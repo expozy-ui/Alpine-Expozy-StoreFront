@@ -1,6 +1,6 @@
 <?php
 
-
+// test
 /**** get repo if folder is empty ****/
 if(file_exists('.htaccess') === false){
 	unlink('index.html');
@@ -8,7 +8,7 @@ if(file_exists('.htaccess') === false){
 	$output = shell_exec($git_clone);
 	header('Location: /gitops.php');
 	die();
-}
+}   
 
 define( "_VALID_PHP", true);
 require_once( "core/autoload.php");
