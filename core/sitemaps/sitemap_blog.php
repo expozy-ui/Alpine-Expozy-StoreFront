@@ -8,22 +8,31 @@ echo '<?xml version="1.0" encoding="UTF-8"?>' ?><urlset xmlns="http://www.sitema
 //$products = [];
 $page = 1;
 $total_pages = 0;
-do{
-	
-	$result = Api::cache(false)->data(['page' => $page ])->get()->blogPosts();
-	$total_pages = $result['pagination']['total_pages'];
-	//$products = array_merge($products,  $result['result']);
-	
-	$page++;
+
+$limit = 1000;
+
+if(isset($_GET['sitemap'])){
+	$result = Api::cache(false)->data(['page' => (int)$_GET['sitemap'], 'order'=>'oldest' ])->limit($limit)->get()->blogPosts();
 	foreach($result['result'] as $row){
 		print " <url>
 				<loc>{$row['url']}</loc>
+				</url>";
+	}
+	
+} 
+else {
+	$result = Api::cache(false)->data(['page' => 1 ])->limit($limit)->get()->blogPosts();
+	
+
+	
+	for($i=1; $i<=$result['pagination']['total_pages']; $i++){
+		print " <url>
+				<loc>{$core->site_url}{$_SERVER['REQUEST_URI']}?sitemap=$i</loc>
 				
 				</url>";
 	}
 	
-
 }
-while($page <= $total_pages );
+
 ?>
 </urlset>
