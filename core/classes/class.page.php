@@ -28,7 +28,7 @@ class Page
 	public string $footer = '';
 	public string $css = '';
 	public string $headCss = '';
-
+	public string $script = '';
 
 
 
@@ -165,6 +165,27 @@ class Page
 						$this->seo_image = $target['images'][0]['url'] ?? $core->web['logo'];
 						$this->seo_tags = $target['tags'] ?? $this->seo_title;
 						$this->error404 = $target ? false : true;
+						
+						$this->script = '<script type="application/ld+json">
+										{
+										  "@context": "https://schema.org",
+										  "@type": "NewsArticle",
+										  "url": "'.$target['url'].'",
+										   "publisher":{
+											  "@type":"Organization",
+											  "name":"Unicon",
+										    },
+										  "headline": "'.$target['title'].'",';
+						if(isset($target['images'][0])){
+							$this->script .=	 '"image": [
+												"'.$target['images'][0]['url'].'"
+											   ],';
+						}						
+
+						$this->script .=     '"datePublished": "'.str_replace(' ','T', $target['date_created']).'+00:00",
+										}
+										</script>';
+
 					} else {
 						$this->error404 = true;
 					}
