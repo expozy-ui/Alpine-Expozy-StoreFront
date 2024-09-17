@@ -34,7 +34,7 @@ if(!isset($_POST['token'])){
 }
 
 $token = $_POST['token'];
-
+$route = $_POST['route']??'';
 
 
 
@@ -56,10 +56,9 @@ $headers = array(
 $res = $user->loginByToken($token);
 
 echo"<script>
-	console.log('test');
 	localStorage.clear();
 	localStorage.setItem('token', '{$token}');
-	document.location.href='/';	
+	document.location.href='/".$route."';	
 	</script>";
 
 ?>
