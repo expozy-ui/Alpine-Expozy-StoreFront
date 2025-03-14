@@ -3,10 +3,11 @@
 
 /**** get repo if folder is empty ****/
 if(file_exists('.htaccess') === false){
+	unlink('index.php');
 	unlink('index.html');
 	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard";
 	$output = shell_exec($git_clone);
-	header('Location: /gitops.php');
+	header('Location: /index.php');
 	die();
 }
 

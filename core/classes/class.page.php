@@ -323,6 +323,47 @@ class Page
 		}
 		return str_replace(" ", ", ",  $string);
 	}
+	
+	public static function downloadPage(){
+			global $lang;
+		
+			$page_id = get('page_id');
+			$orig_lang = get('lang');
+					
+			$language = Api::cache(false)->get()->languages();
+			$orig_i = get('i');
+			$parameters = json_decode(base64_decode($orig_i), true);
+			$parameters['type'] = 'index';
+			
+			
+			foreach($language as $lng){
+					if($lng['lang'] == $orig_lang) continue;
+										
+					$page = Api::cache(false)->id($page_id)->limit(1)->data(['lang'=>$lng['lang']])->get()->pages();
+					$lang->language = $lng['lang'];
+				
+					$parameters['id'] = $page['id'];
+						
+						
+					$new_parameters = base64_encode(json_encode($parameters));
+					$editor = new Editor($new_parameters);
+					$rev = $editor->revisions[0]['object_desc'] ?? '';
+						
+					
+						
+						
+					$template = new Template('index', $page['slug']);
+					
+					if(file_exists($template->get_fileName()) === false && $rev != ''){
+							$template->save_html($rev);
+					}
+
+					
+			}
+			
+		
+			
+	}
 
 
 }

@@ -29,7 +29,7 @@ require_once '../core/autoload.php';
 
 
 //get token
-if(!isset($_POST['token'])){
+if(!isset($_POST['token']) || empty($_POST['token'])){
 	die('Token Error');
 }
 
@@ -52,14 +52,18 @@ $headers = array(
 );
 
 
+
 //verify token
 $res = $user->loginByToken($token);
 
-echo"<script>
+if($res !== false){
+	echo"<script>
 	localStorage.clear();
 	localStorage.setItem('token', '{$token}');
 	document.location.href='/".$route."';	
 	</script>";
+}
+
 
 ?>
 

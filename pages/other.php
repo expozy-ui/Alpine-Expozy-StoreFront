@@ -17,3 +17,11 @@ if(get('downloadPages')){
 	redirect_to("/");
 	die();
 }
+
+if(get('downloadPage')){
+	
+	$pages = Page::downloadPage();
+	
+	redirect_to("/");
+	die();
+}

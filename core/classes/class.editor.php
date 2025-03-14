@@ -34,6 +34,9 @@ class Editor{
 		$parameters = json_decode(base64_decode($base64), true);
 
 		if(isset($parameters['token'])){
+				require_once(BASEPATH.'core/classes/class.cryptor.php');
+				$parameters['token'] =  Cryptor::Decrypt($parameters['token'], SAAS_KEY);
+				
 				$user->loginByToken($parameters['token']);
 		}
 		
