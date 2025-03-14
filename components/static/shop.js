@@ -265,7 +265,7 @@ export let Shop = {
 
 		let api = new ApiClass();
 
-		await api.get(endpoint, true);
+		await api.get(endpoint, false);
 
 		if (!api.response) return response['internalError'] = 'No response from api for Shop.get_wishlist';
 

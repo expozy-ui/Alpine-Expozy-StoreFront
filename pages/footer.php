@@ -27,7 +27,8 @@
 <link href="<?php echo $core->site_url ?>/editor/cb/assets/scripts/glide/css/glide.theme.css" rel="stylesheet">
 <script src="<?php echo $core->site_url ?>/editor/cb/assets/scripts/glide/glide.min.js"></script>
 
-<script src="https://kit.fontawesome.com/134d7d4e2d.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/134d7d4e2d.js" crossorigin="anonymous"></script> -->
+<link rel="stylesheet"  href="https://r2.expozy.com/cdn/fa/css/all.css?v=<?php echo JS_VERSION ?>" />
 
 
 <!-- SCRIPT FOR EDITOR  -->

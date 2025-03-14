@@ -40,7 +40,7 @@
 			const SITEURL = "<?php echo $core->site_url ?>";
 			const LANG = "<?php echo $lang->language ?>";
 			const SAAS_KEY = "<?php echo SAAS_KEY ?>";
-			const COREURL = "<?php echo $core->core_url; ?>api/";
+			const COREURL = "<?php echo CORE_URL; ?>api/";
 			const LOGGED_IN = "<?php echo $user->logged_in ?>";
 			const USER_EMAIL = "<?php echo $user->email ?>";
 			const USER = <?php echo json_encode($user, JSON_UNESCAPED_UNICODE) ?>;
@@ -50,8 +50,7 @@
 			const URL_PARAMETERS = <?php unset($_GET['query_id']); echo json_encode($_GET) ?>;
 			const SITENAME = <?php echo json_encode($core->site_name) ?>;
 			const JS_VERSION = <?php echo JS_VERSION; ?>;
-			const PAGEINIT = {id: <?php echo $page->id?>, target_id: <?php echo $page->target_id; ?>  };
-			const REFERRAL = "<?php echo $_SESSION['referral'] ?? '' ?>";
+			const PAGEINIT = {id: <?= $page->id?>, target_id: <?= $page->target_id; ?>  };
 		</script>
 
 
@@ -112,15 +111,15 @@
 					@click="remove(notice.id)"
 					class="notice  "  :class="notice.type == 'error' ? 'bg-red-600 hover:bg-red-500' : 'bg-sky-900 hover:bg-sky-800'"
 					x-text="notice.text">
-				</div>
-			</template>
-		</div>
+					</div>
+				</template>
+			</div>
 
 
 <?php if($user->logged_in && $user->is_superAdmin()) { ?>
 	
 	<div style="display: none;" id="tailwindCss"></div>
-	<div style="width:100px;height: 50px;position: fixed;right: 100px;bottom: 60px;background-color: red;z-index: 1000;display: flex;justify-content: center;align-items: center;border-radius: 25px;color: white;font-weight: bold;letter-spacing: 1.2px;font-size: 18px;cursor: pointer;" id="dev_save">Gen CSS</div>
+	<div style="width:100px;height: 50px;position: fixed;right: 100px;bottom: 60px;background-color: red;z-index: 1000;display: flex;justify-content: center;align-items: center;border-radius: 25px;color: white;font-weight: bold;letter-spacing: 1.2px;font-size: 18px;cursor: pointer;" id="dev_save">Save</div>
 	<script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
 	<script>
 		  tailwind.config = {

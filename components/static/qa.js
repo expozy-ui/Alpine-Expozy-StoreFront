@@ -25,14 +25,12 @@ export let Qa = {
 
 	post_qa: async function (data, options) {
 		let response = [];
-
 		response['keyName'] = 'qa';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
 
-		let endpoint = Helpers.combineRequest('qa', data);
 		let api = new ApiClass();
+		await api.post('qa', data);
 
-		await api.post(endpoint, false);
+		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
 
 		if (!api.response) return response['internalError'] = 'No response from api for QA.post_qa';
 

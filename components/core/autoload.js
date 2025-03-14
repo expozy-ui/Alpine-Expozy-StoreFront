@@ -240,7 +240,7 @@ async function alpineListeners(method, element) {
     if (("keyName" in response && typeof (response.keyName) !== "") && response.keyName != '') keyName = response.keyName;
 
     // IF WE HAVE KEYNAME AT END SET RESPONSE TO GLOBAL DATA AND UPDATE
-    if (keyName != '') {
+    if (keyName != '' && response.obj != undefined) {
       dataProxy[keyName] = response.obj;
     }
 
@@ -263,6 +263,7 @@ window.alpineListeners = alpineListeners;
 async function forceChange(url) {
   history.pushState(null, null, url);
   dataProxy['pageUrl'] = [];
+  dataProxy['openMobileMenu'] = false;
   Page.load();
   document.getElementById('main').scrollIntoView(true);
 }
@@ -390,8 +391,7 @@ function replaceImages() {
             newUrl = originSrcUrl.replace('10x10', '1024x768');
           }
           if (image.clientWidth >= 1024) {
-            // newUrl = originSrcUrl.replace('10x10', '1024x768');
-            newUrl = originSrcUrl.replace('10x10', '1024x768');
+            newUrl = originSrcUrl.replace('/10x10', '');
           }
         }
 
@@ -422,7 +422,7 @@ function replaceImages() {
             }
 
             if (el.clientWidth >= 1024) {
-              newUrl = originSrcUrl.replace('10x10', '1024x768');
+              newUrl = originSrcUrl.replace('/10x10', '');
             }
           }
           el.style.backgroundImage = newUrl;
@@ -523,24 +523,19 @@ async function classGen() {
 
 /*
   CHANGE CURRENT LANGUAGE
-  changeLang('bg')
+  ex. changeLang('bg')
 */
-function changeLang(lang) {
-  if (dataBody.corePage.lang != undefined && dataBody.corePage.lang != '') {
-    let currentLang = dataBody.corePage.lang;
-    if (currentLang != lang) {
-      let oldUrl = window.location.href;
-      if (oldUrl.includes(`/${currentLang}/`)) {
-        var newUrl = oldUrl.replace(`/${currentLang}/`, `/${lang}/`);
-        window.location.href = newUrl;
+function changeLang(newLang) {
 
-      } else {
-        window.location.href = window.location.origin + `/${lang}/`;
-      }
-    }
+  // СЪЩИЯ ЕЗИК Е ИЗБРАН
+  if (LANG == newLang) return;
+
+  if (window.location.href.includes(`/${LANG}/`)) {
+    window.location.href = window.location.href.replace(`/${LANG}/`, `/${newLang}/`);
   } else {
-    window.location.href = window.location.origin + `/${lang}/`;
+    window.location.href = window.location.origin + `/${newLang}/`;
   }
+
 }
 
 window.changeLang = changeLang;

@@ -13,7 +13,7 @@ document.addEventListener('click', async function (event) {
 			event.preventDefault();
 
 			//change URL in address bar
-			history.pushState(null, null, link.pathname);
+			history.pushState(null, null, link.pathname + link.search);
 
 			// Refresh pageUrl parameters
 			dataProxy['pageUrl'] = [];
