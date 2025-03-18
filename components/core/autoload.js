@@ -261,7 +261,10 @@ window.alpineListeners = alpineListeners;
 // END  ALPINE CLICK EVENT LISTENER
 
 async function forceChange(url) {
+  let a = url;
+  debugger;
   history.pushState(null, null, url);
+
   dataProxy['pageUrl'] = [];
   dataProxy['openMobileMenu'] = false;
   Page.load();

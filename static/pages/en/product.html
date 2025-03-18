@@ -94,7 +94,7 @@
 
                             <div class=" flex gap-3 flex-wrap">
                                 <template x-for="tag in data.product.tags.split(',')">
-                                    <p class="px-5 py-1 border-stone-800 shadow bg-neutral-50 hover:text-white hover:bg-stone-900 cursor-pointer " @click="forceChange('/bg/products?tags[]='+tag)" x-text="tag"></p>
+                                    <p class="px-5 py-1 border-stone-800 shadow bg-neutral-50 hover:text-white hover:bg-stone-900 cursor-pointer " @click="forceChange('/en/products?tags[]='+tag)" x-text="tag"></p>
                                 </template>
                             </div>
                         </template>
@@ -103,7 +103,7 @@
                             <div class="pt-6">
                                 <div class="">
                                     <p class="flex dark:text-gray-200">
-                                        <span class="text-xs">Общо коментари - </span>
+                                        <span class="text-xs">Total comments - </span>
                                         <span class="text-xs" x-text="data.productReviews.length"></span>
                                     </p>
                                 </div>
@@ -123,7 +123,7 @@
                                 <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                                 </svg>
-                                Купи
+                                Buy
                             </button>
 
                         </div>
@@ -135,45 +135,45 @@
             <div class="lg:col-span-6" x-data="{tab : 'description'}">
                 <div class="border-b border-gray-300">
                     <nav class="flex gap-4">
-                        <a @click="tab = 'description'" :class="tab == 'description' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="dark:text-gray-200  py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Описание </a>
+                        <a @click="tab = 'description'" :class="tab == 'description' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="dark:text-gray-200 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800"> Description </a>
 
-                        <a @click="tab = 'reviews'" :class="tab == 'reviews' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="dark:text-gray-200 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800">Коментари</a>
-                        <a @click="tab = 'qa'" :class="tab == 'qa' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="dark:text-gray-200 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800">Запитване</a>
+                        <a @click="tab = 'reviews'" :class="tab == 'reviews' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="dark:text-gray-200 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800">Comments</a>
+                        <a @click="tab = 'qa'" :class="tab == 'qa' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="dark:text-gray-200 py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800">Query</a>
 
                     </nav>
                 </div>
 
                 <div x-show="tab == 'description'" class="mt-8 flow-root sm:mt-12 dark:text-gray-200" x-html="data.product.description"></div>
                 <div x-show="tab == 'reviews'">
-                    <div class="p-3 rounded-lg max-w-xl  shadow mt-5" x-data="{reviewOpen:false}">
-                        <h2 @click="reviewOpen =! reviewOpen" class="text-base font-medium mb-2 cursor-pointer flex justify-between items-center px-5">Оставете коментар <i class="fa-solid fa-circle-plus text-[22px] text-stone-900"></i></h2>
+                    <div class="p-3 rounded-lg max-w-xl shadow mt-5" x-data="{reviewOpen:false}">
+                        <h2 @click="reviewOpen =! reviewOpen" class="text-base font-medium mb-2 cursor-pointer flex justify-between items-center px-5">Leave a comment <i class="fa-solid fa-circle-plus text-[22px] text-stone-900"></i></h2>
                         <form x-show="reviewOpen" class="py-3">
 
                             <div class="mb-4">
-                                <label class="block text-gray-700 font-medium mb-2" for="name">Имейл</label>
+                                <label class="block text-gray-700 font-medium mb-2" for="name">Email</label>
                                 <input name="email" :value="data.user.email" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" type="text" placeholder="">
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-700 font-medium mb-2" for="name">Имена</label>
+                                <label class="block text-gray-700 font-medium mb-2" for="name">Names</label>
                                 <input name="user_name" :value="data.user.names" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500" type="text" placeholder="">
                             </div>
                             <div class="mb-4">
-                                <label class="block text-gray-700 font-medium mb-2" for="comment">Коментар</label>
+                                <label class="block text-gray-700 font-medium mb-2" for="comment">Comment</label>
                                 <textarea rows="4" name="comment" class="appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:border-gray-500"></textarea>
                             </div>
 
-                            <label class="block text-gray-700 font-medium " for="comment">Оценете този продукт </label>
+                            <label class="block text-gray-700 font-medium " for="comment">Rate this product </label>
                             <div x-data="{ temp: 0, orig: 0 }" class="flex cursor-pointer text-4xl mb-7" @click="orig = temp">
                                 <input type="number" name="rating" :value="orig" class="hidden">
 
                                 <template x-for="item in [1,2,3,4,5]">
-                                    <span @mouseenter="temp = item" @mouseleave="temp = orig" class="  shadow-2xl drop-shadow" :class=" temp >= item ? 'text-yellow-400' : 'text-gray-300' ">★</span>
+                                    <span @mouseenter="temp = item" @mouseleave="temp = orig" class=" shadow-2xl drop-shadow" :class=" temp >= item ? 'text-yellow-400' : 'text-gray-300' ">★</span>
                                 </template>
                             </div>
 
                             <div class="flex justify-start">
                                 <button @click="alpineListeners('Reviews.post_product_comments', $event)" :data-product_id="data.product.id" :options-clearForm="true" class="inline-flex items-center justify-center rounded-md border-2 border-transparent bg-stone-900 bg-none px-12 py-3 text-center text-base font-bold text-white transition-all duration-200 ease-in-out hover:bg-stone-800">
-                                    Публикувай
+                                    Publish
                                 </button>
 
                             </div>
@@ -182,7 +182,7 @@
                     <template x-if="data.productReviews[0]">
 
                         <div class="my-10">
-                            <p class="text-base font-bold pt-[20px] pb-2 text-slate-700 uppercase border-b-2 border-slate-800 w-fit">Ревюта за този продукт</p>
+                            <p class="text-base font-bold pt-[20px] pb-2 text-slate-700 uppercase border-b-2 border-slate-800 w-fit">Reviews for this product</p>
 
                             <template x-for="review in data.productReviews">
 
@@ -212,9 +212,9 @@
                 <div x-show="tab == 'qa'" x-cloak>
 
                     <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700">
-                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8  mt-5">
+                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8 mt-5">
                             <h1 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
-                                Направи Запитване
+                                Make an Inquiry
                             </h1>
                             <form>
                                 <input type="hidden" name="product_id" :value="data.corePage.target_id">
@@ -223,22 +223,22 @@
                                     <input type="text" :value="data.user.email" name="email" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" data-gtm-form-interact-field-id="0">
                                 </div>
                                 <div>
-                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Имена</label>
+                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Names</label>
                                     <input type="text" :value="data.user.names" name="user_name" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" data-gtm-form-interact-field-id="0">
                                 </div>
 
                                 <div>
-                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Относно</label>
+                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">About</label>
                                     <input type="text" name="subject" class="bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" data-gtm-form-interact-field-id="0">
                                 </div>
 
                                 <div>
-                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Съобщение</label>
+                                    <label for="text" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Message</label>
                                     <textarea type="text" name="text" class="bg-gray-50 border border-gray-300 h-[100px] text-gray-900 sm:text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" required="" data-gtm-form-interact-field-id="0"></textarea>
 
                                 </div>
 
-                                <button @click="alpineListeners('Qa.post_qa', $event)" class="w-full mt-3 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-stone-900 hover:bg-stone-800">Изпрати</button>
+                                <button @click="alpineListeners('Qa.post_qa', $event)" class="w-full mt-3 text-white font-medium rounded-lg text-sm px-5 py-2.5 text-center bg-stone-900 hover:bg-stone-800">Send</button>
                             </form>
                         </div>
                     </div>
@@ -252,8 +252,8 @@
             <div class="w-full" x-data="{tab : 'promo'}">
                 <div class="">
                     <nav class="container px-4 border-b border-gray-300 mb-10 flex gap-4 sm:mt-12">
-                        <a @click="tab = 'promo'" :class="tab == 'promo' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800 dark:text-gray-200">Промо </a>
-                        <a @click="tab = 'similar'" :class="tab == 'similar' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class=" py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800 dark:text-gray-200"> Подобни </a>
+                        <a @click="tab = 'promo'" :class="tab == 'promo' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class="py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800 dark:text-gray-200">Promo </a>
+                        <a @click="tab = 'similar'" :class="tab == 'similar' ? 'border-b-2 border-gray-900 dark:border-gray-200' : ''" class=" py-4 text-sm font-medium text-gray-900 hover:border-gray-400 hover:text-gray-800 dark:text-gray-200"> Similar </a>
                     </nav>
                 </div>
 
@@ -306,7 +306,7 @@
                                             </template>
 
                                             <template x-if="product.variations[0].promoprice == 0">
-                                                <p x-text="product.variations[0].price.toFixed(2) + ' лв.'" class="  py-1 text-[17px] text-red-600 font-bold">80.00 BGN</p>
+                                                <p x-text="product.variations[0].price.toFixed(2) + '  ' + product.variations[0].currency " class="  py-1 text-[17px] text-red-600 font-bold">80.00 BGN</p>
                                             </template>
                                         </div>
 
@@ -315,7 +315,7 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                                                 </svg>
-                                                Купи
+                                                Buy
                                             </button>
                                         </div>
 
@@ -401,7 +401,7 @@
                                             </template>
 
                                             <template x-if="product.variations[0].promoprice == 0">
-                                                <p x-text="product.variations[0].price.toFixed(2) + ' лв.'" class="  py-1 text-[17px] text-red-600 font-bold">80.00 BGN</p>
+                                                <p x-text="product.variations[0].price.toFixed(2) + '  ' + product.variations[0].currency " class="  py-1 text-[17px] text-red-600 font-bold">80.00 BGN</p>
                                             </template>
                                         </div>
 
@@ -410,7 +410,7 @@
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                                     <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                                                 </svg>
-                                                Купи
+                                                Buy
                                             </button>
                                         </div>
 

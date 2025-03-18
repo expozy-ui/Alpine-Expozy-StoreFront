@@ -1,7 +1,7 @@
 <div class="w-full dark:bg-gray-900 dark:text-gray-200">
     <div apiData="Shop.get_categories" keyname="currentCategory" :data-id="data.corePage.target_id" class="flex items-center flex-col p-[30px]">
         <div class="hidden lg:block">
-            <span class="text-[13px] font-bold"><a href="/"> Начало </a></span>
+            <span class="text-[13px] font-bold"><a href="/"> Home </a></span>
             <template x-for="parent in data.currentCategory.parents">
                 <a :href="parent.url"> > <span x-text="parent.title" class="text-[13px] font-bold"></span></a>
             </template>
@@ -20,17 +20,17 @@
         <div class="  flex flex-col lg:flex-row lg:gap-10 justify-end gap-3 p-2">
 
             <div class="flex gap-2 items-center">
-                <p>Подреди по : </p>
+                <p>Sort by: </p>
                 <select class="border-b border-slate-300 py-1 px-3  rounded-[5px] dark:bg-gray-900" name="" @change="alpineListeners('Shop.get_products', $event)">
-                    <option data-sort="newest" keyname="products" :selected="data.pageUrl.sort == 'newest'" value="">Най - нови</option>
-                    <option data-sort="min_price" keyname="products" :selected="data.pageUrl.sort == 'min_price'" value="">Цена възх.</option>
-                    <option data-sort="max_price" keyname="products" :selected="data.pageUrl.sort == 'max_price'" value="">Цена низх.</option>
-                    <option data-sort="discount" keyname="products" :selected="data.pageUrl.sort == 'discount'" value="">На промоция</option>
+                    <option data-sort="newest" keyname="products" :selected="data.pageUrl.sort == 'newest'" value="">Newest</option>
+                    <option data-sort="min_price" keyname="products" :selected="data.pageUrl.sort == 'min_price'" value="">Price exc.</option>
+                    <option data-sort="max_price" keyname="products" :selected="data.pageUrl.sort == 'max_price'" value="">Price min.</option>
+                    <option data-sort="discount" keyname="products" :selected="data.pageUrl.sort == 'discount'" value="">On Sale</option>
                 </select>
             </div>
 
             <div class="flex gap-2 items-center">
-                <p>Продукти на страница : </p>
+                <p>Products per page: </p>
                 <select class="border-b border-slate-300 py-1 px-3  rounded-[5px] dark:bg-gray-900" name="" @change="alpineListeners('Shop.get_products', $event)">
                     <option data-limit="10" keyname="products" :selected="data.pageUrl.limit == 10" value="" selected="selected">10</option>
                     <option data-limit="20" keyname="products" :selected="data.pageUrl.limit == 20" value="">20</option>
@@ -48,7 +48,7 @@
         <div class=" mx-5 py-10 ">
             <template x-if="data.categories.length > 1 ">
                 <div>
-                    <p class="text-xl font-bold  pb-2 text-slate-700 uppercase border-b-2 border-slate-800 dark:text-gray-200">Категории</p>
+                    <p class="text-xl font-bold  pb-2 text-slate-700 uppercase border-b-2 border-slate-800 dark:text-gray-200">Categories</p>
                     <ul class=" divide-y py-3">
                         <template x-for="category in data.categories">
                             <li class=" w-full  ">
@@ -85,10 +85,10 @@
             <template x-if="data.product_filters.brands.lenth > 1">
 
                 <div>
-                    <p class="text-xl font-bold  pb-2 text-slate-700 uppercase border-b-2 border-slate-800 dark:text-gray-200">Марка</p>
+                    <p class="text-xl font-bold  pb-2 text-slate-700 uppercase border-b-2 border-slate-800 dark:text-gray-200">Brand</p>
                     <div>
                         <select class="border border-slate-300 px-3 my-[20px] rounded-[5px] w-full py-2 dark:bg-gray-950" name="" @change="alpineListeners('Shop.get_products', $event)">
-                            <option data-brands="empty" :data-search="data.search.search" value="">Всички</option>
+                            <option data-brands="empty" :data-search="data.search.search" value="">All</option>
                             <template x-for="brand in data.product_filters.brands">
                                 <option :data-brands="brand.id" :selected="data.pageUrl.brands == brand.id" x-text="brand.title" :value="brand.id">10</option>
                             </template>
@@ -97,7 +97,7 @@
                 </div>
             </template>
 
-            <p class="text-xl font-bold  pb-2 text-slate-700 uppercase border-b-2 border-slate-800 dark:text-gray-200">Тагове</p>
+            <p class="text-xl font-bold  pb-2 text-slate-700 uppercase border-b-2 border-slate-800 dark:text-gray-200">Tags</p>
             <div>
                 <form>
                     <div x-data="{activeTags : data.pageUrl['tags[]'] ?  data.pageUrl['tags[]'] : [] }" id="activeTags" x-init="$watch('activeTags', value => alpineListeners('Shop.get_products', $el))" class="flex flex-wrap">
@@ -119,11 +119,11 @@
 
                 <div class="border-y py-2 border-y py-2 flex justify-between gap-3 my-4">
                     <div class="w-full">
-                        <p class="dark:text-gray-200">Цена от </p>
+                        <p class="dark:text-gray-200">Price from </p>
                         <input @input.debounce.500="alpineListeners('Shop.get_products', $event)" keyname="products" type="number" min="0" max="1000" name="price_from" :value="data.pageUrl.price_from" class="dark:bg-gray-950 dark:text-gray-200 block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded border border-gray-300 focus:ring-primary-500 focus:border-primary-500 ">
                     </div>
                     <div class="w-full">
-                        <p class="dark:text-gray-200">Цена до </p>
+                        <p class="dark:text-gray-200">Price to </p>
                         <input @input.debounce.500="alpineListeners('Shop.get_products', $event)" keyname="products" type="number" min="0" max="1000" name="price_to" :value="data.pageUrl.price_to" class="dark:bg-gray-950 dark:text-gray-200 block p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded border border-gray-300 focus:ring-primary-500 focus:border-primary-500 ">
                     </div>
                 </div>
@@ -184,7 +184,7 @@
                                     </template>
 
                                     <template x-if="product.variations[0].promoprice == 0">
-                                        <p x-text="product.variations[0].price.toFixed(2) + ' лв.'" class=" py-1 text-[17px] text-red-600 font-bold">80.00 BGN</p>
+                                        <p x-text="product.variations[0].price.toFixed(2) + ' ' + product.variations[0].currency" class=" py-1 text-[17px] text-red-600 font-bold">80.00 BGN</p>
                                     </template>
 
                                 </a>
@@ -195,7 +195,7 @@
                                     <svg xmlns="http://www.w3.org/2000/svg" class="shrink-0 mr-3 h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                                         <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
                                     </svg>
-                                    Купи
+                                    Buy
                                 </button>
 
                             </div>
@@ -205,7 +205,7 @@
                 </template>
 
                 <template x-if="!data.products.result[0]">
-                    <p class=" mx-5 py-10 mt-10 px-5">Няма намерени продукти</p>
+                    <p class=" mx-5 py-10 mt-10 px-5">No products found</p>
                 </template>
 
             </div>

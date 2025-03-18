@@ -158,7 +158,7 @@ export let Shop = {
 
 		let endpoint = Helpers.combineRequest('products', data);
 		let api = new ApiClass();
-		await api.get(endpoint, true);
+		await api.get(endpoint, false);
 
 		if (!api.response) return response['internalError'] = 'No response from api for Shop.get_products';
 
@@ -202,10 +202,10 @@ export let Shop = {
 		let response = [];
 
 		response = api.response;
-
+		debugger;
 		if (api.response.status === 1) {
 			response['keyName'] = 'order';
-			response['url'] = '/bg/ordersummary';
+			response['url'] = `/bg/ordersummary?id=${api.response.order_id}`;
 		}
 
 
@@ -230,10 +230,10 @@ export let Shop = {
 		let response = [];
 
 		// CHECK DO WE HAVE data.product_id ELSE RETURN ERROR
-		if (!("product_id" in data) && typeof (data.product_id) === "undefined") return { internalError: 0, msg: `No product_id is set for Shop.delete_wishlist` };
+		if (!("id" in data) && typeof (data.id) === "undefined") return { internalError: 0, msg: `No id is set for Shop.delete_wishlist` };
 
 		let api = new ApiClass();
-		await api.delete('wishlist/' + data.product_id, data);
+		await api.delete('wishlist/' + data.id, data);
 
 		if (!api.response) return response['internalError'] = 'No response from api for Shop.delete_wishlist';
 

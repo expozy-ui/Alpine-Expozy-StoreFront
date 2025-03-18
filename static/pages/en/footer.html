@@ -1,8 +1,8 @@
 <section class="is-section bg-neutral-100 dark:bg-gray-900 w-full">
     <div class="py-8 px-4 mx-auto max-w-screen-xl lg:py-16 lg:px-6">
         <div class="mx-auto max-w-screen-md sm:text-center">
-            <h2 class=" text-2xl tracking-tight font-bold text-gray-900 dark:text-gray-200">Абонирайте се за нашия бюлетин</h2>
-            <p class="mx-auto mb-8 max-w-2xl  text-gray-900   dark:text-gray-200">Получавайте първи нашите новини и оферти. </p>
+            <h2 class=" text-2xl tracking-tight font-bold text-gray-900 dark:text-gray-200">Subscribe to our newsletter</h2>
+            <p class="mx-auto mb-8 max-w-2xl  text-gray-900   dark:text-gray-200">Be the first to receive our news and offers.</p>
             <form>
                 <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
                     <div class="relative w-full">
@@ -13,13 +13,13 @@
                                 <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                             </svg>
                         </div>
-                        <input class="block  p-3 pl-10 w-full text-sm text-gray-900 dark:text-gray-200 dark:bg-gray-950  bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 " placeholder="Въведете имейл" type="email" name="email">
+                        <input class="block  p-3 pl-10 w-full text-sm text-gray-900 dark:text-gray-200 dark:bg-gray-950  bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 " placeholder="Enter email" type="email" name="email">
                     </div>
                     <div>
-                        <button @click="alpineListeners('Newsletter.post_newsletter', $event)" class="py-3 dark:bg-gray-950 px-5 w-full text-sm font-medium text-center text-black rounded-lg border cursor-pointer bg-white border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-stone-900 dark:text-gray-200 dark:hover:bg-gray-950 hover:text-white focus:ring-4 focus:ring-primary-300">Абониране</button>
+                        <button @click="alpineListeners('Newsletter.post_newsletter', $event)" class="py-3 dark:bg-gray-950 px-5 w-full text-sm font-medium text-center text-black rounded-lg border cursor-pointer bg-white border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-stone-900 dark:text-gray-200 dark:hover:bg-gray-950 hover:text-white focus:ring-4 focus:ring-primary-300">Subscribe</button>
                     </div>
                 </div>
-                <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-400">Ние ценим вашата лична информация. <a href="#" class="font-medium text-primary-600  hover:underline">Политика за поверителност</a>.</div>
+                <div class="mx-auto max-w-screen-sm text-sm text-left text-gray-500 newsletter-form-footer dark:text-gray-400">We value your personal information. <a href="#" class="font-medium text-primary-600  hover:underline">Privacy Policy</a>.</div>
             </form>
         </div>
     </div>
@@ -31,7 +31,7 @@
                 <img :src="data.settings.logo" alt="logo" class='w-60' />
             </a>
             <div class="mt-6">
-                <p class="text-white leading-relaxed text-sm">С Expozy eCommerce, управлението на вашия магазин става по-лесно от когато и да е. Оптимизирана скорост, гъвкави решения и безпроблемна интеграция с трети страни гарантират, че ще можете да фокусирате вниманието си точно там, където е най-важно – на вашите клиенти и продукти.</p>
+                <p class="text-white leading-relaxed text-sm">With Expozy eCommerce, managing your store becomes easier than ever. Optimized speed, flexible solutions, and seamless third-party integrations ensure that you can focus your attention exactly where it matters most – on your customers and products.</p>
             </div>
             <ul class="mt-10 flex space-x-5">
                 <li>
@@ -82,18 +82,15 @@
                 </li>
             </ul>
         </div>
-
         <div class="max-lg:min-w-[140px]">
-            <h4 class="text-white font-semibold text-base relative max-sm:cursor-pointer">Полезни страници</h4>
-
+            <h4 class="text-white font-semibold text-base relative max-sm:cursor-pointer">Useful pages</h4>
             <ul class="mt-6 space-y-4 ">
-                <p class="hover:text-accent text-sm"><a href="/en/for-us">За нас</a></p>
-                <p class="hover:text-accent text-sm"><a href="/en/contacts">Контакти</a></p>
-                <p class="hover:text-accent text-sm"><a href="/en/gdpr">Политика за поверителност</a></p>
-                <p class="hover:text-accent text-sm"><a href="/en/terms-conditions">Общи условия</a></p>
+                <p class="hover:text-accent text-sm"><a href="/en/for-us">About us</a></p>
+                <p class="hover:text-accent text-sm"><a href="/en/contacts">Contacts</a></p>
+                <p class="hover:text-accent text-sm"><a href="/en/gdpr">Privacy policy</a></p>
+                <p class="hover:text-accent text-sm"><a href="/en/terms-conditions">Terms and conditions</a></p>
             </ul>
         </div>
-
         <div class="max-lg:min-w-[140px]">
             <h4 class="text-white font-semibold text-base relative max-sm:cursor-pointer">Platforms</h4>
             <ul class="space-y-4 mt-6">
@@ -104,17 +101,15 @@
                     <a href='javascript:void(0)' class='hover:text-accent text-white text-sm'>Integration Services</a>
                 </li>
                 <li>
-                    <a href='javascript:void(0)' class='hover:text-accent text-white text-sm'>Marketing Glossar</a>
+                    <a href='javascript:void(0)' class='hover:text-accent text-white text-sm'>Marketing Glossary</a>
                 </li>
                 <li>
                     <a href='javascript:void(0)' class='hover:text-accent text-white text-sm'>UIPath</a>
                 </li>
             </ul>
         </div>
-
         <div class="max-lg:min-w-[140px]">
             <h4 class="text-white font-semibold text-base relative max-sm:cursor-pointer">Company</h4>
-
             <ul class="space-y-4 mt-6">
                 <li>
                     <a href='javascript:void(0)' class='hover:text-accent text-white text-sm'>About us</a>
@@ -133,10 +128,8 @@
                 </li>
             </ul>
         </div>
-
         <div class="max-lg:min-w-[140px]">
             <h4 class="text-white font-semibold text-base relative max-sm:cursor-pointer">Additional</h4>
-
             <ul class="space-y-4 mt-6">
                 <li>
                     <a href='javascript:void(0)' class='hover:text-accent text-white text-sm'>FAQ</a>
@@ -156,15 +149,12 @@
             </ul>
         </div>
     </div>
-
     <hr class="mt-4 mb-2 border-gray-300" />
-
     <div class="flex flex-wrap max-md:flex-col gap-4 container">
         <div class="column third flex items-center justify-start  gap-1 px-0 text-white">
-            <span>Изработка: <a class="hover:text-accent" href="http://www.studioweb.bg">Studioweb.bg</a></span>
-            <span>Използван софтуер: <a class="hover:text-accent" href="https://expozy.com/">Expozy</a></span>
+            <span>Created by: <a class="hover:text-accent" href="http://www.studioweb.bg">Studioweb.bg</a></span>
+            <span>Software used: <a class="hover:text-accent" href="https://expozy.com/">Expozy</a></span>
         </div>
-
-        <p class='text-white text-sm md:ml-auto'> <span>Всички права запазени © <span x-text="new Date().getFullYear()"></span> Expozy</span></p>
+        <p class='text-white text-sm md:ml-auto'> <span>All rights reserved © <span x-text="new Date().getFullYear()"></span> Expozy</span></p>
     </div>
 </footer>

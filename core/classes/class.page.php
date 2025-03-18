@@ -225,7 +225,7 @@ class Page
 												
 						$this->seo_title = $target['title']??'';
 						$this->seo_tags = $this->seo_title;
-						$this->error404 = $target ? false : true;
+						// $this->error404 = $target ? false : true;
 						
 				}
 			}
