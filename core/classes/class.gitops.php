@@ -6,6 +6,8 @@ if (!defined("_VALID_PHP")) { die('Direct access to this location is not allowed
  * ========================================================== */
 class GitOps
 { 
+		private const INSTALL_KEY_FILE = 'front_key.json';
+	
 		public static function get_current_repo_name():string{
 				$output = shell_exec("git remote get-url origin");
 				$curent_repo = trim(basename($output));
@@ -100,7 +102,18 @@ class GitOps
 				$r1 = shell_exec("git pull");
 				
 				return "{$r1}";
-		}	
+		}
+		
+		public static function install_saas_key():void {
+				$file = BASEPATH.self::INSTALL_KEY_FILE;
+				
+				if(file_exists($file) === false) return;
+
+				// get file content
+				$content = file_get_contents($file);
+
+				self::change_saas_key($content);
+		}
 
 } 
 ?>

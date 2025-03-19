@@ -6,13 +6,18 @@ if(file_exists('.htaccess') === false){
 	unlink('index.html');
 	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard";
 	$output = shell_exec($git_clone);
-	header('Location: /gitops.php');
+	header('Location: /gitops.php?install=1');
 	die();
 }
 
 define( "_VALID_PHP", true);
 require_once( "core/autoload.php");
 require_once(BASEPATH.'core/classes/class.gitops.php');
+
+if(get('install') == 1){
+	GitOps::install_saas_key();
+}
+
 
 /************ Login **********/
 if(post('login')){
@@ -58,6 +63,11 @@ if(post('github_token')){
 
 $github_token = isset($_SESSION['github_token']) && !empty($_SESSION['github_token']) ? $_SESSION['github_token'] : false;
 $default_project = $core->site_name === 'frontend' ? true : false;
+
+if($core->site_name == "myexpozyecommerce"){
+	$core->site_name = 'frontend.expozy';
+}
+
 
 if(post('upload_repo')){
 	$result_string = GitOps::upload_repo($github_token);	
