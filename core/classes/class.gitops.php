@@ -107,7 +107,7 @@ class GitOps
 				global $core;
 				
 				$domain = str_replace(['https://', 'http://'], '', $core->site_url);
-				$filepath = sys_get_temp_dir()."/expozy/frontkeys/{$domain}";
+				$filepath = "/tmp/expozy/frontkeys/{$domain}";
 				
 				if(file_exists($filepath) === false) return;
 
