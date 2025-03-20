@@ -103,11 +103,8 @@ class GitOps
 				return "{$r1}";
 		}
 		
-		public static function install_saas_key():void {
-				global $core;
-				
-				$domain = str_replace(['https://', 'http://'], '', $core->site_url);
-				$filepath = "/tmp/expozy/frontkeys/{$domain}";
+		public static function install_saas_key():void {				
+				$filepath = "/tmp/expozy/frontkeys/{$_SERVER['HTTP_HOST']}";
 				
 				if(file_exists($filepath) === false) return;
 

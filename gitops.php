@@ -16,6 +16,7 @@ require_once(BASEPATH.'core/classes/class.gitops.php');
 
 if(get('install') == 1){
 	GitOps::install_saas_key();
+	header('Location: /gitops.php');
 }
 
 
