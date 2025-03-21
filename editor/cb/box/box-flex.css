@@ -1,5 +1,9 @@
 ﻿/* Global */
 
+.expozy {
+    width: 100%;
+}
+
 body { /* optional */
     width: 100%;
     padding: 0;

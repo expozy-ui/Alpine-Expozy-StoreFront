@@ -13,7 +13,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  min-height-70 box-autofit">
+<div class="expozy is-section is-box is-section-100 is-light-text  min-height-70 box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-6"></div>
@@ -72,7 +72,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -138,7 +138,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-7 min-height-70 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -231,7 +231,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -289,7 +289,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-content-bottom  is-section-40 box-autofit">
+<div class="expozy is-section is-box is-content-bottom  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0">
@@ -320,7 +320,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-60">
+<div class="expozy is-section is-box  is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -344,7 +344,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-25 box-autofit">
+<div class="expozy is-section is-box  is-section-25 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -363,7 +363,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-75 ">
+<div class="expozy is-section is-section-75 ">
 <div class="is-boxes">
     <div class="is-box is-box-8 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -420,7 +420,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -506,7 +506,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -552,7 +552,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -625,7 +625,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -678,7 +678,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -717,7 +717,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-6"></div>
@@ -755,7 +755,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay">
@@ -870,7 +870,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -962,7 +962,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -1003,7 +1003,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -1060,7 +1060,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay">
@@ -1127,7 +1127,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -1180,7 +1180,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -1255,7 +1255,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -1330,7 +1330,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text is-content-bottom min-height-70 box-autofit">
         <div class="is-overlay">
@@ -1392,7 +1392,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs">
+<div class="expozy is-section is-section-100  box-space box-space-xxs">
 <div class="is-boxes">
     <div class="is-box is-box-4 is-light-text is-content-bottom box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -1467,7 +1467,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -1576,7 +1576,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -1635,7 +1635,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space  sm-boxes-1 sm-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space  sm-boxes-1 sm-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -1743,7 +1743,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -1827,7 +1827,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-80">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-80">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-4"></div>
@@ -1891,7 +1891,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -1986,7 +1986,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-sm ">
+<div class="expozy is-section is-section-100 box-space box-space-sm ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -2065,7 +2065,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  is-light-text box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-8"></div>
@@ -2108,7 +2108,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space box-space-sm is-section-100 ">
+<div class="expozy is-section box-space box-space-sm is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay">
@@ -2183,7 +2183,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-70">
+<div class="expozy is-section is-box  is-section-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -2199,7 +2199,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30">
+<div class="expozy is-section is-box  is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -2241,7 +2241,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-space box-space-xxs  is-content-bottom box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text box-space box-space-xxs  is-content-bottom box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-0"></div>
@@ -2284,7 +2284,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-60">
         <div class="is-overlay">
@@ -2388,7 +2388,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -2424,7 +2424,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -2480,7 +2480,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -2557,7 +2557,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-25 box-autofit">
+<div class="expozy is-section is-box  is-section-25 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -2571,7 +2571,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-light-text  is-section-75">
+<div class="expozy is-section is-box is-light-text  is-section-75">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-5"></div>
@@ -2623,7 +2623,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -2697,7 +2697,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-10"></div>
@@ -2742,7 +2742,7 @@ designs: [
 "thumbnail":"preview/item-215b.png",
 "category":"1",
 "html":`
-<div class="is-section is-section-100 ç">
+<div class="expozy is-section is-section-100 ç">
 <div class="is-boxes">
     <div class="is-box box-autofit is-box-7">
         <div class="is-overlay">
@@ -2810,7 +2810,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-light-text is-box-7 box-autofit min-height-50 is-content-bottom">
         <div class="is-overlay">
@@ -2890,7 +2890,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -2948,7 +2948,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -2991,7 +2991,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -3050,7 +3050,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-30">
+<div class="expozy is-section is-box  is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -3085,7 +3085,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-70 ">
+<div class="expozy is-section is-section-70 ">
 <div class="is-boxes">
     <div class="is-box is-box-6">
         <div class="is-overlay">
@@ -3107,7 +3107,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -3153,7 +3153,7 @@ designs: [
 "thumbnail":"preview/item-213c.png",
 "category":"2",
 "html":`
-<div class="is-section is-section-100  space-around box-space box-space-xxs md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  space-around box-space box-space-xxs md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -3221,7 +3221,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-6"></div>
@@ -3261,7 +3261,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 min-height-60 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -3346,7 +3346,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 stack-bottom ">
+<div class="expozy is-section is-section-100 stack-bottom ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -3411,7 +3411,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -3491,7 +3491,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  min-height-70 box-autofit">
+<div class="expozy is-section is-box is-section-100 is-light-text  min-height-70 box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-15"></div>
@@ -3535,7 +3535,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap box-space-xxs">
+<div class="expozy is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap box-space-xxs">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -3622,7 +3622,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-space box-space-xxs ">
+<div class="expozy is-section is-box is-section-100 is-light-text box-space box-space-xxs ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-5"></div>
@@ -3668,7 +3668,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -3749,7 +3749,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 min-height-70 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -3818,7 +3818,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -3853,7 +3853,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit min-height-70">
         <div class="is-overlay">
@@ -3921,7 +3921,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  stack-bottom is-section-100 md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section  stack-bottom is-section-100 md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -3983,7 +3983,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-m stack-top">
+<div class="expozy is-section is-section-100  box-space box-space-m stack-top">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -4058,7 +4058,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space box-space-m  is-section-75 stack-bottom">
+<div class="expozy is-section box-space box-space-m  is-section-75 stack-bottom">
 <div class="is-boxes">
     <div class="is-box is-box-7">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -4099,7 +4099,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-25 is-content-top">
+<div class="expozy is-section is-box  is-section-25 is-content-top">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-top edge-y-0-25">
@@ -4141,7 +4141,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs">
+<div class="expozy is-section is-section-100  box-space box-space-xxs">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -4231,7 +4231,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit  is-light-text min-height-70">
+<div class="expozy is-section is-box is-section-100 box-autofit  is-light-text min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -4278,7 +4278,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit min-height-70">
         <div class="is-overlay">
@@ -4368,7 +4368,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box box-autofit is-box-4">
         <div class="is-overlay">
@@ -4468,7 +4468,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -4547,7 +4547,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-50">
+<div class="expozy is-section  is-section-50">
 <div class="is-boxes">
     <div class="is-box is-box-6">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -4592,7 +4592,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-50">
+<div class="expozy is-section  is-section-50">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -4658,7 +4658,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-5"></div>
@@ -4718,7 +4718,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay">
@@ -4767,7 +4767,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -4862,7 +4862,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-autofit min-height-70 ">
+<div class="expozy is-section is-box is-section-100 is-light-text box-autofit min-height-70 ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -4908,7 +4908,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-bottom stack-top box-autofit">
+<div class="expozy is-section is-box is-section-100  is-content-bottom stack-top box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-bottom edge-y-2">
@@ -4962,7 +4962,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-sm  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space box-space-sm  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay">
@@ -5034,7 +5034,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box box-autofit is-box-5 is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -5098,7 +5098,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs  md-boxes-2 md-boxes-wrap sm-boxes-2 sm-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space box-space-xxs  md-boxes-2 md-boxes-wrap sm-boxes-2 sm-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box-4 is-box box-autofit min-height-40 is-light-text is-content-top">
         <div class="is-overlay">
@@ -5185,7 +5185,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-space is-light-text box-autofit min-height-50 is-section-60 box-space-sm">
+<div class="expozy is-section is-box  box-space is-light-text box-autofit min-height-50 is-section-60 box-space-sm">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -5203,7 +5203,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40">
+<div class="expozy is-section is-box  is-section-40">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -5247,7 +5247,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-100">
+<div class="expozy is-section is-box  box-autofit is-section-100">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -5295,7 +5295,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-reverse md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  box-reverse md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -5373,7 +5373,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-70">
+<div class="expozy is-section  is-section-70">
 <div class="is-boxes">
     <div class="is-box is-box-6">
         <div class="is-overlay">
@@ -5409,7 +5409,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30 box-autofit">
+<div class="expozy is-section is-box  is-section-30 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -5449,7 +5449,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-top">
+<div class="expozy is-section is-box is-section-100  is-content-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -5490,7 +5490,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-content-top box-autofit min-height-75 is-box-5">
         <div class="is-overlay">
@@ -5614,7 +5614,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs  md-boxes-2 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space box-space-xxs  md-boxes-2 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit min-height-50">
         <div class="is-overlay">
@@ -5702,7 +5702,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -5745,7 +5745,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text ">
+<div class="expozy is-section is-box is-section-100 is-dark-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -5813,7 +5813,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -5889,7 +5889,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-bottom  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-content-bottom  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-bottom edge-y-3">
@@ -5926,7 +5926,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-25 box-autofit">
+<div class="expozy is-section is-box  is-section-25 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -5945,7 +5945,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-align-left is-light-text  is-section-75 box-autofit min-height-60">
+<div class="expozy is-section is-box is-align-left is-light-text  is-section-75 box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-content content-selectable" data-dialog-width="1200px" data-dialog-height="900px" data-module="slider-box" data-module-desc="Slider" data-html="%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22_style_%7Bid%7D%22%20style%3D%22display%3Anone%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20id%3D%22%7Bid%7D%22%20class%3D%22glide%20cover%20%22%20style%3D%22display%3Anone%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20data-glide-el%3D%22track%22%20class%3D%22glide__track%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cul%20class%3D%22glide__slides%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cli%20class%3D%22glide__slide%22%20style%3D%22height%3A100%25%3B%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fnextassets.fra1.digitaloceanspaces.com%2Fadmin%2F2023-04-02%2Fimg-1920x1080.png%22%20alt%3D%22%22%20%2F%3E%3C%2Fli%3E%3Cli%20class%3D%22glide__slide%22%20style%3D%22height%3A100%25%3B%22%3E%3Cimg%20src%3D%22https%3A%2F%2Fnextassets.fra1.digitaloceanspaces.com%2Fadmin%2F2023-04-02%2Fbg2-1920x1080.png%22%20alt%3D%22%22%20%2F%3E%3C%2Fli%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Ful%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22glide__arrows%22%20data-glide-el%3D%22controls%22%3E%3Cbutton%20class%3D%22glide__arrow%20glide__arrow--left%22%20data-glide-dir%3D%22%3C%22%3E%3Csvg%20style%3D%22width%3A4.3vw%3Bheight%3A4.3vw%3Bmin-width%3A30px%3Bmin-height%3A30px%3B%22%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M352%20115.4L331.3%2096%20160%20256l171.3%20160%2020.7-19.3L201.5%20256z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E%3C%2Fbutton%3E%3Cbutton%20class%3D%22glide__arrow%20glide__arrow--right%22%20data-glide-dir%3D%22%3E%22%3E%3Csvg%20style%3D%22width%3A4.3vw%3Bheight%3A4.3vw%3Bmin-width%3A30px%3Bmin-height%3A30px%3B%22%20viewBox%3D%220%200%20512%20512%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cpath%20d%3D%22M160%20115.4L180.7%2096%20352%20256%20180.7%20416%20160%20396.7%20310.5%20256z%22%3E%3C%2Fpath%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fsvg%3E%3C%2Fbutton%3E%3C%2Fdiv%3E%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fdiv%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3Cscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20css%20%3D%20document.querySelector('%23_style_%7Bid%7D').innerHTML%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20head%20%3D%20document.getElementsByTagName('head')%5B0%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20s%20%3D%20document.createElement('style')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20s.appendChild(document.createTextNode(css))%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20head.appendChild(s)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20svgDef%20%3D%20'%3Csvg%20width%3D%220%22%20height%3D%220%22%20style%3D%22position%3Aabsolute%3Bdisplay%3Anone%3B%22%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3Cdefs%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3Csymbol%20viewBox%3D%220%200%20512%20512%22%20id%3D%22ion-ios-arrow-left%22%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3Cpath%20d%3D%22M352%20115.4L331.3%2096%20160%20256l171.3%20160%2020.7-19.3L201.5%20256z%22%3E%3C%2Fpath%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3C%2Fsymbol%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3Csymbol%20viewBox%3D%220%200%20512%20512%22%20id%3D%22ion-ios-arrow-right%22%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3Cpath%20d%3D%22M160%20115.4L180.7%2096%20352%20256%20180.7%20416%20160%20396.7%20310.5%20256z%22%3E%3C%2Fpath%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3C%2Fsymbol%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3C%2Fdefs%3E'%20%2B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20'%3C%2Fsvg%3E'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20pre%20%3D%20document.querySelector('%23ion-ios-arrow-left')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(!pre)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20document.body.insertAdjacentHTML('beforeend'%2C%20svgDef)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20docReady%20%3D%20function(fn)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20stateCheck%20%3D%20setInterval(function()%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20if%20(typeof%20Glide%20%3D%3D%3D%20'undefined')%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20var%20waitSlider%20%3D%20false%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(typeof%20Glide%20!%3D%3D%20'undefined')%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if((new%20Glide).mount)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20Do%20Nothing%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20waitSlider%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20waitSlider%20%3D%20true%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(waitSlider)%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20(typeof%20skrollrr%20%3D%3D%3D%20'undefined')%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if%20(typeof%20skrollrr.lax%20%3D%3D%3D%20'undefined')%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20clearInterval(stateCheck)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20fn()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20catch%20(e)%20%7B%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%201)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20docReady(function()%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20glideSlide%20%3D%20document.querySelector(%22%23%7Bid%7D%22)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(!glideSlide)%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20glideSlide.style.display%3D%22%22%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20glideSlides%20%3D%20document.querySelectorAll('%23%7Bid%7D%20.glide__slide')%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20perView%20%3D%202%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20glideSlides.forEach(slide%3D%3E%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20video%20%3D%20slide.querySelector('video')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(video)%20changeVideo(video)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20window.addEventListener('resize'%2C%20()%3D%3E%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20glideSlides.forEach(slide%3D%3E%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20video%20%3D%20slide.querySelector('video')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(video)%20changeVideo(video)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20function%20changeVideo(video)%20%7B%0A%09%09%09%09%09%20%20%20%20%20%20%20%20if(!video)%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20changed%3Dfalse%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20source%20%3D%20video.querySelector('source')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vidDefault%20%3D%20source.getAttribute('data-default')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid240%20%3D%20source.getAttribute('data-240')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid360%20%3D%20source.getAttribute('data-360')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid480%20%3D%20source.getAttribute('data-480')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid540%20%3D%20source.getAttribute('data-540')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid720%20%3D%20source.getAttribute('data-720')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid1080%20%3D%20source.getAttribute('data-1080')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid1440%20%3D%20source.getAttribute('data-1440')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vid2160%20%3D%20source.getAttribute('data-2160')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20vW%20%3D%20window.innerWidth%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vW%3C%3D426)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid240)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid240)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid240)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid360)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid360)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid360)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid480)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid480)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid480)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid540)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid720)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(426%3CvW%20%26%26%20vW%3C%3D640)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid360)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid360)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid360)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid480)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid480)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid480)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid540)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid720)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(640%3CvW%20%26%26%20vW%3C%3D854)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid480)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid480)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid480)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid540)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid720)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(854%3CvW%20%26%26%20vW%3C%3D960)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid540)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid540)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid720)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(vW%3E960%20%26%26%20vW%3C%3D1280)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid720)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid720)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(1280%3CvW%20%26%26%20vW%3C%3D1920)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid1080)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid1080)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid1080)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(1920%3CvW%20%26%26%20vW%3C%3D2560)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid1440)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid1440)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid1440)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20if%20(2560%3CvW)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(vid2160)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid2160)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid2160)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20else%20if(vid1440)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3Dvid1440)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vid1440)%3Bchanged%3Dtrue%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(changed)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.pause()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.currentTime%20%3D%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.load()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(video.closest('.play'))%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.play()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(source.getAttribute('src')!%3D%3DvidDefault)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.pause()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.currentTime%20%3D%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20source.setAttribute('src'%2C%20vidDefault)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.load()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20function%20stopVideo(slide)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20video%20%3D%20slide.querySelector('video')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(video)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.pause()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.currentTime%20%3D%200%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20slide.classList.remove('active')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20slide.classList.remove('play')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20function%20playVideo(slide)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20video%20%3D%20slide.querySelector('video')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(video)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20video.play()%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20slide.classList.add('play')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20function%20coverflow(index)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20activeSlide%20%3D%20glideSlides%5Bindex%5D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20nextSlide%20%3D%20activeSlide.nextElementSibling%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20next2Slide%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(nextSlide)%20next2Slide%20%3D%20nextSlide.nextElementSibling%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20next3Slide%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(next2Slide)%20next3Slide%20%3D%20next2Slide.nextElementSibling%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.classList.remove('glide__slide--previous')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.classList.remove('glide__slide--following')%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(activeSlide.nextElementSibling)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.nextElementSibling.classList.remove('glide__slide--previous')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.nextElementSibling.classList.remove('glide__slide--following')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.nextElementSibling.classList.add('glide__slide--following')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(activeSlide.previousElementSibling)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.previousElementSibling.classList.remove('glide__slide--previous')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.previousElementSibling.classList.remove('glide__slide--following')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.previousElementSibling.classList.add('glide__slide--previous')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(perView%3D%3D%3D1%20%7C%7C%20perView%3D%3D%3D2%20%7C%7C%20perView%3D%3D%3D3%20%7C%7C%20perView%3D%3D%3D4)%20playVideo(activeSlide)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if((perView%3D%3D%3D2%20%7C%7C%20perView%3D%3D%3D3%20%7C%7C%20perView%3D%3D%3D4)%20%26%26%20nextSlide)%20playVideo(nextSlide)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if((perView%3D%3D%3D3%20%7C%7C%20perView%3D%3D%3D4)%20%26%26%20next2Slide)%20playVideo(next2Slide)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(perView%3D%3D%3D4%20%26%26%20next3Slide)%20playVideo(next3Slide)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20activeSlide.classList.add('active')%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20elms%20%3D%20activeSlide.parentNode.querySelectorAll('.glide__slide')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20elms.forEach(elm%3D%3E%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(elm%3D%3D%3DactiveSlide)%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(perView%3D%3D%3D2)%20if(elm%3D%3D%3DactiveSlide%20%7C%7C%20elm%3D%3D%3DnextSlide)%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(perView%3D%3D%3D3)%20if(elm%3D%3D%3DactiveSlide%20%7C%7C%20elm%3D%3D%3DnextSlide%20%7C%7C%20elm%3D%3D%3Dnext2Slide)%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(perView%3D%3D%3D4)%20if(elm%3D%3D%3DactiveSlide%20%7C%7C%20elm%3D%3D%3DnextSlide%20%7C%7C%20elm%3D%3D%3Dnext2Slide%20%7C%7C%20elm%3D%3D%3Dnext3Slide)%20return%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20stopVideo(elm)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20const%20slider%20%3D%20activeSlide.closest('.glide')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20slider.classList.add('running')%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20myslider%20%3D%20document.querySelector(%22%23%7Bid%7D%22)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20_%7Bid%7D%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20if(myslider.classList.contains('coverflow'))%20%7B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20_%7Bid%7D%20%3D%20new%20Glide(myslider%2C%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22carousel%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20autoplay%3A%203000%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20animationDuration%3A%201000%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20gap%3A%200%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20perView%3A%203%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20startAt%3A%202%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20hoverpause%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20arrow%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dots%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20breakpoints%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20575%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20perView%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20peek%3A%2050%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20414%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20perView%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20peek%3A%2040%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20360%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20perView%3A%201%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20peek%3A%2030%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%2F%2F%20focusAt%3A%20%22center%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%20else%20%7B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20_%7Bid%7D%20%3D%20new%20Glide(%22%23%7Bid%7D%22%2C%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20type%3A%20%22carousel%22%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20autoplay%3A%203000%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20animationDuration%3A%201000%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20gap%3A%200%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20perView%3A%202%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20hoverpause%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20arrow%3A%20true%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20dots%3A%20false%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20breakpoints%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20970%3A%20%7B%20perView%3A%201%2C%20gap%3A%200%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%201280%3A%20%7B%20gap%3A%2015%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20_%7Bid%7D.on('mount.after'%2C%20function%20()%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20coverflow(_%7Bid%7D.index%2C%20true)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20_%7Bid%7D.on('run'%2C%20function%20(event)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20coverflow(_%7Bid%7D.index)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20_%7Bid%7D.mount()%3B%0A%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%3C%2Fscript%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20" data-settings="%7B%22type%22%3A%20%22carousel%22%2C%22autoplay%22%3A%20%223000%22%2C%22animationDuration%22%3A1000%2C%22gap%22%3A%200%2C%22perView%22%3A2%2C%22arrow%22%3Atrue%2C%22arrowPreset%22%3A1%2C%22arrowColor%22%3A%20%22%22%2C%22dots%22%3Afalse%2C%22dotsColor%22%3A%20%22%22%2C%22mobileArrows%22%3Afalse%2C%22mobileDots%22%3Afalse%2C%22fit%22%3A%20%22cover%22%2C%22hoverPause%22%3Afalse%2C%22captionAnim%22%3A%20%22appear%22%2C%22images%22%3A%5B%7B%22src%22%3A%20%22https%3A%2F%2Fnextassets.fra1.digitaloceanspaces.com%2Fadmin%2F2023-04-02%2Fimg-1920x1080.png%22%2C%20%22caption%22%3A%20%22%22%2C%20%22style%22%3A%20%22%22%7D%2C%7B%22src%22%3A%20%22https%3A%2F%2Fnextassets.fra1.digitaloceanspaces.com%2Fadmin%2F2023-04-02%2Fbg2-1920x1080.png%22%2C%20%22caption%22%3A%20%22%22%2C%20%22style%22%3A%20%22%22%7D%5D%7D">
         <div id="_style_bRcwXN6" style="display:none">
@@ -6287,7 +6287,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -6351,7 +6351,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit is-light-text is-content-top">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -6427,7 +6427,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -6495,7 +6495,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -6574,7 +6574,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top  is-light-text box-space box-space-xxs stack-top">
+<div class="expozy is-section is-box is-section-100 is-content-top  is-light-text box-space box-space-xxs stack-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -6611,7 +6611,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs stack-bottom">
+<div class="expozy is-section is-section-100  box-space box-space-xxs stack-bottom">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -6677,7 +6677,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-content-top  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -6729,7 +6729,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit min-height-50 is-light-text">
         <div class="is-overlay">
@@ -6796,7 +6796,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top ">
+<div class="expozy is-section is-box is-section-100 is-content-top ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -6834,7 +6834,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -6877,7 +6877,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7">
         <div class="is-overlay">
@@ -6948,7 +6948,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -6990,7 +6990,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-xxs ">
+<div class="expozy is-section is-section-100 box-space box-space-xxs ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -7089,7 +7089,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -7176,7 +7176,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-20 ">
+<div class="expozy is-section is-box is-section-20 ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -7195,7 +7195,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section box-space is-section-80 ">
+<div class="expozy is-section box-space is-section-80 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay">
@@ -7240,7 +7240,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -7303,7 +7303,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -7383,7 +7383,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -7433,7 +7433,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -7526,7 +7526,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit ">
+<div class="expozy is-section is-box is-section-100 box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -7574,7 +7574,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs">
+<div class="expozy is-section is-section-100  box-space box-space-xxs">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -7650,7 +7650,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-20 is-content-bottom">
+<div class="expozy is-section is-box  box-autofit is-section-20 is-content-bottom">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0">
@@ -7664,12 +7664,12 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-space is-section-60 box-space-xxs stack-top">
+<div class="expozy is-section is-box  box-space is-section-60 box-space-xxs stack-top">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
 </div>
-<div class="is-section is-box  box-space box-space-xxs stack-bottom is-section-20">
+<div class="expozy is-section is-box  box-space box-space-xxs stack-bottom is-section-20">
 <div class="is-overlay">
 </div>
 <div class="is-boxes">
@@ -7708,7 +7708,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  no-spacing">
+<div class="expozy is-section is-box is-section-100 is-light-text  no-spacing">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-15" style="background-color: rgb(0, 0, 0);"></div>
@@ -7755,7 +7755,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  no-spacing">
+<div class="expozy is-section is-section-100  no-spacing">
 <div class="is-boxes">
     <div class="is-box is-box-6">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -7839,7 +7839,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top ">
+<div class="expozy is-section is-box is-section-100 is-content-top ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -7942,7 +7942,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-dark-text">
+<div class="expozy is-section is-box is-section-100  is-dark-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -7989,7 +7989,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -8054,7 +8054,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit is-light-text">
+<div class="expozy is-section is-box is-section-100  box-autofit is-light-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -8123,7 +8123,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs stack-top">
+<div class="expozy is-section is-section-100  box-space box-space-xxs stack-top">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit is-light-text min-height-50">
         <div class="is-overlay">
@@ -8192,7 +8192,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-top box-space box-space-xxs stack-bottom">
+<div class="expozy is-section is-box is-section-100  is-content-top box-space box-space-xxs stack-bottom">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -8245,7 +8245,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-30 box-autofit ">
+<div class="expozy is-section is-box is-section-30 box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -8277,7 +8277,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-70 ">
+<div class="expozy is-section is-section-70 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -8335,7 +8335,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-4 box-autofit min-height-60">
         <div class="is-overlay">
@@ -8442,7 +8442,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -8536,7 +8536,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  no-spacing">
+<div class="expozy is-section is-box is-section-100 is-light-text  no-spacing">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -8584,7 +8584,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  no-spacing">
+<div class="expozy is-section is-section-100  no-spacing">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -8679,7 +8679,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs">
+<div class="expozy is-section is-section-100  box-space box-space-xxs">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit min-height-50">
         <div class="is-overlay">
@@ -8761,7 +8761,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 is-content-top box-autofit min-height-50">
         <div class="is-overlay">
@@ -8835,7 +8835,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 stack-bottom space-around  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 stack-bottom space-around  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -8916,7 +8916,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-space ">
+<div class="expozy is-section is-box is-section-100 is-light-text box-space ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -8959,7 +8959,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -9043,7 +9043,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit min-height-50">
         <div class="is-overlay">
@@ -9106,7 +9106,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box box-autofit is-box-6">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -9181,7 +9181,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit is-content-bottom is-light-text ">
+<div class="expozy is-section is-box is-section-100 box-autofit is-content-bottom is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-5"></div>
@@ -9230,7 +9230,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  box-space space-around box-space-xxs is-section-70">
+<div class="expozy is-section  box-space space-around box-space-xxs is-section-70">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -9277,7 +9277,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30 box-autofit">
+<div class="expozy is-section is-box  is-section-30 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -9304,7 +9304,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -9334,7 +9334,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4">
         <div class="is-overlay">
@@ -9401,7 +9401,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-space box-space-xxs is-content-top ">
+<div class="expozy is-section is-box is-section-100 box-space box-space-xxs is-content-top ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -9461,7 +9461,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs stack-top">
+<div class="expozy is-section is-section-100  box-space box-space-xxs stack-top">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit">
         <div class="is-overlay">
@@ -9579,7 +9579,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs stack-bottom">
+<div class="expozy is-section is-section-100  box-space box-space-xxs stack-bottom">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-light-text box-autofit min-height-50">
         <div class="is-overlay">
@@ -9643,7 +9643,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit ">
+<div class="expozy is-section is-box is-section-100 box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -9709,7 +9709,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -9802,7 +9802,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -9863,7 +9863,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -9938,7 +9938,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top  box-space box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-content-top  box-space box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -9980,7 +9980,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -10073,7 +10073,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-top min-height-75 box-autofit">
+<div class="expozy is-section is-box is-section-100  is-content-top min-height-75 box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -10133,7 +10133,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -10203,7 +10203,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -10271,7 +10271,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-top is-light-text" data-section="section-azkYvzw">
+<div class="expozy is-section is-box is-section-100  is-content-top is-light-text" data-section="section-azkYvzw">
 <div class="is-overlay-content" data-module="code" data-module-desc="Custom HTML or Javascript " data-html="%3Cdiv%20class%3D%22section-%7Bid%7D%22%3E%3C%2Fdiv%3E%0A%3Cscript%3E%0A%20%20%20%20var%20skrollrrReady%20%3D%20function(fn)%20%7B%0A%20%20%20%20%20%20%20%20var%20stateCheck%20%3D%20setInterval(function()%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(typeof%20skrollrr%20%3D%3D%3D%20'undefined')%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20if%20(typeof%20skrollrr.lax%20%3D%3D%3D%20'undefined')%20return%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20clearInterval(stateCheck)%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20try%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20fn()%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%20catch%20(e)%20%7B%7D%0A%20%20%20%20%20%20%20%20%7D%2C%201)%3B%0A%20%20%20%20%7D%3B%0A%20%20%20%20skrollrrReady(function()%20%7B%0A%0A%20%20%20%20%20%20%20%20let%20se%20%3D%20document.querySelector('.section-%7Bid%7D').closest('.is-section')%3B%0A%20%20%20%20%20%20%20%20se.setAttribute('data-section'%2C%20'section-%7Bid%7D')%3B%0A%20%20%20%20%20%20%20%20let%20overlay%20%3D%20se.querySelector('.is-overlay')%3B%0A%0A%20%20%20%20%20%20%20%20overlay.style.top%20%3D%20'unset'%3B%0A%20%20%20%20%20%20%20%20overlay.style.bottom%20%3D%20'unset'%3B%0A%20%20%20%20%20%20%20%20overlay.style.left%20%3D%20'unset'%3B%0A%20%20%20%20%20%20%20%20overlay.style.right%20%3D%20'unset'%3B%0A%0A%20%20%20%20%20%20%20%20let%20wrapper%20%3D%20document.querySelector('.is-wrapper')%3B%0A%20%20%20%20%20%20%20%20const%20clientHeight%20%3D%20se.clientHeight%3B%0A%20%20%20%20%20%20%20%20const%20clientWidth%20%3D%20se.clientWidth%3B%0A%20%20%20%20%20%20%20%20skrollrr.lax.addElements('%5Bdata-section%3Dsection-%7Bid%7D%5D'%2C%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20scrollY%3A%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20scale%3A%20%5B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B'elInY'%2C%20'elCenterY'%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5B0%2C%20100%5D%2C%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20cssFn%3A%20function(val%2C%20domElement)%20%7B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20let%20n%20%3D%20(val%20%2F%20100)%20*%20clientWidth%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20overlay.style.width%20%3D%20(val%20%2F%20100)%20*%20clientWidth%20%2B%20'px'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20overlay.style.height%20%3D%20(val%20%2F%20100)%20*%20clientHeight%20%2B%20'px'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20overlay.style.borderRadius%20%3D%20(400%20-%20val%20*%204)%20%2B%20'px'%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20se.style.backgroundColor%20%3D%20overlay.style.backgroundColor%3B%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%7D%0A%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20%5D%2C%0A%20%20%20%20%20%20%20%20%20%20%20%20%7D%2C%0A%20%20%20%20%20%20%20%20%7D)%3B%0A%0A%20%20%20%20%20%20%20%20skrollrr.refresh()%3B%0A%20%20%20%20%7D)%3B%0A%3C%2Fscript%3E" style="z-index: 1;">
     <div class="section-lG6cPUU"></div>
     <script>
@@ -10363,7 +10363,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -10426,7 +10426,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -10515,7 +10515,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section is-box is-section-100 -2 box-autofit">
+<div class="expozy is-section is-box is-section-100 -2 box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -10590,7 +10590,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-top box-space">
+<div class="expozy is-section is-box is-section-100  is-content-top box-space">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -10642,7 +10642,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-15">
+<div class="expozy is-section is-box  box-autofit is-section-15">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -10661,7 +10661,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-85 box-space stack-top">
+<div class="expozy is-section  is-section-85 box-space stack-top">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit min-height-60 is-content-top">
         <div class="is-overlay">
@@ -10787,7 +10787,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap box-space stack-bottom">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap box-space stack-bottom">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -10883,7 +10883,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-top box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-top box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -10935,7 +10935,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -10952,7 +10952,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit min-height-50">
         <div class="is-overlay">
@@ -11021,14 +11021,14 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text  is-content-top min-height-60 box-autofit box-space box-space-xxs is-section-50">
+<div class="expozy is-section is-box is-light-text  is-content-top min-height-60 box-autofit box-space box-space-xxs is-section-50">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-autofit is-section-50">
+<div class="expozy is-section is-box  box-autofit is-section-50">
 <div class="is-overlay">
 </div>
 <div class="is-boxes">
@@ -11081,7 +11081,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-top  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-top  box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -11124,7 +11124,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -11202,7 +11202,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -11266,7 +11266,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -11320,7 +11320,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit ">
+<div class="expozy is-section is-box is-section-100 box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -11357,7 +11357,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -11442,7 +11442,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit is-content-top">
+<div class="expozy is-section is-box is-section-100  box-autofit is-content-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -11494,7 +11494,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -11530,7 +11530,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -11613,7 +11613,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box is-box-7">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -11661,7 +11661,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -11700,7 +11700,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-light-text is-content-bottom box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -11778,7 +11778,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-content-top box-autofit min-height-50">
+<div class="expozy is-section is-box is-section-100  is-content-top box-autofit min-height-50">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -11837,7 +11837,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -11920,7 +11920,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -11969,7 +11969,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -12017,7 +12017,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-4 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -12115,7 +12115,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -12175,7 +12175,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-4 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -12254,7 +12254,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -12349,7 +12349,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space  is-section-100">
+<div class="expozy is-section box-space  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit">
         <div class="is-overlay"></div>
@@ -12413,7 +12413,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section is-section-100 -2 box-space">
+<div class="expozy is-section is-section-100 -2 box-space">
 <div class="is-boxes">
     <div class="is-box is-light-text is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -12486,7 +12486,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -12540,7 +12540,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -12588,7 +12588,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40">
+<div class="expozy is-section is-box  is-section-40">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -12634,7 +12634,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-bottom">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-bottom">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -12695,7 +12695,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-60 ">
+<div class="expozy is-section is-section-60 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -12752,7 +12752,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-40">
+<div class="expozy is-section  is-section-40">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -12812,7 +12812,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -12866,7 +12866,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit is-light-text">
+<div class="expozy is-section is-box is-section-100  box-autofit is-light-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -12921,7 +12921,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -12992,7 +12992,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -13041,7 +13041,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -13072,7 +13072,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-75">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-75">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-8"></div>
@@ -13115,7 +13115,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space  is-section-100">
+<div class="expozy is-section box-space  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -13201,7 +13201,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -13258,7 +13258,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -13296,7 +13296,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-space is-light-text is-section-80  is-content-bottom box-space-sm">
+<div class="expozy is-section is-box box-space is-light-text is-section-80  is-content-bottom box-space-sm">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -13312,7 +13312,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-content-top  is-section-20 box-autofit">
+<div class="expozy is-section is-box is-content-top  is-section-20 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-top edge-y-0">
@@ -13346,7 +13346,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -13434,7 +13434,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-8"></div>
@@ -13486,7 +13486,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-20 box-autofit is-content-bottom">
+<div class="expozy is-section is-box  is-section-20 box-autofit is-content-bottom">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-1">
@@ -13500,7 +13500,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section box-space  is-section-80">
+<div class="expozy is-section box-space  is-section-80">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -13594,7 +13594,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-15">
+<div class="expozy is-section is-box  box-autofit is-section-15">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -13611,7 +13611,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-85">
+<div class="expozy is-section  is-section-85">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -13691,7 +13691,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-50  box-autofit min-height-40">
+<div class="expozy is-section is-box is-section-50  box-autofit min-height-40">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -13726,7 +13726,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-50">
+<div class="expozy is-section is-box  is-section-50">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -13739,7 +13739,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -13825,7 +13825,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -13877,7 +13877,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text is-section-100 is-content-top  box-autofit min-height-60 box-space box-space-xxs stack-top">
+<div class="expozy is-section is-box is-light-text is-section-100 is-content-top  box-autofit min-height-60 box-space box-space-xxs stack-top">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;">
         <div class="is-overlay-color opacity-5"></div>
@@ -13938,7 +13938,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs stack-bottom">
+<div class="expozy is-section is-section-100  box-space box-space-xxs stack-bottom">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -14008,7 +14008,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-75">
+<div class="expozy is-section is-box  box-autofit is-section-75">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -14044,7 +14044,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-25 box-autofit">
+<div class="expozy is-section is-box  is-section-25 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -14086,7 +14086,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -14134,7 +14134,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -14225,7 +14225,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  box-autofit is-section-50">
+<div class="expozy is-section is-box is-dark-text  box-autofit is-section-50">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -14260,7 +14260,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-autofit min-height-50 is-section-50">
+<div class="expozy is-section is-box  box-autofit min-height-50 is-section-50">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -14273,7 +14273,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -14353,7 +14353,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-50 ">
+<div class="expozy is-section is-section-50 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-dark-text box-autofit">
         <div class="is-overlay">
@@ -14400,7 +14400,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-50 ">
+<div class="expozy is-section is-section-50 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit">
         <div class="is-overlay">
@@ -14458,7 +14458,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  min-height-70 box-autofit">
+<div class="expozy is-section is-box is-section-100 is-light-text  min-height-70 box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -14497,7 +14497,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-50 box-autofit">
+<div class="expozy is-section is-box  is-section-50 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -14511,7 +14511,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-50 md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section  is-section-50 md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -14566,7 +14566,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -14649,7 +14649,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-light-text is-box-7 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -14708,7 +14708,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -14769,7 +14769,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space  is-section-100">
+<div class="expozy is-section box-space  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -14835,7 +14835,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-dark-text box-autofit">
+<div class="expozy is-section is-box is-section-100  is-dark-text box-autofit">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -14918,7 +14918,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -14996,7 +14996,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-reverse ">
+<div class="expozy is-section is-section-100 box-reverse ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -15061,7 +15061,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap box-space box-space-xxs">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap box-space box-space-xxs">
 <div class="is-boxes">
     <div class="is-box box-autofit min-height-50 is-box-8">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -15129,7 +15129,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60 is-content-bottom">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60 is-content-bottom">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -15177,7 +15177,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box box-space box-space-sm is-light-text  box-autofit min-height-50">
+<div class="expozy is-section is-section-100 is-box box-space box-space-sm is-light-text  box-autofit min-height-50">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -15208,7 +15208,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -15291,14 +15291,14 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text  is-content-top is-section-60 box-space box-space-xxs">
+<div class="expozy is-section is-box is-light-text  is-content-top is-section-60 box-space box-space-xxs">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40 is-content-top box-autofit">
+<div class="expozy is-section is-box  is-section-40 is-content-top box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
 </div>
 <div class="is-boxes">
@@ -15336,7 +15336,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section -2 is-section-50">
+<div class="expozy is-section -2 is-section-50">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -15389,7 +15389,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-50 -2">
+<div class="expozy is-section is-section-50 -2">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -15461,7 +15461,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -15515,7 +15515,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-content-bottom  is-section-20 box-autofit">
+<div class="expozy is-section is-box is-content-bottom  is-section-20 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0">
@@ -15544,7 +15544,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-80 box-space is-dark-text box-space-m ">
+<div class="expozy is-section is-box is-section-80 box-space is-dark-text box-space-m ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -15574,7 +15574,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -15600,7 +15600,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-60 box-space">
+<div class="expozy is-section  is-section-60 box-space">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -15660,7 +15660,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-content-bottom box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -15747,7 +15747,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -15783,7 +15783,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -15865,12 +15865,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-50">
+<div class="expozy is-section is-box  is-section-50">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
 </div>
-<div class="is-section is-box is-dark-text is-section-50  box-autofit">
+<div class="expozy is-section is-box is-dark-text is-section-50  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -15917,7 +15917,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-space  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text box-space  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -15968,7 +15968,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit min-height-80 is-section-100 is-light-text is-content-top">
+<div class="expozy is-section is-box  box-autofit min-height-80 is-section-100 is-light-text is-content-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -16025,7 +16025,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-15">
+<div class="expozy is-section is-box  box-autofit is-section-15">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -16049,7 +16049,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  md-boxes-1 md-boxes-wrap is-section-60">
+<div class="expozy is-section  md-boxes-1 md-boxes-wrap is-section-60">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-10 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -16085,7 +16085,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-autofit is-section-25">
+<div class="expozy is-section is-box  box-autofit is-section-25">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -16107,7 +16107,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100 md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section  is-section-100 md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -16187,7 +16187,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  is-light-text box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -16244,7 +16244,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -16264,7 +16264,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-60  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-60  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-3 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -16356,7 +16356,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-100">
+<div class="expozy is-section is-box  box-autofit is-section-100">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -16408,7 +16408,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-80 is-light-text is-content-top">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -16498,7 +16498,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-space  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text box-space  box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -16534,7 +16534,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 ">
+<div class="expozy is-section is-section-100 is-shadow-1 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -16634,7 +16634,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-content-bottom  is-section-25">
+<div class="expozy is-section is-box is-content-bottom  is-section-25">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-bottom edge-y-0">
@@ -16660,7 +16660,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-dark-text  box-space is-section-75">
+<div class="expozy is-section is-box is-dark-text  box-space is-section-75">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -16673,7 +16673,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit ">
+<div class="expozy is-section is-box is-section-100 box-autofit ">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -16711,12 +16711,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-60 box-space">
+<div class="expozy is-section is-box  is-section-60 box-space">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
 </div>
-<div class="is-section is-box  is-content-top is-section-40">
+<div class="expozy is-section is-box  is-content-top is-section-40">
 <div class="is-overlay">
 </div>
 <div class="is-boxes">
@@ -16759,7 +16759,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text  box-autofit min-height-40 is-section-85">
+<div class="expozy is-section is-box is-light-text  box-autofit min-height-40 is-section-85">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -16790,7 +16790,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-autofit is-section-15">
+<div class="expozy is-section is-box  box-autofit is-section-15">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -16826,7 +16826,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space is-section-70 ">
+<div class="expozy is-section box-space is-section-70 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -16864,7 +16864,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30 box-autofit">
+<div class="expozy is-section is-box  is-section-30 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -16910,7 +16910,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-autofit min-height-70 ">
+<div class="expozy is-section is-box is-section-100 is-light-text box-autofit min-height-70 ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -16967,7 +16967,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-80 ">
+<div class="expozy is-section is-section-80 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -17037,7 +17037,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-20">
+<div class="expozy is-section  is-section-20">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -17083,7 +17083,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-60 ">
+<div class="expozy is-section is-section-60 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -17128,7 +17128,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40">
+<div class="expozy is-section is-box  is-section-40">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -17168,7 +17168,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-15">
+<div class="expozy is-section is-box  is-section-15">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -17192,7 +17192,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-content-top is-light-text box-autofit min-height-70 is-section-85">
+<div class="expozy is-section is-box  is-content-top is-light-text box-autofit min-height-70 is-section-85">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -17228,7 +17228,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-50">
+<div class="expozy is-section  is-section-50">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -17273,7 +17273,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-50">
+<div class="expozy is-section  is-section-50">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -17313,7 +17313,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -17354,7 +17354,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -17425,7 +17425,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit min-height-70">
+<div class="expozy is-section is-section-100 is-box  box-autofit min-height-70">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -17479,7 +17479,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-dark-text box-autofit">
         <div class="is-overlay">
@@ -17557,7 +17557,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(253, 253, 253);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -17606,7 +17606,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-40">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -17678,7 +17678,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space box-space-sm  is-section-80">
+<div class="expozy is-section box-space box-space-sm  is-section-80">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-bottom box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -17745,7 +17745,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-content-top box-autofit is-section-20">
+<div class="expozy is-section is-box  is-content-top box-autofit is-section-20">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-top edge-y-0">
@@ -17779,7 +17779,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text box-autofit min-height-50 ">
+<div class="expozy is-section is-box is-section-100 is-light-text box-autofit min-height-50 ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;">
         <div class="is-overlay-color opacity-0"></div>
@@ -17827,7 +17827,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100 md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section  is-section-100 md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -17912,7 +17912,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-space box-space-m is-light-text">
+<div class="expozy is-section is-box is-section-100  box-space box-space-m is-light-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -17961,7 +17961,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -18012,7 +18012,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-content-bottom box-autofit is-section-25">
+<div class="expozy is-section is-box  is-content-bottom box-autofit is-section-25">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0">
@@ -18039,7 +18039,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space  is-section-75">
+<div class="expozy is-section is-box box-space  is-section-75">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -18052,7 +18052,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 ">
+<div class="expozy is-section is-section-100 is-shadow-1 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -18141,7 +18141,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-top box-autofit min-height-60 ">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-top box-autofit min-height-60 ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -18182,7 +18182,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-50 box-autofit">
+<div class="expozy is-section is-box  is-section-50 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -18201,7 +18201,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-50 md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section  is-section-50 md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-5 box-autofit">
         <div class="is-overlay"></div>
@@ -18250,7 +18250,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-20">
+<div class="expozy is-section is-box  is-section-20">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -18266,7 +18266,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-light-text is-section-80 is-content-bottom  box-autofit min-height-60">
+<div class="expozy is-section is-box is-light-text is-section-80 is-content-bottom  box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -18298,7 +18298,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-content-bottom is-box-7 box-autofit">
         <div class="is-overlay"></div>
@@ -18357,7 +18357,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -18438,7 +18438,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-top box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-top box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -18484,7 +18484,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  md-boxes-1 md-boxes-wrap is-section-100">
+<div class="expozy is-section  md-boxes-1 md-boxes-wrap is-section-100">
 <div class="is-boxes">
     <div class="is-box box-autofit min-height-50 is-box-6">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -18577,7 +18577,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -18631,7 +18631,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top is-dark-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-content-top is-dark-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -18665,7 +18665,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -18723,7 +18723,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text is-content-bottom box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -18796,7 +18796,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -18894,7 +18894,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -18930,7 +18930,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100 md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section  is-section-100 md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -19010,7 +19010,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  is-content-bottom box-autofit is-section-25">
+<div class="expozy is-section is-box is-dark-text  is-content-bottom box-autofit is-section-25">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0-5">
@@ -19032,7 +19032,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space is-section-75 is-light-text ">
+<div class="expozy is-section is-box box-space is-section-75 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-8"></div>
@@ -19070,7 +19070,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-content-bottom box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -19164,7 +19164,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-content-bottom is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -19243,7 +19243,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-60 ">
+<div class="expozy is-section is-section-60 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -19270,7 +19270,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -19302,7 +19302,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text min-height-50 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -19370,7 +19370,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1  is-section-100">
+<div class="expozy is-section is-shadow-1  is-section-100">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -19455,12 +19455,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-space is-section-70  box-autofit min-height-50">
+<div class="expozy is-section is-box box-space is-section-70  box-autofit min-height-50">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
 </div>
-<div class="is-section is-box is-dark-text  is-section-30 box-autofit">
+<div class="expozy is-section is-box is-dark-text  is-section-30 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -19515,7 +19515,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -19555,7 +19555,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -19610,7 +19610,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit is-light-text is-content-top">
+<div class="expozy is-section is-box is-section-100  box-autofit is-light-text is-content-top">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -19670,7 +19670,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text is-content-bottom box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -19721,7 +19721,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -19785,7 +19785,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-7 box-autofit min-height-50">
         <div class="is-overlay"></div>
@@ -19839,7 +19839,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -19912,7 +19912,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1  is-section-100">
+<div class="expozy is-section is-shadow-1  is-section-100">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-bottom min-height-50 box-autofit">
         <div class="is-overlay">
@@ -20011,7 +20011,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit is-light-text">
+<div class="expozy is-section is-box  is-section-100 box-autofit is-light-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -20057,7 +20057,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
@@ -20114,7 +20114,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -20187,7 +20187,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -20251,7 +20251,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-5"></div>
@@ -20295,7 +20295,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -20352,7 +20352,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-bottom ">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-bottom ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -20395,7 +20395,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1  md-boxes-1 md-boxes-wrap is-section-80">
+<div class="expozy is-section is-shadow-1  md-boxes-1 md-boxes-wrap is-section-80">
 <div class="is-boxes">
     <div class="is-box is-box-3 is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -20485,7 +20485,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-autofit is-section-20">
+<div class="expozy is-section is-box  box-autofit is-section-20">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -20517,7 +20517,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 ">
+<div class="expozy is-section is-section-100 is-shadow-1 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-3 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -20582,7 +20582,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-space is-content-top ">
+<div class="expozy is-section is-box is-section-100 box-space is-content-top ">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -20630,7 +20630,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -20683,7 +20683,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  is-section-40 box-autofit">
+<div class="expozy is-section is-box is-dark-text  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -20736,7 +20736,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-60">
+<div class="expozy is-section is-box  is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -20749,7 +20749,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-100">
+<div class="expozy is-section is-box  box-autofit is-section-100">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -20817,7 +20817,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -20854,7 +20854,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-light-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -20927,7 +20927,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  is-light-text box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -20965,7 +20965,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -21062,7 +21062,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -21122,7 +21122,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;">
         <div class="is-overlay-color opacity-0"></div>
@@ -21185,7 +21185,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -21262,7 +21262,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-bottom box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-8"></div>
@@ -21311,7 +21311,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-7 box-autofit">
         <div class="is-overlay"></div>
@@ -21359,7 +21359,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-4 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -21409,7 +21409,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-autofit is-section-25 is-content-bottom ">
+<div class="expozy is-section is-box box-autofit is-section-25 is-content-bottom ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-bottom edge-y-0-25">
@@ -21434,7 +21434,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-light-text box-space is-content-top  min-height-70 box-autofit is-section-75">
+<div class="expozy is-section is-box is-light-text box-space is-content-top  min-height-70 box-autofit is-section-75">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-8" style="background-color: rgb(0, 0, 0);"></div>
@@ -21449,7 +21449,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -21541,7 +21541,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-top  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-top  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -21586,7 +21586,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -21649,7 +21649,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-bottom box-autofit ">
+<div class="expozy is-section is-box is-section-100 is-content-bottom box-autofit ">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-bottom edge-y-2">
@@ -21697,7 +21697,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -21780,7 +21780,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 ">
+<div class="expozy is-section is-section-100 is-shadow-1 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-3 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -21878,12 +21878,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-space  is-section-70 box-autofit min-height-75">
+<div class="expozy is-section is-box box-space  is-section-70 box-autofit min-height-75">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
 </div>
-<div class="is-section is-box is-dark-text is-section-30 box-autofit ">
+<div class="expozy is-section is-box is-dark-text is-section-30 box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -21915,7 +21915,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-autofit  is-content-bottom">
+<div class="expozy is-section is-box is-section-100 box-autofit  is-content-bottom">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;">
         <div class="is-overlay-color opacity-0"></div>
@@ -21974,7 +21974,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -22014,7 +22014,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-8"></div>
@@ -22051,7 +22051,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1 is-section-100 ">
+<div class="expozy is-section is-shadow-1 is-section-100 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -22144,7 +22144,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit">
+<div class="expozy is-section is-box  is-section-100 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -22188,7 +22188,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -22279,7 +22279,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -22334,7 +22334,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit">
+<div class="expozy is-section is-box  is-section-100 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -22387,7 +22387,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-2"></div>
@@ -22432,7 +22432,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-sm  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space box-space-sm  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-light-text box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -22499,7 +22499,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  is-section-40 box-autofit">
+<div class="expozy is-section is-box is-dark-text  is-section-40 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -22551,7 +22551,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-60 box-autofit min-height-60">
+<div class="expozy is-section is-box  is-section-60 box-autofit min-height-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -22567,7 +22567,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-top  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-top  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -22628,7 +22628,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-content-bottom is-section-40  box-autofit">
+<div class="expozy is-section is-box is-content-bottom is-section-40  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-1">
@@ -22668,7 +22668,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-60 ">
+<div class="expozy is-section is-section-60 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-5 is-content-bottom box-autofit">
         <div class="is-overlay"></div>
@@ -22706,7 +22706,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -22756,7 +22756,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-content-bottom is-section-20 box-autofit">
+<div class="expozy is-section is-box  is-content-bottom is-section-20 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-bottom edge-y-0-25">
@@ -22779,7 +22779,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space is-light-text  is-section-80">
+<div class="expozy is-section is-box box-space is-light-text  is-section-80">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -22806,7 +22806,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -22860,7 +22860,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-8 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -22910,7 +22910,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  is-light-text box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -22966,7 +22966,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom is-light-text box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -23066,7 +23066,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text min-height-70 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -23128,7 +23128,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box box-autofit ">
+<div class="expozy is-section is-section-100 is-box box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -23179,7 +23179,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  is-content-top">
+<div class="expozy is-section is-section-100 is-box  is-content-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -23237,7 +23237,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-20 box-autofit">
+<div class="expozy is-section is-box  is-section-20 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -23256,7 +23256,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-80  is-content-bottom box-autofit min-height-90">
+<div class="expozy is-section is-box is-section-80  is-content-bottom box-autofit min-height-90">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -23287,7 +23287,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -23356,7 +23356,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -23405,7 +23405,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -23452,7 +23452,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-40 ">
+<div class="expozy is-section is-section-40 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit">
         <div class="is-overlay"></div>
@@ -23488,7 +23488,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-60 is-content-top  box-autofit">
+<div class="expozy is-section is-box is-section-60 is-content-top  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-content-top edge-y-1">
@@ -23528,7 +23528,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-bottom  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-bottom  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-5"></div>
@@ -23596,7 +23596,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -23701,7 +23701,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box box-autofit ">
+<div class="expozy is-section is-section-100 is-box box-autofit ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -23747,7 +23747,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text is-content-bottom  box-autofit is-section-40">
+<div class="expozy is-section is-box is-dark-text is-content-bottom  box-autofit is-section-40">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0-25">
@@ -23784,7 +23784,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-60 box-space box-space-xxs stack-top">
+<div class="expozy is-section is-box is-section-60 box-space box-space-xxs stack-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -23797,7 +23797,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60 box-space box-space-m stack-bottom">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60 box-space box-space-m stack-bottom">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -23834,7 +23834,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-30  box-autofit">
+<div class="expozy is-section is-box is-section-30  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -23860,7 +23860,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-70  box-autofit">
+<div class="expozy is-section is-box is-section-70  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -23880,7 +23880,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -23933,7 +23933,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -24005,7 +24005,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-4"></div>
@@ -24039,7 +24039,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space box-space-m ">
+<div class="expozy is-section is-section-100 box-space box-space-m ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -24130,7 +24130,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -24176,7 +24176,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-bottom  min-height-70 box-autofit">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-bottom  min-height-70 box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-15"></div>
@@ -24238,7 +24238,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-30">
+<div class="expozy is-section is-box  is-section-30">
 <div class="is-overlay">
     <div class="is-overlay-bg">
         <div class="is-overlay-color opacity-5" style="background-color: rgb(255, 255, 255);"></div>
@@ -24267,7 +24267,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-70 ">
+<div class="expozy is-section is-section-70 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-dark-text">
         <div class="is-overlay">
@@ -24347,7 +24347,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space">
+<div class="expozy is-section is-section-100  box-space">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -24411,7 +24411,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text  is-section-100">
+<div class="expozy is-section is-box is-light-text  is-section-100">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-0"></div>
@@ -24460,7 +24460,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -24510,7 +24510,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -24572,7 +24572,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 box-space  is-light-text">
+<div class="expozy is-section is-box is-section-100 box-space  is-light-text">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-4"></div>
@@ -24611,7 +24611,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section -2 is-section-100">
+<div class="expozy is-section -2 is-section-100">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -24696,7 +24696,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit min-height-70 is-light-text">
+<div class="expozy is-section is-section-100 is-box  box-autofit min-height-70 is-light-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -24757,7 +24757,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -24817,7 +24817,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  is-section-20">
+<div class="expozy is-section is-box is-dark-text  is-section-20">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -24836,12 +24836,12 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space  is-section-60">
+<div class="expozy is-section is-box box-space  is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
 </div>
-<div class="is-section is-box  is-section-20">
+<div class="expozy is-section is-box  is-section-20">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -24874,7 +24874,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -24974,7 +24974,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-reverse md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  box-reverse md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -25058,7 +25058,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -25137,7 +25137,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top is-light-text  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-content-top is-light-text  box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-5"></div>
@@ -25207,7 +25207,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-30 is-content-bottom box-autofit">
+<div class="expozy is-section is-box  is-section-30 is-content-bottom box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-1">
@@ -25232,7 +25232,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-70 ">
+<div class="expozy is-section is-section-70 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-5 is-content-top box-autofit">
         <div class="is-overlay"></div>
@@ -25279,7 +25279,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -25332,7 +25332,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-40  box-autofit">
+<div class="expozy is-section is-box is-section-40  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -25353,7 +25353,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -25428,7 +25428,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -25507,7 +25507,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -25591,7 +25591,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text">
+<div class="expozy is-section is-box is-section-100  is-light-text">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-10"></div>
@@ -25623,7 +25623,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -25721,7 +25721,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -25796,7 +25796,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -25850,7 +25850,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit min-height-70 is-light-text">
+<div class="expozy is-section is-box is-section-100  box-autofit min-height-70 is-light-text">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -25904,7 +25904,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-content-top box-autofit is-box-6">
         <div class="is-overlay">
@@ -25992,7 +25992,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-5 min-height-60 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -26069,7 +26069,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-30  box-autofit">
+<div class="expozy is-section is-box is-section-30  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -26089,7 +26089,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-70 ">
+<div class="expozy is-section is-section-70 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -26175,7 +26175,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-25 box-autofit">
+<div class="expozy is-section is-box  is-section-25 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -26212,7 +26212,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-75">
+<div class="expozy is-section  is-section-75">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -26251,7 +26251,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-space box-autofit min-height-75">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-space box-autofit min-height-75">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-10"></div>
@@ -26310,7 +26310,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-40">
         <div class="is-overlay">
@@ -26368,7 +26368,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
@@ -26454,7 +26454,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-70 is-light-text">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -26553,7 +26553,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text box-autofit is-section-30 ">
+<div class="expozy is-section is-box is-dark-text box-autofit is-section-30 ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -26588,7 +26588,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  box-autofit min-height-50 is-section-70">
+<div class="expozy is-section is-box  box-autofit min-height-50 is-section-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -26601,7 +26601,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay"></div>
@@ -26668,7 +26668,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -26766,7 +26766,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -26836,7 +26836,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-4"></div>
@@ -26889,7 +26889,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text is-section-75 is-content-bottom ">
+<div class="expozy is-section is-box is-dark-text is-section-75 is-content-bottom ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;">
         <div class="is-overlay-color opacity-0"></div>
@@ -26922,7 +26922,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-25">
+<div class="expozy is-section is-box is-section-25">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -26953,7 +26953,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 ">
+<div class="expozy is-section is-section-100 is-shadow-1 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -27071,7 +27071,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -27165,7 +27165,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit">
+<div class="expozy is-section is-box  is-section-100 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -27219,7 +27219,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1  is-section-70">
+<div class="expozy is-section is-shadow-1  is-section-70">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -27238,7 +27238,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-30">
+<div class="expozy is-section  is-section-30">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -27309,7 +27309,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  is-content-top box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  is-content-top box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color"></div>
@@ -27373,7 +27373,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -27426,7 +27426,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-3 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -27507,7 +27507,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 " data-anim-start="" data-anim-end="">
+<div class="expozy is-section is-section-100 " data-anim-start="" data-anim-end="">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -27583,7 +27583,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text  is-content-top" data-anim-start="">
+<div class="expozy is-section is-box is-section-100 is-dark-text  is-content-top" data-anim-start="">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -27643,7 +27643,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-50 is-content-top box-autofit">
+<div class="expozy is-section is-box  is-section-50 is-content-top box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-top edge-y-1">
@@ -27673,7 +27673,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-50">
+<div class="expozy is-section is-section-50">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-7 is-content-top box-autofit">
         <div class="is-overlay"></div>
@@ -27716,7 +27716,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 min-height-60 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -27809,7 +27809,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100 box-space box-space-xxs stack-top">
+<div class="expozy is-section  is-section-100 box-space box-space-xxs stack-top">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-40">
         <div class="is-overlay">
@@ -27877,7 +27877,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1  box-space box-space-xxs stack-bottom">
+<div class="expozy is-section is-section-100 is-shadow-1  box-space box-space-xxs stack-bottom">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-light-text">
         <div class="is-overlay">
@@ -27962,7 +27962,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -28044,7 +28044,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -28136,7 +28136,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text is-content-top box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  is-light-text is-content-top box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -28177,7 +28177,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -28244,7 +28244,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-30 ">
+<div class="expozy is-section is-box is-section-30 ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -28265,7 +28265,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-dark-text  is-section-70 is-content-top">
+<div class="expozy is-section is-box is-dark-text  is-section-70 is-content-top">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -28289,7 +28289,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -28364,7 +28364,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -28440,7 +28440,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -28489,7 +28489,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text  box-autofit min-height-80">
+<div class="expozy is-section is-box is-section-100 is-dark-text  box-autofit min-height-80">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -28543,7 +28543,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text is-section-100  box-autofit min-height-70">
+<div class="expozy is-section is-box is-light-text is-section-100  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -28600,7 +28600,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -28653,7 +28653,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-8 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -28714,7 +28714,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space is-section-100 ">
+<div class="expozy is-section box-space is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 box-autofit">
         <div class="is-overlay"></div>
@@ -28786,7 +28786,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -28842,7 +28842,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-50">
         <div class="is-overlay">
@@ -28922,7 +28922,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-0"></div>
@@ -28987,7 +28987,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  is-section-100 box-space box-autofit">
+<div class="expozy is-section is-box is-dark-text  is-section-100 box-space box-autofit">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
 </div>
 <div class="is-boxes">
@@ -29057,7 +29057,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-4 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -29123,7 +29123,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -29205,7 +29205,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-80">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -29294,7 +29294,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -29348,7 +29348,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-content-top is-light-text  is-section-80 box-autofit min-height-70">
+<div class="expozy is-section is-box is-content-top is-light-text  is-section-80 box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -29370,7 +29370,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-20 box-autofit min-height-30">
+<div class="expozy is-section is-box  is-section-20 box-autofit min-height-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -29395,7 +29395,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay" style="background-color: rgb(249, 249, 249);"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -29449,7 +29449,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50 is-light-text is-content-top">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -29508,7 +29508,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -29594,7 +29594,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -29653,7 +29653,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text is-content-top ">
+<div class="expozy is-section is-box is-section-100 is-dark-text is-content-top ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -29717,7 +29717,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -29786,7 +29786,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text  box-autofit min-height-75">
+<div class="expozy is-section is-box is-section-100 is-dark-text  box-autofit min-height-75">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -29835,7 +29835,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-60 ">
+<div class="expozy is-section is-section-60 ">
 <div class="is-boxes">
     <div class="is-box is-light-text is-box-6 is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -29869,7 +29869,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -29915,7 +29915,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-8" style="background-color: rgb(0, 0, 0);"></div>
@@ -29956,7 +29956,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  box-autofit is-section-30">
+<div class="expozy is-section is-box  box-autofit is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -29974,7 +29974,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-light-text is-content-top is-section-70">
+<div class="expozy is-section is-box  is-light-text is-content-top is-section-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -30009,7 +30009,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text is-content-bottom  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-dark-text is-content-bottom  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -30056,7 +30056,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -30096,7 +30096,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -30160,7 +30160,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-30">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -30208,7 +30208,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-content-bottom  is-section-25">
+<div class="expozy is-section is-box is-content-bottom  is-section-25">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0-25">
@@ -30229,7 +30229,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space is-section-75 is-light-text is-content-bottom ">
+<div class="expozy is-section is-box box-space is-section-75 is-light-text is-content-bottom ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -30265,7 +30265,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-dark-text  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -30316,7 +30316,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-30">
+<div class="expozy is-section is-box  is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -30338,7 +30338,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-70">
+<div class="expozy is-section  is-section-70">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-7 box-autofit min-height-30">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -30386,7 +30386,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-80">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -30455,7 +30455,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text is-section-70  box-autofit min-height-50">
+<div class="expozy is-section is-box is-light-text is-section-70  box-autofit min-height-50">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -30471,7 +30471,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30 box-autofit min-height-50">
+<div class="expozy is-section is-box  is-section-30 box-autofit min-height-50">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -30498,7 +30498,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section is-section-100 box-space -2">
+<div class="expozy is-section is-section-100 box-space -2">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -30553,7 +30553,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -30599,12 +30599,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-space is-section-60 ">
+<div class="expozy is-section is-box box-space is-section-60 ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
 </div>
-<div class="is-section is-box is-dark-text is-section-40  box-autofit">
+<div class="expozy is-section is-box is-dark-text is-section-40  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -30650,7 +30650,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -30719,7 +30719,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-content-bottom is-box-3 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -30807,7 +30807,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -30852,7 +30852,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-8 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
@@ -30919,7 +30919,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box  box-autofit">
+<div class="expozy is-section is-section-100 is-box  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -30976,7 +30976,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -31046,7 +31046,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -31115,7 +31115,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -31157,7 +31157,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -31217,7 +31217,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-4 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -31297,7 +31297,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -31382,7 +31382,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top is-dark-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -31435,7 +31435,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space box-space-xxs">
+<div class="expozy is-section is-section-100  box-space box-space-xxs">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -31509,7 +31509,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-50  box-autofit">
+<div class="expozy is-section is-box is-section-50  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -31533,7 +31533,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-50">
+<div class="expozy is-section  is-section-50">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-6 is-content-bottom box-autofit">
         <div class="is-overlay"></div>
@@ -31581,7 +31581,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -31666,7 +31666,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color" style="opacity: 0.15; display: block;"></div>
@@ -31724,7 +31724,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -31823,7 +31823,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -31895,7 +31895,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -31937,7 +31937,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -32032,7 +32032,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-light-text box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  is-light-text box-autofit min-height-70">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -32095,7 +32095,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section is-box -2 is-section-30">
+<div class="expozy is-section is-box -2 is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -32117,7 +32117,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space is-content-top -2 is-section-70 box-autofit min-height-100">
+<div class="expozy is-section is-box box-space is-content-top -2 is-section-70 box-autofit min-height-100">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -32153,7 +32153,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -32199,7 +32199,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-40 ">
+<div class="expozy is-section is-box is-section-40 ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -32218,7 +32218,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-60">
+<div class="expozy is-section  is-section-60">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -32263,7 +32263,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  sm-boxes-1 sm-boxes-wrap md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  sm-boxes-1 sm-boxes-wrap md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -32333,7 +32333,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-autofit is-content-bottom is-section-25 ">
+<div class="expozy is-section is-box box-autofit is-content-bottom is-section-25 ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0">
@@ -32361,7 +32361,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space box-space-xxs is-section-75  is-content-top is-light-text">
+<div class="expozy is-section is-box box-space box-space-xxs is-section-75  is-content-top is-light-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -32396,7 +32396,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 is-content-top box-autofit min-height-60 is-light-text">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -32469,7 +32469,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -32507,7 +32507,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -32584,7 +32584,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-40">
+<div class="expozy is-section  is-section-40">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -32624,7 +32624,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-section-60 ">
+<div class="expozy is-section is-section-60 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-3 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -32687,7 +32687,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -32766,7 +32766,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box is-content-top  box-autofit">
+<div class="expozy is-section is-section-100 is-box is-content-top  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%; transition: all 0.3s ease-out 0s;"></div>
 </div>
@@ -32823,7 +32823,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-75">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -32883,7 +32883,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-50 ">
+<div class="expozy is-section is-section-50 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -32926,7 +32926,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-50  box-autofit">
+<div class="expozy is-section is-box is-section-50  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -32968,7 +32968,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit">
+<div class="expozy is-section is-box  is-section-100 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -33012,7 +33012,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-80 ">
+<div class="expozy is-section is-section-80 ">
 <div class="is-boxes">
     <div class="is-box is-content-bottom is-box-4 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -33066,7 +33066,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-auto box-autofit">
+<div class="expozy is-section is-box  is-section-auto box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -33092,7 +33092,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-content-bottom is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -33157,7 +33157,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay">
@@ -33227,7 +33227,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1 is-section-100 ">
+<div class="expozy is-section is-shadow-1 is-section-100 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit is-content-bottom">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -33295,7 +33295,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit">
+<div class="expozy is-section is-box  is-section-100 box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -33351,7 +33351,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -33441,7 +33441,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100 is-light-text  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color" style="opacity: 0.15; display: block;"></div>
@@ -33514,7 +33514,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-light-text is-box-6 box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -33598,7 +33598,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-dark-text  box-autofit">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -33657,7 +33657,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -33706,7 +33706,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-bottom  box-autofit min-height-60">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-bottom  box-autofit min-height-60">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -33778,7 +33778,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 box-space  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -33862,7 +33862,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text ">
+<div class="expozy is-section is-box is-section-100 is-dark-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -33913,7 +33913,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-light-text is-section-70  is-content-bottom">
+<div class="expozy is-section is-box is-light-text is-section-70  is-content-bottom">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -33936,7 +33936,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30">
+<div class="expozy is-section is-box  is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -33969,7 +33969,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -34069,7 +34069,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -34129,7 +34129,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit min-height-70 is-light-text">
+<div class="expozy is-section is-box is-section-100  box-autofit min-height-70 is-light-text">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -34180,7 +34180,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-light-text is-content-bottom box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -34266,7 +34266,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -34330,7 +34330,7 @@ designs: [
 "contentCss":"-2.css",
 "contentClass":"-2",
 "html":`
-<div class="is-section is-section-100 -2">
+<div class="expozy is-section is-section-100 -2">
 <div class="is-boxes">
     <div class="is-box is-box-8 is-light-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -34400,7 +34400,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -34466,7 +34466,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text is-section-40  box-autofit">
+<div class="expozy is-section is-box is-dark-text is-section-40  box-autofit">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -34495,7 +34495,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box box-space  is-section-60">
+<div class="expozy is-section is-box box-space  is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%; opacity: 1;"></div>
 </div>
@@ -34510,7 +34510,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text is-content-top  is-section-30">
+<div class="expozy is-section is-box is-dark-text is-content-top  is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-top edge-y-1">
@@ -34541,7 +34541,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-70 box-space stack-top">
+<div class="expozy is-section is-box  is-section-70 box-space stack-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -34554,7 +34554,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space stack-bottom">
+<div class="expozy is-section is-section-100  box-space stack-bottom">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -34630,7 +34630,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-100 box-autofit">
+<div class="expozy is-section is-box  is-section-100 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -34689,12 +34689,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-60">
+<div class="expozy is-section is-box  is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
 </div>
-<div class="is-section is-box  is-content-bottom box-autofit is-section-40">
+<div class="expozy is-section is-box  is-content-bottom box-autofit is-section-40">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-1">
@@ -34747,7 +34747,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 box-space no-space-between ">
+<div class="expozy is-section is-section-100 is-shadow-1 box-space no-space-between ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-bottom box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -34837,7 +34837,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -34915,7 +34915,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -34973,7 +34973,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -35016,7 +35016,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-content-bottom is-section-60">
+<div class="expozy is-section is-box  is-content-bottom is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -35037,7 +35037,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  md-box-reverse is-section-40">
+<div class="expozy is-section  md-box-reverse is-section-40">
 <div class="is-boxes">
     <div class="is-box is-dark-text box-autofit is-box-9">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
@@ -35096,7 +35096,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  is-dark-text">
+<div class="expozy is-section is-box is-section-100  is-dark-text">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -35148,7 +35148,7 @@ designs: [
 
 
 "html":`
-<div class="is-section box-space is-section-100 " data-anim-end="">
+<div class="expozy is-section box-space is-section-100 " data-anim-end="">
 <div class="is-boxes">
     <div class="is-box box-autofit min-height-70 is-box-7">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -35223,7 +35223,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 " style="transition: all 0.3s ease-out 0s;" data-anim-end="">
+<div class="expozy is-section is-section-100 " style="transition: all 0.3s ease-out 0s;" data-anim-end="">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -35302,7 +35302,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 md-boxes-1 md-boxes-wrap ">
+<div class="expozy is-section is-section-100 md-boxes-1 md-boxes-wrap ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -35373,7 +35373,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -35435,7 +35435,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -35487,7 +35487,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-50 ">
+<div class="expozy is-section is-section-50 ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -35549,7 +35549,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section  is-section-50">
+<div class="expozy is-section  is-section-50">
 <div class="is-boxes">
     <div class="is-box-4 is-box box-autofit">
         <div class="is-overlay">
@@ -35628,7 +35628,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-space is-section-100  box-autofit">
+<div class="expozy is-section is-box box-space is-section-100  box-autofit">
 <div class="is-overlay">
 </div>
 <div class="is-boxes">
@@ -35703,7 +35703,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-align-left box-autofit">
         <div class="is-overlay">
@@ -35755,7 +35755,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top is-light-text  box-autofit min-height-60 box-space stack-top">
+<div class="expozy is-section is-box is-section-100 is-content-top is-light-text  box-autofit min-height-60 box-space stack-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -35808,7 +35808,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  box-space stack-bottom">
+<div class="expozy is-section is-section-100  box-space stack-bottom">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-light-text is-content-top box-autofit min-height-60">
         <div class="is-overlay">
@@ -35867,7 +35867,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -35927,7 +35927,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-7 is-content-bottom box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -36014,7 +36014,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box is-light-text  box-autofit">
+<div class="expozy is-section is-section-100 is-box is-light-text  box-autofit">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-10" style="background-color: rgb(0, 0, 0);"></div>
@@ -36066,12 +36066,12 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-space is-section-70 ">
+<div class="expozy is-section is-box box-space is-section-70 ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30 is-dark-text">
+<div class="expozy is-section is-box  is-section-30 is-dark-text">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -36102,7 +36102,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-box is-light-text is-content-bottom ">
+<div class="expozy is-section is-section-100 is-box is-light-text is-content-bottom ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;">
         <div class="is-overlay-color opacity-6"></div>
@@ -36167,7 +36167,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space ">
+<div class="expozy is-section is-section-100 box-space ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-top box-autofit">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -36229,7 +36229,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text is-section-25  box-autofit min-height-30">
+<div class="expozy is-section is-box is-dark-text is-section-25  box-autofit min-height-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -36271,7 +36271,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-section-75  box-autofit min-height-70 box-space stack-top">
+<div class="expozy is-section is-box is-section-75  box-autofit min-height-70 box-space stack-top">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -36284,7 +36284,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1 no-space-between is-section-100  box-space stack-bottom">
+<div class="expozy is-section is-shadow-1 no-space-between is-section-100  box-space stack-bottom">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -36387,7 +36387,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text is-section-100 ">
+<div class="expozy is-section is-box is-dark-text is-section-100 ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -36468,7 +36468,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -36503,7 +36503,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 box-space " data-anim-end="">
+<div class="expozy is-section is-section-100 box-space " data-anim-end="">
 <div class="is-boxes">
     <div class="is-box is-light-text is-content-bottom is-box-8 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -36576,7 +36576,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-dark-text  is-content-bottom is-section-20 box-autofit" data-anim-start="" data-anim-end="">
+<div class="expozy is-section is-box is-dark-text  is-content-bottom is-section-20 box-autofit" data-anim-start="" data-anim-end="">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95 is-content-bottom edge-y-0">
@@ -36605,7 +36605,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-content-top is-light-text box-space is-section-80  box-autofit min-height-50" data-anim-start="" data-anim-end="">
+<div class="expozy is-section is-box is-content-top is-light-text box-space is-section-80  box-autofit min-height-50" data-anim-start="" data-anim-end="">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -36631,7 +36631,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit" data-anim-end="" data-anim-start="">
+<div class="expozy is-section is-box is-section-100  box-autofit" data-anim-end="" data-anim-start="">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -36697,7 +36697,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100">
+<div class="expozy is-section  is-section-100">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay">
@@ -36766,7 +36766,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit is-content-bottom">
         <div class="is-overlay">
@@ -36823,7 +36823,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay">
@@ -36905,7 +36905,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -36984,7 +36984,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 ">
+<div class="expozy is-section is-box is-section-100 ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -37059,7 +37059,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 " data-anim-end="">
+<div class="expozy is-section is-section-100 " data-anim-end="">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -37111,7 +37111,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text  box-autofit" data-anim-end="">
+<div class="expozy is-section is-box is-section-100 is-dark-text  box-autofit" data-anim-end="">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -37161,7 +37161,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 is-content-top box-autofit">
         <div class="is-overlay"></div>
@@ -37225,7 +37225,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -37264,7 +37264,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 box-space ">
+<div class="expozy is-section is-section-100 is-shadow-1 box-space ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-bottom box-autofit min-height-50">
         <div class="is-overlay">
@@ -37365,7 +37365,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box box-autofit is-section-15 ">
+<div class="expozy is-section is-box box-autofit is-section-15 ">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -37386,7 +37386,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-light-text box-autofit min-height-50 is-section-85 is-content-bottom ">
+<div class="expozy is-section is-box is-light-text box-autofit min-height-50 is-section-85 is-content-bottom ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); opacity: 1; background-position: 50% 60%;"></div>
 </div>
@@ -37414,7 +37414,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box box-autofit min-height-70 is-light-text is-box-5 is-content-top">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -37477,7 +37477,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text is-content-bottom " data-anim-end="">
+<div class="expozy is-section is-box is-section-100 is-light-text is-content-bottom " data-anim-end="">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -37532,7 +37532,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1 box-space ">
+<div class="expozy is-section is-section-100 is-shadow-1 box-space ">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text is-content-top">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
@@ -37608,7 +37608,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 no-space-between ">
+<div class="expozy is-section is-section-100 no-space-between ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 is-content-top box-autofit">
         <div class="is-overlay"></div>
@@ -37663,7 +37663,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-light-text ">
+<div class="expozy is-section is-box is-section-100 is-light-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -37716,7 +37716,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-4 box-autofit">
         <div class="is-overlay"></div>
@@ -37761,7 +37761,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  is-section-40 box-autofit">
+<div class="expozy is-section is-box  is-section-40 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -37796,7 +37796,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-60">
+<div class="expozy is-section is-box  is-section-60">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -37809,7 +37809,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -37889,7 +37889,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-content-bottom is-dark-text box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -37967,7 +37967,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit min-height-70">
+<div class="expozy is-section is-box is-section-100  box-autofit min-height-70">
 <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -38013,7 +38013,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -38076,7 +38076,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 ">
+<div class="expozy is-section is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-box-6 is-dark-text is-content-top box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
@@ -38155,7 +38155,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-content-top  box-autofit">
+<div class="expozy is-section is-box is-section-100 is-content-top  box-autofit">
 <div class="is-overlay">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -38213,7 +38213,7 @@ designs: [
 
 
 "html":`
-<div class="is-section  is-section-100 v2">
+<div class="expozy is-section  is-section-100 v2">
 <div class="is-boxes">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -38290,7 +38290,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-shadow-1 v2 is-section-100 ">
+<div class="expozy is-section is-shadow-1 v2 is-section-100 ">
 <div class="is-boxes">
     <div class="is-box is-dark-text is-box-3 is-content-top box-autofit">
         <div class="is-overlay">
@@ -38374,7 +38374,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 v2 ">
+<div class="expozy is-section is-section-100 v2 ">
 <div class="is-boxes">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -38452,7 +38452,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box  v2 is-section-25 box-autofit">
+<div class="expozy is-section is-box  v2 is-section-25 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -38472,7 +38472,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box v2 is-section-50 ">
+<div class="expozy is-section is-box v2 is-section-50 ">
 <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -38488,7 +38488,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  v2 is-section-25 box-autofit">
+<div class="expozy is-section is-box  v2 is-section-25 box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -38517,7 +38517,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-align-center is-section-25  box-autofit">
+<div class="expozy is-section is-box is-align-center is-section-25  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -38547,7 +38547,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box is-light-text is-content-bottom box-space  is-section-75 box-autofit min-height-50">
+<div class="expozy is-section is-box is-light-text is-content-bottom box-space  is-section-75 box-autofit min-height-50">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -38588,7 +38588,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100  box-autofit">
+<div class="expozy is-section is-box is-section-100  box-autofit">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered is-opacity-95">
@@ -38623,7 +38623,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-70  is-content-bottom is-light-text">
+<div class="expozy is-section is-box is-section-70  is-content-bottom is-light-text">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg2-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -38641,7 +38641,7 @@ designs: [
     </div>
 </div>
 </div>
-<div class="is-section is-box  is-section-30">
+<div class="expozy is-section is-box  is-section-30">
 <div class="is-overlay"></div>
 <div class="is-boxes">
     <div class="is-box-centered">
@@ -38689,7 +38689,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -38780,7 +38780,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-box is-section-100 is-dark-text ">
+<div class="expozy is-section is-box is-section-100 is-dark-text ">
 <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
     <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/bg-2400x1350.png&quot;); background-position: 50% 60%;"></div>
 </div>
@@ -38841,7 +38841,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100 is-shadow-1  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100 is-shadow-1  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box-4 is-box is-content-top is-light-text box-autofit min-height-70">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
@@ -38925,7 +38925,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit min-height-60">
         <div class="is-overlay">
@@ -39005,7 +39005,7 @@ designs: [
 
 
 "html":`
-<div class="is-section is-section-100  md-boxes-1 md-boxes-wrap">
+<div class="expozy is-section is-section-100  md-boxes-1 md-boxes-wrap">
 <div class="is-boxes">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay">
