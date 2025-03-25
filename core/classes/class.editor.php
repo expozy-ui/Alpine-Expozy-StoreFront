@@ -83,6 +83,7 @@ class Editor{
 		if($page->type == 'post'){
 			$row = Api::cache(false)->id($this->id)->data(['resolution' => '10x10'])->get()->blogPosts();
 
+			$this->title = $row['title'];
 			$this->html = $row['description'];
 
 		}
