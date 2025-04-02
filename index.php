@@ -18,6 +18,20 @@ if($core->maintenance_mode == 1 && $page->slug!='demo' && !isset($_SESSION['main
 			redirect_to('/maintenance');
 }
 
+
+
+if($core->web['marketing']['google_analytics_active']){
+  $core->web['scripts']['header'] .= $core->web['marketing']['google_analytics_script'];
+}
+
+if($core->web['marketing']['yandex_active']){
+  $core->web['scripts']['header'] .= $core->web['marketing']['yandex_script'];
+}
+if($core->web['marketing']['fb_pixel_active']){
+  $core->web['scripts']['header'] .= $core->web['marketing']['fb_pixel_script'];
+}
+
+
 require_once 'pages/header.php';
 
 include 'pages/index.php';

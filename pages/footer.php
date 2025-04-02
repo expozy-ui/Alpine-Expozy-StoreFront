@@ -14,6 +14,15 @@
 
 <?= $core->web['scripts']['footer'];?>
 
+
+
+
+<link rel="stylesheet" href="\assets\plugins\cookieconsent\cookieconsent.css?v=<?php echo JS_VERSION ?>">
+<script type="module" src="\assets\plugins\cookieconsent\cookieconsent.js?v=<?php echo JS_VERSION ?>"></script>
+<script type="module" src="\assets\plugins\cookieconsent\coockieconsent_init.js?v=<?php echo JS_VERSION ?>"></script>
+
+
+
 <!-- IMPORTNAT : AUTOLOAD.JS MUST BE BEFORE ALPINE.js  -->
 
 

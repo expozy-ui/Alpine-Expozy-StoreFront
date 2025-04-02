@@ -140,8 +140,15 @@ export class ApiClass {
 				if (Array.isArray(data[key])) {
 					if (data[key][0].constructor.name === 'File') {
 						for (const file of data[key]) {
-							formData.append(key + '[]', file);
+
+							if (key.endsWith('[]')) {
+								formData.append(key, file);
+							} else {
+								formData.append(key + '[]', file);
+							}
 						}
+					} else {
+						data[key].forEach(item => formData.append(key, item));
 					}
 				} else {
 

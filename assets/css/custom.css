@@ -25,7 +25,9 @@
   margin-bottom: 1rem;
 }
 
-
+strong {
+  font-weight: 600 !important;
+}
 
 
 /*

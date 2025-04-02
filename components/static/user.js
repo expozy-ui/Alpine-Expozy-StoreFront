@@ -43,7 +43,7 @@ export let User = {
 		let response = [];
 		let api = new ApiClass();
 
-		data['referral'] = REFERRAL;
+		// data['referral'] = REFERRAL;
 		await api.post('users', data);
 
 		if (!api.response) return response['internalError'] = 'No response from api for Users.post_users';

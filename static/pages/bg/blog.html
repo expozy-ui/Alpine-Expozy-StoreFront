@@ -59,7 +59,7 @@
                         <div class="blog relative rounded-md shadow dark:shadow-gray-800 overflow-hidden flex flex-col justify-between dark:bg-gray-950 dark:text-gray-200">
                             <div class="">
                                 <img :src="blog.images[0] ? blog.images[0].url : data.settings.logo " alt="" style="height: 300px;width: 100%;object-fit: cover;margin:0px !important;">
-                                <a href="blog-detail.html" class=" px-6 pt-3 text-lg font-bold line-clamp-2  " :title="blog.title" x-text="blog.title">Design your apps in your own way</a>
+                                <p @click="forceChange(blog.url)" class=" px-6 pt-3 text-lg font-bold line-clamp-2 cursor-pointer " :title="blog.title" x-text="blog.title">Design your apps in your own way</p>
                             </div>
                             <div class="px-6">
                                 <p class="text-base pt-2 line-clamp-4" :title="blog.seo_description" x-text="blog.seo_description">The phrasal sequence of the is now so that many campaign and benefit</p>

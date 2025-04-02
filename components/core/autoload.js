@@ -276,13 +276,22 @@ window.forceChange = forceChange;
 // GET ALL ATTRIBUTES OF ELEMENT WICH START WITH " DATA- "
 
 function getDataAttributes(element, prefix) {
-
   const dataAttrs = element.getAttributeNames().reduce((obj, name) => {
     if (name.startsWith(prefix + '-')) {
-      return { ...obj, [name.slice(name.indexOf('-') + 1)]: element.getAttribute(name) };
+      let value = element.getAttribute(name);
+
+      // Опитваме се да парснем стойността като JSON
+      try {
+        value = JSON.parse(value);
+      } catch (e) {
+        // Ако не е валиден JSON, оставяме оригиналната стойност
+      }
+
+      return { ...obj, [name.slice(name.indexOf('-') + 1)]: value };
     }
     return obj;
   }, {});
+
   return dataAttrs;
 }
 

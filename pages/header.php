@@ -86,7 +86,8 @@
 		<style id="headCss"><?= $page->headCss ?></style>
 		<style id="pageCss"><?= $page->css ?></style>
 		
-
+		
+			
 		<?= $core->web['scripts']['header'] ?? '' ?>
 	</head>
 

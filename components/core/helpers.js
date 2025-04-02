@@ -13,11 +13,12 @@ let Helpers = {
 
 			if (e.name != '') {
 
+				// CHECKBOXES ARRAY []
 				if (e.name.endsWith('[]') && e.type != 'file') {
+
 					if (object[e.name] !== undefined) {
 
 						if (e.type == 'checkbox' && e.checked) {
-							// debugger;
 							object[e.name].push(e.value);
 						}
 						if (e.value != '' && e.type != 'checkbox') {
@@ -28,21 +29,25 @@ let Helpers = {
 							object[e.name] = [e.value];
 						}
 					}
+				}
 
-				} else if (e.type == 'radio') {
+				// RADIO INPUTS 
+				else if (e.type == 'radio') {
 					if (e.checked == true) {
-
 						object[e.name] = e.getAttribute('value');
 					}
-				} else if (e.type == 'checkbox') {
+				}
+
+				// STANDART CHECKBOX
+				else if (e.type == 'checkbox') {
 
 					let currentValue = e.checked ? 1 : 0;
 					object[e.name] = currentValue;
-				} else if (e.type == 'file') {
+				}
 
+				// IMAGES AND FILES
+				else if (e.type == 'file') {
 					if (e.files[1] != undefined) {
-						// object[e.name+'[]'] = [];
-
 						for (const file of e.files) {
 							if (object[e.name] !== undefined) {
 								object[e.name].push(file);
@@ -55,11 +60,12 @@ let Helpers = {
 					}
 
 
-				} else {
-					if (e.value != 'dontSelect' && e.value != 'empty') {
-						// if(e.value != ''){
+				}
+
+				// DONT SELECT OR RESET VALUE 
+				else {
+					if (e.value != 'dontSelect') {
 						object[e.name] = e.value;
-						// }
 					}
 				}
 
@@ -67,8 +73,6 @@ let Helpers = {
 
 
 		}
-
-
 		return object;
 	},
 

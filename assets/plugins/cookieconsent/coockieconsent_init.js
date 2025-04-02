@@ -9,8 +9,8 @@ window.addEventListener('load', function () {
     // run plugin with your configuration
     cc.run({
         current_lang: lang,
-        autoclear_cookies: true,                   // default: false
-        page_scripts: true,                        // default: false
+        // autoclear_cookies: true,                   // default: false
+        // page_scripts: true,                        // default: false
 
         // mode: 'opt-in'                          // default: 'opt-in'; value: 'opt-in' or 'opt-out'
         // delay: 0,                               // default: 0
@@ -27,6 +27,22 @@ window.addEventListener('load', function () {
         // cookie_same_site: 'Lax',                // default: 'Lax'
         // use_rfc_cookie: false,                  // default: false
         // revision: 0,                            // default: 0
+
+        guiOptions: {
+            consentModal: {
+                layout: "wide",
+                position: "bottom center",
+                equalWeightButtons: true,
+                flipButtons: false
+            },
+            preferencesModal: {
+                layout: "box",
+                position: "bottom center",
+                equalWeightButtons: true,
+                flipButtons: false
+            }
+        },
+
 
         onFirstAction: function (user_preferences, cookie) {
             // callback triggered only once on the first accept/reject action
