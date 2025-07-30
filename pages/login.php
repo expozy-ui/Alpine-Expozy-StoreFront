@@ -26,43 +26,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'OPTIONS') {
 define("_VALID_PHP", '1');
 require_once '../core/autoload.php';
 
-
-
-//get token
-if(!isset($_POST['token']) || empty($_POST['token'])){
-	die('Token Error');
-}
-
-$token = $_POST['token'];
 $route = $_POST['route']??'';
 
 
+//google login
+if(isset($_POST['credential']) && isset($_POST['g_csrf_token'])){
+	$user->login_google($_POST['credential']);
+}
+ 
+else if( isset($_POST['token']) ) {
+	//get token
+	$user->loginByToken($_POST['token']);
+}
 
-//include required files
-define( "_VALID_PHP", true);
-$BASEPATH = str_replace("pages/login.php", "", realpath(__FILE__));
-define("BASEPATH", $BASEPATH);
-
-require_once '../core/config.php';
-
-
-$headers = array(
-    'Content-Type: application/json',
-	'authentication: basic '.SAAS_KEY,
-);
+else{
+	die('Token Error');
+}
 
 
 
-//verify token
-$res = $user->loginByToken($token);
 
-if($res !== false){
-	echo"<script>
+
+echo"<script>
 	localStorage.clear();
-	localStorage.setItem('token', '{$token}');
+	localStorage.setItem('token', '{$user->token}');
 	document.location.href='/".$route."';	
 	</script>";
-}
+
 
 
 ?>
