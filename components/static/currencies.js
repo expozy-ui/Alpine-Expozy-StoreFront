@@ -2,6 +2,15 @@
 
 export let Currencies = {
 
+	//  ========= Фунцкия за форматиране на цената ===============
+	// const formatted = new Intl.NumberFormat('en-US', {
+	// 	style: 'currency',
+	// 	currency: 'USD',
+	//    }).format(123456.78); // "$123,456.78"
+
+
+
+
 	get_currencies: async function (data, options) {
 		let response = [];
 
@@ -21,6 +30,7 @@ export let Currencies = {
 
 		return response;
 	},
+
 
 
 

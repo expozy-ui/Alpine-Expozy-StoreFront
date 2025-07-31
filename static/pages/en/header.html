@@ -1,399 +1,260 @@
-<div x-show="data.openCart" x-transition="" class="is-section fixed inset-y-0 right-0   w-full  lg:!w-[400px]   z-50 lock" x-cloak="" apidata="Shop.get_cart" @click.outside="data.openCart = false">
-    <div class="flex h-full flex-col  bg-white shadow-xl  dark:!bg-gray-950">
-        <div class="flex-1  px-4 py-6 sm:px-6 w-full lg:!w-[400px] overflow-y-auto">
-            <div class="flex items-start justify-between">
-                <h2 class="text-lg font-medium text-gray-900 dark:text-gray-200" id="slide-over-title">Количка</h2>
-                <div class="ml-3 flex h-7 items-center">
-                    <button type="button" class="-m-2 p-2 text-gray-400 hover:text-gray-500" @click="data.openCart = false">
-                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
-                    </button>
-                </div>
-            </div>
-
-            <div class="mt-8">
-                <div class="flow-root">
-
-                    <ul role="list" class="-my-6 divide-y divide-gray-200">
-                        <template x-if="data.cart.total == 0">
-                            <li class="h-[300px] flex justify-center items-center">
-                                <p class="mt-1 text-lg  text-center text-gray-500">Your cart is empty.</p>
-                            </li>
-                        </template>
-
-                        <div>
-
-                            <template x-for="(product,index) in data.cart.products" key="index">
-
-                                <li class="flex py-6">
-                                    <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-                                        <img :src="product.images[0] ? product.images[0].url : data.settings.logo" @click="forceChange(product.url)" class="h-full w-full object-cover object-center cursor-pointer">
-                                        <!-- <div class="bg-neutral-100 animate-pulse shadow animate-infinite animate-duration-[3000ms]  w-full h-full"></div> -->
-                                    </div>
-
-                                    <div class="ml-4 flex flex-1 justify-between flex-col">
-                                        <div>
-
-                                            <p class="mt-1 text-sm text-gray-500 line-clamp-3 cursor-pointer hover:text-orange-400" @click="forceChange(product.url)" :title="product.title" x-text="product.title">Salmon</p>
-                                        </div>
-
-                                        <form>
-                                            <input type="hidden" name="variation_id" :value="product.id" value="2503">
-                                            <div x-data="{quantity: product.quantity}" x-init="$watch('quantity', value => alpineListeners('Shop.put_carts', $el))">
-
-                                                <div class="flex w-fit items-center border border-neutral-300 dark:border-gray-900 rounded bg-neutral-200 dark:bg-gray-900">
-                                                    <button @click="if(product.quantity > 1){product.quantity--; quantity--; }" type="button" class="bg-white dark:bg-gray-900 dark:text-gray-200 rounded w-5 h-5 leading-10 text-gray-600 transition hover:opacity-75"> −</button>
-                                                    <input type="number" name="quantity" :value="product.quantity" class="h-5 w-10 dark:bg-gray-900 dark:text-gray-200 border-transparent text-center  sm:text-sm [-moz-appearance:_textfield] [&amp;::-webkit-outer-spin-button]:m-0 [&amp;::-webkit-outer-spin-button]:appearance-none [&amp;::-webkit-inner-spin-button]:m-0 [&amp;::-webkit-inner-spin-button]:appearance-none">
-                                                    <button @click="product.quantity++; quantity++; " type="button" class="bg-white dark:bg-gray-900 dark:text-gray-200 rounded w-5 h-5 leading-10 text-gray-600 transition hover:opacity-75"> +</button>
-                                                </div>
-                                            </div>
-                                        </form>
-
-                                        <div class="flex  items-end justify-between text-sm">
-
-                                            <div class="flex">
-                                                <p x-text="product.quantity" class="text-slate-500"></p>
-                                                <p class="text-slate-500">x</p>
-                                                <p x-text="product.variation.selling_price" class="text-slate-500">$90.00</p>
-                                                <p x-text="product.variation.currency" class="text-slate-500"></p>
-                                            </div>
-                                            <div class="flex justify-between text-base font-medium text-gray-900">
-
-                                            </div>
-                                            <div class="flex">
-                                                <button type="button" @click="alpineListeners('Shop.delete_carts', $event)" keyname="cart" :data-id="product.id" class="font-medium text-slate-600 hover:text-indigo-500">Remove</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-
-                            </template>
-
-                        </div>
-
-                    </ul>
-                </div>
-            </div>
+<!-- Site Header -->
+<header class="bg-gray-900/90 backdrop-blur-sm border-b border-purple-900/50 shadow-lg sticky top-0 z-50">
+    <!-- Top Bar with Announcement -->
+    <div class="bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 px-4 text-center text-sm relative overflow-hidden md:py-2 md:px-4 md:text-sm">
+        <div class="absolute inset-0 bg-black/10"></div>
+        <div class="relative h-6 overflow-hidden flex items-center" x-data="{ currentAnnouncement: 0 }" x-init="setInterval(() => { currentAnnouncement = currentAnnouncement === 0 ? 1 : 0 }, 5000)">
+            <p x-show="currentAnnouncement === 0" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-full" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-full" class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
+                🎉 Безплатна доставка за поръчки над 0.01 BTC! Използвайте код: <span class="font-bold ml-1 [text-shadow:0_0_5px_rgba(168,85,247,0.7),0_0_10px_rgba(168,85,247,0.5),0_0_15px_rgba(168,85,247,0.3),0_0_20px_rgba(168,85,247,0.2)]">FREESHIP</span>
+            </p>
+            <p x-show="currentAnnouncement === 1" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0 transform translate-y-full" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-full" class="absolute w-full h-full top-0 left-0 flex items-center justify-center">
+                🔥 Нова колекция български продукти! <span class="font-bold ml-1 [text-shadow:0_0_5px_rgba(168,85,247,0.7),0_0_10px_rgba(168,85,247,0.5),0_0_15px_rgba(168,85,247,0.3),0_0_20px_rgba(168,85,247,0.2)]">Разгледайте сега</span>
+            </p>
         </div>
-        <template x-if="data.cart.products[0]">
-
-            <div class="border-t border-gray-200 px-4 lg:py-6 sm:px-6 py-2 lg:mb-0">
-                <div class="flex justify-between text-base font-medium text-gray-900">
-
-                    <template x-if="data.cart.promocode_id == 0">
-                        <form class="flex flex-col gap-3 lg:pb-5 lg:mb-5 w-full">
-                            <p class="hidden lg:block dark:text-gray-200">Enter promo code</p>
-                            <div class="flex justify-between">
-                                <div class="">
-                                    <input type="text" name="promocode" value="" placeholder="Enter promocode" class="block p-3 pl-10 w-full text-sm text-gray-900 bg-white border border-gray-300 dark:bg-gray-900 dark:text-gray-200 focus:ring-primary-500 focus:border-primary-500 ">
-                                </div>
-                                <a @click="alpineListeners('Shop.post_promocode', $event)" keyname="cart" class="flex items-center justify-center px-3 py-1 text-base bg-stone-900 dark:bg-gray-900 font-medium text-white shadow-sm hover:bg-stone-800 dark:hover:bg-gray-800 cursor-pointer">Apply</a>
-                            </div>
-                        </form>
-                    </template>
-
-                    <template x-if="data.cart.promocode_id != 0">
-                        <form class="flex flex-col lg:gap-1 lg:pb-5 lg:mb-5 w-full dark:text-gray-200">
-                            <p>Promo code</p>
-                            <div class="flex justify-between">
-                                <p x-text="data.cart.promocode_info.promocode"></p>
-                                <a @click="alpineListeners('Shop.delete_promocode', $event)" keyname="cart" class="flex items-center justify-center dark:text-gray-200 px-3 py-1 text-base bg-stone-900 dark:bg-gray-900 font-medium text-white shadow-sm hover:bg-stone-800 dark:hover:bg-gray-800 cursor-pointer">remove</a>
-                            </div>
-
-                        </form>
-                    </template>
-                </div>
-
-                <div class="flex justify-between text-base font-medium text-gray-900 dark:text-gray-200">
-                    <p>All products </p>
-                    <p x-text="data.cart.subtotal_without_disc + ' ' + data.cart.products[0].variation.currency">262 BGN</p>
-                </div>
-                <div class="flex justify-between text-base font-medium text-gray-900 dark:text-gray-200">
-                    <p>Discount</p>
-                    <p x-text="data.cart.discount + ' ' + data.cart.products[0].variation.currency">262 BGN</p>
-                </div>
-                <div class="flex justify-between text-base font-medium text-gray-900 dark:text-gray-200">
-                    <p>General</p>
-                    <p x-text="data.cart.total.toFixed(2) + ' ' + data.cart.products[0].variation.currency">262 BGN</p>
-                </div>
-                <div class="mt-1 lg:mt-6">
-                    <a href="/en/checkout" @click="data.openCart = false" class="flex items-center justify-center rounded-md px-6 py-3 text-base bg-stone-900 font-medium text-white shadow-sm hover:bg-stone-800 dark:hover:bg-gray-800 dark:bg-gray-900">Continue</a>
-                </div>
-                <div class="mt-6 flex justify-center text-center text-sm text-gray-500 hidden lg:block">
-                    <p>
-
-                        <button type="button" class="font-medium text-slate-700 hover:text-slate-900 dark:hover:text-slate-400 dark:text-gray-200" @click="data.openCart = false">
-                            Continue shopping
-                            <span aria-hidden="true"> →</span>
-                        </button>
-                    </p>
-                </div>
-            </div>
-
-        </template>
     </div>
-</div>
-<div class="is-section w-full  lock dark:!bg-gray-900" apidata="Menu.get_menu" keyname="menu">
-    <div class="container">
 
-        <div class="flex justify-between pr-4 lg:pr-0 lg:grid lg:grid-cols-4 lg:mx-auto lg:container py-3">
-            <div>
-                <a @click="forceChange('/')">
-                    <img src="" :src="data.settings.logo" alt="" class="!m-0  max-h-[60px]  w-auto rounded-xl">
+    <div class="max-w-7xl mx-auto py-3 px-4 sm:px-6 lg:px-8">
+        <!-- Main Header -->
+        <div class="flex justify-between items-center">
+            <!-- Mobile Menu Button -->
+            <button @click="mobileMenuOpen = !mobileMenuOpen" class="md:hidden text-gray-300 hover:text-white transition-colors cursor-pointer flex items-center justify-center h-10 w-10 magnetic-btn" @mousedown="handleButtonClick">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+
+            <!-- Logo -->
+            <h1 class="text-2xl md:text-3xl font-bold text-white flex items-center">
+                <span class="bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-[length:200%_auto] animate-text-shimmer bg-clip-text text-transparent">Bulgarian</span>
+                <span class="relative" data-text="Market">
+                    Market
+                    <span class="absolute -top-1 -right-2 w-2 h-2 bg-purple-400 rounded-full animate-ping"></span>
+                    <span class="absolute top-0 left-0 w-full h-full before:content-[attr(data-text)] before:absolute before:top-0 before:left-[2px] before:text-shadow-[-1px_0_#ec4899] before:clip-[rect(44px,450px,56px,0)] before:animate-glitch-anim after:content-[attr(data-text)] after:absolute after:top-0 after:left-[-2px] after:text-shadow-[-1px_0_#8b5cf6] after:clip-[rect(44px,450px,56px,0)] after:animate-glitch-anim2"></span>
+                </span>
+            </h1>
+
+            <!-- Desktop Navigation -->
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-1 group cursor-pointer">
+                    <span>Начало</span>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"></span>
+                </a>
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open" @click.away="open = false" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-1 group cursor-pointer">
+                        <span>Категории</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': open}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                        <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"></span>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-2" class="absolute left-0 mt-2 w-48 bg-gray-800/90 backdrop-blur-md rounded-lg shadow-xl z-20 border border-gray-700" x-cloak="">
+                        <div class="py-2 px-3">
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Електроника</a>
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Храни и напитки</a>
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Облекло</a>
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Козметика</a>
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Сувенири</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-1 group cursor-pointer">
+                    <span>За нас</span>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"></span>
+                </a>
+                <a href="#" class="text-gray-300 hover:text-white transition-colors flex items-center space-x-1 group cursor-pointer">
+                    <span>Контакти</span>
+                    <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gradient-to-r from-purple-400 to-pink-400"></span>
                 </a>
             </div>
 
-            <div class="flex justify-center items-center col-span-2 px-10 hidden lg:flex" x-data="{openSearchBar: false}">
-                <form class="w-full">
-                    <div class="items-center mx-auto mb-3 space-y-4 max-w-screen-sm sm:flex sm:space-y-0">
-                        <div class="relative w-full">
-                            <input name="search" @input.debounce.1000="alpineListeners('Search.get_search', $event); openSearchBar = true" @click="if(data.search){openSearchBar = true}" keyname="search" data-show_filters="1" data-filter="1" class="block dark:bg-gray-900 dark:text-gray-200 p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 ">
-                            <div x-show="openSearchBar" @click.outside="openSearchBar = false" x-cloak="" x-transition="" class="dark:bg-gray-950 dark:text-gray-200 hidden md:block w-[200%] bg-white h-auto z-50 p-10 rounded-[15px] shadow-2xl drop-shadow absolute ">
-                                <template x-if="data.search.products.result.length == 0">
-                                    <p>No results found</p>
-                                </template>
+            <!-- User Actions -->
+            <div class="flex items-center space-x-2 md:space-x-4">
+                <!-- Search Button -->
+                <button @click="searchOpen = !searchOpen; handleButtonClick($event)" class="text-gray-300 hover:text-white transition-colors relative flex items-center justify-center h-10 w-10 magnetic-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                    </svg>
+                </button>
 
-                                <ul class="grid grid-cols-2">
-
-                                    <template x-for="product in data.search.products.result">
-                                        <li class="flex py-6 px-3">
-                                            <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
-
-                                                <img :src="product.images[0]? product.images[0].url : data.settings.logo" @click="openSearchBar = false ; forceChange(product.url)" class="h-full w-full object-cover object-center cursor-pointer">
-                                                <!-- <div class="bg-neutral-100 animate-pulse shadow animate-infinite animate-duration-[3000ms]  w-full h-full"></div> -->
-
-                                            </div>
-
-                                            <div class="ml-4 flex flex-1 flex-col">
-                                                <div>
-
-                                                    <p @click="openSearchBar = false ; forceChange(product.url)" class="mt-1 text-sm text-gray-500 line-clamp-3 hover:text-orange-400 cursor-pointer" :title="product.title" x-text="product.title">Salmon</p>
-                                                    <p @click="openSearchBar = false ; forceChange(product.categories[0].url)" class="mt-1 text-sm text-gray-400 line-clamp-2 hover:text-orange-400 cursor-pointer" :title="product.categories[0].title" x-text="product.categories[0].title">Salmon</p>
-                                                </div>
-                                                <div class="flex flex-1 items-end justify-between text-sm">
-                                                    <div class="flex">
-                                                        <p x-text="product.variations[0].selling_price.toFixed(2)" class="text-red-600 font-bold">$90.00</p>
-                                                        <p x-text="product.variations[0].currency" class=" text-red-600 font-bold"></p>
-                                                    </div>
-
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </template>
-
-                                </ul>
-
+                <!-- Notifications -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open; handleButtonClick($event)" @click.away="open = false" class="text-gray-300 hover:text-white transition-colors relative flex items-center justify-center h-10 w-10 magnetic-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path>
+                        </svg>
+                        <span x-show="notifications.filter(n => !n.read).length > 0" class="absolute -top-2 -right-2 bg-red-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center animate-pulse-slow" x-text="notifications.filter(n => !n.read).length"></span>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-2" class="absolute right-0 mt-2 w-80 bg-gray-800/90 backdrop-blur-md rounded-lg shadow-xl z-20 border border-gray-700" x-cloak="">
+                        <div class="py-2 px-3">
+                            <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
+                                <h3 class="font-semibold text-white [text-shadow:0_0_5px_rgba(168,85,247,0.7),0_0_10px_rgba(168,85,247,0.5),0_0_15px_rgba(168,85,247,0.3),0_0_20px_rgba(168,85,247,0.2)]">Известия</h3>
+                                <button @click="notifications.forEach(n => n.read = true)" class="text-xs text-purple-400 hover:text-purple-300 cursor-pointer">Маркирай всички като прочетени</button>
                             </div>
-                        </div>
-                        <div>
-                            <a @click="if(data.search){forceChange('/en/search?search=' + data.search.search)} " class="dark:bg-gray-900 dark:text-gray-200 py-3.5 px-5 w-full text-sm font-medium text-center text-black rounded-lg border cursor-pointer bg-white border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-stone-900 hover:text-white focus:ring-4 focus:ring-stone-900"><i class="fa-solid fa-magnifying-glass"></i></a>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <!-- <div class="flex gap-5 justify-end items-center hidden lg:flex">
-        <i class="fa-solid fa-phone-volume text-neutral-700 text-[30px]"></i>
-        <div>
-          <p class="text-base text-slate-700"> <a href="tel:0888 039 850">Обадете ни се 2</a></p>
-          <p class="text-xl font-bold"><a href="tel:+359888039850">0888 039 850</a></p>
-        </div>
-      </div> -->
-
-            <div class="flex justify-end items-center">
-                <ul class="flex  gap-3">
-
-                    <li class="cursor-pointer hidden lg:block">
-                        <div class="flex gap-3" @click="data.user.logged_in ? forceChange('/en/userpage') : forceChange('/en/login') ">
-                            <template x-if="data.user.logged_in">
-                                <p class="dark:text-gray-200" x-text="data.user.first_name"></p>
-                            </template>
-                            <i class="fa-solid fa-circle-user text-[24px] text-neutral-700 dark:text-gray-200"></i>
-                        </div>
-                    </li>
-
-                    <li class="hidden lg:block"><i class="fa-solid fa-heart text-[22px] cursor-pointer drop-shadow-xl text-neutral-700 dark:text-gray-200 " @click="forceChange('/en/wishlist')"></i></li>
-
-                    <li class="lg:hidden block" @click="data.openMobileMenu = ! data.openMobileMenu"><i class="fa-solid fa-bars text-[22px] mr-1 text-neutral-700 dark:text-gray-200"></i></li>
-
-                    <li class="">
-                        <div class="">
-                            <i @click="data.darkMode =! data.darkMode" :class="data.darkMode ? 'fa-sun' : 'fa-moon' " class="fa-solid dark:text-gray-200 text-neutral-700  text-[22px] group"></i>
-                        </div>
-                    </li>
-                    <li class="">
-                        <div x-data="{openLang:false}" class="relative">
-                            <i @click="openLang =! openLang" class="fa-solid fa-globe dark:text-gray-200 text-neutral-700 text-[22px] "></i>
-                            <div x-show="openLang" class="flex justify-between w-[200px] items-center border border-slate-300 py-2 px-5 mt-3 right-0 absolute z-50 bg-white dark:!bg-gray-800 shadow-xl" style="display: none;">
-                                <ul class="w-full divide-y divide-[#179BB0] dark:divide-white">
-                                    <li class="py-2"> <a @click="changeLang('en')" class="hover:!text-sky-500  duration-500 ease-in-out cursor-pointer  dark:text-white text-gray-950 dark:hover:text-sky-500">English</a> </li>
-                                    <li class=" py-2"> <a @click="changeLang('bg') " class="hover:!text-sky-500  duration-500 ease-in-out cursor-pointer  dark:text-white text-gray-950 dark:hover:text-sky-500">Български</a> </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-
-                    <li class="cursor-pointer pr-4">
-                        <div class="relative z-30" @click="data.openCart =! data.openCart">
-                            <i class="fa-solid fa-cart-shopping text-[22px] text-neutral-700 dark:text-gray-200"></i>
-
-                            <span class="bg-red-600 absolute right-[-10px] top-[-10px] rounded-full text-white flex justify-center items-center w-[20px] h-[20px]" x-text="data.cart.total_quantity"></span>
-                        </div>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-
-    </div>
-</div>
-
-<div class="is-section w-full">
-    <template x-if=" data.screenWidth >= 1024">
-        <div class=" is-section !bg-stone-900 dark:!bg-gray-950   drop-shadol hidden lg:block lock " x-data="{activeCategory: 0, tempCategory: 0}" @mouseleave="activeCategory = 0" apidata="Shop.get_categories" keyname="categories" data-droplist="true">
-            <ul class="flex py-3 gap-2 justify-start flex-wrap container mx-auto">
-
-                <template x-for="category in data.categories">
-                    <div class="">
-                        <li @mouseenter="tempCategory = category.id; setTimeout(() => { if(tempCategory == category.id) {activeCategory = category.id}  }, 200)" @mouseleave="tempCategory = 0" class="px-3 py-1 flex items-center gap-3">
-
-                            <p x-text="category.title" @click="forceChange(category.url)" class="text-white uppercase font-bold text-[12px] hover:text-orange-400 cursor-pointer"></p>
-
-                            <template x-if="category.children">
-                                <i class="fa-solid fa-arrow-down text-white"></i>
-                            </template>
-                        </li>
-                    </div>
-                </template>
-
-                <template x-for="menu in data.menu">
-                    <div class="">
-                        <li @mouseleave="tempCategory = 0" class="px-3 py-1 flex items-center gap-3">
-                            <p x-text="menu.title" @click="forceChange(menu.link)" class="text-white uppercase font-bold text-[12px] hover:text-orange-400 cursor-pointer"></p>
-                        </li>
-                    </div>
-                </template>
-            </ul>
-
-            <div class="!bg-stone-900  dark:!bg-gray-950 border-t-2 border-slate-300 relative  mx-auto z-40">
-
-                <template x-for="category in data.categories">
-                    <template x-if="category.children">
-                        <div x-show="activeCategory == category.id" class="absolute mx-auto !bg-stone-900  dark:!bg-gray-950 w-full is-light-text py-5 " x-transition:enter="transition transform ease-in duration-400">
-                            <div class="container">
-                                <p x-text="category.title" class="font-bold border-b-2 border-slate-300 py-2 w-fit text-[14px]">Японски ножове TOJIRO - made in JAPAN</p>
-                                <ul class=" grid grid-cols-3 py-5">
-                                    <template x-for="subCategory in category.children">
-                                        <li class="pr-10"><a @click="forceChange(subCategory.url)" x-text="subCategory.title" class="text-[13px] hover:text-orange-400 cursor-pointer">Японски кухненски дъски</a></li>
-
-                                    </template>
-                                </ul>
-                            </div>
-                        </div>
-                    </template>
-                </template>
-
-            </div>
-        </div>
-    </template>
-
-</div>
-
-<template x-if="data.openMobileMenu">
-    <div class="is-section bg-neutral-100 dark:bg-gray-950 lg:hidden  fixed top-0 left-0 w-full h-full z-40 lock" x-show="data.openMobileMenu" style="display:none" x-cloack="">
-        <div class="text-center   h-full">
-
-            <div class="relative bg-white border-b border-neutral-200 drop-shadow dark:bg-gray-900">
-                <p class="py-2 dark:text-gray-200">Меню</p>
-
-                <div class="h-full absolute right-0 top-0 w-fit">
-                    <span class="flex justify-center items-center h-full gap-3 px-2" @click="data.openMobileMenu = false"><i class="fa-solid fa-x text-[14px]"></i></span>
-                </div>
-            </div>
-
-            <div class="container h-full">
-
-                <ul class="flex pt-3 px-3 gap-3">
-
-                    <li class="cursor-pointer bg-white py-1  px-2 rounded-xl shadow min-w-[70px] dark:bg-gray-900">
-                        <div class=" gap-3 " @click="data.user.logged_in ? forceChange('/en/userpage') : forceChange('/en/login'); data.openMobileMenu = false ">
-                            <i class="fa-solid fa-circle-user text-[24px] text-stone-900 dark:text-gray-200"></i>
-                            <template x-if="data.user.logged_in">
-                                <p class="dark:text-gray-200" x-text="data.user.first_name"></p>
-                            </template>
-                            <template x-if="!data.user.logged_in">
-                                <p class="dark:text-gray-200">Profile</p>
-                            </template>
-                        </div>
-                    </li>
-
-                    <li class="bg-white py-1  px-2  rounded-xl shadow min-w-[70px] dark:bg-gray-900 dark:text-gray-200"><i class="fa-solid fa-heart text-[22px] dark:text-gray-200 cursor-pointer drop-shadow-xl text-stone-900 " @click="forceChange('/en/wishlist');  data.openMobileMenu = false"></i>
-                        <p class="dark:text-gray-200">Wishlist</p>
-                    </li>
-
-                </ul>
-
-                <div>
-                    <div class="flex justify-center items-center col-span-2 " x-data="{openSearchBar: false}">
-                        <form class="w-full">
-                            <div class="flex items-center py-3">
-                                <div class="relative w-full">
-                                    <input name="search" @input.debounce.1000="alpineListeners('Search.get_search', $event); " data-sort="relevant" keyname="search" class="block dark:bg-gray-900 dark:text-gray-200 p-3 pl-10 w-full text-sm text-gray-900 bg-white rounded-lg border border-gray-300 sm:rounded-none sm:rounded-l-lg focus:ring-primary-500 focus:border-primary-500 ">
-
-                                </div>
-                                <div>
-                                    <a @click="if(data.search){forceChange('/en/search'); data.openMobileMenu = false} " class="dark:text-gray-200 dark:bg-gray-900 py-3.5 px-5 w-full text-sm font-medium text-center text-black rounded-lg border cursor-pointer bg-white border-primary-600 sm:rounded-none sm:rounded-r-lg hover:bg-stone-900 hover:text-white focus:ring-4 focus:ring-stone-900"><i class="fa-solid fa-magnifying-glass"></i></a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-
-                <div class="h-full overflow-scroll pb-[220px]" x-data="{activeCategory: 0}">
-                    <template x-for="category in data.categories">
-
-                        <ul class="">
-                            <li class="py-1  ">
-                                <div class="flex items-center justify-between gap-3 bg-white dark:bg-gray-900 py-2 px-5 ">
-
-                                    <p x-text="category.title" @click="forceChange(category.url); data.openMobileMenu = false" class="dark:text-gray-200 text-black text-left uppercase font-bold text-[12px] hover:text-orange-400 cursor-pointer"></p>
-                                    <template x-if="category.children">
-                                        <div class="bg-stone-900 dark:bg-gray-950 rounded-full h-[25px] w-[25px] flex justify-center items-center" @click="activeCategory != category.id ? activeCategory = category.id : activeCategory = 0">
-                                            <i class="fa-solid fa-arrow-down text-white text-[12px] dark:text-gray-200"></i>
+                            <div class="max-h-60 overflow-y-auto [scrollbar-width:thin] [scrollbar-color:rgba(31,41,55,0.5)_rgba(31,41,55,0.5)] [&amp;::-webkit-scrollbar]:w-[6px] [&amp;::-webkit-scrollbar-track]:bg-gray-800/50 [&amp;::-webkit-scrollbar-track]:rounded-[10px] [&amp;::-webkit-scrollbar-thumb]:bg-gradient-to-b [&amp;::-webkit-scrollbar-thumb]:from-purple-500 [&amp;::-webkit-scrollbar-thumb]:to-pink-500 [&amp;::-webkit-scrollbar-thumb]:rounded-[10px] [&amp;::-webkit-scrollbar-thumb:hover]:from-purple-600 [&amp;::-webkit-scrollbar-thumb:hover]:to-pink-600">
+                                <template x-for="notification in notifications" :key="notification.id">
+                                    <div class="py-2 px-3 hover:bg-gray-700 rounded-lg transition-colors flex items-start hover:scale-105 transform duration-200" :class="{'bg-purple-900/10': !notification.read}">
+                                        <div class="flex-1">
+                                            <p class="text-sm text-gray-300" x-text="notification.text"></p>
+                                            <p class="text-xs text-gray-500 mt-1">Преди 2 часа</p>
                                         </div>
-                                    </template>
-
-                                </div>
-
-                                <div class="" x-show="activeCategory ==  category.id">
-                                    <ul class="bg-white dark:bg-gray-900 px-5  flex flex-col items-start justify-start divide-y">
-                                        <template x-for="subCategory in category.children">
-                                            <li class="text-start w-full py-2">
-                                                <p @click="forceChange(subCategory.url); data.openMobileMenu = false" x-text="subCategory.title" class="dark:text-gray-200 text-[13px] float-left hover:text-orange-400 cursor-pointer">Японски кухненски дъски</p>
-                                            </li>
-
-                                        </template>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-
-                    </template>
-
-                    <template x-for="menu in data.menu">
-                        <ul class="">
-                            <li class="py-1 ">
-                                <div class="flex items-center justify-between gap-3 bg-white dark:bg-gray-900 py-2 px-5 ">
-                                    <p x-text="menu.title" @click="forceChange(menu.link); data.openMobileMenu = false" class=" dark:text-gray-200 text-black text-left uppercase font-bold text-[12px] hover:text-orange-400 cursor-pointer"></p>
-                                </div>
-                            </li>
-                        </ul>
-                    </template>
+                                        <button @click="notification.read = true" class="text-gray-400 hover:text-white cursor-pointer" x-show="!notification.read">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </template>
+                            </div>
+                            <div class="mt-2 pt-2 border-t border-gray-700 text-center">
+                                <a href="#" class="text-sm text-purple-400 hover:text-purple-300 cursor-pointer">Виж всички известия</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-            </div>
+                <!-- Cart Button -->
+                <div x-data="{ open: false }" class="relative">
+                    <button @click="open = !open; handleButtonClick($event)" @click.away="open = false" class="text-gray-300 hover:text-white transition-colors relative flex items-center justify-center h-10 w-10 magnetic-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"></path>
+                        </svg>
+                        <span x-show="cart.items > 0" class="absolute -top-2 -right-2 bg-purple-500 text-white text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center animate-pulse-slow" x-text="cart.items"></span>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-2" class="absolute right-0 mt-2 w-80 bg-gray-800/90 backdrop-blur-md rounded-lg shadow-xl z-20 border border-gray-700" x-cloak="">
+                        <div class="py-2 px-3">
+                            <div class="flex justify-between items-center border-b border-gray-700 pb-2 mb-2">
+                                <h3 class="font-semibold text-white [text-shadow:0_0_5px_rgba(168,85,247,0.7),0_0_10px_rgba(168,85,247,0.5),0_0_15px_rgba(168,85,247,0.3),0_0_20px_rgba(168,85,247,0.2)]">Кошница</h3>
+                                <span class="text-sm text-gray-400" x-text="`${cart.items} продукта`"></span>
+                            </div>
+                            <div class="max-h-60 overflow-y-auto [scrollbar-width:thin] [scrollbar-color:rgba(31,41,55,0.5)_rgba(31,41,55,0.5)] [&amp;::-webkit-scrollbar]:w-[6px] [&amp;::-webkit-scrollbar-track]:bg-gray-800/50 [&amp;::-webkit-scrollbar-track]:rounded-[10px] [&amp;::-webkit-scrollbar-thumb]:bg-gradient-to-b [&amp;::-webkit-scrollbar-thumb]:from-purple-500 [&amp;::-webkit-scrollbar-thumb]:to-pink-500 [&amp;::-webkit-scrollbar-thumb]:rounded-[10px] [&amp;::-webkit-scrollbar-thumb:hover]:from-purple-600 [&amp;::-webkit-scrollbar-thumb:hover]:to-pink-600">
+                                <div class="py-2 flex items-center space-x-3 border-b border-gray-700 hover:bg-gray-700/50 rounded-lg transition-all duration-300 p-2 hover:scale-105 transform">
+                                    <img src="/placeholder.svg?height=64&amp;width=64" alt="Product" class="w-16 h-16 object-cover rounded-md">
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-medium text-white">Български мед от манов</h4>
+                                        <p class="text-xs text-gray-400">1 x 0.005 BTC</p>
+                                    </div>
+                                    <button class="text-gray-400 hover:text-white cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="py-2 flex items-center space-x-3 border-b border-gray-700 hover:bg-gray-700/50 rounded-lg transition-all duration-300 p-2 hover:scale-105 transform">
+                                    <img src="/placeholder.svg?height=64&amp;width=64" alt="Product" class="w-16 h-16 object-cover rounded-md">
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-medium text-white">Розово масло 100% натурално</h4>
+                                        <p class="text-xs text-gray-400">1 x 0.01 BTC</p>
+                                    </div>
+                                    <button class="text-gray-400 hover:text-white cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <div class="py-2 flex items-center space-x-3 hover:bg-gray-700/50 rounded-lg transition-all duration-300 p-2 hover:scale-105 transform">
+                                    <img src="/placeholder.svg?height=64&amp;width=64" alt="Product" class="w-16 h-16 object-cover rounded-md">
+                                    <div class="flex-1">
+                                        <h4 class="text-sm font-medium text-white">Традиционна шопска салата</h4>
+                                        <p class="text-xs text-gray-400">1 x 0.002 BTC</p>
+                                    </div>
+                                    <button class="text-gray-400 hover:text-white cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="mt-4 pt-2 border-t border-gray-700">
+                                <div class="flex justify-between items-center mb-4">
+                                    <span class="text-sm text-gray-400">Общо:</span>
+                                    <span class="text-lg font-bold text-white bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-[length:200%_auto] animate-text-shimmer bg-clip-text text-transparent" x-text="cart.total + ' BTC'"></span>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-center py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer hover:scale-105 transform duration-200 hover:[transform:translateY(-5px)] hover:[box-shadow:0_10px_25px_-5px_rgba(168,85,247,0.4)]">Кошница</a>
+                                    <a href="#" class="relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white text-center py-2 rounded-lg text-sm font-medium transition-colors cursor-pointer hover:scale-105 transform duration-200 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:w-[300px] after:h-[300px] after:bg-white/10 after:rounded-[40%] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:transition-transform after:duration-500 hover:after:scale-150 hover:[transform:translateY(-5px)] hover:[box-shadow:0_10px_25px_-5px_rgba(168,85,247,0.4)]">Плащане</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- User Menu - Hidden on smallest screens -->
+                <div x-data="{ open: false }" class="relative hidden sm:block">
+                    <button @click="open = !open; handleButtonClick($event)" @click.away="open = false" class="relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-4 py-2 rounded-full transition-colors text-sm font-medium shadow-md hover:shadow-purple-500/20 flex items-center cursor-pointer magnetic-btn after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:w-[300px] after:h-[300px] after:bg-white/10 after:rounded-[40%] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:transition-transform after:duration-500 hover:after:scale-150 hover:[transform:translateY(-5px)] hover:[box-shadow:0_10px_25px_-5px_rgba(168,85,247,0.4)]">
+                        <span>Вход</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" :class="{'rotate-180': open}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-2" class="absolute right-0 mt-2 w-48 bg-gray-800/90 backdrop-blur-md rounded-lg shadow-xl z-20 border border-gray-700" x-cloak="">
+                        <div class="py-2 px-3">
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Вход</a>
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Регистрация</a>
+                            <div class="border-t border-gray-700 my-2"></div>
+                            <a href="#" class="block py-2 px-3 text-gray-300 hover:bg-gray-700 hover:text-white rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Помощ</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu - Improved for mobile -->
+        <div x-show="mobileMenuOpen" x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 transform -translate-y-2" x-transition:enter-end="opacity-100 transform translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 transform translate-y-0" x-transition:leave-end="opacity-0 transform -translate-y-2" class="md:hidden mt-4 bg-gray-800/90 backdrop-blur-md rounded-lg p-4 max-h-[80vh] overflow-y-auto [scrollbar-width:thin] [scrollbar-color:rgba(31,41,55,0.5)_rgba(31,41,55,0.5)] [&amp;::-webkit-scrollbar]:w-[6px] [&amp;::-webkit-scrollbar-track]:bg-gray-800/50 [&amp;::-webkit-scrollbar-track]:rounded-[10px] [&amp;::-webkit-scrollbar-thumb]:bg-gradient-to-b [&amp;::-webkit-scrollbar-thumb]:from-purple-500 [&amp;::-webkit-scrollbar-thumb]:to-pink-500 [&amp;::-webkit-scrollbar-thumb]:rounded-[10px] [&amp;::-webkit-scrollbar-thumb:hover]:from-purple-600 [&amp;::-webkit-scrollbar-thumb:hover]:to-pink-600" x-cloak="">
+            <nav class="grid gap-2">
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Начало</a>
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full text-left text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg transition-colors flex justify-between items-center cursor-pointer hover:scale-105 transform duration-200">
+                        <span>Категории</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transition-transform" :class="{'rotate-180': open}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div x-show="open" class="pl-4 mt-2 space-y-2" x-collapse="">
+                        <a href="#" class="block text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Електроника</a>
+                        <a href="#" class="block text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Храни и напитки</a>
+                        <a href="#" class="block text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Облекло</a>
+                        <a href="#" class="block text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Козметика</a>
+                        <a href="#" class="block text-gray-300 hover:bg-gray-700 hover:text-white p-2 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Сувенири</a>
+                    </div>
+                </div>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">За нас</a>
+                <a href="#" class="text-gray-300 hover:bg-gray-700 hover:text-white p-3 rounded-lg transition-colors cursor-pointer hover:scale-105 transform duration-200">Контакти</a>
+
+                <!-- Login button for mobile -->
+                <div class="mt-2 pt-2 border-t border-gray-700">
+                    <a href="#" class="block text-center relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white p-3 rounded-lg transition-colors text-sm font-medium shadow-md hover:shadow-purple-500/20 cursor-pointer mt-2 hover:scale-105 transform duration-200 after:content-[''] after:absolute after:top-1/2 after:left-1/2 after:w-[300px] after:h-[300px] after:bg-white/10 after:rounded-[40%] after:-translate-x-1/2 after:-translate-y-1/2 after:scale-0 after:transition-transform after:duration-500 hover:after:scale-150 hover:[transform:translateY(-5px)] hover:[box-shadow:0_10px_25px_-5px_rgba(168,85,247,0.4)]">
+                        Вход
+                    </a>
+                    <a href="#" class="block text-center bg-gray-700 hover:bg-gray-600 text-white p-3 rounded-lg transition-colors text-sm font-medium cursor-pointer mt-2 hover:scale-105 transform duration-200 hover:[transform:translateY(-5px)] hover:[box-shadow:0_10px_25px_-5px_rgba(168,85,247,0.4)]">
+                        Регистрация
+                    </a>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Search Overlay -->
+        <div x-show="searchOpen" x-transition:enter="transition ease-out duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition ease-in duration-200" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="fixed inset-0 bg-gray-900/80 backdrop-blur-sm z-50 flex items-start justify-center pt-20" x-cloak="">
+            <div @click.away="searchOpen = false" class="bg-gray-800/90 backdrop-blur  x-cloak>
+                <div @click.away=" searchopen="false&quot;">
+                <div class="relative">
+                    <input type="text" placeholder="Търсете продукти..." class="w-full bg-gray-800 border-none py-4 px-6 text-white text-lg focus:outline-none focus:ring-0" x-ref="searchInput" x-init="$nextTick(() => { $refs.searchInput.focus() })">
+                    <button @click="searchOpen = false" class="absolute right-4 top-4 text-gray-400 hover:text-white cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <div class="border-t border-gray-700 py-4 px-6">
+                    <h3 class="text-sm font-medium text-gray-400 mb-3">Популярни търсения</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-full transition-colors cursor-pointer hover:scale-110 transform duration-200">Розово масло</a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-full transition-colors cursor-pointer hover:scale-110 transform duration-200">Български мед</a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-full transition-colors cursor-pointer hover:scale-110 transform duration-200">Лютеница</a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-full transition-colors cursor-pointer hover:scale-110 transform duration-200">Вино</a>
+                        <a href="#" class="bg-gray-700 hover:bg-gray-600 text-white text-sm px-3 py-1 rounded-full transition-colors cursor-pointer hover:scale-110 transform duration-200">Сувенири</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</template>
+</header>
