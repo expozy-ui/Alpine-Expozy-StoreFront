@@ -62,7 +62,7 @@ class Editor{
 
 
 		$revisions = Api::cache(false)->admin_api(true)->data(['type' => $type,'object_id' => $this->id, 'lang'=>$lang->language, 'limit'=>20 , 'sort'=>''])->get()->revisions();
-		$this->revisions = $revisions['result'];
+		$this->revisions = $revisions['result']??[];
  
 		//d($revisions);die();
 		
