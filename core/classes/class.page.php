@@ -53,7 +53,7 @@ class Page
 				$this->slug = '';
 			}
 			
-			$this->slug = parse_url($this->slug, PHP_URL_PATH);
+			$this->slug = parse_url($this->slug??'', PHP_URL_PATH);
 
 			if(empty($this->slug)){
 				$this->id = 1;
