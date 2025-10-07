@@ -3,8 +3,8 @@
 
 /**** get repo if folder is empty ****/
 if(file_exists('.htaccess') === false){
-	unlink('index.html');
-	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard";
+	@unlink('index.html');
+	$git_clone = "git clone https://github.com/expozy-ui/Alpine-Expozy-StoreFront.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard";
 	$output = shell_exec($git_clone);
 	header('Location: /gitops.php?install=1');
 	die();
@@ -16,7 +16,7 @@ require_once(BASEPATH.'core/classes/class.gitops.php');
 
 if(get('install') == 1){
 	GitOps::install_saas_key();
-	header('Location: /gitops.php');
+	header('Location: /');
 }
 
 
