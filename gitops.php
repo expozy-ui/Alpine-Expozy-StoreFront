@@ -5,18 +5,19 @@ if(file_exists('.htaccess') === false){
 	@unlink('index.php');
 	$git_clone = "git clone https://github.com/expozy-ui/Alpine-Expozy-StoreFront.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard";
 	$output = shell_exec($git_clone);
-	header('Location: /gitops.php?install=1');
+	
+	if(isset($_GET['saas_key'])){
+		GitOps::change_saas_key($_GET['saas_key']);
+	}
+	
+	
+	header('Location: /');
 	die();
 }
 
 define( "_VALID_PHP", true);
 require_once( "core/autoload.php");
 require_once(BASEPATH.'core/classes/class.gitops.php');
-
-if(get('install') == 1){
-	GitOps::install_saas_key();
-	header('Location: /');
-}
 
 
 /************ Login **********/
