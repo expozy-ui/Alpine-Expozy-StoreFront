@@ -13,7 +13,6 @@ class FrontCore
 	{
 		$this->get_settings();
 		$this->get_id();
-
 	}
 
 
@@ -22,8 +21,6 @@ class FrontCore
 	 * ========================================================== */
 	private function get_settings()
 	{
-
-
 		//$current_url = parse_url(get_url($_SERVER));
 		//$current_url = 'https://' . $current_url['host'];
 
@@ -43,7 +40,6 @@ class FrontCore
 			d($rows);
 		}
 
-
 		if($rows) {
 			foreach ($rows as $key => $row) {
 				$this->{$key} = $row;
@@ -62,7 +58,6 @@ class FrontCore
 	}
 
 
-
 	/** =======================================================
 	 * Function : get_id()
 	 * @return mixed
@@ -79,9 +74,6 @@ class FrontCore
 				return $this->id = $id;
 		}
 	}
-
-
-
 
 
 	/** =======================================================
@@ -107,7 +99,5 @@ class FrontCore
 		//print $error_msg;
 		die($error_msg);
 	}
-
-
 }
 ?>
