@@ -1,4 +1,5 @@
 <?php
+define( "_VALID_PHP", true);
 /**** get repo if folder is empty ****/
 if(file_exists('.htaccess') === false){
 	@unlink('index.html');
@@ -7,6 +8,8 @@ if(file_exists('.htaccess') === false){
 	$output = shell_exec($git_clone);
 	
 	if(isset($_GET['saas_key'])){
+		require_once( "core/autoload.php");
+		require_once(BASEPATH.'core/classes/class.gitops.php');
 		GitOps::change_saas_key($_GET['saas_key']);
 	}
 	
@@ -14,7 +17,7 @@ if(file_exists('.htaccess') === false){
 	die();
 }
 
-define( "_VALID_PHP", true);
+
 require_once( "core/autoload.php");
 require_once(BASEPATH.'core/classes/class.gitops.php');
 
@@ -207,7 +210,7 @@ if(empty($repo_name)){
 <?php 
 
 function get_template(){
-	define( "_VALID_PHP", true);
+	
 	require_once( "core/autoload.php");
 
 	if (is_dir('static') === false){
