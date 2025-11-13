@@ -3,15 +3,14 @@
 if(file_exists('.htaccess') === false){
 	@unlink('index.html');
 	@unlink('index.php');
-	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard";
+	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard && rm -rf static";
 	$output = shell_exec($git_clone);
 	
 	if(isset($_GET['saas_key'])){
 		GitOps::change_saas_key($_GET['saas_key']);
 	}
 	
-	
-	header('Location: /');
+	header('Location: /get_template.php');
 	die();
 }
 
