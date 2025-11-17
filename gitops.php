@@ -234,5 +234,5 @@ function get_template(){
 		}
 	}
 
-	header('Location: /');
+	print "1";
 } ?>
