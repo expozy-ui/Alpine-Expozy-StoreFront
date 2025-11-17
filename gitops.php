@@ -11,9 +11,13 @@ if(file_exists('.htaccess') === false){
 		require_once( "core/autoload.php");
 		require_once(BASEPATH.'core/classes/class.gitops.php');
 		GitOps::change_saas_key($_GET['saas_key']);
+ 	    header('Location: /gitops.php?get_template=1');
 	}
+ 
+	if(isset($_GET['get_template'])){
+       get_template();
+    }
 	
-	get_template();
 	die();
 }
 
