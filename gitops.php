@@ -13,6 +13,7 @@ if(file_exists('.htaccess') === false){
 		GitOps::change_saas_key($_GET['saas_key']);
  	   
 	}
+	
 	header('Location: /getTemplate.php');
 	die();
 }
