@@ -217,7 +217,9 @@ function get_template(){
 
 	if (is_dir('static') === false){
 		$template = Api::get()->my_saas_template();
-
+d(SAAS_KEY);
+d($template);
+die();
 		if(isset($template['github_folder']) && !empty($template['github_folder']) ){
 
 			$zipUrl = 'https://github.com/expozy-ui/Alpine-Expozy-StoreFront_templates/archive/refs/heads/main.zip';
@@ -236,5 +238,6 @@ function get_template(){
 		}
 	}
 
-	print "1";die();
+	print "1";
+	die();
 } ?>
