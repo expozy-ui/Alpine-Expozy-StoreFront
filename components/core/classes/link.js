@@ -16,7 +16,7 @@ document.addEventListener('click', async function (event) {
 			history.pushState(null, null, link.pathname + link.search);
 
 			// Refresh pageUrl parameters
-			dataProxy['pageUrl'] = [];
+			data['pageUrl'] = [];
 
 			await Page.load();
 

@@ -1,11 +1,11 @@
 <!-- REDIRECT TO HOME IF NO PRODUCTS -->
-<div x-init="!data.cart.products[0] ? forceChange('/') : '' " apiData="Payments.get_payment_methods"></div>
+<div x-init="!data.cart.products[0] ? href('/') : '' " apiData="Payments.get_payment_methods"></div>
 
 <div apiData="User.get_my_addresses" class="w-full dark:bg-gray-900" x-data="{ comment: '' }">
 
     <div class="w-full lg:w-4/6 xl:w-3/6 bg-white dark:bg-gray-900 px-2 sm:px-10 lg:hidden">
         <div class="py-[30px] flex justify-center">
-            <a @click="forceChange('/')">
+            <a @click="href('/')">
                 <img :src="data.settings.logo" src="" alt="" width="auto" class="!m-0 h-[100px] w-auto">
             </a>
         </div>
@@ -16,7 +16,7 @@
         <div class="w-full lg:w-4/6 xl:w-3/6 bg-white dark:bg-gray-900 px-2 sm:px-10 pb-[100px]">
 
             <div class="py-[30px] hidden lg:block">
-                <a @click="forceChange('/')">
+                <a @click="href('/')">
                     <img :src="data.settings.logo" alt="" width="auto" class="!m-0 h-[100px] w-auto">
                 </a>
             </div>

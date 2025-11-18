@@ -2,265 +2,170 @@
 	await import(`./cache.js?v=${JS_VERSION}`);
 })();
 
-
 export const lang = LANG;
-let warehouse_id = 1;
 export const currency = localStorage.getItem('currency');
 
 
-
 export class ApiClass {
+
 	constructor() {
 		this.response = null;
-		this.age = null;
+		this.statusCode = null;
 	}
 
-	async get(endpoint, cachable) {
+	// -----------------------------
+	//   Общ метод за заявка
+	// -----------------------------
+	async request(method, endpoint, data = null, cachable = false) {
 
-		let conn;
-		let tmp = endpoint.split('?');
-		let url;
-		if (currency != undefined) {
-			url = COREURL + tmp[0] + '?lang=' + lang + '&currency=' + currency;
-		} else {
-			url = COREURL + tmp[0] + '?lang=' + lang;
-		}
-
-
-		if (tmp[1] !== undefined) {
-			url += '&' + tmp[1];
-		}
-
-
+		let url = this.buildUrl(endpoint);
 
 		this.response = null;
 		this.statusCode = null;
 
-		const data = await cacheGet(url);
+		// ---- GET с cache ----
+		if (method === 'GET') {
+			const cached = await cacheGet(url);
 
-		//debugger;
-		if (cachable === true && typeof data === 'object' && data !== null && Object.keys(data).length > 0) {
-
-
-			this.response = data;
-
-			conn = Promise;
-		} else {
-
-			var sesid = /SESS\w*ID=([^;]+)/i.test(document.cookie) ? RegExp.$1 : false;
-			conn = fetch(url, {
-				method: 'GET', // *GET, POST, PUT, DELETE, etc.
-				mode: 'cors', // no-cors, *cors, same-origin
-				cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-				headers: {
-					'Content-Type': 'application/json',
-					'authentication': 'basic ' + SAAS_KEY,
-					'authorization': localStorage.getItem('token') ? 'bearer ' + localStorage.getItem('token') : 'session ' + sesid,
-				},
-			}).then(response => response.clone().json().then(data => {
-				this.response = data;
-				this.statusCode = response.status;
-				cacheSet(url, this.response);
-
-				if (data.redirect) {
-					location.href = data.redirect;
-				}
-
-
-
-
-			}));
-
-
+			if (cachable && cached && Object.keys(cached).length > 0) {
+				this.response = cached;
+				this.statusCode = 200;
+				return cached;
+			}
 		}
 
-		return conn;
+		// ---- Fetch изпълнение ----
+		try {
+			const options = this.buildOptions(method, data);
+			const response = await fetch(url, options);
+
+			this.statusCode = response.status;
+
+			const json = await response.json().catch(() => ({}));
+			this.response = json;
+
+			// redirect
+			if (json.redirect) {
+				location.href = json.redirect;
+			}
+
+			// cache GET
+			if (method === 'GET' && response.ok) {
+				cacheSet(url, json);
+			}
+
+			return json;
+
+		} catch (err) {
+			console.error("API ERROR:", err);
+			this.response = { error: true, msg: err.message };
+			return this.response;
+		}
 	}
 
-	delete(endpoint, data) {
-		this.response = null;
-		this.statusCode = null;
-		// data['warehouse_id'] = warehouse_id;
-
-		var sesid = /SESS\w*ID=([^;]+)/i.test(document.cookie) ? RegExp.$1 : false;
-
-		const conn = fetch(COREURL + endpoint, {
-			method: 'DELETE', // *GET, POST, PUT, DELETE, etc.
-			mode: 'cors', // no-cors, *cors, same-origin
-			cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-			headers: {
-				'Content-Type': 'application/json',
-				'authentication': 'basic ' + SAAS_KEY,
-				'authorization': localStorage.getItem('token') ? 'bearer ' + localStorage.getItem('token') : 'session ' + sesid,
-			},
-			body: JSON.stringify(data)
-		})
-			.then(response => response.json().then(data => {
-				this.response = data;
-				this.statusCode = response.status;
-				if (data.redirect) {
-					location.href = data.redirect;
-				}
-				if (this.response.errors) {
-					let errors = this.response.errors;
-					for (var e in errors) {
-						console.log("Error: " + errors[e] + " : " + e);
-					}
-				}
-				if (this.response.msg) {
-					console.log("Error: " + this.response.msg);
-				}
-			}));
-
-
-
-		return conn;
+	// -----------------------------
+	//   Методи за удобство
+	// -----------------------------
+	get(endpoint, cachable = false) {
+		return this.request('GET', endpoint, null, cachable);
 	}
 
 	post(endpoint, data) {
-		this.response = null;
-		this.statusCode = null;
+		return this.request('POST', endpoint, data);
+	}
 
+	put(endpoint, data) {
+		return this.request('PUT', endpoint, data);
+	}
+
+	delete(endpoint, data) {
+		return this.request('DELETE', endpoint, data);
+	}
+
+
+	// -----------------------------
+	//   Помощни методи
+	// -----------------------------
+
+	buildUrl(endpoint) {
 		let tmp = endpoint.split('?');
 		let url = COREURL + tmp[0] + '?lang=' + lang;
-		// let url = COREURL +tmp[0]+'?lang='+lang+ '&warehouse_id='+warehouse_id;
+
+		if (currency != undefined) {
+			url += '&currency=' + currency;
+		}
+
 		if (tmp[1] !== undefined) {
 			url += '&' + tmp[1];
 		}
-		// data['warehouse_id'] = warehouse_id;
-		var sesid = /SESS\w*ID=([^;]+)/i.test(document.cookie) ? RegExp.$1 : false;
 
-		var formData = new FormData;
-		if (data instanceof FormData) {
-			formData = data;
-		} else if (typeof data === 'object') {
-			for (var key in data) {
-
-
-				if (Array.isArray(data[key])) {
-					if (data[key][0].constructor.name === 'File') {
-						for (const file of data[key]) {
-
-							if (key.endsWith('[]')) {
-								formData.append(key, file);
-							} else {
-								formData.append(key + '[]', file);
-							}
-						}
-					} else {
-						data[key].forEach(item => formData.append(key, item));
-					}
-				} else {
-
-					formData.append(key, data[key]);
-				}
-
-			}
-		} else {
-			formData = JSON.stringify(data);
-			headers['Content-Type'] = 'application/json';
-		}
-
-		const conn = fetch(url, {
-			method: 'POST', // *GET, POST, PUT, DELETE, etc.
-			mode: 'cors', // no-cors, *cors, same-origin
-			cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-			headers: {
-				'authentication': 'basic ' + SAAS_KEY,
-				'authorization': localStorage.getItem('token') ? 'bearer ' + localStorage.getItem('token') : 'session ' + sesid,
-			},
-			body: formData
-		})
-			.then(response => response.json().then(data => {
-				this.response = data;
-				this.statusCode = response.status;
-				if (data.redirect) {
-					location.href = data.redirect;
-				}
-				if (this.response.errors) {
-					let errors = this.response.errors;
-					for (var e in errors) {
-						console.log("Error: " + errors[e] + " : " + e);
-					}
-				}
-				if (this.response.msg) {
-					console.log("Error: " + this.response.msg);
-				}
-			}));
-
-
-
-		return conn;
+		return url;
 	}
 
+	buildOptions(method, data) {
 
-	async put(endpoint, data) {
-		this.response = null;
-		this.statusCode = null;
+		let headers = {
+			'authentication': 'basic ' + SAAS_KEY,
+			'authorization': this.getAuth()
+		};
 
-		var sesid = /SESS\w*ID=([^;]+)/i.test(document.cookie) ? RegExp.$1 : false;
-		data['warehouse_id'] = warehouse_id;
+		let options = {
+			method: method,
+			mode: 'cors',
+			cache: 'no-cache',
+			headers: headers
+		};
 
-		var formData = new FormData;
-		if (data instanceof FormData) {
-			formData = data;
-		} else if (typeof data === 'object') {
-			for (var key in data) {
-
-
-				if (Array.isArray(data[key])) {
-					if (data[key][0].constructor.name === 'File') {
-						for (const file of data[key]) {
-							formData.append(key + '[]', file);
-						}
-					}
-				} else {
-
-					formData.append(key, data[key]);
-				}
-
-			}
-		} else {
-			formData = JSON.stringify(data);
-			headers['Content-Type'] = 'application/json';
+		// --- GET / DELETE нямат FormData ---
+		if (method === 'GET') return options;
+		if (method === 'DELETE') {
+			options.headers['Content-Type'] = 'application/json';
+			options.body = JSON.stringify(data);
+			return options;
 		}
 
-		const conn = fetch(COREURL + endpoint, {
-			method: 'PUT', // *GET, POST, PUT, DELETE, etc.
-			mode: 'cors', // no-cors, *cors, same-origin
-			cache: 'no-cache', // *default, no-cache, reload, force-cache, only-if-cached
-			headers: {
-				'authentication': 'basic ' + SAAS_KEY,
-				'authorization': localStorage.getItem('token') ? 'bearer ' + localStorage.getItem('token') : 'session ' + sesid,
-			},
-			body: JSON.stringify(data)
-		})
-			.then(response => response.json().then(data => {
-				this.response = data;
-				this.statusCode = response.status;
-				if (data.redirect) {
-					location.href = data.redirect;
-				}
-				if (this.response.errors) {
-					let errors = this.response.errors;
-					for (var e in errors) {
-						console.log("Error: " + errors[e] + " : " + e);
+		// --- POST / PUT ---
+		if (data instanceof FormData) {
+			options.body = data;
+		} else if (typeof data === 'object') {
+			const formData = new FormData();
+
+			for (let key in data) {
+
+				// multiple files
+				if (Array.isArray(data[key]) && data[key][0] instanceof File) {
+
+					for (const file of data[key]) {
+						if (key.endsWith('[]')) formData.append(key, file);
+						else formData.append(key + '[]', file);
 					}
+
+				} else if (Array.isArray(data[key])) {
+
+					// multiple select
+					data[key].forEach(v => formData.append(key, v));
+
+				} else {
+
+					// normal field
+					formData.append(key, data[key]);
 				}
-				if (this.response.msg) {
-					console.log("Error: " + this.response.msg);
-				}
-			}));
+			}
 
+			options.body = formData;
+		} else {
+			// raw JSON
+			options.headers['Content-Type'] = 'application/json';
+			options.body = JSON.stringify(data);
+		}
 
-
-		return conn;
+		return options;
 	}
 
-};
-
-// let Api = new ApiClass();
-
-window.api = new ApiClass();
-window.ApiClass = ApiClass;
-// window.api = Api; 
+	getAuth() {
+		let sessionId = /SESS\w*ID=([^;]+)/i.test(document.cookie) ? RegExp.$1 : false;
+		return localStorage.getItem('token')
+			? 'bearer ' + localStorage.getItem('token')
+			: 'session ' + sessionId;
+	}
+}

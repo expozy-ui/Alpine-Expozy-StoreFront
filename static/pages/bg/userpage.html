@@ -254,7 +254,7 @@
                                                             <img :src="product.images[0] ? product.images[0].url : '/assets/designs/img/Fotter-Icon.svg'" class=" object-contain max-h-[150px] md:max-h-unset">
 
                                                             <div class="md:pl-10 pt-1 grow">
-                                                                <h1 @click="forceChange(product.url)" class="text-[15px] text-neutral-800 font-bold hover:text-orange-400 dark:text-gray-200" x-text="product.title">ЛУК СУХ КГ</h1>
+                                                                <h1 @click="href(product.url)" class="text-[15px] text-neutral-800 font-bold hover:text-orange-400 dark:text-gray-200" x-text="product.title">ЛУК СУХ КГ</h1>
                                                                 <!-- START TAGS ICONS  -->
                                                                 <div class="flex pt-3 md:h-5 p-2 ">
                                                                     <template x-for="tag in product.tags">

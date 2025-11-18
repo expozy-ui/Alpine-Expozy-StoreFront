@@ -80,12 +80,12 @@
 
                             </div>
                             <div class="  lg:h-[300px] bg-white">
-                                <img :src="product.images[0] ? product.images[0].url : data.settings.logo " alt="" @click="forceChange(product.url)" class="!m-0 w-full  lg:h-full lg:object-scale-down cursor-pointer">
+                                <img :src="product.images[0] ? product.images[0].url : data.settings.logo " alt="" @click="href(product.url)" class="!m-0 w-full  lg:h-full lg:object-scale-down cursor-pointer">
                                 <!-- <div class="bg-neutral-100 animate-pulse shadow animate-infinite animate-duration-[3000ms]  w-full h-full"></div> -->
                             </div>
 
                             <div class="px-3 ">
-                                <p x-text="product.title" @click="forceChange(product.url)" class="pt-[15px]  cursor-pointer hover:text-orange-400" :title="product.title">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
+                                <p x-text="product.title" @click="href(product.url)" class="pt-[15px]  cursor-pointer hover:text-orange-400" :title="product.title">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
                                 <template x-if="product.variations[0].promoprice != 0">
                                     <div class="flex items-center justify-center py-1">
                                         <p class="text-lg font-bold text-red-400" x-text="product.variations[0].selling_price">750</p>

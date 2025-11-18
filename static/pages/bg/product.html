@@ -94,7 +94,7 @@
 
                             <div class=" flex gap-3 flex-wrap">
                                 <template x-for="tag in data.product.tags.split(',')">
-                                    <p class="px-5 py-1 border-stone-800 shadow bg-neutral-50 hover:text-white hover:bg-stone-900 cursor-pointer " @click="forceChange('/bg/products?tags[]='+tag)" x-text="tag"></p>
+                                    <p class="px-5 py-1 border-stone-800 shadow bg-neutral-50 hover:text-white hover:bg-stone-900 cursor-pointer " @click="href('/bg/products?tags[]='+tag)" x-text="tag"></p>
                                 </template>
                             </div>
                         </template>
@@ -285,12 +285,12 @@
                                         </div>
 
                                         <div class="lg:p-10 hover:p-0 h-[300px]  bg-white">
-                                            <img :src="product.images[0] ? product.images[0].url : data.settings.logo" @click="forceChange(product.url)" alt="" class="!m-0 w-full h-full object-scale-down cursor-pointer">
+                                            <img :src="product.images[0] ? product.images[0].url : data.settings.logo" @click="href(product.url)" alt="" class="!m-0 w-full h-full object-scale-down cursor-pointer">
                                             <!-- <div class="bg-neutral-100 animate-pulse shadow animate-infinite animate-duration-[3000ms]  w-full h-full"></div> -->
                                         </div>
 
                                         <div class="px-3 ">
-                                            <p x-text="product.title" @click="forceChange(product.url)" class="pt-[15px] line-clamp-2 cursor-pointer hover:text-orange-400 dark:text-gray-200">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
+                                            <p x-text="product.title" @click="href(product.url)" class="pt-[15px] line-clamp-2 cursor-pointer hover:text-orange-400 dark:text-gray-200">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
                                             <template x-if="product.variations[0].promoprice != 0">
                                                 <div class="flex flex-wrap items-center justify-center py-1">
                                                     <p class="text-lg font-bold text-red-400" x-text="product.variations[0].selling_price.toFixed(2)">750</p>
@@ -380,12 +380,12 @@
                                         </div>
 
                                         <div class="lg:p-10 hover:p-0 h-[300px]  bg-white">
-                                            <img :src="product.images[0] ? product.images[0].url : data.settings.logo" @click="forceChange(product.url)" alt="" class="!m-0 w-full h-full object-scale-down cursor-pointer">
+                                            <img :src="product.images[0] ? product.images[0].url : data.settings.logo" @click="href(product.url)" alt="" class="!m-0 w-full h-full object-scale-down cursor-pointer">
                                             <!-- <div class="bg-neutral-100 animate-pulse shadow animate-infinite animate-duration-[3000ms]  w-full h-full"></div> -->
                                         </div>
 
                                         <div class="px-3 ">
-                                            <p x-text="product.title" @click="forceChange(product.url)" class="pt-[15px] line-clamp-2 cursor-pointer hover:text-orange-400 dark:text-gray-200">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
+                                            <p x-text="product.title" @click="href(product.url)" class="pt-[15px] line-clamp-2 cursor-pointer hover:text-orange-400 dark:text-gray-200">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
                                             <template x-if="product.variations[0].promoprice != 0">
                                                 <div class="flex flex-wrap items-center justify-center py-1">
                                                     <p class="text-lg font-bold text-red-400" x-text="product.variations[0].selling_price.toFixed(2)">750</p>

@@ -89,14 +89,14 @@
                                     </template>
 
                                 </div>
-                                <a @click="forceChange(product.url)">
+                                <a @click="href(product.url)">
                                     <img :src="product.images[0] ? product.images[0].url_10x10 : data.settings.logo" alt="" class="!m-0 w-full  lg:h-full lg:object-scale-down cursor-pointer">
                                 </a>
                             </div>
 
                             <div class="px-3 ">
-                                <a @click="forceChange(product.url)">
-                                    <p x-text="product.title" @click="forceChange(product.url)" class="pt-[15px]  cursor-pointer hover:text-orange-400">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
+                                <a @click="href(product.url)">
+                                    <p x-text="product.title" @click="href(product.url)" class="pt-[15px]  cursor-pointer hover:text-orange-400">Deba Fuji Ryutoku, Деба нож, 15 см, FC-572</p>
 
                                     <template x-if="product.variations[0].promoprice != 0">
                                         <div class="flex items-center justify-center py-1">

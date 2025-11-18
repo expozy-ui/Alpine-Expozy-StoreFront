@@ -132,29 +132,29 @@ export class PageClass {
 		parameters.forEach(function (value, key) {
 
 			if (key.endsWith('[]')) {
-				if (dataProxy.pageUrl[key] == undefined) dataProxy.pageUrl[key] = [];
-				dataProxy.pageUrl[key].push(value);
+				if (data.pageUrl[key] == undefined) data.pageUrl[key] = [];
+				data.pageUrl[key].push(value);
 			} else {
-				dataProxy.pageUrl[key] = value;
+				data.pageUrl[key] = value;
 			}
 		});
 
-		if (this.type !== 'post' && "post" in dataProxy) {
-			dataProxy['post'] = { description: '' };
+		if (this.type !== 'post' && "post" in data) {
+			data['post'] = { description: '' };
 		}
 
-		if (this.type !== 'product' && "product" in dataProxy) {
-			delete dataProxy['product'];
+		if (this.type !== 'product' && "product" in data) {
+			delete data['product'];
 		}
 
 
 
-		if (window.location.pathname.includes("products") && "products" in dataProxy) {
-			delete dataProxy['products']['result'];
-			delete dataProxy['products']['pagination'];
+		if (window.location.pathname.includes("products") && "products" in data) {
+			delete data['products']['result'];
+			delete data['products']['pagination'];
 		}
 
-		dataProxy['corePage'] = this;
+		data['corePage'] = this;
 
 
 
@@ -171,6 +171,8 @@ export class PageClass {
 
 		document.getElementById('pageCss').innerHTML = this.css;
 
+		this.html += '<div x-init="callBackMain()"></div>';
+
 		document.getElementById('main').innerHTML = this.html;
 
 		// INIT SCRIPT FROM NEW HTML
@@ -180,13 +182,13 @@ export class PageClass {
 
 	gen_editor_url(token) {
 
-		let data = {
+		let dataJson = {
 			'token': token,
 			'type': this.type,
 			'id': this.id
 		};
 
-		return SITEURL + '/editor/cb/editor.php?lang=' + LANG + '&i=' + btoa(JSON.stringify(data));
+		return SITEURL + '/editor/cb/editor.php?lang=' + LANG + '&i=' + btoa(JSON.stringify(dataJson));
 
 
 	}
@@ -222,8 +224,8 @@ export class PageClass {
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({ saveCss: 1, css: lastElementString, slug: this.slug })
-		}).then(response => response.json().then(data => {
-			if (data.status == 1) {
+		}).then(response => response.json().then(dataRes => {
+			if (dataRes.status == 1) {
 				window.location.reload();
 			} else {
 				Helpers.show_toast_msg('Save failed', 'error');

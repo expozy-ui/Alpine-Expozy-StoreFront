@@ -86,7 +86,6 @@
 		<style id="headCss"><?= $page->headCss ?></style>
 		<style id="pageCss"><?= $page->css ?></style>
 		
-		
 			
 		<?= $core->web['scripts']['header'] ?? '' ?>
 	</head>
@@ -95,7 +94,7 @@
 
 		<!-- INIT BODY FUNCTION. CONNECTED WITH ALPINE X_DATA  -->
 
-		<body :class="data.darkMode == true ? 'dark' : '' " x-data="dataset" @update.window="updatedata($event.detail)" id="body" x-init="$watch('data', value => console.log(value))" >
+		<body :class="data.darkMode == true ? 'dark' : '' " x-data="data" id="body" >
 
 
 			<!-- NOTIFICATION CONTAINER. ALPINE ADD MESSAGES FROM CORE  -->
@@ -110,7 +109,7 @@
 					x-transition:leave-start="transform translate-x-0 opacity-100"
 					x-transition:leave-end="transform translate-x-full opacity-0"§
 					@click="remove(notice.id)"
-					class="notice  "  :class="notice.type == 'error' ? 'bg-red-600 hover:bg-red-500' : 'bg-sky-900 hover:bg-sky-800'"
+					class="notice"  :class="notice.type == 'error' ? 'bg-red-600 hover:bg-red-500' : 'bg-sky-900 hover:bg-sky-800'"
 					x-text="notice.text">
 					</div>
 				</template>
@@ -138,6 +137,10 @@
 		},
 		  }
 	</script>
+
+	<script type="module" src="\components\core\dev_save.js?v=<?php echo JS_VERSION ?>" ></script>
+
+
 <?php } ?>
 
 

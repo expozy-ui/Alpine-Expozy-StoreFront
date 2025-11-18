@@ -2,11 +2,11 @@
 
 export let User = {
 
-	login: async function (data, options) {
+	login: async function (dataCollect) {
 
 		let response = [];
 		let api = new ApiClass();
-		await api.post('login', data);
+		await api.post('login', dataCollect.combinedData);
 
 
 		if (api.response.status === 1) {

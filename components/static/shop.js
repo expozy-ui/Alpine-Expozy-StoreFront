@@ -16,7 +16,7 @@ export let Shop = {
 		return response;
 
 	},
-	post_carts: async function (data, options) {
+	post_carts: async function (dataCollect) {
 
 		let response = [];
 
@@ -139,58 +139,40 @@ export let Shop = {
 
 
 
-	get_products: async function (data, options) {
+	get_products: async function (dataCollect) {
 
-		let response = [];
+		debugger;
+		// Унифицирана проверка за промяна на URL
+		const shouldChangeUrl =
+			dataCollect?.attributesOptions?.chnageurl === true ||
+			(dataCollect?.keyName && data?.[dataCollect.keyName]?.chnageurl === true);
 
-		response.keyName = 'products';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		if ("chnageurl" in options || (dataProxy[response.keyName] != undefined && "chnageurl" in dataProxy[response.keyName])) {
-			if (!("initial" in options)) {
-				delete dataProxy.pageUrl.page;
-
-			}
-			data = Object.assign({}, dataProxy.pageUrl, data);
-			dataProxy.pageUrl = data;
+		// Ако има подаден changeUrl → добавяме всички данни към заявката
+		if (shouldChangeUrl) {
+			dataCollect.combinedData = { ...data.pageUrl, ...dataCollect.combinedData };
+			data.pageUrl = dataCollect.combinedData;
 		}
 
+		// Генериране на endpoint
+		let endpoint = Helpers.combineRequest("products", dataCollect.combinedData);
 
-		let endpoint = Helpers.combineRequest('products', data);
-		let api = new ApiClass();
+		// Изпълняваме заявката
+		const api = new ApiClass();
 		await api.get(endpoint, false);
 
-		if (!api.response) return response['internalError'] = 'No response from api for Shop.get_products';
+		let response = api.response;
 
-		response.obj = api.response;
+		// Ако URL трябва да се промени → променяме го само веднъж тук
+		if (shouldChangeUrl) {
+			response.chnageurl = true;
 
-		if ("pagination" in response.obj) {
-			response.obj.pagination['pagesArray'] = Helpers.pagination(response.obj.pagination['current_page'], response.obj.pagination['total_pages']);
+			const cleanEndpoint = endpoint.replace("products", "");
+			history.replaceState(null, null, window.location.pathname + cleanEndpoint);
 		}
-
-
-		if (options != undefined) {
-
-			if ("chnageurl" in options || (dataProxy[response.keyName] != undefined && "chnageurl" in dataProxy[response.keyName])) {
-				response['obj'].chnageurl = true;
-
-				endpoint = endpoint.replace("products", "");
-				// change Url With data parameters
-				history.replaceState(null, null, window.location.pathname + endpoint);
-			}
-
-			if ('scroll' in options) {
-				document.getElementById('main').scrollIntoView(true);
-			}
-
-			if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-		}
-
-
 
 		return response;
-
 	},
+
 
 	post_orders: async function (data, options) {
 
