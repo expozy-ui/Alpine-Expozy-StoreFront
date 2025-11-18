@@ -11,10 +11,11 @@ if(file_exists('.htaccess') === false){
 		require_once( "core/autoload.php");
 		require_once(BASEPATH.'core/classes/class.gitops.php');
 		GitOps::change_saas_key($_GET['saas_key']);
- 	   
+		
+		get_template($_GET['saas_key']);
 	}
 	
-	header('Location: /getTemplate.php');
+	
 	die();
 }
 
@@ -208,3 +209,33 @@ if(empty($repo_name)){
 		</div>
 	</body>
 </html>
+
+<?php 
+function get_template(string $saas_key){
+	
+	require_once( "core/autoload.php");
+
+	if (is_dir('static') === false){
+		$template = Api::data(['saas_key' => $saas_key])->get()->my_saas_template();
+
+		if(isset($template['github_folder']) && !empty($template['github_folder']) ){
+
+			$zipUrl = 'https://github.com/expozy-ui/Alpine-Expozy-StoreFront_templates/archive/refs/heads/main.zip';
+
+			shell_exec("wget -q -O repo.zip $zipUrl");
+
+			shell_exec("unzip -q repo.zip -d tmp_repo");
+
+			$repoFolder = 'tmp_repo/Alpine-Expozy-StoreFront_templates-main';
+
+			$folder = escapeshellarg($template['github_folder']);
+			shell_exec("cp -r $repoFolder/$folder/static ./");
+
+			shell_exec("rm -rf tmp_repo repo.zip");
+
+		}
+	}
+
+	print "1";
+	die();
+}
