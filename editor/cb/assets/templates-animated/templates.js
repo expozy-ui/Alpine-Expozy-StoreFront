@@ -11,7 +11,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins">
+<div class="is-section is-box is-section-100 type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-700 leading-14 size-18">
         <div class="row clearfix">
@@ -53,7 +53,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-section-100 type-poppins m-skrollrr-off">
+<div class="is-section is-section-100 type-poppins m-skrollrr-off">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -101,7 +101,7 @@
 		    'contentCss': 'type-montserrat-roboto.css',
 		    'contentClass': 'type-montserrat-roboto',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-montserrat-roboto box-autofit min-height-70">
+<div class="is-section is-box is-section-100 type-montserrat-roboto box-autofit min-height-70">
     <div class="is-overlay">
         <div class="is-overlay-bg is-scale-animated" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-108.jpg&quot;); background-position: 50% 95%;"></div>
     </div>
@@ -162,7 +162,7 @@
 		    'contentCss': 'type-dosis-oldstandardtt.css',
 		    'contentClass': 'type-dosis-oldstandardtt',
 		    'html': `
-<div class="expozy is-section is-section-100 type-dosis-oldstandardtt">
+<div class="is-section is-section-100 type-dosis-oldstandardtt">
     <div class="is-box is-dark-text is-box-4 is-content-top edge-y-2 box-autofit min-height-70">
         <div class="is-overlay">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-032.jpg&quot;); background-position: 50% 60%;" data-bottom-top="transform:translateY(-70px) scale(1);" data-top-bottom="transform:translateY(50px) scale(1.1)"></div>
@@ -290,7 +290,7 @@
 		    'contentCss': 'type-oswald-biryani.css',
 		    'contentClass': 'type-oswald-biryani',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-oswald-biryani is-light-text box-autofit min-height-70">
+<div class="is-section is-box is-section-100 type-oswald-biryani is-light-text box-autofit min-height-70">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-050.jpg&quot;); background-position: 50% 75%;">
             <div class="is-overlay-color opacity-10" style="background-color: rgb(0, 0, 0);"></div>
@@ -314,7 +314,7 @@
 		    'contentCss': 'type-raleway-lato.css',
 		    'contentClass': 'type-raleway-lato',
 		    'html': `
-<div class="expozy is-section is-box is-light-text type-raleway-lato is-section-100 min-height-60">
+<div class="is-section is-box is-light-text type-raleway-lato is-section-100 min-height-60">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-048.jpg&quot;); background-position: 50% 0%;" data-in="transform: scale(1);" data-cen="transform: translateY(0px);" data-out="transform: translateY(100%) scale(1.4);" data-smooth-scrolling="off">
             <div class="is-overlay-color opacity-10" style="background-color: rgb(0, 0, 0);"></div>
@@ -330,7 +330,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section section-pin is-section-100 is-box is-align-left type-poppins m-skrollrr-off m-pin-off">
+<div class="is-section section-pin is-section-100 is-box is-align-left type-poppins m-skrollrr-off m-pin-off">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1600">
         <div class="row clearfix">
@@ -378,7 +378,7 @@
 		    'contentCss': 'type-spacemono.css',
 		    'contentClass': 'type-spacemono',
 		    'html': `
-<div class="expozy is-section section-pin is-section-100 type-spacemono">
+<div class="is-section section-pin is-section-100 type-spacemono">
     <div class="is-box is-box-6">
         <div class="is-overlay">
         </div>
@@ -446,7 +446,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins section-pin is-align-center min-height-60 is-light-text">
+<div class="is-section is-box is-section-100 type-poppins section-pin is-align-center min-height-60 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-111.jpg&quot;); background-position: 8% 60%;">
             <div class="is-overlay-color opacity-10"></div>
@@ -469,7 +469,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins section-pin is-light-text min-height-60">
+<div class="is-section is-box is-section-100 type-poppins section-pin is-light-text min-height-60">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-065.jpg&quot;); background-position: 50% 60%;">
             <div class="is-overlay-color opacity-6"></div>
@@ -493,7 +493,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins section-wide-250 section-pin">
+<div class="is-section is-box is-section-100 type-poppins section-wide-250 section-pin">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-none is-content-left edge-x-3" data-cen="transform: translateX(0px);" data-out="transform: translateX(-120%);" m-data-out="transform: translateX(-440%);">
         <div class="row clearfix">
@@ -535,7 +535,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-section-100 is-box type-poppins section-pin pin-overlap m-pin-off">
+<div class="is-section is-section-100 is-box type-poppins section-pin pin-overlap m-pin-off">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1000">
 
@@ -584,7 +584,7 @@
 		    'contentCss': 'type-montserrat-roboto.css',
 		    'contentClass': 'type-montserrat-roboto',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 section-pin pin-space-lg type-montserrat-roboto">
+<div class="is-section is-box is-section-100 section-pin pin-space-lg type-montserrat-roboto">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1100">
         <div class="row clearfix">
@@ -621,7 +621,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-section-100 is-box type-poppins section-pin pin-overlap pin-space-lg m-pin-off">
+<div class="is-section is-section-100 is-box type-poppins section-pin pin-overlap pin-space-lg m-pin-off">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-none content-py-30">
         <div class="row clearfix relative">
@@ -679,7 +679,7 @@
 		    'contentCss': 'type-alegreya-lato.css',
 		    'contentClass': 'type-alegreya-lato',
 		    'html': `
-<div class="expozy is-section box-space type-alegreya-lato section-pin is-section-100">
+<div class="is-section box-space type-alegreya-lato section-pin is-section-100">
     <div class="is-box-4 is-box is-dark-text is-content-bottom edge-y-2" data-t-300="transform: translateY(100%);" data-t-700="transform: translateY(0px);" data-t="transform: scale(0.8);" data-t-900="transform: scale(0.8);" data-t-1200="transform: scale(1);">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-038.jpg&quot;); background-position: 82% 60%; transition: all 0.3s ease-out 0s;"></div>
@@ -741,7 +741,7 @@
 		    'contentCss': 'type-oswald-opensans.css',
 		    'contentClass': 'type-oswald-opensans',
 		    'html': `
-<div class="expozy is-section is-section-100 is-box type-oswald-opensans section-pin m-pin-off pin-space-lg">
+<div class="is-section is-section-100 is-box type-oswald-opensans section-pin m-pin-off pin-space-lg">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-12 is-content-none size-16 content-py-30">
         <div class="row">
@@ -786,7 +786,7 @@
 		    'contentCss': 'type-oswald-biryani.css',
 		    'contentClass': 'type-oswald-biryani',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-oswald-biryani is-light-text is-content-top edge-y-1 section-pin pin-overlap min-height-60">
+<div class="is-section is-box is-section-100 type-oswald-biryani is-light-text is-content-top edge-y-1 section-pin pin-overlap min-height-60">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-086.jpg&quot;); background-position: 50% 60%;">
             <div class="is-overlay-color opacity-10" style="background-color: rgb(0, 0, 0);"></div>
@@ -847,7 +847,7 @@
 		    'contentCss': 'type-opensans.css',
 		    'contentClass': 'type-opensans',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-opensans">
+<div class="is-section is-box is-section-100 type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1600">
         <div class="row relative sm-items-1">
@@ -879,7 +879,7 @@
 		    'contentCss': 'type-opensans.css',
 		    'contentClass': 'type-opensans',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1600 leading-12">
         <div class="row">
@@ -902,7 +902,7 @@
 		    'contentCss': 'type-poppins-lekton.css',
 		    'contentClass': 'type-poppins-lekton',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-none is-content-1500">
         <div class="row">
@@ -944,7 +944,7 @@
 		    'contentCss': 'type-poppins-lekton.css',
 		    'contentClass': 'type-poppins-lekton',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-none is-content-980">
         <div class="row">
@@ -991,7 +991,7 @@
 		    'contentCss': 'type-heebo-ibmplexmono-2.css',
 		    'contentClass': 'type-heebo-ibmplexmono-2',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-1040 size-16">
         <div class="row">
@@ -1018,7 +1018,7 @@
 		    'contentCss': 'type-quicksand-kalam.css',
 		    'contentClass': 'type-quicksand-kalam',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit min-height-50">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit min-height-50">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-11 size-16 is-content-1400">
 
@@ -1042,7 +1042,7 @@
 		    'contentCss': 'type-quicksand-kalam.css',
 		    'contentClass': 'type-quicksand-kalam',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-1380">
         <div class="row">
@@ -1091,7 +1091,7 @@
 		    'contentCss': 'type-heebo-ibmplexmono.css',
 		    'contentClass': 'type-heebo-ibmplexmono',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1300">
         <div class="row">
@@ -1137,7 +1137,7 @@
 		    'contentCss': 'type-montserrat-roboto.css',
 		    'contentClass': 'type-montserrat-roboto',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-montserrat-roboto box-autofit">
+<div class="is-section is-box is-section-100 type-montserrat-roboto box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1680">
         <div class="row">
@@ -1163,7 +1163,7 @@
 		    'contentCss': 'type-lato.css',
 		    'contentClass': 'type-lato',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1800">
         <div class="row">
@@ -1192,7 +1192,7 @@
 		    'contentCss': 'type-lato.css',
 		    'contentClass': 'type-lato',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1500">
         <div class="row">
@@ -1221,7 +1221,7 @@
 		    'contentCss': 'type-poppins-lekton.css',
 		    'contentClass': 'type-poppins-lekton',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-100 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1600">
         <div class="row sm-autofit">
@@ -1255,7 +1255,7 @@
 		    'contentCss': 'type-poppins-lekton.css',
 		    'contentClass': 'type-poppins-lekton',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-100 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1400 leading-12">
         <div class="row sm-autofit">
@@ -1304,7 +1304,7 @@
 		    'contentCss': 'type-heebo-ibmplexmono-2.css',
 		    'contentClass': 'type-heebo-ibmplexmono-2',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1640">
         <div class="row">
@@ -1350,7 +1350,7 @@
 		    'contentCss': 'type-inconsolata.css',
 		    'contentClass': 'type-inconsolata',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-inconsolata">
+<div class="is-section is-box is-section-100 box-autofit type-inconsolata">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1600 leading-12">
         <div class="row">
@@ -1394,7 +1394,7 @@
 		    'contentCss': 'type-inconsolata.css',
 		    'contentClass': 'type-inconsolata',
 		    'html': `
-<div class="expozy is-section is-section-100 type-inconsolata">
+<div class="is-section is-section-100 type-inconsolata">
     <div class="is-box is-box-6 box-autofit is-content-bottom edge-y-1">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -1471,7 +1471,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-1400">
         <div class="row">
@@ -1517,7 +1517,7 @@
 		    'contentCss': 'type-ibmplexmono.css',
 		    'contentClass': 'type-ibmplexmono',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-ibmplexmono box-autofit">
+<div class="is-section is-box is-section-100 type-ibmplexmono box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1700 h-full flex flex-col justify-between content-pt-60 content-pb-60">
         <div class="row">
@@ -1546,7 +1546,7 @@
 		    'contentCss': 'type-opensans.css',
 		    'contentClass': 'type-opensans',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1500">
         <div class="row">
@@ -1585,7 +1585,7 @@
 		    'contentCss': 'type-opensans.css',
 		    'contentClass': 'type-opensans',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1600">
         <div class="row">
@@ -1619,7 +1619,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-box type-poppins is-dark-text is-section-100 box-autofit">
+<div class="is-section is-box type-poppins is-dark-text is-section-100 box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1800 content-pt-50">
         <div class="row clearfix">
@@ -1657,7 +1657,7 @@
 		    'contentCss': 'type-poppins-lekton.css',
 		    'contentClass': 'type-poppins-lekton',
 		    'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1800 leading-none">
         <div class="row">

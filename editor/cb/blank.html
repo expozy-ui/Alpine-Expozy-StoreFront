@@ -14,8 +14,16 @@
 
     <script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
     <script>
+        const allSizes = Array.from({ length: 401 }, (_, i) => `size-${i}`);
+
         tailwind.config = {
             darkMode: 'class',
+            content: [
+                './src/**/*.{html,js,jsx,ts,tsx}',
+            ],
+
+            // Блокваме размерите заради едитора. 
+            blocklist: allSizes,
 
         }
     </script>
@@ -31,8 +39,8 @@
     <link href="box/box-flex.css" rel="stylesheet">
 
     <style media="screen">
-        .is-section.lock {
-            background-image: url(/editor/cb/assets/images/lock2.png) !important;
+        .lock {
+            background-image: url(/editor/cb/assets/images/lock.png) !important;
             background-size: contain !important;
             background-repeat: no-repeat !important;
             background-position: center !important;
@@ -45,7 +53,7 @@
             aspect-ratio: 5 / 1;
         }
 
-        .is-section.lock>div {
+        .lock>div {
             opacity: 0 !important;
         }
 

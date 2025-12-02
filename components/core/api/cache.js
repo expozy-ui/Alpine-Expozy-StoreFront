@@ -3,6 +3,7 @@ async function cacheSet(url, dataJson, ttl = 600) { //600 sec
     const headers = new Headers({ 'Cache-Control': 'public, max-age=' + ttl });
     const response = new Response(JSON.stringify(dataJson), { headers: headers });
     await cache.put(url, response);
+
 }
 
 async function cacheGet(url) {

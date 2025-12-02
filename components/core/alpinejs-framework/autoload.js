@@ -101,7 +101,8 @@ window.data = {};
             }
 
             // Форматираме с 2 десетични + валута
-            el.textContent = num.toFixed(2) + " " + (CURRENCY || "");
+            el.textContent = num.toFixed(2) + " " + (CURRENCY.symbol || "");
+
         });
     });
 
@@ -128,9 +129,7 @@ window.callBackMain = async function () {
 
 window.alpineListeners = async function (method, element) {
     try { element.preventDefault?.(); } catch (e) { }
-
     const dataCollect = new DataCollect(element);
-
     if (!method) {
         console.error('Методът не е зададен');
         return;
@@ -327,3 +326,7 @@ window.addEventListener('resize', function (event) {
 window.addEventListener('scroll', function (event) {
     data['scrollPosition'] = window.pageYOffset;
 }, true);
+
+
+
+

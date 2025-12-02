@@ -4,7 +4,6 @@ const devSaveButton = document.getElementById("dev_save");
 if (devSaveButton !== null) {
 
     devSaveButton.onclick = async function () {
-        debugger;
         Page.get();
         await alpineTemplatesGen();
         await classGen();
@@ -57,7 +56,6 @@ async function classGen() {
         document.getElementById('templatesDiv').setAttribute('class', replacedValue);
 
     });
-
     await new Promise(resolve => setTimeout(resolve, 1000));
 
 }

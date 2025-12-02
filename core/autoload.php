@@ -63,7 +63,6 @@ require_once(BASEPATH.'core/classes/class.editor.php');
 
 
 
-
 define('SITEURL',			$core->site_url);
 
 
@@ -72,6 +71,8 @@ define('CBURL',				SITEURL.'/editor/cb/');
 
 require_once(BASEPATH.'core/classes/class.inline.php');
 $inline = new Inline();
+
+$currency = $row = Api::cache(true)->data(['default' => 1])->get()->currencies(); 
 
 
 

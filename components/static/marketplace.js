@@ -1,24 +1,11 @@
-
-
 export let Marketplace = {
 
-	post_marketplace_orders: async function (data, options) {
-		let response = [];
-
+	post_marketplace_orders: async function (dataCollect) {
 		let api = new ApiClass();
-
-		await api.post('marketplace_orders', data);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Marketplace.post_marketplace_orders';
-		response = api.response;
-
-		response['keyName'] = 'marketplace_orders';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		return response;
+		await api.post('marketplace_orders', dataCollect.combinedData);
+		return api.response;
 	},
 
-
-}
+};
 
 window.Marketplace = Marketplace;

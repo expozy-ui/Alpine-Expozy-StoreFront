@@ -9,7 +9,7 @@
         const nextSection = function(currentSection) {
             let next = currentSection.nextElementSibling;
             if(!next) return false;
-            if(next.classList.contains('expozy')) {
+            if(next.classList.contains('is-section')) {
                 return next;
             } else {
                 return nextSection(next);
@@ -19,7 +19,7 @@
         let scrollArrow = document.querySelectorAll('.is-arrow-down a');
         scrollArrow.forEach(function(btn){
             btn.addEventListener('click', function(e){
-                let currentSection = e.target.closest('.expozy');
+                let currentSection = e.target.closest('.is-section');
                 if(currentSection) {
                     let gotoSection = nextSection(currentSection);
                     if(gotoSection) {
@@ -46,14 +46,14 @@
                                 let num = url.replace('#section','');
                                 if(!isNaN(parseInt(num))) {
 
-                                    // let section = document.querySelector(`.expozy:nth-child(${num})`);
+                                    // let section = document.querySelector(`.is-section:nth-child(${num})`);
                                     // if(section) scrollIt(section, 1000, 'easeInQuad');
 
-                                    let sections = document.querySelectorAll('.expozy');
+                                    let sections = document.querySelectorAll('.is-section');
                                     let gotoSection;
                                     let x = 0;
                                     sections.forEach(function(section){
-                                        if(!hasClass(section, 'expozy-navbar')) {
+                                        if(!hasClass(section, 'is-section-navbar')) {
                                             if(x===num-1) {
                                                 gotoSection = section;
                                             }
@@ -102,7 +102,7 @@
             }
         });
         // Auto add delays
-        elms = document.querySelectorAll('.expozy > div');
+        elms = document.querySelectorAll('.is-container > div');
         elms.forEach(function(row){
             let animElms = row.querySelectorAll('.is-animated[data-scroll],.is-animated[data-scroll-once]');
             let n = 0;
@@ -215,7 +215,7 @@
             pinWrap.parentNode.removeChild(pinWrap);
         });
         // if(pinWraps.length>0) {
-        const sections = document.querySelectorAll('.expozy');
+        const sections = document.querySelectorAll('.is-section');
         sections.forEach( section => {
             if(section.hasAttribute('data-section-clone')) section.parentNode.removeChild(section);
             if(section.hasAttribute('data-section-original')) {
@@ -251,9 +251,9 @@
     
         // Re-structure multi boxes 
         pins.forEach(function(sectionPin){
-            if(viewportWidth<=970 && (sectionPin.querySelector('.expozy'))) { /* mobile update (not needed) */
+            if(viewportWidth<=970 && (sectionPin.querySelector('.is-box'))) { /* mobile update (not needed) */
     
-                let boxes = sectionPin.querySelectorAll('.expozy');
+                let boxes = sectionPin.querySelectorAll('.is-box');
                 boxes.forEach(box=>{
                     const cloneSection = sectionPin.cloneNode(false);
                     box.getAttributeNames().map(name => {
@@ -261,9 +261,9 @@
                             cloneSection.setAttribute(name,box.getAttribute(name));
                         }
                     });
-                    cloneSection.classList.add('expozy');
+                    cloneSection.classList.add('is-box');
                     box.classList.forEach(item=>{
-                        if(item.indexOf('expozy-')!==-1 ||
+                        if(item.indexOf('is-box-')!==-1 ||
                             item.indexOf('is-content-')!==-1 ||
                             item.indexOf('box-autofit')!==-1 ||
                             item.indexOf('is-light-text')!==-1 ||
@@ -314,7 +314,7 @@
         // no-spacing (adding .section-inview)
         const funcScroll = (e) => {
     
-            const sections = document.querySelectorAll('.expozy');
+            const sections = document.querySelectorAll('.is-section');
             sections.forEach( section => {
     
                 const topDistance = section.getBoundingClientRect().top;
@@ -330,24 +330,24 @@
                 }
                 if(nextSection) {
                     if(nextSection.classList.contains('pin-wrap')) {
-                        nextSection = nextSection.querySelector('.expozy');
+                        nextSection = nextSection.querySelector('.is-section');
                     } 
                 }
                 if(prevSection) {
                     if(prevSection.classList.contains('pin-wrap')) {
-                        prevSection = prevSection.querySelector('.expozy');
+                        prevSection = prevSection.querySelector('.is-section');
                     } 
                 }
     
                 if (topDistance<=0) {
-                    // const sections = document.querySelectorAll('.expozy');
+                    // const sections = document.querySelectorAll('.is-section');
                     // sections.forEach( section => {
                     //     section.classList.remove('section-inview');
                     // });
     
                     if(section.classList.contains('no-spacing')||section.classList.contains('pin-overlap')) section.classList.add('section-inview');
     
-                    const sections = document.querySelectorAll('.expozy');
+                    const sections = document.querySelectorAll('.is-section');
                     sections.forEach( elm => {
                         if(elm!==section) elm.classList.remove('section-inview');
                     });
@@ -432,7 +432,7 @@
             if(elm.querySelector('video.is-video-bg')) elm.setAttribute('data-scroll','');
         });
 
-        let videoContent = document.querySelectorAll('.expozy video'); //make embedded video auto play/pause on view
+        let videoContent = document.querySelectorAll('.is-container video'); //make embedded video auto play/pause on view
         videoContent.forEach(elm=>{
             elm.parentNode.setAttribute('data-scroll','');
         });
@@ -540,7 +540,7 @@
                     });
                 
                     // Auto add delays
-                    elms = document.querySelectorAll('.expozy > div');
+                    elms = document.querySelectorAll('.is-container > div');
                     elms.forEach(function(row){
                         let animElms = row.querySelectorAll('.is-animated[data-scroll],.is-animated[data-scroll-once]');
                         let n = 0;
@@ -699,7 +699,7 @@
             const viewportWidth = window.innerWidth;
     
             // box height
-            document.querySelectorAll('.expozy').forEach(box=>{
+            document.querySelectorAll('.is-box').forEach(box=>{
                 let dataBreakpoints = [];
                 const attributes = box.attributes;
                 for (let i = 0; i < attributes.length; i++) {
@@ -808,7 +808,7 @@
 
                 /*
                 if(!document.body.classList.contains('data-editor')) {
-                    const content = block.querySelector('.expozy');
+                    const content = block.querySelector('.is-container');
                     if(content) {
                         if(viewportWidth>1600) {
                             const n = (viewportWidth/1600) * 0.87; // adjustment: 0.9

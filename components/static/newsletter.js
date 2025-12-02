@@ -1,46 +1,27 @@
-
-
-
 export let Newsletter = {
 
-
-	post_newsletter: async function (data, options) {
-
-		let response = [];
-
-		data['newsletter-checkbox'] = true;
+	post_newsletter: async function (dataCollect) {
+		debugger;
+		// Добавяме специалния флаг
+		dataCollect['newsletter-checkbox'] = true;
 
 		let api = new ApiClass();
-		await api.post('subscribe', data);
+		await api.post('subscribe', dataCollect.combinedData);
 
-		if (!api.response) return response['internalError'] = 'No response from api for Newsletter.post_newsletter';
-
-		response = api.response;
-
-		return response;
+		return api.response;
 	},
 
-	delete_subscribe: async function (data) {
-		let response = [];
-		// CHECK DO WE HAVE data.id ELSE RETURN ERROR
-		if (!("id" in data) && typeof (data.id) === "undefined") return { internalError: 0, msg: `No id is set for Newsletter.delete_subscribe` };
+	delete_subscribe: async function (dataCollect) {
+
+		// delete → работи като get (combineRequest)
+		let endpoint = Helpers.combineRequest('subscribe', dataCollect.combinedData);
 
 		let api = new ApiClass();
-		await api.delete('subscribe/' + data.id, data);
+		await api.delete(endpoint, dataCollect);
 
-		if (!api.response) return response['internalError'] = 'No response from api for Newsletter.delete_subscribe';
-
-
-		response = api.response;
-
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		return response;
+		return api.response;
 	},
-
-
-
-
 
 };
+
 window.Newsletter = Newsletter;

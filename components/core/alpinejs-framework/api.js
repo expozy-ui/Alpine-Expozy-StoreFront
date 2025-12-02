@@ -12,6 +12,7 @@ export class ApiClient {
         this.requestType = this.type == 'api' ? method.substring(0, method.indexOf('.')).toLowerCase() : '';
         this.response = {};
         this.dataCollect = dataCollect;
+        this.endpoint = this._getEndpoint();
     }
 
     async request() {
@@ -23,11 +24,27 @@ export class ApiClient {
         }
 
         this.response = await this._callFunction();
+
+        if (Object.keys(this.response || {}).length === 0) {
+            return Helpers.show_toast_msg('Системата не успя да обработи заявката.', 'error');
+        }
+
         Helpers.old_errors_remove();
 
 
-        if (this.response.pagination != undefined) {
+
+        if (this.response.pagination !== undefined) {
             this.response.pagination = Helpers.pagination(this.response.pagination);
+        } else {
+            for (const key in this.response) {
+                if (
+                    this.response[key] &&
+                    typeof this.response[key] === "object" &&
+                    this.response[key].pagination !== undefined
+                ) {
+                    this.response[key].pagination = Helpers.pagination(this.response[key].pagination);
+                }
+            }
         }
 
 
@@ -39,18 +56,34 @@ export class ApiClient {
 
         } else {
             this.response.obj = { ...this.response };
-
         }
 
-        if ("status" in this.response) Helpers.show_errors(this.response);
+        if (this.dataCollect.pushurl) {
+            this.response.obj.pushurl = true;
+            const cleanEndpoint = this.endpoint.replace(this.method, "");
+            history.replaceState(null, null, window.location.pathname + cleanEndpoint);
+        }
 
-        if ("clearForm" in this.response && element.closest("form") != undefined) Helpers.clear_form_data(element.closest("form"));
+        if ("status" in this.response) {
+            Helpers.show_errors(this.response);
+
+            if (this.response.status === 1) {
+
+                if ("clear" in this.dataCollect.attributesOptions && this.dataCollect.form.form) {
+                    Helpers.clear_form_data(this.dataCollect.form.form);
+                }
+
+                if ('scroll' in this.dataCollect.attributesOptions) {
+                    document.getElementById('main').scrollIntoView(true);
+                }
+
+            }
+        }
 
         // Ако имаме грешки поставяме отговора в друга променлива за да не счупваме обекта. 
         if (this.response.error != undefined || this.response.errors != undefined) {
             this.dataCollect.keyName = 'errorResponse';
         }
-
         if (this.dataCollect.keyName != '') {
             data[this.dataCollect.keyName] = this.response.obj;
         } else {
@@ -67,8 +100,9 @@ export class ApiClient {
             bubbles: false
         }));
 
+
         // IF WE HAVE REDIRECT URL
-        if ("url" in this.response) return href(this.response.url);
+        // if ("url" in this.response) return href(this.response.url);
 
 
         return responseStatus;
@@ -118,22 +152,19 @@ export class ApiClient {
 
         if (this.type == 'api') {
 
-            if (this.dataCollect.combinedData.id != undefined && (this.requestType == 'get' || this.requestType == 'delete')) {
-                this.method = `${this.method}/${this.dataCollect.combinedData.id}`;
-            }
-
             let api = new ApiClass();
 
             try {
 
                 // GET заявки нямат data
                 if (this.requestType === 'get') {
-                    let endpoint = Helpers.combineRequest(this.method, this.dataCollect.combinedData);
-                    return await api.get(endpoint);
+
+                    // let endpoint = Helpers.combineRequest(this.method, this.dataCollect.combinedData);
+                    return await api.get(this.endpoint);
                 }
 
                 // За post / put / delete → подаваме data
-                return await api[this.requestType](this.method, this.dataCollect.combinedData);
+                return await api[this.requestType](this.endpoint, this.dataCollect.combinedData);
 
             } catch (error) {
                 console.log(error);
@@ -143,6 +174,27 @@ export class ApiClient {
 
         return [];
 
+    }
+
+    _getEndpoint() {
+        // GET заявка → комбинираме параметрите
+        if (this.requestType === 'get') {
+            return Helpers.combineRequest(this.method, this.dataCollect.cleanData);
+        }
+
+        // DELETE заявка → ако има id → method/id
+        if (this.requestType === 'delete') {
+            const id = this.dataCollect.combinedData.id;
+
+            if (id) {
+                return `${this.method}/${id}`;
+            }
+
+            return this.method;
+        }
+
+        // Всички други → връщаме стандартния method
+        return this.method;
     }
 
 }

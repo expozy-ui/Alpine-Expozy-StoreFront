@@ -141,7 +141,7 @@ $dir = SITEURL.'/editor/cb/';
 </div>
 <div class="topbar-shadow"></div>
 
-    <div class="is-wrapper " style="opacity:0;" id="mainContent">
+    <div class="is-wrapper" style="opacity:0;" id="mainContent">
     <?php  echo empty($editor->html) ? '' : $editor->html;   ?>
         </div>
   

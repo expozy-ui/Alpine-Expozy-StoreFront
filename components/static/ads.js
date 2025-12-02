@@ -1,192 +1,79 @@
-
-
 export let Ads = {
 
-
-	get_ads: async function (data, options) {
-		let response = [];
-
-		response['keyName'] = 'ads';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('ads', data);
+	// GET ADS
+	get_ads: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('ads', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.get_ads';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
-	get_ads_plans: async function (data, options) {
-		let response = [];
 
-		response['keyName'] = 'ads_plans';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('ads_plans', data);
+	get_ads_plans: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('ads_plans', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.get_ads_plans';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
-	get_ads_types: async function (data, options) {
-		let response = [];
 
-		response['keyName'] = 'ads_types';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('ads_types', data);
+	get_ads_types: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('ads_types', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.get_ads_types';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
-	get_ads_fields: async function (data, options) {
-		let response = [];
 
-		response['keyName'] = 'ads_fields';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('ads_fields', data);
+	get_ads_fields: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('ads_fields', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.get_ads_fields';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
-	get_ads_categories: async function (data, options) {
-		let response = [];
 
-		response['keyName'] = 'ads_categories';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('ads_categories', data);
+	get_ads_categories: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('ads_categories', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.get_ads_categories';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
-	get_ads_wishlist: async function (data, options) {
-		let response = [];
 
-		response['keyName'] = 'ads_wishlist';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('ads_wishlist', data);
+	get_ads_wishlist: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('ads_wishlist', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.get_ads_wishlist';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
-	post_ads: async function (data, options) {
-		let response = [];
 
+
+	// POST ADS
+	post_ads: async function (dataCollect) {
 		let api = new ApiClass();
-
-		await api.post('ads', data);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.post_ads';
-		response = api.response;
-
-		response['keyName'] = 'ads';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		return response;
+		await api.post('ads', dataCollect.combinedData);
+		return api.response;
 	},
 
-	put_ads: async function (data, options) {
-		let response = [];
-
+	// PUT ADS
+	put_ads: async function (dataCollect) {
 		let api = new ApiClass();
-
-		await api.post('put_ads', data);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.put_ads';
-		response = api.response;
-
-		response['keyName'] = 'ads';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		return response;
+		await api.put('ads', dataCollect.combinedData);
+		return api.response;
 	},
 
-	delete_ads: async function (data) {
-		let response = [];
-		// CHECK DO WE HAVE data.id ELSE RETURN ERROR
-		if (!("id" in data) && typeof (data.id) === "undefined") return { internalError: 0, msg: `No id is set for Ads.delete_ads` };
 
+	// DELETE ADS
+	delete_ads: async function (dataCollect) {
 		let api = new ApiClass();
-		await api.delete('ads/' + data.id, data);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.delete_ads';
-
-		response = api.response;
-		response['keyName'] = 'ads';
-
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		return response;
+		await api.delete(`ads/${dataCollect.combinedData.id}`, dataCollect);
+		return api.response;
 	},
 
-	delete_ads_images: async function (data) {
-		let response = [];
-		// CHECK DO WE HAVE data.id ELSE RETURN ERROR
-		if (!("id" in data) && typeof (data.id) === "undefined") return { internalError: 0, msg: `No id is set for Ads.delete_ads_images` };
 
+	// DELETE ADS IMAGES
+	delete_ads_images: async function (dataCollect) {
 		let api = new ApiClass();
-		await api.delete('ads_images/' + data.id, data);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Ads.ads_images';
-
-		response = api.response;
-		response['keyName'] = 'ads';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-
-		return response;
+		await api.delete(`ads_images/${dataCollect.combinedData.id}`, dataCollect);
+		return api.response;
 	},
-
-
-
 
 };
+
 window.Ads = Ads;

@@ -1,29 +1,12 @@
-
-
 export let Auctions = {
 
-
-	get_auctions: async function (data, options) {
-		let response = [];
-
-		response['keyName'] = 'auctions';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('auctions', data);
+	get_auctions: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('auctions', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for Auctions.get_auctions';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
 
-
-
 };
+
 window.Auctions = Auctions;

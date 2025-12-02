@@ -215,6 +215,8 @@ export class PageClass {
 			css: lastElementString,
 			page_id: this.id
 		};
+
+		let api = new ApiClass();
 		api.post('revisions?lang=' + this.lang, reqBody);
 
 		fetch("/pages/editor.php?lang=" + this.lang, {

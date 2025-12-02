@@ -51,21 +51,20 @@
 			const SITENAME = <?php echo json_encode($core->site_name) ?>;
 			const JS_VERSION = <?php echo JS_VERSION; ?>;
 			const PAGEINIT = {id: <?= $page->id?>, target_id: <?= $page->target_id; ?>  };
+			const CURRENCY = <?php echo json_encode($currency, JSON_UNESCAPED_UNICODE) ?>;
 		</script>
 
 
 
 
 		<link href="<?php echo SITEURL. (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : '') ?>" rel="canonical" />
-		<!-- <script  src="/components/core/globals.js" charset="utf-8"></script> -->
 
 
 		<!-- CORE SYSTEM SETTINGS -->
 		<link rel="stylesheet" href="/assets/css/custom.css?v=<?php echo JS_VERSION ?>">
 		<link href="<?= CBURL ?>assets/minimalist-blocks/content.css" rel="stylesheet" type="text/css" />
 		<link href="<?= CBURL ?>box/box-flex.css" rel="stylesheet" type="text/css" />
-		<!-- <link href="/assets/expozyBox/minimalist-blocks/content.css" rel="stylesheet" type="text/css" />
-		<link href="/assets/expozyBox/box/box-flex.css" rel="stylesheet" type="text/css" /> -->
+		
 
 		<style media="screen">
 		@font-face {
@@ -109,7 +108,12 @@
 					x-transition:leave-start="transform translate-x-0 opacity-100"
 					x-transition:leave-end="transform translate-x-full opacity-0"§
 					@click="remove(notice.id)"
-					class="notice"  :class="notice.type == 'error' ? 'bg-red-600 hover:bg-red-500' : 'bg-sky-900 hover:bg-sky-800'"
+					class="notice"  :class="{
+  'bg-red-600 hover:bg-red-500 border-l-4 border-red-400': notice.type == 'error',
+  'bg-emerald-600 hover:bg-emerald-500 border-l-4 border-emerald-400': notice.type == 'success',
+  'bg-amber-600 hover:bg-amber-500 border-l-4 border-amber-400': notice.type == 'warning',
+  'bg-blue-600 hover:bg-blue-500 border-l-4 border-blue-400': notice.type == 'info'
+}"
 					x-text="notice.text">
 					</div>
 				</template>
@@ -121,21 +125,22 @@
 	<div style="display: none;" id="tailwindCss"></div>
 	<div style="width:100px;height: 50px;position: fixed;right: 100px;bottom: 60px;background-color: red;z-index: 1000;display: flex;justify-content: center;align-items: center;border-radius: 25px;color: white;font-weight: bold;letter-spacing: 1.2px;font-size: 18px;cursor: pointer;" id="dev_save">Save</div>
 	<script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
+
+
 	<script>
+
+		 const allSizes = Array.from({ length: 401 }, (_, i) => `size-${i}`);
+
 		  tailwind.config = {
 		    darkMode: 'class',
-			theme: {
-				extend: {
-			colors: {
-			'primary': '#41980a',
-			'primaryhover' : '#317208',
-			'accent': '#d51e0b',
-			'ground': '#f4f2ec',
+			    content: [
+    				  './src/**/*.{html,js,jsx,ts,tsx}',
+    			],
+
+   			 // Блокваме размерите заради едитора. 
+   			 blocklist: allSizes,
 			
-			},
-		},
-		},
-		  }
+		 	 }
 	</script>
 
 	<script type="module" src="\components\core\dev_save.js?v=<?php echo JS_VERSION ?>" ></script>

@@ -1,46 +1,18 @@
-
-
 export let Qa = {
 
-
-	get_qa: async function (data, options) {
-		let response = [];
-
-		response['keyName'] = 'qa';
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		let endpoint = Helpers.combineRequest('qa', data);
+	get_qa: async function (dataCollect) {
+		let endpoint = Helpers.combineRequest('qa', dataCollect.combinedData);
 		let api = new ApiClass();
-
 		await api.get(endpoint, false);
-
-		if (!api.response) return response['internalError'] = 'No response from api for QA.get_qa';
-
-		response['obj'] = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		return api.response;
 	},
 
-	post_qa: async function (data, options) {
-		let response = [];
-		response['keyName'] = 'qa';
-
+	post_qa: async function (dataCollect) {
 		let api = new ApiClass();
-		await api.post('qa', data);
-
-		if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-		if (!api.response) return response['internalError'] = 'No response from api for QA.post_qa';
-
-		response = api.response;
-
-		if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-		return response;
+		await api.post('qa', dataCollect.combinedData);
+		return api.response;
 	},
-
 
 };
+
 window.Qa = Qa;

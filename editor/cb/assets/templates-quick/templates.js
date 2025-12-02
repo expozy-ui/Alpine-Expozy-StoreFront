@@ -25,7 +25,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-			<div class="expozy is-section is-box is-dark-text type-poppins box-autofit is-section-100">
+			<div class="is-section is-box is-dark-text type-poppins box-autofit is-section-100">
 				<div class="is-overlay">
 				</div>
                 <div class="is-container v2 leading-13 size-17 is-content-1100">
@@ -58,7 +58,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-			<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+			<div class="is-section is-box is-section-100 type-poppins box-autofit">
 				<div class="is-overlay"></div>
                 <div class="is-container v2 leading-14 size-18 is-content-1360">
                     <div class="row relative sm-items-1">
@@ -89,7 +89,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -140,7 +140,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-<div class="expozy is-section is-section-100 is-box type-poppins box-autofit">
+<div class="is-section is-section-100 is-box type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-13 size-16 is-content-1000">
         <div class="row">
@@ -184,7 +184,7 @@
 		    'contentCss': 'type-poppins.css',
 		    'contentClass': 'type-poppins',
 		    'html': `
-			<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+			<div class="is-section is-box is-section-100 type-poppins box-autofit">
 				<div class="is-overlay"></div>
                 <div class="is-container v2 size-18 leading-14 is-content-640">
                     <div class="row">
@@ -224,7 +224,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-section-100 is-box type-opensans box-autofit">
+<div class="is-section is-section-100 is-box type-opensans box-autofit">
     <div class="is-overlay">
     </div>
     <div class="is-container v2 size-18 leading-14 is-content-1300">
@@ -256,7 +256,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-quicksand-kalam">
+<div class="is-section is-section-100 is-box is-dark-text type-quicksand-kalam">
     <div class="is-overlay" style="background-color: rgb(240, 240, 240);">
     </div>
     <div class="is-container v2 is-content-1400 leading-14 is-content-left edge-x-2 size-21">
@@ -295,7 +295,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-box is-dark-text type-quicksand-kalam is-section-100 box-autofit">
+<div class="is-section is-box is-dark-text type-quicksand-kalam is-section-100 box-autofit">
     <div class="is-overlay">
     </div>
     <div class="is-container v2 size-19 leading-14 content-pt-50 is-content-1360">
@@ -333,7 +333,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-montserrat-roboto box-autofit">
+<div class="is-section is-section-100 is-box is-dark-text type-montserrat-roboto box-autofit">
     <div class="is-overlay">
     </div>
     <div class="is-container v2 size-19 leading-14 is-content-1300">
@@ -370,7 +370,7 @@
 			'contentCss': 'type-spacemono.css',
 			'contentClass': 'type-spacemono',
 			'html': `
-<div class="expozy is-section is-section-100 type-spacemono">
+<div class="is-section is-section-100 type-spacemono">
     <div class="is-box is-box-6 box-autofit min-height-40">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -432,7 +432,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-box is-content-bottom edge-y-1 is-dark-text box-autofit type-raleway-lato is-section-100 min-height-60">
+<div class="is-section is-box is-content-bottom edge-y-1 is-dark-text box-autofit type-raleway-lato is-section-100 min-height-60">
     <div class="is-overlay">
     </div>
     <div class="is-container is-content-none size-19 leading-16 v2" style="margin-bottom: 0px; padding-bottom: 0px;">
@@ -513,7 +513,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box is-section-100 is-light-text type-montserrat-roboto box-autofit min-height-70">
+<div class="is-section is-box is-section-100 is-light-text type-montserrat-roboto box-autofit min-height-70">
     <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-012.jpg&quot;); background-position-y: 16%; opacity: 1;">
             <div class="is-overlay-color opacity-6"></div>
@@ -565,7 +565,7 @@
 			'contentCss': 'type-oranienbaum-sourcesanspro.css',
 			'contentClass': 'type-oranienbaum-sourcesanspro',
 			'html': `
-<div class="expozy is-section is-box is-section-100 is-content-top edge-y-3 type-oranienbaum-sourcesanspro box-autofit min-height-70">
+<div class="is-section is-box is-section-100 is-content-top edge-y-3 type-oranienbaum-sourcesanspro box-autofit min-height-70">
     <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-018.jpg&quot;); background-position: 50% 75%; opacity: 1;">
             <div class="is-overlay-color opacity-0"></div>
@@ -626,7 +626,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 is-light-text type-poppins-lekton is-content-bottom edge-y-4 min-height-60">
+<div class="is-section is-box is-section-100 is-light-text type-poppins-lekton is-content-bottom edge-y-4 min-height-60">
     <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-131.jpg&quot;); background-position: 50% 60%; opacity: 1;">
             <div class="is-overlay-color opacity-8"></div>
@@ -678,7 +678,7 @@
 			'contentCss': 'type-frankruhllibre-lato.css',
 			'contentClass': 'type-frankruhllibre-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-frankruhllibre-lato">
+<div class="is-section is-section-100 type-frankruhllibre-lato">
     <div class="is-box is-dark-text is-box-6 box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-900 size-16 leading-11">
@@ -738,7 +738,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-section-100 type-inconsolata">
+<div class="is-section is-section-100 type-inconsolata">
     <div class="is-box is-box-8 is-content-bottom edge-y-2 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -804,7 +804,7 @@
 			'contentCss': 'type-fugazone-librefranklin.css',
 			'contentClass': 'type-fugazone-librefranklin',
 			'html': `
-<div class="expozy is-section is-box is-section-100 is-light-text is-content-bottom edge-y-3 type-fugazone-librefranklin box-autofit min-height-70">
+<div class="is-section is-box is-section-100 is-light-text is-content-bottom edge-y-3 type-fugazone-librefranklin box-autofit min-height-70">
     <div class="is-overlay" style="background-color: rgb(225, 225, 225);">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-039.jpg&quot;); background-position: 50% 84%; opacity: 1;">
             <div class="is-overlay-color opacity-5"></div>
@@ -859,7 +859,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box type-poppins box-autofit">
+<div class="is-section is-section-100 is-box type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-12 size-16 is-content-1300">
         <div class="row">
@@ -902,7 +902,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-align-left type-poppins box-autofit">
+<div class="is-section is-section-100 is-box is-align-left type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1100">
         <div class="row">
@@ -950,7 +950,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box type-poppins box-autofit is-section-100">
+<div class="is-section is-box type-poppins box-autofit is-section-100">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 content-pb-60 size-18 is-content-1600">
         <div class="row sm-autofit">
@@ -990,7 +990,7 @@
 			'contentCss': 'type-yantramanav-ibmplexserif.css',
 			'contentClass': 'type-yantramanav-ibmplexserif',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-yantramanav-ibmplexserif box-autofit">
+<div class="is-section is-section-100 is-box is-dark-text type-yantramanav-ibmplexserif box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1200 leading-14 size-19">
         <div class="row">
@@ -1036,7 +1036,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-quicksand-kalam box-autofit">
+<div class="is-section is-section-100 is-box is-dark-text type-quicksand-kalam box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1300 size-19 leading-14">
         <div class="row">
@@ -1122,7 +1122,7 @@
 			'contentCss': 'type-ubuntumono-sourcecodepro.css',
 			'contentClass': 'type-ubuntumono-sourcecodepro',
 			'html': `
-<div class="expozy is-section is-section-100 type-ubuntumono-sourcecodepro">
+<div class="is-section is-section-100 type-ubuntumono-sourcecodepro">
     <div class="is-box is-dark-text is-box-8 box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-1050 size-16 leading-12">
@@ -1180,7 +1180,7 @@
 			'contentCss': 'type-ubuntumono-sourcecodepro.css',
 			'contentClass': 'type-ubuntumono-sourcecodepro',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-ubuntumono-sourcecodepro box-autofit">
+<div class="is-section is-section-100 is-box is-dark-text type-ubuntumono-sourcecodepro box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1540 size-16 leading-12">
         <div class="row">
@@ -1227,7 +1227,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row">
@@ -1279,7 +1279,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row">
@@ -1338,7 +1338,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins">
+<div class="is-section is-box is-section-100 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row">
@@ -1386,7 +1386,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-poppins">
+<div class="is-section is-section-100 is-box box-autofit type-poppins">
     <div class="is-overlay">
     </div>
     <div class="is-container v2 is-content-1200">
@@ -1422,7 +1422,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-poppins">
+<div class="is-section is-section-100 is-box box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1300 size-17 leading-12">
         <div class="row">
@@ -1454,7 +1454,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins">
+<div class="is-section is-box is-section-100 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row sm-autofit">
@@ -1506,7 +1506,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins">
+<div class="is-section is-box is-section-100 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row">
@@ -1559,12 +1559,12 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box box-space type-poppins is-section-70 box-autofit min-height-50">
+<div class="is-section is-box box-space type-poppins is-section-70 box-autofit min-height-50">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-180.jpg&quot;); opacity: 1; background-size: cover; background-position-y: 23%;"></div>
     </div>
 </div>
-<div class="expozy is-section is-box is-section-30 box-autofit type-poppins is-content-top edge-y-0-75">
+<div class="is-section is-box is-section-30 box-autofit type-poppins is-content-top edge-y-0-75">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1600">
         <div class="row">
@@ -1588,7 +1588,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 box-space type-poppins">
+<div class="is-section is-section-100 box-space type-poppins">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-193.jpg&quot;); opacity: 1; background-position: 50% 60%;"></div>
@@ -1633,7 +1633,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row sm-autofit">
@@ -1684,7 +1684,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1420">
         <div class="row">
@@ -1723,7 +1723,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-poppins">
+<div class="is-section is-section-100 is-box box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1200 size-17 leading-14 content-pt-50 content-pb-50">
         <div class="row">
@@ -1803,7 +1803,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-poppins">
+<div class="is-section is-section-100 is-box box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-980 size-17 leading-14 content-pt-50 content-pb-50">
         <div class="row">
@@ -1868,7 +1868,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-poppins">
+<div class="is-section is-section-100 is-box box-autofit type-poppins">
     <div class="is-overlay" style="background-color: rgb(247, 247, 247);"></div>
     <div class="is-container is-content-1500 v2 size-17 leading-14 content-pt-50 content-pb-50">
         <div class="row">
@@ -1946,7 +1946,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-poppins">
+<div class="is-section is-section-100 is-box box-autofit type-poppins">
     <div class="is-overlay" style="background-color: rgb(247, 247, 247);"></div>
     <div class="is-container v2 size-17 leading-14 is-content-1040 content-pt-50 content-pb-50">
         <div class="row">
@@ -2007,7 +2007,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-light-text box-autofit min-height-60 type-poppins">
+<div class="is-section is-section-100 is-box is-light-text box-autofit min-height-60 type-poppins">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-108.jpg&quot;); background-position: 50% 60%; opacity: 1;">
             <div class="is-overlay-color opacity-10" style="background-color: rgb(0, 0, 0);"></div>
@@ -2080,7 +2080,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box-8 is-box is-dark-text box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
         <div class="is-container v2 size-16 leading-14 is-content-900">
@@ -2147,7 +2147,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-raleway-lato">
+<div class="is-section is-box is-section-100 box-autofit type-raleway-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1500 leading-13">
         <div class="row sm-autofit relative sm-items-1">
@@ -2180,7 +2180,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-lato">
+<div class="is-section is-section-100 type-lato">
     <div class="is-box box-autofit min-height-60 is-box-6">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-176.jpg&quot;); background-position: 50% 60%;"></div>
@@ -2253,7 +2253,7 @@
 			'contentCss': 'type-oswald-opensans.css',
 			'contentClass': 'type-oswald-opensans',
 			'html': `
-<div class="expozy is-section is-section-100 type-oswald-opensans">
+<div class="is-section is-section-100 type-oswald-opensans">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -2333,7 +2333,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1300 size-18 leading-13">
         <div class="row">
@@ -2380,7 +2380,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-13 is-content-1500">
         <div class="row">
@@ -2441,7 +2441,7 @@
 			'contentCss': 'type-raleway-playfairdisplay.css',
 			'contentClass': 'type-raleway-playfairdisplay',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit min-height-70 type-raleway-playfairdisplay is-light-text">
+<div class="is-section is-box is-section-100 box-autofit min-height-70 type-raleway-playfairdisplay is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-103.jpg&quot;); background-position: 50% 85%;">
             <div class="is-overlay-color opacity-8"></div>
@@ -2484,7 +2484,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1640 content-pt-60 size-17 leading-12">
         <div class="row">
@@ -2545,7 +2545,7 @@
 			'contentCss': 'type-alegreya-lato.css',
 			'contentClass': 'type-alegreya-lato',
 			'html': `
-<div class="expozy is-section is-box type-alegreya-lato is-section-25 box-autofit">
+<div class="is-section is-box type-alegreya-lato is-section-25 box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-900 size-17 leading-14">
         <div class="row">
@@ -2561,7 +2561,7 @@
     </div>
 </div>
 
-<div class="expozy is-section box-space type-alegreya-lato is-section-75 md-boxes-2 md-boxes-wrap sm-boxes-2 sm-boxes-wrap">
+<div class="is-section box-space type-alegreya-lato is-section-75 md-boxes-2 md-boxes-wrap sm-boxes-2 sm-boxes-wrap">
     <div class="is-box-4 is-box is-light-text is-content-top edge-y-2 box-autofit min-height-40">
         <div class="is-overlay" style="background-color: rgb(243, 243, 243);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-173.jpg&quot;); background-position: 50% 60%;">
@@ -2653,7 +2653,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box box-autofit type-poppins-lekton is-section-30">
+<div class="is-section is-box box-autofit type-poppins-lekton is-section-30">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-600">
         <div class="row">
@@ -2668,7 +2668,7 @@
         </div>
     </div>
 </div>
-<div class="expozy is-section box-space box-space-xxs is-section-70 type-poppins-lekton">
+<div class="is-section box-space box-space-xxs is-section-70 type-poppins-lekton">
     <div class="is-box is-box-6 box-autofit is-content-bottom edge-y-1 is-light-text">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-074.jpg&quot;); background-position: 50% 60%;">
@@ -2754,7 +2754,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1680">
         <div class="row">
@@ -2810,7 +2810,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-raleway-lato">
+<div class="is-section is-box is-section-100 box-autofit type-raleway-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1660">
         <div class="row">
@@ -2867,7 +2867,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-lato">
+<div class="is-section is-section-100 type-lato">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -2940,7 +2940,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-1500 size-17 content-pt-60">
         <div class="row">
@@ -2989,7 +2989,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-raleway-lato">
+<div class="is-section is-section-100 type-raleway-lato">
     <div class="is-box box-autofit is-box-7">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -3061,7 +3061,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-100 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 content-pb-60 content-pt-60 is-content-1200">
         <div class="row">
@@ -3111,7 +3111,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box is-box-5 box-autofit min-height-50">
         <div class="is-overlay">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-063.jpg&quot;); background-position: 50% 60%; opacity: 1;"></div>
@@ -3148,7 +3148,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box is-dark-text is-box-7 box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-1000 size-16 leading-14">
@@ -3199,7 +3199,7 @@
 			'contentCss': 'type-prata-hindsiliguri.css',
 			'contentClass': 'type-prata-hindsiliguri',
 			'html': `
-<div class="expozy is-section is-section-100 box-space type-prata-hindsiliguri">
+<div class="is-section is-section-100 box-space type-prata-hindsiliguri">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-011.jpg&quot;); background-position: 50% 60%; opacity: 1;"></div>
@@ -3240,7 +3240,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-section-100 type-montserrat-roboto">
+<div class="is-section is-section-100 type-montserrat-roboto">
     <div class="is-box is-box-6 is-content-bottom edge-y-1 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -3310,7 +3310,7 @@
 			'contentCss': 'type-novamono-robotomono.css',
 			'contentClass': 'type-novamono-robotomono',
 			'html': `
-<div class="expozy is-section is-section-100 type-novamono-robotomono">
+<div class="is-section is-section-100 type-novamono-robotomono">
     <div class="is-box is-dark-text is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
         <div class="is-container v2 is-content-1000 leading-12 size-16">
@@ -3354,7 +3354,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-section-100 box-space type-quicksand-kalam">
+<div class="is-section is-section-100 box-space type-quicksand-kalam">
     <div class="is-box is-box-6 is-light-text is-content-bottom edge-y-3 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-192.jpg&quot;); background-position: 50% 60%; opacity: 1;">
@@ -3410,7 +3410,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -3476,7 +3476,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-section-100 type-ibmplexmono">
+<div class="is-section is-section-100 type-ibmplexmono">
     <div class="is-box is-dark-text is-box-7 is-align-justify box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-1000 leading-12 size-17">
@@ -3541,7 +3541,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-section-100 is-box type-raleway-lato box-autofit">
+<div class="is-section is-section-100 is-box type-raleway-lato box-autofit">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container v2 is-content-1600 leading-12 size-18">
         <div class="row">
@@ -3576,7 +3576,7 @@
 			'contentCss': 'type-alegreya-lato.css',
 			'contentClass': 'type-alegreya-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-alegreya-lato box-space box-space-sm">
+<div class="is-section is-section-100 type-alegreya-lato box-space box-space-sm">
     <div class="is-box is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -3637,7 +3637,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-section-100 type-montserrat-roboto">
+<div class="is-section is-section-100 type-montserrat-roboto">
     <div class="is-box is-box-5 box-autofit min-height-50 is-light-text is-content-top edge-y-1">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-092.jpg&quot;); background-position: 50% 60%; opacity: 1;">
@@ -3697,7 +3697,7 @@
 			'contentCss': 'type-sixcaps-robotomono.css',
 			'contentClass': 'type-sixcaps-robotomono',
 			'html': `
-<div class="expozy is-section is-section-100 type-sixcaps-robotomono">
+<div class="is-section is-section-100 type-sixcaps-robotomono">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-031.jpg&quot;); background-position: 50% 60%; opacity: 1;"></div>
@@ -3737,7 +3737,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box type-montserrat-roboto is-section-100">
+<div class="is-section is-box type-montserrat-roboto is-section-100">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-12 size-17 content-pt-50 content-pb-50 is-content-1600">
         <div class="row">
@@ -3788,7 +3788,7 @@
 			'contentCss': 'type-ubuntumono-sourcecodepro.css',
 			'contentClass': 'type-ubuntumono-sourcecodepro',
 			'html': `
-<div class="expozy is-section is-section-100 type-ubuntumono-sourcecodepro">
+<div class="is-section is-section-100 type-ubuntumono-sourcecodepro">
     <div class="is-box is-dark-text is-box-8 box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-left edge-x-2 h-full flex flex-col justify-between is-content-1060 size-16 leading-12 content-pt-50 content-pb-50">
@@ -3831,7 +3831,7 @@
 			'contentCss': 'type-yantramanav-ibmplexserif.css',
 			'contentClass': 'type-yantramanav-ibmplexserif',
 			'html': `
-<div class="expozy is-section is-section-100 type-yantramanav-ibmplexserif">
+<div class="is-section is-section-100 type-yantramanav-ibmplexserif">
     <div class="is-box is-dark-text is-box-8 box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-1100 leading-none size-18 content-pt-50 content-pb-50">
@@ -3880,7 +3880,7 @@
 			'contentCss': 'type-spacemono.css',
 			'contentClass': 'type-spacemono',
 			'html': `
-<div class="expozy is-section is-section-100 type-spacemono">
+<div class="is-section is-section-100 type-spacemono">
     <div class="is-box is-dark-text is-box-7 box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-left edge-x-2 is-content-780 leading-12 size-17">
@@ -3941,7 +3941,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-raleway-lato">
+<div class="is-section is-section-100 type-raleway-lato">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-60">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-046.jpg&quot;); opacity: 1; background-position: 50% 60%;"></div>
@@ -3994,7 +3994,7 @@
 			'contentCss': 'type-novamono-robotomono.css',
 			'contentClass': 'type-novamono-robotomono',
 			'html': `
-<div class="expozy is-section is-section-100 type-novamono-robotomono">
+<div class="is-section is-section-100 type-novamono-robotomono">
     <div class="is-box is-content-top is-box-5 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-034.jpg&quot;); opacity: 1; background-position: 50% 60%;"></div>
@@ -4052,7 +4052,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-section-100 type-raleway-lato">
+<div class="is-section is-section-100 type-raleway-lato">
     <div class="is-box is-dark-text is-box-7 is-align-justify box-autofit">
         <div class="is-overlay"></div>
         <div class="is-container v2 is-content-940 leading-12 size-18">
@@ -4113,7 +4113,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins-lekton">
+<div class="is-section is-section-100 type-poppins-lekton">
     <div class="is-box is-dark-text is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
         <div class="is-container v2 is-content-900 size-17 leading-none">
@@ -4169,7 +4169,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1200">
         <div class="row relative sm-items-1">
@@ -4200,7 +4200,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text box-autofit type-poppins">
+<div class="is-section is-section-100 is-box is-dark-text box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1200 leading-14 size-18">
         <div class="row">
@@ -4239,7 +4239,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text box-autofit type-lato">
+<div class="is-section is-section-100 is-box is-dark-text box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container is-content-1300 v2 leading-14 size-18">
         <div class="row">
@@ -4285,7 +4285,7 @@
 			'contentCss': 'type-raleway-playfairdisplay.css',
 			'contentClass': 'type-raleway-playfairdisplay',
 			'html': `
-<div class="expozy is-section is-section-100 type-raleway-playfairdisplay">
+<div class="is-section is-section-100 type-raleway-playfairdisplay">
     <div class="is-box is-dark-text is-align-left is-box-7 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
         <div class="is-container v2 is-content-600 size-17 leading-15">
@@ -4317,7 +4317,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 is-dark-text box-autofit type-lato">
+<div class="is-section is-box is-section-100 is-dark-text box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-17 leading-14 content-pt-50 content-pb-50 is-content-1600">
         <div class="row">
@@ -4362,7 +4362,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-section-100 is-box box-autofit type-lato">
+<div class="is-section is-section-100 is-box box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1300 size-17 leading-14 content-pt-50 content-pb-50">
         <div class="row">
@@ -4399,7 +4399,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box type-poppins box-autofit">
+<div class="is-section is-section-100 is-box type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1000">
         <div class="row">
@@ -4449,7 +4449,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box type-poppins box-autofit is-section-50">
+<div class="is-section is-box type-poppins box-autofit is-section-50">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 is-content-1000 leading-12">
         <div class="row">
@@ -4478,7 +4478,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box box-autofit is-box-5">
         <div class="is-overlay">
         </div>
@@ -4532,7 +4532,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 box-space type-poppins">
+<div class="is-section is-section-100 box-space type-poppins">
     <div class="is-box-6 is-box is-light-text is-content-bottom edge-y-1 box-autofit min-height-50">
         <div class="is-overlay">
             <div class="is-overlay-content content-selectable" data-module="code" data-module-desc="Custom HTML or Javascript " 
@@ -4585,7 +4585,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-			<div class="expozy is-section is-section-100 is-box is-dark-text type-poppins">
+			<div class="is-section is-section-100 is-box is-dark-text type-poppins">
 			<div class="is-overlay">
 				<div class="is-overlay-content content-selectable" data-module="code" data-module-desc="Custom HTML or Javascript" data-html="${encodeURIComponent(`
 				<iframe style="filter: grayscale(1);" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="mg1" src="https://maps.google.com/maps?q=Melbourne,+Victoria,+Australia&amp;hl=en&amp;sll=-7.981898,112.626504&amp;sspn=0.009084,0.016512&amp;oq=melbourne&amp;hnear=Melbourne+Victoria,+Australia&amp;t=m&amp;z=10&amp;output=embed"></iframe>
@@ -4624,7 +4624,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay">
         </div>
@@ -4674,7 +4674,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-poppins box-autofit">
+<div class="is-section is-section-100 is-box is-dark-text type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1000">
         <div class="row">
@@ -4727,7 +4727,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins">
+<div class="is-section is-box is-section-100 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-700 leading-14 size-18">
         <div class="row">
@@ -4782,7 +4782,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-section-100 type-poppins">
+<div class="is-section is-section-100 type-poppins">
     <div class="is-box is-box-5 box-autofit">
         <div class="is-overlay">
         </div>
@@ -4858,7 +4858,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text type-poppins box-autofit is-section-15">
+<div class="is-section is-box is-dark-text type-poppins box-autofit is-section-15">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container v2 size-16 leading-13 is-content-500 is-content-left edge-x-0-5">
         <div class="row">
@@ -4868,12 +4868,12 @@
         </div>
     </div>
 </div>
-<div class="expozy is-section is-box is-dark-text type-poppins box-autofit is-section-60 min-height-60">
+<div class="is-section is-box is-dark-text type-poppins box-autofit is-section-60 min-height-60">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-087.jpg&quot;); background-position: 50% 11%;"></div>
     </div>
 </div>
-<div class="expozy is-section is-box is-dark-text type-poppins box-autofit is-section-25">
+<div class="is-section is-box is-dark-text type-poppins box-autofit is-section-25">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container is-content-1200 v2 size-16 leading-13">
         <div class="row">
@@ -4905,7 +4905,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text type-poppins is-section-75 box-space box-autofit min-height-60">
+<div class="is-section is-box is-dark-text type-poppins is-section-75 box-space box-autofit min-height-60">
     <div class="is-overlay">
         <div class="is-overlay-content content-selectable" data-module="code" data-module-desc="Custom HTML or Javascript" data-html="${encodeURIComponent(`
     <iframe style="filter: grayscale(1);" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="mg1" src="https://maps.google.com/maps?q=Melbourne,+Victoria,+Australia&amp;hl=en&amp;sll=-7.981898,112.626504&amp;sspn=0.009084,0.016512&amp;oq=melbourne&amp;hnear=Melbourne+Victoria,+Australia&amp;t=m&amp;z=10&amp;output=embed"></iframe>
@@ -4914,7 +4914,7 @@
         </div>
     </div>
 </div>
-<div class="expozy is-section is-box is-dark-text type-poppins box-autofit is-section-25">
+<div class="is-section is-box is-dark-text type-poppins box-autofit is-section-25">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container is-content-1200 v2 size-16 leading-13">
         <div class="row">
@@ -4978,7 +4978,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
+<div class="is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1100 size-16 leading-13">
         <div class="row">
@@ -5015,7 +5015,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
+<div class="is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container is-content-1100 v2 size-16 leading-13">
         <div class="row">
@@ -5064,7 +5064,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
+<div class="is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container is-content-1200 v2 size-16 leading-13">
         <div class="row">
@@ -5113,7 +5113,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
+<div class="is-section is-box is-dark-text is-static is-section-50 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container is-content-1200 v2 size-16 leading-13">
         <div class="row">
@@ -5151,7 +5151,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-static is-section-20 box-autofit type-poppins">
+<div class="is-section is-box is-dark-text is-static is-section-20 box-autofit type-poppins">
     <div class="is-overlay" style="background-color: rgb(255, 255, 255);"></div>
     <div class="is-container is-content-1200 v2 size-16 leading-13">
         <div class="row">
@@ -5189,7 +5189,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-opensans">
+<div class="is-section is-box is-section-100 type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1500">
         <div class="row relative sm-items-1">
@@ -5220,7 +5220,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1600 leading-12">
         <div class="row">
@@ -5242,7 +5242,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 is-content-1050">
         <div class="row">
@@ -5307,7 +5307,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 is-content-1480">
         <div class="row">
@@ -5347,7 +5347,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 is-content-1100">
         <div class="row">
@@ -5415,7 +5415,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-60 box-autofit type-opensans">
+<div class="is-section is-box is-section-60 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1400 leading-12">
         <div class="row sm-autofit md-autofit">
@@ -5446,7 +5446,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton is-light-text min-height-60">
+<div class="is-section is-box is-section-100 type-poppins-lekton is-light-text min-height-60">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-181.jpg&quot;); background-position: 50% 89%;">
             <div class="is-overlay-color opacity-8"></div>
@@ -5498,7 +5498,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-none is-content-1500">
         <div class="row">
@@ -5539,7 +5539,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-section-100 is-box is-dark-text type-poppins-lekton box-autofit">
+<div class="is-section is-section-100 is-box is-dark-text type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-1400 leading-13 size-17">
         <div class="row">
@@ -5604,7 +5604,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-none is-content-980">
         <div class="row">
@@ -5650,7 +5650,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-none is-content-1400">
         <div class="row">
@@ -5718,7 +5718,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box type-poppins-lekton is-section-60 box-autofit">
+<div class="is-section is-box type-poppins-lekton is-section-60 box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1000">
         <div class="row">
@@ -5753,7 +5753,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-dark-text box-autofit is-section-30 type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-dark-text box-autofit is-section-30 type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1800 is-content-left edge-x-0-5 content-pt-40 content-pb-20">
         <div class="row clearfix">
@@ -5775,7 +5775,7 @@
         </div>
     </div>
 </div>
-<div class="expozy is-section is-box box-autofit is-section-70 min-height-60 type-heebo-ibmplexmono-2">
+<div class="is-section is-box box-autofit is-section-70 min-height-60 type-heebo-ibmplexmono-2">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-104.jpg&quot;); background-position: 50% 90%;"></div>
     </div>
@@ -5788,7 +5788,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-1040 size-16">
         <div class="row">
@@ -5818,7 +5818,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-dark-text is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-800 size-16">
         <div class="row clearfix">
@@ -5882,7 +5882,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-17 leading-13 is-content-1000">
         <div class="row">
@@ -5943,7 +5943,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box box-autofit is-section-100 type-heebo-ibmplexmono-2">
+<div class="is-section is-box box-autofit is-section-100 type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-1000 size-16">
         <div class="row">
@@ -6015,7 +6015,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-section-60 box-autofit min-height-40 type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-60 box-autofit min-height-40 type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 is-content-1000">
         <div class="row">
@@ -6052,7 +6052,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit min-height-50 is-light-text">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit min-height-50 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-135.jpg&quot;); background-position: 50% 85%;"></div>
     </div>
@@ -6084,7 +6084,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit min-height-50">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit min-height-50">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-11 size-16 is-content-1400">
         <div class="row">
@@ -6105,7 +6105,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-1380">
         <div class="row">
@@ -6154,7 +6154,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1000">
         <div class="row">
@@ -6206,7 +6206,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-quicksand-kalam box-autofit">
+<div class="is-section is-box is-section-100 type-quicksand-kalam box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-840">
         <div class="row">
@@ -6272,7 +6272,7 @@
 			'contentCss': 'type-quicksand-kalam.css',
 			'contentClass': 'type-quicksand-kalam',
 			'html': `
-<div class="expozy is-section is-section-70 type-quicksand-kalam">
+<div class="is-section is-section-70 type-quicksand-kalam">
     <div class="is-box is-box-6 box-autofit min-height-30">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-183.jpg&quot;); background-position: 50% 60%;"></div>
@@ -6321,7 +6321,7 @@
 			'contentCss': 'type-heebo-ibmplexmono.css',
 			'contentClass': 'type-heebo-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-dark-text box-autofit is-section-30 type-heebo-ibmplexmono">
+<div class="is-section is-box is-dark-text box-autofit is-section-30 type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 content-pt-50 is-content-800 content-pb-20">
         <div class="row clearfix">
@@ -6341,7 +6341,7 @@
     </div>
 </div>
 
-<div class="expozy is-section type-heebo-ibmplexmono is-section-70 box-space box-space-xxs">
+<div class="is-section type-heebo-ibmplexmono is-section-70 box-space box-space-xxs">
     <div class="is-box is-box-6 box-autofit min-height-30">
         <div class="is-overlay">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-091.jpg&quot;); background-position: 50% 60%;"></div>
@@ -6362,7 +6362,7 @@
 			'contentCss': 'type-heebo-ibmplexmono.css',
 			'contentClass': 'type-heebo-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1300">
         <div class="row">
@@ -6407,7 +6407,7 @@
 			'contentCss': 'type-heebo-ibmplexmono.css',
 			'contentClass': 'type-heebo-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-dark-text is-section-100 box-autofit type-heebo-ibmplexmono">
+<div class="is-section is-box is-dark-text is-section-100 box-autofit type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-17 is-content-1100">
         <div class="row">
@@ -6468,7 +6468,7 @@
 			'contentCss': 'type-heebo-ibmplexmono.css',
 			'contentClass': 'type-heebo-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-17 leading-13 is-content-1300">
         <div class="row relative">
@@ -6517,7 +6517,7 @@
 			'contentCss': 'type-heebo-ibmplexmono.css',
 			'contentClass': 'type-heebo-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box box-autofit is-section-100 type-heebo-ibmplexmono">
+<div class="is-section is-box box-autofit is-section-100 type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-600">
         <div class="row">
@@ -6571,7 +6571,7 @@
 			'contentCss': 'type-heebo-ibmplexmono.css',
 			'contentClass': 'type-heebo-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-60 box-autofit min-height-40 type-heebo-ibmplexmono">
+<div class="is-section is-box is-section-60 box-autofit min-height-40 type-heebo-ibmplexmono">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 is-content-1300">
         <div class="row">
@@ -6597,7 +6597,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-section-100 type-montserrat-roboto">
+<div class="is-section is-section-100 type-montserrat-roboto">
     <div class="is-box is-box-6 box-autofit min-height-40">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -6660,7 +6660,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-montserrat-roboto box-autofit">
+<div class="is-section is-box is-section-100 type-montserrat-roboto box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1680">
         <div class="row">
@@ -6685,7 +6685,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1180">
         <div class="row">
@@ -6731,7 +6731,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-montserrat-roboto box-autofit min-height-60 is-light-text">
+<div class="is-section is-box is-section-100 type-montserrat-roboto box-autofit min-height-60 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-050.jpg&quot;); background-position: 50% 60%;">
             <div class="is-overlay-color opacity-6"></div>
@@ -6768,7 +6768,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-montserrat-roboto box-autofit">
+<div class="is-section is-box is-section-100 type-montserrat-roboto box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1420">
         <div class="row">
@@ -6830,7 +6830,7 @@
 			'contentCss': 'type-montserrat-roboto.css',
 			'contentClass': 'type-montserrat-roboto',
 			'html': `
-<div class="expozy is-section is-box type-montserrat-roboto is-section-70 box-autofit min-height-60">
+<div class="is-section is-box type-montserrat-roboto is-section-70 box-autofit min-height-60">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-001.jpg&quot;); background-position: 50% 71%;"></div>
     </div>
@@ -6884,7 +6884,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit min-height-60 type-lato">
+<div class="is-section is-box is-section-100 box-autofit min-height-60 type-lato">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-167.jpg&quot;); background-position: 50% 55%;"></div>
     </div>
@@ -6924,7 +6924,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1800">
         <div class="row">
@@ -6952,7 +6952,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1000">
         <div class="row">
@@ -6995,7 +6995,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1200">
         <div class="row">
@@ -7030,7 +7030,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1100">
         <div class="row">
@@ -7086,7 +7086,7 @@
 			'contentCss': 'type-lato.css',
 			'contentClass': 'type-lato',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-lato">
+<div class="is-section is-box is-section-100 box-autofit type-lato">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1500">
         <div class="row">
@@ -7116,7 +7116,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box box-autofit is-section-30 type-poppins-lekton">
+<div class="is-section is-box box-autofit is-section-30 type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1200">
         <div class="row">
@@ -7132,7 +7132,7 @@
     </div>
 </div>
 
-<div class="expozy is-section is-box box-autofit is-section-70 type-poppins-lekton min-height-50">
+<div class="is-section is-box box-autofit is-section-70 type-poppins-lekton min-height-50">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-035.jpg&quot;); background-position: 50% 100%;"></div>
     </div>
@@ -7155,7 +7155,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-100 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1600">
         <div class="row sm-autofit">
@@ -7188,7 +7188,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-100 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1400 leading-12">
         <div class="row sm-autofit">
@@ -7236,7 +7236,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-section-100 box-space type-poppins-lekton stack-top">
+<div class="is-section is-section-100 box-space type-poppins-lekton stack-top">
     <div class="is-box is-box-6 box-autofit is-content-bottom edge-y-1 min-height-40 is-light-text">
         <div class="is-overlay">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-039.jpg&quot;); background-position: 50% 60%;">
@@ -7310,7 +7310,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-100 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1300 leading-12">
         <div class="row">
@@ -7367,7 +7367,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box box-autofit type-poppins-lekton is-section-60">
+<div class="is-section is-box box-autofit type-poppins-lekton is-section-60">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-700 size-18 leading-12">
         <div class="row">
@@ -7407,7 +7407,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box box-autofit type-heebo-ibmplexmono-2 is-section-40">
+<div class="is-section is-box box-autofit type-heebo-ibmplexmono-2 is-section-40">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-left edge-x-2 is-content-1120">
         <div class="row">
@@ -7423,7 +7423,7 @@
     </div>
 </div>
 
-<div class="expozy is-section type-heebo-ibmplexmono-2 is-section-60">
+<div class="is-section type-heebo-ibmplexmono-2 is-section-60">
     <div class="is-box box-autofit is-box-7 min-height-40">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-068.jpg&quot;); background-position: 50% 86%;"></div>
@@ -7467,7 +7467,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1640">
         <div class="row">
@@ -7512,7 +7512,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2 box-space is-content-bottom edge-y-2 min-height-80 is-light-text">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2 box-space is-content-bottom edge-y-2 min-height-80 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-052.jpg&quot;); background-size: cover; background-position-y: 38%;">
             <div class="is-overlay-color opacity-6"></div>
@@ -7561,7 +7561,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-section-100 type-heebo-ibmplexmono-2">
+<div class="is-section is-section-100 type-heebo-ibmplexmono-2">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-128.jpg&quot;); background-position: 50% 60%;"></div>
@@ -7648,7 +7648,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
+<div class="is-section is-box is-section-100 box-autofit type-heebo-ibmplexmono-2">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1200">
         <div class="row">
@@ -7710,7 +7710,7 @@
 			'contentCss': 'type-heebo-ibmplexmono-2.css',
 			'contentClass': 'type-heebo-ibmplexmono-2',
 			'html': `
-<div class="expozy is-section is-box box-autofit type-heebo-ibmplexmono-2 is-section-60">
+<div class="is-section is-box box-autofit type-heebo-ibmplexmono-2 is-section-60">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-16 leading-13 is-content-1260">
         <div class="row">
@@ -7747,7 +7747,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-inconsolata min-height-70 is-content-bottom edge-y-3">
+<div class="is-section is-box is-section-100 box-autofit type-inconsolata min-height-70 is-content-bottom edge-y-3">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-123.jpg&quot;); background-position: 100% 44%;">
         <div class="is-overlay-color opacity-10"></div>
@@ -7792,7 +7792,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-inconsolata">
+<div class="is-section is-box is-section-100 box-autofit type-inconsolata">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1600 leading-12">
         <div class="row">
@@ -7835,7 +7835,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-section-100 type-inconsolata">
+<div class="is-section is-section-100 type-inconsolata">
     <div class="is-box is-box-6 box-autofit is-content-bottom edge-y-1">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -7911,7 +7911,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-inconsolata min-height-50 is-light-text">
+<div class="is-section is-box is-section-100 box-autofit type-inconsolata min-height-50 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-166.jpg&quot;); background-position: 50% 60%;">
             <div class="is-overlay-color opacity-10"></div>
@@ -7955,7 +7955,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-inconsolata">
+<div class="is-section is-box is-section-100 box-autofit type-inconsolata">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1100 leading-12">
         <div class="row">
@@ -8010,7 +8010,7 @@
 			'contentCss': 'type-inconsolata.css',
 			'contentClass': 'type-inconsolata',
 			'html': `
-<div class="expozy is-section is-section-60 type-inconsolata">
+<div class="is-section is-section-60 type-inconsolata">
     <div class="is-box is-box-6 box-autofit is-light-text min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-133.jpg&quot;); background-position: 50% 100%;"></div>
@@ -8071,7 +8071,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box type-poppins box-autofit is-section-30">
+<div class="is-section is-box type-poppins box-autofit is-section-30">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-1700 size-16 content-pb-10">
         <div class="row sm-autofit md-autofit">
@@ -8093,7 +8093,7 @@
     </div>
 </div>
 
-<div class="expozy is-section type-poppins box-space box-space-xxs is-section-70">
+<div class="is-section type-poppins box-space box-space-xxs is-section-70">
     <div class="is-box box-autofit min-height-30 is-box-7">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-171.jpg&quot;); background-size: cover; background-position-y: 38%;"></div>
@@ -8113,7 +8113,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-1400">
         <div class="row">
@@ -8158,13 +8158,13 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box type-poppins box-autofit is-section-70 min-height-50">
+<div class="is-section is-box type-poppins box-autofit is-section-70 min-height-50">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-153.jpg&quot;); background-position: 50% 46%;"></div>
     </div>
 </div>
 
-<div class="expozy is-section is-box type-poppins box-autofit is-section-30">
+<div class="is-section is-box type-poppins box-autofit is-section-30">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-1660">
         <div class="row relative sm-items-3">
@@ -8214,7 +8214,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section type-poppins is-section-50">
+<div class="is-section type-poppins is-section-50">
     <div class="is-box is-box-6 box-autofit is-content-bottom edge-y-1 min-height-50 is-light-text">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-061.jpg&quot;); background-position: 50% 34%;">
@@ -8256,7 +8256,7 @@
     </div>
 </div>
 
-<div class="expozy is-section type-poppins is-section-50">
+<div class="is-section type-poppins is-section-50">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -8305,7 +8305,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins box-autofit">
+<div class="is-section is-box is-section-100 type-poppins box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-1300">
         <div class="row">
@@ -8361,7 +8361,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box type-poppins box-autofit is-section-60">
+<div class="is-section is-box type-poppins box-autofit is-section-60">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-700 leading-14 size-18">
         <div class="row">
@@ -8409,7 +8409,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-ibmplexmono box-autofit min-height-60 is-light-text">
+<div class="is-section is-box is-section-100 type-ibmplexmono box-autofit min-height-60 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-065.jpg&quot;); background-position: 50% 60%;">
             <div class="is-overlay-color opacity-5"></div>
@@ -8441,7 +8441,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-ibmplexmono box-autofit">
+<div class="is-section is-box is-section-100 type-ibmplexmono box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1700 h-full flex flex-col justify-between content-pt-60 content-pb-60">
         <div class="row">
@@ -8469,7 +8469,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-section-100 box-space box-space-sm type-ibmplexmono md-boxes-1 md-boxes-wrap">
+<div class="is-section is-section-100 box-space box-space-sm type-ibmplexmono md-boxes-1 md-boxes-wrap">
     <div class="is-box is-box-6 box-autofit">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -8537,7 +8537,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-ibmplexmono box-autofit">
+<div class="is-section is-box is-section-100 type-ibmplexmono box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 is-content-1400 size-16">
         <div class="row">
@@ -8584,7 +8584,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-ibmplexmono box-autofit">
+<div class="is-section is-box is-section-100 type-ibmplexmono box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-16 is-content-780">
         <div class="row">
@@ -8636,7 +8636,7 @@
 			'contentCss': 'type-ibmplexmono.css',
 			'contentClass': 'type-ibmplexmono',
 			'html': `
-<div class="expozy is-section is-box is-section-60 type-ibmplexmono box-autofit min-height-40 is-light-text">
+<div class="is-section is-box is-section-60 type-ibmplexmono box-autofit min-height-40 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-089.jpg&quot;); background-position: 50% 4%;">
             <div class="is-overlay-color opacity-6"></div>
@@ -8675,7 +8675,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-section-100 type-opensans">
+<div class="is-section is-section-100 type-opensans">
     <div class="is-box box-autofit is-box-6">
         <div class="is-overlay" style="background-color: rgb(255, 255, 255);">
         </div>
@@ -8734,7 +8734,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1400 content-pt-0">
         <div class="row">
@@ -8758,7 +8758,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans min-height-60 is-light-text is-content-bottom edge-y-4">
+<div class="is-section is-box is-section-100 box-autofit type-opensans min-height-60 is-light-text is-content-bottom edge-y-4">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-109.jpg&quot;); background-position: 50% 83%;"></div>
     </div>
@@ -8794,7 +8794,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-880">
         <div class="row">
@@ -8845,7 +8845,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1100">
         <div class="row">
@@ -8910,7 +8910,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-70 box-autofit type-opensans">
+<div class="is-section is-box is-section-70 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1400">
         <div class="row">
@@ -8936,7 +8936,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit is-light-text min-height-70 type-opensans">
+<div class="is-section is-box is-section-100 box-autofit is-light-text min-height-70 type-opensans">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-139.jpg&quot;); background-position: 50% 92%;">
             <div class="is-overlay-color opacity-6"></div>
@@ -8980,7 +8980,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1500">
         <div class="row">
@@ -9019,7 +9019,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-section-100 box-space type-opensans">
+<div class="is-section is-section-100 box-space type-opensans">
     <div class="is-box is-box-6 box-autofit min-height-50 is-light-text">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-076.jpg&quot;); background-position: 50% 60%;">
@@ -9098,7 +9098,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-opensans">
+<div class="is-section is-box is-section-100 box-autofit type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1600">
         <div class="row">
@@ -9131,7 +9131,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box box-autofit is-section-60 min-height-40 type-opensans">
+<div class="is-section is-box box-autofit is-section-60 min-height-40 type-opensans">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-036.jpg&quot;); background-position-y: 9%;"></div>
     </div>
@@ -9144,7 +9144,7 @@
     </div>
 </div>
 
-<div class="expozy is-section is-box box-autofit is-section-40 type-opensans">
+<div class="is-section is-box box-autofit is-section-40 type-opensans">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1620 leading-13">
         <div class="row">
@@ -9184,7 +9184,7 @@
 			'contentCss': 'type-opensans.css',
 			'contentClass': 'type-opensans',
 			'html': `
-<div class="expozy is-section is-box box-autofit is-section-60 type-opensans min-height-60 is-content-top edge-y-1">
+<div class="is-section is-box box-autofit is-section-60 type-opensans min-height-60 is-content-top edge-y-1">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-155.jpg&quot;); background-position: 50% 60%;"></div>
     </div>
@@ -9227,7 +9227,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box type-poppins is-dark-text is-section-100 box-autofit">
+<div class="is-section is-box type-poppins is-dark-text is-section-100 box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1800 content-pt-50">
         <div class="row clearfix">
@@ -9265,7 +9265,7 @@
 			'contentCss': 'type-raleway-lato.css',
 			'contentClass': 'type-raleway-lato',
 			'html': `
-<div class="expozy is-section is-box type-raleway-lato is-section-30 box-autofit">
+<div class="is-section is-box type-raleway-lato is-section-30 box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 is-content-left leading-11 size-16 is-content-1000 edge-x-2">
         <div class="row">
@@ -9285,7 +9285,7 @@
     </div>
 </div>
 
-<div class="expozy is-section is-section-70 type-raleway-lato">
+<div class="is-section is-section-70 type-raleway-lato">
     <div class="is-box is-box-6 box-autofit min-height-50">
         <div class="is-overlay" style="background-color: rgb(247, 247, 247);">
             <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-187.jpg&quot;); background-position: 50% 60%;"></div>
@@ -9340,7 +9340,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-100 type-poppins-lekton box-autofit">
+<div class="is-section is-box is-section-100 type-poppins-lekton box-autofit">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 is-content-1800 leading-none">
         <div class="row">
@@ -9400,7 +9400,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins min-height-60 is-light-text">
+<div class="is-section is-box is-section-100 box-autofit type-poppins min-height-60 is-light-text">
     <div class="is-overlay">
         <div class="is-overlay-bg" style="background-image: url(&quot;[%IMAGE_PATH%]images/img-115.jpg&quot;); background-position: 50% 60%;">
             <div class="is-overlay-color opacity-8"></div>
@@ -9441,7 +9441,7 @@
 			'contentCss': 'type-poppins.css',
 			'contentClass': 'type-poppins',
 			'html': `
-<div class="expozy is-section is-box is-section-100 box-autofit type-poppins">
+<div class="is-section is-box is-section-100 box-autofit type-poppins">
     <div class="is-overlay"></div>
     <div class="is-container v2 leading-14 size-18 is-content-1680">
         <div class="row">
@@ -9509,7 +9509,7 @@
 			'contentCss': 'type-poppins-lekton.css',
 			'contentClass': 'type-poppins-lekton',
 			'html': `
-<div class="expozy is-section is-box is-section-60 box-autofit type-poppins-lekton">
+<div class="is-section is-box is-section-60 box-autofit type-poppins-lekton">
     <div class="is-overlay"></div>
     <div class="is-container v2 size-18 leading-12 is-content-1500">
         <div class="row">

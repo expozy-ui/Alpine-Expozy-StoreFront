@@ -15,31 +15,59 @@ export class DataCollect {
         this.attributesData = this._collectAttributesData('data');
         this.attributesOptions = this._collectAttributesData('options');
         this.keyName = this._getKeyName();
+
         this.keyGet = this.element.getAttribute('keyGet') || this.keyName;
 
-        if (this.element.closest("form") != undefined) {
-            this.form = new FormDataCollector(this.element.closest("form"));
-            this.formData = this.form.data;
-        } else if (this.element.closest("tr") != undefined) {
-            this.form = new FormDataCollector(this.element.closest("tr"));
-            this.formData = this.form.data;
+
+        if (this.element.getAttribute('apiData') == undefined) {
+            if (this.element.closest("form") != undefined) {
+                this.form = new FormDataCollector(this.element.closest("form"));
+                this.formData = this.form.data;
+            } else if (this.element.closest("tr") != undefined) {
+                this.form = new FormDataCollector(this.element.closest("tr"));
+                this.formData = this.form.data;
+            }
         }
 
         this.combinedData = Object.assign(this.attributesData, this.formData);
         // this.formData = this._setFormData();
-        this.changeUrl = this._shouldChangeUrl();
+        this.pushurl = this._shouldPushUrl();
+        this.cleanData = this._cleanData();
+
     }
 
 
-    _shouldChangeUrl() {
+    _cleanData() {
+        const out = {};
+        for (const key in this.combinedData) {
+            const val = this.combinedData[key];
 
-        debugger;
-        const fromOptions = this.attributesOptions?.chnageurl === true;
+            if (
+                val === null ||
+                val === undefined ||
+                val === '' ||
+                (Array.isArray(val) && val.length === 0)
+            ) {
+                continue; // пропуска празните
+            }
 
-        const fromExternal = this.keyName && data[this.keyName]?.changeurl === true;
+            out[key] = val;
+        }
+        return out;
+    }
+
+    _shouldPushUrl() {
+
+        const fromOptions = this.attributesOptions?.pushurl === true;
+
+        const fromExternal = this.keyName && data[this.keyName]?.pushurl === true;
 
 
         if (fromOptions || fromExternal) {
+
+            if (!this.combinedData.page) {
+                delete data.pageUrl.page;
+            }
             this.combinedData = { ...data.pageUrl, ...this.combinedData };
             data.pageUrl = this.combinedData;
         }

@@ -27,6 +27,7 @@ export class ApiClass {
 		if (method === 'GET') {
 			const cached = await cacheGet(url);
 
+
 			if (cachable && cached && Object.keys(cached).length > 0) {
 				this.response = cached;
 				this.statusCode = 200;
@@ -51,7 +52,7 @@ export class ApiClass {
 
 			// cache GET
 			if (method === 'GET' && response.ok) {
-				cacheSet(url, json);
+				await cacheSet(url, this.response);
 			}
 
 			return json;

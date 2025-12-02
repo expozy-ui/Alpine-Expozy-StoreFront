@@ -1,71 +1,31 @@
-
-
 export let Messages = {
 
-  get_messages_rooms: async function (data, options) {
-    let response = [];
-
-    let endpoint = Helpers.combineRequest('messages_rooms', data);
-
+  get_messages_rooms: async function (dataCollect) {
+    let endpoint = Helpers.combineRequest('messages_rooms', dataCollect.combinedData);
     let api = new ApiClass();
     await api.get(endpoint, false);
-
-    if (!api.response) return response['internalError'] = 'No response from api for Messages.get_messages_rooms';
-
-    response['obj'] = api.response;
-    response['keyName'] = 'messages';
-
-    if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-    if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-    return response;
+    return api.response;
   },
 
-  get_messages: async function (data, options) {
-    let response = [];
-
-    let endpoint = Helpers.combineRequest('messages', data);
-
+  get_messages: async function (dataCollect) {
+    let endpoint = Helpers.combineRequest('messages', dataCollect.combinedData);
     let api = new ApiClass();
     await api.get(endpoint, true);
-
-    if (!api.response) return response['internalError'] = 'No response from api for Messages.get_messages';
-
-    response['obj'] = api.response;
-    response['keyName'] = 'messages';
-
-    if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-    if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-    return response;
+    return api.response;
   },
-  post_messages: async function (data, options) {
-    let response = [];
 
-    if (data['text'] == undefined || data['text'] == '') return 0;
+  post_messages: async function (dataCollect) {
 
-    let endpoint = Helpers.combineRequest('messages', data);
+    // Запазваме единствената валидна логика — да не се праща празно съобщение
+    if (!dataCollect.text || dataCollect.text === "") return 0;
 
+    let endpoint = Helpers.combineRequest('messages', dataCollect.combinedData);
     let api = new ApiClass();
-    await api.post(endpoint, data);
+    await api.post(endpoint, dataCollect.combinedData);
 
-    if (!api.response) return response['internalError'] = 'No response from api for Messages.post_messages';
-
-    response = api.response;
-    response['obj'] = response['rooms'];
-    response['keyName'] = 'messages';
-
-    if ("keyName" in options && options['keyName'] != '' && options['keyName'] != null) response.keyName = options['keyName'];
-
-    if ("initial" in options && options['initial'] == true) return Handler.responseHandler(response);
-
-    return response;
+    return api.response;
   },
 
-
-
-}
+};
 
 window.Messages = Messages;

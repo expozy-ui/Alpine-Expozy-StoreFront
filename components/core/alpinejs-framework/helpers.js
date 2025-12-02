@@ -376,7 +376,26 @@ export let Helpers = {
             el.onerror = () => reject(new Error("Failed to load " + url));
             document.head.appendChild(el);
         });
-    }
+    },
+
+    image(size) {
+        if (size == 'product') {
+            return '/static/images/product.webp'
+        }
+        if (size == '1920') {
+            return '/static/images/1920x1080.webp'
+        }
+        if (size == '1024') {
+            return '/static/images/1024x768.webp'
+        }
+        if (size == '800') {
+            return '/static/images/800x600.webp'
+        }
+        if (size == '640') {
+            return '/static/images/640x450.webp'
+        }
+    },
+
 
 
 

@@ -72,6 +72,7 @@ class Api
 		curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 		
 		$url = isset($core->core_url) && !empty($core->core_url) ? $core->core_url : CORE_URL;
+		
 		if(substr($url, -1) !== '/'){
 			$url .= '/';
 		}
