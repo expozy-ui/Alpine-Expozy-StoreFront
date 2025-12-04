@@ -50,8 +50,8 @@ export default class DateHelper {
     }
 
     static async initPicker(root, defaults, options, extraClearFn) {
-        await Helpers.loadFile(`${ADMINURL}/assets/global/plugins/flatpicker/flatpicker.css`)
-        await Helpers.loadFile(`${ADMINURL}/assets/global/plugins/flatpicker/flatpicker.js`)
+        await Helpers.loadFile(`/assets/plugins/flatpicker/flatpicker.css`)
+        await Helpers.loadFile(`/assets/plugins/flatpicker/flatpicker.js`)
 
         const settings = { ...defaults, ...options };
 
