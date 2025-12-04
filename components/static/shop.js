@@ -38,7 +38,12 @@ export let Shop = {
 	post_orders: async function (dataCollect) {
 		let api = new ApiClass();
 		await api.post('orders', dataCollect.combinedData);
-		return api.response;
+		let response = api.response;
+		if (response.status == 1) {
+			href(`/${LANG}/ordersummary?id=${response.order_id}`);
+		}
+
+		return response;
 	},
 
 	put_orders: async function (dataCollect) {

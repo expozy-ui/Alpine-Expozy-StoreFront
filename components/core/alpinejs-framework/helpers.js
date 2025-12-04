@@ -256,7 +256,7 @@ export let Helpers = {
         const ss = String(date.getSeconds()).padStart(2, "0");
 
         // избор на формат
-        const useFormat = format || CORE_DATEFORMAT;
+        const useFormat = format || 'long';
 
         let formattedDate;
         switch (useFormat) {

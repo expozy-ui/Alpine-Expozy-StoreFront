@@ -104,7 +104,6 @@ export class ApiClass {
 	}
 
 	buildOptions(method, data) {
-
 		let headers = {
 			'authentication': 'basic ' + SAAS_KEY,
 			'authorization': this.getAuth()
@@ -117,49 +116,71 @@ export class ApiClass {
 			headers: headers
 		};
 
-		// --- GET / DELETE нямат FormData ---
+		// --- GET / DELETE ---
 		if (method === 'GET') return options;
+
 		if (method === 'DELETE') {
 			options.headers['Content-Type'] = 'application/json';
 			options.body = JSON.stringify(data);
 			return options;
 		}
 
-		// --- POST / PUT ---
-		if (data instanceof FormData) {
-			options.body = data;
-		} else if (typeof data === 'object') {
-			const formData = new FormData();
+		// --------------------------
+		//   POST / PUT / PATCH
+		// --------------------------
+		let containsFile = false;
 
+		// Проверка дали има файлове
+		if (data && typeof data === 'object') {
 			for (let key in data) {
+				const value = data[key];
 
-				// multiple files
-				if (Array.isArray(data[key]) && data[key][0] instanceof File) {
+				if (value instanceof File) {
+					containsFile = true;
+					break;
+				}
 
-					for (const file of data[key]) {
-						if (key.endsWith('[]')) formData.append(key, file);
-						else formData.append(key + '[]', file);
-					}
-
-				} else if (Array.isArray(data[key])) {
-
-					// multiple select
-					data[key].forEach(v => formData.append(key, v));
-
-				} else {
-
-					// normal field
-					formData.append(key, data[key]);
+				if (Array.isArray(value) && value[0] instanceof File) {
+					containsFile = true;
+					break;
 				}
 			}
-
-			options.body = formData;
-		} else {
-			// raw JSON
-			options.headers['Content-Type'] = 'application/json';
-			options.body = JSON.stringify(data);
 		}
 
+		// -----------------------------------------------------
+		//  Ако НЯМА файлове → Пращай JSON за PUT и POST
+		// -----------------------------------------------------
+		if (!containsFile) {
+			options.headers['Content-Type'] = 'application/json';
+			options.body = JSON.stringify(data);
+			return options;
+		}
+
+		// -----------------------------------------------------
+		//  Ако ИМА файлове → Пращай FormData (POST/PUT)
+		// -----------------------------------------------------
+		let formData = new FormData();
+
+		for (let key in data) {
+			let value = data[key];
+
+			if (Array.isArray(value) && value[0] instanceof File) {
+				// multiple files
+				value.forEach(file => {
+					formData.append(key.endsWith('[]') ? key : key + '[]', file);
+				});
+
+			} else if (Array.isArray(value)) {
+				// multi selects
+				value.forEach(v => formData.append(key, v));
+
+			} else {
+				// regular field
+				formData.append(key, value);
+			}
+		}
+
+		options.body = formData;
 		return options;
 	}
 

@@ -85,6 +85,8 @@ export let User = {
 
 	// GET MY ADDRESSES
 	get_my_addresses: async function (dataCollect) {
+		if (!data.user.logged_in) return [];
+
 		let api = new ApiClass();
 		await api.get('my_addresses', false);
 		return api.response;
