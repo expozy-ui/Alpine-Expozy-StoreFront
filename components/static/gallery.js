@@ -6,9 +6,8 @@ export let Gallery = {
         let response = {
             empty: 1
         };
-
-
         if (dataCollect.combinedData.images.length == 0 || dataCollect.combinedData.images == undefined) return response;
+
         let galleryHtml = `
     
             <div   style="z-index:100000; top:0px;left:0px; position:fixed; width:100%;height:100%; background-color:#373737f7; padding:50px;position:fixed;">
