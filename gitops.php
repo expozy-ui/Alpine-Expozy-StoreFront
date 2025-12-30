@@ -242,9 +242,8 @@ function get_template(string $saas_key){
 	
 	if (is_dir('static') === false){
 		GitOps::get_my_saas_template($saas_key);
-		die();
 	}
 
-	print "Ok";
+	header('Location: /');
 	die();
 }
