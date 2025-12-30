@@ -113,6 +113,27 @@ class GitOps
 
 				self::change_saas_key($content);
 		}
+				
+		public static function get_my_saas_template(string $saas_key):void {
+				$template = Api::data(['saas_key' => $saas_key])->get()->my_saas_template();
+
+				if(isset($template['github_folder']) && !empty($template['github_folder']) ){
+
+					$zipUrl = 'https://github.com/expozy-ui/Alpine-Expozy-StoreFront_templates/archive/refs/heads/main.zip';
+
+					shell_exec("wget -q -O repo.zip $zipUrl");
+
+					shell_exec("unzip -q repo.zip -d tmp_repo");
+
+					$repoFolder = 'tmp_repo/Alpine-Expozy-StoreFront_templates-main';
+
+					$folder = escapeshellarg($template['github_folder']);
+					shell_exec("cp -r $repoFolder/$folder/static ./");
+
+					shell_exec("rm -rf tmp_repo repo.zip");
+
+				}
+		}
 
 } 
 ?>
