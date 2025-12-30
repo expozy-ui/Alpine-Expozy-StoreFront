@@ -8,7 +8,7 @@ if(file_exists('.htaccess') === false){
 	exec('rm -rf tmp 2>&1', $out, $code);
 	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard && rm -rf static";
 	$output = exec($git_clone, $out, $code);
-	
+
 	if(isset($_GET['saas_key'])){
 		require_once( "core/autoload.php");
 		require_once(BASEPATH.'core/classes/class.gitops.php');
@@ -81,7 +81,7 @@ if(post('upload_repo')){
 	$result_string = GitOps::upload_repo($github_token);	
 }
 
-$hide_table = $default_project === true || $github_token === false ? true : false;
+$hide_table =  $github_token === false ? true : false;
 
 
 $repos = Api::data(['github_token'=> $github_token, 'github_route'=>'repos'])->get()->git();
@@ -100,6 +100,11 @@ if(post('git_pull')){
 
 if(post('visibility')){
 	$result_string = GitOps::change_repo_visibility($github_token, post('visibility'));
+}
+
+if(post('template_id') && $user->is_admin()){
+	GitOps::change_saas_template(post('template_id'));
+	header('Location: /gitops.php');
 }
 
 
@@ -154,6 +159,24 @@ if(empty($repo_name)){
 			 </div>
 			 <div style="<?php if($hide_table) echo "display:none;"; ?>">
 					<table class='table'>
+						
+						<tr>
+						   <td>Template: </td>
+						   <td><form method="post">
+							   <?php 
+										$templates = GitOps::get_saas_templates(); ?>
+							   
+									<select name='template_id'>
+										<option value="0">-- Select --</option>
+										<?php foreach($templates as $template) { ?>
+										<option value="<?= $template['id'] ?>"><?= $template['title'] ?></option>
+										<?php } ?>
+									</select>
+									<button type="submit" onclick="return confirm('This will override your template, are you sure?')"> Change</button>
+								</form>
+						   </td>
+						</tr>
+						
 						<tr>
 						   <td>Repo visability: </td>
 						   <td><form method="post">

@@ -35,6 +35,8 @@ export class FormDataCollector {
             let value = el.value;
             let included = false;          // флаг дали полето „отговаря на условията“
             let checked = el.checked;
+
+
             switch (type) {
 
                 case 'radio':
@@ -68,6 +70,9 @@ export class FormDataCollector {
                 default:
                     if (el.value !== 'empty') {
                         included = true;
+                    } else {
+                        // ако е empty → чистим от pageUrl заради pushUrl
+                        this._removeFromPageUrl(name);
                     }
 
 
@@ -76,14 +81,27 @@ export class FormDataCollector {
 
             // добавяме в масива с детайли
             rawData.push({ name, type, value, included, checked });
-
             if (included) {
-                if (name.endsWith('[]')) {
-                    if (!data[name]) {
-                        data[name] = [];
+                if (type === 'file') {
+
+                    if (name.endsWith('[]')) {
+                        if (!data[name]) data[name] = [];
+
+                        if (Array.isArray(value)) {
+                            data[name].push(...value); // 🔑 ключовото
+                        } else {
+                            data[name].push(value);
+                        }
+
+                    } else {
+                        data[name] = value;
                     }
 
+                } else if (name.endsWith('[]')) {
+
+                    if (!data[name]) data[name] = [];
                     data[name].push(value);
+
                 } else {
                     data[name] = value;
                 }
@@ -91,4 +109,19 @@ export class FormDataCollector {
         });
         return { data, rawData };
     }
+
+
+    _removeFromPageUrl(name) {
+
+        if (!data.pageUrl || !data.pageUrl[name]) return;
+
+        // ако е масивен параметър
+        if (name.endsWith('[]')) {
+            delete data.pageUrl[name];
+        } else {
+            delete data.pageUrl[name];
+        }
+    }
 }
+
+

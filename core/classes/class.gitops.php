@@ -113,11 +113,9 @@ class GitOps
 
 				self::change_saas_key($content);
 		}
-				
-		public static function get_my_saas_template(string $saas_key):void {
-				$template = Api::data(['saas_key' => $saas_key])->get()->my_saas_template();
-
-				if(isset($template['github_folder']) && !empty($template['github_folder']) ){
+		
+		private static function _install_template(array $template){
+			if(isset($template['github_folder']) && !empty($template['github_folder']) ){
 
 					$zipUrl = 'https://github.com/expozy-ui/Alpine-Expozy-StoreFront_templates/archive/refs/heads/main.zip';
 
@@ -133,6 +131,30 @@ class GitOps
 					shell_exec("rm -rf tmp_repo repo.zip");
 
 				}
+		}
+		
+		public static function get_my_saas_template(string $saas_key):void {
+				$template = Api::data(['saas_key' => $saas_key])->get()->my_saas_template();
+				self::_install_template($template);
+				
+		}
+		
+		public static function get_saas_template(int $id):array {
+				return $template = Api::id($id)->data(['lang'=>'en'])->get()->saas_templates();
+		}
+		
+		public static function get_saas_templates():array {
+				return $template = Api::data(['lang'=>'en'])->get()->saas_templates();
+		}
+		
+		
+		public static function change_saas_template(int $template_id){
+			$template = GitOps::get_saas_template($template_id);
+			
+			//remove old template
+			rename("static", "static_".time());
+			//get new template
+			self::_install_template($template);
 		}
 
 } 

@@ -21,9 +21,10 @@ export let Gallery = {
                            `;
 
 
-
         for (const img of dataCollect.combinedData.images) {
-            galleryHtml += `<li><img src="${img.url}" alt="" class="w-full h-full " style="object-fit: contain;"></li>`;
+            let imgUrl = img.url != '' ? img.url : Helpers.image('product');
+
+            galleryHtml += `<li><img src="${imgUrl}" alt="" class="w-full h-full " style="object-fit: contain;"></li>`;
         }
 
 
