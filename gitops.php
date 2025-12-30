@@ -4,8 +4,10 @@ define( "_VALID_PHP", true);
 if(file_exists('.htaccess') === false){
 	@unlink('index.html');
 	@unlink('index.php');
+	exec('rm -rf .git 2>&1', $out, $code);
+	exec('rm -rf tmp 2>&1', $out, $code);
 	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard && rm -rf static";
-	$output = shell_exec($git_clone);
+	$output = exec($git_clone, $out, $code);
 	
 	if(isset($_GET['saas_key'])){
 		require_once( "core/autoload.php");
