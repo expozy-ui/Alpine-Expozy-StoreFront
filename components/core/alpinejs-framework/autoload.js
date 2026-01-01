@@ -213,11 +213,22 @@ async function callApiData() {
 
 function getUrlParameters() {
     const params = {};
-    const queryString = window.location.search; // взема "?test=true&page=2"
-    const urlParams = new URLSearchParams(queryString);
+    const urlParams = new URLSearchParams(window.location.search);
 
     for (const [key, value] of urlParams.entries()) {
-        params[key] = value;
+
+        // ако ключът вече съществува
+        if (params.hasOwnProperty(key)) {
+
+            // ако не е масив → превръщаме в масив
+            if (!Array.isArray(params[key])) {
+                params[key] = [params[key]];
+            }
+
+            params[key].push(value);
+        } else {
+            params[key] = value;
+        }
     }
 
     return params;
