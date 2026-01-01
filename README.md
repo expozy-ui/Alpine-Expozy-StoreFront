@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/expozy-ui-logo.png" alt="Expozy UI" width="400">
+  <img src="expozy-ui-logo.png" alt="Expozy UI" width="400">
 </p>
 
 <h1 align="center">Expozy Front-End Framework</h1>
