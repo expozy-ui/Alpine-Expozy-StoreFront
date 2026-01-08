@@ -25,7 +25,7 @@ export class ApiClient {
 
         this.response = await this._callFunction();
 
-        if (Object.keys(this.response || {}).length === 0 && this.requestType == 'post' || this.requestType == 'put') {
+        if (Object.keys(this.response || {}).length === 0 && (this.requestType == 'post' || this.requestType == 'put')) {
             return Helpers.show_toast_msg('Системата не успя да обработи заявката.', 'error');
         }
 

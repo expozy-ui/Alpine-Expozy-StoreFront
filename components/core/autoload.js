@@ -470,15 +470,10 @@ const devSaveButton = document.getElementById("dev_save");
 if (devSaveButton !== null) {
 
   devSaveButton.onclick = async function () {
-    // dataProxy['user']['token']
-    //save page
     Page.get();
     await alpineTemplatesGen();
     await classGen();
     await Page.saveCss();
-
-
-
   };
 }
 
