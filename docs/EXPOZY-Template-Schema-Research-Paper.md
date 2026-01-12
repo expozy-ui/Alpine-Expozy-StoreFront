@@ -50,26 +50,54 @@ Analysis of the EXPOZY repository revealed the following structure:
 
 ```
 Alpine-Expozy-StoreFront/
-├── pages/                    # PHP page templates
-│   ├── header.php
-│   ├── footer.php
-│   ├── index.php
-│   └── login.php
+├── pages/                          # PHP page templates
+│   ├── header.php                  # Global header with navigation
+│   ├── footer.php                  # Global footer
+│   ├── index.php                   # Main entry point
+│   ├── login.php                   # Authentication page
+│   ├── editor.php                  # Content editor loader
+│   └── rss.php                     # RSS feed generator
 ├── components/
 │   ├── core/
-│   │   └── alpinejs-framework/   # Core Alpine.js system
-│   │       ├── autoload.js       # Global reactive data
-│   │       ├── api-class.js      # API client
-│   │       ├── data-collect.js   # Parameter collection
-│   │       └── directives/       # Custom directives
-│   └── static/               # Feature modules
-│       ├── shop.js
-│       ├── blog.js
-│       ├── user.js
-│       └── search.js
-├── core/                     # PHP backend
-├── assets/                   # CSS, fonts, plugins
-└── static/                   # Generated HTML/CSS
+│   │   ├── alpinejs-framework/     # Core Alpine.js system
+│   │   │   ├── autoload.js         # Global reactive data initialization
+│   │   │   ├── api.js              # API client wrapper
+│   │   │   ├── helpers.js          # Utility functions
+│   │   │   ├── dataCollect.js      # data-* attribute extraction
+│   │   │   ├── formDataCollector.js # Form data collection
+│   │   │   └── directives/         # Custom Alpine directives
+│   │   ├── api/                    # API utilities
+│   │   │   ├── api.js              # Core API class
+│   │   │   └── cache.js            # Response caching
+│   │   └── classes/                # Core classes
+│   │       ├── page.js             # SPA page navigation
+│   │       └── link.js             # Link handling
+│   └── static/                     # Feature modules (30+ files)
+│       ├── shop.js                 # E-commerce: products, carts, wishlists
+│       ├── blog.js                 # Blog posts and categories
+│       ├── user.js                 # Authentication and profiles
+│       ├── search.js               # Site search functionality
+│       ├── contacts.js             # Contact form handling
+│       ├── gallery.js              # Image gallery functionality
+│       ├── reviews.js              # Product/service reviews
+│       ├── newsletter.js           # Email subscription
+│       ├── menu.js                 # Navigation menus
+│       ├── brands.js               # Brand listings
+│       ├── banners.js              # Promotional banners
+│       ├── sliders.js              # Image sliders
+│       └── ...                     # Additional modules
+├── editor/cb/                      # Content Builder editor
+│   ├── editor.php                  # Main editor interface
+│   ├── contentbuilder/             # Visual page builder
+│   └── assets/                     # Editor resources
+│       ├── modules/                # HTML block templates
+│       │   ├── slider.html
+│       │   ├── navbar-builder.html
+│       │   └── ...
+│       └── minimalist-blocks/      # Pre-built content blocks
+├── core/                           # PHP backend logic
+├── assets/                         # CSS, fonts, plugins
+└── static/                         # Generated static files
 ```
 
 ---
@@ -81,9 +109,34 @@ Alpine-Expozy-StoreFront/
 The schema was derived using a four-step static analysis procedure:
 
 **Step A: Map Template Surface Area**
-- Identified template locations (`pages/`, `components/`)
-- Cataloged recurring page types (landing, product, category, blog)
-- Listed common UI blocks (hero, grid, cards, filters, CTAs)
+
+*Template Locations Identified:*
+| Directory | Contents | Purpose |
+|-----------|----------|---------|
+| `pages/` | header.php, footer.php, index.php, login.php | PHP page templates |
+| `components/static/` | shop.js, blog.js, user.js, contacts.js, etc. | Feature modules (30+ files) |
+| `components/core/alpinejs-framework/` | autoload.js, api.js, helpers.js | Core framework logic |
+| `editor/cb/assets/modules/` | slider.html, navbar-builder.html | HTML block templates |
+
+*Recurring Patterns Identified:*
+| Pattern Type | Source Files | Schema Mapping |
+|--------------|--------------|----------------|
+| Global header/footer | `pages/header.php`, `pages/footer.php` | Consistent page structure |
+| E-commerce logic | `components/static/shop.js` | `products`, `cta` sections |
+| Blog/content logic | `components/static/blog.js` | `posts`, `content` sections |
+| User authentication | `components/static/user.js`, `pages/login.php` | `form` section (login/register) |
+| Contact forms | `components/static/contacts.js` | `form` section |
+| Search functionality | `components/static/search.js` | Search integration |
+
+*UI Patterns Extracted from Module Files:*
+| Module File | Extracted Patterns | Schema Section |
+|-------------|-------------------|----------------|
+| `shop.js` | Product listings, cart actions | `products`, button actions |
+| `blog.js` | Post listings, categories | `posts` |
+| `sliders.js`, `banners.js` | Image carousels, hero banners | `hero` |
+| `gallery.js` | Image galleries | `content` with images |
+| `reviews.js` | Testimonial displays | `testimonials` |
+| `newsletter.js` | Email signup forms | `form`, `cta` |
 
 **Step B: Inventory Allowed Behaviors**
 - Cataloged data-fetch patterns (`apiData`, `keyName`, `data-*`)
@@ -102,14 +155,18 @@ The schema was derived using a four-step static analysis procedure:
 
 ### 3.2 Key Files Analyzed
 
-| File | Purpose | Extracted Patterns |
-|------|---------|-------------------|
-| `autoload.js` | Global reactive state | `data` object structure, state keys |
-| `api-class.js` | API client | Request/response handling |
-| `data-collect.js` | Parameter collection | `data-*` attribute parsing |
-| `shop.js` | E-commerce module | `get.products`, `post.carts` endpoints |
-| `blog.js` | Blog module | `get.blogPosts` endpoints |
-| `user.js` | User module | `post.login`, `post.register` endpoints |
+| File | Path | Purpose | Extracted Patterns |
+|------|------|---------|-------------------|
+| `autoload.js` | `components/core/alpinejs-framework/` | Global reactive state | `Alpine.reactive()`, `data` object structure |
+| `api.js` | `components/core/alpinejs-framework/` | API client wrapper | Request/response handling |
+| `dataCollect.js` | `components/core/alpinejs-framework/` | Parameter collection | `data-*` attribute extraction |
+| `page.js` | `components/core/classes/` | SPA navigation | `href()` function, page transitions |
+| `shop.js` | `components/static/` | E-commerce module | `get_products`, `post_carts` methods |
+| `blog.js` | `components/static/` | Blog module | `get_blogPosts` methods |
+| `user.js` | `components/static/` | User module | `post_login`, `post_register` methods |
+| `contacts.js` | `components/static/` | Contact forms | Form submission patterns |
+| `newsletter.js` | `components/static/` | Email signup | Subscription actions |
+| `header.php` | `pages/` | Global header | Navigation structure, menu patterns |
 
 ---
 
