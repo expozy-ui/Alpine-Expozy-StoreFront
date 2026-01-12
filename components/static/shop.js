@@ -36,11 +36,22 @@ export let Shop = {
 	},
 
 	post_orders: async function (dataCollect) {
-		let api = new ApiClass();
+		const paymentMethod = dataCollect?.combinedData?.payment_method;
+
+		const api = new ApiClass();
+
+		// Фикс за safari редирект
+		if (paymentMethod === 'stripe') {
+			api.post('orders', dataCollect.combinedData);
+			return; // приключваш тук
+		}
+
+		// OTHER METHODS: изчакваш резултат
 		await api.post('orders', dataCollect.combinedData);
-		let response = api.response;
-		if (response.status == 1) {
-			href(`/${LANG}/ordersummary?id=${response.order_id}`);
+
+		const response = api.response;
+		if (response?.status == 1) {
+			href(`/${LANG}/ordersummary?order_id=${response.order_id}`);
 		}
 
 		return response;
