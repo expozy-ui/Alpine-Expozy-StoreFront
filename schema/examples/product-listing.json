@@ -1,47 +1,28 @@
 {
   "metadata": {
-    "id": "product-listing-v1",
+    "id": "product-listing",
     "name": "Product Listing Page",
     "pageType": "category",
-    "schemaVersion": "1.0.0",
     "route": "/products",
-    "seo": {
-      "title": "Products | EXPOZY Store",
-      "description": "Browse our collection of high-quality products."
-    },
-    "languages": ["en", "bg"]
+    "title": "Our Products",
+    "description": "Browse our product collection"
   },
-  "designSystem": {
-    "tailwindMode": "freeform",
-    "theme": {
-      "primaryColor": "indigo-600",
-      "borderRadius": "lg"
-    },
-    "darkMode": true,
-    "responsive": true
+  "theme": {
+    "primaryColor": "indigo-600",
+    "darkMode": true
   },
   "dataSources": [
     {
       "id": "productList",
       "endpoint": "get.products",
       "keyName": "products",
-      "params": {
-        "limit": 12,
-        "page": 1
-      },
-      "options": {
-        "pushUrl": true
-      },
+      "limit": 12,
       "autoLoad": true
     },
     {
-      "id": "categoryList",
+      "id": "categories",
       "endpoint": "get.categories",
       "keyName": "categories",
-      "params": {
-        "parent_id": 0,
-        "limit": 50
-      },
       "autoLoad": true
     }
   ],
@@ -49,213 +30,38 @@
     {
       "id": "addToCart",
       "endpoint": "Shop.post_carts",
-      "keyName": "cart",
-      "params": {
-        "quantity": 1
-      }
+      "keyName": "cart"
     },
     {
       "id": "filterProducts",
       "endpoint": "Shop.get_products",
-      "keyName": "products",
-      "options": {
-        "pushUrl": true,
-        "scroll": true
-      }
-    },
-    {
-      "id": "changePage",
-      "endpoint": "Shop.get_products",
-      "keyName": "products",
-      "options": {
-        "pushUrl": true,
-        "scroll": true
-      }
+      "keyName": "products"
     }
   ],
-  "layout": {
-    "className": "min-h-screen bg-gray-50 dark:bg-gray-900",
-    "children": [
-      {
-        "type": "section",
-        "tag": "header",
-        "background": "default",
-        "className": "bg-white dark:bg-gray-800 shadow-sm py-6",
-        "children": [
-          {
-            "type": "container",
-            "maxWidth": "xl",
-            "children": [
-              {
-                "type": "breadcrumb",
-                "separator": "chevron",
-                "items": [
-                  { "label": "Home", "href": "/" },
-                  { "label": "Products" }
-                ]
-              },
-              {
-                "type": "spacer",
-                "size": "md"
-              },
-              {
-                "type": "flex",
-                "direction": "row",
-                "justify": "between",
-                "align": "center",
-                "children": [
-                  {
-                    "type": "heading",
-                    "level": 1,
-                    "size": "3xl",
-                    "content": "Our Products",
-                    "className": "text-gray-900 dark:text-white font-bold"
-                  },
-                  {
-                    "type": "searchBar",
-                    "placeholder": "Search products...",
-                    "actionRef": "filterProducts",
-                    "instant": true,
-                    "debounce": 400,
-                    "className": "w-80"
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "container",
-        "maxWidth": "xl",
-        "className": "py-8",
-        "children": [
-          {
-            "type": "grid",
-            "columns": { "default": 1, "lg": 4 },
-            "gap": "8",
-            "children": [
-              {
-                "type": "section",
-                "tag": "aside",
-                "className": "lg:col-span-1",
-                "children": [
-                  {
-                    "type": "card",
-                    "variant": "default",
-                    "padding": "md",
-                    "className": "bg-white dark:bg-gray-800",
-                    "children": [
-                      {
-                        "type": "heading",
-                        "level": 3,
-                        "content": "Filters",
-                        "className": "mb-4 text-gray-900 dark:text-white"
-                      },
-                      {
-                        "type": "filter",
-                        "layout": "accordion",
-                        "actionRef": "filterProducts",
-                        "filters": [
-                          {
-                            "key": "category",
-                            "label": "Category",
-                            "filterType": "checkbox",
-                            "optionsBinding": "data.categories.result"
-                          },
-                          {
-                            "key": "price",
-                            "label": "Price Range",
-                            "filterType": "range",
-                            "min": 0,
-                            "max": 1000
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "section",
-                "tag": "main",
-                "className": "lg:col-span-3",
-                "children": [
-                  {
-                    "type": "flex",
-                    "direction": "row",
-                    "justify": "between",
-                    "align": "center",
-                    "className": "mb-6",
-                    "children": [
-                      {
-                        "type": "text",
-                        "variant": "muted",
-                        "bindings": {
-                          "text": "'Showing ' + (data.products.pagination.total || 0) + ' products'"
-                        }
-                      },
-                      {
-                        "type": "select",
-                        "name": "sort",
-                        "placeholder": "Sort by",
-                        "options": [
-                          { "value": "newest", "label": "Newest First" },
-                          { "value": "price_asc", "label": "Price: Low to High" },
-                          { "value": "price_desc", "label": "Price: High to Low" }
-                        ],
-                        "events": {
-                          "change": {
-                            "actionRef": "filterProducts"
-                          }
-                        }
-                      }
-                    ]
-                  },
-                  {
-                    "type": "grid",
-                    "columns": { "default": 1, "sm": 2, "lg": 3 },
-                    "gap": "6",
-                    "children": [
-                      {
-                        "type": "template",
-                        "iterator": "product",
-                        "collection": "data.products.result",
-                        "itemKey": "product.id",
-                        "children": [
-                          {
-                            "type": "productCard",
-                            "variant": "vertical",
-                            "productBinding": "product",
-                            "showImage": true,
-                            "showTitle": true,
-                            "showPrice": true,
-                            "showRating": true,
-                            "showAddToCart": true
-                          }
-                        ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "spacer",
-                    "size": "xl"
-                  },
-                  {
-                    "type": "pagination",
-                    "dataSource": "productList",
-                    "paginationPath": "data.products.pagination",
-                    "variant": "default",
-                    "showFirst": true,
-                    "showLast": true,
-                    "siblingCount": 2
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Our Products",
+      "subtitle": "Discover our latest collection of high-quality products",
+      "className": "bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-16"
+    },
+    {
+      "type": "products",
+      "dataSource": "productList",
+      "columns": 4,
+      "className": "py-12"
+    },
+    {
+      "type": "cta",
+      "title": "Need Help?",
+      "content": "Contact our support team for assistance",
+      "buttons": [
+        {
+          "text": "Contact Us",
+          "href": "/contact",
+          "variant": "primary"
+        }
+      ]
+    }
+  ]
 }

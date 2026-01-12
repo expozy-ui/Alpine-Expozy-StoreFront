@@ -1,311 +1,87 @@
 {
   "metadata": {
-    "id": "blog-post-v1",
-    "name": "Blog Post Page",
-    "pageType": "blogPost",
-    "schemaVersion": "1.0.0",
-    "route": "/blog/:slug",
-    "seo": {
-      "title": "Blog | EXPOZY",
-      "description": "Read our latest articles and updates"
-    },
-    "languages": ["en", "bg"]
+    "id": "blog-page",
+    "name": "Blog Page",
+    "pageType": "blog",
+    "route": "/blog",
+    "title": "Our Blog",
+    "description": "Latest articles and updates"
   },
-  "designSystem": {
-    "tailwindMode": "freeform",
-    "theme": {
-      "primaryColor": "indigo-600",
-      "borderRadius": "lg"
-    },
+  "theme": {
+    "primaryColor": "indigo-600",
     "darkMode": true
   },
   "dataSources": [
     {
-      "id": "blogPost",
-      "endpoint": "get.blogPost",
-      "keyName": "post",
-      "params": {
-        "slug": "example-post"
-      },
-      "autoLoad": true
-    },
-    {
-      "id": "relatedPosts",
+      "id": "blogPosts",
       "endpoint": "get.blogPosts",
-      "keyName": "relatedPosts",
-      "params": {
-        "limit": 3
-      },
+      "keyName": "posts",
+      "limit": 10,
       "autoLoad": true
-    },
-    {
-      "id": "comments",
-      "endpoint": "get.comments",
-      "keyName": "comments",
-      "params": {
-        "limit": 20
-      },
-      "autoLoad": true,
-      "refreshOn": ["commentAdded"]
     }
   ],
   "actions": [
     {
-      "id": "submitComment",
-      "endpoint": "Blog.post_comments",
-      "keyName": "newComment",
-      "options": {
-        "clearForm": true
-      }
-    },
-    {
-      "id": "likePost",
-      "endpoint": "Blog.post_likes",
-      "keyName": "likeResult"
+      "id": "subscribe",
+      "endpoint": "Newsletter.post_subscribe",
+      "keyName": "subscription"
     }
   ],
-  "layout": {
-    "className": "min-h-screen bg-white dark:bg-gray-900",
-    "children": [
-      {
-        "type": "section",
-        "tag": "article",
-        "className": "pb-16",
-        "children": [
-          {
-            "type": "hero",
-            "variant": "background-image",
-            "size": "md",
-            "overlay": true,
-            "title": "Article Title",
-            "subtitle": "Published on January 1, 2025",
-            "className": "text-white"
-          },
-          {
-            "type": "container",
-            "maxWidth": "prose",
-            "className": "px-4 py-12",
-            "children": [
-              {
-                "type": "richText",
-                "sanitize": true,
-                "className": "prose dark:prose-invert prose-lg max-w-none",
-                "bindings": {
-                  "html": "data.post.content"
-                }
-              },
-              {
-                "type": "divider",
-                "variant": "solid",
-                "orientation": "horizontal",
-                "className": "my-8"
-              },
-              {
-                "type": "flex",
-                "direction": "row",
-                "justify": "between",
-                "align": "center",
-                "children": [
-                  {
-                    "type": "text",
-                    "content": "Tags: Technology, Development",
-                    "variant": "muted"
-                  },
-                  {
-                    "type": "flex",
-                    "direction": "row",
-                    "gap": "2",
-                    "children": [
-                      {
-                        "type": "button",
-                        "variant": "outline",
-                        "size": "sm",
-                        "icon": "bi-heart",
-                        "content": "Like",
-                        "events": {
-                          "click": {
-                            "actionRef": "likePost"
-                          }
-                        }
-                      },
-                      {
-                        "type": "button",
-                        "variant": "outline",
-                        "size": "sm",
-                        "icon": "bi-share",
-                        "content": "Share"
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "section",
-        "tag": "section",
-        "background": "muted",
-        "className": "py-16 bg-gray-50 dark:bg-gray-800",
-        "children": [
-          {
-            "type": "container",
-            "maxWidth": "xl",
-            "children": [
-              {
-                "type": "heading",
-                "level": 2,
-                "content": "Comments",
-                "className": "font-bold text-gray-900 dark:text-white mb-8"
-              },
-              {
-                "type": "card",
-                "variant": "default",
-                "padding": "lg",
-                "className": "bg-white dark:bg-gray-700 mb-8",
-                "children": [
-                  {
-                    "type": "form",
-                    "actionRef": "submitComment",
-                    "layout": "vertical",
-                    "children": [
-                      {
-                        "type": "textarea",
-                        "name": "content",
-                        "label": "Leave a comment",
-                        "placeholder": "Share your thoughts...",
-                        "rows": 4,
-                        "required": true
-                      },
-                      {
-                        "type": "flex",
-                        "justify": "end",
-                        "className": "mt-4",
-                        "children": [
-                          {
-                            "type": "button",
-                            "buttonType": "submit",
-                            "variant": "primary",
-                            "content": "Post Comment",
-                            "icon": "bi-send"
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              },
-              {
-                "type": "flex",
-                "direction": "col",
-                "gap": "4",
-                "children": [
-                  {
-                    "type": "template",
-                    "iterator": "comment",
-                    "collection": "data.comments.result",
-                    "itemKey": "comment.id",
-                    "children": [
-                      {
-                        "type": "card",
-                        "variant": "default",
-                        "padding": "md",
-                        "className": "bg-white dark:bg-gray-700",
-                        "children": [
-                          {
-                            "type": "flex",
-                            "direction": "row",
-                            "gap": "4",
-                            "children": [
-                              {
-                                "type": "image",
-                                "aspectRatio": "square",
-                                "objectFit": "cover",
-                                "rounded": "full",
-                                "className": "w-12 h-12",
-                                "bindings": {
-                                  "src": "comment.author_avatar"
-                                }
-                              },
-                              {
-                                "type": "flex",
-                                "direction": "col",
-                                "className": "flex-1",
-                                "children": [
-                                  {
-                                    "type": "text",
-                                    "variant": "bold",
-                                    "className": "text-gray-900 dark:text-white",
-                                    "bindings": {
-                                      "text": "comment.author_name"
-                                    }
-                                  },
-                                  {
-                                    "type": "text",
-                                    "className": "mt-2 text-gray-700 dark:text-gray-300",
-                                    "bindings": {
-                                      "text": "comment.content"
-                                    }
-                                  }
-                                ]
-                              }
-                            ]
-                          }
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "type": "section",
-        "tag": "section",
-        "className": "py-16",
-        "children": [
-          {
-            "type": "container",
-            "maxWidth": "xl",
-            "children": [
-              {
-                "type": "heading",
-                "level": 2,
-                "content": "Related Articles",
-                "className": "font-bold text-gray-900 dark:text-white mb-8"
-              },
-              {
-                "type": "grid",
-                "columns": { "default": 1, "md": 2, "lg": 3 },
-                "gap": "6",
-                "children": [
-                  {
-                    "type": "template",
-                    "iterator": "relatedPost",
-                    "collection": "data.relatedPosts.result",
-                    "itemKey": "relatedPost.id",
-                    "children": [
-                      {
-                        "type": "blogCard",
-                        "variant": "vertical",
-                        "postBinding": "relatedPost",
-                        "showImage": true,
-                        "showTitle": true,
-                        "showExcerpt": true,
-                        "showDate": true,
-                        "showCategory": true
-                      }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
-    ]
-  }
+  "sections": [
+    {
+      "type": "hero",
+      "title": "Our Blog",
+      "subtitle": "Stay updated with our latest articles and news",
+      "className": "bg-gray-900 text-white py-20"
+    },
+    {
+      "type": "posts",
+      "dataSource": "blogPosts",
+      "columns": 3,
+      "className": "py-12"
+    },
+    {
+      "type": "form",
+      "title": "Subscribe to Newsletter",
+      "subtitle": "Get the latest updates delivered to your inbox",
+      "actionRef": "subscribe",
+      "fields": [
+        {
+          "name": "email",
+          "label": "Email Address",
+          "type": "email",
+          "placeholder": "Enter your email",
+          "required": true
+        }
+      ],
+      "buttons": [
+        {
+          "text": "Subscribe",
+          "variant": "primary"
+        }
+      ]
+    },
+    {
+      "type": "features",
+      "title": "Why Read Our Blog?",
+      "columns": 3,
+      "items": [
+        {
+          "title": "Expert Insights",
+          "content": "Learn from industry experts and thought leaders",
+          "icon": "bi-lightbulb"
+        },
+        {
+          "title": "Latest Trends",
+          "content": "Stay ahead with the latest industry trends",
+          "icon": "bi-graph-up"
+        },
+        {
+          "title": "Practical Tips",
+          "content": "Get actionable advice you can apply today",
+          "icon": "bi-check-circle"
+        }
+      ]
+    }
+  ]
 }
