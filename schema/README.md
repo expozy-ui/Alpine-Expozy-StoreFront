@@ -2,21 +2,40 @@
 
 ## Overview
 
-Template Schema v1 is a JSON Schema designed for AI-powered page template generation in EXPOZY. It provides a structured output format that ensures validity, security, and compatibility with the EXPOZY front-end framework.
+Template Schema v1 is a JSON Schema designed for AI-powered page template generation in EXPOZY using Google Vertex AI's structured output feature. The schema ensures that LLM-generated templates are valid, secure, and compatible with the EXPOZY front-end framework.
 
-This schema enables LLMs to generate template packages that are:
-- **Valid**: Structurally correct and machine-checkable
-- **Secure**: Prevents script injection and unsafe patterns
-- **Compatible**: Aligns with EXPOZY's `apiData`, `alpineListener`, and routing conventions
-- **Maintainable**: Uses stable component building blocks
+## Vertex AI Compatibility
 
-## Schema Dialect
+This schema follows **Google Vertex AI structured output conventions** and uses only supported fields:
 
-Template Schema v1 uses **JSON Schema Draft 2020-12** for modern keyword support and broad validator compatibility.
+| Supported | Not Supported |
+|-----------|---------------|
+| `type` (UPPERCASE) | `$schema`, `$id`, `$defs`, `$ref` |
+| `properties` | `additionalProperties` |
+| `required` | `pattern`, `const`, `default` |
+| `items` | `oneOf`, `allOf`, `if/then/else` |
+| `enum` (strings only) | `minLength`, `maxLength` |
+| `nullable` | `title`, `description` |
+| `minimum`, `maximum` | |
+| `minItems`, `maxItems` | |
+| `format` (date, date-time, time, duration) | |
+| `propertyOrdering` | |
+| `anyOf` | |
+
+## Type Format
+
+All types use UPPERCASE format as required by Vertex AI:
 
 ```json
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema"
+  "type": "OBJECT",
+  "properties": {
+    "name": { "type": "STRING" },
+    "count": { "type": "INTEGER" },
+    "price": { "type": "NUMBER" },
+    "active": { "type": "BOOLEAN" },
+    "items": { "type": "ARRAY", "items": { "type": "STRING" } }
+  }
 }
 ```
 
@@ -26,7 +45,6 @@ A template package consists of five main sections:
 
 ```json
 {
-  "$schema": "https://expozy.com/schemas/template-schema-v1.json",
   "metadata": { ... },
   "designSystem": { ... },
   "dataSources": [ ... ],
@@ -44,7 +62,6 @@ Identifies the template and provides SEO/routing information.
   "metadata": {
     "id": "product-listing-page",
     "name": "Product Listing Page",
-    "description": "A responsive product listing with filters and pagination",
     "pageType": "category",
     "schemaVersion": "1.0.0",
     "route": "/products",
@@ -56,6 +73,8 @@ Identifies the template and provides SEO/routing information.
   }
 }
 ```
+
+**Page Types:** `landing`, `product`, `category`, `blog`, `blogPost`, `cart`, `checkout`, `account`, `search`, `contact`, `custom`
 
 ### 2. Design System
 
@@ -74,6 +93,10 @@ Configures styling preferences and theme.
   }
 }
 ```
+
+**Tailwind Modes:** `freeform`, `tokenized`, `restricted`
+
+**Border Radius:** `none`, `sm`, `md`, `lg`, `xl`, `2xl`, `full`
 
 ### 3. Data Sources
 
@@ -102,6 +125,8 @@ Declarative REST API bindings that map to EXPOZY's `apiData` attribute pattern.
 }
 ```
 
+**Available Params:** `limit`, `page`, `sort`, `order`, `category`, `category_id`, `brand`, `brand_id`, `search`, `slug`, `id`, `parent_id`, `post_id`, `product_id`, `user_id`, `exclude`, `min_price`, `max_price`, `in_stock`, `featured`, `on_sale`
+
 ### 4. Actions
 
 User interaction handlers that map to EXPOZY's `alpineListener` pattern.
@@ -123,7 +148,7 @@ User interaction handlers that map to EXPOZY's `alpineListener` pattern.
       "endpoint": "Shop.post_carts",
       "keyName": "cart",
       "params": {
-        "product_id": { "binding": "data.selectedProduct.id" }
+        "quantity": 1
       }
     }
   ]
@@ -140,32 +165,13 @@ A tree of components that defines the page structure.
     "className": "min-h-screen bg-gray-50",
     "children": [
       {
-        "type": "hero",
-        "variant": "centered",
-        "title": "Our Products",
-        "subtitle": "Discover our latest collection"
-      },
-      {
         "type": "container",
+        "maxWidth": "xl",
         "children": [
           {
-            "type": "grid",
-            "columns": { "default": 1, "md": 2, "lg": 4 },
-            "gap": "6",
-            "children": [
-              {
-                "type": "template",
-                "iterator": "product",
-                "collection": "data.products.result",
-                "key": "product.id",
-                "children": [
-                  {
-                    "type": "productCard",
-                    "productBinding": "product"
-                  }
-                ]
-              }
-            ]
+            "type": "heading",
+            "level": 1,
+            "content": "Welcome"
           }
         ]
       }
@@ -176,45 +182,67 @@ A tree of components that defines the page structure.
 
 ## Component Types
 
-The schema supports 40+ component types organized by category:
+The schema supports 40+ component types:
 
 ### Layout Components
-- `container` - Centered max-width container
-- `section` - Semantic section with background options
-- `grid` - CSS Grid layout with responsive columns
-- `flex` - Flexbox layout container
+| Type | Description |
+|------|-------------|
+| `container` | Centered max-width container |
+| `section` | Semantic section with background options |
+| `grid` | CSS Grid layout with responsive columns |
+| `flex` | Flexbox layout container |
 
 ### Content Components
-- `heading` - H1-H6 headings with size variants
-- `text` - Paragraph/span text content
-- `image` - Optimized image with aspect ratio
-- `icon` - Bootstrap icon
-- `richText` - Sanitized HTML content
+| Type | Description |
+|------|-------------|
+| `heading` | H1-H6 headings (level 1-6) |
+| `text` | Paragraph/span text content |
+| `image` | Optimized image with aspect ratio |
+| `icon` | Bootstrap icon (bi-*) |
+| `richText` | Sanitized HTML content |
+| `badge` | Status badge |
+| `divider` | Horizontal/vertical divider |
+| `spacer` | Vertical spacing |
 
 ### Interactive Components
-- `button` - Action button with variants
-- `link` - Navigation link (SPA or external)
-- `form` - Form container with action binding
-- `input`, `select`, `textarea` - Form controls
+| Type | Description |
+|------|-------------|
+| `button` | Action button with variants |
+| `link` | Navigation link (SPA or external) |
+| `form` | Form container with action binding |
+| `input` | Text input field |
+| `select` | Dropdown select |
+| `textarea` | Multi-line text input |
+| `checkbox` | Checkbox input |
+| `radio` | Radio button |
+| `searchBar` | Search input with action |
 
 ### Data Display Components
-- `productCard` - E-commerce product card
-- `blogCard` - Blog post card
-- `table` - Data table with sorting
-- `gallery` - Image gallery with lightbox
-- `carousel` - Image/content carousel
+| Type | Description |
+|------|-------------|
+| `productCard` | E-commerce product card |
+| `blogCard` | Blog post card |
+| `table` | Data table with columns |
+| `gallery` | Image gallery |
+| `carousel` | Image/content carousel |
+| `rating` | Star rating display |
+| `price` | Price display with currency |
 
 ### Navigation Components
-- `pagination` - Page navigation
-- `breadcrumb` - Breadcrumb trail
-- `tabs` - Tabbed content
-- `accordion` - Collapsible sections
+| Type | Description |
+|------|-------------|
+| `pagination` | Page navigation |
+| `breadcrumb` | Breadcrumb trail |
+| `tabs` | Tabbed content |
+| `accordion` | Collapsible sections |
 
 ### Utility Components
-- `modal` - Modal dialog
-- `badge` - Status badge
-- `divider` - Horizontal/vertical divider
-- `spacer` - Vertical spacing
+| Type | Description |
+|------|-------------|
+| `template` | Loop iterator (x-for) |
+| `modal` | Modal dialog |
+| `filter` | Filter controls |
+| `quantity` | Quantity selector |
 
 ## Data Binding
 
@@ -255,29 +283,35 @@ Components can bind to the global `data` object using expressions:
 }
 ```
 
-## Security Constraints
+### Template Loops
 
-### Safe Expressions
-Expressions are restricted to a safe character set to prevent injection:
+```json
+{
+  "type": "template",
+  "iterator": "product",
+  "collection": "data.products.result",
+  "itemKey": "product.id",
+  "children": [
+    {
+      "type": "productCard",
+      "productBinding": "product"
+    }
+  ]
+}
 ```
-^[a-zA-Z0-9_.\\[\\]'\"\\s+\\-*/%<>=!&|?:(),]+$
-```
 
-### Allowlisted Attributes
-Only safe HTML attributes are permitted (id, name, title, alt, aria-*, role, etc.).
+## Property Ordering
 
-### Sanitized HTML
-The `richText` component requires content sanitization before rendering.
+The schema uses `propertyOrdering` to ensure consistent output order from the LLM. Properties are generated in the specified order, which is important for:
 
-### Forbidden Patterns
-- Arbitrary `<script>` tags
-- Inline event handlers (`onclick=`)
-- DOM sinks without sanitization
+1. Consistent template structure
+2. Predictable rendering behavior
+3. Easier debugging and maintenance
 
 ## Mapping to EXPOZY Patterns
 
 | Schema Concept | EXPOZY Pattern |
-|---------------|----------------|
+|----------------|----------------|
 | `dataSources[].endpoint` | `apiData="get.products"` |
 | `dataSources[].keyName` | `keyName="products"` |
 | `dataSources[].params` | `data-*` attributes |
@@ -287,21 +321,52 @@ The `richText` component requires content sanitization before rendering.
 | `template` component | `<template x-for="...">` |
 | Link `spa: true` | `@click="href('/path')"` |
 
-## Validation
+## Usage with Vertex AI
 
-Validate template packages using any JSON Schema Draft 2020-12 compatible validator:
+### Python Example
 
-```javascript
-import Ajv from 'ajv/dist/2020';
-import schema from './template-schema-v1.json';
+```python
+from google import genai
+from google.genai.types import GenerateContentConfig, HttpOptions
+import json
 
-const ajv = new Ajv();
-const validate = ajv.compile(schema);
+# Load the schema
+with open('template-schema-v1.json', 'r') as f:
+    response_schema = json.load(f)
 
-const valid = validate(templatePackage);
-if (!valid) {
-  console.error(validate.errors);
-}
+client = genai.Client(http_options=HttpOptions(api_version="v1"))
+
+response = client.models.generate_content(
+    model="gemini-2.5-flash",
+    contents="Create a product listing page with filters and pagination",
+    config=GenerateContentConfig(
+        response_mime_type="application/json",
+        response_schema=response_schema,
+    ),
+)
+
+template = json.loads(response.text)
+```
+
+### REST API Example
+
+```bash
+curl -X POST \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "contents": {
+      "role": "user",
+      "parts": {
+        "text": "Create a product listing page with filters and pagination"
+      }
+    },
+    "generation_config": {
+      "responseMimeType": "application/json",
+      "responseSchema": '"$(cat template-schema-v1.json)"'
+    }
+  }' \
+  "https://us-central1-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/us-central1/publishers/google/models/gemini-2.5-flash:generateContent"
 ```
 
 ## Semantic Validation
@@ -315,11 +380,11 @@ Some EXPOZY constraints require additional validation beyond JSON Schema:
 
 ## Version History
 
-- **v1.0.0** (2025-12): Initial release with core component set and EXPOZY pattern mappings
+- **v1.0.0** (2025-12): Initial release with Vertex AI structured output compatibility
 
 ## References
 
-- [JSON Schema Draft 2020-12](https://json-schema.org/draft/2020-12)
+- [Google Vertex AI Structured Output](https://cloud.google.com/vertex-ai/generative-ai/docs/multimodal/control-generated-output)
 - [EXPOZY Storefront Framework](https://github.com/expozy-ui/Alpine-Expozy-StoreFront)
 - [Alpine.js Documentation](https://alpinejs.dev)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)

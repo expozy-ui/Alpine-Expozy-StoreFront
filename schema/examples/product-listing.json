@@ -1,32 +1,20 @@
 {
-  "$schema": "https://expozy.com/schemas/template-schema-v1.json",
   "metadata": {
     "id": "product-listing-v1",
     "name": "Product Listing Page",
-    "description": "A responsive product listing page with filters, search, and pagination",
     "pageType": "category",
     "schemaVersion": "1.0.0",
     "route": "/products",
     "seo": {
       "title": "Products | EXPOZY Store",
-      "description": "Browse our collection of high-quality products. Find the perfect item for you.",
-      "keywords": ["products", "shop", "store", "buy"],
-      "noIndex": false,
-      "noFollow": false
+      "description": "Browse our collection of high-quality products."
     },
-    "languages": ["en", "bg", "de"],
-    "author": "EXPOZY Template Generator",
-    "createdAt": "2025-12-01T10:00:00Z"
+    "languages": ["en", "bg"]
   },
   "designSystem": {
     "tailwindMode": "freeform",
     "theme": {
       "primaryColor": "indigo-600",
-      "secondaryColor": "gray-600",
-      "accentColor": "amber-500",
-      "backgroundColor": "gray-50",
-      "textColor": "gray-900",
-      "fontFamily": "Inter, system-ui, sans-serif",
       "borderRadius": "lg"
     },
     "darkMode": true,
@@ -39,16 +27,12 @@
       "keyName": "products",
       "params": {
         "limit": 12,
-        "page": { "binding": "data.pageUrl.page" },
-        "category": { "binding": "data.pageUrl.category" },
-        "sort": { "binding": "data.pageUrl.sort" }
+        "page": 1
       },
       "options": {
-        "pushUrl": true,
-        "scroll": false
+        "pushUrl": true
       },
-      "autoLoad": true,
-      "refreshOn": ["filterChanged", "sortChanged"]
+      "autoLoad": true
     },
     {
       "id": "categoryList",
@@ -57,15 +41,6 @@
       "params": {
         "parent_id": 0,
         "limit": 50
-      },
-      "autoLoad": true
-    },
-    {
-      "id": "brandList",
-      "endpoint": "get.brands",
-      "keyName": "brands",
-      "params": {
-        "limit": 100
       },
       "autoLoad": true
     }
@@ -77,15 +52,7 @@
       "keyName": "cart",
       "params": {
         "quantity": 1
-      },
-      "options": {
-        "clearForm": false
       }
-    },
-    {
-      "id": "addToWishlist",
-      "endpoint": "Shop.post_wishlists",
-      "keyName": "wishlist"
     },
     {
       "id": "filterProducts",
@@ -94,15 +61,6 @@
       "options": {
         "pushUrl": true,
         "scroll": true
-      }
-    },
-    {
-      "id": "searchProducts",
-      "endpoint": "Search.get_products",
-      "keyName": "products",
-      "options": {
-        "pushUrl": true,
-        "debounce": 300
       }
     },
     {
@@ -122,18 +80,17 @@
         "type": "section",
         "tag": "header",
         "background": "default",
-        "className": "bg-white dark:bg-gray-800 shadow-sm",
+        "className": "bg-white dark:bg-gray-800 shadow-sm py-6",
         "children": [
           {
             "type": "container",
             "maxWidth": "xl",
-            "className": "py-6",
             "children": [
               {
                 "type": "breadcrumb",
                 "separator": "chevron",
                 "items": [
-                  { "label": "Home", "href": "/", "icon": "bi-house" },
+                  { "label": "Home", "href": "/" },
                   { "label": "Products" }
                 ]
               },
@@ -146,8 +103,6 @@
                 "direction": "row",
                 "justify": "between",
                 "align": "center",
-                "wrap": true,
-                "gap": "4",
                 "children": [
                   {
                     "type": "heading",
@@ -159,12 +114,10 @@
                   {
                     "type": "searchBar",
                     "placeholder": "Search products...",
-                    "actionRef": "searchProducts",
+                    "actionRef": "filterProducts",
                     "instant": true,
                     "debounce": 400,
-                    "showButton": true,
-                    "showClear": true,
-                    "className": "w-full md:w-80"
+                    "className": "w-80"
                   }
                 ]
               }
@@ -191,12 +144,11 @@
                     "type": "card",
                     "variant": "default",
                     "padding": "md",
-                    "className": "bg-white dark:bg-gray-800 rounded-lg shadow-sm",
+                    "className": "bg-white dark:bg-gray-800",
                     "children": [
                       {
                         "type": "heading",
                         "level": 3,
-                        "size": "lg",
                         "content": "Filters",
                         "className": "mb-4 text-gray-900 dark:text-white"
                       },
@@ -208,38 +160,17 @@
                           {
                             "key": "category",
                             "label": "Category",
-                            "type": "checkbox",
+                            "filterType": "checkbox",
                             "optionsBinding": "data.categories.result"
-                          },
-                          {
-                            "key": "brand",
-                            "label": "Brand",
-                            "type": "checkbox",
-                            "optionsBinding": "data.brands.result"
                           },
                           {
                             "key": "price",
                             "label": "Price Range",
-                            "type": "range",
+                            "filterType": "range",
                             "min": 0,
                             "max": 1000
                           }
                         ]
-                      },
-                      {
-                        "type": "spacer",
-                        "size": "md"
-                      },
-                      {
-                        "type": "button",
-                        "content": "Clear All Filters",
-                        "variant": "outline",
-                        "fullWidth": true,
-                        "events": {
-                          "click": {
-                            "expression": "data.pageUrl = {}"
-                          }
-                        }
                       }
                     ]
                   }
@@ -268,36 +199,16 @@
                         "type": "select",
                         "name": "sort",
                         "placeholder": "Sort by",
-                        "className": "w-48",
                         "options": [
                           { "value": "newest", "label": "Newest First" },
                           { "value": "price_asc", "label": "Price: Low to High" },
-                          { "value": "price_desc", "label": "Price: High to Low" },
-                          { "value": "name_asc", "label": "Name: A to Z" },
-                          { "value": "popular", "label": "Most Popular" }
+                          { "value": "price_desc", "label": "Price: High to Low" }
                         ],
                         "events": {
                           "change": {
-                            "actionRef": "filterProducts",
-                            "modifiers": ["prevent"]
+                            "actionRef": "filterProducts"
                           }
                         }
-                      }
-                    ]
-                  },
-                  {
-                    "type": "flex",
-                    "justify": "center",
-                    "className": "py-12",
-                    "conditional": {
-                      "show": "!data.products || data.table.loading"
-                    },
-                    "children": [
-                      {
-                        "type": "icon",
-                        "name": "bi-arrow-repeat",
-                        "size": "xl",
-                        "className": "animate-spin text-indigo-600"
                       }
                     ]
                   },
@@ -305,207 +216,24 @@
                     "type": "grid",
                     "columns": { "default": 1, "sm": 2, "lg": 3 },
                     "gap": "6",
-                    "conditional": {
-                      "show": "data.products && data.products.result && data.products.result.length > 0"
-                    },
                     "children": [
                       {
                         "type": "template",
                         "iterator": "product",
                         "collection": "data.products.result",
-                        "key": "product.id",
+                        "itemKey": "product.id",
                         "children": [
                           {
-                            "type": "card",
-                            "variant": "default",
-                            "padding": "none",
-                            "clickable": true,
-                            "className": "bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-shadow overflow-hidden group",
-                            "children": [
-                              {
-                                "type": "flex",
-                                "direction": "col",
-                                "children": [
-                                  {
-                                    "type": "link",
-                                    "spa": true,
-                                    "className": "relative",
-                                    "bindings": {
-                                      "href": "'/product/' + product.slug"
-                                    },
-                                    "children": [
-                                      {
-                                        "type": "image",
-                                        "aspectRatio": "square",
-                                        "objectFit": "cover",
-                                        "lazy": true,
-                                        "className": "group-hover:scale-105 transition-transform duration-300",
-                                        "bindings": {
-                                          "src": "product.image",
-                                          "alt": "product.title"
-                                        }
-                                      },
-                                      {
-                                        "type": "badge",
-                                        "variant": "danger",
-                                        "content": "Sale",
-                                        "className": "absolute top-2 left-2",
-                                        "conditional": {
-                                          "show": "product.on_sale"
-                                        }
-                                      },
-                                      {
-                                        "type": "badge",
-                                        "variant": "success",
-                                        "content": "New",
-                                        "className": "absolute top-2 left-2",
-                                        "conditional": {
-                                          "show": "product.is_new && !product.on_sale"
-                                        }
-                                      }
-                                    ]
-                                  },
-                                  {
-                                    "type": "flex",
-                                    "direction": "col",
-                                    "gap": "2",
-                                    "className": "p-4",
-                                    "children": [
-                                      {
-                                        "type": "text",
-                                        "variant": "small",
-                                        "className": "text-gray-500 dark:text-gray-400",
-                                        "bindings": {
-                                          "text": "product.category_name"
-                                        }
-                                      },
-                                      {
-                                        "type": "link",
-                                        "spa": true,
-                                        "className": "hover:text-indigo-600",
-                                        "bindings": {
-                                          "href": "'/product/' + product.slug"
-                                        },
-                                        "children": [
-                                          {
-                                            "type": "heading",
-                                            "level": 3,
-                                            "size": "md",
-                                            "className": "font-semibold text-gray-900 dark:text-white line-clamp-2",
-                                            "bindings": {
-                                              "text": "product.title"
-                                            }
-                                          }
-                                        ]
-                                      },
-                                      {
-                                        "type": "rating",
-                                        "readonly": true,
-                                        "size": "sm",
-                                        "showValue": true,
-                                        "valueBinding": "product.rating",
-                                        "showCount": true,
-                                        "countBinding": "product.review_count"
-                                      },
-                                      {
-                                        "type": "flex",
-                                        "direction": "row",
-                                        "justify": "between",
-                                        "align": "center",
-                                        "className": "mt-2",
-                                        "children": [
-                                          {
-                                            "type": "flex",
-                                            "direction": "row",
-                                            "align": "baseline",
-                                            "gap": "2",
-                                            "children": [
-                                              {
-                                                "type": "price",
-                                                "size": "lg",
-                                                "amountBinding": "product.price",
-                                                "className": "text-indigo-600 font-bold"
-                                              },
-                                              {
-                                                "type": "price",
-                                                "size": "sm",
-                                                "amountBinding": "product.original_price",
-                                                "className": "text-gray-400 line-through",
-                                                "conditional": {
-                                                  "show": "product.on_sale && product.original_price"
-                                                }
-                                              }
-                                            ]
-                                          },
-                                          {
-                                            "type": "button",
-                                            "variant": "ghost",
-                                            "size": "sm",
-                                            "icon": "bi-heart",
-                                            "className": "text-gray-400 hover:text-red-500",
-                                            "attributes": {
-                                              "aria-label": "Add to wishlist"
-                                            },
-                                            "events": {
-                                              "click": {
-                                                "actionRef": "addToWishlist",
-                                                "modifiers": ["stop"]
-                                              }
-                                            }
-                                          }
-                                        ]
-                                      },
-                                      {
-                                        "type": "button",
-                                        "content": "Add to Cart",
-                                        "variant": "primary",
-                                        "fullWidth": true,
-                                        "icon": "bi-cart-plus",
-                                        "className": "mt-3",
-                                        "events": {
-                                          "click": {
-                                            "actionRef": "addToCart",
-                                            "modifiers": ["stop"]
-                                          }
-                                        }
-                                      }
-                                    ]
-                                  }
-                                ]
-                              }
-                            ]
+                            "type": "productCard",
+                            "variant": "vertical",
+                            "productBinding": "product",
+                            "showImage": true,
+                            "showTitle": true,
+                            "showPrice": true,
+                            "showRating": true,
+                            "showAddToCart": true
                           }
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "type": "flex",
-                    "direction": "col",
-                    "align": "center",
-                    "className": "py-12",
-                    "conditional": {
-                      "show": "data.products && data.products.result && data.products.result.length === 0"
-                    },
-                    "children": [
-                      {
-                        "type": "icon",
-                        "name": "bi-search",
-                        "size": "xl",
-                        "className": "text-gray-300 mb-4"
-                      },
-                      {
-                        "type": "heading",
-                        "level": 3,
-                        "size": "lg",
-                        "content": "No products found",
-                        "className": "text-gray-600 dark:text-gray-400"
-                      },
-                      {
-                        "type": "text",
-                        "content": "Try adjusting your filters or search term",
-                        "variant": "muted",
-                        "className": "mt-2"
                       }
                     ]
                   },
@@ -520,8 +248,7 @@
                     "variant": "default",
                     "showFirst": true,
                     "showLast": true,
-                    "siblingCount": 2,
-                    "className": "flex justify-center"
+                    "siblingCount": 2
                   }
                 ]
               }

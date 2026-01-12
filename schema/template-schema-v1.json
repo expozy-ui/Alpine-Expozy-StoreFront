@@ -1,1948 +1,1914 @@
 {
-  "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://expozy.com/schemas/template-schema-v1.json",
-  "title": "EXPOZY Template Schema v1",
-  "description": "JSON Schema for AI-generated EXPOZY page templates. Defines structured output constraints for LLM-based template generation, ensuring validity, security, and EXPOZY framework compatibility.",
-  "type": "object",
-  "required": ["metadata", "layout"],
-  "additionalProperties": false,
+  "type": "OBJECT",
   "properties": {
-    "$schema": {
-      "type": "string",
-      "const": "https://expozy.com/schemas/template-schema-v1.json",
-      "description": "Schema reference for validation"
-    },
     "metadata": {
-      "$ref": "#/$defs/Metadata"
-    },
-    "designSystem": {
-      "$ref": "#/$defs/DesignSystem"
-    },
-    "dataSources": {
-      "type": "array",
-      "description": "Declared REST API calls (maps to EXPOZY apiData pattern)",
-      "items": {
-        "$ref": "#/$defs/DataSource"
-      },
-      "default": []
-    },
-    "actions": {
-      "type": "array",
-      "description": "Declared user interaction actions (maps to EXPOZY alpineListener pattern)",
-      "items": {
-        "$ref": "#/$defs/Action"
-      },
-      "default": []
-    },
-    "layout": {
-      "$ref": "#/$defs/LayoutRoot"
-    }
-  },
-  "$defs": {
-    "Metadata": {
-      "type": "object",
-      "description": "Template package metadata including identification, routing, and SEO",
-      "required": ["id", "name", "pageType", "schemaVersion"],
-      "additionalProperties": false,
+      "type": "OBJECT",
       "properties": {
         "id": {
-          "type": "string",
-          "pattern": "^[a-z0-9-]+$",
-          "minLength": 1,
-          "maxLength": 64,
-          "description": "Unique template identifier (lowercase alphanumeric with hyphens)"
+          "type": "STRING"
         },
         "name": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 128,
-          "description": "Human-readable template name"
-        },
-        "description": {
-          "type": "string",
-          "maxLength": 512,
-          "description": "Template description for cataloging"
+          "type": "STRING"
         },
         "pageType": {
-          "type": "string",
-          "enum": ["landing", "product", "category", "blog", "blogPost", "cart", "checkout", "account", "search", "contact", "custom"],
-          "description": "Page type classification for routing and behavior"
+          "type": "STRING",
+          "enum": ["landing", "product", "category", "blog", "blogPost", "cart", "checkout", "account", "search", "contact", "custom"]
         },
         "schemaVersion": {
-          "type": "string",
-          "const": "1.0.0",
-          "description": "Template schema version for compatibility checking"
+          "type": "STRING",
+          "enum": ["1.0.0"]
         },
         "route": {
-          "type": "string",
-          "pattern": "^/[a-z0-9/-]*$",
-          "maxLength": 256,
-          "description": "URL route pattern (e.g., /products/:id)"
+          "type": "STRING",
+          "nullable": true
         },
         "seo": {
-          "$ref": "#/$defs/SEO"
+          "type": "OBJECT",
+          "nullable": true,
+          "properties": {
+            "title": {
+              "type": "STRING",
+              "nullable": true
+            },
+            "description": {
+              "type": "STRING",
+              "nullable": true
+            },
+            "keywords": {
+              "type": "ARRAY",
+              "nullable": true,
+              "items": {
+                "type": "STRING"
+              },
+              "maxItems": 10
+            },
+            "ogImage": {
+              "type": "STRING",
+              "nullable": true
+            },
+            "canonical": {
+              "type": "STRING",
+              "nullable": true
+            },
+            "noIndex": {
+              "type": "BOOLEAN",
+              "nullable": true
+            },
+            "noFollow": {
+              "type": "BOOLEAN",
+              "nullable": true
+            }
+          },
+          "propertyOrdering": ["title", "description", "keywords", "ogImage", "canonical", "noIndex", "noFollow"]
         },
         "languages": {
-          "type": "array",
+          "type": "ARRAY",
+          "nullable": true,
           "items": {
-            "type": "string",
-            "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
-          },
-          "description": "Supported language codes (e.g., ['en', 'bg', 'de'])"
+            "type": "STRING"
+          }
         },
         "author": {
-          "type": "string",
-          "maxLength": 128
+          "type": "STRING",
+          "nullable": true
         },
         "createdAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "STRING",
+          "format": "date-time",
+          "nullable": true
         },
         "updatedAt": {
-          "type": "string",
-          "format": "date-time"
+          "type": "STRING",
+          "format": "date-time",
+          "nullable": true
         }
-      }
+      },
+      "required": ["id", "name", "pageType", "schemaVersion"],
+      "propertyOrdering": ["id", "name", "pageType", "schemaVersion", "route", "seo", "languages", "author", "createdAt", "updatedAt"]
     },
-    "SEO": {
-      "type": "object",
-      "description": "SEO metadata for the page",
-      "additionalProperties": false,
-      "properties": {
-        "title": {
-          "type": "string",
-          "maxLength": 70,
-          "description": "Page title (recommended max 60 chars for display)"
-        },
-        "description": {
-          "type": "string",
-          "maxLength": 160,
-          "description": "Meta description (recommended max 155 chars)"
-        },
-        "keywords": {
-          "type": "array",
-          "items": {
-            "type": "string",
-            "maxLength": 50
-          },
-          "maxItems": 10
-        },
-        "ogImage": {
-          "type": "string",
-          "format": "uri",
-          "description": "Open Graph image URL"
-        },
-        "canonical": {
-          "type": "string",
-          "format": "uri",
-          "description": "Canonical URL"
-        },
-        "noIndex": {
-          "type": "boolean",
-          "default": false
-        },
-        "noFollow": {
-          "type": "boolean",
-          "default": false
-        }
-      }
-    },
-    "DesignSystem": {
-      "type": "object",
-      "description": "Design system configuration for styling",
-      "additionalProperties": false,
+    "designSystem": {
+      "type": "OBJECT",
+      "nullable": true,
       "properties": {
         "tailwindMode": {
-          "type": "string",
+          "type": "STRING",
           "enum": ["freeform", "tokenized", "restricted"],
-          "default": "freeform",
-          "description": "Tailwind class usage mode: freeform allows any valid classes, tokenized uses design tokens, restricted limits to a predefined set"
+          "nullable": true
         },
         "theme": {
-          "type": "object",
-          "additionalProperties": false,
+          "type": "OBJECT",
+          "nullable": true,
           "properties": {
             "primaryColor": {
-              "$ref": "#/$defs/ColorValue"
+              "type": "STRING",
+              "nullable": true
             },
             "secondaryColor": {
-              "$ref": "#/$defs/ColorValue"
+              "type": "STRING",
+              "nullable": true
             },
             "accentColor": {
-              "$ref": "#/$defs/ColorValue"
+              "type": "STRING",
+              "nullable": true
             },
             "backgroundColor": {
-              "$ref": "#/$defs/ColorValue"
+              "type": "STRING",
+              "nullable": true
             },
             "textColor": {
-              "$ref": "#/$defs/ColorValue"
+              "type": "STRING",
+              "nullable": true
             },
             "fontFamily": {
-              "type": "string",
-              "maxLength": 128
+              "type": "STRING",
+              "nullable": true
             },
             "borderRadius": {
-              "type": "string",
-              "enum": ["none", "sm", "md", "lg", "xl", "2xl", "full"]
+              "type": "STRING",
+              "enum": ["none", "sm", "md", "lg", "xl", "2xl", "full"],
+              "nullable": true
             }
-          }
+          },
+          "propertyOrdering": ["primaryColor", "secondaryColor", "accentColor", "backgroundColor", "textColor", "fontFamily", "borderRadius"]
         },
         "darkMode": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether dark mode variants should be generated"
+          "type": "BOOLEAN",
+          "nullable": true
         },
         "responsive": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether responsive breakpoints should be used"
+          "type": "BOOLEAN",
+          "nullable": true
         }
-      }
+      },
+      "propertyOrdering": ["tailwindMode", "theme", "darkMode", "responsive"]
     },
-    "ColorValue": {
-      "type": "string",
-      "pattern": "^(#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}|[a-z]+-[0-9]{2,3}|transparent|inherit|current)$",
-      "description": "Color value: hex (#RRGGBB), Tailwind color (indigo-600), or CSS keyword"
-    },
-    "DataSource": {
-      "type": "object",
-      "description": "Declarative REST API data source (maps to EXPOZY apiData attribute pattern)",
-      "required": ["id", "endpoint", "keyName"],
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "minLength": 1,
-          "maxLength": 64,
-          "description": "Unique identifier for this data source"
-        },
-        "endpoint": {
-          "type": "string",
-          "pattern": "^(get|post|put|delete)\\.[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "API endpoint in EXPOZY format: method.resource (e.g., get.products, post.carts)"
-        },
-        "keyName": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "minLength": 1,
-          "maxLength": 64,
-          "description": "Key in global data object where response is stored (data[keyName])"
-        },
-        "params": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/$defs/ParamValue"
+    "dataSources": {
+      "type": "ARRAY",
+      "nullable": true,
+      "items": {
+        "type": "OBJECT",
+        "properties": {
+          "id": {
+            "type": "STRING"
           },
-          "description": "Request parameters (maps to data-* attributes)"
-        },
-        "options": {
-          "$ref": "#/$defs/DataSourceOptions"
-        },
-        "autoLoad": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether to load data automatically on page init"
-        },
-        "refreshOn": {
-          "type": "array",
-          "items": {
-            "type": "string"
+          "endpoint": {
+            "type": "STRING"
           },
-          "description": "Event names that trigger a refresh of this data source"
-        }
-      }
-    },
-    "DataSourceOptions": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "pushUrl": {
-          "type": "boolean",
-          "default": false,
-          "description": "Update browser URL with request parameters"
-        },
-        "scroll": {
-          "type": "boolean",
-          "default": false,
-          "description": "Scroll to element after load"
-        },
-        "clear": {
-          "type": "boolean",
-          "default": false,
-          "description": "Clear existing data before loading"
-        }
-      }
-    },
-    "ParamValue": {
-      "oneOf": [
-        { "type": "string", "maxLength": 256 },
-        { "type": "number" },
-        { "type": "boolean" },
-        {
-          "type": "object",
-          "required": ["binding"],
-          "additionalProperties": false,
-          "properties": {
-            "binding": {
-              "type": "string",
-              "pattern": "^data\\.[a-zA-Z][a-zA-Z0-9_.]*$",
-              "description": "Dynamic binding to global data (e.g., data.pageUrl.page)"
+          "keyName": {
+            "type": "STRING"
+          },
+          "params": {
+            "type": "OBJECT",
+            "nullable": true,
+            "properties": {
+              "limit": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "page": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "sort": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "order": {
+                "type": "STRING",
+                "enum": ["asc", "desc"],
+                "nullable": true
+              },
+              "category": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "category_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "brand": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "brand_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "search": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "slug": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "parent_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "post_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "product_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "user_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "exclude": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "min_price": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "max_price": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "in_stock": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "featured": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "on_sale": {
+                "type": "BOOLEAN",
+                "nullable": true
+              }
+            },
+            "propertyOrdering": ["limit", "page", "sort", "order", "category", "category_id", "brand", "brand_id", "search", "slug", "id", "parent_id", "post_id", "product_id", "user_id", "exclude", "min_price", "max_price", "in_stock", "featured", "on_sale"]
+          },
+          "options": {
+            "type": "OBJECT",
+            "nullable": true,
+            "properties": {
+              "pushUrl": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "scroll": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "clear": {
+                "type": "BOOLEAN",
+                "nullable": true
+              }
+            },
+            "propertyOrdering": ["pushUrl", "scroll", "clear"]
+          },
+          "autoLoad": {
+            "type": "BOOLEAN",
+            "nullable": true
+          },
+          "refreshOn": {
+            "type": "ARRAY",
+            "nullable": true,
+            "items": {
+              "type": "STRING"
             }
           }
-        }
-      ],
-      "description": "Parameter value: static or dynamic binding"
+        },
+        "required": ["id", "endpoint", "keyName"],
+        "propertyOrdering": ["id", "endpoint", "keyName", "params", "options", "autoLoad", "refreshOn"]
+      }
     },
-    "Action": {
-      "type": "object",
-      "description": "User interaction action (maps to EXPOZY alpineListener pattern)",
-      "required": ["id", "endpoint"],
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "minLength": 1,
-          "maxLength": 64,
-          "description": "Unique action identifier"
-        },
-        "endpoint": {
-          "type": "string",
-          "pattern": "^[A-Z][a-zA-Z]*\\.(get|post|put|delete)_[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Action endpoint in EXPOZY format: Module.method_name (e.g., Shop.post_carts, User.post_login)"
-        },
-        "keyName": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Key in global data object for response storage"
-        },
-        "params": {
-          "type": "object",
-          "additionalProperties": {
-            "$ref": "#/$defs/ParamValue"
+    "actions": {
+      "type": "ARRAY",
+      "nullable": true,
+      "items": {
+        "type": "OBJECT",
+        "properties": {
+          "id": {
+            "type": "STRING"
           },
-          "description": "Action parameters"
+          "endpoint": {
+            "type": "STRING"
+          },
+          "keyName": {
+            "type": "STRING",
+            "nullable": true
+          },
+          "params": {
+            "type": "OBJECT",
+            "nullable": true,
+            "properties": {
+              "quantity": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "product_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "variant_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "cart_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "post_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "comment_id": {
+                "type": "INTEGER",
+                "nullable": true
+              },
+              "page": {
+                "type": "INTEGER",
+                "nullable": true
+              }
+            },
+            "propertyOrdering": ["quantity", "product_id", "variant_id", "cart_id", "post_id", "comment_id", "page"]
+          },
+          "options": {
+            "type": "OBJECT",
+            "nullable": true,
+            "properties": {
+              "pushUrl": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "scroll": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "clearForm": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "preventDefault": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "debounce": {
+                "type": "INTEGER",
+                "minimum": 0,
+                "maximum": 5000,
+                "nullable": true
+              }
+            },
+            "propertyOrdering": ["pushUrl", "scroll", "clearForm", "preventDefault", "debounce"]
+          },
+          "confirm": {
+            "type": "STRING",
+            "nullable": true
+          }
         },
-        "options": {
-          "$ref": "#/$defs/ActionOptions"
-        },
-        "confirm": {
-          "type": "string",
-          "maxLength": 256,
-          "description": "Confirmation message before executing action"
-        }
+        "required": ["id", "endpoint"],
+        "propertyOrdering": ["id", "endpoint", "keyName", "params", "options", "confirm"]
       }
     },
-    "ActionOptions": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "pushUrl": {
-          "type": "boolean",
-          "default": false
-        },
-        "scroll": {
-          "type": "boolean",
-          "default": false
-        },
-        "clearForm": {
-          "type": "boolean",
-          "default": false
-        },
-        "preventDefault": {
-          "type": "boolean",
-          "default": true
-        },
-        "debounce": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 5000,
-          "description": "Debounce delay in milliseconds"
-        }
-      }
-    },
-    "LayoutRoot": {
-      "type": "object",
-      "description": "Root layout container",
-      "required": ["children"],
-      "additionalProperties": false,
+    "layout": {
+      "type": "OBJECT",
       "properties": {
         "className": {
-          "$ref": "#/$defs/TailwindClasses"
+          "type": "STRING",
+          "nullable": true
         },
         "children": {
-          "type": "array",
+          "type": "ARRAY",
           "items": {
-            "$ref": "#/$defs/Component"
+            "type": "OBJECT",
+            "properties": {
+              "type": {
+                "type": "STRING",
+                "enum": [
+                  "container",
+                  "section",
+                  "grid",
+                  "flex",
+                  "hero",
+                  "card",
+                  "productCard",
+                  "blogCard",
+                  "image",
+                  "text",
+                  "heading",
+                  "link",
+                  "button",
+                  "form",
+                  "input",
+                  "select",
+                  "textarea",
+                  "checkbox",
+                  "radio",
+                  "list",
+                  "listItem",
+                  "template",
+                  "pagination",
+                  "breadcrumb",
+                  "modal",
+                  "notification",
+                  "gallery",
+                  "carousel",
+                  "tabs",
+                  "accordion",
+                  "table",
+                  "badge",
+                  "icon",
+                  "divider",
+                  "spacer",
+                  "richText",
+                  "video",
+                  "map",
+                  "socialLinks",
+                  "rating",
+                  "price",
+                  "quantity",
+                  "searchBar",
+                  "filter",
+                  "sort",
+                  "custom"
+                ]
+              },
+              "id": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "className": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "content": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "variant": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "size": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "tag": {
+                "type": "STRING",
+                "enum": ["div", "span", "p", "section", "article", "aside", "header", "footer", "nav", "main", "h1", "h2", "h3", "h4", "h5", "h6", "ul", "ol", "li", "a", "button", "form", "input", "select", "textarea", "img", "video", "template", "table", "thead", "tbody", "tr", "th", "td"],
+                "nullable": true
+              },
+              "level": {
+                "type": "INTEGER",
+                "minimum": 1,
+                "maximum": 6,
+                "nullable": true
+              },
+              "columns": {
+                "type": "OBJECT",
+                "nullable": true,
+                "properties": {
+                  "default": {
+                    "type": "INTEGER",
+                    "minimum": 1,
+                    "maximum": 12,
+                    "nullable": true
+                  },
+                  "sm": {
+                    "type": "INTEGER",
+                    "minimum": 1,
+                    "maximum": 12,
+                    "nullable": true
+                  },
+                  "md": {
+                    "type": "INTEGER",
+                    "minimum": 1,
+                    "maximum": 12,
+                    "nullable": true
+                  },
+                  "lg": {
+                    "type": "INTEGER",
+                    "minimum": 1,
+                    "maximum": 12,
+                    "nullable": true
+                  },
+                  "xl": {
+                    "type": "INTEGER",
+                    "minimum": 1,
+                    "maximum": 12,
+                    "nullable": true
+                  }
+                },
+                "propertyOrdering": ["default", "sm", "md", "lg", "xl"]
+              },
+              "gap": {
+                "type": "STRING",
+                "enum": ["0", "1", "2", "3", "4", "5", "6", "8", "10", "12"],
+                "nullable": true
+              },
+              "direction": {
+                "type": "STRING",
+                "enum": ["row", "row-reverse", "col", "col-reverse"],
+                "nullable": true
+              },
+              "justify": {
+                "type": "STRING",
+                "enum": ["start", "end", "center", "between", "around", "evenly"],
+                "nullable": true
+              },
+              "align": {
+                "type": "STRING",
+                "enum": ["start", "end", "center", "baseline", "stretch"],
+                "nullable": true
+              },
+              "wrap": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "maxWidth": {
+                "type": "STRING",
+                "enum": ["sm", "md", "lg", "xl", "2xl", "full", "prose"],
+                "nullable": true
+              },
+              "padding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "background": {
+                "type": "STRING",
+                "enum": ["default", "muted", "accent", "dark", "light", "transparent"],
+                "nullable": true
+              },
+              "title": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "subtitle": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "backgroundImage": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "overlay": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "src": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "alt": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "aspectRatio": {
+                "type": "STRING",
+                "enum": ["auto", "square", "4/3", "16/9", "3/4", "21/9", "1/1"],
+                "nullable": true
+              },
+              "objectFit": {
+                "type": "STRING",
+                "enum": ["contain", "cover", "fill", "none", "scale-down"],
+                "nullable": true
+              },
+              "lazy": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "rounded": {
+                "type": "STRING",
+                "enum": ["none", "sm", "md", "lg", "xl", "2xl", "full"],
+                "nullable": true
+              },
+              "href": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "external": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "spa": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "buttonType": {
+                "type": "STRING",
+                "enum": ["button", "submit", "reset"],
+                "nullable": true
+              },
+              "icon": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "iconPosition": {
+                "type": "STRING",
+                "enum": ["left", "right"],
+                "nullable": true
+              },
+              "fullWidth": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "disabled": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "loading": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "clickable": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "name": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "label": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "inputType": {
+                "type": "STRING",
+                "enum": ["text", "email", "password", "tel", "url", "number", "date", "datetime-local", "time", "search", "hidden"],
+                "nullable": true
+              },
+              "placeholder": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "required": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "readonly": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "autocomplete": {
+                "type": "STRING",
+                "enum": ["on", "off", "name", "email", "username", "new-password", "current-password", "tel", "url", "street-address", "country", "postal-code"],
+                "nullable": true
+              },
+              "min": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "max": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "step": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "rows": {
+                "type": "INTEGER",
+                "minimum": 1,
+                "maximum": 50,
+                "nullable": true
+              },
+              "helpText": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "options": {
+                "type": "ARRAY",
+                "nullable": true,
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "value": {
+                      "type": "STRING"
+                    },
+                    "label": {
+                      "type": "STRING"
+                    },
+                    "disabled": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["value", "label"],
+                  "propertyOrdering": ["value", "label", "disabled"]
+                }
+              },
+              "multiple": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "actionRef": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "dataSource": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "iterator": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "collection": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "itemKey": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "separator": {
+                "type": "STRING",
+                "enum": ["slash", "chevron", "arrow", "dot"],
+                "nullable": true
+              },
+              "items": {
+                "type": "ARRAY",
+                "nullable": true,
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "id": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "label": {
+                      "type": "STRING"
+                    },
+                    "href": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "icon": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "disabled": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "defaultOpen": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["label"],
+                  "propertyOrdering": ["id", "label", "href", "icon", "disabled", "defaultOpen"]
+                }
+              },
+              "tabs": {
+                "type": "ARRAY",
+                "nullable": true,
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "id": {
+                      "type": "STRING"
+                    },
+                    "label": {
+                      "type": "STRING"
+                    },
+                    "icon": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "disabled": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["id", "label"],
+                  "propertyOrdering": ["id", "label", "icon", "disabled"]
+                }
+              },
+              "defaultTab": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "allowMultiple": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "tableColumns": {
+                "type": "ARRAY",
+                "nullable": true,
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "key": {
+                      "type": "STRING"
+                    },
+                    "header": {
+                      "type": "STRING"
+                    },
+                    "sortable": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "width": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "align": {
+                      "type": "STRING",
+                      "enum": ["left", "center", "right"],
+                      "nullable": true
+                    },
+                    "format": {
+                      "type": "STRING",
+                      "enum": ["text", "number", "currency", "date", "datetime", "boolean", "image", "link"],
+                      "nullable": true
+                    }
+                  },
+                  "required": ["key", "header"],
+                  "propertyOrdering": ["key", "header", "sortable", "width", "align", "format"]
+                }
+              },
+              "striped": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "hoverable": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "bordered": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "compact": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "triggerId": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "closable": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "closeOnOverlay": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "lightbox": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "autoplay": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "muted": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "loop": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "controls": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "poster": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "provider": {
+                "type": "STRING",
+                "enum": ["native", "youtube", "vimeo"],
+                "nullable": true
+              },
+              "videoId": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "orientation": {
+                "type": "STRING",
+                "enum": ["horizontal", "vertical"],
+                "nullable": true
+              },
+              "showFirst": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showLast": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showPrev": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showNext": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "siblingCount": {
+                "type": "INTEGER",
+                "minimum": 0,
+                "maximum": 5,
+                "nullable": true
+              },
+              "paginationPath": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "showImage": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showTitle": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showPrice": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showDescription": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showRating": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showAddToCart": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showWishlist": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showExcerpt": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showDate": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showAuthor": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showCategory": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showReadTime": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "imageAspectRatio": {
+                "type": "STRING",
+                "enum": ["square", "4/3", "16/9", "3/4"],
+                "nullable": true
+              },
+              "productBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "postBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "amountBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "amount": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "currency": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "showOriginal": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "originalAmountBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "valueBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "value": {
+                "type": "NUMBER",
+                "nullable": true
+              },
+              "showValue": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showCount": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "countBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "instant": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "debounce": {
+                "type": "INTEGER",
+                "minimum": 0,
+                "maximum": 2000,
+                "nullable": true
+              },
+              "showButton": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "showClear": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "layout": {
+                "type": "STRING",
+                "enum": ["vertical", "horizontal", "inline", "accordion"],
+                "nullable": true
+              },
+              "filters": {
+                "type": "ARRAY",
+                "nullable": true,
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "key": {
+                      "type": "STRING"
+                    },
+                    "label": {
+                      "type": "STRING"
+                    },
+                    "filterType": {
+                      "type": "STRING",
+                      "enum": ["checkbox", "radio", "range", "select", "color"]
+                    },
+                    "optionsBinding": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "min": {
+                      "type": "NUMBER",
+                      "nullable": true
+                    },
+                    "max": {
+                      "type": "NUMBER",
+                      "nullable": true
+                    }
+                  },
+                  "required": ["key", "label", "filterType"],
+                  "propertyOrdering": ["key", "label", "filterType", "optionsBinding", "min", "max"]
+                }
+              },
+              "itemsBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "imagesBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "dataPath": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "optionsBinding": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "sanitize": {
+                "type": "BOOLEAN",
+                "nullable": true
+              },
+              "componentName": {
+                "type": "STRING",
+                "nullable": true
+              },
+              "conditional": {
+                "type": "OBJECT",
+                "nullable": true,
+                "properties": {
+                  "show": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "if": {
+                    "type": "STRING",
+                    "nullable": true
+                  }
+                },
+                "propertyOrdering": ["show", "if"]
+              },
+              "bindings": {
+                "type": "OBJECT",
+                "nullable": true,
+                "properties": {
+                  "text": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "html": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "class": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "style": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "src": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "href": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "value": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "disabled": {
+                    "type": "STRING",
+                    "nullable": true
+                  }
+                },
+                "propertyOrdering": ["text", "html", "class", "style", "src", "href", "value", "disabled"]
+              },
+              "events": {
+                "type": "OBJECT",
+                "nullable": true,
+                "properties": {
+                  "click": {
+                    "type": "OBJECT",
+                    "nullable": true,
+                    "properties": {
+                      "actionRef": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "expression": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "navigate": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "modifiers": {
+                        "type": "ARRAY",
+                        "nullable": true,
+                        "items": {
+                          "type": "STRING",
+                          "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
+                        }
+                      }
+                    },
+                    "propertyOrdering": ["actionRef", "expression", "navigate", "modifiers"]
+                  },
+                  "submit": {
+                    "type": "OBJECT",
+                    "nullable": true,
+                    "properties": {
+                      "actionRef": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "expression": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "modifiers": {
+                        "type": "ARRAY",
+                        "nullable": true,
+                        "items": {
+                          "type": "STRING",
+                          "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
+                        }
+                      }
+                    },
+                    "propertyOrdering": ["actionRef", "expression", "modifiers"]
+                  },
+                  "change": {
+                    "type": "OBJECT",
+                    "nullable": true,
+                    "properties": {
+                      "actionRef": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "expression": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "modifiers": {
+                        "type": "ARRAY",
+                        "nullable": true,
+                        "items": {
+                          "type": "STRING",
+                          "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
+                        }
+                      }
+                    },
+                    "propertyOrdering": ["actionRef", "expression", "modifiers"]
+                  },
+                  "input": {
+                    "type": "OBJECT",
+                    "nullable": true,
+                    "properties": {
+                      "actionRef": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "expression": {
+                        "type": "STRING",
+                        "nullable": true
+                      },
+                      "modifiers": {
+                        "type": "ARRAY",
+                        "nullable": true,
+                        "items": {
+                          "type": "STRING",
+                          "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
+                        }
+                      }
+                    },
+                    "propertyOrdering": ["actionRef", "expression", "modifiers"]
+                  }
+                },
+                "propertyOrdering": ["click", "submit", "change", "input"]
+              },
+              "attributes": {
+                "type": "OBJECT",
+                "nullable": true,
+                "properties": {
+                  "id": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "name": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "title": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "alt": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "placeholder": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "ariaLabel": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "ariaDescribedby": {
+                    "type": "STRING",
+                    "nullable": true
+                  },
+                  "role": {
+                    "type": "STRING",
+                    "enum": ["button", "link", "navigation", "main", "article", "section", "form", "list", "listitem", "img", "dialog", "alert", "status", "tab", "tabpanel", "tablist", "menu", "menuitem", "checkbox", "radio", "textbox", "combobox", "search", "banner", "complementary", "contentinfo", "region"],
+                    "nullable": true
+                  },
+                  "tabindex": {
+                    "type": "INTEGER",
+                    "minimum": -1,
+                    "nullable": true
+                  },
+                  "dataTestid": {
+                    "type": "STRING",
+                    "nullable": true
+                  }
+                },
+                "propertyOrdering": ["id", "name", "title", "alt", "placeholder", "ariaLabel", "ariaDescribedby", "role", "tabindex", "dataTestid"]
+              },
+              "children": {
+                "type": "ARRAY",
+                "nullable": true,
+                "items": {
+                  "type": "OBJECT",
+                  "properties": {
+                    "type": {
+                      "type": "STRING",
+                      "enum": [
+                        "container",
+                        "section",
+                        "grid",
+                        "flex",
+                        "hero",
+                        "card",
+                        "productCard",
+                        "blogCard",
+                        "image",
+                        "text",
+                        "heading",
+                        "link",
+                        "button",
+                        "form",
+                        "input",
+                        "select",
+                        "textarea",
+                        "checkbox",
+                        "radio",
+                        "list",
+                        "listItem",
+                        "template",
+                        "pagination",
+                        "breadcrumb",
+                        "modal",
+                        "notification",
+                        "gallery",
+                        "carousel",
+                        "tabs",
+                        "accordion",
+                        "table",
+                        "badge",
+                        "icon",
+                        "divider",
+                        "spacer",
+                        "richText",
+                        "video",
+                        "map",
+                        "socialLinks",
+                        "rating",
+                        "price",
+                        "quantity",
+                        "searchBar",
+                        "filter",
+                        "sort",
+                        "custom"
+                      ]
+                    },
+                    "id": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "className": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "content": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "variant": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "size": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "level": {
+                      "type": "INTEGER",
+                      "minimum": 1,
+                      "maximum": 6,
+                      "nullable": true
+                    },
+                    "tag": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "columns": {
+                      "type": "OBJECT",
+                      "nullable": true,
+                      "properties": {
+                        "default": {
+                          "type": "INTEGER",
+                          "nullable": true
+                        },
+                        "sm": {
+                          "type": "INTEGER",
+                          "nullable": true
+                        },
+                        "md": {
+                          "type": "INTEGER",
+                          "nullable": true
+                        },
+                        "lg": {
+                          "type": "INTEGER",
+                          "nullable": true
+                        },
+                        "xl": {
+                          "type": "INTEGER",
+                          "nullable": true
+                        }
+                      },
+                      "propertyOrdering": ["default", "sm", "md", "lg", "xl"]
+                    },
+                    "gap": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "direction": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "justify": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "align": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "wrap": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "maxWidth": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "padding": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "background": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "title": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "subtitle": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "src": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "alt": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "href": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "external": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "spa": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "icon": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "disabled": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "name": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "label": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "placeholder": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "required": {
+                      "type": "BOOLEAN",
+                      "nullable": true
+                    },
+                    "actionRef": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "dataSource": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "iterator": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "collection": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "itemKey": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "productBinding": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "postBinding": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "amountBinding": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "valueBinding": {
+                      "type": "STRING",
+                      "nullable": true
+                    },
+                    "conditional": {
+                      "type": "OBJECT",
+                      "nullable": true,
+                      "properties": {
+                        "show": {
+                          "type": "STRING",
+                          "nullable": true
+                        },
+                        "if": {
+                          "type": "STRING",
+                          "nullable": true
+                        }
+                      },
+                      "propertyOrdering": ["show", "if"]
+                    },
+                    "bindings": {
+                      "type": "OBJECT",
+                      "nullable": true,
+                      "properties": {
+                        "text": {
+                          "type": "STRING",
+                          "nullable": true
+                        },
+                        "html": {
+                          "type": "STRING",
+                          "nullable": true
+                        },
+                        "class": {
+                          "type": "STRING",
+                          "nullable": true
+                        },
+                        "src": {
+                          "type": "STRING",
+                          "nullable": true
+                        },
+                        "href": {
+                          "type": "STRING",
+                          "nullable": true
+                        },
+                        "value": {
+                          "type": "STRING",
+                          "nullable": true
+                        }
+                      },
+                      "propertyOrdering": ["text", "html", "class", "src", "href", "value"]
+                    },
+                    "events": {
+                      "type": "OBJECT",
+                      "nullable": true,
+                      "properties": {
+                        "click": {
+                          "type": "OBJECT",
+                          "nullable": true,
+                          "properties": {
+                            "actionRef": {
+                              "type": "STRING",
+                              "nullable": true
+                            },
+                            "expression": {
+                              "type": "STRING",
+                              "nullable": true
+                            },
+                            "navigate": {
+                              "type": "STRING",
+                              "nullable": true
+                            },
+                            "modifiers": {
+                              "type": "ARRAY",
+                              "nullable": true,
+                              "items": {
+                                "type": "STRING"
+                              }
+                            }
+                          },
+                          "propertyOrdering": ["actionRef", "expression", "navigate", "modifiers"]
+                        },
+                        "submit": {
+                          "type": "OBJECT",
+                          "nullable": true,
+                          "properties": {
+                            "actionRef": {
+                              "type": "STRING",
+                              "nullable": true
+                            },
+                            "expression": {
+                              "type": "STRING",
+                              "nullable": true
+                            }
+                          },
+                          "propertyOrdering": ["actionRef", "expression"]
+                        },
+                        "change": {
+                          "type": "OBJECT",
+                          "nullable": true,
+                          "properties": {
+                            "actionRef": {
+                              "type": "STRING",
+                              "nullable": true
+                            },
+                            "expression": {
+                              "type": "STRING",
+                              "nullable": true
+                            }
+                          },
+                          "propertyOrdering": ["actionRef", "expression"]
+                        }
+                      },
+                      "propertyOrdering": ["click", "submit", "change"]
+                    },
+                    "children": {
+                      "type": "ARRAY",
+                      "nullable": true,
+                      "items": {
+                        "type": "OBJECT",
+                        "properties": {
+                          "type": {
+                            "type": "STRING"
+                          },
+                          "id": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "className": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "content": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "variant": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "size": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "level": {
+                            "type": "INTEGER",
+                            "nullable": true
+                          },
+                          "src": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "alt": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "href": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "icon": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "name": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "label": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "placeholder": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "required": {
+                            "type": "BOOLEAN",
+                            "nullable": true
+                          },
+                          "disabled": {
+                            "type": "BOOLEAN",
+                            "nullable": true
+                          },
+                          "actionRef": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "iterator": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "collection": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "productBinding": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "postBinding": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "amountBinding": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "valueBinding": {
+                            "type": "STRING",
+                            "nullable": true
+                          },
+                          "conditional": {
+                            "type": "OBJECT",
+                            "nullable": true,
+                            "properties": {
+                              "show": {
+                                "type": "STRING",
+                                "nullable": true
+                              }
+                            }
+                          },
+                          "bindings": {
+                            "type": "OBJECT",
+                            "nullable": true,
+                            "properties": {
+                              "text": {
+                                "type": "STRING",
+                                "nullable": true
+                              },
+                              "src": {
+                                "type": "STRING",
+                                "nullable": true
+                              },
+                              "href": {
+                                "type": "STRING",
+                                "nullable": true
+                              }
+                            }
+                          },
+                          "events": {
+                            "type": "OBJECT",
+                            "nullable": true,
+                            "properties": {
+                              "click": {
+                                "type": "OBJECT",
+                                "nullable": true,
+                                "properties": {
+                                  "actionRef": {
+                                    "type": "STRING",
+                                    "nullable": true
+                                  },
+                                  "expression": {
+                                    "type": "STRING",
+                                    "nullable": true
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "children": {
+                            "type": "ARRAY",
+                            "nullable": true,
+                            "items": {
+                              "type": "OBJECT",
+                              "properties": {
+                                "type": {
+                                  "type": "STRING"
+                                },
+                                "className": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "content": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "variant": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "size": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "level": {
+                                  "type": "INTEGER",
+                                  "nullable": true
+                                },
+                                "src": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "icon": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "name": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "label": {
+                                  "type": "STRING",
+                                  "nullable": true
+                                },
+                                "bindings": {
+                                  "type": "OBJECT",
+                                  "nullable": true,
+                                  "properties": {
+                                    "text": {
+                                      "type": "STRING",
+                                      "nullable": true
+                                    },
+                                    "src": {
+                                      "type": "STRING",
+                                      "nullable": true
+                                    }
+                                  }
+                                },
+                                "conditional": {
+                                  "type": "OBJECT",
+                                  "nullable": true,
+                                  "properties": {
+                                    "show": {
+                                      "type": "STRING",
+                                      "nullable": true
+                                    }
+                                  }
+                                },
+                                "events": {
+                                  "type": "OBJECT",
+                                  "nullable": true,
+                                  "properties": {
+                                    "click": {
+                                      "type": "OBJECT",
+                                      "nullable": true,
+                                      "properties": {
+                                        "actionRef": {
+                                          "type": "STRING",
+                                          "nullable": true
+                                        }
+                                      }
+                                    }
+                                  }
+                                }
+                              },
+                              "required": ["type"],
+                              "propertyOrdering": ["type", "className", "content", "variant", "size", "level", "src", "icon", "name", "label", "bindings", "conditional", "events"]
+                            }
+                          }
+                        },
+                        "required": ["type"],
+                        "propertyOrdering": ["type", "id", "className", "content", "variant", "size", "level", "src", "alt", "href", "icon", "name", "label", "placeholder", "required", "disabled", "actionRef", "iterator", "collection", "productBinding", "postBinding", "amountBinding", "valueBinding", "conditional", "bindings", "events", "children"]
+                      }
+                    }
+                  },
+                  "required": ["type"],
+                  "propertyOrdering": ["type", "id", "className", "content", "variant", "size", "level", "tag", "columns", "gap", "direction", "justify", "align", "wrap", "maxWidth", "padding", "background", "title", "subtitle", "src", "alt", "href", "external", "spa", "icon", "disabled", "name", "label", "placeholder", "required", "actionRef", "dataSource", "iterator", "collection", "itemKey", "productBinding", "postBinding", "amountBinding", "valueBinding", "conditional", "bindings", "events", "children"]
+                }
+              }
+            },
+            "required": ["type"],
+            "propertyOrdering": ["type", "id", "className", "content", "variant", "size", "tag", "level", "columns", "gap", "direction", "justify", "align", "wrap", "maxWidth", "padding", "background", "title", "subtitle", "backgroundImage", "overlay", "src", "alt", "aspectRatio", "objectFit", "lazy", "rounded", "href", "external", "spa", "buttonType", "icon", "iconPosition", "fullWidth", "disabled", "loading", "clickable", "name", "label", "inputType", "placeholder", "required", "readonly", "autocomplete", "min", "max", "step", "rows", "helpText", "options", "multiple", "actionRef", "dataSource", "iterator", "collection", "itemKey", "separator", "items", "tabs", "defaultTab", "allowMultiple", "tableColumns", "striped", "hoverable", "bordered", "compact", "triggerId", "closable", "closeOnOverlay", "lightbox", "autoplay", "muted", "loop", "controls", "poster", "provider", "videoId", "orientation", "showFirst", "showLast", "showPrev", "showNext", "siblingCount", "paginationPath", "showImage", "showTitle", "showPrice", "showDescription", "showRating", "showAddToCart", "showWishlist", "showExcerpt", "showDate", "showAuthor", "showCategory", "showReadTime", "imageAspectRatio", "productBinding", "postBinding", "amountBinding", "amount", "currency", "showOriginal", "originalAmountBinding", "valueBinding", "value", "showValue", "showCount", "countBinding", "instant", "debounce", "showButton", "showClear", "layout", "filters", "itemsBinding", "imagesBinding", "dataPath", "optionsBinding", "sanitize", "componentName", "conditional", "bindings", "events", "attributes", "children"]
           },
           "minItems": 1
         }
-      }
-    },
-    "Component": {
-      "type": "object",
-      "description": "A layout component",
-      "required": ["type"],
-      "allOf": [
-        {
-          "properties": {
-            "type": {
-              "type": "string",
-              "enum": [
-                "container",
-                "section",
-                "grid",
-                "flex",
-                "hero",
-                "card",
-                "productCard",
-                "blogCard",
-                "image",
-                "text",
-                "heading",
-                "link",
-                "button",
-                "form",
-                "input",
-                "select",
-                "textarea",
-                "checkbox",
-                "radio",
-                "list",
-                "listItem",
-                "template",
-                "pagination",
-                "breadcrumb",
-                "modal",
-                "notification",
-                "gallery",
-                "carousel",
-                "tabs",
-                "accordion",
-                "table",
-                "badge",
-                "icon",
-                "divider",
-                "spacer",
-                "richText",
-                "video",
-                "map",
-                "socialLinks",
-                "rating",
-                "price",
-                "quantity",
-                "searchBar",
-                "filter",
-                "sort",
-                "custom"
-              ]
-            },
-            "id": {
-              "type": "string",
-              "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
-              "maxLength": 64,
-              "description": "Optional unique identifier for the component"
-            },
-            "className": {
-              "$ref": "#/$defs/TailwindClasses"
-            },
-            "conditional": {
-              "$ref": "#/$defs/ConditionalDisplay"
-            },
-            "bindings": {
-              "$ref": "#/$defs/DataBindings"
-            },
-            "events": {
-              "$ref": "#/$defs/EventBindings"
-            },
-            "attributes": {
-              "$ref": "#/$defs/SafeAttributes"
-            }
-          }
-        },
-        {
-          "if": { "properties": { "type": { "const": "container" } } },
-          "then": { "$ref": "#/$defs/ContainerProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "section" } } },
-          "then": { "$ref": "#/$defs/SectionProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "grid" } } },
-          "then": { "$ref": "#/$defs/GridProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "flex" } } },
-          "then": { "$ref": "#/$defs/FlexProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "hero" } } },
-          "then": { "$ref": "#/$defs/HeroProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "card" } } },
-          "then": { "$ref": "#/$defs/CardProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "productCard" } } },
-          "then": { "$ref": "#/$defs/ProductCardProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "blogCard" } } },
-          "then": { "$ref": "#/$defs/BlogCardProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "image" } } },
-          "then": { "$ref": "#/$defs/ImageProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "text" } } },
-          "then": { "$ref": "#/$defs/TextProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "heading" } } },
-          "then": { "$ref": "#/$defs/HeadingProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "link" } } },
-          "then": { "$ref": "#/$defs/LinkProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "button" } } },
-          "then": { "$ref": "#/$defs/ButtonProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "form" } } },
-          "then": { "$ref": "#/$defs/FormProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "input" } } },
-          "then": { "$ref": "#/$defs/InputProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "select" } } },
-          "then": { "$ref": "#/$defs/SelectProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "textarea" } } },
-          "then": { "$ref": "#/$defs/TextareaProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "template" } } },
-          "then": { "$ref": "#/$defs/TemplateLoopProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "pagination" } } },
-          "then": { "$ref": "#/$defs/PaginationProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "list" } } },
-          "then": { "$ref": "#/$defs/ListProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "modal" } } },
-          "then": { "$ref": "#/$defs/ModalProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "gallery" } } },
-          "then": { "$ref": "#/$defs/GalleryProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "tabs" } } },
-          "then": { "$ref": "#/$defs/TabsProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "accordion" } } },
-          "then": { "$ref": "#/$defs/AccordionProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "table" } } },
-          "then": { "$ref": "#/$defs/TableProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "icon" } } },
-          "then": { "$ref": "#/$defs/IconProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "divider" } } },
-          "then": { "$ref": "#/$defs/DividerProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "spacer" } } },
-          "then": { "$ref": "#/$defs/SpacerProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "richText" } } },
-          "then": { "$ref": "#/$defs/RichTextProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "price" } } },
-          "then": { "$ref": "#/$defs/PriceProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "quantity" } } },
-          "then": { "$ref": "#/$defs/QuantityProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "searchBar" } } },
-          "then": { "$ref": "#/$defs/SearchBarProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "filter" } } },
-          "then": { "$ref": "#/$defs/FilterProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "breadcrumb" } } },
-          "then": { "$ref": "#/$defs/BreadcrumbProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "rating" } } },
-          "then": { "$ref": "#/$defs/RatingProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "badge" } } },
-          "then": { "$ref": "#/$defs/BadgeProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "video" } } },
-          "then": { "$ref": "#/$defs/VideoProps" }
-        },
-        {
-          "if": { "properties": { "type": { "const": "custom" } } },
-          "then": { "$ref": "#/$defs/CustomComponentProps" }
-        }
-      ]
-    },
-    "TailwindClasses": {
-      "type": "string",
-      "maxLength": 1024,
-      "pattern": "^[a-zA-Z0-9_\\-:.\\[\\]#%/\\s]*$",
-      "description": "Tailwind CSS class string (space-separated utility classes)"
-    },
-    "ConditionalDisplay": {
-      "type": "object",
-      "description": "Conditional rendering (maps to Alpine.js x-show/x-if)",
-      "additionalProperties": false,
-      "properties": {
-        "show": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Expression for x-show (element hidden but in DOM)"
-        },
-        "if": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Expression for x-if (element removed from DOM)"
-        }
-      }
-    },
-    "DataBindings": {
-      "type": "object",
-      "description": "Data bindings for dynamic content",
-      "additionalProperties": false,
-      "properties": {
-        "text": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Text content binding (x-text)"
-        },
-        "html": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "HTML content binding (x-html) - USE WITH CAUTION, requires sanitization"
-        },
-        "class": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Dynamic class binding (:class)"
-        },
-        "style": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Dynamic style binding (:style)"
-        },
-        "src": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Dynamic src binding (:src)"
-        },
-        "href": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Dynamic href binding (:href)"
-        },
-        "value": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Value binding for form elements (x-model)"
-        },
-        "disabled": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Disabled state binding (:disabled)"
-        }
-      }
-    },
-    "EventBindings": {
-      "type": "object",
-      "description": "Event handler bindings",
-      "additionalProperties": false,
-      "properties": {
-        "click": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "submit": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "change": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "input": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "focus": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "blur": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "keydown": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "keyup": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "mouseenter": {
-          "$ref": "#/$defs/EventHandler"
-        },
-        "mouseleave": {
-          "$ref": "#/$defs/EventHandler"
-        }
-      }
-    },
-    "EventHandler": {
-      "oneOf": [
-        {
-          "type": "object",
-          "description": "Action reference handler",
-          "required": ["actionRef"],
-          "additionalProperties": false,
-          "properties": {
-            "actionRef": {
-              "type": "string",
-              "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-              "description": "Reference to a declared action by ID"
-            },
-            "modifiers": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
-              }
-            }
-          }
-        },
-        {
-          "type": "object",
-          "description": "Simple expression handler",
-          "required": ["expression"],
-          "additionalProperties": false,
-          "properties": {
-            "expression": {
-              "$ref": "#/$defs/SafeExpression"
-            },
-            "modifiers": {
-              "type": "array",
-              "items": {
-                "type": "string",
-                "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
-              }
-            }
-          }
-        },
-        {
-          "type": "object",
-          "description": "Navigation handler",
-          "required": ["navigate"],
-          "additionalProperties": false,
-          "properties": {
-            "navigate": {
-              "type": "string",
-              "pattern": "^/[a-zA-Z0-9/_-]*$",
-              "description": "SPA navigation path using href() function"
-            }
-          }
-        }
-      ]
-    },
-    "SafeExpression": {
-      "type": "string",
-      "maxLength": 512,
-      "pattern": "^[a-zA-Z0-9_.\\[\\]'\"\\s+\\-*/%<>=!&|?:(),]+$",
-      "description": "Safe Alpine.js expression (restricted character set to prevent injection)"
-    },
-    "SafeAttributes": {
-      "type": "object",
-      "description": "Safe HTML attributes (allowlisted)",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
-          "maxLength": 64
-        },
-        "name": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
-          "maxLength": 64
-        },
-        "title": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "alt": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "placeholder": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "aria-label": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "aria-describedby": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
-        },
-        "role": {
-          "type": "string",
-          "enum": ["button", "link", "navigation", "main", "article", "section", "form", "list", "listitem", "img", "dialog", "alert", "status", "tab", "tabpanel", "tablist", "menu", "menuitem", "checkbox", "radio", "textbox", "combobox", "search", "banner", "complementary", "contentinfo", "region"]
-        },
-        "tabindex": {
-          "type": "integer",
-          "minimum": -1,
-          "maximum": 32767
-        },
-        "data-testid": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
-          "maxLength": 64
-        }
-      }
-    },
-    "ContainerProps": {
-      "type": "object",
-      "properties": {
-        "maxWidth": {
-          "type": "string",
-          "enum": ["sm", "md", "lg", "xl", "2xl", "full", "prose"],
-          "default": "xl"
-        },
-        "padding": {
-          "type": "boolean",
-          "default": true
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "SectionProps": {
-      "type": "object",
-      "properties": {
-        "tag": {
-          "type": "string",
-          "enum": ["section", "article", "aside", "header", "footer", "nav", "main"],
-          "default": "section"
-        },
-        "background": {
-          "type": "string",
-          "enum": ["default", "muted", "accent", "dark", "light", "transparent"]
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "GridProps": {
-      "type": "object",
-      "properties": {
-        "columns": {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "default": { "type": "integer", "minimum": 1, "maximum": 12 },
-            "sm": { "type": "integer", "minimum": 1, "maximum": 12 },
-            "md": { "type": "integer", "minimum": 1, "maximum": 12 },
-            "lg": { "type": "integer", "minimum": 1, "maximum": 12 },
-            "xl": { "type": "integer", "minimum": 1, "maximum": 12 }
-          }
-        },
-        "gap": {
-          "type": "string",
-          "enum": ["0", "1", "2", "3", "4", "5", "6", "8", "10", "12"],
-          "default": "4"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "FlexProps": {
-      "type": "object",
-      "properties": {
-        "direction": {
-          "type": "string",
-          "enum": ["row", "row-reverse", "col", "col-reverse"],
-          "default": "row"
-        },
-        "justify": {
-          "type": "string",
-          "enum": ["start", "end", "center", "between", "around", "evenly"],
-          "default": "start"
-        },
-        "align": {
-          "type": "string",
-          "enum": ["start", "end", "center", "baseline", "stretch"],
-          "default": "stretch"
-        },
-        "wrap": {
-          "type": "boolean",
-          "default": false
-        },
-        "gap": {
-          "type": "string",
-          "enum": ["0", "1", "2", "3", "4", "5", "6", "8", "10", "12"]
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "HeroProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["centered", "split", "background-image", "video", "minimal"],
-          "default": "centered"
-        },
-        "size": {
-          "type": "string",
-          "enum": ["sm", "md", "lg", "full"],
-          "default": "lg"
-        },
-        "title": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "subtitle": {
-          "type": "string",
-          "maxLength": 512
-        },
-        "backgroundImage": {
-          "type": "string",
-          "format": "uri"
-        },
-        "overlay": {
-          "type": "boolean",
-          "default": false
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "CardProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["default", "outlined", "elevated", "filled"],
-          "default": "default"
-        },
-        "padding": {
-          "type": "string",
-          "enum": ["none", "sm", "md", "lg"],
-          "default": "md"
-        },
-        "clickable": {
-          "type": "boolean",
-          "default": false
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "ProductCardProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["vertical", "horizontal", "compact", "detailed"],
-          "default": "vertical"
-        },
-        "showImage": { "type": "boolean", "default": true },
-        "showTitle": { "type": "boolean", "default": true },
-        "showPrice": { "type": "boolean", "default": true },
-        "showDescription": { "type": "boolean", "default": false },
-        "showRating": { "type": "boolean", "default": false },
-        "showAddToCart": { "type": "boolean", "default": true },
-        "showWishlist": { "type": "boolean", "default": false },
-        "imageAspectRatio": {
-          "type": "string",
-          "enum": ["square", "4/3", "16/9", "3/4"],
-          "default": "square"
-        },
-        "productBinding": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Expression to access product data (e.g., 'product' in a loop)"
-        }
-      }
-    },
-    "BlogCardProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["vertical", "horizontal", "featured", "compact"],
-          "default": "vertical"
-        },
-        "showImage": { "type": "boolean", "default": true },
-        "showTitle": { "type": "boolean", "default": true },
-        "showExcerpt": { "type": "boolean", "default": true },
-        "showDate": { "type": "boolean", "default": true },
-        "showAuthor": { "type": "boolean", "default": false },
-        "showCategory": { "type": "boolean", "default": false },
-        "showReadTime": { "type": "boolean", "default": false },
-        "postBinding": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Expression to access post data (e.g., 'post' in a loop)"
-        }
-      }
-    },
-    "ImageProps": {
-      "type": "object",
-      "properties": {
-        "src": {
-          "type": "string",
-          "format": "uri"
-        },
-        "alt": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "aspectRatio": {
-          "type": "string",
-          "enum": ["auto", "square", "4/3", "16/9", "3/4", "21/9"]
-        },
-        "objectFit": {
-          "type": "string",
-          "enum": ["contain", "cover", "fill", "none", "scale-down"],
-          "default": "cover"
-        },
-        "lazy": {
-          "type": "boolean",
-          "default": true
-        },
-        "rounded": {
-          "type": "string",
-          "enum": ["none", "sm", "md", "lg", "xl", "full"]
-        }
-      }
-    },
-    "TextProps": {
-      "type": "object",
-      "properties": {
-        "content": {
-          "type": "string",
-          "maxLength": 4096
-        },
-        "variant": {
-          "type": "string",
-          "enum": ["body", "lead", "small", "muted", "bold", "italic"],
-          "default": "body"
-        },
-        "tag": {
-          "type": "string",
-          "enum": ["p", "span", "div", "strong", "em", "small"],
-          "default": "p"
-        }
-      }
-    },
-    "HeadingProps": {
-      "type": "object",
-      "properties": {
-        "content": {
-          "type": "string",
-          "maxLength": 512
-        },
-        "level": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 6,
-          "default": 2
-        },
-        "size": {
-          "type": "string",
-          "enum": ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl"],
-          "description": "Visual size (can differ from semantic level)"
-        }
-      }
-    },
-    "LinkProps": {
-      "type": "object",
-      "properties": {
-        "href": {
-          "type": "string",
-          "maxLength": 2048
-        },
-        "content": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "variant": {
-          "type": "string",
-          "enum": ["default", "muted", "underline", "button"],
-          "default": "default"
-        },
-        "external": {
-          "type": "boolean",
-          "default": false,
-          "description": "If true, opens in new tab with rel=noopener"
-        },
-        "spa": {
-          "type": "boolean",
-          "default": true,
-          "description": "If true, uses href() for SPA navigation"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "ButtonProps": {
-      "type": "object",
-      "properties": {
-        "content": {
-          "type": "string",
-          "maxLength": 128
-        },
-        "variant": {
-          "type": "string",
-          "enum": ["primary", "secondary", "outline", "ghost", "danger", "success"],
-          "default": "primary"
-        },
-        "size": {
-          "type": "string",
-          "enum": ["xs", "sm", "md", "lg", "xl"],
-          "default": "md"
-        },
-        "fullWidth": {
-          "type": "boolean",
-          "default": false
-        },
-        "disabled": {
-          "type": "boolean",
-          "default": false
-        },
-        "loading": {
-          "type": "boolean",
-          "default": false
-        },
-        "type": {
-          "type": "string",
-          "enum": ["button", "submit", "reset"],
-          "default": "button"
-        },
-        "icon": {
-          "type": "string",
-          "maxLength": 64,
-          "description": "Bootstrap icon name"
-        },
-        "iconPosition": {
-          "type": "string",
-          "enum": ["left", "right"],
-          "default": "left"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "FormProps": {
-      "type": "object",
-      "required": ["actionRef"],
-      "properties": {
-        "actionRef": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Reference to a declared action for form submission"
-        },
-        "layout": {
-          "type": "string",
-          "enum": ["vertical", "horizontal", "inline"],
-          "default": "vertical"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "InputProps": {
-      "type": "object",
-      "required": ["name"],
-      "properties": {
-        "name": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "maxLength": 64
-        },
-        "label": {
-          "type": "string",
-          "maxLength": 128
-        },
-        "inputType": {
-          "type": "string",
-          "enum": ["text", "email", "password", "tel", "url", "number", "date", "datetime-local", "time", "search", "hidden"],
-          "default": "text"
-        },
-        "placeholder": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "required": {
-          "type": "boolean",
-          "default": false
-        },
-        "disabled": {
-          "type": "boolean",
-          "default": false
-        },
-        "readonly": {
-          "type": "boolean",
-          "default": false
-        },
-        "autocomplete": {
-          "type": "string",
-          "enum": ["on", "off", "name", "email", "username", "new-password", "current-password", "tel", "url", "street-address", "country", "postal-code"]
-        },
-        "min": { "type": "number" },
-        "max": { "type": "number" },
-        "step": { "type": "number" },
-        "minLength": { "type": "integer", "minimum": 0 },
-        "maxLength": { "type": "integer", "minimum": 0 },
-        "pattern": {
-          "type": "string",
-          "maxLength": 256,
-          "description": "Regex pattern for validation"
-        },
-        "helpText": {
-          "type": "string",
-          "maxLength": 256
-        }
-      }
-    },
-    "SelectProps": {
-      "type": "object",
-      "required": ["name"],
-      "properties": {
-        "name": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-        },
-        "label": {
-          "type": "string",
-          "maxLength": 128
-        },
-        "placeholder": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "required": { "type": "boolean", "default": false },
-        "disabled": { "type": "boolean", "default": false },
-        "multiple": { "type": "boolean", "default": false },
-        "options": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["value", "label"],
-            "properties": {
-              "value": { "type": "string" },
-              "label": { "type": "string" },
-              "disabled": { "type": "boolean", "default": false }
-            }
-          }
-        },
-        "optionsBinding": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Dynamic options from data binding"
-        }
-      }
-    },
-    "TextareaProps": {
-      "type": "object",
-      "required": ["name"],
-      "properties": {
-        "name": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-        },
-        "label": {
-          "type": "string",
-          "maxLength": 128
-        },
-        "placeholder": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "required": { "type": "boolean", "default": false },
-        "disabled": { "type": "boolean", "default": false },
-        "rows": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 50,
-          "default": 4
-        },
-        "minLength": { "type": "integer", "minimum": 0 },
-        "maxLength": { "type": "integer", "minimum": 0 }
-      }
-    },
-    "TemplateLoopProps": {
-      "type": "object",
-      "description": "Template loop for iterating over data (maps to x-for on <template>)",
-      "required": ["iterator", "collection"],
-      "properties": {
-        "iterator": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Iterator variable name (e.g., 'product')"
-        },
-        "collection": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Data collection to iterate (e.g., 'data.products.result')"
-        },
-        "key": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Unique key expression for tracking (e.g., 'product.id')"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" },
-          "minItems": 1
-        }
-      }
-    },
-    "PaginationProps": {
-      "type": "object",
-      "properties": {
-        "dataSource": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Reference to data source ID for pagination"
-        },
-        "paginationPath": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Path to pagination data (e.g., 'data.products.pagination')"
-        },
-        "variant": {
-          "type": "string",
-          "enum": ["default", "simple", "dots", "compact"],
-          "default": "default"
-        },
-        "showFirst": { "type": "boolean", "default": true },
-        "showLast": { "type": "boolean", "default": true },
-        "showPrev": { "type": "boolean", "default": true },
-        "showNext": { "type": "boolean", "default": true },
-        "siblingCount": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 5,
-          "default": 1
-        }
-      }
-    },
-    "ListProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["unordered", "ordered", "none"],
-          "default": "unordered"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "ModalProps": {
-      "type": "object",
-      "properties": {
-        "triggerId": {
-          "type": "string",
-          "description": "ID of the modal for triggering"
-        },
-        "title": {
-          "type": "string",
-          "maxLength": 256
-        },
-        "size": {
-          "type": "string",
-          "enum": ["sm", "md", "lg", "xl", "full"],
-          "default": "md"
-        },
-        "closable": {
-          "type": "boolean",
-          "default": true
-        },
-        "closeOnOverlay": {
-          "type": "boolean",
-          "default": true
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
-    },
-    "GalleryProps": {
-      "type": "object",
-      "properties": {
-        "imagesBinding": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Expression to access images array"
-        },
-        "columns": {
-          "type": "object",
-          "properties": {
-            "default": { "type": "integer", "minimum": 1, "maximum": 6 },
-            "sm": { "type": "integer", "minimum": 1, "maximum": 6 },
-            "md": { "type": "integer", "minimum": 1, "maximum": 6 },
-            "lg": { "type": "integer", "minimum": 1, "maximum": 6 }
-          }
-        },
-        "lightbox": {
-          "type": "boolean",
-          "default": true
-        },
-        "aspectRatio": {
-          "type": "string",
-          "enum": ["auto", "square", "4/3", "16/9"]
-        }
-      }
-    },
-    "TabsProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["underline", "pills", "boxed"],
-          "default": "underline"
-        },
-        "tabs": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["id", "label"],
-            "properties": {
-              "id": {
-                "type": "string",
-                "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-              },
-              "label": {
-                "type": "string",
-                "maxLength": 64
-              },
-              "icon": {
-                "type": "string",
-                "maxLength": 64
-              },
-              "disabled": {
-                "type": "boolean",
-                "default": false
-              },
-              "content": {
-                "type": "array",
-                "items": { "$ref": "#/$defs/Component" }
-              }
-            }
-          }
-        },
-        "defaultTab": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-        }
-      }
-    },
-    "AccordionProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["default", "bordered", "separated"],
-          "default": "default"
-        },
-        "allowMultiple": {
-          "type": "boolean",
-          "default": false
-        },
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["id", "title"],
-            "properties": {
-              "id": {
-                "type": "string",
-                "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-              },
-              "title": {
-                "type": "string",
-                "maxLength": 256
-              },
-              "defaultOpen": {
-                "type": "boolean",
-                "default": false
-              },
-              "content": {
-                "type": "array",
-                "items": { "$ref": "#/$defs/Component" }
-              }
-            }
-          }
-        }
-      }
-    },
-    "TableProps": {
-      "type": "object",
-      "properties": {
-        "dataSource": {
-          "type": "string",
-          "description": "Reference to data source ID"
-        },
-        "dataPath": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Path to table data (e.g., 'data.products.result')"
-        },
-        "columns": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["key", "header"],
-            "properties": {
-              "key": {
-                "type": "string",
-                "pattern": "^[a-zA-Z][a-zA-Z0-9_.]*$"
-              },
-              "header": {
-                "type": "string",
-                "maxLength": 128
-              },
-              "sortable": {
-                "type": "boolean",
-                "default": false
-              },
-              "width": {
-                "type": "string"
-              },
-              "align": {
-                "type": "string",
-                "enum": ["left", "center", "right"]
-              },
-              "format": {
-                "type": "string",
-                "enum": ["text", "number", "currency", "date", "datetime", "boolean", "image", "link"]
-              }
-            }
-          }
-        },
-        "striped": { "type": "boolean", "default": false },
-        "hoverable": { "type": "boolean", "default": true },
-        "bordered": { "type": "boolean", "default": false },
-        "compact": { "type": "boolean", "default": false }
-      }
-    },
-    "IconProps": {
-      "type": "object",
-      "required": ["name"],
-      "properties": {
-        "name": {
-          "type": "string",
-          "pattern": "^bi-[a-z0-9-]+$",
-          "maxLength": 64,
-          "description": "Bootstrap icon name (e.g., 'bi-cart', 'bi-heart')"
-        },
-        "size": {
-          "type": "string",
-          "enum": ["xs", "sm", "md", "lg", "xl"],
-          "default": "md"
-        },
-        "color": {
-          "$ref": "#/$defs/ColorValue"
-        }
-      }
-    },
-    "DividerProps": {
-      "type": "object",
-      "properties": {
-        "variant": {
-          "type": "string",
-          "enum": ["solid", "dashed", "dotted"],
-          "default": "solid"
-        },
-        "orientation": {
-          "type": "string",
-          "enum": ["horizontal", "vertical"],
-          "default": "horizontal"
-        },
-        "label": {
-          "type": "string",
-          "maxLength": 64
-        }
-      }
-    },
-    "SpacerProps": {
-      "type": "object",
-      "properties": {
-        "size": {
-          "type": "string",
-          "enum": ["xs", "sm", "md", "lg", "xl", "2xl"],
-          "default": "md"
-        }
-      }
-    },
-    "RichTextProps": {
-      "type": "object",
-      "properties": {
-        "content": {
-          "type": "string",
-          "maxLength": 65536,
-          "description": "Sanitized HTML content - MUST be validated before rendering"
-        },
-        "sanitize": {
-          "type": "boolean",
-          "default": true,
-          "description": "Whether to sanitize content on render"
-        }
-      }
-    },
-    "PriceProps": {
-      "type": "object",
-      "properties": {
-        "amountBinding": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Expression to access price value"
-        },
-        "amount": {
-          "type": "number",
-          "minimum": 0
-        },
-        "currency": {
-          "type": "string",
-          "pattern": "^[A-Z]{3}$",
-          "description": "ISO 4217 currency code"
-        },
-        "showOriginal": {
-          "type": "boolean",
-          "default": false,
-          "description": "Show original price for discounts"
-        },
-        "originalAmountBinding": {
-          "$ref": "#/$defs/SafeExpression"
-        },
-        "size": {
-          "type": "string",
-          "enum": ["sm", "md", "lg", "xl"],
-          "default": "md"
-        }
-      }
-    },
-    "QuantityProps": {
-      "type": "object",
-      "required": ["name"],
-      "properties": {
-        "name": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-        },
-        "min": {
-          "type": "integer",
-          "minimum": 0,
-          "default": 1
-        },
-        "max": {
-          "type": "integer",
-          "minimum": 1,
-          "default": 99
-        },
-        "step": {
-          "type": "integer",
-          "minimum": 1,
-          "default": 1
-        },
-        "value": {
-          "type": "integer",
-          "minimum": 0,
-          "default": 1
-        },
-        "valueBinding": {
-          "$ref": "#/$defs/SafeExpression"
-        }
-      }
-    },
-    "SearchBarProps": {
-      "type": "object",
-      "properties": {
-        "placeholder": {
-          "type": "string",
-          "maxLength": 256,
-          "default": "Search..."
-        },
-        "actionRef": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Reference to search action"
-        },
-        "instant": {
-          "type": "boolean",
-          "default": false,
-          "description": "Search on input change (with debounce)"
-        },
-        "debounce": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 2000,
-          "default": 300
-        },
-        "showButton": {
-          "type": "boolean",
-          "default": true
-        },
-        "showClear": {
-          "type": "boolean",
-          "default": true
-        }
-      }
-    },
-    "FilterProps": {
-      "type": "object",
-      "properties": {
-        "filters": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["key", "label", "type"],
-            "properties": {
-              "key": {
-                "type": "string",
-                "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
-              },
-              "label": {
-                "type": "string",
-                "maxLength": 64
-              },
-              "type": {
-                "type": "string",
-                "enum": ["checkbox", "radio", "range", "select", "color"]
-              },
-              "options": {
-                "type": "array",
-                "items": {
-                  "type": "object",
-                  "required": ["value", "label"],
-                  "properties": {
-                    "value": { "type": "string" },
-                    "label": { "type": "string" },
-                    "count": { "type": "integer" }
-                  }
-                }
-              },
-              "optionsBinding": {
-                "$ref": "#/$defs/SafeExpression"
-              },
-              "min": { "type": "number" },
-              "max": { "type": "number" }
-            }
-          }
-        },
-        "layout": {
-          "type": "string",
-          "enum": ["vertical", "horizontal", "accordion"],
-          "default": "vertical"
-        },
-        "actionRef": {
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
-          "description": "Action to trigger on filter change"
-        }
-      }
-    },
-    "BreadcrumbProps": {
-      "type": "object",
-      "properties": {
-        "items": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "required": ["label"],
-            "properties": {
-              "label": {
-                "type": "string",
-                "maxLength": 64
-              },
-              "href": {
-                "type": "string",
-                "maxLength": 256
-              },
-              "icon": {
-                "type": "string",
-                "maxLength": 64
-              }
-            }
-          }
-        },
-        "itemsBinding": {
-          "$ref": "#/$defs/SafeExpression",
-          "description": "Dynamic breadcrumb items from data binding"
-        },
-        "separator": {
-          "type": "string",
-          "enum": ["slash", "chevron", "arrow", "dot"],
-          "default": "chevron"
-        }
-      }
-    },
-    "RatingProps": {
-      "type": "object",
-      "properties": {
-        "valueBinding": {
-          "$ref": "#/$defs/SafeExpression"
-        },
-        "value": {
-          "type": "number",
-          "minimum": 0,
-          "maximum": 5
-        },
-        "max": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 10,
-          "default": 5
-        },
-        "readonly": {
-          "type": "boolean",
-          "default": true
-        },
-        "size": {
-          "type": "string",
-          "enum": ["sm", "md", "lg"],
-          "default": "md"
-        },
-        "showValue": {
-          "type": "boolean",
-          "default": false
-        },
-        "showCount": {
-          "type": "boolean",
-          "default": false
-        },
-        "countBinding": {
-          "$ref": "#/$defs/SafeExpression"
-        }
-      }
-    },
-    "BadgeProps": {
-      "type": "object",
-      "properties": {
-        "content": {
-          "type": "string",
-          "maxLength": 32
-        },
-        "variant": {
-          "type": "string",
-          "enum": ["default", "primary", "secondary", "success", "warning", "danger", "info"],
-          "default": "default"
-        },
-        "size": {
-          "type": "string",
-          "enum": ["sm", "md", "lg"],
-          "default": "md"
-        },
-        "rounded": {
-          "type": "boolean",
-          "default": false
-        }
-      }
-    },
-    "VideoProps": {
-      "type": "object",
-      "properties": {
-        "src": {
-          "type": "string",
-          "format": "uri"
-        },
-        "poster": {
-          "type": "string",
-          "format": "uri"
-        },
-        "provider": {
-          "type": "string",
-          "enum": ["native", "youtube", "vimeo"],
-          "default": "native"
-        },
-        "videoId": {
-          "type": "string",
-          "maxLength": 64,
-          "description": "Video ID for YouTube/Vimeo"
-        },
-        "autoplay": {
-          "type": "boolean",
-          "default": false
-        },
-        "muted": {
-          "type": "boolean",
-          "default": false
-        },
-        "loop": {
-          "type": "boolean",
-          "default": false
-        },
-        "controls": {
-          "type": "boolean",
-          "default": true
-        },
-        "aspectRatio": {
-          "type": "string",
-          "enum": ["16/9", "4/3", "1/1", "21/9"],
-          "default": "16/9"
-        }
-      }
-    },
-    "CustomComponentProps": {
-      "type": "object",
-      "description": "Custom component for extensibility (requires additional validation)",
-      "properties": {
-        "componentName": {
-          "type": "string",
-          "pattern": "^[A-Z][a-zA-Z0-9]*$",
-          "maxLength": 64,
-          "description": "Registered custom component name"
-        },
-        "props": {
-          "type": "object",
-          "additionalProperties": true,
-          "description": "Component-specific props (validated by component registry)"
-        },
-        "children": {
-          "type": "array",
-          "items": { "$ref": "#/$defs/Component" }
-        }
-      }
+      },
+      "required": ["children"],
+      "propertyOrdering": ["className", "children"]
     }
-  }
+  },
+  "required": ["metadata", "layout"],
+  "propertyOrdering": ["metadata", "designSystem", "dataSources", "actions", "layout"]
 }

@@ -1,5 +1,4 @@
 {
-  "$schema": "https://expozy.com/schemas/template-schema-v1.json",
   "metadata": {
     "id": "minimal-example",
     "name": "Minimal Template",
@@ -10,15 +9,19 @@
     "children": [
       {
         "type": "container",
+        "maxWidth": "lg",
+        "className": "py-16",
         "children": [
           {
             "type": "heading",
             "level": 1,
-            "content": "Hello, World!"
+            "content": "Hello, World!",
+            "className": "text-4xl font-bold text-gray-900 mb-4"
           },
           {
             "type": "text",
-            "content": "This is a minimal EXPOZY template example."
+            "content": "This is a minimal EXPOZY template example.",
+            "className": "text-lg text-gray-600"
           }
         ]
       }
