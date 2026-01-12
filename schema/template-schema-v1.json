@@ -1,0 +1,1948 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://expozy.com/schemas/template-schema-v1.json",
+  "title": "EXPOZY Template Schema v1",
+  "description": "JSON Schema for AI-generated EXPOZY page templates. Defines structured output constraints for LLM-based template generation, ensuring validity, security, and EXPOZY framework compatibility.",
+  "type": "object",
+  "required": ["metadata", "layout"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "const": "https://expozy.com/schemas/template-schema-v1.json",
+      "description": "Schema reference for validation"
+    },
+    "metadata": {
+      "$ref": "#/$defs/Metadata"
+    },
+    "designSystem": {
+      "$ref": "#/$defs/DesignSystem"
+    },
+    "dataSources": {
+      "type": "array",
+      "description": "Declared REST API calls (maps to EXPOZY apiData pattern)",
+      "items": {
+        "$ref": "#/$defs/DataSource"
+      },
+      "default": []
+    },
+    "actions": {
+      "type": "array",
+      "description": "Declared user interaction actions (maps to EXPOZY alpineListener pattern)",
+      "items": {
+        "$ref": "#/$defs/Action"
+      },
+      "default": []
+    },
+    "layout": {
+      "$ref": "#/$defs/LayoutRoot"
+    }
+  },
+  "$defs": {
+    "Metadata": {
+      "type": "object",
+      "description": "Template package metadata including identification, routing, and SEO",
+      "required": ["id", "name", "pageType", "schemaVersion"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Unique template identifier (lowercase alphanumeric with hyphens)"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128,
+          "description": "Human-readable template name"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 512,
+          "description": "Template description for cataloging"
+        },
+        "pageType": {
+          "type": "string",
+          "enum": ["landing", "product", "category", "blog", "blogPost", "cart", "checkout", "account", "search", "contact", "custom"],
+          "description": "Page type classification for routing and behavior"
+        },
+        "schemaVersion": {
+          "type": "string",
+          "const": "1.0.0",
+          "description": "Template schema version for compatibility checking"
+        },
+        "route": {
+          "type": "string",
+          "pattern": "^/[a-z0-9/-]*$",
+          "maxLength": 256,
+          "description": "URL route pattern (e.g., /products/:id)"
+        },
+        "seo": {
+          "$ref": "#/$defs/SEO"
+        },
+        "languages": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^[a-z]{2}(-[A-Z]{2})?$"
+          },
+          "description": "Supported language codes (e.g., ['en', 'bg', 'de'])"
+        },
+        "author": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "SEO": {
+      "type": "object",
+      "description": "SEO metadata for the page",
+      "additionalProperties": false,
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 70,
+          "description": "Page title (recommended max 60 chars for display)"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 160,
+          "description": "Meta description (recommended max 155 chars)"
+        },
+        "keywords": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "maxLength": 50
+          },
+          "maxItems": 10
+        },
+        "ogImage": {
+          "type": "string",
+          "format": "uri",
+          "description": "Open Graph image URL"
+        },
+        "canonical": {
+          "type": "string",
+          "format": "uri",
+          "description": "Canonical URL"
+        },
+        "noIndex": {
+          "type": "boolean",
+          "default": false
+        },
+        "noFollow": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "DesignSystem": {
+      "type": "object",
+      "description": "Design system configuration for styling",
+      "additionalProperties": false,
+      "properties": {
+        "tailwindMode": {
+          "type": "string",
+          "enum": ["freeform", "tokenized", "restricted"],
+          "default": "freeform",
+          "description": "Tailwind class usage mode: freeform allows any valid classes, tokenized uses design tokens, restricted limits to a predefined set"
+        },
+        "theme": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "primaryColor": {
+              "$ref": "#/$defs/ColorValue"
+            },
+            "secondaryColor": {
+              "$ref": "#/$defs/ColorValue"
+            },
+            "accentColor": {
+              "$ref": "#/$defs/ColorValue"
+            },
+            "backgroundColor": {
+              "$ref": "#/$defs/ColorValue"
+            },
+            "textColor": {
+              "$ref": "#/$defs/ColorValue"
+            },
+            "fontFamily": {
+              "type": "string",
+              "maxLength": 128
+            },
+            "borderRadius": {
+              "type": "string",
+              "enum": ["none", "sm", "md", "lg", "xl", "2xl", "full"]
+            }
+          }
+        },
+        "darkMode": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether dark mode variants should be generated"
+        },
+        "responsive": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether responsive breakpoints should be used"
+        }
+      }
+    },
+    "ColorValue": {
+      "type": "string",
+      "pattern": "^(#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{3}|[a-z]+-[0-9]{2,3}|transparent|inherit|current)$",
+      "description": "Color value: hex (#RRGGBB), Tailwind color (indigo-600), or CSS keyword"
+    },
+    "DataSource": {
+      "type": "object",
+      "description": "Declarative REST API data source (maps to EXPOZY apiData attribute pattern)",
+      "required": ["id", "endpoint", "keyName"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Unique identifier for this data source"
+        },
+        "endpoint": {
+          "type": "string",
+          "pattern": "^(get|post|put|delete)\\.[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "API endpoint in EXPOZY format: method.resource (e.g., get.products, post.carts)"
+        },
+        "keyName": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Key in global data object where response is stored (data[keyName])"
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/ParamValue"
+          },
+          "description": "Request parameters (maps to data-* attributes)"
+        },
+        "options": {
+          "$ref": "#/$defs/DataSourceOptions"
+        },
+        "autoLoad": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to load data automatically on page init"
+        },
+        "refreshOn": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Event names that trigger a refresh of this data source"
+        }
+      }
+    },
+    "DataSourceOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pushUrl": {
+          "type": "boolean",
+          "default": false,
+          "description": "Update browser URL with request parameters"
+        },
+        "scroll": {
+          "type": "boolean",
+          "default": false,
+          "description": "Scroll to element after load"
+        },
+        "clear": {
+          "type": "boolean",
+          "default": false,
+          "description": "Clear existing data before loading"
+        }
+      }
+    },
+    "ParamValue": {
+      "oneOf": [
+        { "type": "string", "maxLength": 256 },
+        { "type": "number" },
+        { "type": "boolean" },
+        {
+          "type": "object",
+          "required": ["binding"],
+          "additionalProperties": false,
+          "properties": {
+            "binding": {
+              "type": "string",
+              "pattern": "^data\\.[a-zA-Z][a-zA-Z0-9_.]*$",
+              "description": "Dynamic binding to global data (e.g., data.pageUrl.page)"
+            }
+          }
+        }
+      ],
+      "description": "Parameter value: static or dynamic binding"
+    },
+    "Action": {
+      "type": "object",
+      "description": "User interaction action (maps to EXPOZY alpineListener pattern)",
+      "required": ["id", "endpoint"],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "minLength": 1,
+          "maxLength": 64,
+          "description": "Unique action identifier"
+        },
+        "endpoint": {
+          "type": "string",
+          "pattern": "^[A-Z][a-zA-Z]*\\.(get|post|put|delete)_[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Action endpoint in EXPOZY format: Module.method_name (e.g., Shop.post_carts, User.post_login)"
+        },
+        "keyName": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Key in global data object for response storage"
+        },
+        "params": {
+          "type": "object",
+          "additionalProperties": {
+            "$ref": "#/$defs/ParamValue"
+          },
+          "description": "Action parameters"
+        },
+        "options": {
+          "$ref": "#/$defs/ActionOptions"
+        },
+        "confirm": {
+          "type": "string",
+          "maxLength": 256,
+          "description": "Confirmation message before executing action"
+        }
+      }
+    },
+    "ActionOptions": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "pushUrl": {
+          "type": "boolean",
+          "default": false
+        },
+        "scroll": {
+          "type": "boolean",
+          "default": false
+        },
+        "clearForm": {
+          "type": "boolean",
+          "default": false
+        },
+        "preventDefault": {
+          "type": "boolean",
+          "default": true
+        },
+        "debounce": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5000,
+          "description": "Debounce delay in milliseconds"
+        }
+      }
+    },
+    "LayoutRoot": {
+      "type": "object",
+      "description": "Root layout container",
+      "required": ["children"],
+      "additionalProperties": false,
+      "properties": {
+        "className": {
+          "$ref": "#/$defs/TailwindClasses"
+        },
+        "children": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/Component"
+          },
+          "minItems": 1
+        }
+      }
+    },
+    "Component": {
+      "type": "object",
+      "description": "A layout component",
+      "required": ["type"],
+      "allOf": [
+        {
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": [
+                "container",
+                "section",
+                "grid",
+                "flex",
+                "hero",
+                "card",
+                "productCard",
+                "blogCard",
+                "image",
+                "text",
+                "heading",
+                "link",
+                "button",
+                "form",
+                "input",
+                "select",
+                "textarea",
+                "checkbox",
+                "radio",
+                "list",
+                "listItem",
+                "template",
+                "pagination",
+                "breadcrumb",
+                "modal",
+                "notification",
+                "gallery",
+                "carousel",
+                "tabs",
+                "accordion",
+                "table",
+                "badge",
+                "icon",
+                "divider",
+                "spacer",
+                "richText",
+                "video",
+                "map",
+                "socialLinks",
+                "rating",
+                "price",
+                "quantity",
+                "searchBar",
+                "filter",
+                "sort",
+                "custom"
+              ]
+            },
+            "id": {
+              "type": "string",
+              "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+              "maxLength": 64,
+              "description": "Optional unique identifier for the component"
+            },
+            "className": {
+              "$ref": "#/$defs/TailwindClasses"
+            },
+            "conditional": {
+              "$ref": "#/$defs/ConditionalDisplay"
+            },
+            "bindings": {
+              "$ref": "#/$defs/DataBindings"
+            },
+            "events": {
+              "$ref": "#/$defs/EventBindings"
+            },
+            "attributes": {
+              "$ref": "#/$defs/SafeAttributes"
+            }
+          }
+        },
+        {
+          "if": { "properties": { "type": { "const": "container" } } },
+          "then": { "$ref": "#/$defs/ContainerProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "section" } } },
+          "then": { "$ref": "#/$defs/SectionProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "grid" } } },
+          "then": { "$ref": "#/$defs/GridProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "flex" } } },
+          "then": { "$ref": "#/$defs/FlexProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "hero" } } },
+          "then": { "$ref": "#/$defs/HeroProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "card" } } },
+          "then": { "$ref": "#/$defs/CardProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "productCard" } } },
+          "then": { "$ref": "#/$defs/ProductCardProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "blogCard" } } },
+          "then": { "$ref": "#/$defs/BlogCardProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "image" } } },
+          "then": { "$ref": "#/$defs/ImageProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "text" } } },
+          "then": { "$ref": "#/$defs/TextProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "heading" } } },
+          "then": { "$ref": "#/$defs/HeadingProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "link" } } },
+          "then": { "$ref": "#/$defs/LinkProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "button" } } },
+          "then": { "$ref": "#/$defs/ButtonProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "form" } } },
+          "then": { "$ref": "#/$defs/FormProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "input" } } },
+          "then": { "$ref": "#/$defs/InputProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "select" } } },
+          "then": { "$ref": "#/$defs/SelectProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "textarea" } } },
+          "then": { "$ref": "#/$defs/TextareaProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "template" } } },
+          "then": { "$ref": "#/$defs/TemplateLoopProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "pagination" } } },
+          "then": { "$ref": "#/$defs/PaginationProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "list" } } },
+          "then": { "$ref": "#/$defs/ListProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "modal" } } },
+          "then": { "$ref": "#/$defs/ModalProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "gallery" } } },
+          "then": { "$ref": "#/$defs/GalleryProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "tabs" } } },
+          "then": { "$ref": "#/$defs/TabsProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "accordion" } } },
+          "then": { "$ref": "#/$defs/AccordionProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "table" } } },
+          "then": { "$ref": "#/$defs/TableProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "icon" } } },
+          "then": { "$ref": "#/$defs/IconProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "divider" } } },
+          "then": { "$ref": "#/$defs/DividerProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "spacer" } } },
+          "then": { "$ref": "#/$defs/SpacerProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "richText" } } },
+          "then": { "$ref": "#/$defs/RichTextProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "price" } } },
+          "then": { "$ref": "#/$defs/PriceProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "quantity" } } },
+          "then": { "$ref": "#/$defs/QuantityProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "searchBar" } } },
+          "then": { "$ref": "#/$defs/SearchBarProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "filter" } } },
+          "then": { "$ref": "#/$defs/FilterProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "breadcrumb" } } },
+          "then": { "$ref": "#/$defs/BreadcrumbProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "rating" } } },
+          "then": { "$ref": "#/$defs/RatingProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "badge" } } },
+          "then": { "$ref": "#/$defs/BadgeProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "video" } } },
+          "then": { "$ref": "#/$defs/VideoProps" }
+        },
+        {
+          "if": { "properties": { "type": { "const": "custom" } } },
+          "then": { "$ref": "#/$defs/CustomComponentProps" }
+        }
+      ]
+    },
+    "TailwindClasses": {
+      "type": "string",
+      "maxLength": 1024,
+      "pattern": "^[a-zA-Z0-9_\\-:.\\[\\]#%/\\s]*$",
+      "description": "Tailwind CSS class string (space-separated utility classes)"
+    },
+    "ConditionalDisplay": {
+      "type": "object",
+      "description": "Conditional rendering (maps to Alpine.js x-show/x-if)",
+      "additionalProperties": false,
+      "properties": {
+        "show": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Expression for x-show (element hidden but in DOM)"
+        },
+        "if": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Expression for x-if (element removed from DOM)"
+        }
+      }
+    },
+    "DataBindings": {
+      "type": "object",
+      "description": "Data bindings for dynamic content",
+      "additionalProperties": false,
+      "properties": {
+        "text": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Text content binding (x-text)"
+        },
+        "html": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "HTML content binding (x-html) - USE WITH CAUTION, requires sanitization"
+        },
+        "class": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Dynamic class binding (:class)"
+        },
+        "style": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Dynamic style binding (:style)"
+        },
+        "src": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Dynamic src binding (:src)"
+        },
+        "href": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Dynamic href binding (:href)"
+        },
+        "value": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Value binding for form elements (x-model)"
+        },
+        "disabled": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Disabled state binding (:disabled)"
+        }
+      }
+    },
+    "EventBindings": {
+      "type": "object",
+      "description": "Event handler bindings",
+      "additionalProperties": false,
+      "properties": {
+        "click": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "submit": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "change": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "input": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "focus": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "blur": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "keydown": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "keyup": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "mouseenter": {
+          "$ref": "#/$defs/EventHandler"
+        },
+        "mouseleave": {
+          "$ref": "#/$defs/EventHandler"
+        }
+      }
+    },
+    "EventHandler": {
+      "oneOf": [
+        {
+          "type": "object",
+          "description": "Action reference handler",
+          "required": ["actionRef"],
+          "additionalProperties": false,
+          "properties": {
+            "actionRef": {
+              "type": "string",
+              "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+              "description": "Reference to a declared action by ID"
+            },
+            "modifiers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Simple expression handler",
+          "required": ["expression"],
+          "additionalProperties": false,
+          "properties": {
+            "expression": {
+              "$ref": "#/$defs/SafeExpression"
+            },
+            "modifiers": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": ["prevent", "stop", "self", "outside", "once", "passive", "capture", "debounce", "throttle"]
+              }
+            }
+          }
+        },
+        {
+          "type": "object",
+          "description": "Navigation handler",
+          "required": ["navigate"],
+          "additionalProperties": false,
+          "properties": {
+            "navigate": {
+              "type": "string",
+              "pattern": "^/[a-zA-Z0-9/_-]*$",
+              "description": "SPA navigation path using href() function"
+            }
+          }
+        }
+      ]
+    },
+    "SafeExpression": {
+      "type": "string",
+      "maxLength": 512,
+      "pattern": "^[a-zA-Z0-9_.\\[\\]'\"\\s+\\-*/%<>=!&|?:(),]+$",
+      "description": "Safe Alpine.js expression (restricted character set to prevent injection)"
+    },
+    "SafeAttributes": {
+      "type": "object",
+      "description": "Safe HTML attributes (allowlisted)",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+          "maxLength": 64
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+          "maxLength": 64
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "alt": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "placeholder": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "aria-label": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "aria-describedby": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["button", "link", "navigation", "main", "article", "section", "form", "list", "listitem", "img", "dialog", "alert", "status", "tab", "tabpanel", "tablist", "menu", "menuitem", "checkbox", "radio", "textbox", "combobox", "search", "banner", "complementary", "contentinfo", "region"]
+        },
+        "tabindex": {
+          "type": "integer",
+          "minimum": -1,
+          "maximum": 32767
+        },
+        "data-testid": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_-]*$",
+          "maxLength": 64
+        }
+      }
+    },
+    "ContainerProps": {
+      "type": "object",
+      "properties": {
+        "maxWidth": {
+          "type": "string",
+          "enum": ["sm", "md", "lg", "xl", "2xl", "full", "prose"],
+          "default": "xl"
+        },
+        "padding": {
+          "type": "boolean",
+          "default": true
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "SectionProps": {
+      "type": "object",
+      "properties": {
+        "tag": {
+          "type": "string",
+          "enum": ["section", "article", "aside", "header", "footer", "nav", "main"],
+          "default": "section"
+        },
+        "background": {
+          "type": "string",
+          "enum": ["default", "muted", "accent", "dark", "light", "transparent"]
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "GridProps": {
+      "type": "object",
+      "properties": {
+        "columns": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "default": { "type": "integer", "minimum": 1, "maximum": 12 },
+            "sm": { "type": "integer", "minimum": 1, "maximum": 12 },
+            "md": { "type": "integer", "minimum": 1, "maximum": 12 },
+            "lg": { "type": "integer", "minimum": 1, "maximum": 12 },
+            "xl": { "type": "integer", "minimum": 1, "maximum": 12 }
+          }
+        },
+        "gap": {
+          "type": "string",
+          "enum": ["0", "1", "2", "3", "4", "5", "6", "8", "10", "12"],
+          "default": "4"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "FlexProps": {
+      "type": "object",
+      "properties": {
+        "direction": {
+          "type": "string",
+          "enum": ["row", "row-reverse", "col", "col-reverse"],
+          "default": "row"
+        },
+        "justify": {
+          "type": "string",
+          "enum": ["start", "end", "center", "between", "around", "evenly"],
+          "default": "start"
+        },
+        "align": {
+          "type": "string",
+          "enum": ["start", "end", "center", "baseline", "stretch"],
+          "default": "stretch"
+        },
+        "wrap": {
+          "type": "boolean",
+          "default": false
+        },
+        "gap": {
+          "type": "string",
+          "enum": ["0", "1", "2", "3", "4", "5", "6", "8", "10", "12"]
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "HeroProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["centered", "split", "background-image", "video", "minimal"],
+          "default": "centered"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["sm", "md", "lg", "full"],
+          "default": "lg"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "subtitle": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "backgroundImage": {
+          "type": "string",
+          "format": "uri"
+        },
+        "overlay": {
+          "type": "boolean",
+          "default": false
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "CardProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["default", "outlined", "elevated", "filled"],
+          "default": "default"
+        },
+        "padding": {
+          "type": "string",
+          "enum": ["none", "sm", "md", "lg"],
+          "default": "md"
+        },
+        "clickable": {
+          "type": "boolean",
+          "default": false
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "ProductCardProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["vertical", "horizontal", "compact", "detailed"],
+          "default": "vertical"
+        },
+        "showImage": { "type": "boolean", "default": true },
+        "showTitle": { "type": "boolean", "default": true },
+        "showPrice": { "type": "boolean", "default": true },
+        "showDescription": { "type": "boolean", "default": false },
+        "showRating": { "type": "boolean", "default": false },
+        "showAddToCart": { "type": "boolean", "default": true },
+        "showWishlist": { "type": "boolean", "default": false },
+        "imageAspectRatio": {
+          "type": "string",
+          "enum": ["square", "4/3", "16/9", "3/4"],
+          "default": "square"
+        },
+        "productBinding": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Expression to access product data (e.g., 'product' in a loop)"
+        }
+      }
+    },
+    "BlogCardProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["vertical", "horizontal", "featured", "compact"],
+          "default": "vertical"
+        },
+        "showImage": { "type": "boolean", "default": true },
+        "showTitle": { "type": "boolean", "default": true },
+        "showExcerpt": { "type": "boolean", "default": true },
+        "showDate": { "type": "boolean", "default": true },
+        "showAuthor": { "type": "boolean", "default": false },
+        "showCategory": { "type": "boolean", "default": false },
+        "showReadTime": { "type": "boolean", "default": false },
+        "postBinding": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Expression to access post data (e.g., 'post' in a loop)"
+        }
+      }
+    },
+    "ImageProps": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "format": "uri"
+        },
+        "alt": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "aspectRatio": {
+          "type": "string",
+          "enum": ["auto", "square", "4/3", "16/9", "3/4", "21/9"]
+        },
+        "objectFit": {
+          "type": "string",
+          "enum": ["contain", "cover", "fill", "none", "scale-down"],
+          "default": "cover"
+        },
+        "lazy": {
+          "type": "boolean",
+          "default": true
+        },
+        "rounded": {
+          "type": "string",
+          "enum": ["none", "sm", "md", "lg", "xl", "full"]
+        }
+      }
+    },
+    "TextProps": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "maxLength": 4096
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["body", "lead", "small", "muted", "bold", "italic"],
+          "default": "body"
+        },
+        "tag": {
+          "type": "string",
+          "enum": ["p", "span", "div", "strong", "em", "small"],
+          "default": "p"
+        }
+      }
+    },
+    "HeadingProps": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "maxLength": 512
+        },
+        "level": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 6,
+          "default": 2
+        },
+        "size": {
+          "type": "string",
+          "enum": ["xs", "sm", "md", "lg", "xl", "2xl", "3xl", "4xl"],
+          "description": "Visual size (can differ from semantic level)"
+        }
+      }
+    },
+    "LinkProps": {
+      "type": "object",
+      "properties": {
+        "href": {
+          "type": "string",
+          "maxLength": 2048
+        },
+        "content": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["default", "muted", "underline", "button"],
+          "default": "default"
+        },
+        "external": {
+          "type": "boolean",
+          "default": false,
+          "description": "If true, opens in new tab with rel=noopener"
+        },
+        "spa": {
+          "type": "boolean",
+          "default": true,
+          "description": "If true, uses href() for SPA navigation"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "ButtonProps": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["primary", "secondary", "outline", "ghost", "danger", "success"],
+          "default": "primary"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["xs", "sm", "md", "lg", "xl"],
+          "default": "md"
+        },
+        "fullWidth": {
+          "type": "boolean",
+          "default": false
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "loading": {
+          "type": "boolean",
+          "default": false
+        },
+        "type": {
+          "type": "string",
+          "enum": ["button", "submit", "reset"],
+          "default": "button"
+        },
+        "icon": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Bootstrap icon name"
+        },
+        "iconPosition": {
+          "type": "string",
+          "enum": ["left", "right"],
+          "default": "left"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "FormProps": {
+      "type": "object",
+      "required": ["actionRef"],
+      "properties": {
+        "actionRef": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Reference to a declared action for form submission"
+        },
+        "layout": {
+          "type": "string",
+          "enum": ["vertical", "horizontal", "inline"],
+          "default": "vertical"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "InputProps": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "maxLength": 64
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "inputType": {
+          "type": "string",
+          "enum": ["text", "email", "password", "tel", "url", "number", "date", "datetime-local", "time", "search", "hidden"],
+          "default": "text"
+        },
+        "placeholder": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "required": {
+          "type": "boolean",
+          "default": false
+        },
+        "disabled": {
+          "type": "boolean",
+          "default": false
+        },
+        "readonly": {
+          "type": "boolean",
+          "default": false
+        },
+        "autocomplete": {
+          "type": "string",
+          "enum": ["on", "off", "name", "email", "username", "new-password", "current-password", "tel", "url", "street-address", "country", "postal-code"]
+        },
+        "min": { "type": "number" },
+        "max": { "type": "number" },
+        "step": { "type": "number" },
+        "minLength": { "type": "integer", "minimum": 0 },
+        "maxLength": { "type": "integer", "minimum": 0 },
+        "pattern": {
+          "type": "string",
+          "maxLength": 256,
+          "description": "Regex pattern for validation"
+        },
+        "helpText": {
+          "type": "string",
+          "maxLength": 256
+        }
+      }
+    },
+    "SelectProps": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "placeholder": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "required": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false },
+        "multiple": { "type": "boolean", "default": false },
+        "options": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["value", "label"],
+            "properties": {
+              "value": { "type": "string" },
+              "label": { "type": "string" },
+              "disabled": { "type": "boolean", "default": false }
+            }
+          }
+        },
+        "optionsBinding": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Dynamic options from data binding"
+        }
+      }
+    },
+    "TextareaProps": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 128
+        },
+        "placeholder": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "required": { "type": "boolean", "default": false },
+        "disabled": { "type": "boolean", "default": false },
+        "rows": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 50,
+          "default": 4
+        },
+        "minLength": { "type": "integer", "minimum": 0 },
+        "maxLength": { "type": "integer", "minimum": 0 }
+      }
+    },
+    "TemplateLoopProps": {
+      "type": "object",
+      "description": "Template loop for iterating over data (maps to x-for on <template>)",
+      "required": ["iterator", "collection"],
+      "properties": {
+        "iterator": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Iterator variable name (e.g., 'product')"
+        },
+        "collection": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Data collection to iterate (e.g., 'data.products.result')"
+        },
+        "key": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Unique key expression for tracking (e.g., 'product.id')"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" },
+          "minItems": 1
+        }
+      }
+    },
+    "PaginationProps": {
+      "type": "object",
+      "properties": {
+        "dataSource": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Reference to data source ID for pagination"
+        },
+        "paginationPath": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Path to pagination data (e.g., 'data.products.pagination')"
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["default", "simple", "dots", "compact"],
+          "default": "default"
+        },
+        "showFirst": { "type": "boolean", "default": true },
+        "showLast": { "type": "boolean", "default": true },
+        "showPrev": { "type": "boolean", "default": true },
+        "showNext": { "type": "boolean", "default": true },
+        "siblingCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 5,
+          "default": 1
+        }
+      }
+    },
+    "ListProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["unordered", "ordered", "none"],
+          "default": "unordered"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "ModalProps": {
+      "type": "object",
+      "properties": {
+        "triggerId": {
+          "type": "string",
+          "description": "ID of the modal for triggering"
+        },
+        "title": {
+          "type": "string",
+          "maxLength": 256
+        },
+        "size": {
+          "type": "string",
+          "enum": ["sm", "md", "lg", "xl", "full"],
+          "default": "md"
+        },
+        "closable": {
+          "type": "boolean",
+          "default": true
+        },
+        "closeOnOverlay": {
+          "type": "boolean",
+          "default": true
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    },
+    "GalleryProps": {
+      "type": "object",
+      "properties": {
+        "imagesBinding": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Expression to access images array"
+        },
+        "columns": {
+          "type": "object",
+          "properties": {
+            "default": { "type": "integer", "minimum": 1, "maximum": 6 },
+            "sm": { "type": "integer", "minimum": 1, "maximum": 6 },
+            "md": { "type": "integer", "minimum": 1, "maximum": 6 },
+            "lg": { "type": "integer", "minimum": 1, "maximum": 6 }
+          }
+        },
+        "lightbox": {
+          "type": "boolean",
+          "default": true
+        },
+        "aspectRatio": {
+          "type": "string",
+          "enum": ["auto", "square", "4/3", "16/9"]
+        }
+      }
+    },
+    "TabsProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["underline", "pills", "boxed"],
+          "default": "underline"
+        },
+        "tabs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "label"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 64
+              },
+              "icon": {
+                "type": "string",
+                "maxLength": 64
+              },
+              "disabled": {
+                "type": "boolean",
+                "default": false
+              },
+              "content": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/Component" }
+              }
+            }
+          }
+        },
+        "defaultTab": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+        }
+      }
+    },
+    "AccordionProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["default", "bordered", "separated"],
+          "default": "default"
+        },
+        "allowMultiple": {
+          "type": "boolean",
+          "default": false
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "title"],
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+              },
+              "title": {
+                "type": "string",
+                "maxLength": 256
+              },
+              "defaultOpen": {
+                "type": "boolean",
+                "default": false
+              },
+              "content": {
+                "type": "array",
+                "items": { "$ref": "#/$defs/Component" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "TableProps": {
+      "type": "object",
+      "properties": {
+        "dataSource": {
+          "type": "string",
+          "description": "Reference to data source ID"
+        },
+        "dataPath": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Path to table data (e.g., 'data.products.result')"
+        },
+        "columns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["key", "header"],
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_.]*$"
+              },
+              "header": {
+                "type": "string",
+                "maxLength": 128
+              },
+              "sortable": {
+                "type": "boolean",
+                "default": false
+              },
+              "width": {
+                "type": "string"
+              },
+              "align": {
+                "type": "string",
+                "enum": ["left", "center", "right"]
+              },
+              "format": {
+                "type": "string",
+                "enum": ["text", "number", "currency", "date", "datetime", "boolean", "image", "link"]
+              }
+            }
+          }
+        },
+        "striped": { "type": "boolean", "default": false },
+        "hoverable": { "type": "boolean", "default": true },
+        "bordered": { "type": "boolean", "default": false },
+        "compact": { "type": "boolean", "default": false }
+      }
+    },
+    "IconProps": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^bi-[a-z0-9-]+$",
+          "maxLength": 64,
+          "description": "Bootstrap icon name (e.g., 'bi-cart', 'bi-heart')"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["xs", "sm", "md", "lg", "xl"],
+          "default": "md"
+        },
+        "color": {
+          "$ref": "#/$defs/ColorValue"
+        }
+      }
+    },
+    "DividerProps": {
+      "type": "object",
+      "properties": {
+        "variant": {
+          "type": "string",
+          "enum": ["solid", "dashed", "dotted"],
+          "default": "solid"
+        },
+        "orientation": {
+          "type": "string",
+          "enum": ["horizontal", "vertical"],
+          "default": "horizontal"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 64
+        }
+      }
+    },
+    "SpacerProps": {
+      "type": "object",
+      "properties": {
+        "size": {
+          "type": "string",
+          "enum": ["xs", "sm", "md", "lg", "xl", "2xl"],
+          "default": "md"
+        }
+      }
+    },
+    "RichTextProps": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "maxLength": 65536,
+          "description": "Sanitized HTML content - MUST be validated before rendering"
+        },
+        "sanitize": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to sanitize content on render"
+        }
+      }
+    },
+    "PriceProps": {
+      "type": "object",
+      "properties": {
+        "amountBinding": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Expression to access price value"
+        },
+        "amount": {
+          "type": "number",
+          "minimum": 0
+        },
+        "currency": {
+          "type": "string",
+          "pattern": "^[A-Z]{3}$",
+          "description": "ISO 4217 currency code"
+        },
+        "showOriginal": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show original price for discounts"
+        },
+        "originalAmountBinding": {
+          "$ref": "#/$defs/SafeExpression"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["sm", "md", "lg", "xl"],
+          "default": "md"
+        }
+      }
+    },
+    "QuantityProps": {
+      "type": "object",
+      "required": ["name"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+        },
+        "min": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 1
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 99
+        },
+        "step": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 1
+        },
+        "value": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 1
+        },
+        "valueBinding": {
+          "$ref": "#/$defs/SafeExpression"
+        }
+      }
+    },
+    "SearchBarProps": {
+      "type": "object",
+      "properties": {
+        "placeholder": {
+          "type": "string",
+          "maxLength": 256,
+          "default": "Search..."
+        },
+        "actionRef": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Reference to search action"
+        },
+        "instant": {
+          "type": "boolean",
+          "default": false,
+          "description": "Search on input change (with debounce)"
+        },
+        "debounce": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 2000,
+          "default": 300
+        },
+        "showButton": {
+          "type": "boolean",
+          "default": true
+        },
+        "showClear": {
+          "type": "boolean",
+          "default": true
+        }
+      }
+    },
+    "FilterProps": {
+      "type": "object",
+      "properties": {
+        "filters": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["key", "label", "type"],
+            "properties": {
+              "key": {
+                "type": "string",
+                "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$"
+              },
+              "label": {
+                "type": "string",
+                "maxLength": 64
+              },
+              "type": {
+                "type": "string",
+                "enum": ["checkbox", "radio", "range", "select", "color"]
+              },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["value", "label"],
+                  "properties": {
+                    "value": { "type": "string" },
+                    "label": { "type": "string" },
+                    "count": { "type": "integer" }
+                  }
+                }
+              },
+              "optionsBinding": {
+                "$ref": "#/$defs/SafeExpression"
+              },
+              "min": { "type": "number" },
+              "max": { "type": "number" }
+            }
+          }
+        },
+        "layout": {
+          "type": "string",
+          "enum": ["vertical", "horizontal", "accordion"],
+          "default": "vertical"
+        },
+        "actionRef": {
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9_]*$",
+          "description": "Action to trigger on filter change"
+        }
+      }
+    },
+    "BreadcrumbProps": {
+      "type": "object",
+      "properties": {
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["label"],
+            "properties": {
+              "label": {
+                "type": "string",
+                "maxLength": 64
+              },
+              "href": {
+                "type": "string",
+                "maxLength": 256
+              },
+              "icon": {
+                "type": "string",
+                "maxLength": 64
+              }
+            }
+          }
+        },
+        "itemsBinding": {
+          "$ref": "#/$defs/SafeExpression",
+          "description": "Dynamic breadcrumb items from data binding"
+        },
+        "separator": {
+          "type": "string",
+          "enum": ["slash", "chevron", "arrow", "dot"],
+          "default": "chevron"
+        }
+      }
+    },
+    "RatingProps": {
+      "type": "object",
+      "properties": {
+        "valueBinding": {
+          "$ref": "#/$defs/SafeExpression"
+        },
+        "value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 5
+        },
+        "max": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "default": 5
+        },
+        "readonly": {
+          "type": "boolean",
+          "default": true
+        },
+        "size": {
+          "type": "string",
+          "enum": ["sm", "md", "lg"],
+          "default": "md"
+        },
+        "showValue": {
+          "type": "boolean",
+          "default": false
+        },
+        "showCount": {
+          "type": "boolean",
+          "default": false
+        },
+        "countBinding": {
+          "$ref": "#/$defs/SafeExpression"
+        }
+      }
+    },
+    "BadgeProps": {
+      "type": "object",
+      "properties": {
+        "content": {
+          "type": "string",
+          "maxLength": 32
+        },
+        "variant": {
+          "type": "string",
+          "enum": ["default", "primary", "secondary", "success", "warning", "danger", "info"],
+          "default": "default"
+        },
+        "size": {
+          "type": "string",
+          "enum": ["sm", "md", "lg"],
+          "default": "md"
+        },
+        "rounded": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "VideoProps": {
+      "type": "object",
+      "properties": {
+        "src": {
+          "type": "string",
+          "format": "uri"
+        },
+        "poster": {
+          "type": "string",
+          "format": "uri"
+        },
+        "provider": {
+          "type": "string",
+          "enum": ["native", "youtube", "vimeo"],
+          "default": "native"
+        },
+        "videoId": {
+          "type": "string",
+          "maxLength": 64,
+          "description": "Video ID for YouTube/Vimeo"
+        },
+        "autoplay": {
+          "type": "boolean",
+          "default": false
+        },
+        "muted": {
+          "type": "boolean",
+          "default": false
+        },
+        "loop": {
+          "type": "boolean",
+          "default": false
+        },
+        "controls": {
+          "type": "boolean",
+          "default": true
+        },
+        "aspectRatio": {
+          "type": "string",
+          "enum": ["16/9", "4/3", "1/1", "21/9"],
+          "default": "16/9"
+        }
+      }
+    },
+    "CustomComponentProps": {
+      "type": "object",
+      "description": "Custom component for extensibility (requires additional validation)",
+      "properties": {
+        "componentName": {
+          "type": "string",
+          "pattern": "^[A-Z][a-zA-Z0-9]*$",
+          "maxLength": 64,
+          "description": "Registered custom component name"
+        },
+        "props": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Component-specific props (validated by component registry)"
+        },
+        "children": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/Component" }
+        }
+      }
+    }
+  }
+}

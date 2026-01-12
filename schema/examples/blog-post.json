@@ -1,0 +1,531 @@
+{
+  "$schema": "https://expozy.com/schemas/template-schema-v1.json",
+  "metadata": {
+    "id": "blog-post-v1",
+    "name": "Blog Post Page",
+    "description": "A single blog post page with related articles and comments",
+    "pageType": "blogPost",
+    "schemaVersion": "1.0.0",
+    "route": "/blog/:slug",
+    "seo": {
+      "title": "Blog | EXPOZY",
+      "description": "Read our latest articles and updates"
+    },
+    "languages": ["en", "bg"]
+  },
+  "designSystem": {
+    "tailwindMode": "freeform",
+    "theme": {
+      "primaryColor": "indigo-600",
+      "fontFamily": "Inter, system-ui, sans-serif",
+      "borderRadius": "lg"
+    },
+    "darkMode": true
+  },
+  "dataSources": [
+    {
+      "id": "blogPost",
+      "endpoint": "get.blogPost",
+      "keyName": "post",
+      "params": {
+        "slug": { "binding": "data.pageUrl.slug" }
+      },
+      "autoLoad": true
+    },
+    {
+      "id": "relatedPosts",
+      "endpoint": "get.blogPosts",
+      "keyName": "relatedPosts",
+      "params": {
+        "limit": 3,
+        "exclude": { "binding": "data.post.id" },
+        "category": { "binding": "data.post.category_id" }
+      },
+      "autoLoad": false,
+      "refreshOn": ["postLoaded"]
+    },
+    {
+      "id": "comments",
+      "endpoint": "get.comments",
+      "keyName": "comments",
+      "params": {
+        "post_id": { "binding": "data.post.id" },
+        "limit": 20
+      },
+      "autoLoad": false,
+      "refreshOn": ["postLoaded", "commentAdded"]
+    }
+  ],
+  "actions": [
+    {
+      "id": "submitComment",
+      "endpoint": "Blog.post_comments",
+      "keyName": "newComment",
+      "options": {
+        "clearForm": true
+      }
+    },
+    {
+      "id": "likePost",
+      "endpoint": "Blog.post_likes",
+      "keyName": "likeResult"
+    },
+    {
+      "id": "sharePost",
+      "endpoint": "Blog.post_shares",
+      "keyName": "shareResult"
+    }
+  ],
+  "layout": {
+    "className": "min-h-screen bg-white dark:bg-gray-900",
+    "children": [
+      {
+        "type": "section",
+        "tag": "article",
+        "className": "pb-16",
+        "children": [
+          {
+            "type": "hero",
+            "variant": "background-image",
+            "size": "md",
+            "overlay": true,
+            "className": "relative",
+            "bindings": {
+              "backgroundImage": "data.post.featured_image"
+            },
+            "children": [
+              {
+                "type": "container",
+                "maxWidth": "prose",
+                "className": "relative z-10 text-center text-white py-20",
+                "children": [
+                  {
+                    "type": "badge",
+                    "variant": "primary",
+                    "className": "mb-4",
+                    "bindings": {
+                      "text": "data.post.category_name"
+                    }
+                  },
+                  {
+                    "type": "heading",
+                    "level": 1,
+                    "size": "4xl",
+                    "className": "font-bold mb-4",
+                    "bindings": {
+                      "text": "data.post.title"
+                    }
+                  },
+                  {
+                    "type": "flex",
+                    "direction": "row",
+                    "justify": "center",
+                    "align": "center",
+                    "gap": "4",
+                    "className": "text-gray-200",
+                    "children": [
+                      {
+                        "type": "flex",
+                        "direction": "row",
+                        "align": "center",
+                        "gap": "2",
+                        "children": [
+                          {
+                            "type": "image",
+                            "aspectRatio": "square",
+                            "objectFit": "cover",
+                            "rounded": "full",
+                            "className": "w-10 h-10",
+                            "bindings": {
+                              "src": "data.post.author_avatar",
+                              "alt": "data.post.author_name"
+                            }
+                          },
+                          {
+                            "type": "text",
+                            "bindings": {
+                              "text": "data.post.author_name"
+                            }
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "content": "|",
+                        "className": "opacity-50"
+                      },
+                      {
+                        "type": "text",
+                        "bindings": {
+                          "text": "data.post.published_at"
+                        }
+                      },
+                      {
+                        "type": "text",
+                        "content": "|",
+                        "className": "opacity-50"
+                      },
+                      {
+                        "type": "flex",
+                        "direction": "row",
+                        "align": "center",
+                        "gap": "1",
+                        "children": [
+                          {
+                            "type": "icon",
+                            "name": "bi-clock",
+                            "size": "sm"
+                          },
+                          {
+                            "type": "text",
+                            "bindings": {
+                              "text": "data.post.read_time + ' min read'"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "container",
+            "maxWidth": "prose",
+            "className": "px-4 py-12",
+            "children": [
+              {
+                "type": "richText",
+                "sanitize": true,
+                "className": "prose dark:prose-invert prose-lg max-w-none",
+                "bindings": {
+                  "html": "data.post.content"
+                }
+              },
+              {
+                "type": "divider",
+                "variant": "solid",
+                "className": "my-8"
+              },
+              {
+                "type": "flex",
+                "direction": "row",
+                "justify": "between",
+                "align": "center",
+                "wrap": true,
+                "gap": "4",
+                "children": [
+                  {
+                    "type": "flex",
+                    "direction": "row",
+                    "gap": "2",
+                    "children": [
+                      {
+                        "type": "text",
+                        "content": "Tags:",
+                        "variant": "muted"
+                      },
+                      {
+                        "type": "template",
+                        "iterator": "tag",
+                        "collection": "data.post.tags",
+                        "key": "tag.id",
+                        "children": [
+                          {
+                            "type": "link",
+                            "spa": true,
+                            "variant": "button",
+                            "className": "px-3 py-1 bg-gray-100 dark:bg-gray-700 rounded-full text-sm hover:bg-gray-200",
+                            "bindings": {
+                              "href": "'/blog/tag/' + tag.slug",
+                              "text": "tag.name"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "type": "flex",
+                    "direction": "row",
+                    "gap": "2",
+                    "children": [
+                      {
+                        "type": "button",
+                        "variant": "outline",
+                        "size": "sm",
+                        "icon": "bi-heart",
+                        "className": "gap-2",
+                        "events": {
+                          "click": {
+                            "actionRef": "likePost"
+                          }
+                        },
+                        "bindings": {
+                          "text": "data.post.likes_count"
+                        }
+                      },
+                      {
+                        "type": "button",
+                        "variant": "outline",
+                        "size": "sm",
+                        "icon": "bi-share",
+                        "content": "Share",
+                        "events": {
+                          "click": {
+                            "actionRef": "sharePost"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "tag": "section",
+        "background": "muted",
+        "className": "py-16 bg-gray-50 dark:bg-gray-800",
+        "children": [
+          {
+            "type": "container",
+            "maxWidth": "xl",
+            "children": [
+              {
+                "type": "heading",
+                "level": 2,
+                "size": "2xl",
+                "content": "Comments",
+                "className": "font-bold text-gray-900 dark:text-white mb-8"
+              },
+              {
+                "type": "card",
+                "variant": "default",
+                "padding": "lg",
+                "className": "bg-white dark:bg-gray-700 mb-8",
+                "conditional": {
+                  "show": "data.user && data.user.id"
+                },
+                "children": [
+                  {
+                    "type": "form",
+                    "actionRef": "submitComment",
+                    "layout": "vertical",
+                    "children": [
+                      {
+                        "type": "textarea",
+                        "name": "content",
+                        "label": "Leave a comment",
+                        "placeholder": "Share your thoughts...",
+                        "rows": 4,
+                        "required": true,
+                        "minLength": 10,
+                        "maxLength": 2000
+                      },
+                      {
+                        "type": "flex",
+                        "justify": "end",
+                        "className": "mt-4",
+                        "children": [
+                          {
+                            "type": "button",
+                            "type": "submit",
+                            "variant": "primary",
+                            "content": "Post Comment",
+                            "icon": "bi-send"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "card",
+                "variant": "outlined",
+                "padding": "lg",
+                "className": "bg-white dark:bg-gray-700 mb-8",
+                "conditional": {
+                  "show": "!data.user || !data.user.id"
+                },
+                "children": [
+                  {
+                    "type": "flex",
+                    "direction": "col",
+                    "align": "center",
+                    "gap": "4",
+                    "children": [
+                      {
+                        "type": "text",
+                        "content": "Please log in to leave a comment",
+                        "variant": "muted"
+                      },
+                      {
+                        "type": "button",
+                        "content": "Log In",
+                        "variant": "primary",
+                        "events": {
+                          "click": {
+                            "expression": "data.openLogin = true"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "flex",
+                "direction": "col",
+                "gap": "4",
+                "children": [
+                  {
+                    "type": "template",
+                    "iterator": "comment",
+                    "collection": "data.comments.result",
+                    "key": "comment.id",
+                    "children": [
+                      {
+                        "type": "card",
+                        "variant": "default",
+                        "padding": "md",
+                        "className": "bg-white dark:bg-gray-700",
+                        "children": [
+                          {
+                            "type": "flex",
+                            "direction": "row",
+                            "gap": "4",
+                            "children": [
+                              {
+                                "type": "image",
+                                "aspectRatio": "square",
+                                "objectFit": "cover",
+                                "rounded": "full",
+                                "className": "w-12 h-12 flex-shrink-0",
+                                "bindings": {
+                                  "src": "comment.author_avatar",
+                                  "alt": "comment.author_name"
+                                }
+                              },
+                              {
+                                "type": "flex",
+                                "direction": "col",
+                                "className": "flex-1",
+                                "children": [
+                                  {
+                                    "type": "flex",
+                                    "direction": "row",
+                                    "justify": "between",
+                                    "align": "center",
+                                    "children": [
+                                      {
+                                        "type": "text",
+                                        "variant": "bold",
+                                        "className": "text-gray-900 dark:text-white",
+                                        "bindings": {
+                                          "text": "comment.author_name"
+                                        }
+                                      },
+                                      {
+                                        "type": "text",
+                                        "variant": "small",
+                                        "className": "text-gray-500",
+                                        "bindings": {
+                                          "text": "comment.created_at"
+                                        }
+                                      }
+                                    ]
+                                  },
+                                  {
+                                    "type": "text",
+                                    "className": "mt-2 text-gray-700 dark:text-gray-300",
+                                    "bindings": {
+                                      "text": "comment.content"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "flex",
+                "justify": "center",
+                "className": "py-8",
+                "conditional": {
+                  "show": "!data.comments || data.comments.result.length === 0"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "content": "No comments yet. Be the first to share your thoughts!",
+                    "variant": "muted"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "section",
+        "tag": "section",
+        "className": "py-16",
+        "conditional": {
+          "show": "data.relatedPosts && data.relatedPosts.result && data.relatedPosts.result.length > 0"
+        },
+        "children": [
+          {
+            "type": "container",
+            "maxWidth": "xl",
+            "children": [
+              {
+                "type": "heading",
+                "level": 2,
+                "size": "2xl",
+                "content": "Related Articles",
+                "className": "font-bold text-gray-900 dark:text-white mb-8"
+              },
+              {
+                "type": "grid",
+                "columns": { "default": 1, "md": 2, "lg": 3 },
+                "gap": "6",
+                "children": [
+                  {
+                    "type": "template",
+                    "iterator": "relatedPost",
+                    "collection": "data.relatedPosts.result",
+                    "key": "relatedPost.id",
+                    "children": [
+                      {
+                        "type": "blogCard",
+                        "variant": "vertical",
+                        "showImage": true,
+                        "showTitle": true,
+                        "showExcerpt": true,
+                        "showDate": true,
+                        "showAuthor": false,
+                        "showCategory": true,
+                        "postBinding": "relatedPost"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}
