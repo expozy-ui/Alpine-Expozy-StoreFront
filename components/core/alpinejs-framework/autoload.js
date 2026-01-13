@@ -55,6 +55,16 @@ window.data = {};
     });
 
 
+      // Взимаме активната валута 
+    let api = new ApiClass();
+    await api.get('currencies', true);
+    data.currencies = api.response;
+
+    // DEFAULT
+    let selectedCurrency = (localStorage.getItem('currency') || '').trim() || 'EUR';
+    selectedCurrency = selectedCurrency || 'EUR';
+    data.currency = Object.values(data.currencies).find(obj => obj.code == selectedCurrency);
+
 
     data.pageUrl = getUrlParameters();
 
@@ -101,7 +111,7 @@ window.data = {};
             }
 
             // Форматираме с 2 десетични + валута
-            el.textContent = num.toFixed(2) + " " + (CURRENCY.symbol || "");
+                el.textContent = num.toFixed(2) + " " + (data.currency.symbol || "");
 
         });
     });
