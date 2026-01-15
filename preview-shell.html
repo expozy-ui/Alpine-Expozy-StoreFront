@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXPOZY Preview Shell</title>
+
+    <!-- ============================================
+         EXPOZY PREVIEW SHELL
+         This HTML loads the same CSS/JS as the real
+         storefront so the renderer can inject sections
+         and EXPOZY runtime handles apiData + actions.
+         ============================================ -->
+
+    <!-- GLOBAL CONSTANTS (normally injected by PHP) -->
+    <script>
+        // These would normally come from PHP - set defaults for preview
+        const SITEURL = window.location.origin;
+        const LANG = "en";
+        const SAAS_KEY = "YOUR_SAAS_KEY";  // Replace with actual key
+        const COREURL = "https://devcore.myexpozy.com/api/";
+        const LOGGED_IN = "0";
+        const USER_EMAIL = "";
+        const USER = { logged_in: false };
+        const LOGO_URL = "/assets/logo.png";
+        const FAVICON_URL = "/favicon.ico";
+        const SOCIAL_NETWORKS = {};
+        const URL_PARAMETERS = {};
+        const SITENAME = "Preview";
+        const JS_VERSION = "1";
+        const PAGEINIT = { id: 0, target_id: 0 };
+        const CURRENCY = { symbol: "$", code: "USD" };
+    </script>
+
+    <!-- CSS: Custom styles -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
+
+    <!-- CSS: Content Builder blocks -->
+    <link href="/editor/cb/assets/minimalist-blocks/content.css" rel="stylesheet">
+    <link href="/editor/cb/box/box-flex.css" rel="stylesheet">
+
+    <!-- CSS: Glide slider -->
+    <link href="/editor/cb/assets/scripts/glide/css/glide.core.min.css" rel="stylesheet">
+    <link href="/editor/cb/assets/scripts/glide/css/glide.theme.css" rel="stylesheet">
+
+    <!-- CSS: Font Awesome -->
+    <link rel="stylesheet" href="https://r2.expozy.com/cdn/fa/css/all.css">
+
+    <!-- Custom page CSS slot -->
+    <style id="headCss"></style>
+    <style id="pageCss"></style>
+
+    <!-- Inline font (from header.php) -->
+    <style>
+        @font-face {
+            font-family: 'Repo Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Repo Regular'), url('/assets/fonts/repo/Repo.woff2') format('woff2');
+            font-display: swap;
+        }
+        p, h1, h2, h3, h4, h5, h6, span, a, label {
+            font-family: "Repo Regular";
+            letter-spacing: 0.7px;
+        }
+    </style>
+</head>
+
+<!-- Alpine root: x-data="data" connects to global reactive object -->
+<body :class="data.darkMode == true ? 'dark' : ''" x-data="data" id="body">
+
+    <!-- NOTIFICATION CONTAINER (from header.php) -->
+    <div id="notification" @notice.window="add($event.detail)" x-data="notification">
+        <template x-for="notice of notices" :key="notice.id">
+            <div
+                x-show="visible.includes(notice)"
+                x-transition:enter="transition ease-in duration-400"
+                x-transition:enter-start="transform opacity-0 translate-x-full"
+                x-transition:enter-end="transform opacity-100"
+                x-transition:leave="transition ease-out duration-500"
+                x-transition:leave-start="transform translate-x-0 opacity-100"
+                x-transition:leave-end="transform translate-x-full opacity-0"
+                @click="remove(notice.id)"
+                class="notice fixed right-4 top-4 px-4 py-3 rounded shadow-lg text-white cursor-pointer z-50"
+                :class="{
+                    'bg-red-600': notice.type == 'error',
+                    'bg-emerald-600': notice.type == 'success',
+                    'bg-amber-600': notice.type == 'warning',
+                    'bg-blue-600': notice.type == 'info'
+                }"
+                x-text="notice.text">
+            </div>
+        </template>
+    </div>
+
+    <!-- HEADER SLOT (optional - for preview you may leave empty or inject) -->
+    <div id="header" class="headerFooterCss">
+        <!-- Header content injected here -->
+    </div>
+
+    <!-- =============================================
+         MAIN CONTENT AREA
+         This is where your renderer injects sections.
+         The EXPOZY runtime will:
+         1. Find all [apiData] elements and call callApiData()
+         2. Handle @click="alpineListeners(...)" actions
+         3. Store responses in data[keyName]
+         ============================================= -->
+    <div id="main" class="is-wrapper w-full h-full justify-center" style="min-height: 800px;">
+
+        <!-- CONTENT ROOT: Inject your rendered sections here -->
+        <div id="contentRoot">
+            <!-- Example: Your renderer would inject something like:
+
+            <section apiData="get.products" keyName="products" data-limit="12">
+                <div class="grid grid-cols-3 gap-4">
+                    <template x-for="product in data.products?.result || []">
+                        <div class="p-4 border rounded">
+                            <h3 x-text="product.title"></h3>
+                            <p x-text="product.price + ' ' + CURRENCY.symbol"></p>
+                            <button
+                                @click="alpineListeners('Shop.post_carts', $event.currentTarget)"
+                                data-product_id="product.id"
+                                keyName="cart">
+                                Add to Cart
+                            </button>
+                        </div>
+                    </template>
+                </div>
+            </section>
+
+            -->
+        </div>
+
+        <!-- Triggers callApiData() after Alpine processes the DOM -->
+        <div x-init="callBackMain()"></div>
+    </div>
+
+    <!-- FOOTER SLOT (optional) -->
+    <div id="footer" class="headerFooterCss">
+        <!-- Footer content injected here -->
+    </div>
+
+    <!-- Templates div (used by editor) -->
+    <div id="templatesDiv" style="display: none;"></div>
+
+</body>
+
+<!-- =============================================
+     SCRIPTS (order matters!)
+     ============================================= -->
+
+<!-- JS: Glide slider library -->
+<script src="/editor/cb/assets/scripts/glide/glide.min.js"></script>
+
+<!-- JS: Content builder box -->
+<script src="/editor/cb/box/box-flex.js"></script>
+
+<!-- ⚠️ CRITICAL: autoload.js - Initializes Alpine, global data,
+     callApiData(), alpineListeners(), href(), notification() -->
+<script type="module" src="/components/core/alpinejs-framework/autoload.js"></script>
+
+<!-- ⚠️ CRITICAL: link.js - SPA link interception -->
+<script type="module" src="/components/core/classes/link.js"></script>
+
+</html>
