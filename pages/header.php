@@ -51,7 +51,7 @@
 			const SITENAME = <?php echo json_encode($core->site_name) ?>;
 			const JS_VERSION = <?php echo JS_VERSION; ?>;
 			const PAGEINIT = {id: <?= $page->id?>, target_id: <?= $page->target_id; ?>  };
-			window.data = {};
+			const CURRENCY = <?php echo json_encode($currency, JSON_UNESCAPED_UNICODE) ?>;
 		</script>
 
 

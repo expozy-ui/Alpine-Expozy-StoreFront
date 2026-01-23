@@ -3,6 +3,7 @@
 })();
 
 export const lang = LANG;
+export const currency = localStorage.getItem('currency');
 
 
 export class ApiClass {
@@ -91,8 +92,8 @@ export class ApiClass {
 		let tmp = endpoint.split('?');
 		let url = COREURL + tmp[0] + '?lang=' + lang;
 
-		if (data.currency != undefined) {
-			url += '&currency=' + data.currency.code;
+		if (currency != undefined) {
+			url += '&currency=' + currency;
 		}
 
 		if (tmp[1] !== undefined) {
