@@ -166,9 +166,8 @@ let Helpers = {
 						}
 					} else {
 						//
-						if (objParameters[key] != 'empty' && objParameters[key] != '') {
-
-							url_parameters += key + '=' + objParameters[key] + '&';
+					if (objParameters[key] !== 'empty' && objParameters[key] !== '') {
+ 						 url_parameters += key + '=' + objParameters[key] + '&';
 						}
 					}
 
