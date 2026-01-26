@@ -50,7 +50,7 @@ export let Helpers = {
                         let elements = document.querySelectorAll(e);
 
                         for (const element of elements) {
-                            element.parentNode.innerHTML += '<span class="msg-error text-red-600 !text-xs font-normal">' + `${request.errors[e]}` + '</span>';
+                            element.parentNode.innerHTML += '<p class="msg-error text-red-600 !text-xs font-normal">' + `${request.errors[e]}` + '</p>';
                         }
                     }
 

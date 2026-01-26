@@ -311,9 +311,6 @@ class Page
 
 					}
 			}
-			
-		
-			
 	}
 	
 	private function prepareTags(string|array $string):string{
@@ -349,20 +346,12 @@ class Page
 					$editor = new Editor($new_parameters);
 					$rev = $editor->revisions[0]['object_desc'] ?? '';
 						
-					
-						
-						
 					$template = new Template('index', $page['slug']);
 					
 					if(file_exists($template->get_fileName()) === false && $rev != ''){
 							$template->save_html($rev);
 					}
-
-					
-			}
-			
-		
-			
+			}	
 	}
 
 
