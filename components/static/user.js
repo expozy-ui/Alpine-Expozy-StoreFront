@@ -33,7 +33,6 @@ export let User = {
 
 	// POST USERS
 	post_users: async function (dataCollect) {
-		debugger;
 		let api = new ApiClass();
 		await api.post('users', dataCollect.combinedData);
 
