@@ -10,6 +10,7 @@ export let User = {
 
 			api.response.user['logged_in'] = true;
 			response['obj'] = api.response.user;
+			data.user = response['obj'];
 
 			href('/userpage');
 			localStorage.setItem('token', api.response.token);
@@ -33,11 +34,15 @@ export let User = {
 
 	// POST USERS
 	post_users: async function (dataCollect) {
+
 		let api = new ApiClass();
 		await api.post('users', dataCollect.combinedData);
 
 		if (api.response.status == 1) {
-			await User.login(dataCollect);
+			api.response.user['logged_in'] = true;
+			data.user = api.response.user;
+			href('/userpage');
+			localStorage.setItem('token', api.response.token);
 		}
 
 		return api.response;
