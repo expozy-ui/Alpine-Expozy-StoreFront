@@ -25,6 +25,9 @@ define('PLUGINS_DIR',				'core/plugins/');
 define('PAGES_DIR',					'pages/');
 define('JS_VERSION',				'28');
 
+/* DEV MODE
+========================================== */
+define('DEV_MODE', false);
 
 /* SAAS
  ========================================= */

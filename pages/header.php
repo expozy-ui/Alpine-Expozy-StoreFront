@@ -120,15 +120,12 @@
 			</div>
 
 
-<?php if($user->logged_in && $user->is_superAdmin()) { ?>
-	
-	<div style="display: none;" id="tailwindCss"></div>
-	<div style="width:100px;height: 50px;position: fixed;right: 100px;bottom: 60px;background-color: red;z-index: 1000;display: flex;justify-content: center;align-items: center;border-radius: 25px;color: white;font-weight: bold;letter-spacing: 1.2px;font-size: 18px;cursor: pointer;" id="dev_save">Save</div>
+<?php if(defined('DEV_MODE') && DEV_MODE) { ?>
+
+<div style="display: none;" id="tailwindCss"></div>
 	<script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
 
-
-	<script>
-
+		<script>
 		 const allSizes = Array.from({ length: 401 }, (_, i) => `size-${i}`);
 
 		  tailwind.config = {
@@ -136,15 +133,20 @@
 			    content: [
     				  './src/**/*.{html,js,jsx,ts,tsx}',
     			],
-
-   			 // Блокваме размерите заради едитора. 
+   			 // Блокваме размерите заради едитора.
    			 blocklist: allSizes,
-			
 		 	 }
-	</script>
+		</script>
 
-	<script type="module" src="\components\core\dev_save.js?v=<?php echo JS_VERSION ?>" ></script>
 
+	<?php if($user->logged_in && $user->is_superAdmin()) { ?>
+
+	<div style="width:100px;height: 50px;position: fixed;right: 100px;bottom: 60px;background-color: red;z-index: 1000;display: flex;justify-content: center;align-items: center;border-radius: 25px;color: white;font-weight: bold;letter-spacing: 1.2px;font-size: 18px;cursor: pointer;" id="dev_save">Save</div>
+	<div style="width:120px;height: 50px;position: fixed;right: 100px;bottom: 120px;background-color: #7c3aed;z-index: 1000;display: flex;justify-content: center;align-items: center;border-radius: 25px;color: white;font-weight: bold;letter-spacing: 1.2px;font-size: 14px;cursor: pointer;" id="dev_scan_all">Scan All</div>
+
+	<script type="module" src="/components/core/dev_save.js?v=<?php echo JS_VERSION ?>" ></script>
+
+	<?php } ?>
 
 <?php } ?>
 
