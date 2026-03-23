@@ -26,9 +26,29 @@ class TemplateApi {
         
         $template = new Template($type, $slug);
         
+		
         if (file_exists($template->get_fileName())) {
-            return ['status' => 0,'error' => 'Template already exists', 'code' => 409];
+            //return ['status' => 0,'error' => 'Template already exists', 'code' => 409];
         }
+		
+		$server = $_SERVER;
+		if (!isset($server['HTTP_AUTHORIZATION'])) {
+            return ['status' => 0,'error' => 'HTTP_AUTHORIZATION error', 'code' => 409];
+        }
+		
+		preg_match('/bearer (.*)/', $server['HTTP_AUTHORIZATION'], $auth);
+		$token = isset($auth[1]) ? trim($auth[1]) : '';
+		
+		if(empty($token)){
+            return ['status' => 0,'error' => 'Token is missing', 'code' => 409];
+		}
+		
+		$api_result = Api::data(['token'=>$token])->post()->token_verify();
+		
+		
+		if(!isset($api_result['user']) || $api_result['user']['userlevel'] < 99){
+			return ['status' => 0,'error' => 'Token error', 'code' => 409];
+		}
         
         $result = $template->save_html($html);
 		$template->save_css($css);
