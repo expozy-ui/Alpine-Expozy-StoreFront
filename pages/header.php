@@ -87,6 +87,12 @@
 		
 			
 		<?= $core->web['scripts']['header'] ?? '' ?>
+		
+		<?php 
+			require_once(BASEPATH.'core/classes/class.geo_optimizer.php');
+			$geo = new GeoOptimizer();
+			$geo->headTags();
+		?>
 	</head>
 
 	<!-- CSS FOR CURRENT PAGE GENERATOR FROM ALPINE -->

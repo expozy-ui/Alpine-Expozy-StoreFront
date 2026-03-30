@@ -52,6 +52,9 @@ Options -MultiViews -Indexes +FollowSymlinks
 <IfModule mod_rewrite.c>
  RewriteEngine On
 
+RewriteRule ^llms\.txt$ /core/sitemaps/llms_txt_generator.php [L,QSA]
+RewriteRule ^llms-full\.txt$ /core/sitemaps/llms_txt_generator.php?full=1 [L,QSA]
+
  RewriteRule ^ref/(.*)$ /?referral=$1 [L,R=301]
 
  RewriteRule ^logout pages/logout.php [NC,L]
