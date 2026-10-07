@@ -14,12 +14,14 @@
     letter-spacing: 1px;
 }        
 
-.type-sourcecodepro-nunitosans h1 {font-size: 3.3rem;}
-.type-sourcecodepro-nunitosans h2 {font-size: 2.8rem;}
-.type-sourcecodepro-nunitosans h3 {font-size: 2.4rem;}
-.type-sourcecodepro-nunitosans h4 {font-size: 2rem;}
-.type-sourcecodepro-nunitosans h5 {font-size: 1.7rem;}
-.type-sourcecodepro-nunitosans h6 {font-size: 1.4rem;}
+.type-sourcecodepro-nunitosans h1 {font-size: 3.3rem; margin: 1.2rem 0 1.2rem; }
+.type-sourcecodepro-nunitosans h2 {font-size: 2.8rem; margin: 1rem 0 1rem; }
+.type-sourcecodepro-nunitosans h3 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-sourcecodepro-nunitosans h4 {font-size: 2rem; margin: 0.5rem 0 0.5rem; }
+.type-sourcecodepro-nunitosans h5 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-sourcecodepro-nunitosans h6 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-sourcecodepro-nunitosans p {margin:0.8rem 0 0.8rem;}
+/* .type-sourcecodepro-nunitosans ul, .type-sourcecodepro-nunitosans ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-sourcecodepro-nunitosans .display { margin-bottom: 0.5rem; }
 .type-sourcecodepro-nunitosans .display h1 {

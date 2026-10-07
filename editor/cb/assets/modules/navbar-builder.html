@@ -468,7 +468,7 @@
                     box-shadow: 0px 3px 6px -6px rgb(0 0 0 / 17%);
                 }
             </style>
-            <div class='div-section-list is-general-options' style="margin:40px 25px 25px;">
+            <div class='div-section-list is-general-options' style="margin: 34px 0 0;max-height: 360px;overflow-y: auto;">
                 
             </div>
         </div>
@@ -775,7 +775,7 @@
 
                     parent.contentbox.refreshModule(); // refresh for preview
 
-                }, bgcolor);
+                }, bgcolor, ()=>{}, btnBgColor);
             });
             
             var btnSubBgColor = document.querySelector('.input-subbgcolor');
@@ -791,7 +791,7 @@
 
                     parent.contentbox.refreshModule(); // refresh for preview
 
-                }, subbgcolor);
+                }, subbgcolor, ()=>{}, btnSubBgColor);
             });
 
             /* Run the menu builder */
@@ -1063,7 +1063,7 @@
 
                 let sectionList = modal.querySelector('.div-section-list');
 
-                let sections = parent.document.querySelectorAll('.is-section');
+                let sections = parent.contentbox.doc.querySelectorAll('.is-section');
                 let x = 1;
                 let html = '';
                 sections.forEach((section)=>{
@@ -1160,6 +1160,15 @@
             
         }); // Doc Ready
 
+        function escapeHtml(str) {
+            return str
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#39;");
+        }
+
         /*
         Use construct() function to construct html & settings
         */
@@ -1213,9 +1222,21 @@
 
             var menuitemCss = inpMenuItemCss.value;
 
+            var safeLogoText   = escapeHtml(inpLogoText.value);
+            var safeLogoLink   = escapeHtml(inpLogoLink.value === '' ? '.' : inpLogoLink.value);
+            var safeLogoSrc    = escapeHtml(logoSrc);
+            var safeLogoCss    = escapeHtml(logotextCss);
+            var safeBgColor    = escapeHtml(bgColor);
+            var safeMaxWidth   = escapeHtml(maxwidth);
+
             var html = 
                 `${bgColor||subBgColor||navbarCss?`
                 <div id="_style_{id}" style="display:none">
+
+                    .is-menu a > i.icon {
+                        pointer-events: none;
+                    }
+
                     ${bgColor||navbarCss?`
                     .is-topbar.fixed.static.dark,
                     .is-topbar.fixed.static,
@@ -1248,91 +1269,40 @@
                         }
                     }`:''}
                 </div>`:''}
-                <div class="is-topbar${topbarClass}" data-bgcolor="${bgColor}">
-                    <div class="is-topbar-container" style="max-width:${maxwidth};">
-                        <div class="is-topbar-logo">
-                            <a class="is-logo-link" href="${inpLogoLink.value===''?'.':inpLogoLink.value}" title="${inpLogoText.value}">
-                                ${(logoSrc? `<img class="is-photo-profile${logoClass}" src="${logoSrc}" alt="${inpLogoText.value}">` : '')}
-                                <span class="is-sitename"${logotextCss?` style="${logotextCss}"`:''}>${inpLogoText.value}</span>
-                            </a>
-                        </div>` +
-                        '<div class="is-topbar-menu">' +
-                            '<a id="is-menu-toggle" href="javascript:void(0)" title="Menu"><span class="line line-1"></span><span class="line line-2"></span><span class="line line-3"></span></a>' +
-                            '<div class="is-menu-overlay"></div>' +
-                            '<div class="is-menu">' +
-                                '<div class="is-menu-search-input"><input id="is_txtSearch" type="text" placeholder="Search" /><button id="is_btnSearch"><i class="icon ion-android-search"></i></button></div>' +
 
-                                generateMenuHtml(data, menuitemCss) +
+                <div class="is-topbar${escapeHtml(topbarClass)}" data-bgcolor="${safeBgColor}">
+                    <div class="is-topbar-container" style="max-width:${safeMaxWidth};">
+                    <div class="is-topbar-logo">
+                        <a class="is-logo-link" href="${safeLogoLink}" title="${safeLogoText}">
+                        ${
+                            logoSrc
+                            ? `<img class="is-photo-profile${escapeHtml(logoClass)}"
+                                    src="${safeLogoSrc}"
+                                    alt="${safeLogoText}">`
+                            : ''
+                        }
+                        <span class="is-sitename"${logotextCss ? ` style="${safeLogoCss}"` : ''}>${safeLogoText}</span>
+                        </a>
+                    </div>
+                    <div class="is-topbar-menu">
+                        <a id="is-menu-toggle" href="javascript:void(0)" title="Menu">
+                        <span class="line line-1"></span>
+                        <span class="line line-2"></span>
+                        <span class="line line-3"></span>
+                        </a>
+                        <div class="is-menu-overlay"></div>
+                        <div class="is-menu">
+                        <div class="is-menu-search-input">
+                            <input id="is_txtSearch" type="text" placeholder="Search" />
+                            <button id="is_btnSearch"><i class="icon ion-android-search"></i></button>
+                        </div>
+                        ${generateMenuHtml(data, menuitemCss)}
+                        </div>
+                    </div>
+                    </div>
+                </div>
 
-                                /* // Example:
-                                '<ul class="is-menu-links">' +
-
-                                    '<li><a href=""><i class="icon ion-android-home"></i></a></li>' +
-                                    '<li><a href="services">Services <span><span class="caret menutoggle"></span></span></a>' +
-                                        '<ul>' +
-                                            '<li><a href="product1">Service One</a></li>' +
-                                            '<li><a href="product2">Service Two</a></li>' +
-                                            '<li><a href="product3">Service Three <span><span class="caret menutoggle"></span></span></a>' +
-                                                '<ul>' +
-                                                    '<li><a href="product1">Service One</a></li>' +
-                                                    '<li><a href="product2">Service Two</a></li>' +
-                                                    '<li><a href="product3">Service Three</a></li>' +
-                                                '</ul>' +
-                                            '</li>' +
-                                            '<li><a href="product3">Service Four <span><span class="caret menutoggle"></span></span></a>' +
-                                            
-                                                '<ul>' +
-                                                    '<li><a href="product1">Service One</a></li>' +
-                                                    '<li><a href="product2">Service Two</a></li>' +
-                                                    '<li><a href="product3">Service Three</a></li>' +
-                                                '</ul>' +
-                                            '</li>' +
-                                        '</ul>' +
-                                    '</li>' +
-                                    '<li><a href="support">Support <span><span class="caret menutoggle"></span></span></a>' +
-                                        '<ul>' +
-                                            '<li><a href="product1">Service One</a></li>' +
-                                            '<li><a href="product2">Service Two</a></li>' +
-                                            '<li><a href="product3">Service Three <span><span class="caret menutoggle"></span></span></a>' +
-                                                '<ul>' +
-                                                    '<li><a href="product1">Service One</a></li>' +
-                                                    '<li><a href="product2">Service Two</a></li>' +
-                                                    '<li><a href="product3">Service Three</a></li>' +
-                                                '</ul>' +
-                                            '</li>' +
-                                            '<li><a href="product3">Service Four <span><span class="caret menutoggle"></span></span></a>' +
-                                            
-                                                '<ul>' +
-                                                    '<li><a href="product1">Service One</a></li>' +
-                                                    '<li><a href="product2">Service Two</a></li>' +
-                                                    '<li><a href="product3">Service Three</a></li>' +
-                                                '</ul>' +
-                                            '</li>' +
-                                        '</ul>' +
-                                    '</li>' +
-                                    '<li><a href="about">About</a></li>' +
-                                    '<li><a href="shop" class="is-bordered">SHOP</a></li><li><a href="javascript:" class="is-menu-search"><i class="icon ion-android-search"></i></a></li>' +
-                                    '<li><a href="javascript:"><i class="icon-menu-user"></i></a>' +
-                                        '<ul>' +
-                                            '<li><a href="#">Login</a></li>' +
-                                            '<li><a href="#">Register</a></li>' +
-                                        '</ul>' +
-                                    '</li>' +
-                                    '<li><a href="javascript:"><i class="icon ion-android-share-alt"></i></a>' +
-                                        '<ul>' +
-                                            '<li><a href="https://twitter.com">Twitter</a></li>' +
-                                            '<li><a href="https://facebook">Facebook</a></li>' +
-                                            '<li><a href="https://youtube.com">Youtube</a></li>' +
-                                        '</ul>' +
-                                    '</li>' +
-
-                                '</ul>' +
-                                */
-
-                            '</div>' +
-                        '</div>' +
-                    '</div>' +
-                '</div>' +
+                ` +
                 '<scr' + 'ipt>' +
 
                     `
@@ -1370,20 +1340,23 @@
             setHtml(html);
 
             // We also put the custom variables on the snippet by calling setSettings() method.
-            var settings = '{' +
-                '"topbar": "' + topbarStyle + '",' +
-                '"maxwidth": "' + document.querySelector("#inpContainerWidth").value + '",' +
-                '"logotext": "' + document.querySelector("#inpLogoText").value + '",' +
-                '"logotextcss": "' + document.querySelector("#inpLogoTextCss").value + '",' +
-                '"navbarcss": "' + document.querySelector("#inpNavbarCss").value + '",' +
-                '"menuitemcss": "' + document.querySelector("#inpMenuItemCss").value + '",' +
-                '"logolink": "' + document.querySelector("#inpLogoLink").value + '",' +
-                '"logocircle": ' + document.querySelector("#chkLogoCircle").checked + ',' +
-                '"logoimage": "' + logoSrc + '",' +
-                '"bgcolor": "' + bgColor + '",' +
-                '"subbgcolor": "' + subBgColor + '",' +
-                '"menu":' + JSON.stringify(data.menu) +
-            '}';
+            const settingsObj = {
+                topbar: topbarStyle,
+                maxwidth: document.querySelector("#inpContainerWidth").value,
+                logotext: document.querySelector("#inpLogoText").value,
+                logotextcss: document.querySelector("#inpLogoTextCss").value,
+                navbarcss: document.querySelector("#inpNavbarCss").value,
+                menuitemcss: document.querySelector("#inpMenuItemCss").value,
+                logolink: document.querySelector("#inpLogoLink").value,
+                logocircle: document.querySelector("#chkLogoCircle").checked,
+                logoimage: logoSrc,
+                bgcolor: bgColor,
+                subbgcolor: subBgColor,
+                menu: data.menu
+            };
+
+            const settings = JSON.stringify(settingsObj);
+
 
             setSettings(settings);
 
@@ -1408,60 +1381,45 @@
             constructMenuItem(mainList, data.menu, menuitemCss);
             return mainList.outerHTML;
         }
-
+        
         function constructMenuItem(mainList, itemData, menuitemCss) {
+            const safeItemStyle = menuitemCss !== '' ? ` style="${escapeHtml(menuitemCss)}"` : '';
 
-            var sItemStyle = menuitemCss!==''? ` style="${menuitemCss}"`:'';
+            for (let i = 0; i < itemData.length; i++) {
+                const d = itemData[i];
+                const li = document.createElement('li');
 
-            for(var i=0;i<itemData.length;i++) {
-                var item = document.createElement('li');	
+                const safeClass  = d.classname ? ` class="${escapeHtml(d.classname)}"` : '';
+                const safeTarget = d.target === 'true' ? ` target="_blank"` : '';
 
-                var classAttr = '';
+                // Sanitize href — block javascript/data URLs
+                const href = (d.link || '#').trim();
+                const safeHref = /^(javascript:|data:)/i.test(href) ? '#' : escapeHtml(href);
 
-                if(itemData[i].classname) {
-                    classAttr = ` class="${itemData[i].classname}"`
-                } 
+                // The display part:
+                // - if .html is provided (icon, markup) → trust and insert as HTML
+                // - else → escape text
+                const displayContent = d.html
+                ? decodeURIComponent(d.html)
+                : escapeHtml(d.name);
 
-                var isTrueSet = (itemData[i].target === 'true');
-                var targetHtml = '';
-                if(isTrueSet) {
-                    targetHtml = ` target="_blank"`;
-                }
-                
-                var displaytext = (itemData[i].html? decodeURIComponent(itemData[i].html):itemData[i].name);
-                if (itemData[i].sub) {	
-                    
-                    if(itemData[i].sub.length>0) {
+                let s = `<a${safeItemStyle} href="${safeHref}"${safeClass}${safeTarget}>${displayContent}`;
 
-
-
-                        if(itemData[i].html) {
-                            item.innerHTML=`<a${sItemStyle} href="${itemData[i].link}"${classAttr+targetHtml}>${displaytext}</a>`; // no caret for html/icon with submenu
-                        } else {
-                            item.innerHTML=`<a${sItemStyle} href="${itemData[i].link}"${classAttr+targetHtml}>${displaytext} <span><span class="caret menutoggle"></span></span></a>`;
-                        }
-
-                        var subList = document.createElement('ul');
-                        item.appendChild(subList);
-
-                        var itemData2 = itemData[i].sub;
-
-                        constructMenuItem(subList, itemData2, menuitemCss);
-                        
-                    } else {
-
-                        item.innerHTML=`<a${sItemStyle} href="${itemData[i].link}"${classAttr+targetHtml}>${displaytext}</a>`;
-
-                    }
-                
-                } else {
-
-                    item.innerHTML=`<a${sItemStyle} href="${itemData[i].link}"${classAttr+targetHtml}>${displaytext}</a>`;
-
+                if (d.sub && d.sub.length > 0 && !d.html) {
+                    s += ` <span><span class="caret menutoggle"></span></span>`;
                 }
 
-                mainList.appendChild(item);
+                s += `</a>`;
 
+                li.innerHTML = s;
+
+                if (d.sub && d.sub.length > 0) {
+                    const subList = document.createElement('ul');
+                    li.appendChild(subList);
+                    constructMenuItem(subList, d.sub, menuitemCss);
+                }
+
+                mainList.appendChild(li);
             }
         }
         

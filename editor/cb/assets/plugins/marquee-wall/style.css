@@ -1,0 +1,155 @@
+/* ===== Marquee Wall plugin =====
+   Columns of images scrolling continuously (a "wall of work"). `mount` splits the
+   flat image list into columns, clones each into two identical halves, and drives
+   a CSS transform animation per column (distance/duration/direction set as inline
+   custom properties). All selectors scoped under [data-cb-type="marquee-wall"]. */
+[data-cb-type="marquee-wall"] {
+    --mw-cols: 3;
+    --mw-gap: 16px;
+    --mw-height: 520px;
+    --mw-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Padding only when a background colour is set (transparent blocks stay flush). */
+[data-cb-type="marquee-wall"].mw-has-bg {
+    padding: clamp(12px, 2vw, 24px);
+    border-radius: var(--mw-radius);
+}
+
+[data-cb-type="marquee-wall"] .mw-wall {
+    position: relative;
+    width: 100%;
+}
+
+/* Live (mounted): fixed-height, clipped, columns laid out in a grid. */
+[data-cb-type="marquee-wall"] .mw-wall.mw-live {
+    height: var(--mw-height);
+    /* The band must clip the scrolling tracks (they're taller than the band).
+       Only the wall clips — columns don't — so a card's shadow still shows in the
+       gaps, and the hover effect stays inside the card (see below) so it's never
+       cut by this clip. */
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(var(--mw-cols), minmax(0, 1fr));
+    gap: var(--mw-gap);
+    /* Horizontal gutter INSIDE the clip so the outer cards' side shadows have room
+       to render instead of being sliced at the wall edge. (Top/bottom shadows fall
+       in the fade zone, so they don't need a gutter.) border-box keeps the padding
+       inside the 100% width — no horizontal overflow. */
+    padding: 0 var(--mw-shadow-gutter, 30px);
+    box-sizing: border-box;
+    /* Vertical nudge (− up / + down) composited with any 3D tilt. translateY
+       shifts the wall visually without affecting layout, so it won't push the
+       heading/text beside it. The rotate terms are identity (0deg) when no tilt. */
+    transform: translateY(var(--mw-offsety, 0px)) rotateX(var(--mw-tiltx, 0deg)) rotateY(var(--mw-tilty, 0deg));
+}
+
+/* Soft fade at the top and bottom edges. */
+[data-cb-type="marquee-wall"] .mw-wall.mw-fade {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 11%, #000 89%, transparent 100%);
+}
+
+/* Optional 3D tilt of the whole wall: perspective on the host, rotate on the wall
+   (same approach as the browser-mockup plugin). Kept subtle so the images stay
+   readable. Only added when a tilt angle is set. */
+[data-cb-type="marquee-wall"].mw-tilt {
+    perspective: var(--mw-persp, 1600px);
+}
+
+[data-cb-type="marquee-wall"] .mw-col {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+[data-cb-type="marquee-wall"] .mw-track {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-gap);
+    will-change: transform;
+}
+
+[data-cb-type="marquee-wall"] .mw-track.mw-animate {
+    animation: mw-scroll var(--mw-dur, 40s) linear infinite;
+}
+
+/* Pause on hover (opt-in via .mw-pausehover). */
+[data-cb-type="marquee-wall"] .mw-wall.mw-pausehover:hover .mw-track {
+    animation-play-state: paused;
+}
+
+[data-cb-type="marquee-wall"] .mw-item {
+    flex: 0 0 auto;
+}
+
+[data-cb-type="marquee-wall"] .mw-card {
+    display: block;
+    border-radius: var(--mw-radius);
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.5), 0 6px 14px -8px rgba(0, 0, 0, 0.3);
+    cursor: default;
+    transition: box-shadow 0.3s ease;
+}
+
+[data-cb-type="marquee-wall"] .mw-card[href] {
+    cursor: pointer;
+}
+
+/* Hover: zoom the image INSIDE the card, not the card outward. Because the card
+   keeps its size (and clips the image to its own frame), nothing overflows the
+   clipped band — so the hover is never cut, while the shadow still lifts. */
+[data-cb-type="marquee-wall"] .mw-card:hover {
+    box-shadow: 0 26px 54px -22px rgba(0, 0, 0, 0.6), 0 10px 22px -12px rgba(0, 0, 0, 0.4);
+}
+[data-cb-type="marquee-wall"] .mw-card:hover .mw-img,
+[data-cb-type="marquee-wall"] .mw-card:hover .mw-video {
+    transform: scale(1.06);
+}
+
+[data-cb-type="marquee-wall"].mw-no-shadow .mw-card {
+    box-shadow: none;
+}
+
+[data-cb-type="marquee-wall"] .mw-img,
+[data-cb-type="marquee-wall"] .mw-video {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease;
+}
+
+/* Fallback (before mount): a simple vertical stack so the images are still shown. */
+[data-cb-type="marquee-wall"] .mw-wall:not(.mw-live) {
+    display: flex;
+    flex-direction: column;
+    gap: var(--mw-gap);
+    max-width: 420px;
+    margin: 0 auto;
+}
+
+[data-cb-type="marquee-wall"] .mw-wall:not(.mw-live) .mw-card {
+    border-radius: var(--mw-radius);
+    /* overflow: hidden; */
+    display: block;
+}
+
+@keyframes mw-scroll {
+    from { transform: translateY(var(--mw-from, 0px)); }
+    to { transform: translateY(var(--mw-to, 0px)); }
+}
+
+/* Reduced motion: no scrolling — show a static, non-clipped stack of the images. */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="marquee-wall"] .mw-track.mw-animate {
+        animation: none;
+    }
+    [data-cb-type="marquee-wall"] .mw-item[data-clone] {
+        display: none;
+    }
+    [data-cb-type="marquee-wall"] .mw-wall.mw-live {
+        height: auto;
+    }
+}

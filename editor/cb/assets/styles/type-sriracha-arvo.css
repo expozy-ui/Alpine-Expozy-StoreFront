@@ -13,12 +13,14 @@
     line-height: 1.2;
 }        
 
-.type-sriracha-arvo h1 {font-size: 3.3rem;line-height: 1.15;}
-.type-sriracha-arvo h2 {font-size: 2.6rem;}
-.type-sriracha-arvo h3 {font-size: 2.1rem;}
-.type-sriracha-arvo h4 {font-size: 1.7rem;}
-.type-sriracha-arvo h5 {font-size: 1.5rem;}
-.type-sriracha-arvo h6 {font-size: 1.2rem;}
+.type-sriracha-arvo h1 {font-size: 3.3rem;line-height: 1.15; margin: 1.2rem 0 1.2rem; }
+.type-sriracha-arvo h2 {font-size: 2.6rem; margin: 1rem 0 1rem; }
+.type-sriracha-arvo h3 {font-size: 2.1rem; margin: 1rem 0 1rem; }
+.type-sriracha-arvo h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-sriracha-arvo h5 {font-size: 1.5rem; margin: 0.5rem 0 0.5rem; }
+.type-sriracha-arvo h6 {font-size: 1.2rem; margin: 0.5rem 0 0.5rem; }
+.type-sriracha-arvo p {margin:0.8rem 0 0.8rem;}
+/* .type-sriracha-arvo ul, .type-sriracha-arvo ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-sriracha-arvo .display { margin-bottom: 0.5rem; }
 .type-sriracha-arvo .display h1 {

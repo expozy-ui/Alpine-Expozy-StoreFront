@@ -1,0 +1,170 @@
+/* Warm Gradient Blobs Background Plugin Styles */
+
+/* Container — UNUSED (kept commented for reference).
+   The block renders in-flow as [data-cb-type="blobs-bg"] with its own inline
+   min-height, so it does NOT use this absolute/overlay styling. Re-pointing this
+   to [data-cb-type="blobs-bg"] would change the rendered block (pull it out of
+   flow and make it unselectable), so it stays commented, not re-targeted. */
+/*
+[data-cb-type="warm-blobs-bg"] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0;
+    pointer-events: none;
+}
+*/
+
+/* All blob layers are scoped under the block's real type, [data-cb-type="blobs-bg"]. */
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+/* Floating Gradient Blobs */
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob {
+    position: absolute;
+    filter: blur(var(--blob-blur, 60px));
+    opacity: var(--blob-opacity, 0.4);
+    animation: cb-blobFloat var(--animation-duration, 20s) ease-in-out infinite,
+                cb-fadeIn 1.5s ease-out forwards;
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    will-change: transform, border-radius;
+    mix-blend-mode: normal;
+}
+
+/* Blob Positions */
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--1 {
+    width: var(--blob-size-1, 500px);
+    height: var(--blob-size-1, 500px);
+    background: var(--blob-gradient-1);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--2 {
+    width: var(--blob-size-2, 450px);
+    height: var(--blob-size-2, 450px);
+    background: var(--blob-gradient-2);
+    bottom: -80px;
+    left: -80px;
+    animation-delay: -7s;
+}
+
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--3 {
+    width: var(--blob-size-3, 400px);
+    height: var(--blob-size-3, 400px);
+    background: var(--blob-gradient-3);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation-delay: -14s;
+    animation: cb-blobFloatCenter var(--animation-duration, 20s) ease-in-out infinite,
+                cb-fadeIn 1.5s ease-out forwards;
+}
+
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--4 {
+    width: var(--blob-size-4, 380px);
+    height: var(--blob-size-4, 380px);
+    background: var(--blob-gradient-4);
+    top: 20%;
+    left: 15%;
+    animation-delay: -3.5s;
+}
+
+[data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--5 {
+    width: var(--blob-size-5, 420px);
+    height: var(--blob-size-5, 420px);
+    background: var(--blob-gradient-5);
+    bottom: 25%;
+    right: 20%;
+    animation-delay: -10s;
+}
+
+/* Blob Float Animation */
+@keyframes cb-blobFloat {
+    0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+    25% {
+        transform: translate(40px, -60px) rotate(90deg);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        transform: translate(-30px, 40px) rotate(180deg);
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    75% {
+        transform: translate(60px, 30px) rotate(270deg);
+        border-radius: 70% 30% 40% 60% / 40% 70% 60% 30%;
+    }
+}
+
+/* Center Blob Float Animation */
+@keyframes cb-blobFloatCenter {
+    0%, 100% {
+        transform: translate(-50%, -50%) rotate(0deg) scale(1);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+    25% {
+        transform: translate(calc(-50% + 30px), calc(-50% - 40px)) rotate(90deg) scale(1.05);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+    50% {
+        transform: translate(calc(-50% - 25px), calc(-50% + 30px)) rotate(180deg) scale(0.95);
+        border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    }
+    75% {
+        transform: translate(calc(-50% + 40px), calc(-50% + 20px)) rotate(270deg) scale(1.02);
+        border-radius: 70% 30% 40% 60% / 40% 70% 60% 30%;
+    }
+}
+
+/* Fade In Animation */
+@keyframes cb-fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: var(--blob-opacity, 0.4);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob {
+        animation: cb-fadeIn 1s ease-out forwards !important;
+    }
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--1,
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--2,
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--3,
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--4,
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob--5 {
+        width: 280px !important;
+        height: 280px !important;
+    }
+
+    [data-cb-type="blobs-bg"] .cb-warm-blobs-bg__blob {
+        filter: blur(50px);
+    }
+}
+
+/* High Contrast Mode Support — UNUSED (targets the dead type; kept commented,
+   not re-pointed, so the rendered block is unchanged). */
+/*
+@media (prefers-contrast: high) {
+    [data-cb-type="warm-blobs-bg"] {
+        opacity: 0.2;
+    }
+}
+*/

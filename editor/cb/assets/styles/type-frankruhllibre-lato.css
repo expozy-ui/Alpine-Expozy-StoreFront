@@ -14,12 +14,14 @@
     letter-spacing: 1px;
 }        
 
-.type-frankruhllibre-lato h1 {font-size: 3.1rem;}
-.type-frankruhllibre-lato h2 {font-size: 2.5rem;}
-.type-frankruhllibre-lato h3 {font-size: 2rem;}
-.type-frankruhllibre-lato h4 {font-size: 1.7rem;}
-.type-frankruhllibre-lato h5 {font-size: 1.45rem;}
-.type-frankruhllibre-lato h6 {font-size: 1.21rem;}
+.type-frankruhllibre-lato h1 {font-size: 3.1rem; margin: 1.2rem 0 1.2rem; }
+.type-frankruhllibre-lato h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-frankruhllibre-lato h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-frankruhllibre-lato h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-frankruhllibre-lato h5 {font-size: 1.45rem; margin: 0.5rem 0 0.5rem; }
+.type-frankruhllibre-lato h6 {font-size: 1.21rem; margin: 0.5rem 0 0.5rem; }
+.type-frankruhllibre-lato p {margin:0.8rem 0 0.8rem;}
+/* .type-frankruhllibre-lato ul, .type-frankruhllibre-lato ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-frankruhllibre-lato .display { margin-bottom: 0.5rem; }
 .type-frankruhllibre-lato .display h1 {

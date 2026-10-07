@@ -8,17 +8,20 @@
     font-weight: 300;
 }
 .type-raleway-playfairdisplay h1, .type-raleway-playfairdisplay h2, .type-raleway-playfairdisplay h3, .type-raleway-playfairdisplay h4, .type-raleway-playfairdisplay h5, .type-raleway-playfairdisplay h6 {
+    font-family: 'Raleway', sans-serif;
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: 2px;
 }        
 
-.type-raleway-playfairdisplay h1 {font-size: 3rem;}
-.type-raleway-playfairdisplay h2 {font-size: 2.4rem;}
-.type-raleway-playfairdisplay h3 {font-size: 1.9rem;}
-.type-raleway-playfairdisplay h4 {font-size: 1.6rem;}
-.type-raleway-playfairdisplay h5 {font-size: 1.3rem;}
-.type-raleway-playfairdisplay h6 {font-size: 1.17rem;}
+.type-raleway-playfairdisplay h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-raleway-playfairdisplay h2 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-raleway-playfairdisplay h3 {font-size: 1.9rem; margin: 1rem 0 1rem; }
+.type-raleway-playfairdisplay h4 {font-size: 1.6rem; margin: 0.5rem 0 0.5rem; }
+.type-raleway-playfairdisplay h5 {font-size: 1.3rem; margin: 0.5rem 0 0.5rem; }
+.type-raleway-playfairdisplay h6 {font-size: 1.17rem; margin: 0.5rem 0 0.5rem; }
+.type-raleway-playfairdisplay p {margin:0.8rem 0 0.8rem;}
+/* .type-raleway-playfairdisplay ul, .type-raleway-playfairdisplay ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-raleway-playfairdisplay .display { margin-bottom: 0.5rem;  }
 .type-raleway-playfairdisplay .display h1 {

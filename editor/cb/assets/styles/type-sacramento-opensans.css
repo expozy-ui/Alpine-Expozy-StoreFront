@@ -14,12 +14,14 @@
     line-height: 1.2;
 }        
 
-.type-sacramento-opensans h1 {font-size: 3.6rem;}
-.type-sacramento-opensans h2 {font-size: 2.8rem;}
-.type-sacramento-opensans h3 {font-size: 2.5rem;}
-.type-sacramento-opensans h4 {font-size: 2.3rem;}
-.type-sacramento-opensans h5 {font-size: 2.2rem;}
-.type-sacramento-opensans h6 {font-size: 2.1rem;}
+.type-sacramento-opensans h1 {font-size: 3.6rem; margin: 1.2rem 0 1.2rem; }
+.type-sacramento-opensans h2 {font-size: 2.8rem; margin: 1rem 0 1rem; }
+.type-sacramento-opensans h3 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-sacramento-opensans h4 {font-size: 2.3rem; margin: 0.5rem 0 0.5rem; }
+.type-sacramento-opensans h5 {font-size: 2.2rem; margin: 0.5rem 0 0.5rem; }
+.type-sacramento-opensans h6 {font-size: 2.1rem; margin: 0.5rem 0 0.5rem; }
+.type-sacramento-opensans p {margin:0.8rem 0 0.8rem;}
+/* .type-sacramento-opensans ul, .type-sacramento-opensans ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-sacramento-opensans .display { margin-bottom: 0.5rem; }
 .type-sacramento-opensans .display h1 {

@@ -8,17 +8,20 @@
     font-weight: 300;
 }
 .type-yantramanav-ibmplexserif h1, .type-yantramanav-ibmplexserif h2, .type-yantramanav-ibmplexserif h3, .type-yantramanav-ibmplexserif h4, .type-yantramanav-ibmplexserif h5, .type-yantramanav-ibmplexserif h6 {
+    font-family: 'Yantramanav', sans-serif;
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 1px;
 }        
 
-.type-yantramanav-ibmplexserif h1 {font-size: 3.1rem;}
-.type-yantramanav-ibmplexserif h2 {font-size: 2.5rem;}
-.type-yantramanav-ibmplexserif h3 {font-size: 2rem;}
-.type-yantramanav-ibmplexserif h4 {font-size: 1.7rem;}
-.type-yantramanav-ibmplexserif h5 {font-size: 1.4rem;}
-.type-yantramanav-ibmplexserif h6 {font-size: 1.22rem;}
+.type-yantramanav-ibmplexserif h1 {font-size: 3.1rem; margin: 1.2rem 0 1.2rem; }
+.type-yantramanav-ibmplexserif h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-yantramanav-ibmplexserif h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-yantramanav-ibmplexserif h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-yantramanav-ibmplexserif h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-yantramanav-ibmplexserif h6 {font-size: 1.22rem; margin: 0.5rem 0 0.5rem; }
+.type-yantramanav-ibmplexserif p {margin:0.8rem 0 0.8rem;}
+/* .type-yantramanav-ibmplexserif ul, .type-yantramanav-ibmplexserif ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-yantramanav-ibmplexserif .display { margin-bottom: 0.5rem; }
 .type-yantramanav-ibmplexserif .display h1 {

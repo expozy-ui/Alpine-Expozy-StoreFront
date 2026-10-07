@@ -1,0 +1,79 @@
+/* ===== Map plugin =====
+   All selectors scoped under [data-cb-type="map-embed"] so nothing leaks.
+   The map itself is an external iframe and can't be themed; only the frame
+   surface and the empty-state text run through CSS variables. */
+[data-cb-type="map-embed"] {
+    display: block;
+    --map-height: 380px;
+    --map-radius: 12px;
+    --map-surface: #eef1f4;
+    --map-muted: #6b7280;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Only the frame surface / empty-state text are themeable (the embedded map is
+   Google's own iframe). Uncomment and point the selector at your site's theme
+   trigger.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="map-embed"] {
+    --map-surface: #1f2937;
+    --map-muted: #9ca3af;
+}
+*/
+
+[data-cb-type="map-embed"] .map-embed-frame {
+    position: relative;
+    width: 100%;
+    height: var(--map-height);
+    border-radius: var(--map-radius);
+    overflow: hidden;
+    background: var(--map-surface);
+}
+
+/* ── Fill mode ─────────────────────────────────────────────────────────────
+   data-cb-size-mode="fill" makes the block cover its container instead of
+   taking a pixel height - for a map used as a section background, e.g. inside
+   ContentBox's .is-overlay-content (itself absolutely positioned at 100%x100%).
+   The container must be positioned and have a height. Height / corner radius
+   don't apply here.
+
+   The frame's height / border-radius are set directly (not through the --map-*
+   variables) because mount() writes those variables inline in fixed mode, and
+   an inline variable would beat a stylesheet one. */
+[data-cb-type="map-embed"][data-cb-size-mode="fill"] {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+[data-cb-type="map-embed"][data-cb-size-mode="fill"] .map-embed-frame {
+    height: 100%;
+    border-radius: 0;
+}
+
+[data-cb-type="map-embed"] .map-embed-frame iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+[data-cb-type="map-embed"] .map-embed-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 16px;
+    text-align: center;
+    color: var(--map-muted);
+    font-size: 14px;
+}
+
+/* Editor selectability of the map is handled by the shared `.iframe-overlay`
+   contract in the editor (mount adds that class to .map-embed-frame) — a click
+   selects the block, then the map becomes interactive. Nothing needed here. */

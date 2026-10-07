@@ -1,0 +1,123 @@
+/* ===== Tabs plugin =====
+   All selectors scoped under [data-cb-type="tabs"] so nothing leaks.
+   Colors run through CSS variables so dark mode is just a variable override
+   (auto-applied when a `.dark` ancestor is present, e.g. body.dark). The panel
+   content itself inherits the page's text color, so it follows the site theme. */
+[data-cb-type="tabs"] {
+    position: relative;
+    width: 100%;
+    --tabs-accent: #3b82f6;
+    --tabs-text: #1f2937;
+    --tabs-muted: #6b7280;
+    --tabs-border: #e5e7eb;
+    --tabs-content: inherit;   /* panel body text — light mode inherits the page */
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system. (--tabs-content is the
+   panel body text; #d1d5db keeps user content readable on a dark background.)
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="tabs"] {
+    --tabs-text: #f3f4f6;
+    --tabs-muted: #9ca3af;
+    --tabs-border: #3a3a3a;
+    --tabs-content: #d1d5db;
+}
+*/
+
+/* Tab list */
+[data-cb-type="tabs"] .tabs-nav {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    border-bottom: 1px solid var(--tabs-border);
+}
+
+[data-cb-type="tabs"] .tabs-nav.is-stretch .tabs-tab {
+    flex: 1;
+    text-align: center;
+}
+
+[data-cb-type="tabs"] .tabs-tab {
+    appearance: none;
+    font: inherit;
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--tabs-muted);
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    padding: 11px 16px;
+    cursor: pointer;
+    transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+[data-cb-type="tabs"] .tabs-tab:hover {
+    color: var(--tabs-text);
+}
+
+[data-cb-type="tabs"] .tabs-tab.is-active {
+    color: var(--tabs-accent);
+    border-bottom-color: var(--tabs-accent);
+}
+
+[data-cb-type="tabs"] .tabs-tab:focus-visible {
+    outline: 2px solid var(--tabs-accent);
+    outline-offset: -2px;
+    border-radius: 4px;
+}
+
+/* Panels */
+[data-cb-type="tabs"] .tabs-panel {
+    display: none;
+    padding: 22px 2px;
+    color: var(--tabs-content);
+}
+
+[data-cb-type="tabs"] .tabs-panel.is-active {
+    display: block;
+}
+
+[data-cb-type="tabs"] .tabs-panel:focus-visible {
+    outline: 2px solid var(--tabs-accent);
+    outline-offset: 2px;
+    border-radius: 6px;
+}
+
+/* Sensible defaults for editable content inside a panel */
+[data-cb-type="tabs"] .tabs-panel > .is-subblock > :first-child {
+    margin-top: 0;
+}
+
+[data-cb-type="tabs"] .tabs-panel > .is-subblock > :last-child {
+    margin-bottom: 0;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="tabs"] .tabs-tab {
+        transition: none !important;
+    }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+    [data-cb-type="tabs"] .tabs-tab.is-active {
+        border-bottom-width: 3px;
+    }
+}
+
+/* Print: show all panels so nothing is hidden on paper */
+@media print {
+    [data-cb-type="tabs"] .tabs-panel {
+        display: block !important;
+    }
+}

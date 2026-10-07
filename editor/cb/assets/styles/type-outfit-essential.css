@@ -1,0 +1,78 @@
+/* ==========================================================================
+   24. OUTFIT ESSENTIAL — Outfit
+   ========================================================================== */
+   
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+.type-outfit-essential {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.type-outfit-essential h1,
+.type-outfit-essential h2,
+.type-outfit-essential h3,
+.type-outfit-essential h4,
+.type-outfit-essential h5,
+.type-outfit-essential h6 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.type-outfit-essential h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-outfit-essential h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-outfit-essential h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-outfit-essential h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-outfit-essential h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-outfit-essential h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-outfit-essential p {
+    margin: 0.75rem 0;
+}
+
+.type-outfit-essential .display {
+    margin-bottom: 2rem;
+}
+
+.type-outfit-essential .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.65rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-outfit-essential .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

@@ -1,0 +1,464 @@
+/* ===== Media Slider plugin =====
+   All selectors scoped under [data-cb-type="media-slider"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="media-slider"] {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-bottom: 5px;
+    --accent-color: #0066cc;
+    --accent-color-light: #4d9aff;
+    --ms-card-bg: rgb(255 255 255 / 85%);
+    --ms-card-border: #e5e7eb;
+    --ms-card-border-hover: #d1d5db;
+    --ms-media-bg: #e9ecef;
+    --ms-video-bg: #000000;
+    --ms-title: #1a1a1a;
+    --ms-desc: #666666;
+    --ms-control-bg: rgba(255, 255, 255, 0.95);
+    --ms-control-border: rgba(0, 0, 0, 0.1);
+    --ms-control-icon: #1a1a1a;
+    --ms-dot: #cbd5e0;
+    --ms-dot-hover: #a0aec0;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses — a class, [data-theme="dark"],
+   @media (prefers-color-scheme: dark), etc. Uncomment and point the selector at
+   your site's theme system. The accent color stays as configured.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="media-slider"] {
+    --ms-card-bg: rgb(31 41 55 / 85%);
+    --ms-card-border: #374151;
+    --ms-card-border-hover: #4b5563;
+    --ms-media-bg: #111827;
+    --ms-title: #f3f4f6;
+    --ms-desc: #9ca3af;
+    --ms-control-bg: rgba(31, 41, 55, 0.95);
+    --ms-control-border: rgba(255, 255, 255, 0.1);
+    --ms-control-icon: #f3f4f6;
+    --ms-dot: #4b5563;
+    --ms-dot-hover: #6b7280;
+}
+*/
+
+/* Slider Track */
+[data-cb-type="media-slider"] .media-slider-track {
+    display: flex;
+    gap: 16px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+}
+
+/* Individual Item (Card) */
+[data-cb-type="media-slider"] .slider-item {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    background: var(--ms-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--ms-card-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Rounded Corners off → square cards (wins over the default + mobile radius) */
+[data-cb-type="media-slider"][data-cb-rounded="false"] .slider-item {
+    border-radius: 0;
+}
+
+/* Hover keeps the chosen Border Color — no forced hover shade (the media zoom
+   below is the hover cue). Re-enable the shadow if you want extra emphasis. */
+[data-cb-type="media-slider"] .slider-item:hover {
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12); */
+}
+
+/* Item Media */
+[data-cb-type="media-slider"] .slider-item .item-media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--ms-media-bg);
+}
+
+[data-cb-type="media-slider"] .slider-item .item-media img,
+[data-cb-type="media-slider"] .slider-item .item-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    pointer-events: none;
+    transition: transform 0.4s ease;
+}
+
+[data-cb-type="media-slider"] .slider-item:hover .item-media img,
+[data-cb-type="media-slider"] .slider-item:hover .item-media video {
+    transform: scale(1.05);
+}
+
+/* Item Content */
+[data-cb-type="media-slider"] .slider-item .item-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+[data-cb-type="media-slider"] .slider-item .item-content .item-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--ms-title);
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+/* [data-cb-type="media-slider"] .slider-item:hover .item-content .item-title {
+    color: var(--accent-color);
+} */
+
+[data-cb-type="media-slider"] .slider-item .item-content .item-description {
+    font-size: 16px;
+    line-height: 1.4;
+    color: var(--ms-desc);
+    margin: 0;
+}
+
+[data-cb-type="media-slider"] .slider-item .item-content .item-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-color-light);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 8px;
+    transition: color 0.2s ease;
+}
+
+[data-cb-type="media-slider"] .slider-item:hover .item-content .item-link {
+    color: var(--accent-color);
+}
+
+[data-cb-type="media-slider"] .slider-item .item-content .item-link:hover {
+    text-decoration: underline;
+}
+
+/* Navigation Arrows */
+[data-cb-type="media-slider"] .slider-prev,
+[data-cb-type="media-slider"] .slider-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ms-control-bg);
+    border: 1px solid var(--ms-control-border);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-cb-type="media-slider"] .slider-prev {
+    left: 16px;
+}
+
+[data-cb-type="media-slider"] .slider-next {
+    right: 16px;
+}
+
+[data-cb-type="media-slider"] .slider-prev:hover,
+[data-cb-type="media-slider"] .slider-next:hover {
+    background: var(--ms-control-bg);
+    /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); */
+    transform: translateY(-50%) scale(1.05);
+}
+
+[data-cb-type="media-slider"] .slider-prev:active,
+[data-cb-type="media-slider"] .slider-next:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+[data-cb-type="media-slider"] .slider-prev:disabled,
+[data-cb-type="media-slider"] .slider-next:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+[data-cb-type="media-slider"] .slider-prev svg,
+[data-cb-type="media-slider"] .slider-next svg {
+    width: 20px;
+    height: 20px;
+    color: var(--ms-control-icon);
+}
+
+/* Controls Container */
+[data-cb-type="media-slider"] .slider-controls {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    z-index: 10;
+}
+
+/* Dots Navigation */
+[data-cb-type="media-slider"] .slider-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 8px 16px;
+    background: var(--ms-control-bg);
+    border-radius: 24px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+[data-cb-type="media-slider"] .slider-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--ms-dot);
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+[data-cb-type="media-slider"] .slider-dot:hover {
+    background: var(--ms-dot-hover);
+    transform: scale(1.2);
+}
+
+[data-cb-type="media-slider"] .slider-dot.active {
+    background: var(--accent-color-light);
+    width: 24px;
+    border-radius: 5px;
+}
+
+/* Item Counter */
+[data-cb-type="media-slider"] .slider-counter {
+    padding: 6px 14px;
+    background: var(--ms-control-bg);
+    border-radius: 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ms-title);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Screen Reader Only */
+[data-cb-type="media-slider"] .slider-live-region {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Focus Styles (WCAG Compliance) */
+[data-cb-type="media-slider"]:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 4px;
+    border-radius: 2px;
+}
+
+[data-cb-type="media-slider"] .slider-prev:focus-visible,
+[data-cb-type="media-slider"] .slider-next:focus-visible,
+[data-cb-type="media-slider"] .slider-dot:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    [data-cb-type="media-slider"] {
+        padding: 16px;
+    }
+
+    [data-cb-type="media-slider"] .slider-prev,
+    [data-cb-type="media-slider"] .slider-next {
+        width: 40px;
+        height: 40px;
+    }
+
+    [data-cb-type="media-slider"] .slider-prev {
+        left: 12px;
+    }
+
+    [data-cb-type="media-slider"] .slider-next {
+        right: 12px;
+    }
+
+    [data-cb-type="media-slider"] .item-content {
+        padding: 14px;
+    }
+
+    [data-cb-type="media-slider"] .item-title {
+        font-size: 16px;
+    }
+
+    [data-cb-type="media-slider"] .item-description {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    [data-cb-type="media-slider"] {
+        padding: 12px;
+    }
+
+    [data-cb-type="media-slider"] .slider-prev,
+    [data-cb-type="media-slider"] .slider-next {
+        width: 36px;
+        height: 36px;
+    }
+
+    [data-cb-type="media-slider"] .slider-prev {
+        left: 8px;
+    }
+
+    [data-cb-type="media-slider"] .slider-next {
+        right: 8px;
+    }
+
+    [data-cb-type="media-slider"] .slider-prev svg,
+    [data-cb-type="media-slider"] .slider-next svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    [data-cb-type="media-slider"] .slider-controls {
+        bottom: 12px;
+        gap: 12px;
+    }
+
+    [data-cb-type="media-slider"] .slider-dots {
+        padding: 6px 12px;
+        gap: 6px;
+    }
+
+    [data-cb-type="media-slider"] .slider-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    [data-cb-type="media-slider"] .slider-dot.active {
+        width: 20px;
+    }
+
+    [data-cb-type="media-slider"] .slider-counter {
+        font-size: 12px;
+        padding: 5px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-cb-type="media-slider"] {
+        border-radius: 8px;
+    }
+
+    [data-cb-type="media-slider"] .slider-item {
+        border-radius: 6px;
+    }
+
+    [data-cb-type="media-slider"] .item-content {
+        padding: 12px;
+    }
+
+    [data-cb-type="media-slider"] .item-title {
+        font-size: 15px;
+    }
+
+    [data-cb-type="media-slider"] .item-description {
+        font-size: 12.5px;
+    }
+}
+
+/* Loading State */
+[data-cb-type="media-slider"][data-loading="true"] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Video Specific Styles */
+[data-cb-type="media-slider"] .item-media video {
+    background: var(--ms-video-bg);
+}
+
+[data-cb-type="media-slider"] .item-media video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+[data-cb-type="media-slider"] .item-media:hover video::-webkit-media-controls {
+    opacity: 1;
+}
+
+/* Smooth animations for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="media-slider"] .media-slider-track,
+    [data-cb-type="media-slider"] .slider-item,
+    [data-cb-type="media-slider"] .item-media img,
+    [data-cb-type="media-slider"] .item-media video,
+    [data-cb-type="media-slider"] .slider-prev,
+    [data-cb-type="media-slider"] .slider-next,
+    [data-cb-type="media-slider"] .slider-dot {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    [data-cb-type="media-slider"] .slider-item {
+        border: 2px solid currentColor;
+    }
+
+    [data-cb-type="media-slider"] .slider-prev,
+    [data-cb-type="media-slider"] .slider-next {
+        border: 2px solid currentColor;
+    }
+
+    [data-cb-type="media-slider"] .slider-dot {
+        border: 1px solid currentColor;
+    }
+}
+
+/* Print styles */
+@media print {
+    [data-cb-type="media-slider"] .slider-prev,
+    [data-cb-type="media-slider"] .slider-next,
+    [data-cb-type="media-slider"] .slider-controls {
+        display: none !important;
+    }
+
+    [data-cb-type="media-slider"] .slider-item {
+        page-break-inside: avoid;
+    }
+}
+
+/* Empty state (no content) */
+[data-cb-type="media-slider"] .slider-item:empty::before {
+    content: 'Add content to this item';
+    display: block;
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}

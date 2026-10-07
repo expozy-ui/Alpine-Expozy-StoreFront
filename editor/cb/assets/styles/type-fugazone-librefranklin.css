@@ -14,12 +14,14 @@
     letter-spacing: 1px; 
 }        
 
-.type-fugazone-librefranklin h1 {font-size: 3rem;}
-.type-fugazone-librefranklin h2 {font-size: 2.4rem;}
-.type-fugazone-librefranklin h3 {font-size: 2rem;}
-.type-fugazone-librefranklin h4 {font-size: 1.7rem;}
-.type-fugazone-librefranklin h5 {font-size: 1.4rem;}
-.type-fugazone-librefranklin h6 {font-size: 1.24rem;}
+.type-fugazone-librefranklin h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-fugazone-librefranklin h2 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-fugazone-librefranklin h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-fugazone-librefranklin h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-fugazone-librefranklin h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-fugazone-librefranklin h6 {font-size: 1.24rem; margin: 0.5rem 0 0.5rem; }
+.type-fugazone-librefranklin p {margin:0.8rem 0 0.8rem;}
+/* .type-fugazone-librefranklin ul, .type-fugazone-librefranklin ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-fugazone-librefranklin .display { margin-bottom: 0.5rem; }
 .type-fugazone-librefranklin .display h1 {

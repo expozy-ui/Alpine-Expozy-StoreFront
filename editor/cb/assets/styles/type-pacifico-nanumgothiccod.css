@@ -8,16 +8,19 @@
     font-weight: 400;
 }
 .type-pacifico-nanumgothiccod h1, .type-pacifico-nanumgothiccod h2, .type-pacifico-nanumgothiccod h3, .type-pacifico-nanumgothiccod h4, .type-pacifico-nanumgothiccod h5, .type-pacifico-nanumgothiccod h6 {
+    font-family: 'Nanum Gothic Coding', monospace;
     font-weight: 400;
     line-height: 1.2;
 }        
 
-.type-pacifico-nanumgothiccod h1 {font-size: 3rem;}
-.type-pacifico-nanumgothiccod h2 {font-size: 2.4rem;}
-.type-pacifico-nanumgothiccod h3 {font-size: 2rem;}
-.type-pacifico-nanumgothiccod h4 {font-size: 1.7rem;}
-.type-pacifico-nanumgothiccod h5 {font-size: 1.4rem;}
-.type-pacifico-nanumgothiccod h6 {font-size: 1.14rem;}
+.type-pacifico-nanumgothiccod h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-pacifico-nanumgothiccod h2 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-pacifico-nanumgothiccod h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-pacifico-nanumgothiccod h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-pacifico-nanumgothiccod h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-pacifico-nanumgothiccod h6 {font-size: 1.14rem; margin: 0.5rem 0 0.5rem; }
+.type-pacifico-nanumgothiccod p {margin:0.8rem 0 0.8rem;}
+/* .type-pacifico-nanumgothiccod ul, .type-pacifico-nanumgothiccod ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-pacifico-nanumgothiccod .display { margin-bottom: 0.5rem; }
 .type-pacifico-nanumgothiccod .display h1 {

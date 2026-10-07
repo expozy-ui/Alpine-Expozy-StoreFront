@@ -1,0 +1,79 @@
+/* ==========================================================================
+   01. CLASSIC EDITORIAL — Playfair Display + Source Serif Pro
+   ========================================================================== */
+   
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,500;1,8..60,300;1,8..60,400&display=swap');
+
+.type-classic-editorial {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+.type-classic-editorial h1,
+.type-classic-editorial h2,
+.type-classic-editorial h3,
+.type-classic-editorial h4,
+.type-classic-editorial h5,
+.type-classic-editorial h6 {
+    font-family: 'Playfair Display', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.type-classic-editorial h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-classic-editorial h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-classic-editorial h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-classic-editorial h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-classic-editorial h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-classic-editorial h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-classic-editorial p {
+    margin: 0.75rem 0;
+}
+
+.type-classic-editorial .display {
+    margin-bottom: 2rem;
+}
+
+.type-classic-editorial .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.2;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-classic-editorial .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

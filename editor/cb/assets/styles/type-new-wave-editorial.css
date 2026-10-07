@@ -1,0 +1,78 @@
+/* ==========================================================================
+   06. NEW WAVE EDITORIAL — Newsreader + DM Sans
+   ========================================================================== */
+   
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300;1,9..40,400&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,300;1,6..72,400;1,6..72,500&display=swap');
+
+.type-new-wave-editorial {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-new-wave-editorial h1,
+.type-new-wave-editorial h2,
+.type-new-wave-editorial h3,
+.type-new-wave-editorial h4,
+.type-new-wave-editorial h5,
+.type-new-wave-editorial h6 {
+    font-family: 'Newsreader', Georgia, serif;
+    font-weight: 500;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+}
+
+.type-new-wave-editorial h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-new-wave-editorial h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-new-wave-editorial h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-new-wave-editorial h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-new-wave-editorial h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-new-wave-editorial h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-new-wave-editorial p {
+    margin: 0.75rem 0;
+}
+
+.type-new-wave-editorial .display {
+    margin-bottom: 2rem;
+}
+
+.type-new-wave-editorial .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.65rem);
+    line-height: 1.15;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.type-new-wave-editorial .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

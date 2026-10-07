@@ -14,12 +14,14 @@
     letter-spacing: 1px;
 }        
 
-.type-cormorantsc-ibmplexsanscon h1 {font-size: 3rem;line-height: 1.1;}
-.type-cormorantsc-ibmplexsanscon h2 {font-size: 2.5rem;}
-.type-cormorantsc-ibmplexsanscon h3 {font-size: 2rem;}
-.type-cormorantsc-ibmplexsanscon h4 {font-size: 1.7rem;}
-.type-cormorantsc-ibmplexsanscon h5 {font-size: 1.5rem;}
-.type-cormorantsc-ibmplexsanscon h6 {font-size: 1.24rem;}
+.type-cormorantsc-ibmplexsanscon h1 {font-size: 3rem;line-height: 1.1; margin: 1.2rem 0 1.2rem; }
+.type-cormorantsc-ibmplexsanscon h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-cormorantsc-ibmplexsanscon h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-cormorantsc-ibmplexsanscon h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-cormorantsc-ibmplexsanscon h5 {font-size: 1.5rem; margin: 0.5rem 0 0.5rem; }
+.type-cormorantsc-ibmplexsanscon h6 {font-size: 1.24rem; margin: 0.5rem 0 0.5rem; }
+.type-cormorantsc-ibmplexsanscon p {margin:0.8rem 0 0.8rem;}
+/* .type-cormorantsc-ibmplexsanscon ul, .type-cormorantsc-ibmplexsanscon ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-cormorantsc-ibmplexsanscon .display { margin-bottom: 0.5rem; }
 .type-cormorantsc-ibmplexsanscon .display h1 {

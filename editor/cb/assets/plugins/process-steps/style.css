@@ -1,0 +1,162 @@
+/* ===== Process Steps plugin =====
+   All selectors scoped under [data-cb-type="process-steps"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="process-steps"] {
+    display: block;
+    --ps-accent: #3b82f6;
+    --ps-num-text: #ffffff;
+    --ps-line: #e5e7eb;
+    --ps-surface: #ffffff;
+    --ps-title: #111827;
+    --ps-desc: #6b7280;
+    --ps-num-size: 44px;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="process-steps"] {
+    --ps-line: #374151;
+    --ps-surface: #111827;
+    --ps-title: #f3f4f6;
+    --ps-desc: #9ca3af;
+}
+*/
+
+[data-cb-type="process-steps"] .ps-list {
+    display: grid;        /* horizontal (default); mount sets the column count */
+    gap: 28px 20px;
+}
+
+[data-cb-type="process-steps"] .ps-step {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 14px;
+}
+
+/* Numbered circle — sits above the connector line */
+[data-cb-type="process-steps"] .ps-num {
+    position: relative;
+    z-index: 1;
+    flex: none;
+    width: var(--ps-num-size);
+    height: var(--ps-num-size);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ps-accent);
+    color: var(--ps-num-text);
+    font-size: calc(var(--ps-num-size) * 0.42);
+    font-weight: 700;
+    line-height: 1;
+    /* ring in the surface color so the connector never touches the circle edge */
+    box-shadow: 0 0 0 4px var(--ps-surface);
+}
+
+[data-cb-type="process-steps"] .ps-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ps-title);
+}
+
+[data-cb-type="process-steps"] .ps-desc {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--ps-desc);
+}
+
+/* ── Horizontal connector: a line between adjacent numbers ─────────────────
+   Scoped to :not(vertical) so it never bleeds into the vertical layout. */
+[data-cb-type="process-steps"]:not([data-cb-layout="vertical"])[data-cb-connector="true"] .ps-step:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: calc(var(--ps-num-size) / 2);
+    right: 50%;
+    width: 100%;
+    height: 2px;
+    background: var(--ps-line);
+    z-index: 0;
+}
+
+/* ── Vertical layout ─────────────────────────────────────────────────────── */
+[data-cb-type="process-steps"][data-cb-layout="vertical"] .ps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+[data-cb-type="process-steps"][data-cb-layout="vertical"] .ps-step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 18px;
+    padding-bottom: 28px;
+}
+
+[data-cb-type="process-steps"][data-cb-layout="vertical"] .ps-step:last-child {
+    padding-bottom: 0;
+}
+
+/* Vertical connector: a line down from each number to the next */
+[data-cb-type="process-steps"][data-cb-layout="vertical"][data-cb-connector="true"] .ps-step:not(:last-child)::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--ps-num-size) / 2 - 1px);
+    top: var(--ps-num-size);
+    bottom: 0;
+    width: 2px;
+    background: var(--ps-line);
+    z-index: 0;
+}
+
+[data-cb-type="process-steps"][data-cb-layout="vertical"] .ps-body {
+    padding-top: 4px;
+}
+
+/* ── Responsive: horizontal collapses to a single stacked column ───────────
+   Scoped to :not(vertical) — the vertical layout is already stacked and owns
+   its own connector at every width, so it must stay untouched here. */
+@media (max-width: 640px) {
+    [data-cb-type="process-steps"]:not([data-cb-layout="vertical"]) .ps-list {
+        display: flex !important;   /* override the inline grid-template-columns from mount */
+        flex-direction: column;
+        gap: 0;
+    }
+    [data-cb-type="process-steps"]:not([data-cb-layout="vertical"]) .ps-step {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        gap: 18px;
+        padding-bottom: 28px;
+    }
+    [data-cb-type="process-steps"]:not([data-cb-layout="vertical"]) .ps-step:last-child {
+        padding-bottom: 0;
+    }
+    /* swap the horizontal connector for a vertical one */
+    [data-cb-type="process-steps"]:not([data-cb-layout="vertical"])[data-cb-connector="true"] .ps-step:not(:first-child)::before {
+        display: none;
+    }
+    [data-cb-type="process-steps"]:not([data-cb-layout="vertical"])[data-cb-connector="true"] .ps-step:not(:last-child)::after {
+        content: "";
+        position: absolute;
+        left: calc(var(--ps-num-size) / 2 - 1px);
+        top: var(--ps-num-size);
+        bottom: 0;
+        width: 2px;
+        background: var(--ps-line);
+        z-index: 0;
+    }
+}

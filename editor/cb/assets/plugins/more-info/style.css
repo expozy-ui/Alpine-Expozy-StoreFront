@@ -1,0 +1,300 @@
+/* ===== More Info plugin =====
+   Two surfaces:
+   1. The trigger — a span[data-cb-type="more-info"], scoped and variable-driven.
+   2. The popover — created by mount() and appended to <body>, so its classes
+      (.more-info-popover / .popover-content) are necessarily GLOBAL, not scoped
+      under the block. They're namespaced to keep leak risk low.
+   Colors run through CSS variables so dark mode is a variable override. */
+
+/* ── Trigger base ────────────────────────────────────────────────────────── */
+[data-cb-type="more-info"] {
+    position: relative;
+    cursor: help;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    -webkit-user-select: none;
+    user-select: none;
+    --mi-info: #2563eb;
+    --mi-info-hover: #1d4ed8;
+    --mi-citation: #059669;
+    --mi-citation-hover: #047857;
+    --mi-highlight-bg: #fef08a;
+    --mi-highlight-bg-hover: #fde047;
+    --mi-highlight-text: #854d0e;
+    --mi-highlight-text-hover: #713f12;
+    --mi-focus: #3b82f6;
+}
+
+[data-cb-type="more-info"]:focus {
+    outline: 2px solid var(--mi-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ── Style variants ──────────────────────────────────────────────────────── */
+
+/* Info (blue) */
+[data-cb-type="more-info"].style-info {
+    color: var(--mi-info);
+    border-bottom: 1px dotted var(--mi-info);
+    font-weight: 500;
+}
+[data-cb-type="more-info"].style-info::after {
+    content: "ⓘ";
+    display: inline-block;
+    font-size: 0.85em;
+    margin-left: 2px;
+    opacity: 0.7;
+    font-style: normal;
+}
+[data-cb-type="more-info"].style-info:hover {
+    color: var(--mi-info-hover);
+    border-bottom-color: var(--mi-info-hover);
+}
+
+/* Citation (superscript) */
+[data-cb-type="more-info"].style-citation {
+    color: var(--mi-citation);
+    font-weight: 500;
+    position: relative;
+    font-size: 0.8em;
+    vertical-align: super;
+    text-decoration: none;
+}
+[data-cb-type="more-info"].style-citation::before {
+    content: "[";
+    font-weight: 600;
+}
+[data-cb-type="more-info"].style-citation::after {
+    content: "]";
+    font-weight: 600;
+}
+[data-cb-type="more-info"].style-citation:hover {
+    color: var(--mi-citation-hover);
+    text-decoration: underline;
+}
+
+/* Highlight (yellow) */
+[data-cb-type="more-info"].style-highlight {
+    background: linear-gradient(180deg, transparent 60%, var(--mi-highlight-bg) 60%);
+    color: var(--mi-highlight-text);
+    padding: 2px 4px;
+    border-radius: 2px;
+    font-weight: 500;
+    position: relative;
+}
+[data-cb-type="more-info"].style-highlight::before {
+    content: "✨";
+    font-size: 0.75em;
+    margin-right: 2px;
+    opacity: 0.8;
+}
+[data-cb-type="more-info"].style-highlight:hover {
+    background: linear-gradient(180deg, transparent 60%, var(--mi-highlight-bg-hover) 60%);
+    color: var(--mi-highlight-text-hover);
+}
+
+/* ── Popover (body-appended; global by necessity) ────────────────────────── */
+.more-info-popover {
+    position: absolute;
+    z-index: 10000;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    pointer-events: none;
+    --mi-pop-bg: #ffffff;
+    --mi-pop-border: #e5e7eb;
+    --mi-pop-text: #374151;
+    --mi-pop-strong: #111827;
+    --mi-pop-link: #2563eb;
+    --mi-pop-link-hover: #1d4ed8;
+    --mi-pop-code-bg: #f3f4f6;
+    --mi-pop-code-text: #dc2626;
+    --mi-pop-scroll-track: #f3f4f6;
+    --mi-pop-scroll-thumb: #d1d5db;
+    --mi-pop-scroll-thumb-hover: #9ca3af;
+}
+.more-info-popover.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+.more-info-popover.position-bottom {
+    transform: translateY(4px);
+}
+.more-info-popover.position-bottom.visible {
+    transform: translateY(0);
+}
+
+.popover-content {
+    background: var(--mi-pop-bg);
+    border: 1px solid var(--mi-pop-border);
+    border-radius: 8px;
+    padding: 14px 16px;
+    box-shadow:
+        0 4px 6px -1px rgba(0, 0, 0, 0.1),
+        0 2px 4px -1px rgba(0, 0, 0, 0.06),
+        0 0 0 1px rgba(0, 0, 0, 0.05);
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--mi-pop-text);
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.popover-arrow {
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: var(--mi-pop-bg);
+    border: 1px solid var(--mi-pop-border);
+    transform: rotate(45deg);
+    z-index: -1;
+}
+.more-info-popover.position-top .popover-arrow {
+    bottom: -7px;
+    border-top: none;
+    border-left: none;
+}
+.more-info-popover.position-bottom .popover-arrow {
+    top: -7px;
+    border-bottom: none;
+    border-right: none;
+}
+
+/* Popover content formatting */
+.popover-content p { margin: 0 0 10px 0; }
+.popover-content p:last-child { margin-bottom: 0; }
+.popover-content strong,
+.popover-content b {
+    font-weight: 600;
+    color: var(--mi-pop-strong);
+}
+.popover-content em,
+.popover-content i { font-style: italic; }
+.popover-content a {
+    color: var(--mi-pop-link);
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+.popover-content a:hover { color: var(--mi-pop-link-hover); }
+.popover-content ul,
+.popover-content ol {
+    margin: 8px 0;
+    padding-left: 24px;
+}
+.popover-content li { margin: 4px 0; }
+.popover-content code {
+    background: var(--mi-pop-code-bg);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.9em;
+    color: var(--mi-pop-code-text);
+}
+.popover-content hr {
+    border: none;
+    border-top: 1px solid var(--mi-pop-border);
+    margin: 12px 0;
+}
+
+/* Custom scrollbar */
+.popover-content::-webkit-scrollbar { width: 6px; }
+.popover-content::-webkit-scrollbar-track {
+    background: var(--mi-pop-scroll-track);
+    border-radius: 3px;
+}
+.popover-content::-webkit-scrollbar-thumb {
+    background: var(--mi-pop-scroll-thumb);
+    border-radius: 3px;
+}
+.popover-content::-webkit-scrollbar-thumb:hover {
+    background: var(--mi-pop-scroll-thumb-hover);
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Both surfaces are variable-driven, so redefine the palette below under whatever
+   trigger your site uses. NOTE the popover block targets `.dark .more-info-popover`
+   (not scoped under the block) because the popover lives at <body> level.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="more-info"] {
+    --mi-info: #60a5fa;
+    --mi-info-hover: #93c5fd;
+    --mi-citation: #34d399;
+    --mi-citation-hover: #6ee7b7;
+    --mi-highlight-bg: #854d0e;
+    --mi-highlight-bg-hover: #a16207;
+    --mi-highlight-text: #fef08a;
+    --mi-highlight-text-hover: #fde047;
+}
+.dark .more-info-popover {
+    --mi-pop-bg: #1f2937;
+    --mi-pop-border: #374151;
+    --mi-pop-text: #d1d5db;
+    --mi-pop-strong: #f9fafb;
+    --mi-pop-link: #60a5fa;
+    --mi-pop-link-hover: #93c5fd;
+    --mi-pop-code-bg: #374151;
+    --mi-pop-code-text: #fca5a5;
+    --mi-pop-scroll-track: #374151;
+    --mi-pop-scroll-thumb: #4b5563;
+    --mi-pop-scroll-thumb-hover: #6b7280;
+}
+*/
+
+/* ── Responsive ──────────────────────────────────────────────────────────── */
+@media (max-width: 768px) {
+    .more-info-popover { max-width: calc(100vw - 40px) !important; }
+    .popover-content {
+        font-size: 13px;
+        padding: 12px 14px;
+        max-height: 300px;
+    }
+    [data-cb-type="more-info"] {
+        padding: 4px;
+        margin: -4px;
+    }
+}
+@media (max-width: 480px) {
+    .more-info-popover { max-width: calc(100vw - 24px) !important; }
+    .popover-content {
+        font-size: 12px;
+        padding: 10px 12px;
+    }
+}
+
+/* ── Accessibility ───────────────────────────────────────────────────────── */
+@media (prefers-contrast: high) {
+    [data-cb-type="more-info"] {
+        text-decoration: underline;
+        text-decoration-style: dotted;
+    }
+    .popover-content { border-width: 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="more-info"],
+    .more-info-popover,
+    .popover-content a { transition: none; }
+}
+[data-cb-type="more-info"]:focus-visible {
+    outline: 2px solid var(--mi-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* Print — show the content inline */
+@media print {
+    [data-cb-type="more-info"]::after {
+        content: " (" attr(data-cb-content) ")";
+        font-size: 0.9em;
+        color: #666;
+    }
+    .more-info-popover { display: none; }
+}

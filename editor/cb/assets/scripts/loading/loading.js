@@ -8,7 +8,6 @@ var Loading = (function () {
             };
             this.opts = Object.assign(this, defaults, opts);
 
-
             let showProgress = false;
             const NAMESPACE = 'builderstart';
 
@@ -75,30 +74,28 @@ var Loading = (function () {
             setTimeout(()=>{
                 let progressContainer = document.querySelector('#progress-container');
                 if(progressContainer) progressContainer.style.display = '';
-            }, 2000);
+            }, 0);
 
             window.onload = function () {
                 let loadingStatus = document.querySelector('.page-loading');
                 if(loadingStatus) loadingStatus.parentNode.removeChild(loadingStatus);
             };
         
-            document.addEventListener("DOMContentLoaded", function () {
-                var progressBar = document.getElementById("progress-bar");
-                var maxProgress = 100;
-                var currentProgress = 0;
-        
-                var interval = setInterval(function () {
-                currentProgress += 1;
-                progressBar.style.width = (currentProgress / maxProgress) * 100 + "%";
-        
-                if (currentProgress >= maxProgress) {
-                    clearInterval(interval);
+            var progressBar = document.getElementById("progress-bar");
+            var maxProgress = 100;
+            var currentProgress = 0;
+    
+            var interval = setInterval(function () {
+            currentProgress += 1;
+            progressBar.style.width = (currentProgress / maxProgress) * 100 + "%";
+    
+            if (currentProgress >= maxProgress) {
+                clearInterval(interval);
 
-                    let loadingStatus = document.querySelector('.page-loading');
-                    if(loadingStatus) loadingStatus.parentNode.removeChild(loadingStatus);
-                }
-                }, 20);
-            });
+                let loadingStatus = document.querySelector('.page-loading');
+                if(loadingStatus) loadingStatus.parentNode.removeChild(loadingStatus);
+            }
+            }, 200);
         }
       }
 

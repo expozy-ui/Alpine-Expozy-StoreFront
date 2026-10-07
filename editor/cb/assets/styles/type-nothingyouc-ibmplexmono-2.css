@@ -14,12 +14,14 @@
     letter-spacing: 2px;
 }        
 
-.type-nothingyouc-ibmplexmono-2 h1 {font-size: 3.25rem;}
-.type-nothingyouc-ibmplexmono-2 h2 {font-size: 1.5rem;}
-.type-nothingyouc-ibmplexmono-2 h3 {font-size: 1.2rem;}
-.type-nothingyouc-ibmplexmono-2 h4 {font-size: 1rem;}
-.type-nothingyouc-ibmplexmono-2 h5 {font-size: 0.9rem;}
-.type-nothingyouc-ibmplexmono-2 h6 {font-size: 0.8rem;}
+.type-nothingyouc-ibmplexmono-2 h1 {font-size: 3.25rem; margin: 1.2rem 0 1.2rem; }
+.type-nothingyouc-ibmplexmono-2 h2 {font-size: 1.5rem; margin: 1rem 0 1rem; }
+.type-nothingyouc-ibmplexmono-2 h3 {font-size: 1.2rem; margin: 1rem 0 1rem; }
+.type-nothingyouc-ibmplexmono-2 h4 {font-size: 1rem; margin: 0.5rem 0 0.5rem; }
+.type-nothingyouc-ibmplexmono-2 h5 {font-size: 0.9rem; margin: 0.5rem 0 0.5rem; }
+.type-nothingyouc-ibmplexmono-2 h6 {font-size: 0.8rem; margin: 0.5rem 0 0.5rem; }
+.type-nothingyouc-ibmplexmono-2 p {margin:0.8rem 0 0.8rem;}
+/* .type-nothingyouc-ibmplexmono-2 ul, .type-nothingyouc-ibmplexmono-2 ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-nothingyouc-ibmplexmono-2 .display { margin-bottom: 0.5rem; }
 .type-nothingyouc-ibmplexmono-2 .display h1 {

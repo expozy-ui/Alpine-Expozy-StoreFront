@@ -1,0 +1,79 @@
+/* ==========================================================================
+   RETRO TERMINAL — Space Mono
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+
+.type-retro-terminal {
+    font-family: 'Space Mono', monospace;
+    font-size: 1rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-retro-terminal h1,
+.type-retro-terminal h2,
+.type-retro-terminal h3,
+.type-retro-terminal h4,
+.type-retro-terminal h5,
+.type-retro-terminal h6 {
+    font-family: 'Space Mono', monospace;
+    font-weight: 600;
+    line-height: 1.17;
+    margin-top: 0;
+    letter-spacing: -0.02em;
+}
+
+.type-retro-terminal h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-retro-terminal h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-retro-terminal h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-retro-terminal h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-retro-terminal h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-retro-terminal h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-retro-terminal p {
+    margin: 0.75rem 0;
+}
+
+.type-retro-terminal .display {
+    margin-bottom: 2rem;
+}
+
+.type-retro-terminal .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.5rem);
+    line-height: 1.17;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-retro-terminal .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.15rem);
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

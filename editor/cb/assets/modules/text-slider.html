@@ -461,7 +461,7 @@
                     btnArrowColor.setAttribute('data-color', color); // save color value for later read when needed
 
 
-                }, bgcolor);
+                }, bgcolor, ()=>{}, btnArrowColor);
             });
 
             var btnDotsColor = document.querySelector('#btnDotsColor');
@@ -476,7 +476,7 @@
                     btnDotsColor.setAttribute('data-color', color); // save color value for later read when needed
 
 
-                }, bgcolor);
+                }, bgcolor, ()=>{}, btnDotsColor);
             });
 
             applyBehaviour();
@@ -595,6 +595,11 @@
             var dotsColor = btnDotsColor.getAttribute('data-color')?btnDotsColor.getAttribute('data-color'):'';
 
             var items = document.querySelectorAll('#imageList > div');
+            if(items.length<2) {
+                return {
+                    error: 'You need at least two slides.'
+                };
+            }
             items.forEach(function(item){
 
                 htmlDots += `<button class="glide__bullet" data-glide-dir="=${i}"></button>`;
@@ -743,38 +748,44 @@
                     let swap = true;
                     if(myslider.closest('.is-edit')) swap=false;
 
-                    let _{id} = new Glide("#{id}", {
-                        type: "${document.querySelector("#inpType").value}",
-                        autoplay: ${document.querySelector("#inpAutoplay").value},
-                        animationDuration: ${document.querySelector("#inpDuration").value},
-                        gap: ${(gap===''?0:gap)},
-                        perView: ${perView},
-                        hoverpause: ${document.querySelector("#chkHoverPause").checked},
-                        arrow: ${document.querySelector("#chkArrow").checked},
-                        dots: ${document.querySelector("#chkDots").checked},
-                        breakpoints: {
-                            ${(perView===8? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
-                            ${(perView===7? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
-                            ${(perView===6? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
-                            ${(perView===5? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
-                            ${(perView===4? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
-                            ${(perView===3? '970: { perView: 2 },':'')}
-                            760: { perView: 1, gap: 0 }
-                        },
-                        swipeThreshold: swap, dragThreshold: swap
-                    });
+                    setTimeout(()=>{
 
-                    _{id}.mount();
+                        let _{id} = new Glide("#{id}", {
+                            type: "${document.querySelector("#inpType").value}",
+                            autoplay: ${document.querySelector("#inpAutoplay").value},
+                            animationDuration: ${document.querySelector("#inpDuration").value},
+                            gap: ${(gap===''?0:gap)},
+                            perView: ${perView},
+                            hoverpause: ${document.querySelector("#chkHoverPause").checked},
+                            arrow: ${document.querySelector("#chkArrow").checked},
+                            dots: ${document.querySelector("#chkDots").checked},
+                            breakpoints: {
+                                ${(perView===8? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
+                                ${(perView===7? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
+                                ${(perView===6? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
+                                ${(perView===5? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
+                                ${(perView===4? '1180: { perView: 3 }, 970: { perView: 2 },':'')}
+                                ${(perView===3? '970: { perView: 2 },':'')}
+                                760: { perView: 1, gap: 0 }
+                            },
+                            swipeThreshold: swap, dragThreshold: swap
+                        });
 
-                    _cleanClonedItems();
+                        _{id}.mount();
+
+                        _cleanClonedItems();
+                        
+                    }, 400);
 
                 });
 
                 function _cleanClonedItems() {
                     var clones = document.querySelectorAll(".glide__slide--clone");
                     Array.prototype.forEach.call(clones, function(clone){
-                        clone.removeAttribute("data-subblock");
-                        clone.childNodes[0].removeAttribute("data-subblock");
+                        try {
+                            clone.removeAttribute("data-subblock");
+                            clone.childNodes[0].removeAttribute("data-subblock");
+                        } catch(e) {}
                     });
                 }
             </scr${''}ipt>

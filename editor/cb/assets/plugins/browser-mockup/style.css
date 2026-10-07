@@ -1,0 +1,133 @@
+/* Browser Mockup Container.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="browser-mockup"] {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 120px;
+    position: relative;
+    --bm-window-bg: #ffffff;
+    --bm-window-shadow:
+        0 50px 100px rgba(0, 0, 0, 0.15),
+        0 20px 60px rgba(99, 102, 241, 0.1),
+        inset 0 0 0 1px rgba(0, 0, 0, 0.05);
+    --bm-header-bg: #f8fafc;
+    --bm-header-border: #e2e8f0;
+    --bm-screenshot-bg: #f8fafc;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses — a class, [data-theme="dark"],
+   @media (prefers-color-scheme: dark), etc. Uncomment and point the selector at
+   your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="browser-mockup"] {
+    --bm-window-bg: #1f2937;
+    --bm-window-shadow:
+        0 50px 100px rgba(0, 0, 0, 0.5),
+        0 20px 60px rgba(99, 102, 241, 0.15),
+        inset 0 0 0 1px rgba(255, 255, 255, 0.05);
+    --bm-header-bg: #111827;
+    --bm-header-border: #374151;
+    --bm-screenshot-bg: #111827;
+}
+*/
+
+[data-cb-type="browser-mockup"] .app-showcase {
+    perspective: 2000px;
+    position: relative;
+    animation: fadeInScale 1.4s ease-out;
+}
+
+[data-cb-type="browser-mockup"] .app-container {
+    position: relative;
+    transform: rotateX(8deg) rotateY(-8deg);
+    transition: transform 0.6s ease;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+[data-cb-type="browser-mockup"] .app-showcase:hover .app-container {
+    transform: rotateX(4deg) rotateY(-4deg) scale(1.02);
+}
+
+[data-cb-type="browser-mockup"] .app-window {
+    background: var(--bm-window-bg);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: var(--bm-window-shadow);
+}
+
+[data-cb-type="browser-mockup"] .window-header {
+    background: var(--bm-header-bg);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-bottom: 1px solid var(--bm-header-border);
+}
+
+[data-cb-type="browser-mockup"] .window-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+[data-cb-type="browser-mockup"] .window-dot:nth-child(1) {
+    background: #ef4444;
+}
+
+[data-cb-type="browser-mockup"] .window-dot:nth-child(2) {
+    background: #f59e0b;
+}
+
+[data-cb-type="browser-mockup"] .window-dot:nth-child(3) {
+    background: #10b981;
+}
+
+[data-cb-type="browser-mockup"] .app-screenshot {
+    width: 100%;
+    background: var(--bm-screenshot-bg);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-cb-type="browser-mockup"] .screenshot-image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+/* Animation */
+@keyframes fadeInScale {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    [data-cb-type="browser-mockup"] {
+        padding: 40px 20px 60px;
+    }
+
+    [data-cb-type="browser-mockup"] .app-container {
+        transform: rotateX(4deg) rotateY(0deg);
+    }
+
+    [data-cb-type="browser-mockup"] .app-showcase:hover .app-container {
+        transform: rotateX(2deg) rotateY(0deg) scale(1.01);
+    }
+}

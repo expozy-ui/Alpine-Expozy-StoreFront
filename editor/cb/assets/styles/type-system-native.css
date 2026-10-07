@@ -1,0 +1,78 @@
+/* ==========================================================================
+   19. SYSTEM NATIVE — system-ui
+   ========================================================================== */
+
+.type-system-native {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.type-system-native h1,
+.type-system-native h2,
+.type-system-native h3,
+.type-system-native h4,
+.type-system-native h5,
+.type-system-native h6 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-top: 0;
+    letter-spacing: -0.02em;
+}
+
+.type-system-native h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin-bottom: 1.5rem;
+}
+
+.type-system-native h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin-bottom: 1.25rem;
+}
+
+.type-system-native h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin-bottom: 1rem;
+}
+
+.type-system-native h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin-bottom: 0.875rem;
+}
+
+.type-system-native h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin-bottom: 0.75rem;
+}
+
+.type-system-native h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin-bottom: 0.5rem;
+}
+
+.type-system-native p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.type-system-native .display {
+    margin-bottom: 2rem;
+}
+
+.type-system-native .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.5rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.type-system-native .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

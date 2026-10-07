@@ -1,0 +1,79 @@
+/* ==========================================================================
+   13. BRUTALIST REFINED — Archivo Black + Libre Franklin
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Libre+Franklin:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&display=swap');
+
+.type-brutalist-refined {
+    font-family: 'Libre Franklin', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-brutalist-refined h1,
+.type-brutalist-refined h2,
+.type-brutalist-refined h3,
+.type-brutalist-refined h4,
+.type-brutalist-refined h5,
+.type-brutalist-refined h6 {
+    font-family: 'Archivo Black', sans-serif;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    /* text-transform: uppercase; */
+}
+
+.type-brutalist-refined h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-brutalist-refined h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-brutalist-refined h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-brutalist-refined h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-brutalist-refined h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-brutalist-refined h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-brutalist-refined p {
+    margin: 0.75rem 0;
+}
+
+.type-brutalist-refined .display {
+    margin-bottom: 2rem;
+}
+
+.type-brutalist-refined .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.15;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem;
+}
+
+.type-brutalist-refined .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

@@ -1,0 +1,95 @@
+/* ===== Countdown Timer plugin =====
+   All selectors scoped under [data-cb-type="countdown-timer"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="countdown-timer"] {
+    position: relative;
+    width: 100%;
+    --cd-accent: #3b82f6;
+    --cd-surface: #f3f4f6;       /* unit box background */
+    --cd-text: #1a1a1a;
+    --cd-muted: #6b7280;
+    --cd-value-size: 42px;       /* medium (see size overrides) */
+}
+
+[data-cb-type="countdown-timer"][data-cb-size="small"] { --cd-value-size: 30px; }
+[data-cb-type="countdown-timer"][data-cb-size="large"] { --cd-value-size: 60px; }
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="countdown-timer"] {
+    --cd-surface: #1e1e1e;
+    --cd-text: #f3f4f6;
+    --cd-muted: #9ca3af;
+}
+*/
+
+[data-cb-type="countdown-timer"] .cd-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+}
+
+[data-cb-type="countdown-timer"] .cd-unit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    min-width: 76px;
+    padding: 16px 14px;
+    background: var(--cd-surface);
+    border-radius: 12px;
+}
+
+[data-cb-type="countdown-timer"] .cd-value {
+    font-size: var(--cd-value-size);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--cd-accent);
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+}
+
+[data-cb-type="countdown-timer"] .cd-label {
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--cd-muted);
+}
+
+/* Expired message — hidden until the timer reaches zero */
+[data-cb-type="countdown-timer"] .cd-expired {
+    display: none;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--cd-text);
+}
+
+[data-cb-type="countdown-timer"].is-expired .cd-grid { display: none; }
+[data-cb-type="countdown-timer"].is-expired .cd-expired { display: block; }
+
+/* Responsive */
+@media (max-width: 480px) {
+    [data-cb-type="countdown-timer"] .cd-unit {
+        min-width: 64px;
+        padding: 12px 10px;
+    }
+    [data-cb-type="countdown-timer"] { --cd-value-size: 34px; }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+    [data-cb-type="countdown-timer"] .cd-unit {
+        border: 1px solid currentColor;
+    }
+}

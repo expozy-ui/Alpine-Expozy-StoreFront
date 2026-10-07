@@ -9,16 +9,19 @@
     font-weight: 200;
 }
 .type-pinyonscript-firasans h1, .type-pinyonscript-firasans h2, .type-pinyonscript-firasans h3, .type-pinyonscript-firasans h4, .type-pinyonscript-firasans h5, .type-pinyonscript-firasans h6 {
+    font-family: 'Fira Sans', sans-serif;
     font-weight: 200;
     line-height: 1.2;
 }        
 
-.type-pinyonscript-firasans h1 {font-size: 3.2rem;}
-.type-pinyonscript-firasans h2 {font-size: 2.5rem;}
-.type-pinyonscript-firasans h3 {font-size: 1.9rem;}
-.type-pinyonscript-firasans h4 {font-size: 1.6rem;}
-.type-pinyonscript-firasans h5 {font-size: 1.4rem;}
-.type-pinyonscript-firasans h6 {font-size: 1.14rem;}
+.type-pinyonscript-firasans h1 {font-size: 3.2rem; margin: 1.2rem 0 1.2rem; }
+.type-pinyonscript-firasans h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-pinyonscript-firasans h3 {font-size: 1.9rem; margin: 1rem 0 1rem; }
+.type-pinyonscript-firasans h4 {font-size: 1.6rem; margin: 0.5rem 0 0.5rem; }
+.type-pinyonscript-firasans h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-pinyonscript-firasans h6 {font-size: 1.14rem; margin: 0.5rem 0 0.5rem; }
+.type-pinyonscript-firasans p {margin:0.8rem 0 0.8rem;}
+/* .type-pinyonscript-firasans ul, .type-pinyonscript-firasans ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-pinyonscript-firasans .display { margin-bottom: 0.5rem; }
 .type-pinyonscript-firasans .display h1 {

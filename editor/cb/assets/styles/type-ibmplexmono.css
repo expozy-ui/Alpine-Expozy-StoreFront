@@ -7,17 +7,20 @@
     font-weight: 300;
 }
 .type-ibmplexmono h1, .type-ibmplexmono h2, .type-ibmplexmono h3, .type-ibmplexmono h4, .type-ibmplexmono h5, .type-ibmplexmono h6 {
+    font-family: 'IBM Plex Mono', monospace;
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 1px;
 }        
 
-.type-ibmplexmono h1 {font-size: 3rem;}
-.type-ibmplexmono h2 {font-size: 2.5rem;}
-.type-ibmplexmono h3 {font-size: 2.1rem;}
-.type-ibmplexmono h4 {font-size: 1.8rem;}
-.type-ibmplexmono h5 {font-size: 1.4rem;}
-.type-ibmplexmono h6 {font-size: 1.06rem;}
+.type-ibmplexmono h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-ibmplexmono h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-ibmplexmono h3 {font-size: 2.1rem; margin: 1rem 0 1rem; }
+.type-ibmplexmono h4 {font-size: 1.8rem; margin: 0.5rem 0 0.5rem; }
+.type-ibmplexmono h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-ibmplexmono h6 {font-size: 1.06rem; margin: 0.5rem 0 0.5rem; }
+.type-ibmplexmono p {margin:0.8rem 0 0.8rem;}
+/* .type-ibmplexmono ul, .type-ibmplexmono ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-ibmplexmono .display { margin-bottom: 0.5rem; }
 .type-ibmplexmono .display h1 {

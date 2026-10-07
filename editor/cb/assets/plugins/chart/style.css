@@ -1,0 +1,214 @@
+/* ===== Chart plugin =====
+   All selectors scoped under [data-cb-type="chart"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="chart"] {
+    display: block;
+    --chart-accent: #3b82f6;
+    --chart-h: 320px;
+    --chart-text: #111827;
+    --chart-muted: #6b7280;
+    --chart-grid: #e5e7eb;
+    --chart-track: #eceef1;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses. Uncomment and point the selector at your
+   site's theme system. Bar/line use the accent color you configured; donut
+   slice colors come from a fixed palette.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="chart"] {
+    --chart-text: #f3f4f6;
+    --chart-muted: #9ca3af;
+    --chart-grid: #374151;
+    --chart-track: #374151;
+}
+*/
+
+/* Data list is the accessible source of truth; kept out of sight but readable
+   by assistive tech (not display:none). */
+[data-cb-type="chart"] .chart-data {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* ── Plot shared ─────────────────────────────────────────────────────────── */
+[data-cb-type="chart"] .chart-plot {
+    position: relative;
+    height: var(--chart-h);
+    box-sizing: border-box;
+}
+
+[data-cb-type="chart"] .chart-plot.chart-grid {
+    background-image: repeating-linear-gradient(to top, var(--chart-grid) 0, var(--chart-grid) 1px, transparent 1px, transparent 25%);
+}
+
+[data-cb-type="chart"] .chart-xlabels {
+    display: flex;
+    margin-top: 8px;
+}
+[data-cb-type="chart"] .chart-xlabels span {
+    flex: 1;
+    min-width: 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--chart-muted);
+    padding: 0 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* ── Bar ─────────────────────────────────────────────────────────────────── */
+[data-cb-type="chart"] .chart-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    height: 100%;
+}
+[data-cb-type="chart"] .chart-col {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 6px;
+}
+[data-cb-type="chart"] .chart-bar {
+    width: 100%;
+    max-width: 64px;
+    background: var(--chart-accent);
+    border-radius: 6px 6px 0 0;
+    transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+[data-cb-type="chart"] .chart-val {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--chart-text);
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Line ────────────────────────────────────────────────────────────────── */
+[data-cb-type="chart"] .chart-line {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+[data-cb-type="chart"] .chart-stroke {
+    fill: none;
+    stroke: var(--chart-accent);
+    stroke-width: 2.5;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+}
+[data-cb-type="chart"] .chart-area {
+    fill: var(--chart-accent);
+    opacity: 0.12;
+    stroke: none;
+}
+[data-cb-type="chart"] .chart-points {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+[data-cb-type="chart"] .chart-dot {
+    position: absolute;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2.5px solid var(--chart-accent);
+    transform: translate(-50%, -50%);
+}
+[data-cb-type="chart"] .chart-pt-val {
+    position: absolute;
+    transform: translate(-50%, -180%);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--chart-text);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+}
+
+/* ── Donut ───────────────────────────────────────────────────────────────── */
+[data-cb-type="chart"] .chart-donut {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-wrap: wrap;
+}
+[data-cb-type="chart"] .chart-donut-ring {
+    position: relative;
+    width: min(var(--chart-h), 260px);
+    aspect-ratio: 1;
+    flex: none;
+}
+[data-cb-type="chart"] .chart-donut-ring svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+[data-cb-type="chart"] .chart-donut-track { stroke: var(--chart-track); }
+[data-cb-type="chart"] .chart-seg {
+    transition: stroke-dasharray 0.4s ease;
+}
+[data-cb-type="chart"] .chart-donut-center {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.2;
+}
+[data-cb-type="chart"] .chart-donut-center b {
+    font-size: 24px;
+    color: var(--chart-text);
+    font-variant-numeric: tabular-nums;
+}
+[data-cb-type="chart"] .chart-donut-center span {
+    font-size: 12px;
+    color: var(--chart-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+[data-cb-type="chart"] .chart-legend {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 160px;
+}
+[data-cb-type="chart"] .chart-legend li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    color: var(--chart-text);
+}
+[data-cb-type="chart"] .chart-swatch {
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    flex: none;
+}
+[data-cb-type="chart"] .chart-legend-label { flex: 1; min-width: 0; }
+[data-cb-type="chart"] .chart-legend-val {
+    color: var(--chart-muted);
+    font-variant-numeric: tabular-nums;
+}

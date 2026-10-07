@@ -1,4 +1,5 @@
-﻿@import url("../ionicons/css/ionicons.min.css"); 
+﻿/* @import url("../ionicons/css/ionicons.min.css");  */
+@import url("https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.0/css/ionicons.min.css");
 
 /* @import url("../icons/bootstrap-icons.min.css");  */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"); 
@@ -18,11 +19,13 @@
     .display p { font-size: 1.1rem; }
 }
 
-a {color: #000;} 
+a {color: inherit;} 
+a[role="button"] i { color:inherit; }
+.is-dark-text a[role="button"] i, .is-light-text a[role="button"] i, a[role="button"] i { color:inherit; }
 hr {background:none;background-color: transparent;border:none;border-top: rgba(0, 0, 0, 0.18) 1px solid;margin: 30px 0 25px;padding: 5px;}    
 img {max-width:100%;}
 figure {margin:0}
-table td {padding:12px;}
+table td, table th {padding:12px;}
 pre {
     font-family: courier;
     font-size: 1rem;
@@ -214,10 +217,9 @@ a {
 }
 .is-card-content-centered { display:table-cell;vertical-align:middle;text-align:center; }
 .max-390 { max-width:390px;margin:0 auto; }
-.shadow-1 { /* card */
-    -webkit-box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24); 
-    -moz-box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24); 
-    box-shadow: 0 1px 3px rgba(0,0,0, 0.12), 0 1px 2px rgba(0,0,0, 0.24); 
+.box-border	{ box-sizing: border-box; }
+.shadow-1 {
+    box-shadow: 0 0 #0000, 0 0 #0000, 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 .shadow-2 { /* screenshot */
     -webkit-box-shadow: 0 30px 50px rgba(0, 0, 0, 0.15);
@@ -257,6 +259,10 @@ img.bordered {border: #ccc 1px solid;}
     .quote > p {margin-left:20px !important;font-size: 1.2em;}
 }
 
+.left .is-social { justify-content: flex-start }
+.center .is-social { justify-content: center }
+.right .is-social { justify-content: flex-end }
+
 .is-social { display: flex; gap: 2.2rem; margin:1.2rem 0 0.8rem; }
 .is-social a > i {font-size: 1.2em;}
 .is-social.text-left { justify-content: flex-start }
@@ -279,39 +285,92 @@ img.bordered {border: #ccc 1px solid;}
 .height-260 {height:260px;flex:none;}
 .height-280 {height:280px;flex:none;}
 .height-300 {height:300px;flex:none;}
+
 @media (min-width: 1921px) {
-    .height-20 {height:2.5vh}
-    .height-40 {height:5vh}
-    .height-60 {height:7.5vh}
-    .height-80 {height:10vh}
-    .height-100 {height:12.5vh}
-    .height-120 {height:15vh}
-    .height-140 {height:17.5vh}
-    .height-160 {height:20vh}
-    .height-180 {height:22.5vh}
-    .height-200 {height:25vh}
-    .height-220 {height:27.5vh}
-    .height-240 {height:30vh}
-    .height-260 {height:32.5vh}
-    .height-280 {height:35vh}
-    .height-300 {height:37.5vh}
+    .v2:not(.v3) .height-20 {height:2.5vh}
+    .v2:not(.v3) .height-40 {height:5vh}
+    .v2:not(.v3) .height-60 {height:7.5vh}
+    .v2:not(.v3) .height-80 {height:10vh}
+    .v2:not(.v3) .height-100 {height:12.5vh}
+    .v2:not(.v3) .height-120 {height:15vh}
+    .v2:not(.v3) .height-140 {height:17.5vh}
+    .v2:not(.v3) .height-160 {height:20vh}
+    .v2:not(.v3) .height-180 {height:22.5vh}
+    .v2:not(.v3) .height-200 {height:25vh}
+    .v2:not(.v3) .height-220 {height:27.5vh}
+    .v2:not(.v3) .height-240 {height:30vh}
+    .v2:not(.v3) .height-260 {height:32.5vh}
+    .v2:not(.v3) .height-280 {height:35vh}
+    .v2:not(.v3) .height-300 {height:37.5vh}
 }
 @media (max-width: 1440px) {
-    .height-20 {height:10px}
-    .height-40 {height:20px}
-    .height-60 {height:30px}
-    .height-80 {height:40px}
-    .height-100 {height:50px}
-    .height-120 {height:60px}
-    .height-140 {height:70px}
-    .height-160 {height:80px}
-    .height-180 {height:90px}
-    .height-200 {height:100px}
-    .height-220 {height:110px}
-    .height-240 {height:120px}
-    .height-260 {height:130px}
-    .height-280 {height:140px}
-    .height-300 {height:150px}
+    .v2:not(.v3) .height-20 {height:10px}
+    .v2:not(.v3) .height-40 {height:20px}
+    .v2:not(.v3) .height-60 {height:30px}
+    .v2:not(.v3) .height-80 {height:40px}
+    .v2:not(.v3) .height-100 {height:50px}
+    .v2:not(.v3) .height-120 {height:60px}
+    .v2:not(.v3) .height-140 {height:70px}
+    .v2:not(.v3) .height-160 {height:80px}
+    .v2:not(.v3) .height-180 {height:90px}
+    .v2:not(.v3) .height-200 {height:100px}
+    .v2:not(.v3) .height-220 {height:110px}
+    .v2:not(.v3) .height-240 {height:120px}
+    .v2:not(.v3) .height-260 {height:130px}
+    .v2:not(.v3) .height-280 {height:140px}
+    .v2:not(.v3) .height-300 {height:150px}
+}
+
+@media (max-width: 760px) {
+    .xs-height-20 {height:20px !important;flex:none;}
+    .xs-height-40 {height:40px !important;flex:none;}
+    .xs-height-60 {height:60px !important;flex:none;}
+    .xs-height-80 {height:80px !important;flex:none;}
+    .xs-height-100 {height:100px !important;flex:none;}
+    .xs-height-120 {height:120px !important;flex:none;}
+    .xs-height-140 {height:140px !important;flex:none;}
+    .xs-height-160 {height:160px !important;flex:none;}
+    .xs-height-180 {height:180px !important;flex:none;}
+    .xs-height-200 {height:200px !important;flex:none;}
+    .xs-height-220 {height:220px !important;flex:none;}
+    .xs-height-240 {height:240px !important;flex:none;}
+    .xs-height-260 {height:260px !important;flex:none;}
+    .xs-height-280 {height:280px !important;flex:none;}
+    .xs-height-300 {height:300px !important;flex:none;}
+}
+@media (min-width: 761px) and (max-width: 970px) {
+    .sm-height-20 {height:20px !important;flex:none;}
+    .sm-height-40 {height:40px !important;flex:none;}
+    .sm-height-60 {height:60px !important;flex:none;}
+    .sm-height-80 {height:80px !important;flex:none;}
+    .sm-height-100 {height:100px !important;flex:none;}
+    .sm-height-120 {height:120px !important;flex:none;}
+    .sm-height-140 {height:140px !important;flex:none;}
+    .sm-height-160 {height:160px !important;flex:none;}
+    .sm-height-180 {height:180px !important;flex:none;}
+    .sm-height-200 {height:200px !important;flex:none;}
+    .sm-height-220 {height:220px !important;flex:none;}
+    .sm-height-240 {height:240px !important;flex:none;}
+    .sm-height-260 {height:260px !important;flex:none;}
+    .sm-height-280 {height:280px !important;flex:none;}
+    .sm-height-300 {height:300px !important;flex:none;}
+}
+@media (min-width: 971px) and (max-width: 1280px) {
+    .md-height-20 {height:20px !important;flex:none;}
+    .md-height-40 {height:40px !important;flex:none;}
+    .md-height-60 {height:60px !important;flex:none;}
+    .md-height-80 {height:80px !important;flex:none;}
+    .md-height-100 {height:100px !important;flex:none;}
+    .md-height-120 {height:120px !important;flex:none;}
+    .md-height-140 {height:140px !important;flex:none;}
+    .md-height-160 {height:160px !important;flex:none;}
+    .md-height-180 {height:180px !important;flex:none;}
+    .md-height-200 {height:200px !important;flex:none;}
+    .md-height-220 {height:220px !important;flex:none;}
+    .md-height-240 {height:240px !important;flex:none;}
+    .md-height-260 {height:260px !important;flex:none;}
+    .md-height-280 {height:280px !important;flex:none;}
+    .md-height-300 {height:300px !important;flex:none;}
 }
 
 .size-12 {font-size:12px !important}
@@ -332,94 +391,96 @@ img.bordered {border: #ccc 1px solid;}
 .size-42 {font-size:42px !important}
 .size-46 {font-size:46px !important}
 .size-48 {font-size:48px !important}
-.size-50 {font-size:50px !important; overflow-wrap: break-word;}
-.size-54 {font-size:54px !important; overflow-wrap: break-word;}
-.size-60 {font-size:60px !important; overflow-wrap: break-word;}
-.size-64 {font-size:64px !important; overflow-wrap: break-word;}
-.size-68 {font-size:68px !important; overflow-wrap: break-word;}
-.size-72 {font-size:72px !important; overflow-wrap: break-word;}
-.size-76 {font-size:76px !important; overflow-wrap: break-word;}
-.size-80 {font-size:80px !important; overflow-wrap: break-word;}
-.size-84 {font-size:84px !important; overflow-wrap: break-word;}
-.size-88 {font-size:88px !important; overflow-wrap: break-word;}
-.size-92 {font-size:92px !important; overflow-wrap: break-word;}
-.size-96 {font-size:96px !important; overflow-wrap: break-word;}
-.size-100 {font-size:100px !important; overflow-wrap: break-word;}
-.size-104 {font-size:104px !important; overflow-wrap: break-word;}
-.size-108 {font-size:108px !important; overflow-wrap: break-word;}
-.size-112 {font-size:112px !important; overflow-wrap: break-word;}
-.size-116 {font-size:116px !important; overflow-wrap: break-word;}
-.size-120 {font-size:120px !important; overflow-wrap: break-word;}
-.size-124 {font-size:124px !important; overflow-wrap: break-word;}
-.size-128 {font-size:128px !important; overflow-wrap: break-word;}
-.size-132 {font-size:132px !important; overflow-wrap: break-word;}
-.size-136 {font-size:136px !important; overflow-wrap: break-word;}
-.size-140 {font-size:140px !important; overflow-wrap: break-word;}
-.size-144 {font-size:144px !important; overflow-wrap: break-word;}
-.size-148 {font-size:148px !important; overflow-wrap: break-word;}
-.size-152 {font-size:152px !important; overflow-wrap: break-word;}
-.size-156 {font-size:156px !important; overflow-wrap: break-word;}
-.size-160 {font-size:160px !important; overflow-wrap: break-word;}
-.size-164 {font-size:164px !important; overflow-wrap: break-word;}
-.size-168 {font-size:168px !important; overflow-wrap: break-word;}
-.size-172 {font-size:172px !important; overflow-wrap: break-word;}
-.size-176 {font-size:176px !important; overflow-wrap: break-word;}
-.size-180 {font-size:180px !important; overflow-wrap: break-word;}
-.size-184 {font-size:184px !important; overflow-wrap: break-word;}
-.size-188 {font-size:188px !important; overflow-wrap: break-word;}
-.size-192 {font-size:192px !important; overflow-wrap: break-word;}
-.size-196 {font-size:196px !important; overflow-wrap: break-word;}
-.size-200 {font-size:200px !important; overflow-wrap: break-word;}
-.size-204 {font-size:204px !important; overflow-wrap: break-word;}
-.size-208 {font-size:208px !important; overflow-wrap: break-word;}
-.size-212 {font-size:212px !important; overflow-wrap: break-word;}
-.size-216 {font-size:216px !important; overflow-wrap: break-word;}
-.size-220 {font-size:220px !important; overflow-wrap: break-word;}
-.size-224 {font-size:224px !important; overflow-wrap: break-word;}
-.size-228 {font-size:228px !important; overflow-wrap: break-word;}
-.size-232 {font-size:232px !important; overflow-wrap: break-word;}
-.size-236 {font-size:236px !important; overflow-wrap: break-word;}
-.size-240 {font-size:240px !important; overflow-wrap: break-word;}
-.size-244 {font-size:244px !important; overflow-wrap: break-word;}
-.size-248 {font-size:248px !important; overflow-wrap: break-word;}
-.size-252 {font-size:252px !important; overflow-wrap: break-word;}
-.size-256 {font-size:256px !important; overflow-wrap: break-word;}
-.size-260 {font-size:260px !important; overflow-wrap: break-word;}
-.size-264 {font-size:264px !important; overflow-wrap: break-word;}
-.size-268 {font-size:268px !important; overflow-wrap: break-word;}
-.size-272 {font-size:272px !important; overflow-wrap: break-word;}
-.size-276 {font-size:276px !important; overflow-wrap: break-word;}
-.size-280 {font-size:280px !important; overflow-wrap: break-word;}
-.size-284 {font-size:284px !important; overflow-wrap: break-word;}
-.size-288 {font-size:288px !important; overflow-wrap: break-word;}
-.size-292 {font-size:292px !important; overflow-wrap: break-word;}
-.size-296 {font-size:296px !important; overflow-wrap: break-word;}
-.size-300 {font-size:300px !important; overflow-wrap: break-word;}
-.size-304 {font-size:304px !important; overflow-wrap: break-word;}
-.size-308 {font-size:308px !important; overflow-wrap: break-word;}
-.size-312 {font-size:312px !important; overflow-wrap: break-word;}
-.size-316 {font-size:316px !important; overflow-wrap: break-word;}
-.size-320 {font-size:320px !important; overflow-wrap: break-word;}
-.size-324 {font-size:324px !important; overflow-wrap: break-word;}
-.size-328 {font-size:328px !important; overflow-wrap: break-word;}
-.size-332 {font-size:332px !important; overflow-wrap: break-word;}
-.size-336 {font-size:336px !important; overflow-wrap: break-word;}
-.size-340 {font-size:340px !important; overflow-wrap: break-word;}
-.size-344 {font-size:344px !important; overflow-wrap: break-word;}
-.size-348 {font-size:348px !important; overflow-wrap: break-word;}
-.size-352 {font-size:352px !important; overflow-wrap: break-word;}
-.size-356 {font-size:356px !important; overflow-wrap: break-word;}
-.size-360 {font-size:360px !important; overflow-wrap: break-word;}
-.size-364 {font-size:364px !important; overflow-wrap: break-word;}
-.size-368 {font-size:368px !important; overflow-wrap: break-word;}
-.size-372 {font-size:372px !important; overflow-wrap: break-word;}
-.size-376 {font-size:376px !important; overflow-wrap: break-word;}
-.size-380 {font-size:380px !important; overflow-wrap: break-word;}
-.size-384 {font-size:384px !important; overflow-wrap: break-word;}
-.size-388 {font-size:388px !important; overflow-wrap: break-word;}
-.size-392 {font-size:392px !important; overflow-wrap: break-word;}
-.size-396 {font-size:396px !important; overflow-wrap: break-word;}
-.size-400 {font-size:400px !important; overflow-wrap: break-word;}
+.size-50 {font-size:50px !important}
+.size-54 {font-size:54px !important}
+.size-60 {font-size:60px !important}
+.size-64 {font-size:64px !important}
+.size-68 {font-size:68px !important}
+.size-72 {font-size:72px !important}
+.size-76 {font-size:76px !important}
+.size-80 {font-size:80px !important}
+.size-84 {font-size:84px !important}
+.size-88 {font-size:88px !important}
+.size-92 {font-size:92px !important}
+.size-96 {font-size:96px !important}
+.size-100 {font-size:100px !important}
+.size-104 {font-size:104px !important}
+.size-108 {font-size:108px !important}
+.size-112 {font-size:112px !important}
+.size-116 {font-size:116px !important}
+.size-120 {font-size:120px !important}
+.size-124 {font-size:124px !important}
+.size-128 {font-size:128px !important}
+.size-132 {font-size:132px !important}
+.size-136 {font-size:136px !important}
+.size-140 {font-size:140px !important}
+.size-144 {font-size:144px !important}
+.size-148 {font-size:148px !important}
+.size-152 {font-size:152px !important}
+.size-156 {font-size:156px !important}
+.size-160 {font-size:160px !important}
+.size-164 {font-size:164px !important}
+.size-168 {font-size:168px !important}
+.size-172 {font-size:172px !important}
+.size-176 {font-size:176px !important}
+.size-180 {font-size:180px !important}
+.size-184 {font-size:184px !important}
+.size-188 {font-size:188px !important}
+.size-192 {font-size:192px !important}
+.size-196 {font-size:196px !important}
+.size-200 {font-size:200px !important}
+.size-204 {font-size:204px !important}
+.size-208 {font-size:208px !important}
+.size-212 {font-size:212px !important}
+.size-216 {font-size:216px !important}
+.size-220 {font-size:220px !important}
+.size-224 {font-size:224px !important}
+.size-228 {font-size:228px !important}
+.size-232 {font-size:232px !important}
+.size-236 {font-size:236px !important}
+.size-240 {font-size:240px !important}
+.size-244 {font-size:244px !important}
+.size-248 {font-size:248px !important}
+.size-252 {font-size:252px !important}
+.size-256 {font-size:256px !important}
+.size-260 {font-size:260px !important}
+.size-264 {font-size:264px !important}
+.size-268 {font-size:268px !important}
+.size-272 {font-size:272px !important}
+.size-276 {font-size:276px !important}
+.size-280 {font-size:280px !important}
+.size-284 {font-size:284px !important}
+.size-288 {font-size:288px !important}
+.size-292 {font-size:292px !important}
+.size-296 {font-size:296px !important}
+.size-300 {font-size:300px !important}
+.size-304 {font-size:304px !important}
+.size-308 {font-size:308px !important}
+.size-312 {font-size:312px !important}
+.size-316 {font-size:316px !important}
+.size-320 {font-size:320px !important}
+.size-324 {font-size:324px !important}
+.size-328 {font-size:328px !important}
+.size-332 {font-size:332px !important}
+.size-336 {font-size:336px !important}
+.size-340 {font-size:340px !important}
+.size-344 {font-size:344px !important}
+.size-348 {font-size:348px !important}
+.size-352 {font-size:352px !important}
+.size-356 {font-size:356px !important}
+.size-360 {font-size:360px !important}
+.size-364 {font-size:364px !important}
+.size-368 {font-size:368px !important}
+.size-372 {font-size:372px !important}
+.size-376 {font-size:376px !important}
+.size-380 {font-size:380px !important}
+.size-384 {font-size:384px !important}
+.size-388 {font-size:388px !important}
+.size-392 {font-size:392px !important}
+.size-396 {font-size:396px !important}
+.size-400 {font-size:400px !important}
+
+.container .size-64, .is-container .size-64 { width: unset; height: unset; }
 
 @media all and (max-width: 1800px) { 
     .v2 .size-12 {font-size:0.74vw !important; font-size:clamp(12px, 0.74vw, 0.74vw) !important} /* Use clamp to prevent small sizes */
@@ -530,7 +591,7 @@ img.bordered {border: #ccc 1px solid;}
     .v2 .size-400 {font-size:20.84vw !important; font-size:clamp(117px, 20.84vw, 20.84vw) !important}  
 } 
 
-@media all and (min-width: 1921px) { /* v2 */
+@media all and (min-width: 1921px) { 
     .v2 .size-12 {font-size:0.63vw !important}
     .v2 .size-13 {font-size:0.68vw !important}
     .v2 .size-14 {font-size:0.73vw !important}
@@ -636,7 +697,115 @@ img.bordered {border: #ccc 1px solid;}
     .v2 .size-388 {font-size:20.21vw !important}
     .v2 .size-392 {font-size:20.42vw !important}
     .v2 .size-396 {font-size:20.63vw !important}
-    .v2 .size-400 {font-size:20.84vw !important}  
+    .v2 .size-400 {font-size:20.84vw !important}
+
+    /* new v3: limit the size on large screen */
+    .v3 .size-12 {font-size:0.63vw !important}
+    .v3 .size-13 {font-size:0.68vw !important}
+    .v3 .size-14 {font-size:0.73vw !important}
+    .v3 .size-15 {font-size:0.78vw !important}
+    .v3 .size-16 {font-size:0.83vw !important}
+    .v3 .size-17 {font-size:0.89vw !important}
+    .v3 .size-18 {font-size:0.94vw !important}
+    .v3 .size-19 {font-size:0.99vw !important}
+    .v3 .size-20 {font-size:1.04vw !important}
+    .v3 .size-21 {font-size:1.09vw !important}
+    .v3 .size-24 {font-size:1.25vw !important}
+    .v3 .size-28 {font-size:1.46vw !important}
+    .v3 .size-32 {font-size:clamp(30px, 1.67vw, 43px) !important}
+    .v3 .size-35 {font-size:clamp(30px, 1.82vw, 44px) !important}
+    .v3 .size-38 {font-size:clamp(30px, 1.98vw, 45px) !important}
+    .v3 .size-42 {font-size:clamp(30px, 2.19vw, 46px) !important}
+    .v3 .size-46 {font-size:clamp(30px, 2.4vw, 47px) !important}
+    .v3 .size-48 {font-size:clamp(30px, 2.5vw, 48px) !important}
+    .v3 .size-50 {font-size:clamp(30px, 2.61vw, 50px) !important;}
+    .v3 .size-54 {font-size:clamp(30px, 2.81vw, 54px) !important;}
+    .v3 .size-60 {font-size:clamp(30px, 3.13vw, 60px) !important;}
+    .v3 .size-64 {font-size:clamp(30px, 3.33vw, 64px) !important;}
+    .v3 .size-68 {font-size:clamp(30px, 3.54vw, 68px) !important;}
+    .v3 .size-72 {font-size:clamp(30px, 3.75vw, 72px) !important;}
+    .v3 .size-76 {font-size:clamp(30px, 3.96vw, 76px) !important;}
+    .v3 .size-80 {font-size:clamp(30px, 4.17vw, 80px) !important}
+    .v3 .size-84 {font-size:clamp(30px, 4.38vw, 84px) !important} 
+    .v3 .size-88 {font-size:clamp(30px, 4.58vw, 88px) !important}
+    .v3 .size-92 {font-size:clamp(30px, 4.79vw, 92px) !important}
+    .v3 .size-96 {font-size:clamp(30px, 5vw, 96px) !important}
+    .v3 .size-100 {font-size:clamp(30px, 5.21vw, 100px) !important} 
+    .v3 .size-104 {font-size:clamp(30px, 5.42vw, 104px) !important}
+    .v3 .size-108 {font-size:clamp(30px, 5.63vw, 108px) !important}
+    .v3 .size-112 {font-size:clamp(30px, 5.84vw, 112px) !important}
+    .v3 .size-116 {font-size:clamp(30px, 6.04vw, 116px) !important}
+    .v3 .size-120 {font-size:clamp(30px, 6.25vw, 120px) !important}
+    .v3 .size-124 {font-size:clamp(30px, 6.46vw, 124px) !important}
+    .v3 .size-128 {font-size:clamp(30px, 6.67vw, 128px) !important}
+    .v3 .size-132 {font-size:clamp(30px, 6.88vw, 132px) !important}
+    .v3 .size-136 {font-size:clamp(30px, 7.09vw, 136px) !important}
+    .v3 .size-140 {font-size:clamp(30px, 7.29vw, 140px) !important}
+    .v3 .size-144 {font-size:clamp(30px, 7.5vw, 144px) !important}
+    .v3 .size-148 {font-size:clamp(30px, 7.71vw, 148px) !important}
+    .v3 .size-152 {font-size:clamp(30px, 7.92vw, 152px) !important}
+    .v3 .size-156 {font-size:clamp(30px, 8.13vw, 156px) !important}
+    .v3 .size-160 {font-size:clamp(30px, 8.34vw, 160px) !important}
+    .v3 .size-164 {font-size:clamp(30px, 8.54vw, 164px) !important}
+    .v3 .size-168 {font-size:clamp(30px, 8.75vw, 168px) !important}
+    .v3 .size-172 {font-size:clamp(30px, 8.96vw, 172px) !important}
+    .v3 .size-176 {font-size:clamp(30px, 9.17vw, 176px) !important}
+    .v3 .size-180 {font-size:clamp(30px, 9.38vw, 180px) !important}
+    .v3 .size-184 {font-size:clamp(30px, 9.59vw, 184px) !important}
+    .v3 .size-188 {font-size:clamp(30px, 9.79vw, 188px) !important}
+    .v3 .size-192 {font-size:clamp(30px, 10vw, 192px) !important}
+    .v3 .size-196 {font-size:clamp(30px, 10.21vw, 196px) !important}
+    .v3 .size-200 {font-size:clamp(30px, 10.42vw, 200px) !important}
+    .v3 .size-204 {font-size:clamp(30px, 10.63vw, 204px) !important}
+    .v3 .size-208 {font-size:clamp(30px, 10.84vw, 208px) !important}
+    .v3 .size-212 {font-size:clamp(30px, 11.05vw, 212px) !important}
+    .v3 .size-216 {font-size:clamp(30px, 11.25vw, 216px) !important}
+    .v3 .size-220 {font-size:clamp(30px, 11.46vw, 220px) !important}  
+    .v3 .size-224 {font-size:clamp(30px, 11.67vw, 224px) !important}
+    .v3 .size-228 {font-size:clamp(30px, 11.88vw, 228px) !important}
+    .v3 .size-232 {font-size:clamp(30px, 12.09vw, 232px) !important}
+    .v3 .size-236 {font-size:clamp(30px, 12.3vw, 236px) !important}
+    .v3 .size-240 {font-size:clamp(30px, 12.5vw, 240px) !important}
+    .v3 .size-244 {font-size:clamp(30px, 12.71vw, 244px) !important}
+    .v3 .size-248 {font-size:clamp(30px, 12.92vw, 248px) !important}
+    .v3 .size-252 {font-size:clamp(30px, 13.13vw, 252px) !important}
+    .v3 .size-256 {font-size:clamp(30px, 13.34vw, 256px) !important}
+    .v3 .size-260 {font-size:clamp(30px, 13.55vw, 260px) !important}
+    .v3 .size-264 {font-size:clamp(30px, 13.75vw, 264px) !important}
+    .v3 .size-268 {font-size:clamp(30px, 13.96vw, 268px) !important}
+    .v3 .size-272 {font-size:clamp(30px, 14.17vw, 272px) !important}
+    .v3 .size-276 {font-size:clamp(30px, 14.38vw, 276px) !important}
+    .v3 .size-280 {font-size:clamp(30px, 14.59vw, 280px) !important}
+    .v3 .size-284 {font-size:clamp(30px, 14.8vw, 284px) !important}
+    .v3 .size-288 {font-size:clamp(30px, 15vw, 288px) !important}
+    .v3 .size-292 {font-size:clamp(30px, 15.21vw, 292px) !important}
+    .v3 .size-296 {font-size:clamp(30px, 15.42vw, 296px) !important}
+    .v3 .size-300 {font-size:clamp(30px, 15.63vw, 300px) !important}
+    .v3 .size-304 {font-size:clamp(30px, 15.84vw, 304px) !important}
+    .v3 .size-308 {font-size:clamp(30px, 16.06vw, 308px) !important}
+    .v3 .size-312 {font-size:clamp(30px, 16.26vw, 312px) !important}
+    .v3 .size-316 {font-size:clamp(30px, 16.46vw, 316px) !important}
+    .v3 .size-320 {font-size:clamp(30px, 16.67vw, 320px) !important}
+    .v3 .size-324 {font-size:clamp(30px, 16.88vw, 324px) !important}
+    .v3 .size-328 {font-size:clamp(30px, 17.09vw, 328px) !important}
+    .v3 .size-332 {font-size:clamp(30px, 17.3vw, 332px) !important}
+    .v3 .size-336 {font-size:clamp(30px, 17.5vw, 336px) !important}
+    .v3 .size-340 {font-size:clamp(30px, 17.71vw, 340px) !important}
+    .v3 .size-344 {font-size:clamp(30px, 17.92vw, 344px) !important}
+    .v3 .size-348 {font-size:clamp(30px, 18.13vw, 348px) !important}
+    .v3 .size-352 {font-size:clamp(30px, 18.34vw, 352px) !important}
+    .v3 .size-356 {font-size:clamp(30px, 18.55vw, 356px) !important}
+    .v3 .size-360 {font-size:clamp(30px, 18.76vw, 360px) !important}
+    .v3 .size-364 {font-size:clamp(30px, 18.96vw, 364px) !important}
+    .v3 .size-368 {font-size:clamp(30px, 19.17vw, 368px) !important}
+    .v3 .size-372 {font-size:clamp(30px, 19.38vw, 372px) !important}
+    .v3 .size-376 {font-size:clamp(30px, 19.59vw, 376px) !important}
+    .v3 .size-380 {font-size:clamp(30px, 19.8vw, 380px) !important}
+    .v3 .size-384 {font-size:clamp(30px, 20vw, 384px) !important}
+    .v3 .size-388 {font-size:clamp(30px, 20.21vw, 388px) !important}
+    .v3 .size-392 {font-size:clamp(30px, 20.42vw, 392px) !important}
+    .v3 .size-396 {font-size:clamp(30px, 20.63vw, 396px) !important}
+    .v3 .size-400 {font-size:clamp(30px, 20.84vw, 400px) !important}  
 }
 
 /* targetted font sizes */
@@ -1297,8 +1466,12 @@ img.bordered {border: #ccc 1px solid;}
     .margin-right-1024-reset {margin-right:0px !important;}
 }
 
-.is-light-text * {color: rgba(255,255,255,0.93);}
-.is-dark-text * {color: #000;}
+.is-light-text *:not(svg):not(path) {
+    color: rgba(255, 255, 255, 0.93);
+}
+.is-dark-text *:not(svg):not(path) {
+    color: #000;
+}
 
 /* Snippets: text */
 
@@ -2001,10 +2174,10 @@ Note: .v2 class option gives optimization for large screen.
     .is-container.size-16 label {font-size:0.99vw; font-size:clamp(16px, 0.99vw, 0.99vw)}
 }
 @media all and (min-width: 1921px) { 
-    .is-container.size-16.v2 p, 
-    .is-container.size-16.v2 td, 
-    .is-container.size-16.v2 li, 
-    .is-container.size-16.v2 label {font-size:0.83vw}
+    .is-container.size-16.v2:not(.v3) p, 
+    .is-container.size-16.v2:not(.v3) td, 
+    .is-container.size-16.v2:not(.v3) li, 
+    .is-container.size-16.v2:not(.v3) label {font-size:0.83vw}
 }
 
 /* size-17 */
@@ -2017,10 +2190,10 @@ Note: .v2 class option gives optimization for large screen.
     .is-container.size-17 label {font-size:1.05vw; font-size:clamp(17px, 1.05vw, 1.05vw)}
 }
 @media all and (min-width: 1921px) { 
-    .is-container.size-17.v2 p, 
-    .is-container.size-17.v2 td, 
-    .is-container.size-17.v2 li, 
-    .is-container.size-17.v2 label {font-size:0.89vw}
+    .is-container.size-17.v2:not(.v3) p, 
+    .is-container.size-17.v2:not(.v3) td, 
+    .is-container.size-17.v2:not(.v3) li, 
+    .is-container.size-17.v2:not(.v3) label {font-size:0.89vw}
 }
 
 /* size-18 */
@@ -2033,10 +2206,10 @@ Note: .v2 class option gives optimization for large screen.
     .is-container.size-18 label {font-size:1.11vw; font-size:clamp(18px, 1.11vw, 1.11vw)}
 }
 @media all and (min-width: 1921px) { 
-    .is-container.size-18.v2 p, 
-    .is-container.size-18.v2 td, 
-    .is-container.size-18.v2 li, 
-    .is-container.size-18.v2 label{font-size:0.94vw}
+    .is-container.size-18.v2:not(.v3) p, 
+    .is-container.size-18.v2:not(.v3) td, 
+    .is-container.size-18.v2:not(.v3) li, 
+    .is-container.size-18.v2:not(.v3) label{font-size:0.94vw}
 }
 
 /* size-19 */
@@ -2049,10 +2222,10 @@ Note: .v2 class option gives optimization for large screen.
     .is-container.size-19 label {font-size:1.17vw; font-size:clamp(19px, 1.17vw, 1.17vw)}
 }
 @media all and (min-width: 1921px) { 
-    .is-container.size-19.v2 p, 
-    .is-container.size-19.v2 td, 
-    .is-container.size-19.v2 li, 
-    .is-container.size-19.v2 label {font-size:0.99vw}
+    .is-container.size-19.v2:not(.v3) p, 
+    .is-container.size-19.v2:not(.v3) td, 
+    .is-container.size-19.v2:not(.v3) li, 
+    .is-container.size-19.v2:not(.v3) label {font-size:0.99vw}
 }
 
 /* size-20 */
@@ -2065,10 +2238,10 @@ Note: .v2 class option gives optimization for large screen.
     .is-container.size-20 label {font-size:1.23vw; font-size:clamp(20px, 1.23vw, 1.23vw)}
 }
 @media all and (min-width: 1921px) { 
-    .is-container.size-20.v2 p, 
-    .is-container.size-20.v2 td, 
-    .is-container.size-20.v2 li, 
-    .is-container.size-20.v2 label {font-size:1.04vw}
+    .is-container.size-20.v2:not(.v3) p, 
+    .is-container.size-20.v2:not(.v3) td, 
+    .is-container.size-20.v2:not(.v3) li, 
+    .is-container.size-20.v2:not(.v3) label {font-size:1.04vw}
 }
 
 /* size-21 */
@@ -2081,10 +2254,10 @@ Note: .v2 class option gives optimization for large screen.
     .is-container.size-21 label {font-size:1.29vw; font-size:clamp(21px, 1.29vw, 1.29vw)}
 }
 @media all and (min-width: 1921px) { 
-    .is-container.size-21.v2 p, 
-    .is-container.size-21.v2 td, 
-    .is-container.size-21.v2 li, 
-    .is-container.size-21.v2 label {font-size:1.09vw}
+    .is-container.size-21.v2:not(.v3) p, 
+    .is-container.size-21.v2:not(.v3) td, 
+    .is-container.size-21.v2:not(.v3) li, 
+    .is-container.size-21.v2:not(.v3) label {font-size:1.09vw}
 }
 
 /* leading */
@@ -2177,3 +2350,234 @@ Note: .v2 class option gives optimization for large screen.
 }
 
 .grow { flex-grow: 1; } 
+
+/* Media Grid */
+.is-media-grid {
+    column-count: 4;
+    column-gap: 10px;
+    padding: 0px;
+}
+.is-media-grid.cols-1 { column-count: 1 !important; }
+.is-media-grid.cols-2 { column-count: 2 !important; }
+.is-media-grid.cols-3 { column-count: 3 !important; }
+.is-media-grid.cols-4 { column-count: 4 !important; }
+.is-media-grid.cols-5 { column-count: 5 !important; }
+.is-media-grid.cols-6 { column-count: 6 !important; }
+.is-media-grid.cols-7 { column-count: 7 !important; }
+.is-media-grid.cols-8 { column-count: 8 !important; }
+.is-media-grid.cols-9 { column-count: 9 !important; }
+.is-media-grid.cols-10 { column-count: 10 !important; }
+.is-media-grid .gallery-item {
+    position: relative;
+    break-inside: avoid;
+    border-radius: 0px;
+    margin-bottom: 10px;
+    line-height: 0;
+    overflow: hidden;
+}
+.is-media-grid .gallery-item img {
+    width: 100%;
+    height: auto;
+    transition: .8s all;
+}
+.is-media-grid .gallery-item .caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color: #fff;
+    padding: 12px 15px;
+    opacity: 0;
+    transition: all 0.8s ease;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: .9em;
+    font-weight: 200;
+    line-height: 1.2;
+}
+.is-media-grid .gallery-item .caption h4 {
+    font-weight: 300;
+    font-size: 1.1em;
+    margin: 0 0 0.1em;;
+}
+.is-media-grid .gallery-item video {
+    height: auto;
+    width: 100%;
+    object-fit: cover;
+}
+
+.is-container form {
+    width: 100%;
+}
+
+.is-container .size-12,
+.is-container .size-13,
+.is-container .size-14,
+.is-container .size-15,
+.is-container .size-16,
+.is-container .size-17,
+.is-container .size-18,
+.is-container .size-19,
+.is-container .size-20,
+.is-container .size-21,
+.is-container .size-24,
+.is-container .size-28,
+.is-container .size-32,
+.is-container .size-35,
+.is-container .size-38,
+.is-container .size-42,
+.is-container .size-46,
+.is-container .size-48,
+.is-container .size-50,
+.is-container .size-54,
+.is-container .size-60,
+.is-container .size-64,
+.is-container .size-68,
+.is-container .size-72,
+.is-container .size-76,
+.is-container .size-80,
+.is-container .size-84,
+.is-container .size-88,
+.is-container .size-92,
+.is-container .size-96,
+.is-container .size-100,
+.is-container .size-104,
+.is-container .size-108,
+.is-container .size-112,
+.is-container .size-116,
+.is-container .size-120,
+.is-container .size-124,
+.is-container .size-128,
+.is-container .size-132,
+.is-container .size-136,
+.is-container .size-140,
+.is-container .size-144,
+.is-container .size-148,
+.is-container .size-152,
+.is-container .size-156,
+.is-container .size-160,
+.is-container .size-164,
+.is-container .size-168,
+.is-container .size-172,
+.is-container .size-176,
+.is-container .size-180,
+.is-container .size-184,
+.is-container .size-188,
+.is-container .size-192,
+.is-container .size-196,
+.is-container .size-200,
+.is-container .size-204,
+.is-container .size-208,
+.is-container .size-212,
+.is-container .size-216,
+.is-container .size-220,
+.is-container .size-224,
+.is-container .size-228,
+.is-container .size-232,
+.is-container .size-236,
+.is-container .size-240,
+.is-container .size-244,
+.is-container .size-248,
+.is-container .size-252,
+.is-container .size-256,
+.is-container .size-260,
+.is-container .size-264,
+.is-container .size-268,
+.is-container .size-272,
+.is-container .size-276,
+.is-container .size-280,
+.is-container .size-284,
+.is-container .size-288,
+.is-container .size-292,
+.is-container .size-296,
+.is-container .size-300,
+.is-container .size-304,
+.is-container .size-308,
+.is-container .size-312,
+.is-container .size-316,
+.is-container .size-320,
+.is-container .size-324,
+.is-container .size-328,
+.is-container .size-332,
+.is-container .size-336,
+.is-container .size-340,
+.is-container .size-344,
+.is-container .size-348,
+.is-container .size-352,
+.is-container .size-356,
+.is-container .size-360,
+.is-container .size-364,
+.is-container .size-368,
+.is-container .size-372,
+.is-container .size-376,
+.is-container .size-380,
+.is-container .size-384,
+.is-container .size-388,
+.is-container .size-392,
+.is-container .size-396,
+.is-container .size-400 {
+    width: initial;
+    height: initial;
+}
+
+.is-container.size-16,
+.is-container.size-17,
+.is-container.size-18,
+.is-container.size-19,
+.is-container.size-20,
+.is-container.size-21 {
+    width: 100%;
+    height: initial;
+}
+.is-container.size-16.h-full,
+.is-container.size-17.h-full,
+.is-container.size-18.h-full,
+.is-container.size-19.h-full,
+.is-container.size-20.h-full,
+.is-container.size-21.h-full {
+    width: 100%;
+    height: 100%;
+}
+
+:root {
+  --focus-outline-color: #3e93f7;
+}
+
+/* Editable-region for plugins */
+body.data-editor [data-cb-type] .edit {
+    border-radius: 3px;
+    transition: background-color 0.2s ease;
+}
+body.data-editor [data-cb-type] .edit:hover {
+    background-color: rgba(62, 147, 247, 0.06);
+}
+body.data-editor [data-cb-type] .edit:focus {
+    outline: 2px solid var(--focus-outline-color);
+    outline-offset: 3px;
+}
+
+/* Selectable embedded iframe */
+.iframe-overlay {
+    position: relative;
+}
+.iframe-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.iframe-overlay.iframe-active::after {
+  z-index: -1;
+}
+
+a[role="button"].transition-all,
+button.transition-all {
+    transition: all 0.4s ease, border-color 0s 0.4s; /* hover-OUT: delayed snap */
+}
+a[role="button"].transition-all:hover,
+button.transition-all:hover {
+    transition: all 0.4s ease, border-color 0s 0s;   /* hover-IN: instant */
+}

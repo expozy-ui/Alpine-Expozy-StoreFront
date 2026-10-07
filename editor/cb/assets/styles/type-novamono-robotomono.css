@@ -13,12 +13,14 @@
     line-height: 1.2;  
 }        
 
-.type-novamono-robotomono h1 {font-size: 3rem;}
-.type-novamono-robotomono h2 {font-size: 2.4rem;}
-.type-novamono-robotomono h3 {font-size: 2rem;}
-.type-novamono-robotomono h4 {font-size: 1.7rem;}
-.type-novamono-robotomono h5 {font-size: 1.4rem;}
-.type-novamono-robotomono h6 {font-size: 1.14rem;}
+.type-novamono-robotomono h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-novamono-robotomono h2 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-novamono-robotomono h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-novamono-robotomono h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-novamono-robotomono h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-novamono-robotomono h6 {font-size: 1.14rem; margin: 0.5rem 0 0.5rem; }
+.type-novamono-robotomono p {margin:0.8rem 0 0.8rem;}
+/* .type-novamono-robotomono ul, .type-novamono-robotomono ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-novamono-robotomono .display { margin-bottom: 0.5rem; }
 .type-novamono-robotomono .display h1 {

@@ -1,0 +1,294 @@
+/* Light (default) */
+[data-cb-type="code-view"] {
+    --code-bg: #f6f8fa;
+    --code-border: #e4e8ee;
+    --code-text: #24292f;
+    --code-radius: 6px;
+    --code-font: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+    --code-size: 0.875rem;
+    --code-line-height: 1.65;
+
+    --code-comment: #6e7781;
+    --code-keyword: #cf222e;
+    --code-string: #0a3069;
+    --code-number: #0550ae;
+    --code-function: #8250df;
+    --code-class: #953800;
+    --code-tag: #116329;
+    --code-attr: #0550ae;
+    --code-variable: #953800;
+    --code-property: #0550ae;
+    --code-punct: #57606a;
+
+    position: relative;
+    padding: 0;
+}
+
+[data-cb-type="code-view"] pre {
+    margin: 0;
+    padding: 14px 16px;
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-radius: var(--code-radius);
+    overflow-x: auto;
+    tab-size: 2;
+    -moz-tab-size: 2;
+}
+
+[data-cb-type="code-view"][data-cb-tab-size="4"] pre {
+    tab-size: 4;
+    -moz-tab-size: 4;
+}
+
+/* A code block that can be scrolled from the keyboard shows it has focus. */
+[data-cb-type="code-view"] pre:focus-visible {
+    outline: 2px solid var(--focus-outline-color, #3e93f7);
+    outline-offset: 2px;
+}
+
+[data-cb-type="code-view"] pre code {
+    display: block;
+    font-family: var(--code-font);
+    font-size: var(--code-size);
+    line-height: var(--code-line-height);
+    color: var(--code-text);
+    white-space: pre;
+    background: none;
+    border: none;
+    padding: 0;
+    outline: none;
+}
+
+/* File name bar. With one, the block's top corners belong to the bar. */
+[data-cb-type="code-view"] .cbcode-head {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 7px 6px 16px;
+    background: var(--code-bg);
+    border: 1px solid var(--code-border);
+    border-bottom: none;
+    border-radius: var(--code-radius) var(--code-radius) 0 0;
+}
+
+[data-cb-type="code-view"] .cbcode-file {
+    flex: 1;
+    min-width: 0;
+    font-family: var(--code-font);
+    font-size: 0.8125rem;
+    line-height: 1.9;
+    color: var(--code-comment);
+    outline: none;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[data-cb-type="code-view"] .cbcode-head + pre {
+    border-radius: 0 0 var(--code-radius) var(--code-radius);
+}
+
+/* Line numbers: a gutter pinned to the left while the code scrolls sideways. */
+[data-cb-type="code-view"][data-cb-line-numbers="true"] pre {
+    display: flex;
+    align-items: flex-start;
+    padding-left: 0;
+}
+
+[data-cb-type="code-view"] .cbcode-lines {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    flex: none;
+    padding: 0 12px 0 16px;
+    background: var(--code-bg);
+    color: var(--code-comment);
+    font-family: var(--code-font);
+    font-size: var(--code-size);
+    line-height: var(--code-line-height);
+    text-align: right;
+    opacity: 0.55;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+[data-cb-type="code-view"] .cbcode-lines span {
+    display: block;
+}
+
+[data-cb-type="code-view"][data-cb-line-numbers="true"] pre code {
+    flex: 0 0 auto;
+    min-width: 0;
+    padding-right: 16px;
+}
+
+/* Wrap long lines instead of scrolling them. */
+[data-cb-type="code-view"][data-cb-wrap="true"] pre code {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    flex: 1 1 auto;
+}
+
+/* Copy button — icon only, in the block's top-right corner, with a tooltip. */
+[data-cb-type="code-view"] .cbcode-bar {
+    position: absolute;
+    top: 1px;
+    right: 1px;                 /* inside the pre's border */
+    z-index: 1;
+    padding: 6px 6px 6px 18px;
+    border-radius: 0 var(--code-radius) 0 0;
+    /* The code scrolls sideways underneath — fade it out behind the button. */
+    background: linear-gradient(to right, transparent, var(--code-bg) 18px);
+}
+
+[data-cb-type="code-view"] .cbcode-copy {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-radius: 5px;
+    background: none;
+    color: var(--code-punct);
+    cursor: pointer;
+    transition: color 0.15s ease, background-color 0.15s ease;
+}
+
+[data-cb-type="code-view"] .cbcode-copy {
+    background-color: var(--code-bg);
+}
+
+[data-cb-type="code-view"] .cbcode-copy:hover {
+    color: var(--code-text);
+    background-color: var(--code-border);
+}
+
+[data-cb-type="code-view"] .cbcode-copy:focus-visible {
+    outline: 2px solid var(--focus-outline-color, #3e93f7);
+    outline-offset: 2px;
+}
+
+[data-cb-type="code-view"] .cbcode-copy.is-copied {
+    color: var(--code-tag);
+}
+
+/* Tooltip */
+[data-cb-type="code-view"] .cbcode-copy::after {
+    content: attr(data-tip);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 6px;
+    padding: 4px 9px;
+    border-radius: 5px;
+    background: var(--code-text);
+    color: var(--code-bg);
+    font-family: system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1.5;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.15s ease;
+}
+
+[data-cb-type="code-view"] .cbcode-copy:hover::after,
+[data-cb-type="code-view"] .cbcode-copy:focus-visible::after {
+    opacity: 1;
+}
+
+/* Keep the longest line clear of the floating button. */
+[data-cb-type="code-view"]:not([data-cb-copy-button="false"]) pre {
+    padding-right: 46px;
+}
+
+/* In a file-name bar the button sits in the row, so the code needs no gutter
+   for it and nothing overlaps. */
+[data-cb-type="code-view"] .cbcode-head .cbcode-copy {
+    position: relative;
+    flex: none;
+}
+
+[data-cb-type="code-view"]:has(.cbcode-head) pre {
+    padding-right: 16px;
+}
+
+/* While the block is selected, the plugin's settings button takes that corner.
+   Hidden rather than removed, so the file-name bar keeps its height. */
+body.data-editor [data-cb-type="code-view"].elm-active .cbcode-copy {
+    visibility: hidden;
+}
+
+@media print {
+    [data-cb-type="code-view"] .cbcode-bar { display: none; }
+}
+
+/* Edit it like any other text on the page: no hover tint, no focus outline —
+   the caret is the only affordance. Overrides the editor's default .edit
+   highlight (contentbuilder.scss), which stays in place for other plugins. */
+body.data-editor [data-cb-type="code-view"] .edit:hover,
+body.data-editor [data-cb-type="code-view"] .edit:focus {
+    background-color: transparent;
+    outline: none;
+}
+
+[data-cb-type="code-view"] .cbcode-comment { color: var(--code-comment); font-style: italic; }
+[data-cb-type="code-view"] .cbcode-keyword { color: var(--code-keyword); }
+[data-cb-type="code-view"] .cbcode-string { color: var(--code-string); }
+[data-cb-type="code-view"] .cbcode-number { color: var(--code-number); }
+[data-cb-type="code-view"] .cbcode-function { color: var(--code-function); }
+[data-cb-type="code-view"] .cbcode-class { color: var(--code-class); }
+[data-cb-type="code-view"] .cbcode-tag { color: var(--code-tag); }
+[data-cb-type="code-view"] .cbcode-doctype { color: var(--code-comment); }
+[data-cb-type="code-view"] .cbcode-attr { color: var(--code-attr); }
+[data-cb-type="code-view"] .cbcode-entity { color: var(--code-number); }
+[data-cb-type="code-view"] .cbcode-variable { color: var(--code-variable); }
+[data-cb-type="code-view"] .cbcode-property { color: var(--code-property); }
+[data-cb-type="code-view"] .cbcode-selector { color: var(--code-class); }
+[data-cb-type="code-view"] .cbcode-atrule { color: var(--code-keyword); }
+[data-cb-type="code-view"] .cbcode-decorator { color: var(--code-function); }
+[data-cb-type="code-view"] .cbcode-operator { color: var(--code-punct); }
+[data-cb-type="code-view"] .cbcode-punct { color: var(--code-punct); }
+
+/* Dark */
+[data-cb-type="code-view"][data-cb-theme="dark"] {
+    --code-bg: #0d1117;
+    --code-border: #30363d;
+    --code-text: #e6edf3;
+
+    --code-comment: #8b949e;
+    --code-keyword: #ff7b72;
+    --code-string: #a5d6ff;
+    --code-number: #79c0ff;
+    --code-function: #d2a8ff;
+    --code-class: #ffa657;
+    --code-tag: #7ee787;
+    --code-attr: #79c0ff;
+    --code-variable: #ffa657;
+    --code-property: #79c0ff;
+    --code-punct: #8b949e;
+}
+
+/* Midnight */
+[data-cb-type="code-view"][data-cb-theme="midnight"] {
+    --code-bg: #282a36;
+    --code-border: #44475a;
+    --code-text: #f8f8f2;
+
+    --code-comment: #6272a4;
+    --code-keyword: #ff79c6;
+    --code-string: #f1fa8c;
+    --code-number: #bd93f9;
+    --code-function: #50fa7b;
+    --code-class: #8be9fd;
+    --code-tag: #ff79c6;
+    --code-attr: #50fa7b;
+    --code-variable: #ffb86c;
+    --code-property: #8be9fd;
+    --code-punct: #f8f8f2;
+}

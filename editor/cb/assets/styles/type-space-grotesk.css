@@ -1,0 +1,78 @@
+/* ==========================================================================
+   22. SPACE GROTESK — Space Grotesk
+   ========================================================================== */
+   
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+.type-space-grotesk {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-space-grotesk h1,
+.type-space-grotesk h2,
+.type-space-grotesk h3,
+.type-space-grotesk h4,
+.type-space-grotesk h5,
+.type-space-grotesk h6 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.type-space-grotesk h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-space-grotesk h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-space-grotesk h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-space-grotesk h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-space-grotesk h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-space-grotesk h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-space-grotesk p {
+    margin: 0.75rem 0;
+}
+
+.type-space-grotesk .display {
+    margin-bottom: 2rem;
+}
+
+.type-space-grotesk .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-space-grotesk .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

@@ -1,0 +1,108 @@
+/* ===== Floating Showcase plugin =====
+   Real <img> cards floating in a CSS-3D perspective stage. `mount` positions each
+   card and drives its transform every frame (drift + cursor parallax + hover), so
+   the transform property is JS-owned here — CSS only transitions opacity/filter.
+   All selectors scoped under [data-cb-type="floating-showcase"]. */
+[data-cb-type="floating-showcase"] {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 480px;
+    --fg-radius: 12px;
+}
+
+/* Fallback (before mount): a simple centered flow so the images are still visible. */
+[data-cb-type="floating-showcase"] .fg-stage {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    /* Let cards receive hover/click even when they sit behind the stage's own
+       z=0 plane (negative translateZ). Without this, the full-bleed stage plane
+       intercepts the pointer and the card never gets it. */
+    pointer-events: none;
+}
+
+/* Live (mounted): JS places each card absolutely in 3D. */
+[data-cb-type="floating-showcase"] .fg-stage.fg-live {
+    display: block;
+    padding: 0;
+}
+
+[data-cb-type="floating-showcase"] .fg-item {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: opacity var(--fg-hover-dur, 0.35s) ease, filter var(--fg-hover-dur, 0.35s) ease;
+    pointer-events: auto;   /* re-enable pointer on the cards (stage is none) */
+}
+
+[data-cb-type="floating-showcase"] .fg-stage.fg-live .fg-item {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    will-change: transform;
+}
+
+[data-cb-type="floating-showcase"] .fg-card {
+    display: block;
+    width: min(22vw, 220px);
+    border-radius: var(--fg-radius);
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: 0 24px 48px -20px rgba(0, 0, 0, 0.5), 0 8px 18px -10px rgba(0, 0, 0, 0.35);
+    text-decoration: none;
+    cursor: default;
+    transition: box-shadow var(--fg-hover-dur, 0.35s) ease;
+}
+
+/* Featured card — centered; its size is set by the "Featured Size" option
+   (--fg-featured-w), still capped responsively by 40vw on narrow screens. */
+[data-cb-type="floating-showcase"] .fg-featured .fg-card {
+    width: min(40vw, var(--fg-featured-w, 135px));
+}
+
+/* Linked cards show a pointer (they navigate on click). */
+[data-cb-type="floating-showcase"] .fg-card[href] {
+    cursor: pointer;
+}
+
+[data-cb-type="floating-showcase"].fg-no-shadow .fg-card {
+    box-shadow: none;
+}
+
+[data-cb-type="floating-showcase"] .fg-img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Dim the other cards while one is hovered. */
+[data-cb-type="floating-showcase"] .fg-stage.fg-hovering .fg-item:not(.fg-hover) {
+    opacity: 0.5;
+    filter: blur(1.5px);
+}
+
+[data-cb-type="floating-showcase"] .fg-item.fg-hover .fg-card {
+    box-shadow: 0 42px 80px -20px rgba(0, 0, 0, 0.6), 0 14px 30px -10px rgba(0, 0, 0, 0.42);
+}
+
+@media (max-width: 640px) {
+    [data-cb-type="floating-showcase"] .fg-card {
+        width: min(40vw, 170px);
+    }
+    [data-cb-type="floating-showcase"] .fg-featured .fg-card {
+        width: min(70vw, 280px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="floating-showcase"] .fg-item {
+        transition: none;
+    }
+}

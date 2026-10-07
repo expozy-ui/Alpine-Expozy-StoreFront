@@ -1,0 +1,78 @@
+/* ==========================================================================
+   MATERIAL STANDARD — Roboto
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400&display=swap');
+
+.type-material-standard {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-material-standard h1,
+.type-material-standard h2,
+.type-material-standard h3,
+.type-material-standard h4,
+.type-material-standard h5,
+.type-material-standard h6 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.type-material-standard h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-material-standard h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-material-standard h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-material-standard h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-material-standard h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-material-standard h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-material-standard p {
+    margin: 0.75rem 0;
+}
+
+.type-material-standard .display {
+    margin-bottom: 2rem;
+}
+
+.type-material-standard .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.7rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.2rem;
+}
+
+.type-material-standard .display p {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

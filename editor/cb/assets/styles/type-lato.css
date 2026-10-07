@@ -8,15 +8,18 @@
     letter-spacing: 0.3px;
 }
 .type-lato h1, .type-lato h2, .type-lato h3, .type-lato h4, .type-lato h5, .type-lato h6 {
+    font-family: 'Lato', sans-serif;
     line-height: 1.2;
 }        
 
-.type-lato h1 {font-size: 3rem;}
-.type-lato h2 {font-size: 2.4rem;}
-.type-lato h3 {font-size: 2rem;}
-.type-lato h4 {font-size: 1.7rem;}
-.type-lato h5 {font-size: 1.3rem;}
-.type-lato h6 {font-size: 1.16rem;}
+.type-lato h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-lato h2 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-lato h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-lato h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-lato h5 {font-size: 1.3rem; margin: 0.5rem 0 0.5rem; }
+.type-lato h6 {font-size: 1.16rem; margin: 0.5rem 0 0.5rem; }
+.type-lato p {margin:0.8rem 0 0.8rem;}
+/* .type-lato ul, .type-lato ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-lato .display { margin-bottom: 0.5rem; }
 .type-lato .display h1 {

@@ -9,17 +9,20 @@
     font-weight: 300;
 }
 .type-parisienne-maitree h1, .type-parisienne-maitree h2, .type-parisienne-maitree h3, .type-parisienne-maitree h4, .type-parisienne-maitree h5, .type-parisienne-maitree h6 {
+    font-family: 'Maitree', serif;
     font-weight: 300;
     line-height: 1.2;
     letter-spacing: 1px;
 }        
 
-.type-parisienne-maitree h1 {font-size: 3.2rem;}
-.type-parisienne-maitree h2 {font-size: 2.6rem;}
-.type-parisienne-maitree h3 {font-size: 2rem;}
-.type-parisienne-maitree h4 {font-size: 1.7rem;}
-.type-parisienne-maitree h5 {font-size: 1.4rem;}
-.type-parisienne-maitree h6 {font-size: 1.17rem;font-weight: 600;}
+.type-parisienne-maitree h1 {font-size: 3.2rem; margin: 1.2rem 0 1.2rem; }
+.type-parisienne-maitree h2 {font-size: 2.6rem; margin: 1rem 0 1rem; }
+.type-parisienne-maitree h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-parisienne-maitree h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-parisienne-maitree h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-parisienne-maitree h6 {font-size: 1.17rem;font-weight: 600; margin: 0.5rem 0 0.5rem; }
+.type-parisienne-maitree p {margin:0.8rem 0 0.8rem;}
+/* .type-parisienne-maitree ul, .type-parisienne-maitree ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-parisienne-maitree .display { margin-bottom: 0.5rem; }
 .type-parisienne-maitree .display h1 {

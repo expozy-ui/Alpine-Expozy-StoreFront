@@ -14,12 +14,14 @@
     letter-spacing: 2px;
 }        
 
-.type-amaticsc-josepfinsans h1 {font-size: 3.3rem;}
-.type-amaticsc-josepfinsans h2 {font-size: 2.8rem;}
-.type-amaticsc-josepfinsans h3 {font-size: 2.4rem;}
-.type-amaticsc-josepfinsans h4 {font-size: 2rem;}
-.type-amaticsc-josepfinsans h5 {font-size: 1.6rem;}
-.type-amaticsc-josepfinsans h6 {font-size: 1.29rem;}
+.type-amaticsc-josepfinsans h1 {font-size: 3.3rem; margin: 1.2rem 0 1.2rem; }
+.type-amaticsc-josepfinsans h2 {font-size: 2.8rem; margin: 1rem 0 1rem; }
+.type-amaticsc-josepfinsans h3 {font-size: 2.4rem; margin: 1rem 0 1rem; }
+.type-amaticsc-josepfinsans h4 {font-size: 2rem; margin: 0.5rem 0 0.5rem; }
+.type-amaticsc-josepfinsans h5 {font-size: 1.6rem; margin: 0.5rem 0 0.5rem; }
+.type-amaticsc-josepfinsans h6 {font-size: 1.29rem; margin: 0.5rem 0 0.5rem; }
+.type-amaticsc-josepfinsans p {margin:0.8rem 0 0.8rem;}
+/* .type-amaticsc-josepfinsans ul, .type-amaticsc-josepfinsans ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-amaticsc-josepfinsans .display { margin-bottom: 0.5rem; }
 .type-amaticsc-josepfinsans .display h1 {

@@ -1,0 +1,127 @@
+/* ===== YouTube Embed plugin =====
+   A YouTube player (or a click-to-load thumbnail facade) in a responsive frame.
+   mount builds the content; CSS owns the frame, facade, and play button. All
+   selectors scoped under [data-cb-type="youtube-embed"]. */
+[data-cb-type="youtube-embed"] {
+    display: block;
+    width: 100%;
+    --yt-radius: 12px;
+}
+
+[data-cb-type="youtube-embed"] .yt-embed-frame {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;   /* default; mount sets the chosen ratio inline */
+    border-radius: var(--yt-radius);
+    overflow: hidden;
+    background: #000;
+}
+
+[data-cb-type="youtube-embed"] .yt-embed-frame iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    display: block;
+}
+
+/* Click-to-load facade */
+[data-cb-type="youtube-embed"] .yt-facade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: #000;
+    cursor: pointer;
+    display: block;
+    overflow: hidden;
+}
+
+[data-cb-type="youtube-embed"] .yt-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease, opacity 0.3s ease;
+}
+
+[data-cb-type="youtube-embed"] .yt-facade:hover .yt-thumb {
+    transform: scale(1.03);
+    opacity: 0.9;
+}
+
+/* Play button (YouTube-style) */
+[data-cb-type="youtube-embed"] .yt-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 68px;
+    height: 48px;
+    border-radius: 14px;
+    background: rgba(18, 18, 18, 0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+[data-cb-type="youtube-embed"] .yt-facade:hover .yt-play {
+    background: #ff0000;
+    transform: translate(-50%, -50%) scale(1.06);
+}
+
+[data-cb-type="youtube-embed"] .yt-play::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 10px 0 10px 17px;
+    border-color: transparent transparent transparent #fff;
+    margin-left: 3px;
+}
+
+[data-cb-type="youtube-embed"] .yt-facade:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 3px;
+}
+
+/* Empty state */
+[data-cb-type="youtube-embed"] .yt-embed-empty {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    color: #9ca3af;
+    font-size: 14px;
+    background: #f3f4f6;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="youtube-embed"] .yt-thumb,
+    [data-cb-type="youtube-embed"] .yt-facade:hover .yt-play {
+        transition: none;
+        transform: translate(-50%, -50%);
+    }
+    [data-cb-type="youtube-embed"] .yt-facade:hover .yt-thumb {
+        transform: none;
+    }
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   The player is YouTube's own iframe and can't be themed; only the empty-state
+   surface is themeable. Uncomment and point the selector at your site's theme
+   trigger (a class, [data-theme="dark"], etc.).
+
+.dark [data-cb-type="youtube-embed"] .yt-embed-empty {
+    color: #9ca3af;
+    background: #1f2937;
+}
+*/

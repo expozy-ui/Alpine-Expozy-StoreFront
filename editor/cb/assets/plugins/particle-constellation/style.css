@@ -1,0 +1,32 @@
+/* ===== Particle Constellation plugin =====
+   All selectors scoped under [data-cb-type="particle-constellation"].
+
+   Dark mode: nothing to override here. The container is transparent and the
+   whole visual (including its background) is drawn on the canvas from the
+   `color` / `bgColor` / `transparentBg` settings — see index.js. Set those to
+   suit a light or dark section; there is no theme-dependent CSS color. */
+[data-cb-type="particle-constellation"] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+    background: transparent;
+}
+
+[data-cb-type="particle-constellation"] canvas {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    [data-cb-type="particle-constellation"] {
+        padding: 10px 0;
+    }
+    
+    [data-cb-type="particle-constellation"] canvas {
+        border-radius: 4px;
+    }
+}

@@ -1,0 +1,50 @@
+/*
+Form plugin — block styles.
+
+The fields are styled and themed by the runtime, so only two things are defined
+here: how the message after submitting opens, and the spinner on the button.
+
+The message sets no colours of its own — it is page content, so it inherits the
+site's text styles and needs nothing for dark mode.
+*/
+
+[data-cb-type="form"] .cb-form-fields {
+    width: 100%;
+}
+
+/* Collapsed until there is something to say, so it takes no space. */
+[data-cb-type="form"] .cb-form-status {
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+}
+
+[data-cb-type="form"] .cb-form-status.is-visible {
+    height: auto;
+    opacity: 1;
+    margin-top: 16px;
+}
+
+[data-cb-type="form"] .cb-form-spinner {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    vertical-align: -4px;
+    animation: cb-form-spin 1s linear infinite;
+}
+
+@keyframes cb-form-spin {
+    to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="form"] .cb-form-status {
+        transition: none;
+    }
+    [data-cb-type="form"] .cb-form-spinner {
+        animation: none;
+    }
+}
+

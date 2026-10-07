@@ -1,0 +1,170 @@
+/* ===== Accordion plugin (DEPRECATED — use `faq` for new content) =====
+   All selectors scoped under [data-cb-type="accordion"].
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="accordion"] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0;
+    --acc-item-bg: #ffffff;
+    --acc-item-border: #e5e7eb;
+    --acc-item-border-hover: #d1d5db;
+    --acc-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.04);
+    --acc-header-hover-bg: #f9fafb;
+    --acc-header-active-bg: #f3f4f6;
+    --acc-question: #111827;
+    --acc-answer: #4b5563;
+    --acc-icon: #6b7280;
+    --acc-icon-active: #374151;
+    --acc-focus: #3b82f6;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses — a class, [data-theme="dark"], etc.
+   Uncomment and point the selector at your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="accordion"] {
+    --acc-item-bg: #1f2937;
+    --acc-item-border: #374151;
+    --acc-item-border-hover: #4b5563;
+    --acc-shadow-hover: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --acc-header-hover-bg: #111827;
+    --acc-header-active-bg: #1a1f2e;
+    --acc-question: #f9fafb;
+    --acc-answer: #d1d5db;
+    --acc-icon: #9ca3af;
+    --acc-icon-active: #d1d5db;
+    --acc-focus: #60a5fa;
+}
+*/
+
+/* Individual Accordion Item */
+[data-cb-type="accordion"] .accordion-item {
+    background-color: var(--acc-item-bg);
+    border: 1px solid var(--acc-item-border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+[data-cb-type="accordion"] .accordion-item:hover {
+    border-color: var(--acc-item-border-hover);
+    box-shadow: var(--acc-shadow-hover);
+}
+
+/* Accordion Header (now a button) */
+[data-cb-type="accordion"] .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.25s ease;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+}
+
+[data-cb-type="accordion"] .accordion-header:hover {
+    background-color: var(--acc-header-hover-bg);
+}
+
+[data-cb-type="accordion"] .accordion-item.active .accordion-header {
+    background-color: var(--acc-header-active-bg);
+}
+
+/* Question Text */
+[data-cb-type="accordion"] .accordion-question {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--acc-question);
+    line-height: 1.5;
+    flex: 1;
+    padding-right: 16px;
+}
+
+/* Accordion Icon */
+[data-cb-type="accordion"] .accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: var(--acc-icon);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
+}
+
+[data-cb-type="accordion"] .accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+    color: var(--acc-icon-active);
+}
+
+/* Accordion Content */
+[data-cb-type="accordion"] .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-cb-type="accordion"] .accordion-item.active .accordion-content {
+    max-height: 500px;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Answer Text */
+[data-cb-type="accordion"] .accordion-answer {
+    font-size: 18px;
+    color: var(--acc-answer);
+    line-height: 1.4;
+    padding: 14px 24px 20px 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    [data-cb-type="accordion"] {
+        gap: 10px;
+    }
+
+    [data-cb-type="accordion"] .accordion-header {
+        padding: 16px 20px;
+    }
+
+    [data-cb-type="accordion"] .accordion-question {
+        font-size: 17px;
+        padding-right: 12px;
+    }
+
+    [data-cb-type="accordion"] .accordion-item.active .accordion-content {
+        max-height: 2000px;
+    }
+
+    [data-cb-type="accordion"] .accordion-answer {
+        font-size: 16px;
+        padding: 10px 20px 18px 20px;
+    }
+}
+
+/* Focus State for Accessibility */
+[data-cb-type="accordion"] .accordion-header:focus {
+    outline: 2px solid var(--acc-focus);
+    outline-offset: -2px;
+}
+
+[data-cb-type="accordion"] .accordion-header:focus-visible {
+    outline: 2px solid var(--acc-focus);
+    outline-offset: -2px;
+}
+
+/* Remove default button focus outline in favor of custom one */
+[data-cb-type="accordion"] .accordion-header:focus:not(:focus-visible) {
+    outline: none;
+}

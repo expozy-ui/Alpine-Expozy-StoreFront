@@ -1,0 +1,175 @@
+/* ===== Team Members plugin =====
+   All selectors scoped under [data-cb-type="team-members"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="team-members"] {
+    position: relative;
+    width: 100%;
+    --tm-accent: #3b82f6;
+    --tm-surface: #fff;
+    --tm-text: #1a1a1a;
+    --tm-muted: #6b7280;
+    --tm-border: #e5e7eb;
+    --tm-photo-bg: #f3f4f6;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="team-members"] {
+    --tm-surface: #1e1e1e;
+    --tm-text: #f3f4f6;
+    --tm-muted: #9ca3af;
+    --tm-border: #3a3a3a;
+    --tm-photo-bg: #2a2a2a;
+}
+*/
+
+[data-cb-type="team-members"] .team-grid {
+    display: grid;
+    gap: 24px;
+    align-items: stretch;
+}
+
+[data-cb-type="team-members"] .team-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 22px;
+    background: var(--tm-surface);
+    border: 1px solid var(--tm-border);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+[data-cb-type="team-members"] .team-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: #d1d5db;
+}
+
+[data-cb-type="team-members"] .team-photo {
+    width: 104px;
+    height: 104px;
+    object-fit: cover;
+    border-radius: 50%;
+    background: var(--tm-photo-bg);
+    margin-bottom: 16px;
+}
+
+/* Photo shape option */
+[data-cb-type="team-members"][data-cb-image-shape="rounded"] .team-photo { border-radius: 16px; }
+[data-cb-type="team-members"][data-cb-image-shape="square"] .team-photo { border-radius: 0; }
+
+[data-cb-type="team-members"] .team-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    width: 100%;
+}
+
+[data-cb-type="team-members"] .team-name {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--tm-text);
+    margin: 0;
+    line-height: 1.3;
+}
+
+[data-cb-type="team-members"] .team-role {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--tm-accent);
+    margin: 0;
+}
+
+[data-cb-type="team-members"] .team-bio {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--tm-muted);
+    margin: 6px 0 0;
+}
+
+[data-cb-type="team-members"][data-cb-show-bio="false"] .team-bio { display: none; }
+
+/* Social links */
+[data-cb-type="team-members"] .team-social {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+[data-cb-type="team-members"] .team-social:empty { display: none; }
+
+[data-cb-type="team-members"] .team-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    color: var(--tm-muted);
+    background: transparent;
+    transition: color 0.2s ease, background 0.2s ease;
+}
+
+[data-cb-type="team-members"] .team-link svg {
+    width: 18px;
+    height: 18px;
+}
+
+[data-cb-type="team-members"] .team-link:hover {
+    color: var(--tm-accent);
+    background: color-mix(in srgb, var(--tm-accent) 12%, transparent);
+}
+
+[data-cb-type="team-members"] .team-link:focus-visible {
+    outline: 2px solid var(--tm-accent);
+    outline-offset: 2px;
+}
+
+/* ----- Optional: Card Shadow off (flat) — data-cb-shadow="false" ----- */
+[data-cb-type="team-members"][data-cb-shadow="false"] .team-card,
+[data-cb-type="team-members"][data-cb-shadow="false"] .team-card:hover {
+    box-shadow: none;
+}
+
+/* ----- Optional: Rounded Corners off (square) — data-cb-rounded="false" ----- */
+[data-cb-type="team-members"][data-cb-rounded="false"] .team-card {
+    border-radius: 0;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    [data-cb-type="team-members"] .team-grid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+@media (max-width: 560px) {
+    [data-cb-type="team-members"] .team-grid { grid-template-columns: 1fr !important; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="team-members"] .team-card,
+    [data-cb-type="team-members"] .team-link {
+        transition: none !important;
+    }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+    [data-cb-type="team-members"] .team-card { border: 2px solid currentColor; }
+}
+
+/* Print */
+@media print {
+    [data-cb-type="team-members"] .team-card { page-break-inside: avoid; box-shadow: none; }
+}

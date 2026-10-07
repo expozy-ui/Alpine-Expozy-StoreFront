@@ -1,0 +1,63 @@
+/* ===== Hero Animation plugin =====
+   All selectors scoped under [data-cb-type="hero-animation"].
+   The ambient glow runs through a CSS variable so dark mode is a variable override.
+   (The canvas draws itself from the `baseColor` setting — see index.js.) */
+[data-cb-type="hero-animation"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 400px;
+    padding: 40px 20px;
+    position: relative;
+    --ha-glow: rgba(100, 100, 255, 0.03);
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   The glow color is a CSS variable, so redefine it below under whatever trigger
+   your site uses — a class, [data-theme="dark"], @media (prefers-color-scheme:
+   dark), etc. Uncomment and point the selector at your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="hero-animation"] {
+    --ha-glow: rgba(100, 100, 255, 0.08);
+}
+*/
+
+/* Canvas Styling */
+[data-cb-type="hero-animation"] canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Subtle ambient background glow */
+[data-cb-type="hero-animation"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, var(--ha-glow) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    [data-cb-type="hero-animation"] {
+        min-height: 300px;
+        padding: 20px 10px;
+    }
+
+    [data-cb-type="hero-animation"] canvas {
+        max-width: 100%;
+        width: 100% !important;
+        height: auto !important;
+    }
+}

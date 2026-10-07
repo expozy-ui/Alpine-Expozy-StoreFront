@@ -9,7 +9,7 @@
                     '<div class="is-modal-content" style="max-width:300px;height:200px;padding:0;">' +
                         '<div class="is-modal-bar is-draggable" style="height:32px;line-height:32px;">' + 
                             _cb.out('Word Count') +
-                            '<div class="is-modal-close">&#10005;</div>' +
+                            '<button type="button" class="is-modal-close" tabindex="-1" title="' + _cb.out('Close') + '">&#10005;</button>' +
                         '</div>' +
                         '<div style="padding:45px 20px 0;">' +
                             '<div style="line-height:1"><span id="spanWords" style="font-size:60px;font-weight:700;"></span> &nbsp;<span style="letter-spacing: 1px;font-size:15px;">' + _cb.out('words') + '</span></div>' +
@@ -66,11 +66,13 @@
         modal.querySelector('#spanWords').innerText = words;
         modal.querySelector('#spanChars').innerText = chars;
         modal.querySelector('#spanCharsNoSpaces').innerText = charsnospaces;
-        
-        var btnClose = modal.querySelector('.is-modal-close');
-        btnClose.addEventListener('click', function(e){
-            _cb.hideModal(modal);
-        });
     }
+
+    // Bind the close button once, when the plugin loads — not on every open
+    // (which would accumulate a listener per open).
+    var wordcountModal = document.querySelector(".is-modal.wordcount");
+    wordcountModal.querySelector('.is-modal-close').addEventListener('click', function () {
+        _cb.hideModal(wordcountModal);
+    });
 
 })();

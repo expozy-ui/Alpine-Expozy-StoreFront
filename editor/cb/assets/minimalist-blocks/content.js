@@ -19,16 +19,27 @@ var _snippets_path = _path();
 var data_basic = {
     'snippets': [
 
+
 		{
-		    'thumbnail': 'preview/basic-01.png',
+		    'thumbnail': 'preview/basic-01b.png',
 		    'category': '120',
 		    'html': `
 			<div class="display">
-				<h1 class="uppercase size-42 font-semibold">Beautiful Content. Responsive.</h1>
-				<p><span class="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span></p>
+				<h1 class="font-medium">Design the way you think.</h1>
+				<p>Build your site with more creative freedom.</p>
 			</div>
 			`	
 		},
+		// {
+		//     'thumbnail': 'preview/basic-01.png',
+		//     'category': '120',
+		//     'html': `
+		// 	<div class="display">
+		// 		<h1 class="uppercase size-42 font-semibold">Beautiful Content. Responsive.</h1>
+		// 		<p><span class="italic">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span></p>
+		// 	</div>
+		// 	`	
+		// },
 		{
 		    'thumbnail': 'preview/basic-02.png',
 		    'category': '120',
@@ -57,7 +68,19 @@ var data_basic = {
 		    'thumbnail': 'preview/basic-05.png',
 		    'category': '120',
 		    'html': `
-			<img src="assets/minimalist-blocks/images/img-2400x1350.png" alt="">
+			<img src="assets/minimalist-blocks/images/ai-4fA9e.jpg" alt="">
+			`	
+		},
+        {
+		    'thumbnail': 'preview/basic-24.png',
+		    'category': '120',
+		    'html': `
+			<div class="row">
+                <div class="column">
+                    <h1 class="size-96"><span class="font-semibold size-96">About</span> us</h1>
+                    <h3 class="size-21 tracking-wide">Founded in 2019</h3>
+                </div>
+			</div>
 			`	
 		},
 		{
@@ -66,13 +89,13 @@ var data_basic = {
 			'mode': 'canvas',
 		    'html': `
 			<div class="is-block block-steady" style="top: 20%; left: 20%; width:540px;height: 300px" data-new-dummy="1">
-				<div class="is-block-overlay" style="background-image: url(&quot;assets/minimalist-blocks/images/img-2400x1350.png"&quot;); background-position: 50% 60%;"></div>
+				<div class="is-block-overlay" style="background-image: url(&quot;assets/minimalist-blocks/images/ai-4fA9e.jpg"&quot;); background-position: 50% 60%;"></div>
 			</div>
 			`,
 			'html2': `
 			<div class="row">
 				<div class="column pt-0 pb-0 pl-0 pr-0 flex flex-col justify-center">
-				<img src="assets/minimalist-blocks/images/img-2400x1350.png" alt="">
+				<img src="assets/minimalist-blocks/images/ai-4fA9e.jpg" alt="">
 				</div>
 			</div>
 			`
@@ -102,19 +125,18 @@ var data_basic = {
 		    'html': `
 			<div class="row">
 				<div class="column half">
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 				<div class="column half">
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+						<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
 						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 				</div>
 
 			</div>
 			`	
 		},
+        
 		{
 		    'thumbnail': 'preview/basic-07.png',
 		    'category': '120',
@@ -131,6 +153,506 @@ var data_basic = {
 			</div>
 			`	
 		},
+
+		{
+		    'thumbnail': 'preview/basic-23.png',
+		    'category': '120',
+		    'html': `
+			<div class="row">
+				<div class="column full">
+					<h1 class="font-semibold size-42 tracking-wider">Agency Name — We imagine, ideate, and execute with intention and drive to discover new ways of designing and detailing spaces.</h1>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column full">
+					<div class="spacer height-40"></div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="column full">
+					<p class="font-semibold tracking-wider size-19"><a href="#" title="" class="no-underline">Let's Talk</a>&nbsp;<i class="icon ion-android-arrow-forward"></i></p>
+				</div>
+			</div>
+			`	
+		},
+        {
+		    'thumbnail': 'preview/gallery-01.png',
+		    'category': '120',
+		    'html': `
+				<div class="row">
+                    <div class="column py-1" data-noedit 
+                    data-dialog-width="1200px" 
+                    data-dialog-height="740px" 
+                    data-module="media-grid-builder" 
+                    data-module-desc="Image Gallery" 
+                    data-html="
+
+							${encodeURIComponent(`
+                            <div id="_style_{id}" style="display:none">
+                            #{id}.is-media-grid {
+                              column-count: 3;
+                              column-gap: 10px;
+                              padding: 0px;
+                            }
+                            #{id} .gallery-item {
+                              position: relative;
+                              break-inside: avoid;
+                              border-radius: 0px;
+                              margin-bottom: 10px;
+                              line-height: 0; /* Eliminate extra space */
+                              overflow: hidden;
+                            }
+                            #{id} .gallery-item img {
+                              width: 100%;
+                              height: auto;
+                              transition: .8s all;
+                              margin: 0;
+                            }
+                            #{id} .gallery-item .caption {
+                              position: absolute;
+                              bottom: 0;
+                              left: 0;
+                              width: 100%;
+                              background-color: rgba(0, 0, 0, 0.4);
+                              color: #fff;
+                              padding: 12px 15px;
+                              opacity: 0;
+                              transition: all 0.8s ease;
+                              overflow: hidden;
+                              text-overflow: ellipsis;
+                              box-sizing: border-box;
+                              font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+                              font-size: .9em;
+                              font-weight: 200;
+                              line-height: 1.2;
+                            }
+                            
+                            #{id} .gallery-item .caption h4 {
+                              font-weight: 300;
+                              font-size: 1.1em;
+                              margin: 0 0 0.1em;;
+                            }
+                            #{id} .gallery-item:hover .caption {
+                              opacity: 1;
+                            }
+                  
+                            /* Slide */
+                            #{id} .gallery-item .caption {
+                                transform: translateY(100%);
+                                transition: transform 0.5s ease, opacity 0.5s ease;
+                            }
+                            #{id} .gallery-item:hover .caption {
+                                transform: translateY(0%);
+                                opacity: 1;
+                            } 
+                            
+                            /* Caption Light */
+                            #{id} .gallery-item .caption {
+                                background-color: #fff;
+                                color: #000;
+                            }
+                  
+                            @media (max-width: 800px) {
+                              #{id}.is-media-grid {column-count: 3;}
+                            }
+                            @media (max-width: 600px) {
+                              #{id}.is-media-grid {column-count: 2;}
+                            }
+                            @media (max-width: 400px) {
+                              #{id}.is-media-grid {column-count: 1;}
+                            }
+                  
+                            #{id} .gallery-item a.glightbox {
+                                pointer-events: none;
+                            }
+
+                            .gallery-item video {
+                                height: auto; 
+                                width: 100%;
+                                object-fit: cover;
+                            }
+                            </div>
+                            <div id="{id}" class="is-media-grid grid-sortable" style="opacity:0">
+                              <div class="gallery-item">
+                                <a href="assets/minimalist-blocks/images/ai-MILpb.jpg" class="glightbox" data-title="My title" data-description="This is the description">
+                                  <img src="assets/minimalist-blocks/images/ai-MILpb.jpg" alt="My title">
+                                  <div class="caption">
+                                    <h4>My title</h4>
+                                    <div>This is the description</div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="gallery-item">
+                                <a href="assets/minimalist-blocks/images/ai-2JkRP.jpg" class="glightbox" data-title="My title" data-description="This is the description">
+                                  <img src="assets/minimalist-blocks/images/ai-2JkRP.jpg" alt="My title">
+                                  <div class="caption">
+                                    <h4>My title</h4>
+                                    <div>This is the description</div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="gallery-item">
+                                <a href="assets/minimalist-blocks/images/ai-4mQ3H.jpg" class="glightbox" data-title="My title" data-description="This is the description">
+                                  <img src="assets/minimalist-blocks/images/ai-4mQ3H.jpg" alt="">
+                                  <div class="caption">
+                                    <h4>My title</h4>
+                                    <div>This is the description</div>
+                                  </div>
+                                </a>
+                              </div>
+                            
+                              <div class="gallery-item">
+                                <a href="assets/minimalist-blocks/images/ai-j6Oyc.jpg" class="glightbox" data-title="My title" data-description="This is the description">
+                                  <img src="assets/minimalist-blocks/images/ai-j6Oyc.jpg" alt="My title">
+                                  <div class="caption">
+                                    <h4>My title</h4>
+                                    <div>This is the description</div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="gallery-item">
+                                <a href="assets/minimalist-blocks/images/ai-lMoX0.jpg" class="glightbox" data-title="My title" data-description="This is the description">
+                                  <img src="assets/minimalist-blocks/images/ai-lMoX0.jpg" alt="My title">
+                                  <div class="caption">
+                                    <h4>My title</h4>
+                                    <div>This is the description</div>
+                                  </div>
+                                </a>
+                              </div>
+                              <div class="gallery-item">
+                                <a href="assets/minimalist-blocks/images/ai-xPlfu.jpg" class="glightbox" data-title="My title" data-description="This is the description">
+                                  <img src="assets/minimalist-blocks/images/ai-xPlfu.jpg" alt="My title">
+                                  <div class="caption">
+                                    <h4>My title</h4>
+                                    <div>This is the description</div>
+                                  </div>
+                                </a>
+                              </div>
+                            </div>
+                            <script>
+                            var docReady = function(fn) {
+                                var stateCheck = setInterval(function() {
+                                    if (document.readyState !== "complete") return;
+                                    clearInterval(stateCheck);
+                                    fn();
+                                }, 1);
+                            };
+                  
+                            docReady(function() {
+                              var cssElm = document.querySelector('#_style_{id}');
+                              if(!cssElm) return;
+                              var css = cssElm.innerHTML;
+                              var head = document.getElementsByTagName('head')[0];
+                              var s = document.createElement('style');
+                              s.appendChild(document.createTextNode(css));
+                              head.appendChild(s);
+                  
+                              var grid = document.getElementById('{id}');
+                          
+                              if (typeof GLightbox === 'undefined') {
+                                var lightboxCss = document.createElement('link');
+                                lightboxCss.href = 'https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/css/glightbox.min.css';
+                                lightboxCss.rel = 'stylesheet';
+                          
+                                var lightboxJs = document.createElement('script');
+                                lightboxJs.src = 'https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js';
+                                lightboxJs.async = true; // Ensure script is executed after load
+                                lightboxJs.defer = true; // Ensure script is executed in order
+
+                                lightboxJs.onload = function() {
+                                    initializeLightbox(grid);
+                                };
+                    
+                                document.head.appendChild(lightboxCss);
+                                document.head.appendChild(lightboxJs);
+
+                              } else {
+
+                                initializeLightbox(grid);
+
+                              }
+                          
+                            });
+
+                            function initializeLightbox(grid) {
+                                if (typeof GLightbox !== 'undefined') {
+                                    setTimeout(() => {
+                                        grid.style.opacity = '';
+                                    }, 100);
+                        
+                                    const lightbox = GLightbox({
+                                        touchNavigation: true,
+                                        selector: '#{id} .glightbox',
+                                        loop: true,
+                                        autoplayVideos: true,
+                                        zoomable: true,
+                                        slideEffect: 'slide',
+                                        descPosition: 'bottom',
+                                        skin: 'light'
+                                    });
+                                } else {
+                                    setTimeout(() => {
+                                        initializeLightbox(grid);
+                                    }, 100); // Retry after a short delay if still undefined
+                                }
+                            }
+                            </script>					
+							
+							`)}
+
+                        " 
+						
+						data-settings="
+
+							${encodeURIComponent(`
+                            {
+                              "gap": 10,
+                              "cols": 3,
+                              "rounded": 0,
+                              "theme": "light",
+                              "hover": "",
+                              "captionPos": "bottom",
+                              "captionEffect": "slide",
+                              "captionTheme": "light",
+                              "slideEffect": "slide",
+                              "zoomable": "yes",
+                              "lightbox": "disabled"
+                            }
+                          `)}
+						
+						">
+
+                    </div>
+                </div>
+			`	
+		},
+/*
+        {
+		    'thumbnail': 'preview/gallery-01.png',
+		    'category': '120',
+		    'html': `
+				<div class="row">
+                    <div class="column" data-noedit 
+                    data-dialog-width="1220px" 
+                    data-dialog-height="85vh" 
+                    data-module="form-builder" 
+                    data-module-desc="Form Builder" 
+                    data-html="
+
+							${encodeURIComponent(`
+
+                            <div id="_style_{id}" style="display:none">
+                                .animate-spin {
+                                    animation: spin 1s linear infinite;
+                                }
+                                @keyframes spin {
+                                    from {
+                                        transform: rotate(0deg);
+                                    }
+                                    to {
+                                        transform: rotate(360deg);
+                                    }
+                                }
+                            </div>
+                            <form id="form_{id}" method="POST" action="/formsubmission" style="padding: 25px 0 20px">
+                                <div id="{id}"></div>
+
+                                <button id="btn_send_{id}" type="submit" class="transition-all inline-flex items-center whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-6 mb-1 py-2 size-18 px-8 text-black leading-relaxed rounded border-transparent hover:border-transparent font-normal tracking-wide" style="background-color: rgb(240, 240, 240);">Submit</button>
+                            
+                                <div id="status_{id}"></div>
+                            </form>
+                            
+                            <script>
+                            var css = document.querySelector('#_style_{id}').innerHTML;
+                            var head = document.getElementsByTagName('head')[0];
+                            var s = document.createElement('style');
+                            s.appendChild(document.createTextNode(css));
+                            head.appendChild(s);
+
+                            var docReady = function(fn) {
+                                var stateCheck = setInterval(function() {
+                                    if (document.readyState !== "complete") return;
+                                    clearInterval(stateCheck);
+                                    fn();
+                                }, 1);
+                            };
+                  
+                            docReady(function() {
+                    
+                                var elm = document.getElementById('{id}');
+                                var viewer = new FormViewer(elm, {
+                                    onChange: (json) => {
+                                        // console.log(json);
+                                    },
+                                    // formHeader: false,
+                                });
+
+                                let json = {
+    "title": "Register for the Tech Conference",
+    "description": "Join us for an insightful and engaging experience.",
+    "elements": [
+        {
+            "title": "Full Name:",
+            "name": "full_name",
+            "type": "short-text",
+            "isRequired": true,
+            "placeholder": "Enter your full name"
+        },
+        {
+            "title": "Ticket Type:",
+            "name": "ticket_type",
+            "type": "select",
+            "isRequired": true,
+            "choices": [
+                "Standard Admission",
+                "VIP Admission",
+                "Student Discount"
+            ]
+        },
+        {
+            "title": "Select the sessions you’re interested in:",
+            "name": "select_the_sessions_youre_interested_in",
+            "type": "multi-select",
+            "choices": [
+                "Keynote Speech",
+                "AI Workshop",
+                "Networking Session",
+                "Panel Discussion"
+            ]
+        },
+        {
+            "title": "Are you attending the networking dinner?",
+            "name": "are_you_attending_the_networking_dinner",
+            "type": "switch"
+        },
+        {
+            "title": "Email:",
+            "name": "email",
+            "type": "email",
+            "isRequired": true,
+            "placeholder": "Enter your email"
+        }
+    ]
+};
+                                
+                                viewer.view(json); // Render form
+
+                                const form = document.querySelector('#form_{id}');
+
+                                var btnSend = document.querySelector('#btn_send_{id}');
+
+                                var statusInfo = document.querySelector('#status_{id}');
+
+                                async function handleSubmit(event) {
+                                    event.preventDefault();
+
+                                    btnSend.innerHTML = '<span class="loading-icon"><svg class="animate-spin" style="margin-right:7px;width:20px;height:20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></span>Submit';
+
+                                    var data = new FormData(event.target);
+                                    fetch(event.target.action, {
+                                        method: form.method,
+                                        body: data,
+                                        headers: {
+                                            'Accept': 'application/json'
+                                        }
+                                    }).then(response => {
+                                        if (response.ok) {
+                                            statusInfo.innerHTML = '<div class="text-center pt-4"><i class="bi bi-send-check size-64"></i>' +
+                                            '</div><div class="leading-11 text-center size-38 pb-4">Thanks for your submission!</div>';
+                                            form.reset();
+                                        } else {
+                                            response.json().then(data => {
+                                                if (Object.hasOwn(data, 'errors')) {
+                                                    statusInfo.innerHTML = data['errors'].map(error => error['message']).join(', ');
+                                                } else {
+                                                    statusInfo.innerHTML = '<div class="leading-11 text-center size-38 pt-4 pb-4">Oops! There was a problem submitting your form.</div>';
+                                                }
+                                            });
+                                        }
+
+                                        btnSend.innerHTML = 'Submit';
+                                    }).catch(error => {
+                                        statusInfo.innerHTML = '<div class="leading-11 text-center size-38 pt-4 pb-4">Oops! There was a problem submitting your form.</div>';
+
+                                        btnSend.innerHTML = 'Submit';
+                                    });
+                                }
+                                form.addEventListener('submit', handleSubmit);
+                          
+                            });
+                            </script>					
+							
+							`)}
+
+                        " 
+						
+						data-settings="
+
+							${encodeURIComponent(`
+                            {
+                                "json": {
+    "title": "Register for the Tech Conference",
+    "description": "Join us for an insightful and engaging experience.",
+    "elements": [
+        {
+            "title": "Full Name:",
+            "name": "full_name",
+            "type": "short-text",
+            "isRequired": true,
+            "placeholder": "Enter your full name"
+        },
+        {
+            "title": "Ticket Type:",
+            "name": "ticket_type",
+            "type": "select",
+            "isRequired": true,
+            "choices": [
+                "Standard Admission",
+                "VIP Admission",
+                "Student Discount"
+            ]
+        },
+        {
+            "title": "Select the sessions you’re interested in:",
+            "name": "select_the_sessions_youre_interested_in",
+            "type": "multi-select",
+            "choices": [
+                "Keynote Speech",
+                "AI Workshop",
+                "Networking Session",
+                "Panel Discussion"
+            ]
+        },
+        {
+            "title": "Are you attending the networking dinner?",
+            "name": "are_you_attending_the_networking_dinner",
+            "type": "switch"
+        },
+        {
+            "title": "Email:",
+            "name": "email",
+            "type": "email",
+            "isRequired": true,
+            "placeholder": "Enter your email"
+        }
+    ]
+},
+                                "thankYouMessage": "Thanks for your submission!",
+                                "errorMessage": "Oops! There was a problem submitting your form.",
+                                "buttonText": "Submit",
+                                "hideHeader": false,
+                                "formAction": "/formsubmission"
+                            }
+                          `)}
+						
+						">
+
+                    </div>
+                </div>
+			`	
+		},
+        */
+
 		/*
 		{
 		    'thumbnail': 'preview/basic-08.png',
@@ -233,27 +755,24 @@ var data_basic = {
 		    'thumbnail': 'preview/basic-12.png',
 		    'category': '120',
 		    'html': `
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-				<div class="column half flex justify-center flex-col items-center">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column half" style="width: 57.6087%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-4DbMv.jpg" alt=""></div>
+    <div class="column half flex justify-center flex-col items-center" style="width: 100%;">
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/basic-13.png',
 		    'category': '120',
 		    'html': `
-			<div class="row">
-				<div class="column half flex justify-center flex-col items-center">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-
-			</div>
-			`	
+<div class="row">
+<div class="column half flex justify-center flex-col items-center" style="width: 100%;">
+    <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+</div>
+<div class="column half" style="width: 58.8043%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-Vg1LJ.jpg" alt="" data-filename="ai-xgcEE-editdYnaSM4.png"></div>
+</div>`	
 		},
 
 
@@ -276,6 +795,9 @@ var data_basic = {
 							${encodeURIComponent(`
 
 							<div id="_style_{id}" style="display:none">
+                                #{id} .glide__arrow svg {
+                                    fill: #000 !important;
+                                }
 								.plr { padding-left:40px;padding-right:40px; }
 								.plr .glide__arrow--left { left:-70px !important; }
 								.plr .glide__arrow--right { right:-70px !important;  }
@@ -375,37 +897,43 @@ var data_basic = {
 									let swap = true;
 									if(myslider.closest('.is-edit')) swap=false;
 
-									myslider.style.display = '';
-									var _{id} = new Glide('#{id}', {
-										type: 'carousel',
-										autoplay: false,
-										animationDuration: 1000,
-										gap: 40,
-										perView: 2,
-										hoverpause: true,
-										arrow: true,
-										dots: false,
-										breakpoints: {
-											760: { perView: 1, gap: 0 }
-										},
-										swipeThreshold: swap, dragThreshold: swap
-									}).mount();
-									_cleanClonedItems();
+                                    setTimeout(()=>{
+
+                                        myslider.style.display = '';
+                                        var _{id} = new Glide('#{id}', {
+                                            type: 'carousel',
+                                            autoplay: false,
+                                            animationDuration: 1000,
+                                            gap: 40,
+                                            perView: 2,
+                                            hoverpause: true,
+                                            arrow: true,
+                                            dots: false,
+                                            breakpoints: {
+                                                760: { perView: 1, gap: 0 }
+                                            },
+                                            swipeThreshold: swap, dragThreshold: swap
+                                        }).mount();
+                                        _cleanClonedItems();
+
+                                    }, 400);
 								});
 							
-								function _cleanClonedItems() {
-									var clones = document.querySelectorAll('.glide__slide--clone');
-									Array.prototype.forEach.call(clones, function(clone) {
-										clone.removeAttribute('data-subblock');
-										clone.childNodes[0].removeAttribute('data-subblock');
-									});
-								}
+                                function _cleanClonedItems() {
+                                    var clones = document.querySelectorAll(".glide__slide--clone");
+                                    Array.prototype.forEach.call(clones, function(clone){
+                                        try {
+                                            clone.removeAttribute("data-subblock");
+                                            clone.childNodes[0].removeAttribute("data-subblock");
+                                        } catch(e) {}
+                                    });
+                                }
 							</script>
 							
 							`)}
 
-                        '" 
-						
+                        "
+
 						data-settings="
 
 							${encodeURIComponent('' +
@@ -417,6 +945,7 @@ var data_basic = {
 								'"perView":2,' +
 								'"hoverpause":true,' +
 								'"arrow":true,' +
+								'"arrowColor": "#000",' +
 								'"dots":false,' +
 								'"fit":""' +
 							'}')}
@@ -427,44 +956,66 @@ var data_basic = {
                 </div>`	
 		},
 		{
-		    'thumbnail': 'preview/basic-youtube.png',
-		    'category': '120',
-		    'html': `
-				<div class="embed-responsive embed-responsive-16by9">
-            		<iframe width="560" height="315" src="https://www.youtube.com/embed/P5yHEKqx86U?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            	</div>
-			`	
-		},
-		{
-		    'thumbnail': 'preview/basic-map.png',
-		    'category': '120',
-		    'html': `
-				<div class="embed-responsive embed-responsive-16by9">
-					<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="mg1" src="https://maps.google.com/maps?q=Melbourne,+Victoria,+Australia&amp;hl=en&amp;sll=-7.981898,112.626504&amp;sspn=0.009084,0.016512&amp;oq=melbourne&amp;hnear=Melbourne+Victoria,+Australia&amp;t=m&amp;z=10&amp;output=embed"></iframe>
-				</div>
-			`	
-		},
-		{
-		    'thumbnail': 'preview/basic-audio.png',
-		    'category': '120',
-		    'html': `
-				<div style="display:flex;width:100%;position:relative;margin:15px 0;background: transparent;">
-					<audio controls="" style="width:100%">
-						<source src="assets/minimalist-blocks/example.mp3" type="audio/mpeg">
-						Your browser does not support the audio element.
-					</audio>
-				</div>
-			`	
-		},
-		{
-		    'thumbnail': 'preview/basic-video.png',
+		    'thumbnail': 'preview/ai-B2h6J.webp',
 		    'category': '120',
 		    'html': `
 			<video style="width: 100%;" loop="" autoplay="">
-				<source src="assets/minimalist-blocks/example.mp4" type="video/mp4">
+				<source src="assets/minimalist-blocks/images/ai-cQ5ST.mp4" type="video/mp4">
 			</video>
 			`	
 		},
+		/* /elements */
+
+		{
+		    'thumbnail': 'preview/basic-14.png',
+		    'category': '120',
+		    'html': `
+			<div class="row">
+				<div class="column half" style="width: 55%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-ER9hZ.jpg" alt=""></div>
+				<div class="column half">
+					<p>In a sunlit room, a graceful plant stands in a white vase on a minimalist wooden table. Its lush green leaves reach toward the light, casting soft shadows on pale walls. The serene setting invites calm reflection, where nature and simplicity exist in quiet harmony.</p>
+				</div>
+			</div>
+			`	
+		},
+		{
+		    'thumbnail': 'preview/basic-15.png',
+		    'category': '120',
+		    'html': `
+			<div class="row">
+				<div class="column half">
+					<p>In a bright, sunlit room, a vibrant yellow sofa sits against a smooth white wall, its clean lines softened by a plush white pillow. Sunlight pours in, casting gentle shadows across the floor. This warm, inviting corner blends comfort and simplicity, creating a cheerful space for rest, reflection, and quiet joy.</p>
+				</div>
+				<div class="column half" style="width: 55%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-upOUB.jpg" alt=""></div>
+			</div>
+			`	
+		},
+		{
+		    'thumbnail': 'preview/basic-16.png',
+		    'category': '120',
+		    'html': `
+			<div class="row">
+				<div class="column half" style="width: 55%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-twdt4.jpg" alt=""></div>
+				<div class="column half flex flex-col justify-end items-start">
+					<p>In a calm, minimalist room, a simple rack holds neatly arranged outfits in soft and bold tones. Black heels rest nearby on warm wooden flooring, and a small table with a clear vase adds a touch of natural elegance.</p>
+				</div>
+			</div>
+			`	
+		},
+		{
+		    'thumbnail': 'preview/basic-17.png',
+		    'category': '120',
+		    'html': `
+			<div class="row">
+				<div class="column half flex flex-col justify-end items-start">
+					<p>Sunlight streams through the window, glowing on the wooden steps. The soft, neutral walls and minimalist design create a serene escape—each step leading to quiet moments of peace. Light and shadow speak in simplicity.</p>
+				</div>
+				<div class="column half" style="width: 55%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-Ur8t8.jpg" alt=""></div>
+			</div>
+			`	
+		},
+
+
 		{
 		    'thumbnail': 'preview/basic-slider.png',
 		    'category': '120',
@@ -474,11 +1025,11 @@ var data_basic = {
                     '<div class="column full" data-noedit data-module="slider" data-module-desc="Slider" data-html="' +
 
                         encodeURIComponent('<div id="{id}" class="slider-on-content" style="position:absolute;top:0;left:0;width:100%;height:100%;display:none">' +
-                            '<div class="is-boxes slider-image" style="background-image: url(\'assets/minimalist-blocks/images/slide1.jpg\');">' +
+                            '<div class="is-boxes slider-image" style="background-image: url(\'assets/minimalist-blocks/images/ai-w6ntC.jpg\');">' +
                             '</div>' +
-                            '<div class="is-boxes slider-image" style="background-image: url(\'assets/minimalist-blocks/images/slide2.jpg\');">' +
+                            '<div class="is-boxes slider-image" style="background-image: url(\'assets/minimalist-blocks/images/ai-2mCK5.jpg\');">' +
                             '</div>' +
-                            '<div class="is-boxes slider-image" style="background-image: url(\'assets/minimalist-blocks/images/slide3.jpg\');">' +
+                            '<div class="is-boxes slider-image" style="background-image: url(\'assets/minimalist-blocks/images/ai-iiKdf.jpg\');">' +
                             '</div>' +
                         '</div>' +
                         '' +
@@ -520,15 +1071,15 @@ var data_basic = {
                                     '"images":' +
                                         '[' +
                                             '{' +
-                                                '"src": "assets/minimalist-blocks/images/slide1.jpg", ' +
+                                                '"src": "assets/minimalist-blocks/images/ai-w6ntC.jpg", ' +
                                                 '"caption": "", "link": "", "width": "450", "align": "", "position": "bottom left"' +
                                             '},' +
                                             '{' +
-                                                '"src": "assets/minimalist-blocks/images/slide2.jpg", ' +
+                                                '"src": "assets/minimalist-blocks/images/ai-2mCK5.jpg", ' +
                                                 '"caption": "", "link": "", "width": "450", "align": "", "position": "bottom left"' +
                                             '},' +
                                             '{' +
-                                                '"src": "assets/minimalist-blocks/images/slide3.jpg", ' +
+                                                '"src": "assets/minimalist-blocks/images/ai-iiKdf.jpg", ' +
                                                 '"caption": "", "link": "", "width": "450", "align": "", "position": "bottom left"' +
                                             '}' +
                                         ']' +
@@ -540,12 +1091,12 @@ var data_basic = {
 			    '</div>'
 		},
 		{
-		    'thumbnail': 'preview/basic-slider.png',
+		    'thumbnail': 'preview/basic-slider.webp',
 		    'category': '120',
 			'type': 'glide',
 		    'html': `
 				<div class="row">
-                    <div class="column full padding-0 is-light-text" data-noedit data-module="slider-builder" data-module-desc="Slider" data-html="
+                    <div class="column full py-1 is-light-text" data-noedit data-module="slider-builder" data-module-desc="Slider" data-html="
 
 							${encodeURIComponent(`
 								<div id="_style_{id}" style="display:none">
@@ -555,14 +1106,16 @@ var data_basic = {
 									}
 		
 								</div>
-								<div id="{id}" class="glide" style="display:none">
+								<div id="{id}" class="glide cover" style="display:none">
 									<div data-glide-el="track" class="glide__track">
 										<ul class="glide__slides">
 											<li class="glide__slide">
-												<div data-subblock><img data-image-embed data-noresize data-sync src="assets/minimalist-blocks/images/travel2.png" alt="" /></div>
+												<div data-subblock>
+                                                    <video muted loop playsinline><source src="assets/minimalist-blocks/images/ai-xuSLh.mp4"></video>
+                                                </div>
 											</li>
 											<li class="glide__slide">
-												<div data-subblock><img data-image-embed data-noresize data-sync src="assets/minimalist-blocks/images/travel.png" alt="" /></div>
+												<div data-subblock><img data-image-embed data-noresize data-sync src="assets/minimalist-blocks/images/ai-lsDB4.jpg" alt="" /></div>
 											</li>
 										</ul>
 									</div>
@@ -581,58 +1134,192 @@ var data_basic = {
 									</div>
 								</div>
 								
-								<script>
-								var css = document.querySelector('#_style_{id}').innerHTML;
-								var head = document.getElementsByTagName('head')[0];
-								var s = document.createElement('style');
-								s.appendChild(document.createTextNode(css));
-								head.appendChild(s);
-								
-									var svgDef = '<svg width="0" height="0" style="position:absolute;display:none;">' +
-										'<defs>' +
-											'<symbol viewBox="0 0 512 512" id="ion-ios-arrow-left">' +
-												'<path d="M352 115.4L331.3 96 160 256l171.3 160 20.7-19.3L201.5 256z"></path>' +
-											'</symbol>' +
-											'<symbol viewBox="0 0 512 512" id="ion-ios-arrow-right">' +
-												'<path d="M160 115.4L180.7 96 352 256 180.7 416 160 396.7 310.5 256z"></path>' +
-											'</symbol>' +
-										'</defs>' +
-									'</svg>';
-									var pre = document.querySelector('#ion-ios-arrow-left');
-									if(!pre) {
-										document.body.insertAdjacentHTML('beforeend', svgDef);
-									}
-									
-									var docReady = function (fn) {
-										var stateCheck = setInterval(function () {
-											if (document.readyState !== 'complete') return;
-											clearInterval(stateCheck);
-											try { fn() } catch (e) { }
-										}, 1);
-									};
-									docReady(function () {
-										document.querySelector('#{id}').style.display='';
-										var _{id} = new Glide('#{id}', {
-											type: 'carousel',
-											autoplay: false,
-											animationDuration: 1000,
-											gap: 0,
-											perView: 1,
-											hoverpause: true,
-											arrow: true,
-											dots: false,
-										}).mount();
-										_cleanClonedItems();
-									});
-									function _cleanClonedItems() {
-										var clones = document.querySelectorAll('.glide__slide--clone');
-										Array.prototype.forEach.call(clones, function(clone){
-											clone.removeAttribute('data-subblock');
-											clone.childNodes[0].removeAttribute('data-subblock');
-										});
-									}
-									
-								</script>						
+                                
+<script>
+    var css = document.querySelector('#_style_{id}').innerHTML;
+    var head = document.getElementsByTagName('head')[0];
+    var s = document.createElement('style');
+    s.appendChild(document.createTextNode(css));
+    head.appendChild(s);
+
+    var svgDef = '<svg width="0" height="0" style="position:absolute;display:none;">' +
+        '<defs>' +
+        '<symbol viewBox="0 0 512 512" id="ion-ios-arrow-left">' +
+        '<path d="M352 115.4L331.3 96 160 256l171.3 160 20.7-19.3L201.5 256z"></path>' +
+        '</symbol>' +
+        '<symbol viewBox="0 0 512 512" id="ion-ios-arrow-right">' +
+        '<path d="M160 115.4L180.7 96 352 256 180.7 416 160 396.7 310.5 256z"></path>' +
+        '</symbol>' +
+        '</defs>' +
+        '</svg>';
+    var pre = document.querySelector('#ion-ios-arrow-left');
+    if (!pre) {
+        document.body.insertAdjacentHTML('beforeend', svgDef);
+    }
+
+    var docReady = function(fn) {
+        var stateCheck = setInterval(function() {
+            if (typeof Glide === 'undefined') return;
+            clearInterval(stateCheck);
+            try {
+                fn()
+            } catch (e) {}
+        }, 1);
+    };
+    docReady(function() {
+        document.querySelector("#{id}").style.display = "";
+
+        const glideSlides = document.querySelectorAll('#{id} .glide__slide');
+
+        const perView = 1;
+
+        function stopVideo(slide) {
+            const video = slide.querySelector('video');
+            if (video) {
+                video.pause();
+                video.currentTime = 0;
+            }
+            slide.classList.remove('active');
+        }
+
+        function playVideo(slide) {
+            let video = slide.querySelector('video');
+            if (video) {
+                video.play();
+            }
+        }
+
+        function coverflow(index) {
+            let activeSlide = glideSlides[index];
+            let nextSlide = activeSlide.nextElementSibling;
+            let next2Slide;
+            if (nextSlide) next2Slide = nextSlide.nextElementSibling;
+            let next3Slide;
+            if (next2Slide) next3Slide = next2Slide.nextElementSibling;
+
+            activeSlide.classList.remove('glide__slide--previous');
+            activeSlide.classList.remove('glide__slide--following');
+
+            if (activeSlide.nextElementSibling) {
+                activeSlide.nextElementSibling.classList.remove('glide__slide--previous');
+                activeSlide.nextElementSibling.classList.remove('glide__slide--following');
+                activeSlide.nextElementSibling.classList.add('glide__slide--following');
+            }
+
+            if (activeSlide.previousElementSibling) {
+                activeSlide.previousElementSibling.classList.remove('glide__slide--previous');
+                activeSlide.previousElementSibling.classList.remove('glide__slide--following');
+                activeSlide.previousElementSibling.classList.add('glide__slide--previous');
+            }
+
+            if (perView === 1 || perView === 2 || perView === 3 || perView === 4) playVideo(activeSlide);
+            if ((perView === 2 || perView === 3 || perView === 4) && nextSlide) playVideo(nextSlide);
+            if ((perView === 3 || perView === 4) && next2Slide) playVideo(next2Slide);
+            if (perView === 4 && next3Slide) playVideo(next3Slide);
+
+            activeSlide.classList.add('active');
+
+            let elms = activeSlide.parentNode.querySelectorAll('.glide__slide');
+            elms.forEach(elm => {
+                if (elm === activeSlide) return;
+                if (perView === 2)
+                    if (elm === activeSlide || elm === nextSlide) return;
+                if (perView === 3)
+                    if (elm === activeSlide || elm === nextSlide || elm === next2Slide) return;
+                if (perView === 4)
+                    if (elm === activeSlide || elm === nextSlide || elm === next2Slide || elm === next3Slide) return;
+
+                stopVideo(elm);
+            });
+
+            const slider = activeSlide.closest('.glide');
+            slider.classList.add('running');
+        }
+
+        let myslider = document.querySelector("#{id}");
+        let _{id};
+
+        setTimeout(() => {
+
+            if (myslider.classList.contains('coverflow')) {
+
+                _{id} = new Glide(myslider, {
+                    type: "carousel",
+                    autoplay: false,
+                    animationDuration: 1000,
+                    gap: 0,
+                    perView: 3,
+                    startAt: 2,
+                    hoverpause: false,
+                    arrow: true,
+                    dots: false,
+                    breakpoints: {
+                        575: {
+                            perView: 1,
+                            peek: 50
+                        },
+
+                        414: {
+                            perView: 1,
+                            peek: 40
+                        },
+
+                        360: {
+                            perView: 1,
+                            peek: 30
+                        }
+                    },
+                    focusAt: "center",
+                });
+
+            } else {
+
+                _{id} = new Glide("#{id}", {
+                    type: "carousel",
+                    autoplay: false,
+                    animationDuration: 1000,
+                    gap: 0,
+                    perView: 1,
+                    hoverpause: false,
+                    arrow: true,
+                    dots: false,
+                    breakpoints: {
+
+                        970: {
+                            perView: 1,
+                            gap: 0
+                        }
+                    },
+                });
+
+            }
+
+            _{id}.on('mount.after', function() {
+                coverflow(_{id}.index, true);
+            });
+
+            _{id}.on('run', function(event) {
+                coverflow(_{id}.index);
+            });
+
+            _{id}.mount();
+
+            _cleanClonedItems();
+
+        }, 400);
+
+    });
+
+    function _cleanClonedItems() {
+        var clones = document.querySelectorAll(".glide__slide--clone");
+        Array.prototype.forEach.call(clones, function(clone) {
+            try {
+                clone.removeAttribute("data-subblock");
+                clone.childNodes[0].removeAttribute("data-subblock");
+            } catch (e) {}
+        });
+    }
+</script>
 							
 							`)}
 
@@ -652,7 +1339,7 @@ var data_basic = {
 								'"arrowColor": "rgb(0,0,0)",' +
 								'"arrowPreset":2,' +
 								'"dots":false,' +
-								'"fit":""' +
+								'"fit":"cover"' +
 							'}')}
 						
 						">
@@ -661,81 +1348,29 @@ var data_basic = {
                 </div>
 			`	
 		},
-		/* /elements */
 
-		{
-		    'thumbnail': 'preview/basic-14.png',
-		    'category': '120',
-		    'html': `
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-				<div class="column half">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-			`	
-		},
-		{
-		    'thumbnail': 'preview/basic-15.png',
-		    'category': '120',
-		    'html': `
-			<div class="row">
-				<div class="column half">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-			</div>
-			`	
-		},
-		{
-		    'thumbnail': 'preview/basic-16.png',
-		    'category': '120',
-		    'html': `
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-				<div class="column half flex flex-col justify-end items-start">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-			`	
-		},
-		{
-		    'thumbnail': 'preview/basic-17.png',
-		    'category': '120',
-		    'html': `
-			<div class="row">
-				<div class="column half flex flex-col justify-end items-start">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-			</div>
-			`	
-		},
 		{
 		    'thumbnail': 'preview/basic-18.png',
 		    'category': '120',
 		    'html': `
 			<div class="row">
 				<div class="column third">
-					<h2 class="size-64">01</h2>
+					<h2 class="size-48">01</h2>
 					<div class="spacer height-20"></div>
-					<h3 class="size-21 uppercase leading-12">Step One</h3>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<h3 class="size-19 uppercase leading-12">Step One</h3>
+					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 				</div>
 				<div class="column third">
-					<h2 class="size-64">02</h2>
+					<h2 class="size-48">02</h2>
 					<div class="spacer height-20"></div>
-					<h3 class="size-21 uppercase leading-12">Step Two</h3>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<h3 class="size-19 uppercase leading-12">Step Two</h3>
+					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 				</div>
 				<div class="column third">
-					<h2 class="size-64">03</h2>
+					<h2 class="size-48">03</h2>
 					<div class="spacer height-20"></div>
-					<h3 class="size-21 uppercase leading-12">Step Three</h3>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					<h3 class="size-19 uppercase leading-12">Step Three</h3>
+					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
 				</div>
 			</div>
 			`	
@@ -749,21 +1384,21 @@ var data_basic = {
 					<div class="rounded-full flex justify-center items-center mb-8" style="width: 40px;height: 40px;border: 2px solid rgb(136, 136, 136);">
 						<i class="icon ion-android-done leading-none size-24" style="color: rgb(136, 136, 136);"></i>
 					</div>
-					<h3 class="tracking-wide size-28">Feature One</h3>
+					<h3 class="tracking-wide size-24">Feature One</h3>
 					<p>Lorem Ipsum is simply dummy text of the printing industry.</p>
 				</div>
 				<div class="column third">
 					<div class="rounded-full flex justify-center items-center mb-8" style="width: 40px;height: 40px;border: 2px solid rgb(136, 136, 136);">
 						<i class="icon ion-android-done leading-none size-24" style="color: rgb(136, 136, 136);"></i>
 					</div>
-					<h3 class="tracking-wide size-28">Feature Two</h3>
+					<h3 class="tracking-wide size-24">Feature Two</h3>
 					<p>Lorem Ipsum is simply dummy text of the printing industry.</p>
 				</div>
 				<div class="column third">
 					<div class="rounded-full flex justify-center items-center mb-8" style="width: 40px;height: 40px;border: 2px solid rgb(136, 136, 136);">
 						<i class="icon ion-android-done leading-none size-24" style="color: rgb(136, 136, 136);"></i>
 					</div>
-					<h3 class="tracking-wide size-28">Feature Three</h3>
+					<h3 class="tracking-wide size-24">Feature Three</h3>
 					<p>Lorem Ipsum is simply dummy text of the printing industry.</p>
 				</div>
 			</div>
@@ -777,6 +1412,234 @@ var data_basic = {
 		},
 
 		{
+		    'thumbnail': 'preview/basic-youtube.png',
+		    'category': '120',
+		    'html': `
+				<div class="embed-responsive embed-responsive-16by9">
+            		<iframe width="560" height="315" src="https://www.youtube.com/embed/P5yHEKqx86U?rel=0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            	</div>
+			`	
+		},
+		{
+		    'thumbnail': 'preview/basic-map.png',
+		    'category': '120',
+		    'html': `
+				<div class="embed-responsive embed-responsive-16by9">
+					<iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" class="mg1" src="https://maps.google.com/maps?q=Melbourne,+Victoria,+Australia&amp;hl=en&amp;sll=-7.981898,112.626504&amp;sspn=0.009084,0.016512&amp;oq=melbourne&amp;hnear=Melbourne+Victoria,+Australia&amp;t=m&amp;z=10&amp;output=embed"></iframe>
+				</div>
+			`	
+		},
+		{
+		    'thumbnail': 'preview/basic-audio.png',
+		    'category': '120',
+		    'html': `
+				<div style="display:flex;width:100%;position:relative;margin:15px 0;background: transparent;">
+					<audio controls="" style="width:100%">
+						<source src="assets/minimalist-blocks/example.mp3" type="audio/mpeg">
+						Your browser does not support the audio element.
+					</audio>
+				</div>
+			`	
+		},
+
+		{
+		    'thumbnail': 'preview/basic-form.png',
+		    'category': '120',
+			'type': 'form',
+		    'html': `
+				<div class="row">
+                    <div class="column" data-noedit 
+                    data-dialog-width="1600px" 
+                    data-dialog-height="85vh" 
+                    data-module="form-builder" 
+                    data-module-desc="Form Builder" 
+                    data-html="
+
+							${encodeURIComponent(`
+                            <div id="_style_{id}" style="display:none">
+                                #{id} {
+                                    transition: all 0.3s ease-out;
+                                    height: auto;
+                                }
+                                #{id}.collapsed {
+                                    overflow: hidden;
+                                    height: 0;
+                                }
+                                #status_{id} {
+                                    transition: all 0.3s ease-out;
+                                    height: auto;
+                                }
+                                #status_{id}.collapsed {
+                                    overflow: hidden;
+                                    height: 0;
+                                }
+                            </div>
+                            <form id="form_{id}" method="POST" action="/formsubmission" style="padding: 25px 0 20px">
+                                <div id="{id}"></div>
+
+                                <div id="status_{id}" class="collapsed"></div>
+                            </form>
+                            
+                            <script>
+                            var css = document.querySelector('#_style_{id}').innerHTML;
+                            var head = document.getElementsByTagName('head')[0];
+                            var s = document.createElement('style');
+                            s.appendChild(document.createTextNode(css));
+                            head.appendChild(s);
+                            
+                            var docReady = function(fn) {
+                                var stateCheck = setInterval(function() {
+                                    if (document.readyState !== "complete") return;
+                                    clearInterval(stateCheck);
+                                    try {
+                                        fn()
+                                    } catch (e) {}
+                                }, 1);
+                            };
+                  
+                            docReady(function() {
+                    
+                                var elm = document.getElementById('{id}');
+                                var viewer = new FormViewer(elm);
+
+                                let json = {
+    "title": "Let’s Build Something Cool!",
+    "description": "Fuel your creativity with ease.",
+    "elements": [
+        {
+            "title": "Your Name:",
+            "name": "your_name",
+            "type": "short-text",
+            "isRequired": true,
+            "placeholder": "Enter your name"
+        },
+        {
+            "title": "Your Best Email:",
+            "name": "email",
+            "type": "email",
+            "isRequired": true,
+            "placeholder": "Enter your email"
+        }
+    ],
+    "useSubmitButton": true,
+    "submitText": "Let’s Go!"
+};
+                                
+                                const initialFormData = JSON.stringify(json);
+                                viewer.view(initialFormData); 
+
+                                var statusInfo = document.querySelector('#status_{id}');
+
+                                var form = document.querySelector('#form_{id}');
+
+                                async function handleSubmit(event) {
+                                    event.preventDefault();
+
+                                    var btnSend = form.querySelector('.btn-submitform');
+                                    
+                                    btnSend.innerHTML = '<span class="loading-icon"><svg class="animate-spin" style="margin-right:7px;width:20px;height:20px" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg></span>Submit';
+
+                                    var data = new FormData(form);
+
+                                    fetch(form.action, {
+                                        method: form.method,
+                                        body: data,
+                                        headers: {
+                                            'Accept': 'application/json'
+                                        }
+                                    })
+                                    .then(response=>response.json())
+                                    .then(data=>{
+                                        if(!data.error) {
+                                            statusInfo.innerHTML = '<div class="text-center pt-4 pb-4"><i class="bi bi-send-check size-64"></i>' +
+                                            '</div><div class="leading-14 text-center size-38 pb-4">Thanks for your submission!</div>';
+                                            form.reset();
+
+                                            elm.classList.add('collapsed');
+                                            setTimeout(function(){
+                                                statusInfo.classList.remove('collapsed');
+                                            },300);
+
+                                        } else {
+                                            statusInfo.innerHTML = '<div class="leading-14 text-center size-38 pt-4 pb-4">Oops! There was a problem submitting your form.</div>';
+                                        
+                                            // elm.classList.toggle('collapsed');
+                                            setTimeout(function(){
+                                                // statusInfo.innerHTML = data.error;
+                                                statusInfo.classList.remove('collapsed');
+                                            },300);
+                                        }
+
+                                        btnSend.innerHTML = 'Submit';
+                                    });
+                                }
+
+                                form.addEventListener('submit', handleSubmit);
+                          
+                            });
+                            </script>					
+							
+							`)}
+
+                        " 
+						
+						data-settings="
+
+							${encodeURIComponent(`
+                            {
+                              "json": {
+    "title": "Let’s Build Something Cool!",
+    "description": "Fuel your creativity with ease.",
+    "elements": [
+        {
+            "title": "Your Name:",
+            "name": "your_name",
+            "type": "short-text",
+            "isRequired": true,
+            "placeholder": "Enter your full name"
+        },
+        {
+            "title": "Your Best Email:",
+            "name": "email",
+            "type": "email",
+            "isRequired": true,
+            "placeholder": "Enter your email"
+        }
+    ],
+    "useSubmitButton": true,
+    "submitText": "Let’s Go!"
+},
+                                "thankYouMessage": "Thanks for your submission!",
+                                "errorMessage": "Oops! There was a problem submitting your form.",
+                                "buttonText": "Submit",
+                                "hideHeader": false,
+                                "formAction": "/formsubmission"
+                            }
+                          `)}
+						
+						">
+
+                    </div>
+                </div>
+			`	
+		},
+
+		{
+		    'thumbnail': 'preview/basic-code.png',
+		    'category': '120',
+		    'html': `
+			<div data-cb-code data-src="${encodeURIComponent(`<h1 id="{id}">Lorem ipsum</h1>
+<p>This is a custom code block. To edit, select this block and click the Settings button.</p>
+<script>
+document.querySelector('#{id}').innerHTML = '<b>Code Block</b>';
+</script>`)}"></div>
+			`
+		},
+
+		/* Replaced by the code element above (data-cb-code).
+		   The [data-html] code block still works and is still supported;
+		   existing content keeps rendering through it.
+		{
 		    'thumbnail': 'preview/basic-code.png',
 		    'category': '120',
 		    'html': `
@@ -784,7 +1647,7 @@ var data_basic = {
 				<div class="column full" data-noedit data-html="
 
 					${encodeURIComponent(`<h1 id="{id}">Lorem ipsum</h1>
-						<p>This is a code block. You can edit this block using the source dialog.</p>
+						<p>This is a custom code block. To edit, select this block and click the Settings button.</p>
 						<script>
 						var docReady = function (fn) {
 							var stateCheck = setInterval(function () {
@@ -794,7 +1657,7 @@ var data_basic = {
 							}, 1);
 						};
 						docReady(function() {
-							document.querySelector(\'#{id}\').innerHTML =\'<b>Hello World..!</b>\';
+							document.querySelector(\'#{id}\').innerHTML =\'<b>Code Block</b>\';
 						});
 						</script>`)}
 
@@ -804,6 +1667,7 @@ var data_basic = {
 			</div>
 			`	
 		},
+		*/
 
 		/* Article */
 		{
@@ -867,15 +1731,15 @@ var data_basic = {
 		    'thumbnail': 'preview/article-03.png',
 		    'category': '118',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="py-6 flex flex-col justify-center column third">
-					<h1 class="leading-none size-28 font-normal">Fascinating Places, Great Journey.</h1>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="flex flex-col justify-center items-center column two-third"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-			</div>
+<div class="row relative sm-items-1">
+    <div class="py-6 flex flex-col justify-center column third">
+        <h1 class="leading-none size-28 font-normal">Fascinating Places, Great Journey.</h1>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="flex flex-col justify-center items-center column two-third"><img src="assets/minimalist-blocks/images/ai-EiDeP.jpg" alt=""></div>
+</div>
 			`	
 		},
 		{
@@ -962,16 +1826,16 @@ var data_basic = {
 		    'thumbnail': 'preview/article-07.png',
 		    'category': '118',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="flex flex-col justify-center items-center column two-third" style="width: 100%;"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="" style="width: 99.9136%; height: auto;"></div>
-				<div class="py-6 flex flex-col justify-center column third" style="width: 33.2943%; flex: 0 0 auto;">
-					<h1 class="leading-none size-64 font-medium">flying high</h1>
-					<div class="spacer height-20"></div>
-					<p class="text-justify italic font-light size-16">By&nbsp;Nicklas Henriksen</p>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
+<div class="row relative sm-items-1">
+    <div class="flex flex-col justify-center items-center column two-third" style="width: 100%;"><img src="assets/minimalist-blocks/images/ai-SyNxZ.jpg" alt="" style="width: 99.9136%; height: auto;" data-filename="ai-2XpKE-editndwr5cw.png"></div>
+    <div class="py-6 flex flex-col justify-center column third" style="width: 33.2943%; flex: 0 0 auto;">
+        <h1 class="leading-none size-64 font-medium">flying high</h1>
+        <div class="spacer height-20"></div>
+        <p class="text-justify italic font-light size-16">By&nbsp;Nicklas Henriksen</p>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -1053,31 +1917,41 @@ var data_basic = {
 		    'thumbnail': 'preview/article-10.png',
 		    'category': '118',
 		    'html': `
-			<div class="row">
-				<div class="column third" style="width: 36.7206%; flex: 0 0 auto;">
-					<h3 class="size-42 font-normal leading-11">Fascinating Places, Great Journey.</h3>
-					<p class="size-17 leading-14" style="color: rgb(145, 145, 145);">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.</p>
-				</div>
-				<div class="column two-third xs-hidden" style="width: 100%;">
-					<div class="spacer height-80"></div>
-				</div>
-			</div>
-			<div class="row sm-autofit">
-				<div class="column full xs-hidden sm-hidden">
-					<div class="spacer height-180"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column third">
-					<p class="text-justify">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending. Time — we’ll fight against the time, and we’ll fly on the white wings of the wind. 80 days around the world, no we won’t say a word before the ship is really back. Round, round, all around the world.</p>
-				</div>
-				<div class="column third">
-					<p class="text-justify">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending. Time — we’ll fight against the time, and we’ll fly on the white wings of the wind. 80 days around the world, no we won’t say a word before the ship is really back. Round, round, all around the world.</p>
-				</div>
-				<div class="column third">
-					<p class="text-justify">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending. Time — we’ll fight against the time, and we’ll fly on the white wings of the wind. 80 days around the world, no we won’t say a word before the ship is really back. Round, round, all around the world.</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column third" style="width: 36.7206%; flex: 0 0 auto;">
+        <h3 class="size-42 font-normal leading-11">Fascinating Places, Great Journey.</h3>
+        <p class="size-17 leading-14" style="color: rgb(145, 145, 145);">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending.</p>
+    </div>
+    <div class="column two-third xs-hidden" style="width: 100%;">
+        <div class="spacer height-80"></div>
+    </div>
+</div>
+<div class="row sm-autofit">
+    <div class="column full xs-hidden sm-hidden">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <p class="text-justify">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending. Time — we’ll fight against the time, and we’ll fly on the white wings of the wind. 80 days around the world, no we won’t say a word before the ship is really back. Round, round, all around the world.</p>
+    </div>
+
+    <div class="column">
+        <p class="text-justify">80 days around the world, we’ll find a pot of gold just sitting where the rainbow’s ending. Time — we’ll fight against the time, and we’ll fly on the white wings of the wind. 80 days around the world, no we won’t say a word before the ship is really back. Round, round, all around the world.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <div class="spacer height-20"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column" style="width: 74.7826%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-TDcyw.jpg" alt="" data-filename="ai-ls8Ku-edityZX70Ci.png"></div>
+
+    <div class="column flex flex-col justify-end items-start" style="width: 100%;">
+        <p class="text-left">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -1147,21 +2021,20 @@ var data_basic = {
 		    'thumbnail': 'preview/article-13.png',
 		    'category': '118',
 		    'html': `
-			<div class="row relative sm-items-2">
-				<div style="width: 42.6729%; flex: 0 0 auto;" class="column half flex flex-col justify-end pb-3"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt="">
-				</div>
-				<div style="width: 100%;" class="column fourth">
-					<h1 class="leading-none uppercase font-semibold size-42">Home is Where Your Story Begins</h1>
-					<p class="font-semibold size-14">Jonathan Courtright</p>
-				</div>
-				<div style="width: 100%;" class="flex flex-col justify-end column fourth">
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
+<div class="row relative sm-items-2">
+    <div style="width: 42.6729%; flex: 0 0 auto;" class="column half flex flex-col justify-end pb-3"><img src="assets/minimalist-blocks/images/ai-hdeid.jpg" alt="" data-filename="ai-CbyDu-editoSan1S2.png">
+    </div>
+    <div style="width: 100%;" class="column fourth">
+        <h1 class="leading-none uppercase font-semibold size-28">Home is Where Your Story Begins</h1>
+        <p class="font-semibold size-14">Jonathan Courtright</p>
+    </div>
+    <div style="width: 100%;" class="flex flex-col justify-end column fourth">
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type.</p>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -1244,30 +2117,40 @@ var data_basic = {
 		    'thumbnail': 'preview/article-16.png',
 		    'category': '118',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="font-semibold size-54 leading-09">Keep Everything Simple</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full xs-hidden">
-					<div class="spacer height-120"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div style="width: 100%;" class="column half">
-					<p style="color: rgb(145, 145, 145);">Words from<br>Brandon Lamberth</p>
-				</div>
-				<div class="column half" style="width: 54.0445%; flex: 0 0 auto;">
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="font-semibold size-54 leading-09">Keep Everything Simple</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full xs-hidden">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column" style="width: 57.8261%; flex: 0 0 auto;">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+    </div>
+    <div class="column" style="width: 10.5435%; flex: 0 0 auto;">
+        <div class="spacer height-80"></div>
+    </div>
+    <div style="width: 100%;" class="column">
+        <p style="color: rgb(145, 145, 145);">Words from<br>Brandon Lamberth</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <div class="spacer height-20"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column"><img src="assets/minimalist-blocks/images/ai-lsDB4.jpg" alt="" data-filename="ai-mDJ0J-editoqZd279.png"></div>
+</div>
 			`	
 		},
 		{
@@ -1550,18 +2433,16 @@ var data_basic = {
 		    'thumbnail': 'preview/headline-06.png',
 		    'category': '101',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="column half py-6 flex flex-col justify-center items-start">
-
-					<h1 class="font-normal leading-09 size-42">Great things don’t have to be complicated.</h1>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<div class="text-center">
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Take a Tour</a><a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid border-transparent ml-1 mr-1 hover:border-transparent rounded size-16 py-1 px-5 font-normal tracking-wide text-gray-800 underline leading-relaxed" title="">Get In Touch</a>
-					</div>
-
-				</div>
-				<div class="column half flex flex-col justify-center items-center"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-			</div>
+<div class="row relative sm-items-1">
+    <div class="column py-6 flex flex-col justify-center items-start" style="width: 100%;">
+        <h1 class="font-normal leading-09 size-35">Great things don’t have to be complicated.</h1>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="text-center">
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Take a Tour</a><a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid border-transparent ml-1 mr-1 hover:border-transparent rounded size-16 py-1 px-5 font-normal tracking-wide text-gray-800 underline leading-relaxed" title="">Get In Touch</a>
+        </div>
+    </div>
+    <div class="column flex flex-col justify-center items-center" style="width: 60.5435%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-2K7j5.jpg" alt=""></div>
+</div>
 			`	
 		},
 		{
@@ -1596,32 +2477,31 @@ var data_basic = {
 		    'thumbnail': 'preview/headline-17.png',
 		    'category': '101',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="column half" style="width: 41%; flex: 0 0 auto;">
-					<div class="spacer height-40"></div>
-					<h1 class="tracking-wide leading-none size-54 font-medium">Build Anything Beautifully</h1>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<div class="spacer height-20"></div>
+<div class="row relative sm-items-1">
+    <div class="column half" style="width: 42.1053%; flex: 0 0 auto;">
+        <div class="spacer height-40"></div>
+        <h1 class="tracking-wide leading-none font-medium size-48">Build Anything Beautifully</h1>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <div class="spacer height-20"></div>
 
-					<div class="button-group">
-						<a href="#preview" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Preview</a>
-						<a href="#buynow" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 text-black leading-14 rounded-full border-transparent hover:border-transparent font-normal tracking-wide" title="" style="background-color: rgb(240, 240, 240);">Buy Now</a>
-					</div>
-				</div>
-				<div style="position: relative; width: 59%; flex: 0 0 auto;" class="flex flex-col justify-center column half">
-					<div class="is-dock">
-						<div style="width: 90%;left: 15%;top: 19%;min-width:400px">
+        <div class="button-group">
+            <a href="#preview" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Preview</a>
+            <a href="#buynow" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 text-black leading-14 rounded-full border-transparent hover:border-transparent font-normal tracking-wide" title="" style="background-color: rgb(240, 240, 240);">Buy Now</a>
+        </div>
+    </div>
+    <div style="position: relative; width: 100%;" class="flex flex-col justify-center column half">
+        <div class="is-dock">
+            <div style="width: 90%;left: 15%;top: 19%;min-width:400px">
 
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/img-2400x1350.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(130px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(125px);">
-						</div>
-						<div style="width: 92%;left: 41%;top: 41%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/bg2-1920x1080.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(100px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);">
-						</div>
-					</div>
-				</div>
-
-			</div>
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-9Prvh.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(130px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(125px);" data-filename="ai-xG2F8-editSVxYrFy.png">
+            </div>
+            <div style="width: 92%;left: 41%;top: 41%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-IZAg5.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(100px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);" data-filename="ai-iiPhS-editHBnPc8L.png">
+            </div>
+        </div>
+    </div>
+</div>
 			`	
 		},
 
@@ -1670,34 +2550,33 @@ var data_basic = {
 		    'thumbnail': 'preview/headline-18.png',
 		    'category': '101',
 		    'html': `
-			<div class="row clearfix relative sm-items-1">
-				<div class="flex justify-center flex-col column two-third" style="width: 41%; flex: 0 0 auto;">
-					<h1 class="tracking-wide leading-none size-54 font-medium">Keep Everything Simple</h1>
-					<div class="spacer height-20"></div>
+<div class="row clearfix relative sm-items-1">
+    <div class="flex justify-center flex-col column two-third" style="width: 42.2368%; flex: 0 0 auto;">
+        <h1 class="tracking-wide leading-none font-medium size-48">Keep Everything Simple</h1>
+        <div class="spacer height-20"></div>
 
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <div class="spacer height-20"></div>
 
-					<div class="button-group">
-						<a href="#preview" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Preview</a>
-						<a href="#buynow" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 text-black leading-14 rounded-full border-transparent hover:border-transparent font-normal tracking-wide" title="" style="background-color: rgb(240, 240, 240);">Buy Now</a>
-					</div>
-				</div>
-				<div style="position: relative; min-height: 30vh; width: 59%; flex: 0 0 auto;" class="flex flex-col justify-center items-center column third">
-					<div class="is-dock" style="margin:50px 0">
-						<div style="width: 120%;left: 40%;top: 4%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/img-2400x1350.png" style="width: 100%;" data-bottom-top="transform: translateX(130px);" data-center="transform: translateX(0px);">
-						</div>
-						<div style="width: 58%;left: 13%;top: 56%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/bg2-1920x1080.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(75px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(75px);">
-						</div>
-						<div style="width: 58%;left: 89%;top: 56%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/bg2-1920x1080.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(125px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);">
-						</div>
-					</div>
-				</div>
-
-			</div>
+        <div class="button-group">
+            <a href="#preview" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Preview</a>
+            <a href="#buynow" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 text-black leading-14 rounded-full border-transparent hover:border-transparent font-normal tracking-wide" title="" style="background-color: rgb(240, 240, 240);">Buy Now</a>
+        </div>
+    </div>
+    <div style="position: relative; min-height: 30vh; width: 57.7174%;" class="flex flex-col justify-center items-center column third">
+        <div class="is-dock" style="margin:50px 0">
+            <div style="width: 120%;left: 40%;top: 4%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-4eEUt.jpg" style="width: 100%;" data-bottom-top="transform: translateX(130px);" data-center="transform: translateX(0px);" data-filename="ai-rBr7d-editfXtbiw6.png">
+            </div>
+            <div style="width: 58%;left: 13%;top: 56%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-cvlfg.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(75px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(75px);" data-filename="ai-lMoX0-editiapPoPs.png">
+            </div>
+            <div style="width: 58%;left: 89%;top: 56%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-XUe84.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(125px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);" data-filename="ai-EjMa5-editTiWcFjJ.png">
+            </div>
+        </div>
+    </div>
+</div>
 			`	
 		},
 
@@ -1789,7 +2668,8 @@ var data_basic = {
 				</div>
 				<div class="text-left column two-third flex flex-col justify-center items-start">
 					<div class="text-left">
-						<a href="#" title="" class="flex items-center underline"><i class="icon ion-android-arrow-dropright-circle mr-3 size-48"></i> Show Reel</a>
+						<a href="#" title="" class="flex items-center" style="text-decoration:none">
+                        <i class="icon ion-android-arrow-dropright-circle mr-3 size-48"></i> Show Reel</a>
 					</div>
 				</div>
 			</div>
@@ -2009,9 +2889,7 @@ var data_basic = {
 			<div class="text-center flex items-center justify-center">
 				<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mb-1 py-2 size-18 px-9 border-current hover:border-current font-normal leading-relaxed rounded-full tracking-wide mr-5 mt-1" title="">Explore Menu</a>
 
-				<a href="#" title="" class="ml-5 flex items-center underline" style="
-display: inline-flex;
-"><i class="icon ion-android-arrow-dropright-circle mr-3 size-50"></i> Show Reel</a>
+				<a href="#" title="" class="ml-5 flex items-center" style="display: inline-flex;text-decoration:none"><i class="icon ion-android-arrow-dropright-circle mr-3 size-50"></i> Show Reel</a>
 			</div>
 			`	
 		},
@@ -2030,72 +2908,72 @@ display: inline-flex;
 		    'thumbnail': 'preview/photos-01.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="" style="margin: 0;float: left;"></div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="" style="margin: 0;float: left;"></div>
-			</div>
+<div class="row">
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-XUe84.jpg" alt="" style="margin: 0;float: left;" data-filename="ai-MhBT8-editIx7MmTn.png"></div>
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-cvlfg.jpg" alt="" style="margin: 0;float: left;" data-filename="ai-0Xx4D-editcfCbAOe.png"></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-02.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="" style="margin: 0;float: left;"></div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="" style="margin: 0;float: left;"></div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="" style="margin: 0;float: left;"></div>
-			</div>
+<div class="row">
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-uDhRs.jpg" alt="" style="margin: 0;float: left;" data-filename="ai-6ay66-editiYP7lM9.png"></div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-K5c5T.jpg" alt="" style="margin: 0;float: left;" data-filename="ai-O4SHb-editrtRtJ92.png"></div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-0Yhoi.jpg" alt="" style="margin: 0;float: left;" data-filename="ai-Rv3el-editnRcjlrC.png"></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-03.png',
 		    'category': '102',
 		    'html': `
-			<img src="assets/minimalist-blocks/images/img-2400x1350.png" alt="">
+<img src="assets/minimalist-blocks/images/ai-gX9nR.jpg" alt="">
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-04.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column third flex flex-col justify-center items-start">
-					<h1 class="font-medium size-28 leading-none">Discover new possibilities.</h1>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				</div>
-				<div class="column two-third"><img src="assets/minimalist-blocks/images/img-1920x1280.png" alt=""></div>
-			</div>
+<div class="row">
+    <div class="column third flex flex-col justify-center items-start">
+        <h1 class="font-medium size-28 leading-none">Discover new possibilities.</h1>
+
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
+    <div class="column two-third"><img src="assets/minimalist-blocks/images/ai-bIpd8.jpg" alt="" data-filename="ai-r0K4U-editMam9unJ.png"></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-05.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column two-third"><img src="assets/minimalist-blocks/images/img-1920x1280.png" alt=""></div>
-				<div class="column third flex flex-col justify-center items-start">
-					<h1 class="font-medium size-28 leading-none">Everything you need is here.</h1>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column two-third"><img src="assets/minimalist-blocks/images/ai-M51Y5.jpg" alt="" data-filename="ai-2jc41-editfRbgdvk.png"></div>
+    <div class="column third flex flex-col justify-center items-start">
+        <h1 class="font-medium size-28 leading-none">Everything you need is here.</h1>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-06.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column half">
-					<p class="text-center">Example One</p><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-				</div>
-				<div class="column half">
-					<p class="text-center">Example Two</p><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-				</div>
-			</div>
+<div class="row">
+    <div class="column half">
+        <p class="text-center">Caption One</p><img src="assets/minimalist-blocks/images/ai-WIyxT.jpg" alt="" data-filename="ai-VKkIR-editosmpAhF.png">
+    </div>
+    <div class="column half">
+        <p class="text-center">Caption Two</p><img src="assets/minimalist-blocks/images/ai-3nzGt.jpg" alt="" data-filename="ai-obZqc-editTmVUiej.png">
+    </div>
+</div>
 			`	
 		},
 
@@ -2103,213 +2981,208 @@ display: inline-flex;
 		    'thumbnail': 'preview/photos-13.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<img src="assets/minimalist-blocks/images/img-2400x1350.png" alt="">
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column full">
+        <img src="assets/minimalist-blocks/images/ai-Mnx3I.jpg" alt="" data-filename="ai-KRivl-editOikeCV0.png">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-14.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column half">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<p class="text-center">Example One</p>
-				</div>
-				<div class="column half">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<p class="text-center">Example Two</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column half">
+        <img src="assets/minimalist-blocks/images/ai-ehmKk.jpg" alt="" data-filename="ai-HI7Lx-editnzCdNcM.png">
+        <p class="text-center">Example One</p>
+    </div>
+    <div class="column half">
+        <img src="assets/minimalist-blocks/images/ai-ER9hZ.jpg" alt="" data-filename="ai-EjMa5-edituVB0rtI.png">
+        <p class="text-center">Example Two</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-15.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column third">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<p class="text-center">Example One</p>
-				</div>
-				<div class="column third">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<p class="text-center">Example Two</p>
-				</div>
-				<div class="column third">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<p class="text-center">Example Three</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column third">
+        <img src="assets/minimalist-blocks/images/ai-Lucwn.jpg" alt="">
+        <p class="text-center">Example One</p>
+    </div>
+    <div class="column third">
+        <img src="assets/minimalist-blocks/images/ai-DXzgn.jpg" alt="">
+        <p class="text-center">Example Two</p>
+    </div>
+    <div class="column third">
+        <img src="assets/minimalist-blocks/images/ai-ueYQN.jpg" alt="">
+        <p class="text-center">Example Three</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-16.png',
 		    'category': '102',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="column half" style="width: 37%; flex: 0 0 auto;">
-					<h1 class="tracking-wide font-medium size-36 leading-11">Discover new possibilities.</h1>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div style="position: relative; width: 63%; flex: 0 0 auto;" class="flex flex-col justify-center column half">
-					<div class="is-dock">
-						<div style="width: 90%;left: 15%;top: 19%;min-width:400px">
+<div class="row relative sm-items-1">
+    <div class="column half" style="width: 36.9737%; flex: 0 0 auto;">
+        <h1 class="tracking-wide font-medium size-36 leading-11">Discover new possibilities.</h1>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div style="position: relative; width: 63.0435%;" class="flex flex-col justify-center column half">
+        <div class="is-dock">
+            <div style="width: 90%;left: 15%;top: 19%;min-width:400px">
 
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/img-2400x1350.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(130px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(125px);">
-						</div>
-						<div style="width: 92%;left: 41%;top: 41%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/bg2-1920x1080.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(100px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);">
-						</div>
-					</div>
-				</div>
-			</div>
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-5V0rH.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(130px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(125px);" data-filename="ai-e02Fm-editWt2uF5V.png">
+            </div>
+            <div style="width: 92%;left: 41%;top: 41%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-jDJiG.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(100px);" data-center-top="transform: translateX(0px);" data-50-top="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);" data-filename="ai-OJVXh-editTe4o2s7.png">
+            </div>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-07.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="font-normal size-21">Item One</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing industry</p>
-				</div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="size-21 font-normal">Item Two</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing industry</p>
-				</div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="size-21 font-normal">Item Three</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing industry</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-RDRoj.jpg" alt="">
+        <h3 class="font-normal size-21">Item One</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing industry</p>
+    </div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-oFKJG.jpg" alt="">
+        <h3 class="size-21 font-normal">Item Two</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing industry</p>
+    </div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-jWqaN.jpg" alt="" data-filename="ai-K8NLb-editKHOt72Z.png">
+        <h3 class="size-21 font-normal">Item Three</h3>
+        <p>Lorem Ipsum is simply dummy text of the printing industry</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-17.png',
 		    'category': '102',
 		    'html': `
-			<div class="row clearfix relative sm-items-1">
-				<div class="flex justify-center flex-col column two-third" style="width: 38.2156%; flex: 0 0 auto;">
-					<h1 class="tracking-wide leading-none font-medium size-36">Discover new possibilities.</h1>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div style="position: relative; min-height: 30vh; width: 59.8513%; flex: 0 0 auto;" class="flex flex-col justify-center items-center column third">
-					<div class="is-dock" style="margin:50px 0">
-						<div style="width: 120%;left: 40%;top: 4%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/img-2400x1350.png" style="width: 100%;" data-bottom-top="transform: translateX(130px);" data-center="transform: translateX(0px);">
-						</div>
-						<div style="width: 58%;left: 13%;top: 56%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/bg2-1920x1080.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(75px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(75px);">
-						</div>
-						<div style="width: 58%;left: 89%;top: 56%;">
-							<img alt="" data-noresize="" src="assets/minimalist-blocks/images/bg2-1920x1080.png" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(125px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);">
-						</div>
-					</div>
-				</div>
-			</div>
+<div class="row clearfix relative sm-items-1">
+    <div class="flex justify-center flex-col column two-third" style="width: 38.2156%; flex: 0 0 auto;">
+        <h1 class="tracking-wide leading-none font-medium size-36">Discover new possibilities.</h1>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div style="position: relative; min-height: 30vh; width: 59.8913%; flex: 0 0 auto;" class="flex flex-col justify-center items-center column third">
+        <div class="is-dock" style="margin:50px 0">
+            <div style="width: 120%;left: 40%;top: 4%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-pdgTj.jpg" style="width: 100%;" data-bottom-top="transform: translateX(130px);" data-center="transform: translateX(0px);" data-filename="ai-LYgLn-editZE1UrHC.png">
+            </div>
+            <div style="width: 58%;left: 13%;top: 56%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-85Hwg.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(75px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(75px);" data-filename="ai-GkRyo-editAn7tWgk.png">
+            </div>
+            <div style="width: 58%;left: 89%;top: 56%;">
+                <img alt="" data-noresize="" src="assets/minimalist-blocks/images/ai-4UgvH.jpg" style="width: 100%; box-shadow: rgba(22, 22, 22, 0.2) 3em 3em 5em;" data-bottom-top="transform: translateX(125px);" data-center-top="transform: translateX(0px);" data-center-bottom="transform: translateX(0px);" data-top-bottom="transform: translateX(100px);" data-filename="ai-xG2F8-editIw9OILJ.png">
+            </div>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-08.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="pr-8 column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt="">
+<div class="row">
+    <div class="column"><img src="assets/minimalist-blocks/images/ai-aTIy0.jpg" alt="">
 
-					<h1 class="font-normal size-21">Item One</h1>
-					<p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-				</div>
-				<div class="pr-8 column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt="">
+        <h1 class="font-normal size-21">Item One</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+    </div>
+    <div class="column" style="width: 60%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-VPX1m.jpg" alt="">
 
-					<h1 class="font-normal size-21">Item Two</h1>
-					<p>Lorem Ipsum is simply dummy text of the printing industry.</p>
-				</div>
-			</div>
+        <h1 class="font-normal size-21">Item Two</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing industry.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-09.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div style="width: 73.7397%; flex: 0 0 auto;" class="column two-fourth"><img src="assets/minimalist-blocks/images/img-1600x1200.png" alt=""></div>
-				<div class="flex flex-col justify-end column fourth" style="width: 100%;">
-					<h1 class="leading-none size-28 font-normal">We're visual storytellers. Helping people &amp; brands through every step of their journey.</h1>
+<div class="row">
+    <div style="width: 73.7397%; flex: 0 0 auto;" class="column two-fourth"><img src="assets/minimalist-blocks/images/ai-PHFUp.jpg" alt="" data-filename="ai-J6fcA-editicZq1U0.png"></div>
+    <div class="flex flex-col justify-end column fourth" style="width: 100%;">
+        <h1 class="leading-none size-28 font-normal">We're visual storytellers. Helping people &amp; brands through every step of their journey.</h1>
 
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-			</div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-10.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div class="column fourth flex flex-col justify-end items-start" style="width: 100%;">
-					<h1 class="leading-none size-28 font-normal">Great things don’t have to be complicated.</h1>
+<div class="row">
+    <div class="column fourth flex flex-col justify-end items-start" style="width: 100%;">
+        <h1 class="leading-none size-28 font-normal">Great things don’t have to be complicated.</h1>
 
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div style="width: 73.7397%; flex: 0 0 auto;" class="column two-fourth"><img src="assets/minimalist-blocks/images/img-1600x1200.png" alt=""></div>
-			</div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div style="width: 73.7397%; flex: 0 0 auto;" class="column two-fourth"><img src="assets/minimalist-blocks/images/ai-xW9WX.jpg" alt="" data-filename="ai-xPiUl-editqUsvy4K.png"></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-11.png',
 		    'category': '102',
 		    'html': `
-			<div class="row sm-autofit md-autofit">
-				<div style="width: 38.7637%; flex: 0 0 auto;" class="column fourth"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
+<div class="row">
+    <div style="width: 40%; flex: 0 0 auto;" class="column"><img src="assets/minimalist-blocks/images/ai-Mj1qZ.jpg" alt="">
 
-					<h2 class="font-normal size-21">Project One</h2>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-				<div style="width: 100%;" class="column fourth xs-hidden sm-hidden md-hidden">
-					<div class="spacer height-80"></div>
-				</div>
-				<div style="width: 100%;" class="column fourth"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
+        <h2 class="font-normal size-21">Project One</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
 
-					<h2 class="font-normal size-21">Project Two</h2>
-					<p>Lorem Ipsum is simply dummy text of the printing.</p>
-				</div>
-				<div class="column fourth" style="width: 100%;"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
+    <div class="column"><img src="assets/minimalist-blocks/images/ai-4CEhz.jpg" alt="">
 
-					<h2 class="font-normal size-21">Project Three</h2>
-					<p>Lorem Ipsum is simply dummy text of the printing.</p>
-				</div>
-			</div>
+        <h2 class="font-normal size-21">Project Two</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+    </div>
+    <div class="column"><img src="assets/minimalist-blocks/images/ai-trryg.jpg" alt="">
+
+        <h2 class="font-normal size-21">Project Three</h2>
+        <p>Lorem Ipsum is simply dummy text of the printing.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/photos-12.png',
 		    'category': '102',
 		    'html': `
-			<div class="row">
-				<div style="width: 27.2594%; flex: 0 0 auto;" class="column third pb-6">
-					<h1 class="size-42 leading-09 font-normal">Our recent works.</h1>
-				</div>
-				<div style="width: 100%;" class="column third">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-				</div>
-				<div class="column third" style="width: 100%;">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-				</div>
-			</div>
+<div class="row">
+    <div style="width: 27.2594%; flex: 0 0 auto;" class="column third pb-6">
+        <h1 class="size-42 leading-09 font-normal">Our recent works.</h1>
+    </div>
+    <div style="width: 100%;" class="column third">
+        <img src="assets/minimalist-blocks/images/ai-mkXX2.jpg" alt="">
+        <img src="assets/minimalist-blocks/images/ai-iNSwQ.jpg" alt="">
+    </div>
+    <div class="column third" style="width: 100%;">
+        <img src="assets/minimalist-blocks/images/ai-xMYsY.jpg" alt="">
+        <img src="assets/minimalist-blocks/images/ai-HzKor.jpg" alt="">
+    </div>
+</div>
 			`	
 		},
 
@@ -2318,96 +3191,95 @@ display: inline-flex;
 		    'thumbnail': 'preview/profile-01.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="text-center tracking-wide size-42 font-normal">Meet Our Team</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-80"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="flex flex-col justify-center items-center column third px-3">
-					<div class="img-circular" style="margin:25px 0 0;width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/img-700x700.png" alt=""></div>
-					<p class="text-center leading-14">
-						<span class="size-19 text-center font-normal">Vincent Nelson</span><br>
-						<span style="color: rgb(109, 109, 109);">Developer</span>
-					</p>
-				</div>
-				<div class="flex flex-col justify-center items-center column third px-3">
-					<div class="img-circular" style="margin:25px 0 0;width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/img-700x700.png" alt=""></div>
-					<p class="text-center leading-14">
-						<span class="size-19 text-center font-normal">Freja E. Andersen</span><br>
-						<span style="color: rgb(109, 109, 109);">Developer</span>
-					</p>
-				</div>
-				<div class="flex flex-col justify-center items-center column third px-3">
-					<div class="img-circular" style="margin:25px 0 0;width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/img-700x700.png" alt=""></div>
-					<p class="text-center leading-14">
-						<span class="size-19 text-center font-normal">Nathan Williams</span><br>
-						<span style="color: rgb(109, 109, 109);">Illustrator</span>
-					</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="text-center tracking-wide size-42 font-normal">Meet Our Team</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-80"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="flex flex-col justify-center items-center column third px-3">
+        <div class="img-circular" style="margin:25px 0 0;width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/ai-Ayo6y.jpg" alt="" data-filename="ai-v0kWC-editXvGHq38.png"></div>
+        <p class="text-center leading-14">
+            <span class="size-19 text-center font-normal">Jennifer Clarke</span><br>
+            <span style="color: rgb(109, 109, 109);">Developer</span>
+        </p>
+    </div>
+    <div class="flex flex-col justify-center items-center column third px-3">
+        <div class="img-circular" style="margin:25px 0 0;width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/ai-U9Mhk.jpg" alt="" data-filename="ai-5LB8u-editHA3SVGs.png"></div>
+        <p class="text-center leading-14">
+            <span class="size-19 text-center font-normal">Freja E. Andersen</span><br>
+            <span style="color: rgb(109, 109, 109);">Developer</span>
+        </p>
+    </div>
+    <div class="flex flex-col justify-center items-center column third px-3">
+        <div class="img-circular" style="margin:25px 0 0;width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/ai-wfCwM.jpg" alt="" data-filename="ai-rBr7d-editQCT5GrW.png"></div>
+        <p class="text-center leading-14">
+            <span class="size-19 text-center font-normal">Nathan Williams</span><br>
+            <span style="color: rgb(109, 109, 109);">Illustrator</span>
+        </p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-02.png',
 		    'category': '103',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="py-6 flex flex-col justify-center column third">
-					<p style="color: rgb(123, 123, 123);">Story about me.</p>
-					<h1 class="size-54 font-light leading-none">Emilie Petersen</h1>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<div class="spacer height-20"></div>
-					<div class="is-social text-left">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-						<a href="https://www.instagram.com/" title=""><i class="icon bi bi-instagram"></i></a>
-					</div>
-				</div>
-				<div class="flex flex-col justify-center items-center column two-third">
-					<img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-				</div>
-			</div>
-		</div>
+<div class="row relative sm-items-1">
+    <div class="py-6 flex flex-col justify-center column third">
+        <p style="color: rgb(123, 123, 123);">Story about me.</p>
+        <h1 class="size-54 font-light leading-none">Emilie Petersen</h1>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="spacer height-20"></div>
+        <div class="is-social text-left">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.instagram.com/" title=""><i class="icon bi bi-instagram"></i></a>
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center column two-third">
+        <img src="assets/minimalist-blocks/images/ai-fP32o.jpg" alt="" data-filename="ai-rBr7f-editoxDuXn4.png">
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-03.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full center">
-					<h2 class="size-42 font-normal" style="letter-spacing: 3px;">Meet The Team</h2>
-					<p style="color: rgb(136, 136, 136);" class="size-19">Here are our awesome team.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full center">
-					<div class="spacer height-60"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column third center flex flex-col justify-start items-center"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-					<h3 class="size-21 font-normal">Emilie Petersen</h3>
-					<div style="color: rgb(136, 136, 136);">Founder</div>
-				</div>
-				<div class="column third center flex flex-col justify-start items-center"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-					<h3 class="size-21 font-normal">Marcus Klausen</h3>
-					<div style="color: rgb(136, 136, 136);">Developer</div>
-				</div>
-				<div class="column third center flex flex-col justify-start items-center">
-					<img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-					<h3 class="size-21 font-normal">Jennifer Clarke</h3>
-					<div style="color: rgb(136, 136, 136);">UI/UX</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full center">
+        <h2 class="size-42 font-normal" style="letter-spacing: 3px;">Meet The Team</h2>
+        <p style="color: rgb(136, 136, 136);" class="size-19">Here are our awesome team.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column full center">
+        <div class="spacer height-60"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column third center flex flex-col justify-start items-center"><img src="assets/minimalist-blocks/images/ai-A1pR1.jpg" alt="" data-filename="ai-VETbj 2-editPMpscUR.png">
+        <h3 class="size-21 font-normal">Emilie Petersen</h3>
+        <div style="color: rgb(136, 136, 136);">Founder</div>
+    </div>
+    <div class="column third center flex flex-col justify-start items-center"><img src="assets/minimalist-blocks/images/ai-53t21.jpg" alt="" data-filename="ai-q5dRh-editso6EkVK.png">
+        <h3 class="size-21 font-normal">Marcus Klausen</h3>
+        <div style="color: rgb(136, 136, 136);">Developer</div>
+    </div>
+    <div class="column third center flex flex-col justify-start items-center">
+        <img src="assets/minimalist-blocks/images/ai-vP7cI.jpg" alt="" data-filename="ai-49P71-editXAEmqxx.png">
+        <h3 class="size-21 font-normal">Jennifer Clarke</h3>
+        <div style="color: rgb(136, 136, 136);">UI/UX</div>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -2431,277 +3303,278 @@ display: inline-flex;
 		    'thumbnail': 'preview/profile-05.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h3 class="text-center size-28 font-normal">The Team</h3>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column half py-4">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="font-normal size-24">Amanda Steele</h3>
-					<p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					<div class="is-social text-left">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-				<div class="column half py-4">
-					<img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="font-normal size-24">Peter A. Lassen</h3>
-					<p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					<div class="is-social text-left">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <h3 class="text-center font-normal size-32">The Team</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-20"></div>
+    </div>
+</div>            
+<div class="row">
+    <div class="column half py-4">
+        <img src="assets/minimalist-blocks/images/ai-M8a3L.jpg" alt="" data-filename="ai-Woik1-editxQ8cIMT.png">
+        <h3 class="font-normal size-24">Amanda Steele</h3>
+        <p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <div class="is-social text-left">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+    <div class="column half py-4">
+        <img src="assets/minimalist-blocks/images/ai-rBm3n.jpg" alt="" data-filename="ai-O2ED1-editFBpnp2k.png">
+        <h3 class="font-normal size-24">Peter A. Lassen</h3>
+        <p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <div class="is-social text-left">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-06.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h2 class="size-42 text-left font-normal">The Team</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-80"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column third py-4"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="font-normal size-24">Emilie Petersen</h3>
-					<p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-				<div class="column third py-4"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="font-normal size-24">Jonathan Rugg</h3>
-					<p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-				<div class="column third py-4"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<h3 class="font-normal size-24">Peter A. Lassen</h3>
-					<p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <h2 class="size-42 text-left font-normal">The Team</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column third py-4"><img src="assets/minimalist-blocks/images/ai-32nTD.jpg" alt="" data-filename="ai-A0tqK-editZopXqYt.png">
+        <h3 class="font-normal size-24">Emilie Petersen</h3>
+        <p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="column third py-4"><img src="assets/minimalist-blocks/images/ai-YLtos.jpg" alt="" data-filename="ai-R3Xui-editDtexBS0.png">
+        <h3 class="font-normal size-24">Jonathan Rugg</h3>
+        <p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="column third py-4"><img src="assets/minimalist-blocks/images/ai-1ANxo.jpg" alt="">
+        <h3 class="font-normal size-24">Amanda Steele</h3>
+        <p style="max-width: 400px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-07.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full text-center">
-					<h1 class="size-60 font-normal">A Passionate Team</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<p class="text-center">We work as equals &amp; celebrate as a team.</p>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="text-right column third flex flex-col justify-center items-center">
-					<div class="img-circular" style="margin:25px 0;width: 13vw;height: 13vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/img-700x700.png" alt=""></div>
-				</div>
-				<div class="flex flex-col justify-center column two-third">
-					<h2 class="size-21 font-normal">Elaine Moreno</h2>
-					<h3 class="font-light size-18" style="color: rgb(174, 174, 174);">Designer</h3>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-			</div>
-			<div class="row relative desktop-column-reverse md-column-reverse sm-column-reverse">
-				<div class="flex flex-col justify-center column two-third">
-					<h2 class="size-21 font-normal">Janice Smith</h2>
-					<h3 class="font-light size-18" style="color: rgb(174, 174, 174);">Developer</h3>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="text-left column third flex flex-col justify-center items-center">
-					<div class="img-circular" style="margin:25px 0;width: 13vw;height: 13vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/img-700x700.png" alt=""></div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full text-center">
+        <h1 class="size-60 font-normal">A Passionate Team</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <p class="text-center">We work as equals &amp; celebrate as a team.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="text-right column third flex flex-col justify-center items-center">
+        <div class="img-circular" style="margin:25px 0;width: 13vw;height: 13vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/ai-DJgsj.jpg" alt="" data-filename="ai-obZqc-editzbfsl0b.png"></div>
+    </div>
+    <div class="flex flex-col justify-center column two-third">
+        <h2 class="size-21 font-normal">Elaine Moreno</h2>
+        <h3 class="font-light size-18" style="color: rgb(174, 174, 174);">Designer</h3>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+</div>
+<div class="row relative desktop-column-reverse md-column-reverse sm-column-reverse">
+    <div class="flex flex-col justify-center column two-third">
+        <h2 class="size-21 font-normal">Janice Smith</h2>
+        <h3 class="font-light size-18" style="color: rgb(174, 174, 174);">Developer</h3>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="text-left column third flex flex-col justify-center items-center">
+        <div class="img-circular" style="margin:25px 0;width: 13vw;height: 13vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/ai-qugm7.jpg" alt="" data-filename="ai-49P77-editKYIzbti.png"></div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-08.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="flex flex-col justify-center items-center px-3 column third py-3">
-					<div class="img-circular" style="width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/img-700x700.png" alt=""></div>
-				</div>
-				<div class="px-3 flex flex-col justify-center column two-third">
-					<p class="size-21 font-normal leading-11">Nathan Williams</p>
-					<p style="color: rgb(109, 109, 109);">Lorem Ipsum is simply dummy text of the printing industry.</p>
-					<div class="is-social text-center">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="flex flex-col justify-center items-center px-3 column third py-3">
+        <div class="img-circular" style="width: 10vw;height: 10vw;min-width:150px;min-height:150px;"><img style="height: 100%; width: 100%; object-fit: cover" src="assets/minimalist-blocks/images/ai-IulKo.jpg" alt="" data-filename="ai-Dpzsu-editgi68ksx.png"></div>
+    </div>
+    <div class="px-3 flex flex-col justify-center column two-third">
+        <p class="size-21 font-normal leading-11">Nathan Williams</p>
+        <p style="color: rgb(109, 109, 109);">Lorem Ipsum is simply dummy text of the printing industry.</p>
+        <div class="is-social text-left">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-09.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 style="letter-spacing: 3px; width: 400px; max-width: 100%; font-size: 56px !important;" class="leading-none font-medium">Meet <br>our amazing team.</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-20"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-					<h5 class="size-21 font-medium tracking-wide">Nathan Williams <span style="color: rgb(136, 136, 136);">/ Founder</span></h5>
-					<p>Lorem Ipsum is dummy text of the printing and typesetting industry.</p>
-				</div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-					<h5 class="size-21 font-medium tracking-wide">Sarah Smith <span style="color: rgb(136, 136, 136);">/ Developer</span></h5>
-					<p>Lorem Ipsum is dummy text of the printing and typesetting industry.</p>
-				</div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-					<h5 class="size-21 font-medium tracking-wide">Jane Doe <span style="color: rgb(136, 136, 136);" class="font-medium">/ Designer</span></h5>
-					<p>Lorem Ipsum is dummy text of the printing and typesetting industry.</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 style="letter-spacing: 3px; width: 400px; max-width: 100%; font-size: 56px !important;" class="leading-none font-medium">Meet <br>our amazing team.</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-20"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-TVh7V.jpg" alt="" data-filename="ai-CbyDu-editPrBEsiC.png">
+        <h5 class="size-21 font-medium tracking-wide">Sarah&nbsp;<span style="color: rgb(136, 136, 136);">/ Founder</span></h5>
+        <p>Lorem Ipsum is dummy text of the printing and typesetting industry.</p>
+    </div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-1owT9.jpg" alt="" data-filename="ai-0qHok-editHAa8oh4.png">
+        <h5 class="size-21 font-medium tracking-wide">Nathan&nbsp;<span style="color: rgb(136, 136, 136);">/ Developer</span></h5>
+        <p>Lorem Ipsum is dummy text of the printing and typesetting industry.</p>
+    </div>
+
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-TysFp.jpg" alt="" data-filename="ai-obZqc-editFBXxfuT.png">
+        <h5 class="size-21 font-medium tracking-wide">Janice&nbsp;<span style="color: rgb(136, 136, 136);" class="font-medium">/ Designer</span></h5>
+        <p>Lorem Ipsum is dummy text of the printing and typesetting industry.</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-10.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<p class="size-18 is-info1">Hi World!</p>
-					<h1 class="size-42 is-title1-48 is-title-lite font-medium">I'M AUDREY SMITH</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="flex flex-col justify-center column half">
-					<h3 style="letter-spacing: 1px;" class="font-normal size-21">I design beautiful and functional stuff</h3>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text.</p>
-					<div class="size-14 is-social">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1200x675.png" alt=""></div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <p class="size-18 is-info1">Hi World!</p>
+        <h1 class="size-42 is-title1-48 is-title-lite font-medium">I'M AUDREY SMITH</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-20"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="flex flex-col justify-center column half" style="width: 100%;">
+        <h3 style="letter-spacing: 1px;" class="font-normal size-21">I design beautiful and functional stuff</h3>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text.</p>
+        <div class="size-14 is-social">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+    <div class="column half" style="width: 59.2391%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-MxA1c.jpg" alt="" data-filename="ai-MhBT8-editKYgBsVH.png"></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-11.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="center column half"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-				<div class="flex flex-col justify-center items-center column half">
-					<h2 style="letter-spacing: 3px;" class="text-center">Martha Massey</h2>
-					<div style="border-bottom: 2px solid #b8b8b8;width: 70px;display: inline-block;margin: 22px 0 7px;"></div>
-					<p class="text-center tracking-225 size-14 uppercase">Full Stack Developer</p>
-					<div class="spacer height-20"></div>
-					<p class="text-center">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text.</p>
-					<div class="spacer height-20"></div>
-					<div class="is-social center">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="center column half"><img src="assets/minimalist-blocks/images/ai-joa6X.jpg" alt=""></div>
+    <div class="flex flex-col justify-center items-center column half">
+        <h2 style="letter-spacing: 3px;" class="text-center">Martha Massey</h2>
+        <div style="border-bottom: 2px solid #b8b8b8;width: 70px;display: inline-block;margin: 22px 0 7px;"></div>
+        <p class="text-center tracking-225 size-14 uppercase">Full Stack Developer</p>
+        <div class="spacer height-20"></div>
+        <p class="text-center">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Lorem Ipsum is simply dummy text.</p>
+        <div class="spacer height-20"></div>
+        <div class="is-social center">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-12.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column half flex flex-col justify-end items-start"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-				<div class="flex flex-col justify-center items-end column half">
-					<h1 class="size-160 text-right leading-11">A.</h1>
-					<h2 class="size-28 text-right tracking-wide">Ann Higby</h2>
-					<div class="spacer height-140"></div>
-					<p class="text-left size-17" style="font-style: italic; font-family: serif; width: 100%;">Web Developer</p>
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<div class="is-social size-14" style="width: 100%;">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column half flex flex-col justify-end items-start"><img src="assets/minimalist-blocks/images/ai-XYcP5.jpg" alt="" data-filename="ai-nZOdD-editJnHhoBO.jpg"></div>
+    <div class="flex flex-col justify-center items-end column half">
+        <h1 class="size-160 text-right leading-11">A.</h1>
+        <h2 class="size-28 text-right tracking-wide">Ann Higby</h2>
+        <div class="spacer height-140"></div>
+        <p class="text-left size-17" style="font-style: italic; font-family: serif; width: 100%;">Product Designer</p>
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <div class="is-social size-14" style="width: 100%;">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-13.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column half flex flex-col justify-center items-start">
-					<h1 class="size-160 leading-11">M.</h1>
-					<h2 class="size-28 text-right tracking-wider">Michael Snow</h2>
-					<div class="spacer height-100"></div>
-					<p class="text-right size-17" style="font-style: italic; font-family: serif;">Freelance Graphic Designer</p>
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<div class="is-social size-14">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-				<div class="column half flex flex-col justify-end items-start"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-			</div>
+<div class="row">
+    <div class="column half flex flex-col justify-center items-start">
+        <h1 class="size-160 leading-11">M.</h1>
+        <h2 class="size-28 text-right tracking-wider">Monica Reed</h2>
+        <div class="spacer height-100"></div>
+        <p class="text-right size-17" style="font-style: italic; font-family: serif;">Product Designer</p>
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <div class="is-social size-14">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+    <div class="column half flex flex-col justify-end items-start"><img src="assets/minimalist-blocks/images/ai-p98j0.jpg" alt=""></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/profile-14.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-				<div class="column half flex flex-col justify-center items-start">
-					<p style="font-style: italic; color: rgb(188, 188, 188); font-family: Georgia, serif;" class="tracking-175">Hello</p>
-					<h1 class="size-28 tracking-wider">I'm <span class="font-semibold">Olivia Maus</span>. I develop website and design awesome things <span class="font-semibold">you will love</span>.</h1>
-					<div class="spacer height-20"></div>
-					<p class="text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-					<div class="spacer height-20"></div>
-					<div class="is-social size-14">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-BKPZP.jpg" alt=""></div>
+    <div class="column half flex flex-col justify-center items-start">
+        <p style="font-style: italic; color: rgb(188, 188, 188); font-family: Georgia, serif;" class="tracking-175">Hello</p>
+        <h1 class="size-28 tracking-wider">I'm <span class="font-semibold">Olivia Maus</span>. I develop website and design awesome things <span class="font-semibold">you will love</span>.</h1>
+        <div class="spacer height-20"></div>
+        <p class="text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+        <div class="spacer height-20"></div>
+        <div class="is-social size-14">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 
@@ -2710,473 +3583,358 @@ display: inline-flex;
 		    'thumbnail': 'preview/products-01.png',
 		    'category': '104',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="py-6 column half" style="width: 100%;">
-					<p class="leading-none size-15" style="color: rgb(138, 138, 138);">Store Name<br class="size-15">Your City Name</p>
-					<h2 class="font-normal leading-none size-35">Bedside Table</h2>
-				
-					<p class="font-medium size-24">$129.00</p>
-				
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<p class="font-normal">Details</p>
-					<ul>
-						<li>Base Material: Solid Wood</li>
-						<li>Seat Material: Soft Fabric<br></li>
-					</ul>
-				
-					<div class="whitespace-nowrap">
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Buy Now</a>
-					</div>
-				</div>
-				<div class="flex flex-col justify-center items-center column half" style="width: 59.4737%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-			</div>
+<div class="row relative sm-items-1">
+    <div class="py-6 column half" style="width: 100%;">
+        <p class="leading-none size-15" style="color: rgb(138, 138, 138);">Store Name<br class="size-15">Your City Name</p>
+        <h2 class="font-normal leading-none size-35">Bedside Table</h2>
+
+        <p class="font-medium size-24">$129.00</p>
+
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p class="font-normal">Details</p>
+        <ul>
+            <li>Base Material: Solid Wood</li>
+            <li>Seat Material: Soft Fabric<br></li>
+        </ul>
+
+        <div class="whitespace-nowrap">
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Buy Now</a>
+        </div>
+    </div>
+    <div class="flex flex-col justify-center items-center column half" style="width: 61.413%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-7dr6M.jpg" alt=""></div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-03.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column half py-4" style="width: 100%;">
-					<h2 class="leading-08 font-normal size-88">Shoes</h2>
-					<div class="spacer height-40"></div>
-					<h4 class="size-21 tracking-wide leading-loose">Details</h4>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				
-					<p class="font-medium size-32">$199</p>
-				
-					<div class="button-group">
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 border-current hover:border-current font-normal leading-14 rounded tracking-wide" title="">Buy Now</a>
-					</div>
-				</div>
-				<div class="column half" style="width: 60.5263%; flex: 0 0 auto;">
-					<img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-					<p class="tracking-wide font-semibold leading-none size-18">Colors</p>
-					<p>White, Black, Grey, Yellow, Red</p>
-				</div>
-			</div>
+<div class="row relative desktop-column-reverse">
+    <div class="column half py-4" style="width: 100%;">
+        <h2 class="leading-08 font-normal size-88">Shoes</h2>
+        <div class="spacer height-40"></div>
+        <h4 class="size-21 tracking-wide leading-loose">Details</h4>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+        <p class="font-medium size-32">$199</p>
+
+        <div class="button-group">
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 border-current hover:border-current font-normal leading-14 rounded tracking-wide" title="">Buy Now</a>
+        </div>
+    </div>
+    <div class="column half" style="width: 62.8261%; flex: 0 0 auto;">
+        <img src="assets/minimalist-blocks/images/ai-7g7oa.jpg" alt="" data-filename="img-KE1UcwrHe8N7yNIewWkN1-editvFjRgQT.jpg">
+        <p class="tracking-wide font-semibold leading-none size-18">Colors</p>
+        <p class="size-15 leading-none">White, Black, Grey, Yellow, Red</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-04.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h2 class="text-center size-42 font-medium">Furniture</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="py-4 column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
+<div class="row">
+    <div class="column full">
+        <h2 class="text-center size-42 font-medium">Furniture</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="py-4 column half"><img src="assets/minimalist-blocks/images/ai-hC1gx.jpg" alt="">
 
-					<h3 class="font-normal size-24">Bedside Table</h3>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type.</p>
-					<p class="font-normal leading-16 size-32">$129</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide">Buy Now</a>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid border-transparent ml-1 mr-1 hover:border-transparent rounded size-16 py-1 px-5 font-normal tracking-wide text-gray-800 underline leading-relaxed">View Details</a>
-					</div>
-				</div>
-				<div class="py-4 column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-				
-					<h3 class="font-normal size-24">Wood Cabinet</h3>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type.</p>
-					<p class="font-normal leading-16 size-32">$159</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide">Buy Now</a>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid border-transparent ml-1 mr-1 hover:border-transparent rounded size-16 py-1 px-5 font-normal tracking-wide text-gray-800 underline leading-relaxed">View Details</a>
-					</div>
-				</div>
-			</div>
+        <h3 class="font-normal size-24">Bedside Table</h3>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type.</p>
+        <p class="font-normal leading-16 size-32">$129</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide">Buy Now</a>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid border-transparent ml-1 mr-1 hover:border-transparent rounded size-16 py-1 px-5 font-normal tracking-wide text-gray-800 underline leading-relaxed">View Details</a>
+        </div>
+    </div>
+    <div class="py-4 column half"><img src="assets/minimalist-blocks/images/ai-D9YFP.jpg" alt="">
+
+        <h3 class="font-normal size-24">Wood Cabinet</h3>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type.</p>
+        <p class="font-normal leading-16 size-32">$159</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide">Buy Now</a>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid border-transparent ml-1 mr-1 hover:border-transparent rounded size-16 py-1 px-5 font-normal tracking-wide text-gray-800 underline leading-relaxed">View Details</a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-05.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h2 class="text-center size-42 font-normal">Products</h2>
-				</div>
+<div class="row">
+    <div class="column full">
+        <h2 class="text-center size-42 font-normal">Products</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row relative sm-items-2">
+    <div class="column py-4"><img src="assets/minimalist-blocks/images/ai-FpLps.jpg" alt="">
 
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
+        <h3 class="font-normal size-21">Coffee Table</h3>
+        <p class="font-medium size-32">$29</p>
 
-			</div>
-			<div class="row relative sm-items-2">
-			<div class="column third py-4"><img src="assets/minimalist-blocks/images/img-900x900.png" alt="">
+        <p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer.</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
+        </div>
+    </div>
+    <div class="column py-4"><img src="assets/minimalist-blocks/images/ai-bHuNq.jpg" alt="">
 
-				<h3 class="font-normal size-21">Coffee Table</h3>
-				<p class="font-medium size-32">$29</p>
-			
-				<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-					when an unknown printer.</p>
-				<div>
-					<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-				</div>
-			</div>
-			<div class="column third py-4"><img src="assets/minimalist-blocks/images/img-900x900.png" alt="">
-			
-				<h3 class="size-21 font-normal">Bookcase</h3>
-				<p class="font-medium size-32">$49</p>
-			
-				<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-					when an unknown printer.</p>
-				<div>
-					<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-				</div>
-			</div>
-			<div class="column third py-4"><img src="assets/minimalist-blocks/images/img-900x900.png" alt="">
-			
-				<h3 class="size-21 font-normal">Storage Cabinet</h3>
-				<p class="font-medium size-32">$89</p>
-			
-				<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-					when an unknown printer.</p>
-				<div>
-					<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-				</div>
-			</div>
-			</div>
+        <h3 class="size-21 font-normal">Bookcase</h3>
+        <p class="font-medium size-32">$49</p>
+
+        <p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer.</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-06.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="leading-09 text-center font-normal size-50">Wood Cabinet</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="flex flex-col justify-end column fourth">
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="column half">
-					<img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-				</div>
-				<div class="flex flex-col justify-start column fourth">
-					<p class="leading-none tracking-tight font-normal size-32">$189</p>
-					<div class="spacer height-20"></div>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 px-6 border-current hover:border-current font-normal leading-12 rounded-none pt-3 pb-3 size-15 tracking-wider" title="">Buy Product&nbsp;<i class="icon ion-android-arrow-forward"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="leading-09 text-center font-normal size-50">Wood Cabinet</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="flex flex-col justify-end column">
+        <p class="size-16 leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="column" style="width: 50%; flex: 0 0 auto;">
+        <img src="assets/minimalist-blocks/images/ai-6u6u8.jpg" alt="" data-filename="ai-54zu9-edituBnxtQJ.png">
+    </div>
+    <div class="flex flex-col justify-start column">
+        <p class="leading-none tracking-tight font-normal size-32">$189</p>
+        <div class="spacer height-20"></div>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 px-6 border-current hover:border-current font-normal leading-12 rounded-none pt-3 pb-3 size-15 tracking-wider" title="">Buy Product&nbsp;<i class="icon ion-android-arrow-forward"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-02.png',
 		    'category': '104',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="flex flex-col justify-center items-center column half" style="width: 58.0263%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-				<div class="py-6 column half" style="width: 100%;">
-				
-					<h2 class="font-normal leading-none size-48">Dinning Chair</h2>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					<p class="font-normal">Details</p>
-					<ul>
-						<li>Base Material: Solid Wood</li>
-						<li>Seat Material: Soft Fabric<br></li>
-					</ul>
-					<p class="font-light size-35">$149.00</p>
-				
-					<div class="whitespace-nowrap">
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Buy Now</a>
-					</div>
-				</div>
-			</div>
+<div class="row relative sm-items-1">
+    <div class="flex flex-col justify-center items-center column half" style="width: 59.1304%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-Ir61c.jpg" alt=""></div>
+    <div class="py-6 column half" style="width: 100%;">
+
+        <h2 class="font-normal leading-none size-48">Dinning Chair</h2>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+        <p class="font-normal">Details</p>
+        <ul>
+            <li>Base Material: Solid Wood</li>
+            <li>Seat Material: Soft Fabric<br></li>
+        </ul>
+        <p class="font-light size-35">$149.00</p>
+
+        <div class="whitespace-nowrap">
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-14 rounded-full tracking-wide" title="">Buy Now</a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-07.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h2 class="text-center size-42 font-normal">Most Loved</h2>
-				</div>
+<div class="row">
+    <div class="column full">
+        <h2 class="text-center size-42 font-normal">Most Loved</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row relative sm-items-2">
+    <div class="column py-4"><img src="assets/minimalist-blocks/images/ai-01Opn.jpg" alt="">
 
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
+        <h3 class="size-21 font-normal">Coffee Table</h3>
+        <p class="font-medium size-32">$29</p>
 
-			</div>
-			<div class="row relative sm-items-2">
-				<div class="column fourth py-4"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
+        <p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer.</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
+        </div>
+    </div>
+    <div class="column py-4"><img src="assets/minimalist-blocks/images/ai-MHUTu.jpg" alt="">
 
-					<h3 class="size-21 font-normal">Coffee Table</h3>
-					<p class="font-medium size-32">$29</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-					</div>
-				</div>
-				<div class="column fourth py-4"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-				
-					<h3 class="size-21 font-normal">Bookcase</h3>
-					<p class="font-medium size-32">$49</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-					</div>
-				</div>
-				<div class="column fourth py-4"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-				
-					<h3 class="size-21 font-normal">Storage Cabinet</h3>
-					<p class="font-medium size-32">$89</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-					</div>
-				</div>
-				<div class="column fourth py-4"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-				
-					<h3 class="size-21 font-normal">Office Desk</h3>
-					<p class="font-medium size-32">$59</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
-					</div>
-				</div>
-			</div>
+        <h3 class="size-21 font-normal">Bookcase</h3>
+        <p class="font-medium size-32">$49</p>
+
+        <p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer.</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 text-black leading-12 rounded-full border-transparent hover:border-transparent font-normal tracking-wide px-2 underline" data-bg="">View Details</a>
+        </div>
+    </div>
+</div>
 			`	
 		},
-		/*
-		{
-		    'thumbnail': 'preview/products-08.png',
-		    'category': '104',
-		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h2 class="text-center size-64 font-normal">New Arrivals</h2>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<p class="text-center">We make shopping easier.</p>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-60"></div>
-				</div>
-
-			</div>
-			<div class="row relative md-items-2 sm-items-2">
-				<div style="width: 27.4233%; flex: 0 0 auto;" class="column fourth pb-4"><img src="assets/minimalist-blocks/images/img-900x1350.png" alt=""></div>
-				<div style="width: 100%;" class="column fourth pb-4">
-					<h3 class="font-normal size-28">Sweater</h3>
-					<div class="spacer height-20"></div>
-					<p class="size-28 font-medium">$179</p>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type.</p>
-					<div class="spacer height-20"></div>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid ml-1 mr-1 text-black font-normal border-current hover: hover:border-current tracking-wide leading-relaxed rounded-full pt-2 pb-2 px-8 size-14 mb-3" title="">Buy Now</a>
-					</div>
-				</div>
-				<div class="column fourth pb-4" style="width: 27.4847%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/img-900x1350.png" alt=""></div>
-				<div class="column fourth pb-4" style="width: 100%;">
-					<h3 class="font-normal size-28">Winter Coat</h3>
-					<div class="spacer height-20"></div>
-					<p class="size-28 font-medium">$289</p>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type.</p>
-					<div class="spacer height-20"></div>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid ml-1 mr-1 text-black font-normal border-current hover: hover:border-current tracking-wide leading-relaxed rounded-full pt-2 pb-2 px-8 size-14 mb-3" title="">Buy Now</a>
-					</div>
-				</div>
-
-			</div>
-			`	
-		},
-		*/
 		{
 		    'thumbnail': 'preview/products-09.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h2 class="size-42 font-normal text-left">Featured Products</h2>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row relative sm-items-2">
-				<div class="column fourth flex flex-col justify-end py-4"><img src="assets/minimalist-blocks/images/img-900x900.png" alt="">
+<div class="row">
+    <div class="column full">
+        <h2 class="size-42 font-normal text-left">Featured Products</h2>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row relative sm-items-2">
+    <div class="column flex flex-col justify-end py-4"><img src="assets/minimalist-blocks/images/ai-8JTXG.jpg" alt="">
 
-					<h3 class="size-21 font-normal">Coffee Table</h3>
-					<p class="font-medium size-32">$29</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					</div>
-				</div>
-				<div class="column fourth flex flex-col justify-end py-4"><img src="assets/minimalist-blocks/images/img-900x600.png" alt="">
-				
-					<h3 class="size-21 font-normal">Bookcase</h3>
-					<p class="font-medium size-32">$49</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					</div>
-				</div>
-				<div class="column fourth flex flex-col justify-end py-4"><img src="assets/minimalist-blocks/images/img-678x904.png" alt="">
-				
-					<h3 class="size-21 font-normal">Storage Cabinet</h3>
-					<p class="font-medium size-32">$89</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					</div>
-				</div>
-				<div class="column fourth flex flex-col justify-end py-4"><img src="assets/minimalist-blocks/images/img-900x1350.png" alt="">
-				
-					<h3 class="size-21 font-normal">Office Desk</h3>
-					<p class="font-medium size-32">$59</p>
-				
-					<p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer.</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
-					</div>
-				</div>
-			</div>
+        <h3 class="size-21 font-normal">Bedside Table</h3>
+        <p class="font-medium size-32">$39</p>
+
+        <p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer.</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
+        </div>
+    </div>
+    <div class="column flex flex-col justify-end py-4" style="width: 50%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-vjVz0.jpg" alt="">
+
+        <h3 class="size-21 font-normal">Bookcase</h3>
+        <p class="font-medium size-32">$49</p>
+
+        <p class="leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer.</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-7 border-current hover:border-current font-normal leading-12 rounded-full tracking-wide">Buy Now</a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-10.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column half flex flex-col justify-center items-start" style="width: 100%;">
-					<h2 class="leading-none font-normal size-54">Comfy Wooden Office Desk</h2>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				</div>
-				<div class="column half" style="width: 60.4651%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-20"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column half" style="width: 43.0095%; flex: 0 0 auto;">
-					<p class="font-normal size-28">$189</p>
-					<div>
-						<a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 px-9 leading-relaxed rounded-full border-transparent hover:border-transparent font-normal uppercase tracking-125 size-14" title="" style="background-color: rgb(36, 36, 36); color: rgb(255, 255, 255);" data-bg="rgb(36,36,36)">Buy Now&nbsp;<i class="icon ion-android-arrow-forward"></i></a>
-					</div>
-				</div>
-				<div class="column half flex flex-col justify-center items-start" style="width: 100%;">
-					<ul style="list-style: initial;padding-left: 20px;">
-						<li>Shape: Rectangular</li>
-						<li>Dimension:&nbsp;19.7"D x 19.7"W x 29.5"H</li>
-						<li>Color: Walnut</li>
-						<li>Style: Modern</li>
-					</ul>
-				</div>
-			</div>
+<div class="row">
+    <div class="column half flex flex-col justify-center items-start" style="width: 100%;">
+        <h2 class="leading-none font-normal size-54">Comfy Wooden Office Desk</h2>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
+    <div class="column half" style="width: 60.4651%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-Pehly.jpg" alt="" data-filename="ai-sGD6j-editMLX4bfi.png"></div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-20"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column half" style="width: 43.0095%; flex: 0 0 auto;">
+        <p class="font-normal size-28">$189</p>
+        <div>
+            <a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 px-9 leading-relaxed rounded-full border-transparent hover:border-transparent font-normal uppercase tracking-125 size-14" title="" style="background-color: rgb(36, 36, 36); color: rgb(255, 255, 255);" data-bg="rgb(36,36,36)">Buy Now&nbsp;<i class="icon ion-android-arrow-forward"></i></a>
+        </div>
+    </div>
+    <div class="column half flex flex-col justify-center items-start" style="width: 100%;">
+        <ul style="list-style: initial;padding-left: 20px;">
+            <li>Shape: Rectangular</li>
+            <li>Dimension:&nbsp;19.7"D x 19.7"W x 29.5"H</li>
+            <li>Color: Walnut</li>
+            <li>Style: Modern</li>
+        </ul>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-11.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-				<div class="column" style="width: 50%; flex: 0 0 auto;">
-					<h2 class="tracking-wide size-32">Extra Bass Earphone</h2>
-					<p class="text-justify leading-13">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
-					<table class="default" style="border-collapse:collapse;width:100%;">
-						<tbody>
-							<tr style="border-bottom: 1px solid; border-color: rgb(158, 158, 158);">
-								<td class="size-14">Price</td>
-								<td class="size-14 text-right">$34</td>
-							</tr>
-							<tr style="border-bottom: 1px solid; border-color: rgb(158, 158, 158);">
-								<td class="size-14">Color Availability</td>
-								<td class="size-14 text-right">Black, White, Red</td>
-							</tr>
-						</tbody>
-					</table>
-					<div class="spacer height-20"></div>
-					<div><a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 text-black leading-12 rounded border-transparent hover:border-transparent font-normal tracking-wide" title="" style="background-color: rgb(240, 240, 240);">Add to Cart</a> &nbsp; <a href="#" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 border-current hover:border-current font-normal leading-12 rounded tracking-wide" title="" role="button">Buy Now</a></div>
-					<div class="spacer height-20"></div>
-					<p class="size-14 text-right" style="margin-bottom: 5px;">Share:</p>
-					<div class="is-social text-right">
-						<a href="https://twitter.com/home?status=https://example.com/"><i class="bi bi-twitter-x size-14" style="margin-right: 2px;"></i></a>
-						<a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/"><i class="bi bi-facebook size-14" style="margin-right: 2px;"></i></a>
-						<a href="https://pinterest.com/pin/create/button/?url=https://example.com/&amp;media=&amp;description="><i class="icon ion-social-pinterest-outline size-14"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="column" style="width: 55.2174%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-XR1Mp.jpg" alt="" data-filename="ai-cNyke-editMdV0t2R.png"></div>
+    <div class="column" style="width: 100%;">
+        <h2 class="tracking-wide size-32">Extra Bass Earphone</h2>
+        <p class="text-justify leading-13">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's.</p>
+        <table class="default" style="border-collapse:collapse;width:100%;">
+            <tbody>
+                <tr style="border-bottom: 1px solid; border-color: rgb(158, 158, 158);">
+                    <td class="size-14">Price</td>
+                    <td class="size-14 text-right">$34</td>
+                </tr>
+                <tr style="border-bottom: 1px solid; border-color: rgb(158, 158, 158);">
+                    <td class="size-14">Color Availability</td>
+                    <td class="size-14 text-right">Black, White, Red</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="spacer height-20"></div>
+        <div><a href="#" role="button" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 text-black leading-12 rounded border-transparent hover:border-transparent font-normal tracking-wide" title="" style="background-color: rgb(240, 240, 240);">Add to Cart</a> &nbsp; <a href="#" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 border-current hover:border-current font-normal leading-12 rounded tracking-wide" title="" role="button">Buy Now</a></div>
+        <div class="spacer height-20"></div>
+        <p class="size-14 text-right" style="margin-bottom: 5px;">Share:</p>
+        <div class="is-social text-right">
+            <a href="https://twitter.com/home?status=https://example.com/"><i class="bi bi-twitter-x size-14" style="margin-right: 2px;"></i></a>
+            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com/"><i class="bi bi-facebook size-14" style="margin-right: 2px;"></i></a>
+            <a href="https://pinterest.com/pin/create/button/?url=https://example.com/&amp;media=&amp;description="><i class="icon ion-social-pinterest-outline size-14"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/products-12.png',
 		    'category': '104',
 		    'html': `
-			<div class="row">
-				<div class="column half pb-3" style="width: 100%;">
-					<h1 class="tracking-wide size-32">Strawberries Dessert</h1>
-					<p class="size-12 tracking-wider"><i class="icon ion-android-time"></i>&nbsp;18 MINS&nbsp; &nbsp;<i class="icon ion-person"></i>&nbsp;&nbsp;1 PERSON&nbsp; &nbsp;<i class="icon ion-ios-flame"></i>&nbsp;93 CALORIES</p>
-					<div class="spacer height-20"></div>
-					<p class="text-justify leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.</p>
-					<p class="size-28 font-medium">$14</p>
-					<div><a href="#" title="" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 border-current hover:border-current font-normal leading-14 rounded tracking-wide" role="button">Place Order</a></div>
-				</div>
-				<div class="column half" style="width: 53.5526%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-			</div>
+<div class="row">
+    <div class="column half pb-3" style="width: 100%;">
+        <h1 class="tracking-wide size-32">Strawberry Dessert</h1>
+        <p class="size-12 tracking-wider"><i class="icon ion-android-time"></i>&nbsp;18 MINS&nbsp; &nbsp;<i class="icon ion-person"></i>&nbsp;&nbsp;1 PERSON&nbsp; &nbsp;<i class="icon ion-ios-flame"></i>&nbsp;93 CALORIES</p>
+        <div class="spacer height-20"></div>
+        <p class="text-justify leading-13">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took.</p>
+        <p class="size-28 font-medium">$14</p>
+        <div><a href="#" title="" class="transition-all inline-block whitespace-nowrap cursor-pointer no-underline border-2 border-solid mr-2 mt-2 mb-1 py-2 size-17 px-6 border-current hover:border-current font-normal leading-14 rounded tracking-wide" role="button">Place Order</a></div>
+    </div>
+    <div class="column half" style="width: 57.9348%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-GE8eQ.jpg" alt="" data-filename="ai-uRRdO-editeEnWfgv.png"></div>
+</div>
 			`	
 		},
 		
@@ -3804,27 +4562,27 @@ display: inline-flex;
 		    'thumbnail': 'preview/steps-06.png',
 		    'category': '106',
 		    'html': `
-			<div class="row">
-				<div class="column half">
-					<p class="tracking-75 size-16">STEP ONE</p>
-					<h1 class="font-semibold size-32">Discovery</h1>
-					<p>Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt=""></div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt=""></div>
-				<div class="column half">
-					<p class="tracking-75 size-16">STEP TWO</p>
-					<h1 class="font-semibold size-32">Design and Development</h1>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-				</div>
-			</div>
+<div class="row">
+    <div class="column half">
+        <p class="tracking-75 size-16">STEP ONE</p>
+        <h1 class="font-semibold size-32">Discovery</h1>
+        <p>Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-yLlkY.jpg" alt="" data-filename="ai-135pk-editqXenIiK.png"></div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-fI9Mf.jpg" alt="" data-filename="ai-UQ7nZ-editjkWxWbh.png"></div>
+    <div class="column half">
+        <p class="tracking-75 size-16">STEP TWO</p>
+        <h1 class="font-semibold size-32">Design and Development</h1>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -5608,20 +6366,19 @@ display: inline-flex;
 		    'thumbnail': 'preview/quotes-03.png',
 		    'category': '110',
 		    'html': `
-			<div class="row">
-				<div class="column two-third"><img src="assets/minimalist-blocks/images/img-1920x1080.png" alt="""></div>
+<div class="row">
+    <div class="column two-third"><img src="assets/minimalist-blocks/images/ai-r43cG.jpg" alt="" data-filename=" ai-49P75-editRkU0S4C.png"></div>
 
-				<div class="flex flex-col justify-center column third py-3">
-					<div class="text-left leading-18">
-						<i class="icon ion-quote size-28"></i>
-					</div>
+    <div class="flex flex-col justify-center column third py-3">
+        <div class="text-left leading-18">
+            <i class="icon ion-quote size-28"></i>
+        </div>
 
-					<p class="size-21 leading-14">It's easy to use, customizable, and user-friendly. A truly amazing features.</p>
+        <p class="size-21 leading-14">It's easy to use, customizable, and user-friendly. A truly amazing features.</p>
 
-					<p style="color: rgb(138, 138, 138);">- A User</p>
-				</div>
-
-			</div>
+        <p style="color: rgb(138, 138, 138);">- A User</p>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -5643,130 +6400,110 @@ display: inline-flex;
 		    'thumbnail': 'preview/quotes-05.png',
 		    'category': '110',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="text-center size-35 font-normal">Their Stories</h1>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-80"></div>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/img-700x700.png" alt="" style="border-radius: 500px; width: 65%; height: auto;">
-					<div class="spacer height-20"></div>
-					<h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
-					<p class="tracking-wider size-16" style="color: rgb(138, 138, 138);">— A Client</p>
-				</div>
-				<div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/img-700x700.png" alt="" style="border-radius: 500px; width: 65%; height: auto;">
-					<div class="spacer height-20"></div>
-					<h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
-					<p class="tracking-wider size-16" style="color: rgb(138, 138, 138);">— A Client</p>
-				</div>
-				<div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/img-700x700.png" alt="" style="border-radius: 500px; width: 65%; height: auto;">
-					<div class="spacer height-20"></div>
-					<h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
-					<p class="tracking-wider size-16" style="color: rgb(138, 138, 138);">— A Client</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="text-center size-35 font-normal">Their Stories</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/ai-HIWv9.jpg" alt="" style="border-radius: 500px; width: 65%; height: auto;">
+        <div class="spacer height-20"></div>
+        <h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
+        <p class="tracking-wider size-16" style="color: rgb(138, 138, 138);">— A Client</p>
+    </div>
+    <div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/ai-enoP2.jpg" alt="" style="border-radius: 500px; width: 65%; height: auto;" data-filename="ai-KavP7-editqE13lyq.png">
+        <div class="spacer height-20"></div>
+        <h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
+        <p class="tracking-wider size-16" style="color: rgb(138, 138, 138);">— A Client</p>
+    </div>
+    <div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/ai-COmhJ.jpg" alt="" style="border-radius: 500px; width: 65%; height: auto;" data-filename="ai-R3Xui-editGGY45h3.png">
+        <div class="spacer height-20"></div>
+        <h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
+        <p class="tracking-wider size-16" style="color: rgb(138, 138, 138);">— A Client</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/quotes-06.png',
 		    'category': '110',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="text-center size-35 font-normal">Their Stories</h1>
-				</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="text-center size-35 font-normal">Their Stories</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-60"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="text-center flex flex-col justify-center items-center column"><img src="assets/minimalist-blocks/images/ai-CKaDa.jpg" alt="" data-filename="ai-VETbj 2-editwK2A7QN.png">
+        <div class="spacer height-20"></div>
+        <div class="text-center">
+            <i class="icon ion-quote size-28"></i>
+        </div>
 
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-80"></div>
-				</div>
+        <h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
+        <p class="tracking-wider size-16" style="color: rgb(102, 102, 102);">— A Client</p>
+    </div>
+    <div class="text-center flex flex-col justify-center items-center column" style="width: 50%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-8ABNg.jpg" alt="" data-filename="ai-3A86k-edithSvRhPC.png">
+        <div class="spacer height-20"></div>
+        <div class="text-center">
+            <i class="icon ion-quote size-28"></i>
+        </div>
 
-			</div>
-			<div class="row">
-				<div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<div class="spacer height-20"></div>
-					<div class="text-center">
-						<i class="icon ion-quote size-28"></i>
-					</div>
-
-					<h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
-					<p class="tracking-wider size-16" style="color: rgb(102, 102, 102);">— A Client</p>
-				</div>
-				<div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<div class="spacer height-20"></div>
-					<div class="text-center">
-						<i class="icon ion-quote size-28"></i>
-					</div>
-
-					<h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
-					<p class="tracking-wider size-16" style="color: rgb(102, 102, 102);">— A Client</p>
-				</div>
-				<div class="text-center flex flex-col justify-center items-center column third"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt="">
-					<div class="spacer height-20"></div>
-					<div class="text-center">
-						<i class="icon ion-quote size-28"></i>
-					</div>
-
-					<h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
-					<p class="tracking-wider size-16" style="color: rgb(102, 102, 102);">— A Client</p>
-				</div>
-
-			</div>
+        <h3 class="size-19 font-light">"Lorem Ipsum is simply dummy text of the printing and typesetting industry"</h3>
+        <p class="tracking-wider size-16" style="color: rgb(102, 102, 102);">— A Client</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/quotes-07.png',
 		    'category': '110',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="tracking-tight size-35 font-normal">Loving words.</h1>
-				</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="tracking-tight size-35 font-normal">Loving words.</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-Tf6Lf.jpg" alt="" data-filename="ai-4643D-editgoanILm.png"></div>
 
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
+    <div class="flex flex-col justify-center column half">
+        <p class="leading-14">"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type."</p>
+        <p class="italic size-16">— A User</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row relative xs-items-1 sm-column-reverse md-column-reverse desktop-column-reverse">
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-PzIQ9.jpg" alt="" data-filename="ai-SZFTj-editdAfykdZ.png"></div>
 
-			</div>
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt=""></div>
-
-				<div class="flex flex-col justify-center column half">
-					<p class="leading-14">"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type."</p>
-					<p class="italic size-16">— A User</p>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-
-			</div>
-			<div class="row relative xs-items-1 sm-column-reverse md-column-reverse desktop-column-reverse">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x900.png" alt=""></div>
-
-				<div class="flex flex-col justify-center column half">
-					<p class="leading-14">"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-						Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-						when an unknown printer took a galley of type and scrambled it to make a type."</p>
-					<p class="italic size-16">— A User</p>
-				</div>
-
-			</div>
+    <div class="flex flex-col justify-center column half">
+        <p class="leading-14">"Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an unknown printer took a galley of type and scrambled it to make a type."</p>
+        <p class="italic size-16">— A User</p>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -5947,31 +6684,29 @@ display: inline-flex;
 		    'thumbnail': 'preview/quotes-12.png',
 		    'category': '110',
 		    'html': `
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-				<div class="column half flex flex-col justify-center items-center">
-					<h1 class="font-semibold text-center size-28">"Incredible services and awesome customer support."</h1>
-					<div class="spacer height-80"></div>
-					<p class="text-center size-16">BY THOMAS JONE<br>Project Manager at Company Name</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column half"><img src="assets/minimalist-blocks/images/ai-K9gej.jpg" alt="" data-filename="ai-rBr7f-editeNITo5O.png"></div>
+    <div class="column half flex flex-col justify-center items-center">
+        <h1 class="font-semibold text-center size-28">"Incredible services and awesome customer support."</h1>
+        <div class="spacer height-80"></div>
+        <p class="text-center size-16">BY MARTHA MASSEY<br>Project Manager at Company Name</p>
+    </div>
+</div>
 			`	
 		},
 		{
 		    'thumbnail': 'preview/quotes-13.png',
 		    'category': '110',
 		    'html': `
-			<div class="row">
-				<div class="column half flex flex-col justify-center items-start">
-					<h2 class="size-42 font-semibold leading-11 tracking-wide">"All products are awesome with strong attention to details."</h2>
-					<p style="color: rgb(158, 158, 158); font-family: Georgia, serif; font-style: italic;">- Kyle Harrelson</p>
-					<div class="spacer height-20"></div>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. <a href="#" title="">Read the Success Story</a></p>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1500x2000.png" alt=""></div>
-
-			</div>
+<div class="row">
+    <div class="column flex flex-col justify-center items-start">
+        <h2 class="font-semibold leading-11 tracking-wide size-32">"All products are awesome with strong attention to details."</h2>
+        <p style="color: rgb(158, 158, 158); font-family: Georgia, serif; font-style: italic;">- Kyle Harrelson</p>
+        <div class="spacer height-20"></div>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. <a href="#" title="">Read the Success Story</a></p>
+    </div>
+    <div class="column" style="width: 60%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-6eGW3.jpg" alt="" data-filename="ai-ZX06k-editlAqmkn9.png"></div>
+</div>
 			`	
 		},
 
@@ -6469,12 +7204,10 @@ display: inline-flex;
 					<h3 class="is-title1-32 is-title-lite size-21 leading-tight">STAY TUNED!</h3>
 					<h1 class="size-64 is-title1-54 is-title-bold font-normal leading-none">OUR WEBSITE IS COMING VERY SOON</h1>
 					<div class="spacer height-20"></div>
-					<div class="is-social">
-						<div class="size-21">
-							<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-							<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-							<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-						</div>
+					<div class="is-social size-21">
+                        <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+                        <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+                        <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
 					</div>
 				</div>
 
@@ -6928,27 +7661,27 @@ display: inline-flex;
 		    'thumbnail': 'preview/contact-03.png',
 		    'category': '116',
 		    'html': `
-			<div class="row relative sm-items-1">
-				<div class="flex flex-col justify-center items-center column half">
-					<img src="assets/minimalist-blocks/images/img-1350x1350.png" alt="">
-				</div>
-				<div class="py-6 flex flex-col justify-center column half">
-					<p class="uppercase size-12 tracking-125 text-left" style="color: rgb(102, 102, 102);">Your Company Name</p>
-					<h1 class="leading-none text-left font-normal size-42">Get In Touch</h1>
-					<div class="spacer height-20"></div>
-					
-					<p style="color: rgb(109, 109, 109);" class="text-left">12345 Street Name, City. State 12345
-						<br>P: (123) 456 7890 / 456 7891.
-					</p>
-					<p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
-					
-					<div class="is-social">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x size-18" style="margin-right: 1em"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook size-18" style="margin-right: 1em;"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope size-18"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row relative sm-items-1">
+    <div class="flex flex-col justify-center items-center column half" style="width: 55.3261%; flex: 0 0 auto;">
+        <img src="assets/minimalist-blocks/images/ai-PCHEp.jpg" alt="">
+    </div>
+    <div class="py-6 flex flex-col justify-center column half" style="width: 100%;">
+        <p class="uppercase size-12 tracking-125 text-left" style="color: rgb(102, 102, 102);">Your Company Name</p>
+        <h1 class="leading-none text-left font-normal size-42">Get In Touch</h1>
+        <div class="spacer height-20"></div>
+
+        <p style="color: rgb(109, 109, 109);" class="text-left">12345 Street Name, City. State 12345
+            <br>P: (123) 456 7890 / 456 7891.
+        </p>
+        <p>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+
+        <div class="is-social">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x size-18" style="margin-right: 1em"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook size-18" style="margin-right: 1em;"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope size-18"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -7030,37 +7763,37 @@ display: inline-flex;
 		    'thumbnail': 'preview/contact-06.png',
 		    'category': '116',
 		    'html': `
-			<div class="row">
-				<div class="center column full">
-					<h1 class="tracking-wider size-28 text-left font-normal">Contact Us</h1>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="column full"><img src="assets/minimalist-blocks/images/img-1600x600.png" alt=""></div>
-			</div>
-			<div class="row">
-				<div class="column third center flex justify-center flex-col items-center">
-					<h1 class="size-21 font-normal">Company Name</h1>
-				</div>
-				<div class="column third center flex justify-center flex-col items-center">
-					<p style="color: rgb(109, 109, 109);" class="text-left">12345 Street Name, City. State 12345
-						<br>P: (123) 456 7890 / 456 7891.
-					</p>
-				</div>
-				<div class="column third center flex justify-center flex-col items-center">
-					<div class="is-social" style="margin: 25px 0">
-						<a href="https://twitter.com/"><i class="bi bi-twitter-x size-17"></i></a>
-						<a href="https://www.facebook.com/"><i class="bi bi-facebook size-17"></i></a>
-						<a href="https://www.instagram.com/"><i class="icon bi bi-instagram size-17"></i></a>
-						<a href="mailto:you@example.com"><i class="bi bi-envelope size-17"></i></a>
-					</div>
-				</div>
-			</div>
+<div class="row">
+    <div class="center column full">
+        <h1 class="tracking-wider size-28 text-left font-normal">Contact Us</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-20"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column full"><img src="assets/minimalist-blocks/images/ai-9UXxW.jpg" alt=""></div>
+</div>
+<div class="row">
+    <div class="column third center flex justify-center flex-col items-center">
+        <h1 class="size-21 font-normal">Company Name</h1>
+    </div>
+    <div class="column third center flex justify-center flex-col items-center">
+        <p style="color: rgb(109, 109, 109);" class="text-left">12345 Street Name, City. State 12345
+            <br>P: (123) 456 7890 / 456 7891.
+        </p>
+    </div>
+    <div class="column third center flex justify-center flex-col items-center">
+        <div class="is-social" style="margin: 25px 0">
+            <a href="https://twitter.com/"><i class="bi bi-twitter-x size-17"></i></a>
+            <a href="https://www.facebook.com/"><i class="bi bi-facebook size-17"></i></a>
+            <a href="https://www.instagram.com/"><i class="icon bi bi-instagram size-17"></i></a>
+            <a href="mailto:you@example.com"><i class="bi bi-envelope size-17"></i></a>
+        </div>
+    </div>
+</div>
 			`	
 		},
 		{
@@ -7168,7 +7901,7 @@ display: inline-flex;
 						<p style="border-bottom: 2px solid #000;width: 70px;display: inline-block;margin-bottom:0"></p>
 					</div>
 					<div class="spacer height-80"></div>
-					<div class="is-social center">
+					<div class="is-social text-center">
 						<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
 						<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
 						<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
@@ -7213,15 +7946,13 @@ display: inline-flex;
 		    'category': '116',
 		    'html': `
 			<div class="row">
-				<div class="column full center" style="width: 100%; flex: 0 0 auto;">
-					<h1 class="size-28 font-normal">Have questions? Give us a call <span style="color: rgb(230, 126, 34);">0 123 456 78 90</span></h1>
+				<div class="column full" style="width: 100%; flex: 0 0 auto;">
+					<h1 class="size-28 font-normal text-center">Have questions? Give us a call <span style="color: rgb(230, 126, 34);">0 123 456 78 90</span></h1>
 					<div class="spacer height-40"></div>
-					<div class="is-social">
-						<div class="size-18">
-							<a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
-							<a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
-							<a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
-						</div>
+					<div class="is-social  text-center size-18">
+                        <a href="https://twitter.com/"><i class="bi bi-twitter-x" style="margin-right: 1em"></i></a>
+                        <a href="https://www.facebook.com/"><i class="bi bi-facebook" style="margin-right: 1em"></i></a>
+                        <a href="mailto:you@example.com"><i class="bi bi-envelope"></i></a>
 					</div>
 				</div>
 			</div>
@@ -7260,26 +7991,23 @@ display: inline-flex;
 		    'thumbnail': 'preview/about-02.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="size-96"><span class="font-semibold size-96">About</span> us</h1>
-					<h3 class="size-21 tracking-wide">Founded in 2019</h3>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-60"></div>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column third">
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.</p>
-				</div>
-				<div class="column two-third"><img src="assets/minimalist-blocks/images/img-1920x1280.png" alt=""></div>
-
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="size-96"><span class="font-semibold size-96">About</span> us</h1>
+        <h3 class="size-21 tracking-wide">Founded in 2019</h3>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-60"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column third">
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it.</p>
+    </div>
+    <div class="column two-third"><img src="assets/minimalist-blocks/images/ai-ClsMt.jpg" alt="" data-filename="ai-t0Qu9-editcJfc1a3.png"></div>
+</div>
 			`	
 		},
 		
@@ -7316,26 +8044,23 @@ display: inline-flex;
 		    'thumbnail': 'preview/about-04.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full"><img src="assets/minimalist-blocks/images/img-1600x600.png" alt=""></div>
-
-			</div>
-			<div class="row">
-				<div class="column full pt-2">
-					<h1 class="tracking-wide">Our Story</h1>
-					<p style="border-bottom: 2px solid #f49400;width: 70px;display: inline-block;margin-top: 0;"></p>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column two-third">
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
-				</div>
-				<div class="column third">
-					<p class="size-14" style="color: rgb(138, 138, 138);">1st floor, Building Name. <br>Street Name, City. State 456.<br>Phone: (123) 456 7890</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column full"><img src="assets/minimalist-blocks/images/ai-lClur.jpg" alt=""></div>
+</div>
+<div class="row">
+    <div class="column full pt-2">
+        <h1 class="tracking-wide">Our Story</h1>
+        <p style="border-bottom: 2px solid #f49400;width: 70px;display: inline-block;margin-top: 0;"></p>
+    </div>
+</div>
+<div class="row">
+    <div class="column two-third">
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="column third">
+        <p class="size-14" style="color: rgb(138, 138, 138);">1st floor, Building Name. <br>Street Name, City. State 456.<br>Phone: (123) 456 7890</p>
+    </div>
+</div>
 			`	
 		},
 		
@@ -7343,29 +8068,26 @@ display: inline-flex;
 		    'thumbnail': 'preview/about-05.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="size-35 font-semibold text-center lowercase tracking-wide">Who We Are</h1>
-					<p class="size-16 text-center" style="color: rgb(102, 102, 102);">read the story about us and discover what we do.</p>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-40"></div>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-				<div class="column half flex flex-col justify-center items-start">
-					<h3 class="size-21 text-right lowercase tracking-wide">We're a team of passionate <span style="color: rgb(158, 158, 158);">design-thinkers</span></h3>
-					<div class="spacer height-20"></div>
-					<p class="text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
-					<p class="text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="size-35 font-semibold text-center lowercase tracking-wide">Who We Are</h1>
+        <p class="size-16 text-center" style="color: rgb(102, 102, 102);">read the story about us and discover what we do.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column half" style="width: 59.5652%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-nNGF3.jpg" alt="" data-filename="ai-P2bmb-editaumdzm5.png"></div>
+    <div class="column half flex flex-col justify-center items-start" style="width: 100%;">
+        <h3 class="size-21 text-right lowercase tracking-wide">We're a team of passionate <span style="color: rgb(158, 158, 158);">design-thinkers</span></h3>
+        <div class="spacer height-20"></div>
+        <p class="text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
+        <p class="text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley.</p>
+    </div>
+</div>
 			`	
 		},
 		
@@ -7373,41 +8095,22 @@ display: inline-flex;
 		    'thumbnail': 'preview/about-06.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column third">
-					<h1 class="size-28" style="margin-top: 15px;"><span class="font-semibold">Who</span> We Are</h1>
-					<p style="border-bottom: 2px solid #000;width: 30px;display: inline-block;margin-top: 0;"></p>
-				</div>
-				<div class="column two-third pb-5">
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full"><img src="assets/minimalist-blocks/images/img-1600x600.png" alt=""></div>
-
-			</div>
+<div class="row">
+    <div class="column third">
+        <h1 class="size-28" style="margin-top: 15px;"><span class="font-semibold">Who</span> We Are</h1>
+        <p style="border-bottom: 2px solid #000;width: 30px;display: inline-block;margin-top: 0;"></p>
+    </div>
+    <div class="column two-third pb-5">
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+    </div>
+</div>
+<div class="row">
+    <div class="column full"><img src="assets/minimalist-blocks/images/ai-9F5nG.jpg" alt=""></div>
+</div>
 			`	
 		},
 		
-		{
-		    'thumbnail': 'preview/about-07.png',
-		    'category': '103',
-		    'html': `
-			<div class="row">
-				<div style="padding-right: 30px;" class="column third">
-					<p style="margin-bottom: 0px;" class="size-16 tracking-widest">ABOUT US</p>
-					<p style="border-bottom: 1px solid #000;width: 90px;display: inline-block;margin-top: 0;"></p>
-					<h1 class="size-28">We believe in simplicity</h1>
-					<p style="color: rgb(102, 102, 102);" class="size-16 text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
-				</div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
-				<div class="column third"><img src="assets/minimalist-blocks/images/img-1200x1600.png" alt=""></div>
 
-			</div>
-			`	
-		},
-		
 		{
 		    'thumbnail': 'preview/about-08.png',
 		    'category': '103',
@@ -7436,32 +8139,47 @@ display: inline-flex;
 			</div>
 			`	
 		},
+        
+		{
+		    'thumbnail': 'preview/about-07.png',
+		    'category': '103',
+		    'html': `
+<div class="row">
+    <div style="padding-right: 30px;" class="column third">
+        <p style="margin-bottom: 0px;" class="size-16 tracking-widest">ABOUT US</p>
+        <p style="border-bottom: 1px solid #000;width: 90px;display: inline-block;margin-top: 0;"></p>
+        <h1 class="size-28">We believe in simplicity</h1>
+        <p style="color: rgb(102, 102, 102);" class="size-16 text-justify">Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type.</p>
+    </div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-pu0f6.jpg" alt="" data-filename="ai-3NxD7-editeBaewl7.png"></div>
+    <div class="column third"><img src="assets/minimalist-blocks/images/ai-P7nRp.jpg" alt="" data-filename="ai-yQngq-editzw6x76j.png"></div>
+</div>
+			`	
+		},
+		
 		
 		{
 		    'thumbnail': 'preview/about-09.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="size-42 font-semibold tracking-wide" style="width: 100%; max-width: 220px;">About Us.</h1>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-60"></div>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column half">
-					<p class="font-semibold text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-					<div class="spacer height-20"></div>
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-				</div>
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1350x1350.png" alt=""></div>
-
-			</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="size-42 font-semibold tracking-wide" style="width: 100%; max-width: 220px;">About Us.</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column full">
+        <div class="spacer height-60"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="column half" style="width: 100%;">
+        <p class="font-semibold text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+        <div class="spacer height-20"></div>
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+    </div>
+    <div class="column half" style="width: 58.4783%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-t8SCz.jpg" alt="" data-filename="tDcXFaIVf5LDwABsv33LL-editVejtahq.png"></div>
+</div>
 			`	
 		},
 		
@@ -7469,25 +8187,23 @@ display: inline-flex;
 		    'thumbnail': 'preview/about-10.png',
 		    'category': '103',
 		    'html': `
-			<div class="row">
-				<div class="column full">
-					<h1 class="size-42 font-semibold tracking-wide">Hello, we are [Company Name]. We are a team of passionate design-thinkers &amp; product strategist.</h1>
-				</div>
+<div class="row">
+    <div class="column full">
+        <h1 class="size-42 font-semibold tracking-wide">Hello, we are [Company Name]. We are a team of passionate design-thinkers &amp; product strategist.</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="column">
+        <div class="spacer height-40"></div>
+    </div>
+</div>
 
-			</div>
-			<div class="row">
-				<div class="column full">
-					<div class="spacer height-60" style="border-left: 3px solid #e8e8e8;"></div>
-				</div>
-
-			</div>
-			<div class="row">
-				<div class="column half"><img src="assets/minimalist-blocks/images/img-1920x1080.png" alt=""></div>
-				<div class="column half">
-					<p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
-				</div>
-
-			</div>
+<div class="row">
+    <div class="column half" style="width: 60.4348%; flex: 0 0 auto;"><img src="assets/minimalist-blocks/images/ai-xUZGO.jpg" alt="" data-filename="ai-BNvw3-editYcTcTj4.png"></div>
+    <div class="column half" style="width: 100%;">
+        <p class="text-justify">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type.</p>
+    </div>
+</div>
 			`	
 		},
 		
@@ -7805,59 +8521,6 @@ display: inline-flex;
 			    '</div>'
         },
 
-        // Custom Module example on how to use AJAX to get data from server
-        {
-		'thumbnail': 'preview/element-ajax.png',
-		'category': '120',
-		'html':
-			    '<div class="row">' +
-                    '<div class="column full" data-noedit data-module="my-ajax-module" data-dialog-width="500px" data-module-desc="Sample Ajax Request Module" data-html="' + // module file will be: assets/modules/my-ajax-module.html
-                        // Default HTML
-                        encodeURIComponent('<h2>Sample Content From Ajax Request</h2>' +
-                        '<div id="{id}"></div>' +
-                        '<scr' + 'ipt>' +
-                            'var docReady = function (fn) {' +
-                                'var stateCheck = setInterval(function () {' +
-                                    'if (document.readyState !== "complete") return;' +
-                                    'clearInterval(stateCheck);' +
-                                    'try { fn() } catch (e) { }' +
-                                '}, 1);' +
-                            '};' +
-                            'docReady(function () {' +
-                                '' +
-                                // https://happycoding.io/tutorials/javascript/ajax
-                                'var xmlhttp = new XMLHttpRequest();' +
-                                'xmlhttp.onreadystatechange = function() {' +
-                                    'if (xmlhttp.readyState == XMLHttpRequest.DONE) {' + 
-                                        'if (xmlhttp.status == 200) {' +
-                                            'var jsonObj = JSON.parse(xmlhttp.responseText);' +
-                                            'var randomMessagesArray = jsonObj.randomMessages;' +
-                                            'var randomIndex = Math.floor(Math.random()*randomMessagesArray.length);' +
-                                            'var messageObj = randomMessagesArray[randomIndex];' +
-                                            'document.getElementById("{id}").innerHTML = messageObj.message;' +
-                                            'document.getElementById("{id}").style.color = messageObj.color;' +
-                                        '} else {' +
-                                            'console.log("Status error: " + xmlhttp.status);' +
-                                        '}' +
-                                    '}' +
-                                '};' +
-                                'xmlhttp.open("GET", "assets/sampledata.txt", true);' +
-                                'xmlhttp.send();' +
-                                '' +
-                            '});' +
-                        '</scr' + 'ipt>' +
-                        '') +
-
-                        '" data-settings="' +
-                        // Default Settings (Custom Variables)
-                        encodeURIComponent('{"title": "Sample Content From Ajax Request", "requestUrl": "assets/sampledata.txt"}') + '"' +
-
-                    '>' +
-
-		            '</div>' +
-			    '</div>'
-        }, 
-
 		// Quiz Builder module example
 		{
 			'thumbnail': 'preview/element-module.png',
@@ -7940,13 +8603,14 @@ display: inline-flex;
 				`<div class="row">
 					<div class="column full" data-noedit data-module="codeview" data-module-desc="Code" data-dialog-height="570px" data-html="${encodeURIComponent(`
 
-						<div class="hide-on-print" style="display: flex;justify-content: flex-end;margin-bottom:5px"><button id="_copycode{id}" style="font-family:system-ui;font-size:13px;font-weight:300;padding:0;border:none;background:transparent;display:flex">
+						<div class="hide-on-print" style="display: flex;justify-content: flex-end;margin-bottom:5px"><button id="_copycode{id}" style="font-family:system-ui;font-size:13px;font-weight:300;padding:0;border:none;background:transparent;display:flex;cursor:pointer;">
 							<svg width="16" height="16" style="margin-right:3px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-sm">
 								<path fill-rule="evenodd" clip-rule="evenodd" d="M12 4C10.8954 4 10 4.89543 10 6H14C14 4.89543 13.1046 4 12 4ZM8.53513 4C9.22675 2.8044 10.5194 2 12 2C13.4806 2 14.7733 2.8044 15.4649 4H17C18.6569 4 20 5.34315 20 7V19C20 20.6569 18.6569 22 17 22H7C5.34315 22 4 20.6569 4 19V7C4 5.34315 5.34315 4 7 4H8.53513ZM8 6H7C6.44772 6 6 6.44772 6 7V19C6 19.5523 6.44772 20 7 20H17C17.5523 20 18 19.5523 18 19V7C18 6.44772 17.5523 6 17 6H16C16 7.10457 15.1046 8 14 8H10C8.89543 8 8 7.10457 8 6Z" fill="currentColor"></path>
 							</svg>
-							Copy Code</button>
+							Copy Code</button><!-- Tooltip element below the button -->
+                            <div id="tooltip{id}" style="display: none; margin-top: 25px; background-color: #333; color: #fff; padding: 5px 10px; border-radius: 4px; position: absolute; z-index: 1; font-size: 12px;">Copied.</div>
 						</div>
-						<pre id="{id}" class="language-markup" style="font-size:14px;background-color: #f4f4f4;padding: 12px 16px">&lt;h1>Hellow World&lt;/h1></pre>
+						<pre id="{id}" class="language-markup" style="font-size:14px;background-color: #f4f4f4;padding: 12px 16px;text-wrap: wrap;">&lt;h1>Hello World&lt;/h1></pre>
 						<scr`+`ipt>
 							var docReady = function(fn) {
 								var stateCheck = setInterval(function() {
@@ -8009,12 +8673,17 @@ display: inline-flex;
 								} catch (e) {}
 						
 								var btnCopyCode = document.getElementById('_copycode{id}');
+                                var tooltip = document.getElementById('tooltip{id}');
 								btnCopyCode.addEventListener('click', () => {
 									const range = document.createRange();
 									range.selectNode(block);
 									window.getSelection().addRange(range);
 									try {
 										document.execCommand('copy');
+                                        tooltip.style.display = 'block';
+                                        setTimeout(() => {
+                                            tooltip.style.display = 'none';
+                                        }, 1000);
 									} catch (err) {
 										console.error('Failed to copy code:', err);
 									}
@@ -8029,7 +8698,7 @@ display: inline-flex;
 						data-settings="${encodeURIComponent(`
 							
 							{
-								"code": "<h1>Hellow World<h1>",
+								"code": "<h1>Hello World<h1>",
 								"theme": "none"
 							}
 
@@ -8037,6 +8706,47 @@ display: inline-flex;
 					</div>
 				</div>`
 		}, 
+
+        /*
+        {
+		'thumbnail': 'preview/element-module.png',
+		'category': '120',
+		'html':
+			    `<div class="row">
+                    <div class="column" data-module="my-module" data-dialog-width="500px" data-module-desc="My Module" data-html="${encodeURIComponent(`
+
+                        <div><b>Dynamic Content From Fetch</b></div>
+
+                        <h3 id="post_title_{id}"></h3>
+                        <div id="post_body_{id}"></div>
+
+                        <script>
+                            var docReady = function(fn) {
+                                var stateCheck = setInterval(function () {
+                                    if (document.readyState !== "complete") return;
+                                    clearInterval(stateCheck);
+                                    fn()
+                                }, 1);
+                            };
+                            docReady(async function() {
+                                const response = await fetch('https://jsonplaceholder.typicode.com/posts/1');
+                                const data = await response.json();
+                                document.getElementById("post_title_{id}").innerHTML = data.title;
+                                document.getElementById("post_body_{id}").innerHTML= data.body;
+                            });
+                        </script>
+                        `)}" data-settings="${encodeURIComponent(`
+                            {
+                            "description": "Dynamic Content From Fetch", 
+                            "requestUrl": "https://jsonplaceholder.typicode.com/posts/1"
+                            }
+                        `)}"
+                        >
+
+		            </div>
+			    </div>`
+        }
+        */
 	]
 
 };

@@ -14,12 +14,14 @@
     letter-spacing: 2px;
 }
 
-.type-raleway-neuton h1 {font-size: 3.4rem;line-height:1.12;}
-.type-raleway-neuton h2 {font-size: 2.8rem;}
-.type-raleway-neuton h3 {font-size: 2.3rem;}
-.type-raleway-neuton h4 {font-size: 1.92rem;}
-.type-raleway-neuton h5 {font-size: 1.6rem;}
-.type-raleway-neuton h6 {font-size: 1.35rem;}
+.type-raleway-neuton h1 {font-size: 3.4rem;line-height:1.12; margin: 1.2rem 0 1.2rem; }
+.type-raleway-neuton h2 {font-size: 2.8rem; margin: 1rem 0 1rem; }
+.type-raleway-neuton h3 {font-size: 2.3rem; margin: 1rem 0 1rem; }
+.type-raleway-neuton h4 {font-size: 1.92rem; margin: 0.5rem 0 0.5rem; }
+.type-raleway-neuton h5 {font-size: 1.6rem; margin: 0.5rem 0 0.5rem; }
+.type-raleway-neuton h6 {font-size: 1.35rem; margin: 0.5rem 0 0.5rem; }
+.type-raleway-neuton p {margin:0.8rem 0 0.8rem;}
+/* .type-raleway-neuton ul, .type-raleway-neuton ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-raleway-neuton .display { margin-bottom: 0.5rem; }
 .type-raleway-neuton .display h1 {

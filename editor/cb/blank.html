@@ -1,44 +1,44 @@
 <!DOCTYPE HTML>
 <html>
-
 <head>
     <meta charset="utf-8">
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="A drag & drop HTML editor Javascript library for web applications.">
     <link rel="shortcut icon" href="#">
 
-    <!-- <link href="assets/frameworks/tailwindcss/styles.css" rel="stylesheet"> -->
+    <!-- ContentBox runtime (replaces content.css / box-flex / glide / navbar includes) -->
+    <link href="runtime/contentbox-runtime.css" rel="stylesheet">
 
-    <link href="assets/minimalist-blocks/content.css" rel="stylesheet">
-
-    <script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
-    <script>
-        const allSizes = Array.from({ length: 401 }, (_, i) => `size-${i}`);
-
-        tailwind.config = {
-            darkMode: 'class',
-            content: [
-                './src/**/*.{html,js,jsx,ts,tsx}',
-            ],
-
-            // Блокваме размерите заради едитора. 
-            blocklist: allSizes,
-
+    <!-- Expozy: same assets as the site (pages/header.php + footer.php) so content
+         looks the same here and the saved Tailwind CSS snapshot has every utility -->
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="https://r2.expozy.com/cdn/fa/css/all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <style media="screen">
+        @font-face {
+            font-family: 'Repo Regular';
+            font-style: normal;
+            font-weight: normal;
+            src: local('Repo Regular'), url('/assets/fonts/repo/Repo.woff2') format('woff2');
+            font-display: swap;
         }
-    </script>
+        p, h1, h2, h3, h4, h5, h6, span, a, label {
+            font-family: "Repo Regular";
+            letter-spacing: 0.7px;
+        }
+    </style>
+
+    <!-- Expozy: Tailwind CDN + the shared config (theme, animations, custom utilities) -->
+    <script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
+    <script src="/assets/js/tailwind.config.js?v=2"></script>
 
     <div style="display: none;" id="tailwindCss"></div>
     <div style="display: none;" id="templatesDiv"></div>
 
-    <!-- <style>
-        .h-\[300px\] {
-            height: 300px
-        }
-    </style> -->
-    <link href="box/box-flex.css" rel="stylesheet">
-
     <style media="screen">
+        /* Expozy: locked (non-editable) section placeholder */
         .lock {
             background-image: url(/editor/cb/assets/images/lock.png) !important;
             background-size: contain !important;
@@ -53,59 +53,82 @@
             aspect-ratio: 5 / 1;
         }
 
+        /* Dynamic (Alpine / apiData) sections carry .lock: shown as a placeholder,
+           content hidden and not clickable, so it cannot be edited here. */
         .lock>div {
             opacity: 0 !important;
+            pointer-events: none !important;
         }
 
         [x-cloak] {
             display: none !important;
         }
     </style>
-
 </head>
 
-<body>
+<body id="body" style="touch-action: pan-y">
 
     <div class="is-wrapper" style="opacity:0.01">
     </div>
 
     <div id="headerFooter" style="display: none;"></div>
 
-    <!-- Slider -->
-    <link href="assets/scripts/glide/css/glide.core.css" rel="stylesheet">
-    <link href="assets/scripts/glide/css/glide.theme.css" rel="stylesheet">
-    <script src="assets/scripts/glide/glide.js"></script>
-
-    <!-- Navbar -->
-    <link href="assets/scripts/navbar/navbar.css" rel="stylesheet">
-    <script src="assets/scripts/navbar/navbar.min.js"></script>
-
-    <script src="box/box-flex.js"></script>
-
-    <!-- Optional: smooth scrolling -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js"></script>
+    <script src="runtime/contentbox-runtime.min.js"></script>
     <script>
-        SmoothScroll({
-            frameRate: 150,
-            animationTime: 800,
-            stepSize: 120,
-            pulseAlgorithm: 1,
-            pulseScale: 4,
-            pulseNormalize: 1,
-            accelerationDelta: 300,
-            accelerationMax: 2,
-            keyboardSupport: 1,
-            arrowScroll: 50,
-            fixedBackground: 0
+        const basePath = window.location.href.substring(0, window.location.href.lastIndexOf('/'));
+
+        const PLUGIN_NAMES = [
+            'logo-loop', 'click-counter', 'card-list', 'accordion', 'hero-animation', 'animated-stats',
+            'timeline', 'before-after-slider', 'more-info', 'social-share', 'pendulum', 'browser-mockup',
+            'hero-background', 'cta-buttons', 'media-slider', 'media-grid', 'particle-constellation',
+            'vector-force', 'aurora-glow', 'simple-stats', 'faq', 'callout-box', 'code', 'video-embed',
+            'swiper-slider', 'pricing-table', 'contact-form', 'testimonials', 'tabs', 'countdown-timer',
+            'team-members', 'progress-bars', 'table-of-contents', 'audio-player', 'star-rating',
+            'process-steps', 'flip-card', 'map-embed', 'section-divider', 'chart', 'typewriter', 'marquee',
+            'floating-showcase', 'marquee-wall', 'youtube-embed', 'text-slider',
+            'blobs-bg', 'fullscreen-slider', 'video-background', 'nav-menu', 'sticky-category-nav', 'form', 'code-view',
+        ];
+
+        // Plugins are registered here and loaded only when used in content.
+        const plugins = {};
+        PLUGIN_NAMES.forEach(name => {
+            plugins[name] = {
+                url: basePath + '/assets/plugins/' + name + '/index.js',
+                css: basePath + '/assets/plugins/' + name + '/style.css',
+            };
         });
+
+        const runtime = new ContentBoxRuntime({ plugins });
+        runtime.init();
+
+        // Make available globally for ContentBox editor
+        window.builderRuntime = runtime;
+
+        // Prevent horizontal scrolling
+        document.body.style.overflowX = 'hidden';
+
+        document.addEventListener('wheel', function (e) {
+            if (Math.abs(e.deltaX) > 0) e.preventDefault();
+        }, { passive: false });
+
+        document.body.addEventListener('keydown', (e) => {
+            const isInputOrEditable = e.target.closest('.is-container');
+            if ((e.key === 'ArrowLeft' || e.key === 'ArrowRight') && !isInputOrEditable) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('touchmove', function (e) {
+            if (e.touches.length === 2) e.preventDefault();
+        }, { passive: false });
     </script>
 
+    <!-- Expozy: helpers called by editor.php before save (Alpine templates / :class → static classes) -->
     <script>
         function classGen() {
             var elementsWithAttribute = document.querySelectorAll('[\\:class]');
 
             elementsWithAttribute.forEach(function (element) {
-
                 var attributeValue = element.getAttribute(':class');
                 var replacedValue = attributeValue.replace(/['"]/g, ' ');
 
@@ -115,20 +138,13 @@
                     replacedValue = elementsWithAttribute[0].classList.value + ' ' + replacedValue
                     elementsWithAttribute[0].setAttribute('class', replacedValue);
                 }
-
             });
-
-
         }
 
-
         function alpineTemplatesGen() {
-
-            // debugger;
             var templates = document.querySelectorAll("template");
             var container = document.getElementById("templatesDiv");
             container.innerHTML = '';
-
 
             processTemplates(container, templates);
         }
@@ -148,6 +164,7 @@
             });
         }
         window.alpineTemplatesGen = alpineTemplatesGen;
+        window.classGen = classGen;
     </script>
 </body>
 

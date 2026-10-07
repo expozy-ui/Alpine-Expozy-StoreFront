@@ -1,0 +1,132 @@
+/* ===== Flip Card plugin =====
+   All selectors scoped under [data-cb-type="flip-card"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="flip-card"] {
+    display: block;
+    perspective: 1200px;
+    --fc-height: 280px;
+    --fc-radius: 14px;
+    --fc-accent: #3b82f6;
+    --fc-front-bg: #ffffff;
+    --fc-front-text: #111827;
+    --fc-back-text: #ffffff;
+    --fc-border: #e5e7eb;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system. The back face keeps the
+   accent color you configured.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="flip-card"] {
+    --fc-front-bg: #1f2937;
+    --fc-front-text: #f3f4f6;
+    --fc-border: #374151;
+}
+*/
+
+[data-cb-type="flip-card"] .fc-inner {
+    position: relative;
+    width: 100%;
+    height: var(--fc-height);
+    transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+[data-cb-type="flip-card"] .fc-face {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    padding: 28px;
+    box-sizing: border-box;
+    border-radius: var(--fc-radius);
+    border: 1px solid var(--fc-border);
+    overflow: auto;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+
+[data-cb-type="flip-card"] .fc-front {
+    background: var(--fc-front-bg);
+    color: var(--fc-front-text);
+    transform: rotateY(0deg);
+}
+
+[data-cb-type="flip-card"] .fc-back {
+    background: var(--fc-accent);
+    color: var(--fc-back-text);
+    border-color: transparent;
+    transform: rotateY(180deg);
+}
+
+[data-cb-type="flip-card"][data-cb-axis="vertical"] .fc-back {
+    transform: rotateX(180deg);
+}
+
+/* Content resets inside the faces (0-specificity so user formatting wins) */
+[data-cb-type="flip-card"] .fc-face > .edit { width: 100%; }
+[data-cb-type="flip-card"] .fc-face :where(h1, h2, h3, h4, p) { margin: 0 0 6px; }
+[data-cb-type="flip-card"] .fc-face :where(h1, h2, h3, h4, p):last-child { margin-bottom: 0; }
+[data-cb-type="flip-card"] .fc-back a { color: inherit; text-decoration: underline; }
+
+/* ── Flip triggers ─────────────────────────────────────────────────────────
+   Hover flips on the live page only (body:not(.data-editor)). In the editor a
+   hover-flip would trap you on the back face with no way to reach the front to
+   edit it, so hover is disabled there and the card flips on CLICK instead
+   (mount wires it -> toggles .is-flipped). The .is-flipped rules below drive the
+   flip in BOTH the editor and the live page, so the effect works while editing. */
+body:not(.data-editor) [data-cb-type="flip-card"][data-cb-trigger="hover"]:hover .fc-inner { transform: rotateY(180deg); }
+body:not(.data-editor) [data-cb-type="flip-card"][data-cb-trigger="hover"][data-cb-axis="vertical"]:hover .fc-inner { transform: rotateX(180deg); }
+
+[data-cb-type="flip-card"].is-flipped .fc-inner { transform: rotateY(180deg); }
+[data-cb-type="flip-card"][data-cb-axis="vertical"].is-flipped .fc-inner { transform: rotateX(180deg); }
+
+body:not(.data-editor) [data-cb-type="flip-card"][data-cb-trigger="click"] { cursor: pointer; }
+body:not(.data-editor) [data-cb-type="flip-card"][data-cb-trigger="click"]:focus-visible {
+    outline: 2px solid var(--fc-accent);
+    outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="flip-card"] .fc-inner { transition: none; }
+}
+
+/* ── Editor affordance ─────────────────────────────────────────────────────
+   The 3D flip stays fully live while editing. This just hints the interaction:
+   an empty area of a face is clickable (flips), the text is editable. */
+body.data-editor [data-cb-type="flip-card"] .fc-face { cursor: pointer; }
+body.data-editor [data-cb-type="flip-card"] .fc-face .edit { cursor: text; }
+
+/* Editor-only badge: in the editor the card flips on CLICK (hover would trap you
+   on the back), so tell the user. It's not part of the content — never saved,
+   never shown on the live page — and pointer-events:none so it can't block a
+   flip or text editing. The label is localizable: mount() resolves "Click to
+   flip" through the lang map and sets --fc-flip-label (falls back to English). */
+body.data-editor [data-cb-type="flip-card"] { position: relative; }
+body.data-editor [data-cb-type="flip-card"]::before {
+    content: var(--fc-flip-label, "Click to flip");
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    z-index: 5;
+    padding: 3px 9px;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.02em;
+    color: #fff;
+    background: rgba(17, 24, 39, 0.72);
+    border-radius: 999px;
+    pointer-events: none;
+}

@@ -14,12 +14,14 @@
     letter-spacing: 1px;
 }        
 
-.type-nanumgothiccod-firasanscon h1 {font-size: 3.2rem;}
-.type-nanumgothiccod-firasanscon h2 {font-size: 2.6rem;}
-.type-nanumgothiccod-firasanscon h3 {font-size: 2rem;}
-.type-nanumgothiccod-firasanscon h4 {font-size: 1.7rem;}
-.type-nanumgothiccod-firasanscon h5 {font-size: 1.4rem;}
-.type-nanumgothiccod-firasanscon h6 {font-size: 1.2rem;}
+.type-nanumgothiccod-firasanscon h1 {font-size: 3.2rem; margin: 1.2rem 0 1.2rem; }
+.type-nanumgothiccod-firasanscon h2 {font-size: 2.6rem; margin: 1rem 0 1rem; }
+.type-nanumgothiccod-firasanscon h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-nanumgothiccod-firasanscon h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-nanumgothiccod-firasanscon h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-nanumgothiccod-firasanscon h6 {font-size: 1.2rem; margin: 0.5rem 0 0.5rem; }
+.type-nanumgothiccod-firasanscon p {margin:0.8rem 0 0.8rem;}
+/* .type-nanumgothiccod-firasanscon ul, .type-nanumgothiccod-firasanscon ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-nanumgothiccod-firasanscon .display { margin-bottom: 0.5rem; }
 .type-nanumgothiccod-firasanscon .display h1 {

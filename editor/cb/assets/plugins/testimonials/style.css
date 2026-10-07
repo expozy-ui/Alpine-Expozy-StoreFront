@@ -1,0 +1,230 @@
+/* ===== Testimonials plugin =====
+   All selectors scoped under [data-cb-type="testimonials"] so nothing leaks.
+   Colors run through CSS variables so dark mode is just a variable override
+   (auto-applied when a `.dark` ancestor is present, e.g. body.dark). */
+[data-cb-type="testimonials"] {
+    position: relative;
+    width: 100%;
+    --tst-accent: #3b82f6;
+    --tst-surface: #fff;         /* card background */
+    --tst-text: #1f2937;
+    --tst-muted: #6b7280;
+    --tst-border: #e5e7eb;
+    --tst-border-hover: #d1d5db;
+    --tst-divider: #e5e7eb;
+    --tst-star-empty: #d1d5db;
+    --tst-avatar-bg: #f3f4f6;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="testimonials"] {
+    --tst-surface: #1e1e1e;
+    --tst-text: #f3f4f6;
+    --tst-muted: #9ca3af;
+    --tst-border: #3a3a3a;
+    --tst-border-hover: #52525b;
+    --tst-star-empty: #4b5563;
+    --tst-avatar-bg: #2a2a2a;
+}
+*/
+
+[data-cb-type="testimonials"] .testimonials-grid {
+    display: grid;
+    gap: 24px;
+    align-items: stretch;
+}
+
+[data-cb-type="testimonials"] .testimonial {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin: 0;
+    padding: 26px 24px;
+    background: var(--tst-surface);
+    border: 1px solid var(--tst-border);
+    border-radius: 14px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover Effect — a pure lift (no added shadow, no forced border color, so it
+   respects your Border Color; add "Lift + Shadow" for depth). */
+[data-cb-type="testimonials"] .testimonial:hover {
+    transform: translateY(-4px);
+}
+
+/* Rating */
+[data-cb-type="testimonials"] .testimonial-rating {
+    display: flex;
+    gap: 2px;
+    font-size: 17px;
+    line-height: 1;
+}
+
+[data-cb-type="testimonials"] .testimonial-rating .star {
+    color: var(--tst-star-empty);
+}
+
+[data-cb-type="testimonials"] .testimonial-rating .star.is-filled {
+    color: var(--tst-accent);
+}
+
+/* Hide ratings when the setting is off */
+[data-cb-type="testimonials"][data-cb-show-rating="false"] .testimonial-rating {
+    display: none;
+}
+
+/* Quote */
+[data-cb-type="testimonials"] .testimonial-quote {
+    margin: 0;
+    flex: 1;
+}
+
+[data-cb-type="testimonials"] .testimonial-quote p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--tst-text);
+}
+
+/* Author */
+[data-cb-type="testimonials"] .testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+[data-cb-type="testimonials"] .testimonial-avatar {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex: 0 0 auto;
+    background: var(--tst-avatar-bg);
+}
+
+[data-cb-type="testimonials"] .testimonial-meta {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+[data-cb-type="testimonials"] .testimonial-name {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--tst-text);
+}
+
+[data-cb-type="testimonials"] .testimonial-role {
+    font-size: 13px;
+    color: var(--tst-muted);
+}
+
+/* Optional: Rounded Corners off (square) — data-cb-rounded="false".
+   Avatars stay circular (portraits read as circles even in sharp designs). */
+[data-cb-type="testimonials"][data-cb-rounded="false"] .testimonial {
+    border-radius: 0;
+}
+
+/* Hover Effect = "lift-shadow" → add a soft shadow to the lift. Placed BEFORE the
+   Minimal/Divided hover rules so those card-less styles stay shadow-free (Cards only). */
+[data-cb-type="testimonials"][data-cb-hover="lift-shadow"] .testimonial:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+/* Card background (Cards style). Transparent = see-through; Glass = the background
+   color at reduced opacity + a backdrop blur (frosted). The Minimal/Divided base
+   below resets both (those styles are always fill-less). */
+[data-cb-type="testimonials"][data-cb-background="transparent"] .testimonial {
+    background: transparent;
+}
+[data-cb-type="testimonials"][data-cb-background="glass"] .testimonial {
+    background: color-mix(in srgb, var(--tst-surface) 55%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+/* ── Style variants (data-cb-variant) ─────────────────────────────────────── */
+
+/* Minimal + Divided share a "no card" base */
+[data-cb-type="testimonials"][data-cb-variant="minimal"] .testimonial,
+[data-cb-type="testimonials"][data-cb-variant="divided"] .testimonial {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    padding: 8px 24px;
+}
+/* Keep the subtle lift on hover (so it still shows without a card), drop the
+   shadow / border change. */
+[data-cb-type="testimonials"][data-cb-variant="minimal"] .testimonial:hover,
+[data-cb-type="testimonials"][data-cb-variant="divided"] .testimonial:hover {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* Divided → a thin vertical rule between columns; the responsive breakpoints
+   drop the rule for items that become the start of a wrapped row. */
+[data-cb-type="testimonials"][data-cb-variant="divided"] .testimonial:not(:first-child) {
+    border-left: 1px solid var(--tst-divider);
+}
+@media (max-width: 900px) {
+    [data-cb-type="testimonials"][data-cb-variant="divided"] .testimonial:nth-child(2n+1) { border-left: none; }
+}
+@media (max-width: 600px) {
+    [data-cb-type="testimonials"][data-cb-variant="divided"] .testimonial { border-left: none; }
+}
+
+/* Hover Effect = "none" → no hover anywhere. Placed after the per-style hover rules
+   so it wins (equal specificity, later source). */
+[data-cb-type="testimonials"][data-cb-hover="none"] .testimonial:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--tst-border);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    [data-cb-type="testimonials"] .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    [data-cb-type="testimonials"] .testimonials-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="testimonials"] .testimonial {
+        transition: none !important;
+    }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+    [data-cb-type="testimonials"] .testimonial {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Print */
+@media print {
+    [data-cb-type="testimonials"] .testimonial {
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+}

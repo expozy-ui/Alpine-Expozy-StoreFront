@@ -1,0 +1,79 @@
+/* ==========================================================================
+   11. AVANT-GARDE MAGAZINE — Plus Jakarta Sans + Bitter
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600&family=Bitter:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
+.type-avant-garde-magazine {
+    font-family: 'Bitter', Georgia, serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-avant-garde-magazine h1,
+.type-avant-garde-magazine h2,
+.type-avant-garde-magazine h3,
+.type-avant-garde-magazine h4,
+.type-avant-garde-magazine h5,
+.type-avant-garde-magazine h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    /* text-transform: uppercase; */
+}
+
+.type-avant-garde-magazine h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-avant-garde-magazine h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-avant-garde-magazine h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-avant-garde-magazine h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-avant-garde-magazine h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-avant-garde-magazine h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-avant-garde-magazine p {
+    margin: 0.75rem 0;
+}
+
+.type-avant-garde-magazine .display {
+    margin-bottom: 2rem;
+}
+
+.type-avant-garde-magazine .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-avant-garde-magazine .display p {
+    font-size: clamp(1rem, 1.8vw, 1.125rem);
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

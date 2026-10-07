@@ -1,0 +1,80 @@
+/* ==========================================================================
+   28. 70s REVIVAL — Abril Fatface + Outfit
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Outfit:wght@200;300;400;500;600;700&display=swap');
+
+.type-70s-revival {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-70s-revival h1,
+.type-70s-revival h2,
+.type-70s-revival h3,
+.type-70s-revival h4,
+.type-70s-revival h5,
+.type-70s-revival h6 {
+    font-family: 'Abril Fatface', cursive;
+    font-weight: 400;
+    line-height: 1.1;
+    /* color: #e85d04; */
+    letter-spacing: 0.02em;
+}
+
+.type-70s-revival h1 {
+    font-size: clamp(2rem, 5vw, 2.3rem);
+    margin: 1.2rem 0;
+}
+
+.type-70s-revival h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-70s-revival h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-70s-revival h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-70s-revival h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-70s-revival h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-70s-revival p {
+    margin: 0.75rem 0;
+}
+
+.type-70s-revival .display {
+    margin-bottom: 2rem;
+}
+
+.type-70s-revival .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    margin-bottom: 1rem;
+    /* color: #e85d04; */
+}
+
+.type-70s-revival .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

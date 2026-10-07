@@ -14,12 +14,14 @@
     line-height: 1.2;
 }        
 
-.type-ptserif-poppins h1 {font-size: 2.9rem;}
-.type-ptserif-poppins h2 {font-size: 2.3rem;}
-.type-ptserif-poppins h3 {font-size: 1.85rem;}
-.type-ptserif-poppins h4 {font-size: 1.5rem;}
-.type-ptserif-poppins h5 {font-size: 1.2rem;}
-.type-ptserif-poppins h6 {font-size: 1.05rem;}
+.type-ptserif-poppins h1 {font-size: 2.9rem; margin: 1.2rem 0 1.2rem; }
+.type-ptserif-poppins h2 {font-size: 2.3rem; margin: 1rem 0 1rem; }
+.type-ptserif-poppins h3 {font-size: 1.85rem; margin: 1rem 0 1rem; }
+.type-ptserif-poppins h4 {font-size: 1.5rem; margin: 0.5rem 0 0.5rem; }
+.type-ptserif-poppins h5 {font-size: 1.2rem; margin: 0.5rem 0 0.5rem; }
+.type-ptserif-poppins h6 {font-size: 1.05rem; margin: 0.5rem 0 0.5rem; }
+.type-ptserif-poppins p {margin:0.8rem 0 0.8rem;}
+/* .type-ptserif-poppins ul, .type-ptserif-poppins ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-ptserif-poppins .display { margin-bottom: 0.5rem; }
 .type-ptserif-poppins .display h1 {

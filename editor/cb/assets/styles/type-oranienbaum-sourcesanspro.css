@@ -14,12 +14,14 @@
     letter-spacing: 1px;
 }        
 
-.type-oranienbaum-sourcesanspro h1 {font-size: 3.3rem;}
-.type-oranienbaum-sourcesanspro h2 {font-size: 2.5rem;}
-.type-oranienbaum-sourcesanspro h3 {font-size: 2rem;}
-.type-oranienbaum-sourcesanspro h4 {font-size: 1.7rem;}
-.type-oranienbaum-sourcesanspro h5 {font-size: 1.4rem;}
-.type-oranienbaum-sourcesanspro h6 {font-size: 1.26rem;}
+.type-oranienbaum-sourcesanspro h1 {font-size: 3.3rem; margin: 1.2rem 0 1.2rem; }
+.type-oranienbaum-sourcesanspro h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-oranienbaum-sourcesanspro h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-oranienbaum-sourcesanspro h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-oranienbaum-sourcesanspro h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-oranienbaum-sourcesanspro h6 {font-size: 1.26rem; margin: 0.5rem 0 0.5rem; }
+.type-oranienbaum-sourcesanspro p {margin:0.8rem 0 0.8rem;}
+/* .type-oranienbaum-sourcesanspro ul, .type-oranienbaum-sourcesanspro ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-oranienbaum-sourcesanspro .display { margin-bottom: 0.5rem; }
 .type-oranienbaum-sourcesanspro .display h1 {

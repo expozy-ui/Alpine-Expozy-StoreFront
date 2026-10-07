@@ -95,6 +95,7 @@ var EditPanel = (function () {
                       width: 100%;
                       height: calc(100% - 28px);
                       position: absolute;
+                      border:none;
                   }
                 </style>
 

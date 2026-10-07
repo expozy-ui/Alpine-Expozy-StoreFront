@@ -1,0 +1,78 @@
+/* ==========================================================================
+   07. ART DECO REVIVAL — Bodoni Moda + Outfit
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;0,6..96,700;1,6..96,400;1,6..96,500&family=Outfit:wght@200;300;400;500;600&display=swap');
+
+.type-art-deco-revival {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.type-art-deco-revival h1,
+.type-art-deco-revival h2,
+.type-art-deco-revival h3,
+.type-art-deco-revival h4,
+.type-art-deco-revival h5,
+.type-art-deco-revival h6 {
+    font-family: 'Bodoni Moda', Didot, serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.type-art-deco-revival h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-art-deco-revival h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-art-deco-revival h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-art-deco-revival h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-art-deco-revival h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-art-deco-revival h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-art-deco-revival p {
+    margin: 0.75rem 0;
+}
+
+.type-art-deco-revival .display {
+    margin-bottom: 2rem;
+}
+
+.type-art-deco-revival .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.5rem);
+    line-height: 1.2;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-art-deco-revival .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

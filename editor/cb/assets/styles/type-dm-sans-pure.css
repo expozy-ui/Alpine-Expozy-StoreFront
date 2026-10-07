@@ -1,0 +1,78 @@
+/* ==========================================================================
+   23. DM SANS PURE — DM Sans
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,300;1,9..40,400&display=swap');
+
+.type-dm-sans-pure {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-dm-sans-pure h1,
+.type-dm-sans-pure h2,
+.type-dm-sans-pure h3,
+.type-dm-sans-pure h4,
+.type-dm-sans-pure h5,
+.type-dm-sans-pure h6 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+}
+
+.type-dm-sans-pure h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-dm-sans-pure h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-dm-sans-pure h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-dm-sans-pure h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-dm-sans-pure h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-dm-sans-pure h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-dm-sans-pure p {
+    margin: 0.75rem 0;
+}
+
+.type-dm-sans-pure .display {
+    margin-bottom: 2rem;
+}
+
+.type-dm-sans-pure .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.1;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-dm-sans-pure .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

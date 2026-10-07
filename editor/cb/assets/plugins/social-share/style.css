@@ -1,0 +1,161 @@
+/* ===== Social Share plugin =====
+   All selectors scoped under [data-cb-type="social-share"].
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="social-share"] {
+    --ss-border: #e5e7eb;
+    --ss-label: #6b7280;
+    --ss-btn: #111827;
+    --ss-btn-hover: #6b7280;
+    --ss-dropdown-bg: #ffffff;
+    --ss-dropdown-border: #e5e7eb;
+    --ss-dropdown-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --ss-menuitem: #374151;
+    --ss-menuitem-hover-bg: #f3f4f6;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses — a class, [data-theme="dark"],
+   @media (prefers-color-scheme: dark), etc. Uncomment and point the selector at
+   your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="social-share"] {
+    --ss-border: #374151;
+    --ss-label: #9ca3af;
+    --ss-btn: #f9fafb;
+    --ss-btn-hover: #d1d5db;
+    --ss-dropdown-bg: #1f2937;
+    --ss-dropdown-border: #374151;
+    --ss-dropdown-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    --ss-menuitem: #e5e7eb;
+    --ss-menuitem-hover-bg: #374151;
+}
+*/
+
+/* Container (optional divider — uncomment to enable) */
+/* [data-cb-type="social-share"] {
+    border-top: 1px solid var(--ss-border);
+    padding-top: 24px;
+    margin-top: 24px;
+} */
+
+[data-cb-type="social-share"] .share-container {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Alignment options */
+[data-cb-type="social-share"] .share-container[data-alignment="left"] {
+    justify-content: flex-start;
+}
+
+[data-cb-type="social-share"] .share-container[data-alignment="center"] {
+    justify-content: center;
+}
+
+[data-cb-type="social-share"] .share-container[data-alignment="right"] {
+    justify-content: flex-end;
+}
+
+/* Label */
+[data-cb-type="social-share"] .share-label {
+    font-size: 14px;
+    color: var(--ss-label);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 500;
+}
+
+/* Buttons wrapper */
+[data-cb-type="social-share"] .share-buttons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Individual button */
+[data-cb-type="social-share"] .share-btn {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background: transparent;
+    color: var(--ss-btn);
+    cursor: pointer;
+    transition: color 0.2s ease;
+    padding: 0;
+    border-radius: 4px;
+}
+
+[data-cb-type="social-share"] .share-btn:hover {
+    color: var(--ss-btn-hover);
+}
+
+[data-cb-type="social-share"] .share-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* More dropdown */
+[data-cb-type="social-share"] .share-more {
+    position: relative;
+}
+
+[data-cb-type="social-share"] .share-dropdown {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    background: var(--ss-dropdown-bg);
+    border: 1px solid var(--ss-dropdown-border);
+    border-radius: 8px;
+    box-shadow: var(--ss-dropdown-shadow);
+    padding: 4px;
+    min-width: 140px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-8px);
+    transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+    z-index: 100;
+}
+
+[data-cb-type="social-share"] .share-dropdown.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+[data-cb-type="social-share"] .share-dropdown button {
+    width: 100%;
+    padding: 8px 12px;
+    border: none;
+    background: transparent;
+    color: var(--ss-menuitem);
+    font-size: 14px;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.15s ease;
+}
+
+[data-cb-type="social-share"] .share-dropdown button:hover {
+    background-color: var(--ss-menuitem-hover-bg);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    [data-cb-type="social-share"] .share-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    [data-cb-type="social-share"] .share-buttons {
+        width: 100%;
+    }
+}

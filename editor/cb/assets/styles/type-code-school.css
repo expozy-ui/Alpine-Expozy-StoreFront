@@ -1,0 +1,78 @@
+/* ==========================================================================
+   CODE SCHOOL — Poppins + Lekton
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Lekton:ital,wght@0,400;0,700;1,400&display=swap');
+
+.type-code-school {
+    font-family: 'Lekton', monospace;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-code-school h1,
+.type-code-school h2,
+.type-code-school h3,
+.type-code-school h4,
+.type-code-school h5,
+.type-code-school h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+
+.type-code-school h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-code-school h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-code-school h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-code-school h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-code-school h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-code-school h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-code-school p {
+    margin: 0.75rem 0;
+}
+
+.type-code-school .display {
+    margin-bottom: 2rem;
+}
+
+.type-code-school .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.6rem);
+    line-height: 1.1;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    margin-bottom: 1.2rem;
+}
+
+.type-code-school .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.15rem);
+    line-height: 1.6;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

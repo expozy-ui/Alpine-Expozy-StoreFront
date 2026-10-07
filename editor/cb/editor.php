@@ -2,68 +2,105 @@
 
 if(session_id() == '') session_start();
 
-$parameters = json_decode(base64_decode($_GET['i'] ?? ''), true);
-
-
 if(!isset($_GET['i'])) die();
-
 
 define( "_VALID_PHP", true);
 require_once '../../core/autoload.php';
 
+$parameters = json_decode(base64_decode($_GET['i'] ?? ''), true);
+
 if(isset($parameters['token'])){
-	
-	
 	require_once(BASEPATH.'core/classes/class.cryptor.php');
 	$_SESSION['token'] = Cryptor::Decrypt($parameters['token'], SAAS_KEY);
-	
+
 	$user = new Users();
 }
 
-
-
 $editor = new Editor($_GET['i']);
 
-
-
 $dir = SITEURL.'/editor/cb/';
+
+// UI language for the editor panels: bg or en, anything else falls back to en.
+$uiLang = strtolower(substr($_GET['lang'] ?? ($lang->language ?? ''), 0, 2));
+if (!in_array($uiLang, ['bg', 'en'], true)) $uiLang = 'en';
+
+$i18n = [
+	'en' => [
+		'ai_title'        => 'AI Assistant',
+		'clear'           => 'Clear',
+		'close'           => 'Close',
+		'level'           => 'Level',
+		'level_1'         => '1 · Simple: text and images',
+		'level_2'         => '2 · Rich: sliders and animations',
+		'level_3'         => '3 · Live: news, products, forms',
+		'level_info_btn'  => 'What each level does',
+		'level_info_title'=> 'AI assistant levels',
+		'level_info_intro'=> 'Choose how complex the result of the AI assistant should be:',
+		'level_info_1'    => '<b>1 · Simple</b> — adds or changes headings, text and images. Good for everyday fixes: a new paragraph, a replaced image, a text correction.',
+		'level_info_2'    => '<b>2 · Rich</b> — besides text and images, builds richer sections: galleries and sliders, animated elements, FAQs, tabs.',
+		'level_info_3'    => '<b>3 · Live</b> — sections that update themselves from the site: latest news, shop products, sponsors, contact forms.',
+		'level_info_hint' => 'If unsure, keep level 1.',
+		'got_it'          => 'Got it',
+		'placeholder'     => 'Describe the change...',
+		'send'            => 'Send',
+		'done'            => 'Done.',
+		'html_load_error' => 'HTML could not be loaded: ',
+		'revisions'       => 'Revisions',
+		'revision_name'   => 'Revision Name',
+		'get_revision'    => 'Get Revision',
+	],
+	'bg' => [
+		'ai_title'        => 'AI асистент',
+		'clear'           => 'Изчисти',
+		'close'           => 'Затвори',
+		'level'           => 'Ниво',
+		'level_1'         => '1 · Просто: текст и снимки',
+		'level_2'         => '2 · Ефектно: слайдъри и анимации',
+		'level_3'         => '3 · Живо: новини, продукти, форми',
+		'level_info_btn'  => 'Какво прави всяко ниво',
+		'level_info_title'=> 'Нива на AI асистента',
+		'level_info_intro'=> 'Изберете колко сложно да е това, което AI асистентът ще направи:',
+		'level_info_1'    => '<b>1 · Просто</b> — добавя или променя заглавия, текст и снимки. Подходящо за ежедневни корекции: нов абзац, смяна на снимка, поправка на текст.',
+		'level_info_2'    => '<b>2 · Ефектно</b> — освен текст и снимки прави и по-богати секции: галерии и слайдъри, движещи се елементи, въпроси и отговори, табове.',
+		'level_info_3'    => '<b>3 · Живо</b> — секции, които се обновяват сами от сайта: последни новини, продукти от магазина, спонсори, форми за контакт.',
+		'level_info_hint' => 'Ако не сте сигурни, оставете ниво 1.',
+		'got_it'          => 'Разбрах',
+		'placeholder'     => 'Опишете промяната...',
+		'send'            => 'Изпрати',
+		'done'            => 'Готово.',
+		'html_load_error' => 'HTML не можа да бъде зареден: ',
+		'revisions'       => 'Ревизии',
+		'revision_name'   => 'Име на ревизията',
+		'get_revision'    => 'Вземи ревизия',
+	],
+];
+$t = $i18n[$uiLang];
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8">
-     <title>Editor-<?= $page->type;?>-<?= $page->slug?></title>
+    <title>Editor-<?= $page->type;?>-<?= $page->slug?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <link rel="shortcut icon" href="#"> 
-    
-	<script type="text/javascript">
-  		const SITEURL = "<?= SITEURL ?>";
-  		const LANG = "<?= $lang->language ?>";
-  		const SAAS_KEY = "<?= SAAS_KEY ?>";
-  		const COREURL = "<?= $core->core_url; ?>api/"
-  		localStorage.setItem('token', '<?= $_SESSION['token']?>');
-  	</script>
-	
-	
-	
-    <!-- Required css for production -->    
-    <link href="<?= $dir ?>assets/minimalist-blocks/content.css" rel="stylesheet"> 
-    <link href="<?= $dir ?>box/box-flex.css" rel="stylesheet"> 
+    <link rel="shortcut icon" href="#">
 
-    <!-- Required css for editing (not needed in production) -->   
+	<script type="text/javascript">
+		const SITEURL = "<?= SITEURL ?>";
+		const LANG = "<?= $lang->language ?>";
+		const SAAS_KEY = "<?= SAAS_KEY ?>";
+		const COREURL = "<?= $core->core_url; ?>api/"
+		localStorage.setItem('token', '<?= $_SESSION['token']?>');
+	</script>
+
     <link href="<?= $dir ?>contentbuilder/contentbuilder.css" rel="stylesheet">
     <link href="<?= $dir ?>contentbox/contentbox.css" rel="stylesheet">
-	
+
 	<style>
         /* Switch the device buttons to save space on smaller screen */
         @media all and (max-width: 1380px) {
-            .custom-topbar .btn-device-desktop,
-            .custom-topbar .btn-device-tablet,
-            .custom-topbar .btn-device-tablet-landscape,
-            .custom-topbar .btn-device-mobile {display:none !important} /* Hide the topbar buttons */
-
-            .is-responsive-toolbar {display:inline-flex !important} /* Show the default buttons */
+            .custom-topbar [data-device] {display:none !important}
+            .is-responsive-toolbar {display:inline-flex !important}
         }
         .topbar-shadow {
             position: fixed;
@@ -75,582 +112,355 @@ $dir = SITEURL.'/editor/cb/';
         }
     </style>
 </head>
-<body>
+<body id="body">
 
-<!-- Example of custom toolbar -->
+<!-- Custom Topbar -->
 <div class="builder-ui keep-selection custom-topbar" data-tooltip>
     <div>
-		
         <?php echo $editor->title ?>
     </div>
     <div>
-        <!-- custom buttons here -->
-        
+        <button data-action="undo" title="Undo">
+            <svg><use xlink:href="#icon-undo"></use></svg>
+        </button>
+        <button data-action="redo" title="Redo">
+            <svg><use xlink:href="#icon-redo"></use></svg>
+        </button>
 
         <div class="separator"></div>
 
-
-
-        <button class="btn-save" title="Save" id="saveBtn">
+        <button data-action="save" title="Save" id="saveBtn">
             <svg><use xlink:href="#icon-save"></use></svg>
             <span>Save</span>
         </button>
-		<button class="btn-loader" title="Loading" id="loaderBtn" style="display:none;">
+		<button title="Loading" id="loaderBtn" style="display:none;">
             <i class="fa-solid fa-spinner animate-spin text-[22px]"></i>
         </button>
-		
-
-        
-
     </div>
     <div>
-        <!-- custom buttons here -->
-        <button class="btn-device-desktop-large" data-device="desktop-lg" title="Desktop - Large Screen">
-            <svg style="width:18px;height:18px;"><use xlink:href="#icon-device-desktop"></use></svg>
+        <button data-device="desktop-lg" title="Desktop - Large Screen">
+            <svg><use xlink:href="#icon-device-desktop"></use></svg>
         </button>
-        <button class="btn-device-desktop" data-device="desktop" title="Desktop / Laptop">
-            <svg style="width:20px;height:20px;"><use xlink:href="#icon-device-laptop"></use></svg>
+        <button data-device="desktop" title="Desktop / Laptop">
+            <svg><use xlink:href="#icon-device-laptop"></use></svg>
         </button>
-        <button class="btn-device-tablet-landscape" data-device="tablet-landscape" title="Tablet - Landscape">
-            <svg style="width:18px;height:18px;transform:rotate(-90deg)"><use xlink:href="#icon-device-tablet"></use></svg>
+        <button data-device="tablet-landscape" title="Tablet - Landscape">
+            <svg style="transform:rotate(-90deg)"><use xlink:href="#icon-device-tablet"></use></svg>
         </button>
-        <button class="btn-device-tablet" data-device="tablet" title="Tablet - Portrait">
-            <svg  style="width:18px;height:18px;"><use xlink:href="#icon-device-tablet"></use></svg>
+        <button data-device="tablet" title="Tablet - Portrait">
+            <svg><use xlink:href="#icon-device-tablet"></use></svg>
         </button>
-        <button class="btn-device-mobile" data-device="mobile" title="Mobile">
-            <svg  style="width:18px;height:18px;"><use xlink:href="#icon-device-mobile"></use></svg>
+        <button data-device="mobile" title="Mobile">
+            <svg><use xlink:href="#icon-device-mobile"></use></svg>
         </button>
-        <button class="btn-fullview" data-device="fullview" title="Full View">
-            <svg  style="width:18px;height:18px;"><use xlink:href="#icon-fullview"></use></svg>
+        <button data-device="fullview" title="Full View">
+            <svg><use xlink:href="#icon-fullview"></use></svg>
         </button>
 
         <div class="separator"></div>
 
-        <button class="btn-download" title="Download">
+        <button data-action="download" title="Download">
             <svg><use xlink:href="#icon-download"></use></svg>
         </button>
-
-
+        <button data-action="html" title="HTML">
+            <svg><use xlink:href="#icon-code"></use></svg>
+        </button>
+        <button data-action="preview" title="Preview">
+            <svg><use xlink:href="#icon-eye"></use></svg>
+        </button>
 
         <div class="separator"></div>
 
-        <button class="btn-togglepanel" data-button="togglepanel" title="Toggle Edit Panel"> <!-- To enable state, add:  data-state="togglepanel" -->
+        <button data-action="toggle-panel" title="Toggle Edit Panel">
             <svg><use xlink:href="#icon-pencil"></use></svg>
         </button>
     </div>
 </div>
 <div class="topbar-shadow"></div>
 
-    <div class="is-wrapper" style="opacity:0;" id="mainContent">
-    <?php  echo empty($editor->html) ? '' : $editor->html;   ?>
-        </div>
-  
+<!-- Content is loaded with builder.loadHtml() below (see initialHtml). Loading it through this
+     wrapper skips builderRuntime.reinitialize(), so data-cb-type plugins never mount. -->
+<div class="is-wrapper" style="opacity:0;" id="mainContent"></div>
 
-
-        <div style="display: none;" id="tailwindCss"></div>
-<!-- <div style="display: none;" id="templatesDiv"></div> -->
+<div style="display: none;" id="tailwindCss"></div>
 <div style="display: none !important;" id="headerFooterHtml">
 <?php
-
-		if($page->slug == 'header'){
-			echo $page->footer;
-
-		} else if($page->slug == 'footer'){
-			echo $page->header;
-		}
+	if($page->slug == 'header'){
+		echo $page->footer;
+	} else if($page->slug == 'footer'){
+		echo $page->header;
+	}
 ?>
-<?php  ?></div>
+</div>
 
-<!-- Slider feature (by setting slider: 'glide') -->
-<link href="<?= $dir ?>assets/scripts/glide/css/glide.core.css" rel="stylesheet">
-<link href="<?= $dir ?>assets/scripts/glide/css/glide.theme.css" rel="stylesheet">
-<script src="<?= $dir ?>assets/scripts/glide/glide.js"></script>
+<!-- AI panel -->
+<div id="aiPanel" class="fixed top-[60px] right-4 z-[10001] w-[420px] max-w-[calc(100vw-32px)] h-[70vh] flex flex-col bg-white rounded-lg shadow-lg border border-gray-200" style="display:none">
+	<div class="flex items-center justify-between px-4 py-3 border-b">
+		<h3 class="text-base font-semibold text-gray-900"><?= $t['ai_title'] ?></h3>
+		<div class="flex items-center gap-3">
+			<button type="button" onclick="clearAiChat()" class="text-sm text-gray-500 hover:text-gray-900"><?= $t['clear'] ?></button>
+			<button type="button" onclick="toggleAiPanel()" class="text-gray-500 hover:text-gray-900" title="<?= $t['close'] ?>">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+		</div>
+	</div>
+	<!-- AI level: sent to api/ai.php as `level` (1 | 2 | 3) -->
+	<div class="px-4 py-2 border-b bg-gray-50 flex items-center gap-2 text-sm">
+		<label for="aiLevel" class="text-gray-600 shrink-0"><?= $t['level'] ?></label>
+		<select id="aiLevel" onchange="setAiLevel(this.value)" class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg px-2 py-1.5 flex-1">
+			<option value="1"><?= $t['level_1'] ?></option>
+			<option value="2"><?= $t['level_2'] ?></option>
+			<option value="3"><?= $t['level_3'] ?></option>
+		</select>
+		<button type="button" onclick="openAiLevelInfo()" class="w-7 h-7 shrink-0 rounded-full border border-gray-300 text-gray-500 hover:text-blue-700 hover:border-blue-700" title="<?= $t['level_info_btn'] ?>">
+			<i class="fa-solid fa-info text-xs"></i>
+		</button>
+	</div>
+	<div id="aiMessages" class="flex-1 overflow-y-auto flex flex-col gap-2 p-4"></div>
+	<div id="aiError" class="mx-4 mb-2 rounded-lg bg-red-50 text-red-700 text-sm px-3 py-2" style="display:none"></div>
+	<div class="border-t p-3 flex items-end gap-2">
+		<textarea id="aiInput" rows="3" placeholder="<?= $t['placeholder'] ?>" class="flex-1 resize-none bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg p-2.5"></textarea>
+		<button id="aiSend" type="button" onclick="sendAiMessage()" class="text-white inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 disabled:opacity-60 font-medium rounded-lg text-sm px-4 py-2.5">
+			<i id="aiLoader" class="fa-solid fa-spinner animate-spin" style="display:none"></i>
+			<?= $t['send'] ?>
+		</button>
+	</div>
+</div>
 
-<!-- Navbar feature (by setting navbar: true) -->
-<link href="<?= $dir ?>assets/scripts/navbar/navbar.css" rel="stylesheet">
-<script src="<?= $dir ?>assets/scripts/navbar/navbar.min.js"></script>
+<!-- AI level info modal -->
+<div id="aiLevelInfoModal" class="fixed inset-0 flex items-center justify-center p-4" style="display:none; z-index:10010">
+	<div class="absolute inset-0 bg-gray-900/50" onclick="closeAiLevelInfo()"></div>
+	<div class="relative w-full max-w-lg bg-white rounded-lg shadow-lg border border-gray-200" role="dialog" aria-modal="true" aria-labelledby="aiLevelInfoTitle">
+		<div class="flex items-center justify-between px-4 py-3 border-b">
+			<h3 id="aiLevelInfoTitle" class="text-base font-semibold text-gray-900"><?= $t['level_info_title'] ?></h3>
+			<button type="button" onclick="closeAiLevelInfo()" class="text-gray-500 hover:text-gray-900" title="<?= $t['close'] ?>">
+				<i class="fa-solid fa-xmark"></i>
+			</button>
+		</div>
+		<div class="px-4 py-4 text-sm text-gray-700 space-y-3">
+			<p class="text-gray-500"><?= $t['level_info_intro'] ?></p>
+			<p><?= $t['level_info_1'] ?></p>
+			<p><?= $t['level_info_2'] ?></p>
+			<p><?= $t['level_info_3'] ?></p>
+			<p class="text-gray-500"><?= $t['level_info_hint'] ?></p>
+		</div>
+		<div class="px-4 py-3 border-t flex justify-end">
+			<button type="button" onclick="closeAiLevelInfo()" class="text-white bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5"><?= $t['got_it'] ?></button>
+		</div>
+	</div>
+</div>
 
-<!-- Required js for editing (not needed in production) -->  
 <script src="<?= $dir ?>contentbox/lang/en.js"></script>
 <script src="<?= $dir ?>contentbox/contentbox.min.js"></script>
 
 <script>
-	
-    var timeoutId; //Used for Auto Save
 
-    //Enable editing
     const builder = new ContentBox({
-        
-        previewURL: 'preview.html', //'preview.html',
 
         controlPanel: true,
         iframeSrc: 'blank.html',
-        zoom: 1,
-        //screenMode: 'fullview', // or fullview
-        topSpace: true, // to give a space on top for custom toolbar
+        topSpace: true, // space on top for custom toolbar
         iframeCentered: true,
-		
-		// htmlButton: false, // HTML button on left sidebar
-        // undoRedoButtons: false, // Undo & redo buttons on control panel
-        toggleDeviceButton: false, // Toggle device button on control panel
-        deviceButtons: false, // Multiple device buttons on frame
-		//
-		//
-        // To enable AI Assistant
-        sendCommandUrl: 'api/sendcommand.php',
-        // AIToolbar: false,
-        // showDisclaimer: false,
-        // startAIAssistant: true, // Auto open 'AI Assistant' panel
-        // enableShortCommands: false,
-        speechRecognitionLang: 'en-US', 
-        triggerWords: {
-            send: ['send', 'okay', 'ok', 'execute', 'run'],
-            abort: ['abort', 'cancel'],
-            clear: ['clear', 'erase']
-        },
-        
-        // If using DeepGram for speech recognition, specify the speechTranscribeUrl.
-        // speechTranscribeUrl: 'ws://localhost:3002',
-        // The server implementation for ws://localhost:3002 can be found in server.js (Node.js code)
+        zoom: 1,
 
-        // Enabling AI image generation
-        textToImageUrl: 'api/texttoimage.php', 
-        upscaleImageUrl: 'api/upscaleimage.php',
-        imageAutoUpscale: false,
-        viewFileUrl: 'api/viewfile.php', // Used if using S3 (public bucket).
-        
-         templates: [
-            {   
-                url: '<?= $dir ?>assets/templates-simple/templates.js',
-                path: '<?= $dir ?>assets/templates-simple/', 
-                pathReplace: [],
-                numbering: true,
-                showNumberOnHover: true,
-            },
-            {   
-                url: '<?= $dir ?>assets/templates-quick/templates.js',
-                path: '<?= $dir ?>assets/templates-quick/', 
-                pathReplace: [],
-                numbering: true,
-                showNumberOnHover: true,
-            },
-            {   
-                url: '<?= $dir ?>assets/templates-animated/templates.js',
-                path: '<?= $dir ?>assets/templates-animated/', 
-                pathReplace: [],
-                numbering: true,
-                showNumberOnHover: true,
-            },
-						 
-			// thelayout BLOCKS
+        toggleDeviceButton: false,
+        deviceButtons: false,
+
+        contentStylesVersion: 2,
+        snippetUrl: 'assets/minimalist-blocks/content-plugins.js',
+
+        templates: [
             {
-               url: '<?= $dir ?>assets/thelayout/templates.js',
-               path: '<?= $dir ?>assets/thelayout/',
-               pathReplace: [],
-               numbering: true,
-               showNumberOnHover: true,
-           },
+                url: '<?= $dir ?>assets/templates-simple/templates.js',
+                path: '<?= $dir ?>assets/templates-simple/',
+                pathReplace: [],
+                numbering: true,
+                showNumberOnHover: true,
+            },
+            {
+                url: '<?= $dir ?>assets/templates-quick/templates.js',
+                path: '<?= $dir ?>assets/templates-quick/',
+                pathReplace: [],
+                numbering: true,
+                showNumberOnHover: true,
+            },
+            {
+                url: '<?= $dir ?>assets/templates-animated/templates.js',
+                path: '<?= $dir ?>assets/templates-animated/',
+                pathReplace: [],
+                numbering: true,
+                showNumberOnHover: true,
+            },
+            {
+                url: '<?= $dir ?>assets/thelayout/templates.js',
+                path: '<?= $dir ?>assets/thelayout/',
+                pathReplace: [],
+                numbering: true,
+                showNumberOnHover: true,
+            },
         ],
-	
-	
-        // Open asset/file browser (can be replaced with your own asset/file manager application)
-        imageSelect: 'assets.html',
-        videoSelect: 'assets.html',
-        audioSelect: 'assets.html',
-        fileSelect: 'assets.html',
-        mediaSelect: 'assets.html', // for images and videos
-        // You can replace it with your own asset/file manager application
-        // or use: https://innovastudio.com/asset-manager
 
-        // Or use custom:
-        // onImageSelectClick: () => {  }, 
-        // onVideoSelectClick: () => {  },
-        // onAudioSelectClick: () => {  },
-        // onFileSelectClick: () => {  },
-        // onMediaSelectClick: () => {  }, 
+        // AI editing goes through our own panel (api/ai.php -> core), not the built-in assistant.
 
-        onUploadCoverImage: (e) => {
-            uploadFile(e, (response)=>{
-                if(response.error) {
-                    alert(response.error);
-                    return;
-                }
-                const uploadedFileUrl = response.url; // get saved image url
-                if(uploadedFileUrl) builder.boxImage(uploadedFileUrl); // change cover image
-            });
+        // Uploads go to the Expozy images API
+        upload: async (file) => {
+            return await uploadFile(file);
         },
-        onImageUpload: (e)=>{
-            uploadFile(e, (response)=>{
-                if(response.error) {
-                    alert(response.error);
-                    builder.returnUrl(false);
-                    return;
-                }
-                const uploadedFileUrl = response.url; // get saved file url
-                if(uploadedFileUrl) builder.returnUrl(uploadedFileUrl); // apply
-            });
-        },
-        onVideoUpload: (e)=>{
-            uploadFile(e, (response)=>{
-                if(response.error) {
-                    alert(response.error);
-                    builder.returnUrl(false);
-                    return;
-                }
-                const uploadedFileUrl = response.url; // get saved file url
-                if(uploadedFileUrl) builder.returnUrl(uploadedFileUrl); // apply
-            });
-        },  
-        onAudioUpload: (e)=>{
-            uploadFile(e, (response)=>{
-                if(response.error) {
-                    alert(response.error);
-                    builder.returnUrl(false);
-                    return;
-                }
-                const uploadedFileUrl = response.url; // get saved file url
-                if(uploadedFileUrl) builder.returnUrl(uploadedFileUrl); // apply
-            });
-        }, 
-        onMediaUpload: (e)=>{
-            uploadFile(e, (response)=>{
-                if(response.error) {
-                    alert(response.error);
-                    builder.returnUrl(false);
-                    return;
-                }
-                const uploadedFileUrl = response.url; // get saved file url
-                if(uploadedFileUrl) builder.returnUrl(uploadedFileUrl); // apply
-            });
-        }, 
-        onFileUpload: (e)=>{
-            uploadFile(e, (response)=>{
-                if(response.error) {
-                    alert(response.error);
-                    builder.returnUrl(false);
-                    return;
-                }
-                const uploadedFileUrl = response.url; // get saved file url
-                if(uploadedFileUrl) builder.returnUrl(uploadedFileUrl); // apply
-            });
-        }, 
-        
+
+        // File picker for images / videos / audio / documents
+        filePicker: 'assets.html',
+
         onChange: function () {
-            //Auto Save
-//            clearTimeout(timeoutId);
-//            timeoutId = setTimeout(function () {
-//                save();                    
-//            }, 1000);
+            // Auto save is off. Save with the Save button.
         },
-
-        slider: 'glide',
-        navbar: true,
-        
-        /* ContentBox settings */
-        // designUrl1: 'assets/designs/basic.js',
-        // designUrl2: 'assets/designs/examples.js',
-        // designPath: 'assets/designs/',
-        // contentStylePath: 'assets/styles/',
-
-        /* ContentBuilder settings */
-        // modulePath: 'assets/modules/', 
-        // fontAssetPath: 'assets/fonts/', 
-        // assetPath: 'assets/', 
-        // snippetUrl: 'assets/minimalist-blocks/content.js', 
-        // snippetPath: 'assets/minimalist-blocks/',
-        // pluginPath: 'contentbuilder/', 
-        // useLightbox: true,
-
     });
 
-    // Load content
-    fetch('api/loadcontent.php', {
-        method:'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
-    .then(response=>response.json())
-    .then(data=>{
-        const html = data.content;
-        const mainCss = data.mainCss;
-        const sectionCss = data.sectionCss;
+    // Initial content. loadHtml() waits for the iframe, then runs the runtime
+    // (plugins with data-cb-type get mounted). JSON_HEX_TAG escapes < and >
+    // so a closing script tag inside the content cannot end this block.
+    const initialHtml = <?= json_encode($editor->html, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP) ?>;
+    builder.loadHtml(initialHtml);
 
-        //builder.loadHtml(html); // Load html
-        builder.loadStyles(mainCss, sectionCss); // Load styles
-
-        // For viewing the content, call pageReRender() (from box-flex.js include)
-        window.pageReRender();
-    });
-
-    
-    // Example of adding custom buttons
-    builder.addButton({ 
-        'pos': 2, // button position
-        'title': 'Undo',
-        'html': '<svg class="is-icon-flex" style="width:14px;height:14px;"><use xlink:href="#icon-undo"></use></svg>',
-        'onClick': ()=>{
-            builder.undo();
-        }
-    });
-    builder.addButton({ 
-        'pos': 3,
-        'title': 'Redo',
-        'html': '<svg class="is-icon-flex" style="width:14px;height:14px;"><use xlink:href="#icon-redo"></use></svg>',
-        'onClick': ()=>{
-            builder.redo();
-        }
-    });
-    builder.addButton({ 
-        'pos': 4, 
-        'title': 'Animation',
-        'html': '<svg class="is-icon-flex" style="fill:rgba(0, 0, 0, 0.7);width:14px;height:14px;"><use xlink:href="#icon-wand"></use></svg>',
-        'onClick': ()=>{
+    builder.addButton({
+        pos: 2,
+        title: 'Animation',
+        html: '<svg><use xlink:href="#icon-wand"></use></svg>',
+        onClick: () => {
             builder.openAnimationPanel();
         }
     });
-    builder.addButton({ 
-        'pos': 5,
-        'title': 'Timeline Editor',
-        'html': '<svg><use xlink:href="#icon-anim-timeline"></use></svg>', 
-        'onClick': ()=>{
+    builder.addButton({
+        pos: 3,
+        title: 'Timeline Editor',
+        html: '<svg><use xlink:href="#icon-anim-timeline"></use></svg>',
+        onClick: () => {
             builder.openAnimationTimeline();
         }
     });
-    builder.addButton({ 
-        'pos': 6,
-        'title': 'AI Assistant',
-        'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-message"></use></svg>', 
-        'onClick': (e)=>{
-
-            builder.openAIAssistant();
-
+    builder.addButton({
+        pos: 4,
+        title: 'AI Assistant',
+        html: '<svg><use xlink:href="#icon-sparkles"></use></svg>',
+        onClick: () => {
+            toggleAiPanel();
         }
     });
-     builder.addButton({ 
-         'pos': 8,
-         'title': 'Settings',
-         'html': '<svg class="is-icon-flex" style="width:15px;height:15px;"><use xlink:href="#icon-settings"></use></svg>',
-         'onClick': (e)=>{
-             builder.openSettings(e);
-         }
-     });
-    builder.addButton({ 
-        'pos': 9,
-        'title': 'Clear Content',
-        'html': '<svg class="is-icon-flex"><use xlink:href="#icon-eraser"></use></svg>', 
-        'onClick': (e)=>{
+    builder.addButton({
+        pos: 5,
+        title: 'Settings',
+        html: '<svg><use xlink:href="#icon-settings"></use></svg>',
+        onClick: (e) => {
+            builder.openSettings(e);
+        }
+    });
+    builder.addButton({
+        pos: 6,
+        title: 'Clear Content',
+        html: '<svg><use xlink:href="#icon-eraser"></use></svg>',
+        onClick: () => {
             builder.clear();
         }
     });
-    builder.addButton({ 
-        'pos': 10, 
-        'title': 'Preview',
-        'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#ion-eye"></use></svg>',
-        'onClick': ()=>{
-            // var html = builder.html();
-            // localStorage.setItem('preview-html', html); 
-            // var mainCss = builder.mainCss(); 
-            // localStorage.setItem('preview-maincss', mainCss); 
-            // var sectionCss = builder.sectionCss();
-            // localStorage.setItem('preview-sectioncss', sectionCss);
-
-            window.open('<?= $page->url ?>', '_blank').focus();
+    builder.addButton({
+        pos: 7,
+        title: 'Revisions',
+        html: '<svg><use xlink:href="#icon-list-search"></use></svg>',
+        onClick: () => {
+            toggleDisplay();
         }
     });
-	builder.addButton({
-         'pos': 11,
-         'title': 'Revisions',
-         'html': '<svg class="is-icon-flex" style="width:16px;height:16px;"><use xlink:href="#icon-list-search"></use></svg>',
-         'onClick': ()=>{
-				toggleDisplay();
-         }
-     });
 
-	function uploadFile(e, callback) {
-        const selectedFile = e.target.files[0];
-        const filename = selectedFile.name;
-        const reader = new FileReader();
-        reader.onload = (e) => {
-            let base64 = e.target.result;
-            base64 = base64.replace(/^data:(.*?);base64,/, "");
-            base64 = base64.replace(/ /g, '+');
+    // ====================
+    // Upload (Expozy)
+    // ====================
 
-            const reqBody = { image: base64, filename: filename,get:<?= json_encode($_GET); ?> };
-            fetch('api/upload_expozy.php', {
-                method: 'POST',
-				credentials: 'same-origin',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify( reqBody ),
-            })
-            .then(response=>response.json())
-            .then(data=>{
-				console.log(data);
-                callback(data);
-            });
-        }
-        reader.readAsDataURL(selectedFile);
+    function readAsBase64(file) {
+        return new Promise((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                let base64 = e.target.result;
+                base64 = base64.replace(/^data:(.*?);base64,/, "");
+                base64 = base64.replace(/ /g, '+');
+                resolve(base64);
+            };
+            reader.onerror = reject;
+            reader.readAsDataURL(file);
+        });
     }
+
+    async function uploadFile(file) {
+        const base64 = await readAsBase64(file);
+        const reqBody = { image: base64, filename: file.name, get: <?= json_encode($_GET); ?> };
+
+        const response = await fetch('api/upload_expozy.php', {
+            method: 'POST',
+            credentials: 'same-origin',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(reqBody),
+        });
+        const data = await response.json();
+        if (data.error) {
+            alert(typeof data.error === 'string' ? data.error : JSON.stringify(data.error));
+            return {};
+        }
+        return data; // { url }
+    }
+
+    // ====================
+    // Save (Expozy)
+    // ====================
 
     function save() {
 
         builder.saveImages('', function(){
-           
+
             var iframe = document.getElementById('ifrBuilder');
             const styles = iframe.contentDocument.getElementById('tailwindCss').getElementsByTagName('style');
-			const lastElement = styles[styles.length - 1];
-			const lastElementString = lastElement.outerHTML;
-			const revision_title = document.getElementById('revisionName').value;
+            const lastElement = styles[styles.length - 1];
+            const lastElementString = lastElement ? lastElement.outerHTML : '';
+            const revision_title = document.getElementById('revisionName').value;
 
-
-			
             var html = builder.html();
-			
-            var mainCss = builder.mainCss(); //mainCss() returns css that defines typography style for the body/entire page.
-           
-			var sectionCss = builder.sectionCss(); //sectionCss returns css that define typography styles for certan section(s) on the page
-           
-			const reqBody = {savecontent:1, content: html, mainCss: mainCss, sectionCss: sectionCss, tailwindCss:lastElementString,revision_title:revision_title, get:<?= json_encode($_GET); ?> };
+            var mainCss = builder.mainCss();
+            var sectionCss = builder.sectionCss();
+
+            const reqBody = {savecontent:1, content: html, mainCss: mainCss, sectionCss: sectionCss, tailwindCss:lastElementString, revision_title:revision_title, get:<?= json_encode($_GET); ?> };
             fetch('api/savecontent.php', {
                 method:'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(reqBody),
             })
-            
             .then(response => {
-				if (response.redirected) {
-					window.location.replace(response.url);
-				}
-				return response.json();
-			})
-            .then(data=>{
-					document.getElementById('saveBtn').style.display = "flex";
-					document.getElementById('loaderBtn').style.display = "none";
+                if (response.redirected) {
+                    window.location.replace(response.url);
+                }
+                return response.json();
+            })
+            .then(data => {
+                document.getElementById('saveBtn').style.display = "flex";
+                document.getElementById('loaderBtn').style.display = "none";
             });
 
         }, function(img, base64, filename){
 
-            // Upload image process
+            // Base64 images embedded in content are uploaded and replaced by URL
             const reqBody = { image: base64, filename: filename, get:<?= json_encode($_GET); ?> };
             fetch('api/upload_expozy.php', {
-                method: 'POST', 
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify( reqBody ),
             })
             .then(response=>response.json())
             .then(response=>{
-                const uploadedImageUrl = response.url; // get saved image url
-
-                img.setAttribute('src', uploadedImageUrl); // set image src
+                if (response.url) img.setAttribute('src', response.url);
             });
 
         });
-        
     }
 
-    /* Custom Topbar */
-
-    const btnSave = document.querySelector('.custom-topbar .btn-save');
-    btnSave.addEventListener('click', ()=>{
-		saveContent();
-    });
-
-
-
-    const btnFullView = document.querySelector('.custom-topbar .btn-fullview');
-    const btnDeviceDesktopLarge = document.querySelector('.custom-topbar .btn-device-desktop-large');
-    const btnDeviceDesktop = document.querySelector('.custom-topbar .btn-device-desktop');
-    const btnDeviceTabletLandscape = document.querySelector('.custom-topbar .btn-device-tablet-landscape');
-    const btnDeviceTablet = document.querySelector('.custom-topbar .btn-device-tablet');
-    const btnDeviceMobile = document.querySelector('.custom-topbar .btn-device-mobile');
-
-    const clearActiveButtons = () => {
-        btnFullView.classList.remove('on');
-        btnDeviceDesktop.classList.remove('on');
-        btnDeviceDesktopLarge.classList.remove('on');
-        btnDeviceTabletLandscape.classList.remove('on');
-        btnDeviceTablet.classList.remove('on');
-        btnDeviceMobile.classList.remove('on');
-    }
-
-    btnFullView.addEventListener('click', ()=>{
-        builder.setScreenMode('fullview');
-        clearActiveButtons();
-        btnFullView.classList.add('on');
-    });
-
-    btnDeviceDesktopLarge.addEventListener('click', ()=>{
-        builder.setScreenMode('desktop-lg');
-        clearActiveButtons();
-        btnDeviceDesktopLarge.classList.add('on');
-    });
-
-    btnDeviceDesktop.addEventListener('click', ()=>{
-        builder.setScreenMode('desktop');
-        clearActiveButtons();
-        btnDeviceDesktop.classList.add('on');
-    });
-
-    btnDeviceTabletLandscape.addEventListener('click', ()=>{
-        builder.setScreenMode('tablet-landscape');
-        clearActiveButtons();
-        btnDeviceTabletLandscape.classList.add('on');
-    });
-
-    btnDeviceTablet.addEventListener('click', ()=>{
-        builder.setScreenMode('tablet');
-        clearActiveButtons();
-        btnDeviceTablet.classList.add('on');
-    });
-
-    btnDeviceMobile.addEventListener('click', ()=>{
-        builder.setScreenMode('mobile');
-        clearActiveButtons();
-        btnDeviceMobile.classList.add('on');
-    });
-
-    if(builder.screenMode==='fullview'){
-        btnFullView.classList.add('on');
-    } else if(builder.screenMode==='desktop-lg'){
-        btnDeviceDesktopLarge.classList.add('on');
-    } else if(builder.screenMode==='desktop'){
-        btnDeviceDesktop.classList.add('on');
-    } else if(builder.screenMode==='tablet-landscape'){
-        btnDeviceTabletLandscape.classList.add('on');
-    } else if(builder.screenMode==='tablet'){
-        btnDeviceTablet.classList.add('on');
-    } else if(builder.screenMode==='mobile'){
-        btnDeviceMobile.classList.add('on');
-    } 
-
-    const btnDownload = document.querySelector('.custom-topbar .btn-download');
-    if(btnDownload) btnDownload.addEventListener('click', ()=>{
-        builder.download();
-    });
-
- 
-
-
-
-    const btnTogglePanel = document.querySelector('.custom-topbar .btn-togglepanel');
-    if(btnTogglePanel) btnTogglePanel.addEventListener('click', ()=>{
-        builder.toggleEditPanel();
-    });
-	
-	
-	
-	
-	function saveContent(){
-		document.getElementById('saveBtn').style.display = "none";
-		document.getElementById('loaderBtn').style.display = "flex";
-        
-
+    function saveContent(){
+        document.getElementById('saveBtn').style.display = "none";
+        document.getElementById('loaderBtn').style.display = "flex";
 
         var iframe = document.getElementById('ifrBuilder');
 
@@ -659,137 +469,266 @@ $dir = SITEURL.'/editor/cb/';
             iframe.contentWindow.document.getElementById('headerFooter').innerHTML = html;
         }
 
-
-
         iframe.contentWindow.alpineTemplatesGen();
         iframe.contentWindow.classGen();
-		// alpineTemplatesGen();
-		// classGen();
-		// tailwindGen();
-			  timeoutId = setTimeout(function () {
-				  save();
-			  }, 100);
-	}
 
+        setTimeout(function () {
+            save();
+        }, 100);
+    }
 
-	// function classGen(){
-	// 	var elementsWithClassAttribute = document.querySelectorAll('[\\:class]');
-	// 	debugger;
-	// }
-	
-	// function alpineTemplatesGen() {
-	// 	var templates = document.querySelectorAll("template");
+    // ====================
+    // Topbar
+    // ====================
 
-	// 	var container = document.getElementById("templatesDiv");
-	// 	container.innerHTML = '';
+    document.querySelector('.custom-topbar').addEventListener('click', (e) => {
+        const button = e.target.closest('button');
+        if (!button) return;
 
+        const action = button.dataset.action;
+        const device = button.dataset.device;
 
-	// 	processTemplates(container, templates);
-	// }
+        if (device) {
+            setDevice(device);
+            return;
+        }
 
-	// function processTemplates(container, templates) {
-	// 	templates.forEach(function (template) {
-	// 	  var templateContent = template.content;
-	// 	  var div = document.createElement("div");
-	// 	  div.appendChild(templateContent.cloneNode(true));
+        switch(action) {
+            case 'undo':
+                builder.undo();
+                break;
+            case 'redo':
+                builder.redo();
+                break;
+            case 'save':
+                saveContent();
+                break;
+            case 'download':
+                builder.download();
+                break;
+            case 'html':
+                builder.viewHtml();
+                break;
+            case 'preview':
+                window.open('<?= $page->url ?>', '_blank').focus();
+                break;
+            case 'toggle-panel':
+                builder.toggleEditPanel();
+                break;
+        }
+    });
 
-	// 	  var nestedTemplates = div.querySelectorAll("template");
-	// 	  if (nestedTemplates.length > 0) {
-	// 		processTemplates(div, nestedTemplates);
-	// 	  }
+    function setDevice(mode) {
+        builder.setScreenMode(mode);
+        document.querySelectorAll('[data-device]').forEach(btn => {
+            btn.classList.toggle('on', btn.dataset.device === mode);
+        });
+    }
 
-	// 	  container.appendChild(div);
-	// 	});
-	// }
+    setDevice(builder.screenMode);
 
+    // ====================
+    // Revisions (Expozy)
+    // ====================
 
-</script>
+    const rev = <?php echo json_encode( $editor->revisions, JSON_UNESCAPED_UNICODE)  ?>;
 
-<!-- Required js for production --> 
-<script src="box/box-flex.js"></script> <!-- Box Framework js include -->
-<script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
-<script src="https://kit.fontawesome.com/134d7d4e2d.js" crossorigin="anonymous"></script>
-<!-- <script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
-<script>
-      tailwind.config = {
-        darkMode: 'class',
+    function loadRevision(){
+        let selectedRevision = document.getElementById('revisionsSelect').value;
+        builder.loadHtml(rev[selectedRevision].object_desc);
+    }
 
-      }
-</script> -->
-<script type="text/javascript">
-  const rev = <?php echo json_encode( $editor->revisions, JSON_UNESCAPED_UNICODE)  ?>;
+    let revisionsClosedAt = 0;
 
-  function loadRevision(){
-    let selectedRevision = document.getElementById('revisionsSelect').value;
-    builder.loadHtml(rev[selectedRevision].object_desc);
-  }
+    function closeRevisions() {
+        const element = document.getElementById('openRevisionsModal');
+        if (!element || element.style.display === 'none') return;
+        element.style.display = 'none';
+        revisionsClosedAt = Date.now();
+    }
 
-  function toggleDisplay() {
-    var element = document.getElementById('openRevisionsModal');
-
-    if (element) {
+    function toggleDisplay() {
+        var element = document.getElementById('openRevisionsModal');
+        if (!element) return;
+        // The outside-click handler just closed it on mousedown of the toolbar button; do not reopen.
+        if (Date.now() - revisionsClosedAt < 300) return;
         var currentDisplayStyle = window.getComputedStyle(element).getPropertyValue('display');
+        element.style.display = (currentDisplayStyle === 'none') ? '' : 'none';
+    }
 
-        if (currentDisplayStyle === 'none') {
-            // Ако има стил display: none, премахваме го
-            element.style.display = '';
-        } else {
-            // Ако няма стил display: none, добавяме го
-            element.style.display = 'none';
+    // ====================
+    // AI (Expozy core)
+    // ====================
+
+    const AI_T = <?= json_encode($t, JSON_UNESCAPED_UNICODE | JSON_HEX_TAG) ?>;
+
+    let aiMessages = [];
+    let aiBusy = false;
+
+    // AI level 1..3, remembered per browser. Default 1 (text and images only).
+    let aiLevel = parseInt(localStorage.getItem('cbAiLevel'), 10);
+    if (![1, 2, 3].includes(aiLevel)) aiLevel = 1;
+    document.getElementById('aiLevel').value = String(aiLevel);
+
+    function setAiLevel(value) {
+        aiLevel = [1, 2, 3].includes(parseInt(value, 10)) ? parseInt(value, 10) : 1;
+        localStorage.setItem('cbAiLevel', String(aiLevel));
+    }
+
+    function openAiLevelInfo() {
+        document.getElementById('aiLevelInfoModal').style.display = '';
+    }
+
+    function closeAiLevelInfo() {
+        document.getElementById('aiLevelInfoModal').style.display = 'none';
+    }
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeAiLevelInfo();
+            closeRevisions();
+        }
+    });
+
+    // Close the revisions panel on a click outside it (the toolbar button toggles it itself).
+    document.addEventListener('mousedown', (e) => {
+        const panel = document.getElementById('openRevisionsModal');
+        if (!panel || panel.style.display === 'none') return;
+        if (panel.contains(e.target)) return;
+        closeRevisions();
+    });
+
+    function toggleAiPanel() {
+        const panel = document.getElementById('aiPanel');
+        panel.style.display = panel.style.display === 'none' ? '' : 'none';
+        if (panel.style.display === '') document.getElementById('aiInput').focus();
+    }
+
+    function renderAiMessages() {
+        const list = document.getElementById('aiMessages');
+        list.innerHTML = '';
+        aiMessages.forEach(m => {
+            const item = document.createElement('div');
+            item.className = m.role === 'user'
+                ? 'self-end max-w-[85%] rounded-lg bg-blue-700 text-white text-sm px-3 py-2 whitespace-pre-wrap'
+                : 'self-start max-w-[85%] rounded-lg bg-gray-100 text-gray-900 text-sm px-3 py-2 whitespace-pre-wrap';
+            item.textContent = m.content;
+            list.appendChild(item);
+        });
+        list.scrollTop = list.scrollHeight;
+    }
+
+    function setAiBusy(busy) {
+        aiBusy = busy;
+        document.getElementById('aiSend').disabled = busy;
+        document.getElementById('aiLoader').style.display = busy ? '' : 'none';
+    }
+
+    function showAiError(text) {
+        const el = document.getElementById('aiError');
+        el.textContent = text || '';
+        el.style.display = text ? '' : 'none';
+    }
+
+    async function sendAiMessage() {
+        if (aiBusy) return;
+        const input = document.getElementById('aiInput');
+        const text = input.value.trim();
+        if (!text) return;
+
+        showAiError('');
+        aiMessages.push({ role: 'user', content: text });
+        input.value = '';
+        renderAiMessages();
+        setAiBusy(true);
+
+        try {
+            const response = await fetch('api/ai.php', {
+                method: 'POST',
+                credentials: 'same-origin',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: aiMessages, html: builder.html(), level: aiLevel, get: <?= json_encode($_GET); ?> }),
+            });
+            const data = await response.json();
+
+            if (data.status != 1) {
+                // Drop the failed turn so the history stays valid.
+                aiMessages.pop();
+                input.value = text;
+                renderAiMessages();
+                showAiError(typeof data.error === 'string' ? data.error : JSON.stringify(data.error));
+                return;
+            }
+
+            // Show the assistant reply first, so a render failure does not hide it.
+            aiMessages.push({ role: 'assistant', content: data.message || AI_T.done });
+            renderAiMessages();
+
+            try {
+                builder.loadHtml(data.html);
+            } catch (e) {
+                showAiError(AI_T.html_load_error + e.message);
+            }
+        } catch (e) {
+            // Drop the user turn only if no assistant reply was added.
+            if (aiMessages.length && aiMessages[aiMessages.length - 1].role === 'user') {
+                aiMessages.pop();
+                input.value = text;
+            }
+            renderAiMessages();
+            showAiError(e.message);
+        } finally {
+            setAiBusy(false);
         }
     }
-}
 
+    function clearAiChat() {
+        aiMessages = [];
+        showAiError('');
+        renderAiMessages();
+    }
+
+    document.getElementById('aiInput').addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            sendAiMessage();
+        }
+    });
 
 </script>
-<div id="openRevisionsModal"  class="w-[600px] h-[400px] overflow-y-scroll  absolute top-0 right-0 z-20" style="display:none">
 
-	<!-- Main modal -->
-	<div class="  justify-center items-center w-full md:inset-0  max-h-full">
-		<div class="p-4 w-full ">
-			<!-- Modal content -->
-			<div class="relative p-4 bg-white rounded-lg shadow ">
-				<!-- Modal header -->
-				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-					<h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                    Revisions
-					</h3>
+<script src="/assets/plugins/tailwindcss.3.3.1.js"></script>
+<link rel="stylesheet" href="https://r2.expozy.com/cdn/fa/css/all.css" />
 
+<div id="openRevisionsModal" class="w-[600px] h-[400px] overflow-y-scroll absolute top-0 right-0 z-20" style="display:none">
+	<div class="justify-center items-center w-full md:inset-0 max-h-full">
+		<div class="p-4 w-full">
+			<div class="relative p-4 bg-white rounded-lg shadow">
+				<div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+					<h3 class="text-lg font-semibold text-gray-900"><?= $t['revisions'] ?></h3>
 				</div>
-				<!-- Modal body -->
 
-					<div class="grid gap-4 mb-4 grid-cols-2 mt-3">
-						<div class="col-span-2">
-							<label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Revisions Name</label>
-							<input value="<?php echo $editor->title ?>" type="text" name="revisionName" id="revisionName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500" placeholder="Type product name" required="">
-						</div>
-
-						<div class="col-span-2 sm:col-span-1">
-							<label for="category" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Revisions</label>
-							<select id="revisionsSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
-							  <?php
-                             
-							  foreach ($editor->revisions as $key => $revision) {
-								?>
-								  <option value="<?php echo $key?>" ><?php echo $revision['title'] ?> : <?php echo $revision['date_created'] ?></option>
-
-								<?php
-								}
-							   ?>
-
-							</select>
-						</div>
-
+				<div class="grid gap-4 mb-4 grid-cols-2 mt-3">
+					<div class="col-span-2">
+						<label for="revisionName" class="block mb-2 text-sm font-medium text-gray-900"><?= $t['revision_name'] ?></label>
+						<input value="<?php echo $editor->title ?>" type="text" name="revisionName" id="revisionName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5" required="">
 					</div>
-					<button onclick="loadRevision()"  type="button" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-						<svg class="me-1 -ms-1 w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 5a1 1 0 011 1v3h3a1 1 0 110 2h-3v3a1 1 0 11-2 0v-3H6a1 1 0 110-2h3V6a1 1 0 011-1z" clip-rule="evenodd"></path></svg>
-						Load Revisions
-					</button>
 
+					<div class="col-span-2 sm:col-span-1">
+						<label for="revisionsSelect" class="block mb-2 text-sm font-medium text-gray-900"><?= $t['revisions'] ?></label>
+						<select id="revisionsSelect" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5">
+						<?php foreach ($editor->revisions as $key => $revision) { ?>
+							<option value="<?php echo $key?>"><?php echo $revision['title'] ?> : <?php echo $revision['date_created'] ?></option>
+						<?php } ?>
+						</select>
+					</div>
+				</div>
+				<button onclick="loadRevision()" type="button" class="text-white inline-flex items-center bg-blue-700 hover:bg-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center">
+					<?= $t['get_revision'] ?>
+				</button>
 			</div>
 		</div>
 	</div>
-
 </div>
 </body>
 </html>

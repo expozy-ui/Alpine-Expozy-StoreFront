@@ -8,17 +8,20 @@
     font-weight: 300;
 }
 .type-alexbrush-ibmplexsans h1, .type-alexbrush-ibmplexsans h2, .type-alexbrush-ibmplexsans h3, .type-alexbrush-ibmplexsans h4, .type-alexbrush-ibmplexsans h5, .type-alexbrush-ibmplexsans h6 {
+    font-family: 'IBM Plex Sans', sans-serif;
     font-weight: 200;
     line-height: 1.2;
     letter-spacing: 1px;
 }        
 
-.type-alexbrush-ibmplexsans h1 {font-size: 3.2rem;}
-.type-alexbrush-ibmplexsans h2 {font-size: 2.6rem;}
-.type-alexbrush-ibmplexsans h3 {font-size: 2.1rem;}
-.type-alexbrush-ibmplexsans h4 {font-size: 1.7rem;}
-.type-alexbrush-ibmplexsans h5 {font-size: 1.4rem;}
-.type-alexbrush-ibmplexsans h6 {font-size: 1.15rem;}
+.type-alexbrush-ibmplexsans h1 {font-size: 3.2rem; margin: 1.2rem 0 1.2rem; }
+.type-alexbrush-ibmplexsans h2 {font-size: 2.6rem; margin: 1rem 0 1rem; }
+.type-alexbrush-ibmplexsans h3 {font-size: 2.1rem; margin: 1rem 0 1rem; }
+.type-alexbrush-ibmplexsans h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-alexbrush-ibmplexsans h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-alexbrush-ibmplexsans h6 {font-size: 1.15rem; margin: 0.5rem 0 0.5rem; }
+.type-alexbrush-ibmplexsans p {margin:0.8rem 0 0.8rem;}
+/* .type-alexbrush-ibmplexsans ul, .type-alexbrush-ibmplexsans ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-alexbrush-ibmplexsans .display { margin-bottom: 0.5rem; }
 .type-alexbrush-ibmplexsans .display h1 {

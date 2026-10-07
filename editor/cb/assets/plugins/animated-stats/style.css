@@ -1,0 +1,279 @@
+/* ===== Animated Stats plugin =====
+   All selectors scoped under [data-cb-type="animated-stats"].
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="animated-stats"] {
+    display: grid;
+    gap: 32px;
+    padding: 40px 0;
+    --as-card-bg: #ffffff;
+    --as-card-border: #e5e7eb;
+    --as-card-border-hover: #d1d5db;
+    --as-number: inherit;
+    --as-label: inherit;
+    --as-divider: #e5e7eb;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses — a class, [data-theme="dark"],
+   @media (prefers-color-scheme: dark), etc. Uncomment and point the selector at
+   your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="animated-stats"] {
+    --as-card-bg: #1f2937;
+    --as-card-border: #374151;
+    --as-card-border-hover: #4b5563;
+    --as-number: #f9fafb;
+    --as-label: #9ca3af;
+}
+*/
+
+/* Individual Stat Item */
+[data-cb-type="animated-stats"] .stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 16px;
+    background: var(--as-card-bg);
+    border: 1px solid var(--as-card-border);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    /* Entrance animation. `backwards` (not `forwards`) applies the start frame only
+       during the stagger delay, then RELEASES the transform when it ends — otherwise
+       the retained `translateY(0)` outranks and clobbers the :hover lift. Items rest
+       at opacity:1, so they're visible after the animation (and if it never runs). */
+    animation: fadeInUp 0.6s ease backwards;
+    text-align: center;
+}
+
+/* Hover Effect — a pure lift (no shadow, no forced border color, so it stays
+   neutral and respects your Border Color; add "Lift + Shadow" for depth). */
+[data-cb-type="animated-stats"] .stat-item:hover {
+    transform: translateY(-5px);
+}
+
+/* Icon */
+[data-cb-type="animated-stats"] .stat-icon {
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 4px;
+    filter: grayscale(0.2);
+    transition: filter 0.3s ease, transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+[data-cb-type="animated-stats"] .stat-icon i,
+[data-cb-type="animated-stats"] .stat-icon svg {
+    width: 48px;
+    height: 48px;
+    display: block;
+}
+
+[data-cb-type="animated-stats"] .stat-item:hover .stat-icon {
+    filter: grayscale(0);
+    transform: scale(1.1);
+}
+
+/* Number (size / weight stay at (0,2,0) so the responsive font-size overrides win) */
+[data-cb-type="animated-stats"] .stat-number {
+    font-size: 42px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Number COLOR only, scoped one level deeper (`.stat-item .stat-number`) so it sits
+   at (0,3,0) — enough to beat an aggressive global text utility like
+   `.is-light-text *:not(svg):not(path)` (0,2,2) WITHOUT !important, so the Number
+   Color setting stays authoritative. Same on mobile (color isn't in any media query). */
+[data-cb-type="animated-stats"] .stat-item .stat-number {
+    color: var(--as-number);
+}
+
+/* Label */
+[data-cb-type="animated-stats"] .stat-label {
+    font-size: 16px;
+    /* font-weight: 500;
+    text-transform: uppercase; */
+    color: var(--as-label);
+    letter-spacing: 0.05em;
+    line-height: 1.4;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Stagger animation delays */
+[data-cb-type="animated-stats"] .stat-item:nth-child(1) {
+    animation-delay: 0s;
+}
+
+[data-cb-type="animated-stats"] .stat-item:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+[data-cb-type="animated-stats"] .stat-item:nth-child(3) {
+    animation-delay: 0.2s;
+}
+
+[data-cb-type="animated-stats"] .stat-item:nth-child(4) {
+    animation-delay: 0.3s;
+}
+
+[data-cb-type="animated-stats"] .stat-item:nth-child(5) {
+    animation-delay: 0.4s;
+}
+
+[data-cb-type="animated-stats"] .stat-item:nth-child(6) {
+    animation-delay: 0.5s;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    [data-cb-type="animated-stats"] {
+        gap: 24px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-item {
+        padding: 20px 12px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-icon {
+        font-size: 40px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-icon i,
+    [data-cb-type="animated-stats"] .stat-icon svg {
+        width: 40px;
+        height: 40px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-number {
+        font-size: 36px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-label {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    [data-cb-type="animated-stats"] {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 16px;
+        padding: 24px 0;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-item {
+        padding: 16px 12px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-icon {
+        font-size: 36px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-icon i,
+    [data-cb-type="animated-stats"] .stat-icon svg {
+        width: 36px;
+        height: 36px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-number {
+        font-size: 32px;
+    }
+    
+    [data-cb-type="animated-stats"] .stat-label {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    [data-cb-type="animated-stats"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Show Icon = off → hide the icon */
+[data-cb-type="animated-stats"][data-cb-show-icon="false"] .stat-icon { display: none; }
+
+/* Rounded Corners = off → square cards (Cards style) */
+[data-cb-type="animated-stats"][data-cb-rounded="false"] .stat-item { border-radius: 0; }
+
+/* Hover Effect = "lift-shadow" → add a soft shadow to the lift. Placed BEFORE the
+   Minimal/Divided hover rules, so on those card-less styles their `box-shadow:none`
+   wins and the shadow only lands on Cards. */
+[data-cb-type="animated-stats"][data-cb-hover="lift-shadow"] .stat-item:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
+}
+
+/* Card background (Cards style). Transparent = see-through; Glass = the background
+   color at reduced opacity + a backdrop blur (frosted). Placed BEFORE the
+   Minimal/Divided base, which resets both (those styles are always fill-less). */
+[data-cb-type="animated-stats"][data-cb-background="transparent"] .stat-item {
+    background: transparent;
+}
+[data-cb-type="animated-stats"][data-cb-background="glass"] .stat-item {
+    background: color-mix(in srgb, var(--as-card-bg) 55%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+/* Style: Minimal + Divided share a "no card" base */
+[data-cb-type="animated-stats"][data-cb-variant="minimal"] .stat-item,
+[data-cb-type="animated-stats"][data-cb-variant="divided"] .stat-item {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+    padding: 8px 24px;
+}
+/* Minimal / Divided keep the subtle lift on hover (so the hover still shows even
+   with the icon hidden), but drop the card shadow / border change — there's no card. */
+[data-cb-type="animated-stats"][data-cb-variant="minimal"] .stat-item:hover,
+[data-cb-type="animated-stats"][data-cb-variant="divided"] .stat-item:hover {
+    box-shadow: none;
+    border-color: transparent;
+}
+
+/* Style: Divided → a thin vertical rule between columns. In a single row the
+   leading item has no rule; the responsive breakpoints drop the rule for the
+   items that become the start of a wrapped row. */
+[data-cb-type="animated-stats"][data-cb-variant="divided"] .stat-item:not(:first-child) {
+    border-left: 1px solid var(--as-divider);
+}
+@media (max-width: 768px) {
+    [data-cb-type="animated-stats"][data-cb-variant="divided"] .stat-item:nth-child(2n+1) { border-left: none; }
+}
+@media (max-width: 480px) {
+    [data-cb-type="animated-stats"][data-cb-variant="divided"] .stat-item { border-left: none; }
+}
+
+/* Hover Effect = "none" → no hover anywhere (lift, shadow, icon zoom). Placed last
+   so it wins over the per-style hover rules above (equal specificity, later source). */
+[data-cb-type="animated-stats"][data-cb-hover="none"] .stat-item:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--as-card-border);
+}
+[data-cb-type="animated-stats"][data-cb-hover="none"] .stat-item:hover .stat-icon {
+    filter: grayscale(0.2);
+    transform: none;
+}

@@ -13,12 +13,14 @@
     line-height: 1.2;
 }        
 
-.type-rancho-robotoslab h1 {font-size: 4rem;line-height: 1.15;}
-.type-rancho-robotoslab h2 {font-size: 3.3rem;}
-.type-rancho-robotoslab h3 {font-size: 2.7rem;}
-.type-rancho-robotoslab h4 {font-size: 2.3rem;}
-.type-rancho-robotoslab h5 {font-size: 1.8rem;}
-.type-rancho-robotoslab h6 {font-size: 1.55rem;}
+.type-rancho-robotoslab h1 {font-size: 4rem;line-height: 1.15; margin: 1.2rem 0 1.2rem; }
+.type-rancho-robotoslab h2 {font-size: 3.3rem; margin: 1rem 0 1rem; }
+.type-rancho-robotoslab h3 {font-size: 2.7rem; margin: 1rem 0 1rem; }
+.type-rancho-robotoslab h4 {font-size: 2.3rem; margin: 0.5rem 0 0.5rem; }
+.type-rancho-robotoslab h5 {font-size: 1.8rem; margin: 0.5rem 0 0.5rem; }
+.type-rancho-robotoslab h6 {font-size: 1.55rem; margin: 0.5rem 0 0.5rem; }
+.type-rancho-robotoslab p {margin:0.8rem 0 0.8rem;}
+/* .type-rancho-robotoslab ul, .type-rancho-robotoslab ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-rancho-robotoslab .display { margin-bottom: 0.5rem; }
 .type-rancho-robotoslab .display h1 {

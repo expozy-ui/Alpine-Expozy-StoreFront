@@ -1,0 +1,345 @@
+/* ===== Pricing Table plugin =====
+   Every selector is scoped under [data-cb-type="pricing-table"] so the rendered
+   block's styles can never leak into other plugins, the host page, or the editor.
+   Colors run through CSS variables so dark mode is just a variable override
+   (auto-applied when a `.dark` ancestor is present, e.g. body.dark). */
+[data-cb-type="pricing-table"] {
+    position: relative;
+    width: 100%;
+    --pt-accent: #3b82f6;
+    --pt-accent-soft: color-mix(in srgb, var(--pt-accent) 10%, transparent);
+    --pt-accent-border: color-mix(in srgb, var(--pt-accent) 35%, transparent);
+    --pt-surface: #fff;          /* card + active toggle */
+    --pt-track: #f1f3f5;         /* billing-toggle track */
+    --pt-active: #fff;           /* active billing option */
+    --pt-text: #1a1a1a;          /* headings, price */
+    --pt-body: #374151;          /* feature text */
+    --pt-muted: #6b7280;         /* description, period, toggle text */
+    --pt-border: #e5e7eb;
+    --pt-border-hover: #d1d5db;
+    --pt-disabled: #9ca3af;      /* not-included feature */
+    --pt-disabled-bg: #f3f4f6;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="pricing-table"] {
+    --pt-surface: #1e1e1e;
+    --pt-track: #171717;
+    --pt-active: #333;
+    --pt-text: #f3f4f6;
+    --pt-body: #d1d5db;
+    --pt-muted: #9ca3af;
+    --pt-border: #3a3a3a;
+    --pt-border-hover: #52525b;
+    --pt-disabled: #6b7280;
+    --pt-disabled-bg: #2a2a2a;
+}
+*/
+
+/* ----- Billing toggle ----- */
+[data-cb-type="pricing-table"] .pricing-billing-toggle {
+    display: inline-flex;
+    gap: 4px;
+    margin: 0 auto 28px;
+    padding: 4px;
+    background: var(--pt-track);
+    border-radius: 999px;
+    /* center the toggle above the grid */
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+[data-cb-type="pricing-table"] .pricing-billing-toggle .billing-option {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    color: var(--pt-muted);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-cb-type="pricing-table"] .pricing-billing-toggle .billing-option.is-active {
+    background: var(--pt-active);
+    color: var(--pt-text);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+[data-cb-type="pricing-table"] .pricing-billing-toggle .billing-save {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--pt-accent);
+    background: var(--pt-accent-soft);
+    padding: 2px 7px;
+    border-radius: 999px;
+}
+
+/* ----- Grid ----- */
+[data-cb-type="pricing-table"] .pricing-grid {
+    display: grid;
+    gap: 24px;
+    align-items: stretch;
+}
+
+/* ----- Plan card ----- */
+[data-cb-type="pricing-table"] .pricing-plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: var(--pt-surface);
+    border: 1px solid var(--pt-border);
+    border-radius: 14px;
+    padding: 28px 24px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+    transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+}
+
+[data-cb-type="pricing-table"] .pricing-plan:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    border-color: var(--pt-border-hover);
+}
+
+[data-cb-type="pricing-table"] .pricing-plan.is-featured {
+    border-color: var(--pt-accent);
+    box-shadow: 0 8px 30px var(--pt-accent-soft);
+}
+
+/* Badge */
+[data-cb-type="pricing-table"] .plan-badge {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--pt-accent);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 5px 14px;
+    border-radius: 999px;
+    white-space: nowrap;
+    box-shadow: 0 2px 8px var(--pt-accent-soft);
+}
+
+/* Header */
+[data-cb-type="pricing-table"] .plan-header {
+    margin-bottom: 18px;
+}
+
+[data-cb-type="pricing-table"] .plan-name {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--pt-text);
+    margin: 0 0 4px;
+    line-height: 1.3;
+}
+
+[data-cb-type="pricing-table"] .plan-description {
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--pt-muted);
+    margin: 0;
+}
+
+/* Price */
+[data-cb-type="pricing-table"] .plan-price {
+    display: flex;
+    align-items: baseline;
+    gap: 2px;
+    margin-bottom: 22px;
+    color: var(--pt-text);
+    flex-wrap: wrap;
+}
+
+[data-cb-type="pricing-table"] .price-currency {
+    font-size: 22px;
+    font-weight: 600;
+    align-self: flex-start;
+    margin-top: 6px;
+}
+
+[data-cb-type="pricing-table"] .price-amount {
+    font-size: 44px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+[data-cb-type="pricing-table"] .price-period {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--pt-muted);
+}
+
+/* Features */
+[data-cb-type="pricing-table"] .plan-features {
+    list-style: none;
+    margin: 0 0 24px;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex: 1;
+}
+
+[data-cb-type="pricing-table"] .plan-features li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 15px;
+    line-height: 1.5;
+    color: var(--pt-body);
+}
+
+[data-cb-type="pricing-table"] .plan-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 2px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--pt-accent-soft);
+}
+
+/* The checkmark itself — masked so it always follows the live --pt-accent color */
+[data-cb-type="pricing-table"] .plan-features li::after {
+    content: "";
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--pt-accent);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+[data-cb-type="pricing-table"] .plan-features li.feature-disabled {
+    color: var(--pt-disabled);
+    text-decoration: line-through;
+    text-decoration-color: var(--pt-border-hover);
+}
+
+[data-cb-type="pricing-table"] .plan-features li.feature-disabled::before {
+    background: var(--pt-disabled-bg);
+}
+
+[data-cb-type="pricing-table"] .plan-features li.feature-disabled::after {
+    background-color: var(--pt-disabled);
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Button */
+[data-cb-type="pricing-table"] .plan-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 12px 18px;
+    margin-top: auto;
+    font-size: 15px;
+    font-weight: 600;
+    text-align: center;
+    text-decoration: none;
+    color: var(--pt-accent);
+    background: transparent;
+    border: 1.5px solid var(--pt-accent-border);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+[data-cb-type="pricing-table"] .plan-button:hover {
+    background: var(--pt-accent-soft);
+    border-color: var(--pt-accent);
+}
+
+[data-cb-type="pricing-table"] .pricing-plan.is-featured .plan-button {
+    color: #fff;
+    background: var(--pt-accent);
+    border-color: var(--pt-accent);
+}
+
+[data-cb-type="pricing-table"] .pricing-plan.is-featured .plan-button:hover {
+    filter: brightness(0.94);
+}
+
+[data-cb-type="pricing-table"] .plan-button:focus-visible {
+    outline: 2px solid var(--pt-accent);
+    outline-offset: 2px;
+}
+
+/* ----- Optional: Card Shadow off (flat) — data-cb-shadow="false" ----- */
+[data-cb-type="pricing-table"][data-cb-shadow="false"] .pricing-plan,
+[data-cb-type="pricing-table"][data-cb-shadow="false"] .pricing-plan:hover,
+[data-cb-type="pricing-table"][data-cb-shadow="false"] .pricing-plan.is-featured,
+[data-cb-type="pricing-table"][data-cb-shadow="false"] .plan-badge {
+    box-shadow: none;
+}
+
+/* ----- Optional: Rounded Corners off (square) — data-cb-rounded="false" ----- */
+[data-cb-type="pricing-table"][data-cb-rounded="false"] .pricing-plan,
+[data-cb-type="pricing-table"][data-cb-rounded="false"] .plan-badge,
+[data-cb-type="pricing-table"][data-cb-rounded="false"] .plan-button,
+[data-cb-type="pricing-table"][data-cb-rounded="false"] .pricing-billing-toggle,
+[data-cb-type="pricing-table"][data-cb-rounded="false"] .billing-option,
+[data-cb-type="pricing-table"][data-cb-rounded="false"] .billing-save {
+    border-radius: 0;
+}
+
+/* ----- Responsive ----- */
+@media (max-width: 900px) {
+    [data-cb-type="pricing-table"] .pricing-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 600px) {
+    [data-cb-type="pricing-table"] .pricing-grid {
+        grid-template-columns: 1fr !important;
+    }
+    [data-cb-type="pricing-table"] .pricing-plan.is-featured {
+        transform: none;
+    }
+}
+
+/* ----- Reduced motion ----- */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="pricing-table"] .pricing-plan,
+    [data-cb-type="pricing-table"] .billing-option,
+    [data-cb-type="pricing-table"] .plan-button {
+        transition: none !important;
+    }
+}
+
+/* ----- High contrast ----- */
+@media (prefers-contrast: high) {
+    [data-cb-type="pricing-table"] .pricing-plan {
+        border: 2px solid currentColor;
+    }
+}
+
+/* ----- Print ----- */
+@media print {
+    [data-cb-type="pricing-table"] .pricing-plan {
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+}

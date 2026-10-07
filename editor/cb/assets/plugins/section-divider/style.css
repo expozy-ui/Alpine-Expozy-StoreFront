@@ -1,0 +1,89 @@
+/* ===== Section Divider plugin =====
+   All selectors scoped under [data-cb-type="section-divider"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="section-divider"] {
+    display: flex;
+    align-items: center;
+    width: var(--sd-width, 100%);
+    margin: 0 auto;                 /* centers the divider when width < 100% */
+    padding: var(--sd-space, 24px) 0;
+    box-sizing: border-box;
+    --sd-color: #d1d5db;
+    --sd-thickness: 1px;
+    --sd-width: 100%;
+    --sd-space: 24px;
+    --sd-label: #6b7280;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   The line color is whatever you configure; only the label color has a default
+   worth overriding. Uncomment and point the selector at your site's theme
+   trigger.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="section-divider"] {
+    --sd-label: #9ca3af;
+}
+*/
+
+[data-cb-type="section-divider"] .sd-line {
+    flex: 1;
+    min-width: 0;
+    height: var(--sd-thickness);
+    background: var(--sd-color);
+}
+
+/* Dashed / dotted use a top border instead of a filled bar */
+[data-cb-type="section-divider"][data-cb-style="dashed"] .sd-line,
+[data-cb-type="section-divider"][data-cb-style="dotted"] .sd-line {
+    height: 0;
+    background: none;
+    border-top-width: var(--sd-thickness);
+    border-top-color: var(--sd-color);
+}
+[data-cb-type="section-divider"][data-cb-style="dashed"] .sd-line { border-top-style: dashed; }
+[data-cb-type="section-divider"][data-cb-style="dotted"] .sd-line { border-top-style: dotted; }
+
+/* Gradient fades the line out toward the ends */
+[data-cb-type="section-divider"][data-cb-style="gradient"] .sd-line-left {
+    background: linear-gradient(to right, transparent, var(--sd-color));
+}
+[data-cb-type="section-divider"][data-cb-style="gradient"] .sd-line-right {
+    background: linear-gradient(to left, transparent, var(--sd-color));
+}
+
+/* Center: hidden by default (plain lines meet in the middle), shown for
+   label / dots / icon styles so the lines break around it */
+[data-cb-type="section-divider"] .sd-center { display: none; }
+[data-cb-type="section-divider"][data-cb-style="label"] .sd-center,
+[data-cb-type="section-divider"][data-cb-style="dots"] .sd-center,
+[data-cb-type="section-divider"][data-cb-style="icon"] .sd-center {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 18px;
+    white-space: nowrap;
+    line-height: 1;
+}
+
+[data-cb-type="section-divider"] .sd-label {
+    display: none;
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    /* text-transform: uppercase; */
+    color: var(--sd-label);
+}
+[data-cb-type="section-divider"][data-cb-style="label"] .sd-label { display: inline; }
+
+[data-cb-type="section-divider"][data-cb-style="dots"] .sd-center::after {
+    content: "\2022 \2022 \2022";   /* • • • */
+    letter-spacing: 6px;
+    color: var(--sd-color);
+    font-size: 18px;
+}
+[data-cb-type="section-divider"][data-cb-style="icon"] .sd-center::after {
+    content: "\2726";               /* ✦ */
+    color: var(--sd-color);
+    font-size: 18px;
+}

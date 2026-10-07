@@ -223,7 +223,11 @@ ul:after {clear: both;}
 	/*.is-menu li ul.active {display:block;}*/
 	
     .is-menu > ul {padding: 0px 0px;}
-    .is-menu > ul > li > a {padding: 0 0 0 30px;} /* new */
+    .is-menu > ul > li > a {
+		padding: 0 0 0 30px;
+	    align-items: center;
+    	min-height: 45px;
+	} /* new */
 	.is-menu > ul:first-child {margin-top:50px;}
 	
 	.is-menu li ul a {padding-left:2.5em}

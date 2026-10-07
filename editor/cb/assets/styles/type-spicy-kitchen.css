@@ -1,0 +1,78 @@
+/* ==========================================================================
+   SPICY KITCHEN — Sriracha + Arvo
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&family=Arvo:ital,wght@0,400;0,700;1,400&display=swap');
+
+.type-spicy-kitchen {
+    font-family: 'Arvo', serif;
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-spicy-kitchen h1,
+.type-spicy-kitchen h2,
+.type-spicy-kitchen h3,
+.type-spicy-kitchen h4,
+.type-spicy-kitchen h5,
+.type-spicy-kitchen h6 {
+    font-family: 'Sriracha', cursive;
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: 0;
+}
+
+.type-spicy-kitchen h1 {
+    font-size: clamp(2.25rem, 5vw, 2.5rem);
+    margin: 1.2rem 0;
+}
+
+.type-spicy-kitchen h2 {
+    font-size: clamp(1.75rem, 4vw, 2rem);
+    margin: 1rem 0;
+}
+
+.type-spicy-kitchen h3 {
+    font-size: clamp(1.5rem, 3.5vw, 1.75rem);
+    margin: 0.9rem 0;
+}
+
+.type-spicy-kitchen h4 {
+    font-size: clamp(1.375rem, 3vw, 1.6rem);
+    margin: 0.8rem 0;
+}
+
+.type-spicy-kitchen h5 {
+    font-size: clamp(1.25rem, 2.5vw, 1.48rem);
+    margin: 0.75rem 0;
+}
+
+.type-spicy-kitchen h6 {
+    font-size: clamp(1.125rem, 2vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-spicy-kitchen p {
+    margin: 0.75rem 0;
+}
+
+.type-spicy-kitchen .display {
+    margin-bottom: 2rem;
+}
+
+.type-spicy-kitchen .display h1 {
+    font-size: clamp(2.5rem, 6vw, 3rem);
+    line-height: 1.05;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 1.2rem;
+}
+
+.type-spicy-kitchen .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.15rem);
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

@@ -1,0 +1,179 @@
+/* ===== Accordion / FAQ plugin =====
+   All selectors scoped under [data-cb-type="faq"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="faq"] {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 0;
+    --border-radius: 10px;
+    --faq-surface: #ffffff;
+    --faq-border: #e5e7eb;
+    --faq-border-hover: #d1d5db;
+    --faq-header-hover: #f9fafb;
+    --faq-header-active: #f3f4f6;
+    --faq-question: #111827;
+    --faq-answer: #4b5563;
+    --faq-icon: #6b7280;
+    --faq-icon-active: #374151;
+    --faq-focus: #3b82f6;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="faq"] {
+    --faq-surface: #1f2937;
+    --faq-border: #374151;
+    --faq-border-hover: #4b5563;
+    --faq-header-hover: #111827;
+    --faq-header-active: #1a1f2e;
+    --faq-question: #f9fafb;
+    --faq-answer: #d1d5db;
+    --faq-icon: #9ca3af;
+    --faq-icon-active: #d1d5db;
+    --faq-focus: #60a5fa;
+}
+*/
+
+/* Individual Accordion Item */
+[data-cb-type="faq"] .accordion-item {
+    background-color: var(--faq-surface);
+    border: 1px solid var(--faq-border);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+[data-cb-type="faq"] .accordion-item:hover {
+    border-color: var(--faq-border-hover);
+}
+
+/* Accordion Header (now a button) */
+[data-cb-type="faq"] .accordion-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 24px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.25s ease;
+    width: 100%;
+    text-align: left;
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    border-radius: var(--border-radius);
+}
+
+[data-cb-type="faq"] .accordion-header:hover {
+    background-color: var(--faq-header-hover);
+}
+
+[data-cb-type="faq"] .accordion-item.active .accordion-header {
+    background-color: var(--faq-header-active);
+}
+
+/* Question Text */
+[data-cb-type="faq"] .accordion-question {
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--faq-question);
+    line-height: 1.5;
+    flex: 1;
+    padding-right: 16px;
+}
+
+/* Accordion Icon */
+[data-cb-type="faq"] .accordion-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    color: var(--faq-icon);
+    transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s ease;
+}
+
+[data-cb-type="faq"] .accordion-item.active .accordion-icon {
+    transform: rotate(180deg);
+    color: var(--faq-icon-active);
+}
+
+/* Accordion Content */
+[data-cb-type="faq"] .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0px 24px 0px 24px;
+}
+
+/* No height cap: an open item is `none`, so an answer of any length is fully
+   visible even in a narrow column. The pixel values the transition needs are
+   measured and applied inline by mount() — this rule is what shows the content
+   when the script has not run yet, or at all. */
+[data-cb-type="faq"] .accordion-item.active .accordion-content {
+    max-height: none;
+    transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Answer Text */
+[data-cb-type="faq"] .accordion-answer {
+    font-size: 18px;
+    color: var(--faq-answer);
+    line-height: 1.4;
+    margin-top: -3px;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    [data-cb-type="faq"] {
+        gap: 10px;
+    }
+
+    [data-cb-type="faq"] .accordion-header {
+        padding: 16px 20px;
+    }
+
+    [data-cb-type="faq"] .accordion-question {
+        font-size: 17px;
+        padding-right: 12px;
+    }
+
+    /* Match the header's horizontal padding, as on large screens, so the answer
+       lines up with the question. The answer itself adds no padding of its own —
+       a second inset here only narrows the text and makes it taller. */
+    [data-cb-type="faq"] .accordion-content {
+        padding: 0px 20px 0px 20px;
+    }
+
+    [data-cb-type="faq"] .accordion-answer {
+        font-size: 16px;
+    }
+}
+
+/* Focus State for Accessibility */
+[data-cb-type="faq"] .accordion-header:focus {
+    outline: 2px solid var(--faq-focus);
+    outline-offset: -2px;
+}
+
+[data-cb-type="faq"] .accordion-header:focus-visible {
+    outline: 2px solid var(--faq-focus);
+    outline-offset: -2px;
+}
+
+/* Remove default button focus outline in favor of custom one */
+[data-cb-type="faq"] .accordion-header:focus:not(:focus-visible) {
+    outline: none;
+}

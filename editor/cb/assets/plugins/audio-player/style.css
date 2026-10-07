@@ -1,0 +1,334 @@
+/* ===== Audio / Podcast Player plugin =====
+   All selectors scoped under [data-cb-type="audio-player"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override; mount
+   renders the control row (.ap-controls) and sets the palette vars from options. */
+[data-cb-type="audio-player"] {
+    position: relative;
+    width: 100%;
+    --ap-accent: #3b82f6;
+    --ap-surface: #fff;
+    --ap-text: #1a1a1a;
+    /* Muted (subtitle / time) = the Text color softened, so it tracks whatever
+       Text color you set instead of being a fixed grey. */
+    --ap-muted: color-mix(in srgb, var(--ap-text) 58%, transparent);
+    --ap-border: #e5e7eb;
+    --ap-track: #e5e7eb;
+    --ap-card-radius: 14px;
+    --ap-art-size: 68px;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. (The Background
+   and Text colors set in the panel become inline vars, which would win over this;
+   leave those at their defaults if you want site dark mode to drive them.)
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme.
+
+.dark [data-cb-type="audio-player"] {
+    --ap-surface: #1e1e1e;
+    --ap-text: #f3f4f6;
+    --ap-muted: #9ca3af;
+    --ap-border: #3a3a3a;
+    --ap-track: #3a3a3a;
+}
+*/
+
+[data-cb-type="audio-player"] .ap-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    max-width: 640px;
+    padding: 14px 16px;
+    background: var(--ap-surface);
+    border: 1px solid var(--ap-border);
+    border-radius: var(--ap-card-radius);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 6px 20px -12px rgba(0, 0, 0, 0.18);
+    box-sizing: border-box;
+}
+
+[data-cb-type="audio-player"].ap-no-shadow .ap-card { box-shadow: none; }
+[data-cb-type="audio-player"].ap-no-border .ap-card { border: 0; }
+/* No border AND no shadow → there's no "card" to inset from, so drop the padding
+   for a flush, minimal look, and open the artwork/content gap a little. */
+[data-cb-type="audio-player"].ap-no-border.ap-no-shadow .ap-card {
+    padding: 0;
+    gap: 20px;
+}
+
+/* Artwork + shapes (shape class is on the block) */
+[data-cb-type="audio-player"] .ap-art {
+    width: var(--ap-art-size);
+    height: var(--ap-art-size);
+    object-fit: cover;
+    border-radius: 10px;
+    flex: 0 0 auto;
+    background: var(--ap-track);
+    align-self: flex-start;
+}
+[data-cb-type="audio-player"].ap-art-circle .ap-art { border-radius: 50%; }
+[data-cb-type="audio-player"].ap-art-square .ap-art { border-radius: 0; }
+
+[data-cb-type="audio-player"] .ap-main {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+[data-cb-type="audio-player"] .ap-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ap-text);
+    line-height: 1.3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+[data-cb-type="audio-player"] .ap-subtitle {
+    font-size: 12.5px;
+    font-weight: 500;
+    color: var(--ap-muted);
+    line-height: 1.3;
+    margin-top: -4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+[data-cb-type="audio-player"] .ap-subtitle:empty { display: none; }
+
+[data-cb-type="audio-player"] .ap-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+/* Progress row: seek + time */
+[data-cb-type="audio-player"] .ap-progress {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+[data-cb-type="audio-player"] .ap-seek {
+    flex: 1;
+    min-width: 0;
+    padding: 8px 0;
+    cursor: pointer;
+    touch-action: none;   /* let pointer-drag scrub without the page scrolling */
+}
+
+[data-cb-type="audio-player"] .ap-seek-track {
+    position: relative;
+    height: 5px;
+    background: var(--ap-track);
+    border-radius: 999px;
+}
+
+[data-cb-type="audio-player"] .ap-seek-buffered,
+[data-cb-type="audio-player"] .ap-seek-played {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    border-radius: inherit;
+}
+[data-cb-type="audio-player"] .ap-seek-buffered { background: color-mix(in srgb, var(--ap-accent) 28%, transparent); }
+[data-cb-type="audio-player"] .ap-seek-played { background: var(--ap-accent); }
+
+[data-cb-type="audio-player"] .ap-seek-handle {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--ap-accent);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 0.15s ease;
+    pointer-events: none;
+}
+[data-cb-type="audio-player"] .ap-seek:hover .ap-seek-handle,
+[data-cb-type="audio-player"] .ap-seek:focus-visible .ap-seek-handle,
+[data-cb-type="audio-player"] .ap-card.is-playing .ap-seek-handle { opacity: 1; }
+
+[data-cb-type="audio-player"] .ap-seek:focus-visible {
+    outline: 2px solid var(--ap-accent);
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
+[data-cb-type="audio-player"] .ap-time {
+    flex: 0 0 auto;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--ap-muted);
+    font-variant-numeric: tabular-nums;
+}
+
+/* Buttons row */
+[data-cb-type="audio-player"] .ap-buttons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+[data-cb-type="audio-player"] .ap-spacer { flex: 1 1 auto; }
+
+/* Play / pause (primary) */
+[data-cb-type="audio-player"] .ap-play {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: var(--ap-accent);
+    color: #fff;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+[data-cb-type="audio-player"] .ap-play:hover { filter: brightness(0.94); }
+[data-cb-type="audio-player"] .ap-ic { width: 20px; height: 20px; }
+[data-cb-type="audio-player"] .ap-ic-pause { display: none; }
+[data-cb-type="audio-player"] .ap-card.is-playing .ap-ic-play { display: none; }
+[data-cb-type="audio-player"] .ap-card.is-playing .ap-ic-pause { display: block; }
+
+/* Secondary icon controls (skip / mute / download) */
+[data-cb-type="audio-player"] .ap-skip,
+[data-cb-type="audio-player"] .ap-mute,
+[data-cb-type="audio-player"] .ap-download {
+    position: relative;
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ap-text);
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+[data-cb-type="audio-player"] .ap-skip:hover,
+[data-cb-type="audio-player"] .ap-mute:hover,
+[data-cb-type="audio-player"] .ap-download:hover { background: color-mix(in srgb, var(--ap-text) 8%, transparent); }
+[data-cb-type="audio-player"] .ap-skip .ap-ic,
+[data-cb-type="audio-player"] .ap-mute .ap-ic,
+[data-cb-type="audio-player"] .ap-download .ap-ic { width: 20px; height: 20px; }
+
+/* Skip second-count centered inside the circular arrow */
+[data-cb-type="audio-player"] .ap-skip-n {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8.5px;
+    font-weight: 700;
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+}
+
+/* Playback speed */
+[data-cb-type="audio-player"] .ap-speed {
+    flex: 0 0 auto;
+    min-width: 40px;
+    height: 28px;
+    padding: 0 8px;
+    border: 1px solid var(--ap-border);
+    border-radius: 8px;
+    background: transparent;
+    color: var(--ap-text);
+    font-size: 12px;
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+[data-cb-type="audio-player"] .ap-speed:hover { background: color-mix(in srgb, var(--ap-text) 8%, transparent); }
+
+/* Volume */
+[data-cb-type="audio-player"] .ap-vol-wrap {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    flex: 0 0 auto;
+}
+[data-cb-type="audio-player"] .ap-ic-mute { display: none; }
+[data-cb-type="audio-player"] .ap-card.is-muted .ap-ic-vol { display: none; }
+[data-cb-type="audio-player"] .ap-card.is-muted .ap-ic-mute { display: block; }
+
+[data-cb-type="audio-player"] .ap-vol-slider {
+    width: 64px;
+    height: 4px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: var(--ap-track);
+    border-radius: 999px;
+    cursor: pointer;
+}
+[data-cb-type="audio-player"] .ap-vol-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--ap-accent);
+    border: none;
+    cursor: pointer;
+}
+[data-cb-type="audio-player"] .ap-vol-slider::-moz-range-thumb {
+    width: 12px;
+    height: 12px;
+    border: none;
+    border-radius: 50%;
+    background: var(--ap-accent);
+    cursor: pointer;
+}
+
+/* Shared focus ring */
+[data-cb-type="audio-player"] .ap-play:focus-visible,
+[data-cb-type="audio-player"] .ap-skip:focus-visible,
+[data-cb-type="audio-player"] .ap-speed:focus-visible,
+[data-cb-type="audio-player"] .ap-mute:focus-visible,
+[data-cb-type="audio-player"] .ap-download:focus-visible,
+[data-cb-type="audio-player"] .ap-vol-slider:focus-visible {
+    outline: 2px solid var(--ap-accent);
+    outline-offset: 2px;
+}
+
+[data-cb-type="audio-player"] .ap-audio { display: none; }
+
+/* Responsive: shed the least-essential bits on narrow widths */
+@media (max-width: 520px) {
+    [data-cb-type="audio-player"] .ap-vol-slider { display: none; }
+}
+@media (max-width: 400px) {
+    [data-cb-type="audio-player"] .ap-time { display: none; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="audio-player"] .ap-play,
+    [data-cb-type="audio-player"] .ap-skip,
+    [data-cb-type="audio-player"] .ap-mute,
+    [data-cb-type="audio-player"] .ap-download,
+    [data-cb-type="audio-player"] .ap-speed,
+    [data-cb-type="audio-player"] .ap-seek-handle { transition: none; }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+    [data-cb-type="audio-player"] .ap-card { border: 2px solid currentColor; }
+}

@@ -14,12 +14,14 @@
     letter-spacing: 3px;
 }        
 
-.type-sourcesanspro-anonymouspro h1 {font-size: 3rem;}
-.type-sourcesanspro-anonymouspro h2 {font-size: 2.5rem;}
-.type-sourcesanspro-anonymouspro h3 {font-size: 2.1rem;}
-.type-sourcesanspro-anonymouspro h4 {font-size: 1.8rem;}
-.type-sourcesanspro-anonymouspro h5 {font-size: 1.5rem;}
-.type-sourcesanspro-anonymouspro h6 {font-size: 1.2rem;}
+.type-sourcesanspro-anonymouspro h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-sourcesanspro-anonymouspro h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-sourcesanspro-anonymouspro h3 {font-size: 2.1rem; margin: 1rem 0 1rem; }
+.type-sourcesanspro-anonymouspro h4 {font-size: 1.8rem; margin: 0.5rem 0 0.5rem; }
+.type-sourcesanspro-anonymouspro h5 {font-size: 1.5rem; margin: 0.5rem 0 0.5rem; }
+.type-sourcesanspro-anonymouspro h6 {font-size: 1.2rem; margin: 0.5rem 0 0.5rem; }
+.type-sourcesanspro-anonymouspro p {margin:0.8rem 0 0.8rem;}
+/* .type-sourcesanspro-anonymouspro ul, .type-sourcesanspro-anonymouspro ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-sourcesanspro-anonymouspro .display { margin-bottom: 0.5rem; }
 .type-sourcesanspro-anonymouspro .display h1 {

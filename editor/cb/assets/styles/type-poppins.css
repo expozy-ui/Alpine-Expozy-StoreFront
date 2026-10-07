@@ -7,17 +7,20 @@
     line-height: 1.5;
 }
 .type-poppins h1, .type-poppins h2, .type-poppins h3, .type-poppins h4, .type-poppins h5, .type-poppins h6 {
+    font-family: 'Poppins', sans-serif;
     font-weight: 600;
     line-height: 1.2;
     letter-spacing: -1px;
 }        
 
-.type-poppins h1 {font-size: 3.2rem;}
-.type-poppins h2 {font-size: 2.5rem;}
-.type-poppins h3 {font-size: 1.9rem;}
-.type-poppins h4 {font-size: 1.6rem;}
-.type-poppins h5 {font-size: 1.3rem;}
-.type-poppins h6 {font-size: 1.14rem;}
+.type-poppins h1 {font-size: 3.2rem; margin: 1.2rem 0 1.2rem; }
+.type-poppins h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-poppins h3 {font-size: 1.9rem; margin: 1rem 0 1rem; }
+.type-poppins h4 {font-size: 1.6rem; margin: 0.5rem 0 0.5rem; }
+.type-poppins h5 {font-size: 1.3rem; margin: 0.5rem 0 0.5rem; }
+.type-poppins h6 {font-size: 1.14rem; margin: 0.5rem 0 0.5rem; }
+.type-poppins p {margin:0.8rem 0 0.8rem;}
+/* .type-poppins ul, .type-poppins ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-poppins .display { margin-bottom: 0.5rem; }
 .type-poppins .display h1 {

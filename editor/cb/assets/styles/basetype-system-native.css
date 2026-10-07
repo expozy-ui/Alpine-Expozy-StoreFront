@@ -1,0 +1,70 @@
+body, .is-wrapper {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+h1, h2, h3, h4, h5, h6, 
+.is-wrapper h1, .is-wrapper h2, .is-wrapper h3, .is-wrapper h4, .is-wrapper h5, .is-wrapper h6 {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-weight: 500;
+    line-height: 1.15;
+    margin-top: 0;
+    letter-spacing: -0.02em;
+}
+
+.is-wrapper h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin-bottom: 1.5rem;
+}
+
+.is-wrapper h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin-bottom: 1.25rem;
+}
+
+.is-wrapper h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin-bottom: 1rem;
+}
+
+.is-wrapper h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin-bottom: 0.875rem;
+}
+
+.is-wrapper h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin-bottom: 0.75rem;
+}
+
+.is-wrapper h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin-bottom: 0.5rem;
+}
+
+.is-wrapper p {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+}
+
+.is-wrapper .display {
+    margin-bottom: 2rem;
+}
+
+.is-wrapper .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.5rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+.is-wrapper .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.2rem);
+    line-height: 1.4;
+    font-weight: 300;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

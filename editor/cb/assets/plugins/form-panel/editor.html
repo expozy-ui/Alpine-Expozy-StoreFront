@@ -1,0 +1,900 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Form Builder</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content=""> 
+<script>
+/* The plugin folder can live anywhere, so the Form plugin passes the site root
+   in and everything below resolves against it: FormBuilderAI, the tab script,
+   and later the templates and uploaded files the builder itself asks for.
+
+   The dependencies are written from here rather than sitting in the markup
+   because the browser's preload scanner fetches markup <script src>/<link href>
+   before <base> is applied, which would 404 on every one of them. Written tags
+   are created during parsing, after <base>, and still load in order. */
+(function () {
+    var m = /[?&]base=([^&]*)/.exec(location.search);
+    var base = (m ? decodeURIComponent(m[1]) : '../../../').replace(/"/g, '&quot;');
+    document.write('<base href="' + base + '">');
+    document.write('<link rel="stylesheet" href="assets/scripts/formbuilderai/formbuilderai.css">');
+    document.write('<scr' + 'ipt src="assets/scripts/formbuilderai/formbuilderai.min.js"></scr' + 'ipt>');
+    /* Ships with the full FormBuilderAI package only. Absent in a stock
+       ContentBuilder/ContentBox install, which is why the page must run
+       perfectly well without it. */
+    document.write('<scr' + 'ipt src="assets/scripts/formbuilderai/config.js"></scr' + 'ipt>');
+})();
+</script>
+<style>
+body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+    font-size:1rem;
+    font-weight:400;
+    line-height:1.4; 
+    color: #3c3c3c;
+    
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    flex-direction: column;
+}
+.dark body {
+    background-color: #111;
+    color: #f9fafb;
+} 
+
+.topbar {
+    display: none;
+    width: 100%;
+    height: 64px;
+    z-index: 2;
+    align-items: center;
+    gap: 10px;
+    box-sizing: border-box;
+    padding: 0 20px;
+    box-shadow: 0 1px 3px 0 #00000021;
+}
+body.show-nav .topbar {
+    display: flex;
+}
+.dark .topbar {
+    box-shadow: 0 1px 3px 0 #ffffff57;
+}
+
+.view-builder,
+.view-templates {
+    display: none;
+    box-sizing: border-box;
+    width: 100%;    
+    /* height: calc(100vh - 64px); */
+    height: 100vh;
+}
+body.show-nav .view-builder,
+body.show-nav .view-templates {
+    height: calc(100vh - 64px);
+}
+
+.view-builder.active { display: flex; }
+.view-templates.active { display: block; padding: 0 15px 20px; overflow-y: auto; }
+
+.btn-templates, 
+.btn-edit {
+    font-family: system-ui, sans-serif;
+    font-size: 0.95rem;
+    font-weight: 400;
+    background: transparent;
+    color: inherit;
+    padding: 6px 16px;
+    border: none;
+    border-radius:50px;
+    cursor: pointer;
+}
+.btn-templates.active,
+.btn-edit.active {
+    background: #111;
+    color: #f3f3f3;
+    cursor: default;
+}
+.dark .btn-templates,
+.dark .btn-edit {
+    background: #4d4d4d;
+    color: inherit;
+}
+.dark .btn-templates.active,
+.dark .btn-edit.active {
+    background: transparent;
+}
+
+.content {
+    padding: 0;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content-inner {
+    padding: 25px;
+    box-sizing: border-box;
+    width: 100%;    
+    height: 100%;
+    position: relative;
+    overflow-y: auto;
+}
+
+.content-inner-container {
+    max-width: 500px;
+    margin: 2.5rem auto 3.5rem;
+}
+
+.sidebar {
+    width: 100%;
+    max-width: 590px;
+    flex: none;
+    padding: 0;
+    box-sizing: border-box;
+    background: #fff;
+    border-left: 1px solid #ddd;
+}
+.dark .sidebar {
+    background: #111;
+    border-left: 1px solid #dddddd40;
+}
+
+/* Tabs — the editor's tab style: neutral text, a 2px underline on the selected
+   one. Colours read the editor's --cb-* tokens when they are present and fall
+   back to the light palette otherwise. */
+.tabs {
+    margin: 0 auto;
+}
+.tab-list {
+    display: flex;
+    flex-flow: wrap;
+    box-sizing: border-box;
+    padding: 25px 25px 0;
+    border-bottom: 1px solid var(--cb-line, #dcdee2);
+}
+.tab-list button.tab {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    height: 40px;
+    padding: 0 22px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    font-family: inherit;
+    font-size: 12.5px;
+    color: var(--cb-text-3, #9096a0);
+    transition: color 0.15s;
+}
+.tab-list button.tab:hover {
+    color: var(--cb-text-2, #5c6169);
+}
+.tab-list button.tab[aria-selected="true"] {
+    color: var(--cb-text, #18181b);
+}
+.tab-list button.tab[aria-selected="true"]::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--cb-text, #18181b);
+}
+.tab-list button.tab:focus-visible {
+    outline: 2px solid var(--cb-accent, #2c6fdb);
+    outline-offset: -2px;
+}
+
+/* Tabs style adjustments */
+.tab-panel {
+    /* height: calc(100vh - 134px); */
+    height: calc(100vh - 45px);
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 25px 25px 35px;
+}
+body.show-nav .tab-panel {
+    height: calc(100vh - 134px);
+}
+
+.tab-list {
+    padding-top: 0px;
+}
+body.show-nav .tab-list {
+    padding-top: 25px;
+}
+
+/* Sidebar toggle */
+.sidebar-toggle {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1001;
+    width: 40px;
+    padding: 10px;
+    background-color: #111;
+    color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+}
+@media (max-width: 1050px) {
+    .sidebar {
+        position: fixed;
+        right: -80%;
+        top: 0;
+        height: 100vh;
+        width: 80%;
+        transition: right 0.3s;
+        z-index: 1000;
+    }
+    .sidebar.active {
+        right: 0;
+    }
+    .sidebar-toggle {
+        display: block;
+    }
+}
+
+/* Adjustments */
+.app-filters {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: #fff;
+    padding: 15px 10px 0px;
+    box-shadow: 0px 10px 20px #ffffff;
+}
+.dark .app-filters {
+    background: #000000;
+    box-shadow: 0px 10px 20px #000000;
+}
+.result-container {
+    margin-top: 20px
+}
+
+/* Overlay from ContentBox */
+.is-overlay {
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    overflow:hidden;
+    z-index: -1;
+}
+.is-overlay .is-overlay-bg {
+    position:absolute;left:0px;top:0px;width:100%;height:100%;
+    background-size:cover;
+    background-repeat:no-repeat;
+    background-position:50% 60%;
+}
+.is-overlay .is-overlay-color {
+    position:absolute;left:0px;top:0px;width:100%;height:100%;
+    background-color: rgb(0, 0, 0);opacity: 0.05;
+}      
+.opacity-0 { opacity: 0 !important }
+.opacity-2 { opacity: 0.02 !important }
+.opacity-4 { opacity: 0.04 !important }
+.opacity-5 { opacity: 0.05 !important }
+.opacity-6 { opacity: 0.06 !important }
+.opacity-8 { opacity: 0.08 !important }
+.opacity-10 { opacity: 0.1 !important }
+.opacity-12 { opacity: 0.12 !important }
+.opacity-15 { opacity: 0.15 !important }
+.opacity-20 { opacity: 0.2 !important }
+.opacity-25 { opacity: 0.25 !important }
+.opacity-30 { opacity: 0.3 !important }
+.opacity-35 { opacity: 0.35 !important }
+.opacity-40 { opacity: 0.4 !important }
+.opacity-45 { opacity: 0.45 !important }
+.opacity-50 { opacity: 0.5 !important }
+.opacity-55 { opacity: 0.55 !important }
+.opacity-60 { opacity: 0.6 !important }
+.opacity-65 { opacity: 0.65 !important }
+.opacity-70 { opacity: 0.7 !important }
+.opacity-75 { opacity: 0.75 !important }
+.opacity-80 { opacity: 0.8 !important }
+.opacity-85 { opacity: 0.85 !important }
+.opacity-90 { opacity: 0.9 !important }
+.opacity-95 { opacity: 0.95 !important }
+.opacity-100 { opacity: 1 !important }  
+
+</style>
+
+</head>
+<body>
+
+<nav class="topbar" role="navigation">
+    <button data-lang 
+        class="nav-button btn-edit" 
+        aria-label="Switch to Edit view"
+    >Edit</button>
+    <button data-lang 
+        class="nav-button btn-templates" 
+        aria-label="Switch to Templates view"
+        aria-current="page"
+    >Templates</button>
+</nav>
+
+<div class="view-builder">
+
+    <div class="content">
+
+        <div class="content-inner">
+            <div class="content-inner-container">
+                <div class="form-preview"></div>
+                <div class="workflow-result"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="sidebar">
+
+        <div class="tabs">
+            <div class="tab-list" role="tablist">
+                <button role="tab" class="tab" aria-selected="false" data-lang>Edit Form</button>
+                <button role="tab" class="tab tab-workflow" aria-selected="false" style="display:none" data-lang>Workflow</button>
+                <button role="tab" class="tab" aria-selected="false" data-lang>Settings</button>
+                <button role="tab" class="tab" aria-selected="false" data-lang>Designer</button>
+                <button role="tab" class="tab tab-generate" aria-selected="false" data-lang-title="Generate" style="display:none; padding: 12px 20px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" style="width:16px;height: 16px;">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456ZM16.894 20.567 16.5 21.75l-.394-1.183a2.25 2.25 0 0 0-1.423-1.423L13.5 18.75l1.183-.394a2.25 2.25 0 0 0 1.423-1.423l.394-1.183.394 1.183a2.25 2.25 0 0 0 1.423 1.423l1.183.394-1.183.394a2.25 2.25 0 0 0-1.423 1.423Z" />
+                      </svg>
+                </button>
+            </div>
+
+            <div class="tab-panel" role="tabpanel" hidden>
+                <div class="form-editor"></div>
+            </div>
+            <div class="tab-panel" role="tabpanel" hidden>
+                <div class="form-workflow"></div>
+            </div>
+            <div class="tab-panel" role="tabpanel" hidden>
+                <div class="form-settings"></div>
+
+            </div>
+            <div class="tab-panel" role="tabpanel" hidden>
+                <div class="form-designer"></div>
+            </div>
+            <div class="tab-panel" role="tabpanel" hidden>
+                <div class="form-generator"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <button class="sidebar-toggle">☰</button>
+</div>
+
+<div class="view-templates active">
+    <div class="form-templates"></div>
+</div>
+    
+<script>
+/* What the installed FormBuilderAI package allows. Nothing installed = the
+   features that ship with ContentBuilder/ContentBox. */
+const fbConfig = window.FormBuilderAIConfig || {};
+const workflow = fbConfig.workflow === true;
+
+/* The Form plugin owns this overlay and puts everything this page needs on
+   the builder window before loading it (same origin, so no copying). */
+var bridge = parent.__cbFormEditor || {};
+
+var builder;
+
+var docReady = function (fn) {
+    var stateCheck = setInterval(function () {
+        if (document.readyState !== "complete") return;
+        clearInterval(stateCheck);
+        fn();
+        // try { fn() } catch (e) { }
+    }, 1);
+};
+
+var lang, defaultTextGenerationProvider, model, model2, sendCommandUrl, sendCommandStreamUrl;
+var generationModels_OpenAI, generationModels_OpenRouter;
+var defaultMediaGenerationProvider, mediaGenerationProvider;
+var generateMediaUrl_OpenAI_CreateImage, generateMediaUrl_OpenAI_CreateImageEdit, generateMediaUrl_Google;
+var headers, customData;
+var uploadMediaUrl_Fal, uploadBase64Url_Fal;
+var generateMediaUrl_Fal, checkRequestStatusUrl_Fal, getResultUrl_Fal;
+var minimizeImageUrl, cleanup;
+var assetsFolder, templatesUrl, templateFilters;
+var colors;
+
+docReady(function () {
+
+    // The form definition, theme and workflow held by the block being edited.
+    var jsonForm = bridge.form || {};
+    var jsonTheme = bridge.theme || {};
+    jsonWorkflow = bridge.workflow || null;
+    
+    const editor = parent.contentbox || parent._cb || {};
+
+    // Parameters
+    lang = parent._txt || [];
+    defaultTextGenerationProvider = editor.defaultTextGenerationProvider || 'openai';
+    model = editor.model || 'gpt-4o-mini';
+    model2 = editor.model2 || 'gpt-4o-mini';
+    sendCommandUrl = editor.sendCommandUrl || '';
+    sendCommandStreamUrl = editor.sendCommandStreamUrl || '';
+
+    generationModels_OpenAI = editor.generationModels_OpenAI || [
+        {
+            model: 'gpt-4o-mini',
+            name:  'GPT-4o-mini'
+        },
+        {
+            model: 'gpt-4o',
+            name:  'GPT-4o'
+        },
+        {
+            model: 'gpt-4.1-nano',
+            name:  'GPT-4.1-nano'
+        },
+        {
+            model: 'gpt-4.1-mini',
+            name:  'GPT-4.1-mini'
+        },
+        {
+            model: 'gpt-4.1',
+            name:  'GPT-4.1'
+        },
+    ];
+
+    generationModels_OpenRouter = editor.generationModels_OpenRouter || [
+        {
+            model: 'openai/gpt-4o-mini',
+            name:  'OpenAI: GPT-4o-mini'
+        },
+        {
+            model: 'openai/gpt-4o-2024-11-20',
+            name:  'OpenAI: GPT-4o'
+        },
+        {
+            model: 'anthropic/claude-3.7-sonnet',
+            name:  'Anthropic: Claude 3.7 Sonnet'
+        },
+        {
+            model: 'anthropic/claude-3.5-sonnet',
+            name:  'Anthropic: Claude 3.5 Sonnet'
+        },
+        {
+            model: 'anthropic/claude-3.5-haiku',
+            name:  'Anthropic: Claude 3.5 Haiku'
+        },
+        {
+            model: 'google/gemini-2.0-flash-lite-001',
+            name:  'Google: Gemini 2.0 Flash Lite'
+        },
+        {
+            model: 'google/gemini-2.0-flash-001',
+            name:  'Google: Gemini 2.0 Flash'
+        },
+        {
+            model: 'qwen/qwen-2.5-72b-instruct',
+            name:  'Qwen2.5 72B Instruct'
+        },
+        {
+            model: 'deepseek/deepseek-r1',
+            name:  'DeepSeek: R1'
+        },
+        {
+            model: 'meta-llama/llama-4-maverick',
+            name:  'Meta: Llama 4 Maverick'
+        },
+        {
+            model: 'meta-llama/llama-4-scout',
+            name:  'Meta: Llama 4 Scout'
+        },
+        {
+            model: 'meta-llama/llama-3.3-70b-instruct',
+            name:  'Meta: Llama 3.3 70B Instruct'
+        }
+    ];
+
+    imageToggle = editor.imageToggle || false;
+    videoToggle = editor.videoToggle || false;
+    audioToggle = editor.audioToggle || false;
+
+    defaultMediaGenerationProvider = editor.defaultMediaGenerationProvider || 'fal';
+    mediaGenerationProviders = editor.mediaGenerationProviders || [
+        {
+            name: 'Fal',
+            value: 'fal'
+        },
+        {
+            name: 'OpenAI',
+            value: 'openai'
+        },
+    ];
+
+    uploadMediaUrl_Fal = editor.uploadMediaUrl_Fal || '';
+    uploadBase64Url_Fal = editor.uploadBase64Url_Fal || '';
+    generateMediaUrl_Fal = editor.generateMediaUrl_Fal || '';
+    checkRequestStatusUrl_Fal = editor.checkRequestStatusUrl_Fal || '';
+    getResultUrl_Fal = editor.getResultUrl_Fal || '';
+    minimizeImageUrl = editor.minimizeImageUrl || '';
+    cleanup = editor.cleanup || '';
+
+    generateMediaUrl_OpenAI_CreateImage = editor.generateMediaUrl_OpenAI_CreateImage || '';
+    generateMediaUrl_OpenAI_CreateImageEdit = editor.generateMediaUrl_OpenAI_CreateImageEdit || '';
+    generateMediaUrl_Google = editor.generateMediaUrl_Google || '';
+
+    assetsFolder = editor.assetsFolder; // || 'assets/formfiles/';
+    templatesUrl = editor.templatesUrl; // || 'assets/templates.json';
+    templateFilters = editor.templateFilters || [];
+    templatesConfig = editor.templatesConfig || {
+        fal: false
+    };
+
+    headers = editor.headers || {};
+    customData = editor.customData || {};
+
+    exampleImageUrl = editor.exampleImageUrl || 'assets/formfiles/ai-V8Khk.jpg';
+    exampleVideoUrl = editor.exampleVideoUrl || 'assets/formfiles/ai-thhyR.mp4';
+    exampleAudioUrl = editor.exampleAudioUrl || 'assets/formfiles/ai-3EVMb.wav';
+    
+    saveResults = editor.saveResults || true;
+
+    colors = editor.colors || ['#ff9f01', '#f57c00', '#e64918', '#d32f2f', '#5d4038', '#37474f', '#353535',
+        '#fbc02c', '#b0b42a', '#689f39', '#c21f5b', '#7b21a2', '#522da8', '#616161',
+        '#01b8c9', '#009688', '#388d3c', '#0388d0', '#1465c0', '#2f3f9e', '#9e9e9e'];
+
+    if(fbConfig.nav === true) document.body.classList.add('show-nav');
+
+    if(sendCommandUrl && workflow==true) {
+        const tabWorkflow = document.querySelector('.tab-workflow');
+        if(tabWorkflow) tabWorkflow.style.display = '';
+    }
+
+    if(sendCommandUrl) {
+        const tabGenerate = document.querySelector('.tab-generate');
+        tabGenerate.style.display = '';
+    }
+
+    // Navigation
+    const btnTemplates = document.querySelector('.btn-templates');
+    const btnEdit = document.querySelector('.btn-edit');
+    const builderView = document.querySelector('.view-builder');
+    const templatesView = document.querySelector('.view-templates');
+    const sidebar = document.querySelector('.sidebar');
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+
+    // View Control Functions
+    function setView(view) {
+        // Hide all views
+        builderView.classList.remove('active');
+        templatesView.classList.remove('active');
+
+        // Show selected view
+        if (view === 'templates') {
+            templatesView.classList.add('active');
+            if(btnTemplates) btnTemplates.classList.add('active');
+            if(btnEdit) btnEdit.classList.remove('active');
+            localStorage.setItem('_builder_view', 'templates');
+        } else {
+            builderView.classList.add('active');
+            if(btnEdit) btnEdit.classList.add('active');
+            if(btnTemplates) btnTemplates.classList.remove('active');
+            localStorage.setItem('_builder_view', 'builder');
+        }
+    }
+    if(btnTemplates && btnEdit) {
+        btnTemplates.addEventListener('click', () => setView('templates'));
+        btnEdit.addEventListener('click', () => setView('builder'));
+
+        // // Initialize view based on localStorage (must set before FormBuilderAI init)
+        // const savedView = localStorage.getItem('_builder_view') || 'builder';
+        // setView(savedView);
+        setView('builder');
+    } else {
+        setView('builder');
+    }
+
+    builder = new FormBuilderAI({
+        // consoleLog: true,
+        lang,
+        
+        builderSelector: '.form-editor', 
+        workflowSelector: '.form-workflow',
+        settingsSelector: '.form-settings',
+        designerSelector: '.form-designer',
+        previewSelector: '.form-preview',
+        resultSelector: '.workflow-result',
+
+        templatesSelector: '.form-templates',
+
+        // form generator
+        generatorSelector: '.form-generator',
+        language:'English',
+        languageSelection: true,
+
+        // Using OpenAI:
+        defaultTextGenerationProvider,
+        model, // for content generation
+        model2, // for processing (function calling)
+        sendCommandUrl, 
+        sendCommandStreamUrl,
+
+        generationModels_OpenAI,
+        generationModels_OpenRouter,
+
+        /*
+        // Using OpenRouter:
+        defaultTextGenerationProvider,
+        model: 'openai/gpt-4o-mini', // for content generation
+        model2: 'openai/gpt-4o-mini', // for processing (function calling)
+        sendCommandUrl, 
+        sendCommandStreamUrl,
+        */
+
+        // Media Generation
+
+        imageToggle,
+        videoToggle,
+        audioToggle,
+
+        defaultMediaGenerationProvider,
+        mediaGenerationProviders,
+
+        // Upload Endpoints:
+        uploadMediaUrl_Fal, 
+        uploadBase64Url_Fal,
+                
+        // Fal Integration Endpoints:
+        generateMediaUrl_Fal, // request generation
+        checkRequestStatusUrl_Fal, // check generation status
+        getResultUrl_Fal, // receive result
+
+        // Optimization & Cleanup Endpoints:
+        minimizeImageUrl, // minimize image file size
+        cleanup, // cleanup input files
+
+        // OpenAI Integration Endpoints:
+        generateMediaUrl_OpenAI_CreateImage, 
+        generateMediaUrl_OpenAI_CreateImageEdit, 
+
+        // Google Gemini Flash Integration Endpoints: (experimental)
+        generateMediaUrl_Google,
+
+        // Enable templates:
+        assetsFolder,
+        templatesUrl, 
+        templateFilters,
+        templatesConfig,
+        /*
+        // To disable Media Generation templates
+        templateFilters: [], 
+        templatesConfig: {
+            fal: false,
+        },
+        */
+
+        /*
+        headers: {}, // Custom headers for every server (API) request.
+        customData: { // This will be included in every server (API) request.
+            user_id: 3,
+            form_id: 5,
+            other: 'somevalue'
+        }
+        */
+        headers,
+        customData,
+
+        // Default image, video and audio for element
+        exampleImageUrl,
+        exampleVideoUrl,
+        exampleAudioUrl,
+    
+        saveResults,
+
+        colors
+
+    }).on('templateSelect', (template) => {
+
+        setView('dashboard');
+
+        // console.log('Selected template:', template);
+
+        // Load/render form
+        const formData = JSON.stringify(template.form);
+        builder.load(formData);
+
+        // Load workflow
+        const workflowData = JSON.stringify(template.workflow);
+        builder.loadWorkflow(workflowData);
+
+        // Save selected
+        localStorage.setItem('myFormData_MediaGeneration', formData); // save form
+        localStorage.setItem('myWorkflowData_MediaGeneration', workflowData); // save workflowtop: 0, behavior: 'smooth' });
+
+    }).on('change', (formData) => {
+
+        // console.log('Form updated:', JSON.parse(formData));
+        localStorage.setItem('myFormData_MediaGeneration', formData); // save form
+
+    }).on('workflowChange', (workflowData) => {
+
+        // console.log('Workflow updated:', JSON.parse(workflowData));
+        localStorage.setItem('myWorkflowData_MediaGeneration', workflowData); // save workflow
+
+    }).on('themeChange', (themeData) => {
+
+        localStorage.setItem('themeData', themeData); // save theme
+
+    }).on('formGenerate', (formData) => {
+
+        // reload
+        builder.load(formData); // Show Editor
+        builder.view(formData); // Show Form
+
+        // // Set theme
+        // let exampleTheme = {};
+        // let initialTheme = JSON.stringify(exampleTheme);
+        // let themeData = localStorage.getItem('myThemeData') || initialTheme; 
+        // builder.setTheme(themeData); 
+
+        // // Show Designer
+        // builder.showDesigner();
+
+    }).on('resultReady', ({ previewText, markdown, html, media }) => {
+
+        // For saving the result
+
+    });
+   
+    //Load Templates
+    builder.loadTemplates();
+
+    // Set theme
+    let initialTheme = JSON.stringify(jsonTheme);
+    builder.setTheme(initialTheme); 
+
+    let formData = JSON.stringify(jsonForm); 
+    builder.load(formData); // Show Editor
+
+    // builder.view(formData); // Show Form
+
+    // Show Designer
+    builder.showDesigner();
+
+    // Show Settings
+    builder.showSettings();
+
+    // Show Generator
+    // builder.showGenerator();
+
+    // Load Workflow
+    let exampleWorkflow = {
+        "steps": []
+    };
+    let workflowData = JSON.stringify(exampleWorkflow);
+    if(jsonWorkflow) {
+        workflowData = JSON.stringify(jsonWorkflow);
+    }
+    builder.loadWorkflow(workflowData);
+
+    // Tabs. Click, arrow keys and Home/End, so the tab strip is usable from the
+    // keyboard — the same behaviour the old shared script provided.
+    document.querySelectorAll('.tabs').forEach((group) => {
+        const tabs = [...group.querySelectorAll('[role="tab"]')];
+        const panels = [...group.querySelectorAll('[role="tabpanel"]')];
+        // Some tabs are switched off (Workflow, Generate) and are display:none.
+        // Arrow keys must step over them, or the keyboard reaches a tab nobody
+        // can see and opens its panel.
+        const shown = () => tabs.filter(tab => tab.offsetParent !== null);
+        const select = (index, focus) => {
+            tabs.forEach((tab, i) => {
+                tab.setAttribute('aria-selected', i === index);
+                tab.tabIndex = i === index ? 0 : -1;
+            });
+            panels.forEach((panel, i) => { panel.hidden = i !== index; });
+            if (focus) tabs[index].focus();
+        };
+        tabs.forEach((tab) => {
+            tab.addEventListener('click', () => select(tabs.indexOf(tab), true));
+            tab.addEventListener('keydown', (e) => {
+                const visible = shown();
+                const at = visible.indexOf(tab);
+                const last = visible.length - 1;
+                if (at === -1) return;
+                let next = null;
+                if (e.key === 'ArrowLeft') next = at === 0 ? last : at - 1;
+                else if (e.key === 'ArrowRight') next = at === last ? 0 : at + 1;
+                else if (e.key === 'Home') next = 0;
+                else if (e.key === 'End') next = last;
+                if (next === null) return;
+                e.preventDefault();
+                select(tabs.indexOf(visible[next]), true);
+            });
+        });
+        select(0, false);
+    });
+    
+    // Sidebar interactions
+    sidebarToggle.addEventListener('click', () => 
+        sidebar.classList.toggle('active')
+    );
+
+    // Close sidebar on outside click (mobile)
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 1050 && 
+            sidebar.classList.contains('active') && 
+            !sidebar.contains(e.target) && 
+            !sidebarToggle.contains(e.target)) {
+            sidebar.classList.remove('active');
+        }
+    });
+
+    // Close sidebar on desktop resize
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1050) {
+            sidebar.classList.remove('active');
+        }
+    });
+
+    // Set bg
+    const panelPreview = document.querySelector('.content');
+    const activeModule = bridge.element;
+    if(activeModule) {
+        const section = activeModule.closest('.is-box');
+        let overlay, overlayBg;
+        if(section) {
+            overlay = section.querySelector('.is-overlay');
+            if (overlay && panelPreview) {
+                const clonedOverlay = overlay.cloneNode(true);
+                // panelPreview.appendChild(clonedOverlay);
+                panelPreview.insertBefore(clonedOverlay, panelPreview.firstChild);
+            }
+        }
+    }
+});
+
+/*
+ * The overlay's Save button calls this. It returns only what the form builder
+ * owns — the definition, its theme and its workflow. Submission settings
+ * (action, messages, reCAPTCHA) belong to the plugin's settings panel, and the
+ * rendered HTML is built by the plugin from the definition.
+ */
+function cbFormCollect() {
+    var result = { form: null, theme: null, workflow: null };
+    try { result.form = JSON.parse(builder.get()); } catch (e) { console.error('[form] invalid form data', e); }
+    try { result.theme = JSON.parse(builder.getTheme(bridge.element || document.body)); } catch (e) { }
+    try { result.workflow = JSON.parse(builder.getWorkflow()); } catch (e) { }
+    return result.form ? result : null;
+}
+window.cbFormCollect = cbFormCollect;
+
+// Language file stuff
+function applyLang() {
+    if (!parent._cb || typeof parent._cb.out !== 'function') return;
+    let elms = document.querySelectorAll('[data-lang]');
+    elms.forEach(function(elm){
+        elm.innerHTML = parent._cb.out(elm.innerHTML);
+    });
+
+    elms = document.querySelectorAll('[data-lang-title]');
+
+    elms.forEach(function(elm){
+        elm.setAttribute('title', parent._cb.out(elm.getAttribute('title')) || elm.getAttribute('data-lang-title'));
+    });
+}
+applyLang();
+
+// --------- Form Builder ------------
+
+</script>
+</body>
+</html>

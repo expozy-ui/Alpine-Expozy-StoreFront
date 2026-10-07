@@ -15,12 +15,14 @@
     letter-spacing: 1.5px;
 }        
 
-.type-merriweathersans-martel h1 {font-size: 3rem;}
-.type-merriweathersans-martel h2 {font-size: 2.5rem;}
-.type-merriweathersans-martel h3 {font-size: 2rem;}
-.type-merriweathersans-martel h4 {font-size: 1.7rem;}
-.type-merriweathersans-martel h5 {font-size: 1.4rem;}
-.type-merriweathersans-martel h6 {font-size: 1.08rem;}
+.type-merriweathersans-martel h1 {font-size: 3rem; margin: 1.2rem 0 1.2rem; }
+.type-merriweathersans-martel h2 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-merriweathersans-martel h3 {font-size: 2rem; margin: 1rem 0 1rem; }
+.type-merriweathersans-martel h4 {font-size: 1.7rem; margin: 0.5rem 0 0.5rem; }
+.type-merriweathersans-martel h5 {font-size: 1.4rem; margin: 0.5rem 0 0.5rem; }
+.type-merriweathersans-martel h6 {font-size: 1.08rem; margin: 0.5rem 0 0.5rem; }
+.type-merriweathersans-martel p {margin:0.8rem 0 0.8rem;}
+/* .type-merriweathersans-martel ul, .type-merriweathersans-martel ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-merriweathersans-martel .display { margin-bottom: 0.5rem; }
 .type-merriweathersans-martel .display h1 {

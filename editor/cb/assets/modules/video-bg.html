@@ -152,19 +152,36 @@
              <symbol viewBox="0 0 512 512" id="ion-ios-plus-empty"><path d="M384 265H264v119h-17V265H128v-17h119V128h17v120h120v17z"></path></symbol>
              <symbol viewBox="0 0 512 512" id="ion-more"><path d="M113.7 304C86.2 304 64 282.6 64 256c0-26.5 22.2-48 49.7-48 27.6 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48zM256 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.3-48 49.8-48 27.5 0 49.7 21.5 49.7 48 0 26.6-22.2 48-49.7 48zM398.2 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.2-48 49.8-48 27.5 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48z"></path></symbol>
              <symbol viewBox="0 0 512 512" id="ion-ios-close-empty"><path d="M340.2 160l-84.4 84.3-84-83.9-11.8 11.8 84 83.8-84 83.9 11.8 11.7 84-83.8 84.4 84.2 11.8-11.7-84.4-84.3 84.4-84.2z"></path></symbol>
+
+            <symbol id="icon-upload" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2"></path>
+                <path d="M7 9l5 -5l5 5"></path>
+                <path d="M12 4l0 12"></path>
+            </symbol>
         </defs>
     </svg>
 
     <label id="lblMP4" for="txtMP4" style="width:100%"><span data-lang>Video URL</span>:</label>
-    <div style="display: flex;">
+    <div class="drop-video" style="display: flex;">
         <input id="txtMP4" type="text" style="width:100%;margin-right:2px;" />
-        <button title="Select" class="input-select" style="height:40px;background:transparent"><svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg></button>
+        <button title="Select" class="input-select" style="height:40px;background:transparent"><svg class="is-icon-flex"><use xlink:href="#icon-folder"></use></svg></button>
+
+        <button title="Upload" class="input-upload-video" style="height:40px;background:transparent;display:none;">
+            <svg style="width:16px;height:16px;"><use xlink:href="#icon-upload"></use></svg>
+        </button>
+        <input id="inpVideoFile" type="file" accept="video/mp4" style="display:none" />
     </div>
 
     <label id="lblPoster" for="txtPoster" style="width:100%;margin-top:12px;"><span data-lang>Video Poster</span>:</label>
     <div style="display:flex;">
         <input id="txtPoster" type="text" style="width:100%;margin-right:2px;" />
-        <button title="Select" class="input-select2" style="height:40px;background:transparent"><svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg></button>
+        <button title="Select" class="input-select2" style="height:40px;background:transparent"><svg class="is-icon-flex"><use xlink:href="#icon-folder"></use></svg></button>
+
+        <button title="Upload" class="input-upload-poster" style="height:40px;background:transparent;display:none;">
+            <svg style="width:16px;height:16px;"><use xlink:href="#icon-upload"></use></svg>
+        </button>
+        <input id="inpPosterFile" type="file" accept="image/*" style="display:none" />
     </div>
 
 
@@ -190,7 +207,7 @@
             </button>
 
             <button title="Select" data-lang-title class="input-select-video" style="flex:none;">
-                <svg class="is-icon-flex"><use xlink:href="#ion-more"></use></svg>
+                <svg class="is-icon-flex"><use xlink:href="#icon-folder"></use></svg>
             </button>
         </div>
     </div>
@@ -219,7 +236,7 @@
                 <option value="top-left" data-lang>Top Left</option>
                 <option value="top-right" data-lang>Top Right</option>
                 <option value="bottom-left" data-lang>Bottom Left</option>
-                <option value="bottom-right" selected data-lang>Bottom right</option>
+                <option value="bottom-right" selected data-lang>Bottom Right</option>
             </select>
 
             <label for="btnControlColor" style="padding:0;">
@@ -245,6 +262,64 @@
         var inpVideoControlPos = document.querySelector('#inpVideoControlPos');
         var btnControlColor = document.querySelector("#btnControlColor");
 
+
+        var builder = parent.contentbox || parent._cb;
+
+        // ---- Upload Video ----
+        var base64Video = ''; // demo support using base64
+        var inpVideoFile = document.querySelector("#inpVideoFile");
+        var btnUploadVideo = document.querySelector(".input-upload-video");
+        if(builder.onVideoUpload) {
+            btnUploadVideo.style.display = ''; // show
+
+            btnUploadVideo.addEventListener('click', () => {
+                inpVideoFile.click();
+            });
+            inpVideoFile.addEventListener('change', (e) => {
+                // Start uploading
+                builder.editor.onAssetUpload = (url) => {
+                    // finish uploading
+                    if(url.indexOf('base64')!==-1) {
+                        inpMP4.value = 'video (base64)';
+                        base64Video = url;
+                    } else {
+                        inpMP4.value = url;
+                        base64Video = '';
+                    }
+                }
+                builder.onVideoUpload(e);
+            });
+        }
+        // ---- /Upload Video ----
+
+        // ---- Upload Poster ----
+        var base64VPoster = ''; // demo support using base64
+        var inpPosterFile = document.querySelector("#inpPosterFile");
+        var btnUploadPoster = document.querySelector(".input-upload-poster");
+        if(builder.onImageUpload) {
+            btnUploadPoster.style.display = ''; // show
+
+            btnUploadPoster.addEventListener('click', () => {
+                inpPosterFile.click();
+            });
+            inpPosterFile.addEventListener('change', (e) => {
+                // Start uploading
+                builder.editor.onAssetUpload = (url) => {
+                    // finish uploading
+                    base64VPoster = '';
+                    if(url.indexOf('base64')!==-1) {
+                        inpPoster.value = 'image (base64)';
+                        base64VPoster = url;
+                    } else {
+                        inpPoster.value = url;
+                        base64VPoster = '';
+                    }
+                }
+                builder.onImageUpload(e);
+            });
+        }
+        // ---- /Upload Poster ----
+
         var btnSelect = document.querySelector('.input-select');
         if (parent._cb.opts.onVideoSelectClick || parent._cb.opts.videoSelect ) {
             var inpMP4 = document.querySelector('#txtMP4');
@@ -269,8 +344,24 @@
         if (settings != 'undefined') {
             try {
                 var json = JSON.parse(settings);
-                inpMP4.value = json[0].mp4;
-                inpPoster.value = json[0].poster;
+
+                if(json[0].mp4.indexOf('base64')!==-1) {
+                    inpMP4.value = 'video (base64)';
+                    base64Video = json[0].mp4;
+                } else {
+                    inpMP4.value = json[0].mp4;
+                    base64Video = '';
+                }
+
+                if(json[0].poster.indexOf('base64')!==-1) {
+                inpPoster.value = '';
+                    inpPoster.value = 'image (base64)';
+                    base64VPoster = json[0].poster;
+                } else { 
+                    inpPoster.value = json[0].poster;
+                    base64VPoster = '';
+                }
+
                 inpOpacity.value = json[0].overlay;
 
                 chkShowPlayButton.checked = false;
@@ -376,7 +467,7 @@
                 btnControlColor.setAttribute('data-color', color); // save color value for later read when needed
 
 
-            }, currentColor);
+            }, currentColor, ()=>{}, btnControlColor);
         });
 
 
@@ -420,6 +511,13 @@
         function construct() {
             var inpMP4 = document.querySelector('#txtMP4');
             var inpPoster = document.querySelector('#txtPoster');
+
+            var videoUrl = inpMP4.value;
+            if(videoUrl==='video (base64)') videoUrl = base64Video;
+
+            var posterUrl = inpPoster.value;
+            if(posterUrl==='image (base64)') posterUrl = base64VPoster;
+
             var inpOpacity = document.querySelector('#txtOverlay');
             var chkShowPlayButton = document.querySelector('#chkShowPlayButton');
             var chkShowMuteButton = document.querySelector('#chkShowMuteButton');
@@ -484,8 +582,8 @@
                 }
                 `}
             </div>
-            <video id="{id}" class="is-video-bg"${inpPoster.value!==''?` poster="${inpPoster.value}"`:''} loop playsinline${chkAutoplay.checked?' muted autoplay':''}>
-                <source src="{assetpath}videos/blank.mp4" data-default="${inpMP4.value}"${vs}>
+            <video id="{id}" class="is-video-bg"${inpPoster.value!==''?` poster="${posterUrl}"`:''} loop playsinline${chkAutoplay.checked?' muted autoplay':''}>
+                <source src="{assetpath}videos/blank.mp4" data-default="${videoUrl}"${vs}>
             </video>
             <div class="is-overlay-video" style="opacity:${inpOpacity.value}"></div>
 
@@ -763,7 +861,7 @@
 
             setHtml(html);
 
-            var settings = '[{"mp4":"' + inpMP4.value + '","poster":"' + inpPoster.value + '","videos":[' + jsonItem + '],"overlay":' + inpOpacity.value + ',"controlPlay":' + chkShowPlayButton.checked + ',"controlMute":' + chkShowMuteButton.checked + ',"autoplay":' + chkAutoplay.checked + ',"pos":"' + inpVideoControlPos.value + '","controlColor":"' + controlColor + '"}]';
+            var settings = '[{"mp4":"' + videoUrl + '","poster":"' + posterUrl + '","videos":[' + jsonItem + '],"overlay":' + inpOpacity.value + ',"controlPlay":' + chkShowPlayButton.checked + ',"controlMute":' + chkShowMuteButton.checked + ',"autoplay":' + chkAutoplay.checked + ',"pos":"' + inpVideoControlPos.value + '","controlColor":"' + controlColor + '"}]';
 
             setSettings(settings);
         }
@@ -878,7 +976,12 @@
 
     <svg width="0" height="0" style="position:absolute;display:none;">
         <defs>
-            <symbol viewBox="0 0 512 512" id="ion-more"><path d="M113.7 304C86.2 304 64 282.6 64 256c0-26.5 22.2-48 49.7-48 27.6 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48zM256 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.3-48 49.8-48 27.5 0 49.7 21.5 49.7 48 0 26.6-22.2 48-49.7 48zM398.2 304c-27.5 0-49.8-21.4-49.8-48 0-26.5 22.2-48 49.8-48 27.5 0 49.8 21.5 49.8 48 0 26.6-22.2 48-49.8 48z"></path></symbol>
+            <symbol id="icon-folder" viewBox="0 0 24 24" stroke-width="1" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                <path d="M11 19h-6a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2h4l3 3h7a2 2 0 0 1 2 2v2.5"></path>
+                <path d="M18 18m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0"></path>
+                <path d="M20.2 20.2l1.8 1.8"></path>
+            </symbol>
         </defs>
     </svg>
 </body>

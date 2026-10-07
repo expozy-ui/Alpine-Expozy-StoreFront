@@ -1,0 +1,80 @@
+/* ===== Star Rating plugin =====
+   All selectors scoped under [data-cb-type="star-rating"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="star-rating"] {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    --sr-accent: #f59e0b;
+    --sr-empty: #d1d5db;
+    --sr-text: #1a1a1a;
+    --sr-muted: #6b7280;
+    --sr-size: 22px;       /* medium (see size overrides) */
+}
+
+[data-cb-type="star-rating"][data-cb-size="small"] { --sr-size: 16px; }
+[data-cb-type="star-rating"][data-cb-size="large"] { --sr-size: 30px; }
+
+/* Editor-only: this block hugs its content (inline-flex), so the floating
+   settings/tool icons land on top of the caption. Reserve space on the right
+   while editing — the rendered page is unaffected (no body.data-editor there). */
+body.data-editor [data-cb-type="star-rating"] {
+    padding-right: 44px;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so to enable dark mode you only need to
+   redefine the palette below under whatever trigger your site uses — a class,
+   [data-theme="dark"], @media (prefers-color-scheme: dark), etc. Uncomment and
+   change the selector to match your site's theme system.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here to avoid the editor
+   repainting your content while you edit.
+
+.dark [data-cb-type="star-rating"] {
+    --sr-empty: #4b5563;
+    --sr-text: #f3f4f6;
+    --sr-muted: #9ca3af;
+}
+*/
+
+/* Stars: an empty (gray) layer with an accent-colored layer clipped on top */
+[data-cb-type="star-rating"] .sr-stars {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: var(--sr-size);
+    line-height: 1;
+    letter-spacing: 2px;
+}
+
+[data-cb-type="star-rating"] .sr-stars-bg {
+    color: var(--sr-empty);
+}
+
+[data-cb-type="star-rating"] .sr-stars-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    color: var(--sr-accent);
+}
+
+[data-cb-type="star-rating"] .sr-value {
+    font-size: calc(var(--sr-size) * 0.72);
+    font-weight: 700;
+    color: var(--sr-text);
+    font-variant-numeric: tabular-nums;
+}
+
+[data-cb-type="star-rating"][data-cb-show-value="false"] .sr-value { display: none; }
+
+[data-cb-type="star-rating"] .sr-caption {
+    font-size: 14px;
+    color: var(--sr-muted);
+}
+
+[data-cb-type="star-rating"] .sr-caption:empty { display: none; }

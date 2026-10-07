@@ -1,0 +1,887 @@
+.practice-menu {
+    --pm-bg-light: #ffffff;
+    --pm-text-light: #0f0f0f;
+    --pm-text-muted-light: #737373;
+    --pm-border-light: rgba(0, 0, 0, 0.06);
+    --pm-accent-light: #0f0f0f;
+    
+    --pm-bg-dark: #0a0a0a;
+    --pm-text-dark: #fafafa;
+    --pm-text-muted-dark: #a3a3a3;
+    --pm-border-dark: rgba(255, 255, 255, 0.08);
+    --pm-accent-dark: #fafafa;
+    
+    --pm-height-default: 64px;
+    --pm-height-scrolled: 56px;
+    --pm-max-width: 1280px;
+    --pm-padding-x: 32px;
+    --pm-logo-size: 16px;
+    --pm-link-size: 14px;
+    --pm-link-gap: 40px;
+    --pm-mobile-link-size: 26px;
+    --pm-mobile-link-gap: 32px;
+    
+    --pm-cta-size: 13px;
+    --pm-cta-padding: 9px 20px;
+    --pm-cta-border-radius: 22px;
+    --pm-mobile-cta-size: 16px;
+    --pm-mobile-cta-padding: 14px;
+    
+    /* CTA Button - Light Mode */
+    --pm-cta-bg-light: #0f0f0f;
+    --pm-cta-text-light: #ffffff;
+    --pm-cta-border-light: transparent;
+    --pm-cta-bg-hover-light: rgba(236, 236, 238, 1);
+    --pm-cta-text-hover-light: #0f0f0f;
+    --pm-cta-border-hover-light: transparent;
+    --pm-cta-opacity-hover: 0.85;
+    
+    /* CTA Button - Dark Mode */
+    --pm-cta-bg-dark: #ffffff;
+    --pm-cta-text-dark: #0f0f0f;
+    --pm-cta-border-dark: transparent;
+    --pm-cta-bg-hover-dark: #ffffff;
+    --pm-cta-text-hover-dark: #0f0f0f;
+    --pm-cta-border-hover-dark: transparent;
+    
+    --pm-hamburger-width: 22px;
+    --pm-hamburger-height: 2px;
+    --pm-hamburger-gap: 6px;
+    
+    --pm-dropdown-bg-light: #ffffff;
+    --pm-dropdown-bg-dark: #2b2b2b;
+    --pm-dropdown-shadow-light: 0 8px 32px rgba(0, 0, 0, 0.08), 0 2px 8px rgba(0, 0, 0, 0.04);
+    --pm-dropdown-shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.5), 0 2px 8px rgba(0, 0, 0, 0.3);
+    --pm-dropdown-min-width: 200px;
+    --pm-dropdown-padding: 6px;
+    --pm-dropdown-item-padding: 10px 16px;
+    --pm-dropdown-border-radius: 12px;
+    --pm-dropdown-offset: 8px;
+    --pm-dropdown-hover-bg-light: #f5f5f5;
+    --pm-dropdown-hover-bg-dark: #262626;
+    
+    --pm-transition: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    --pm-mobile-transition: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    --pm-dropdown-transition: 0.18s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --pm-z-nav: 1002;
+    --pm-z-toggle: 1002;
+    --pm-z-dropdown: 1003;
+    
+    --pm-bg: var(--pm-bg-light);
+    --pm-text: var(--pm-text-light);
+    --pm-text-muted: var(--pm-text-muted-light);
+    --pm-border: var(--pm-border-light);
+    --pm-accent: var(--pm-accent-light);
+    --pm-dropdown-bg: var(--pm-dropdown-bg-light);
+    --pm-dropdown-shadow: var(--pm-dropdown-shadow-light);
+    --pm-dropdown-hover-bg: var(--pm-dropdown-hover-bg-light);
+    
+    /* CTA Runtime Variables */
+    --pm-cta-bg: var(--pm-cta-bg-light);
+    --pm-cta-text: var(--pm-cta-text-light);
+    --pm-cta-border: var(--pm-cta-border-light);
+    --pm-cta-bg-hover: var(--pm-cta-bg-hover-light);
+    --pm-cta-text-hover: var(--pm-cta-text-hover-light);
+    --pm-cta-border-hover: var(--pm-cta-border-hover-light);
+}
+
+/* =========================================
+   BASE MENU STYLES
+   ========================================= */
+
+.practice-menu {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: var(--pm-z-nav);
+    background: var(--pm-bg);
+    border-bottom: 1px solid var(--pm-border);
+    transition: background var(--pm-transition), 
+                border-color var(--pm-transition),
+                backdrop-filter var(--pm-transition);
+}
+
+.practice-menu--scrolled {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+/* Custom adjustment for section after the menu */
+/* .practice-menu + .is-section {
+    margin-top: -65px !important;
+} */
+
+/* Custom adjustment for section after the menu to make it fully visible on viewport */
+.practice-menu + .is-section-10 { min-height: calc(10vh - 65px) !important; }
+.practice-menu + .is-section-15 { min-height: calc(15vh - 65px) !important; }
+.practice-menu + .is-section-20 { min-height: calc(20vh - 65px) !important; }
+.practice-menu + .is-section-25 { min-height: calc(25vh - 65px) !important; }
+.practice-menu + .is-section-30 { min-height: calc(30vh - 65px) !important; }
+.practice-menu + .is-section-40 { min-height: calc(40vh - 65px) !important; }
+.practice-menu + .is-section-50 { min-height: calc(50vh - 65px) !important; }
+.practice-menu + .is-section-60 { min-height: calc(60vh - 65px) !important; }
+.practice-menu + .is-section-70 { min-height: calc(70vh - 65px) !important; }
+.practice-menu + .is-section-75 { min-height: calc(75vh - 65px) !important; }
+.practice-menu + .is-section-80 { min-height: calc(80vh - 65px) !important; }
+.practice-menu + .is-section-85 { min-height: calc(85vh - 65px) !important; }
+.practice-menu + .is-section-90 { min-height: calc(90vh - 65px) !important; }
+.practice-menu + .is-section-100 { min-height: calc(100vh - 65px) !important; }
+
+.practice-menu + .box-canvas.is-section-10 { height: calc(10vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-15 { height: calc(15vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-20 { height: calc(20vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-25 { height: calc(25vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-30 { height: calc(30vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-40 { height: calc(40vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-50 { height: calc(50vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-60 { height: calc(60vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-70 { height: calc(70vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-75 { height: calc(75vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-80 { height: calc(80vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-85 { height: calc(85vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-90 { height: calc(90vh - 65px) !important; }
+.practice-menu + .box-canvas.is-section-100 { height: calc(100vh - 65px) !important; }
+
+.practice-menu *,
+.practice-menu *::before,
+.practice-menu *::after {
+    box-sizing: border-box;
+}
+
+/* =========================================
+   WRAPPER
+   ========================================= */
+
+.practice-menu__wrapper {
+    max-width: var(--pm-max-width);
+    margin: 0 auto;
+    padding: 0 var(--pm-padding-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--pm-height-default);
+    transition: height var(--pm-transition);
+}
+
+.practice-menu--scrolled .practice-menu__wrapper {
+    height: var(--pm-height-scrolled);
+}
+
+/* =========================================
+   LOGO
+   ========================================= */
+
+.practice-menu__logo-link {
+    font-size: var(--pm-logo-size);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    text-decoration: none;
+    color: var(--pm-text);
+    z-index: var(--pm-z-toggle);
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", system-ui, sans-serif;
+    transition: color var(--pm-transition), opacity var(--pm-transition);
+    display: flex;
+    align-items: center;
+}
+
+.practice-menu__logo-link:focus-visible {
+    outline: 2px solid var(--pm-text);
+    outline-offset: 6px;
+    border-radius: 4px;
+}
+
+/* =========================================
+   LOGO VARIANTS (Text, Image, Combo)
+   ========================================= */
+
+/* Logo Combo Container (Image + Text) */
+.practice-menu__logo-combo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Logo Image Container */
+.practice-menu__logo-image {
+    height: 44px;
+    width: 44px;
+    overflow: hidden;
+    display: inline-block;
+    transition: all var(--pm-transition);
+}
+
+.practice-menu__logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Rounded (Circle) Logo Variant */
+.practice-menu__logo-image--rounded {
+    border-radius: 50%;
+}
+
+/* Normal Logo Variant (Auto Width) */
+.practice-menu__logo-image--normal {
+    width: auto;
+    aspect-ratio: auto;
+}
+
+.practice-menu__logo-image--normal img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+/* Scrolled State - Shrink Logo */
+.practice-menu--scrolled .practice-menu__logo-image {
+    height: 38px;
+}
+
+.practice-menu--scrolled .practice-menu__logo-image--rounded {
+    width: 38px;
+}
+
+/* =========================================
+   HAMBURGER BUTTON
+   ========================================= */
+
+.practice-menu__toggle {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+.practice-menu__toggle-button {
+    display: none;
+    cursor: pointer;
+    z-index: var(--pm-z-toggle);
+    padding: 20px 12px;
+    margin-right: -12px;
+    user-select: none;
+    background: none;
+    border: none;
+    position: relative;
+    border-radius: 6px;
+    transition: background var(--pm-transition);
+    /* Fix Mobile Input Delay */
+    touch-action: manipulation;
+}
+
+.practice-menu__toggle-button:hover {
+    background: var(--pm-dropdown-hover-bg);
+}
+
+.practice-menu__hamburger {
+    width: var(--pm-hamburger-width);
+    height: var(--pm-hamburger-height);
+    background: var(--pm-text);
+    display: block;
+    position: relative;
+    transition: var(--pm-transition);
+    border-radius: 2px;
+}
+
+.practice-menu__hamburger::before,
+.practice-menu__hamburger::after {
+    content: '';
+    width: var(--pm-hamburger-width);
+    height: var(--pm-hamburger-height);
+    background: var(--pm-text);
+    position: absolute;
+    left: 0;
+    transition: var(--pm-transition);
+    border-radius: 2px;
+}
+
+.practice-menu__hamburger::before {
+    top: calc(-1 * (var(--pm-hamburger-height) + var(--pm-hamburger-gap)));
+}
+
+.practice-menu__hamburger::after {
+    bottom: calc(-1 * (var(--pm-hamburger-height) + var(--pm-hamburger-gap)));
+}
+
+/* =========================================
+   NAVIGATION LIST
+   ========================================= */
+
+.practice-menu__nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: var(--pm-link-gap);
+    align-items: center;
+}
+
+.practice-menu__nav-item {
+    position: relative;
+}
+
+/* =========================================
+   LINK WRAPPER (for split click targets)
+   ========================================= */
+
+.practice-menu__link-wrapper {
+    display: contents;
+}
+
+/* =========================================
+   NAVIGATION LINKS
+   ========================================= */
+
+.practice-menu__nav-link {
+    font-size: var(--pm-link-size);
+    font-weight: 450;
+    color: var(--pm-text);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    transition: color var(--pm-transition), opacity var(--pm-transition);
+    position: relative;
+    letter-spacing: -0.01em;
+    /* Fix Mobile Input Delay */
+    touch-action: manipulation;
+}
+
+.practice-menu__nav-link:focus-visible {
+    color: var(--pm-text);
+    opacity: 0.6;
+    outline: 2px solid var(--pm-text);
+    outline-offset: 6px;
+    border-radius: 4px;
+}
+
+/* Only apply hover opacity on Desktop */
+@media (min-width: 769px) {
+    .practice-menu__nav-link:hover {
+        opacity: 0.8;
+    }
+}
+
+/* =========================================
+   ARROW / CARET STYLES
+   ========================================= */
+
+/* Dropdown indicator - REPLACED WITH CHEVRON FOR STABILITY */
+.practice-menu__nav-link--has-dropdown::after {
+    content: '';
+    width: 6px;
+    height: 6px;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0; /* Creates Chevron */
+    transform: rotate(45deg);
+    transform-origin: center;
+    transition: all var(--pm-dropdown-transition);
+    opacity: 0.6;
+    margin-top: -2px; 
+}
+
+/* Rotate when OPEN (45 + 180 = 225) */
+.practice-menu__nav-item--open > .practice-menu__nav-link--has-dropdown::after,
+.practice-menu__nav-item--open > .practice-menu__link-wrapper > .practice-menu__nav-link--has-dropdown::after {
+    transform: rotate(225deg);
+    margin-top: 2px; 
+}
+
+/* Desktop Hover Rotation */
+@media (min-width: 769px) {
+    .practice-menu__nav-item:hover > .practice-menu__nav-link--has-dropdown::after,
+    .practice-menu__nav-item:hover > .practice-menu__link-wrapper > .practice-menu__nav-link--has-dropdown::after {
+        transform: rotate(225deg);
+    }
+}
+
+/* =========================================
+   DROPDOWN TOGGLE BUTTON (hidden on desktop)
+   ========================================= */
+
+.practice-menu__dropdown-toggle {
+    display: none;
+}
+
+/* =========================================
+   CTA BUTTON
+   ========================================= */
+
+.practice-menu__nav-actions {
+    margin-left: 8px;
+}
+
+.practice-menu__cta-button {
+    font-size: var(--pm-cta-size);
+    font-weight: 500;
+    color: var(--pm-cta-text);
+    background: var(--pm-cta-bg);
+    border: 1px solid var(--pm-cta-border);
+    padding: var(--pm-cta-padding);
+    border-radius: var(--pm-cta-border-radius);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all var(--pm-transition);
+    letter-spacing: -0.01em;
+    touch-action: manipulation;
+}
+
+/* .practice-menu__cta-button:hover,
+.practice-menu__cta-button:focus-visible {
+    background: var(--pm-cta-bg-hover);
+    color: var(--pm-cta-text-hover);
+    border-color: var(--pm-cta-border-hover);
+    opacity: var(--pm-cta-opacity-hover);
+} */
+.practice-menu__cta-button:hover {
+    opacity: var(--pm-cta-opacity-hover);
+}
+.practice-menu__cta-button:focus-visible {
+    outline: 2px solid var(--pm-text);
+    outline-offset: 4px;
+}
+
+/* =========================================
+   DROPDOWN MENUS (Shared Base)
+   ========================================= */
+
+.practice-menu__dropdown {
+    background: var(--pm-dropdown-bg);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    z-index: var(--pm-z-dropdown);
+}
+
+/* =========================================
+   DESKTOP DROPDOWNS (min-width: 769px)
+   ========================================= */
+
+@media (min-width: 769px) {
+    .practice-menu__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%) translateY(-8px);
+        box-shadow: var(--pm-dropdown-shadow);
+        border-radius: var(--pm-dropdown-border-radius);
+        padding: var(--pm-dropdown-padding);
+        min-width: var(--pm-dropdown-min-width);
+        margin-top: var(--pm-dropdown-offset);
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity var(--pm-dropdown-transition),
+                    visibility var(--pm-dropdown-transition),
+                    transform var(--pm-dropdown-transition);
+    }
+
+    /* Desktop Hover/Open States */
+    .practice-menu__nav-item:hover > .practice-menu__dropdown,
+    .practice-menu__nav-item--open > .practice-menu__dropdown,
+    .practice-menu__dropdown-item:hover > .practice-menu__dropdown,
+    .practice-menu__dropdown-item--open > .practice-menu__dropdown {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    /* Dropdown items need position relative for nested dropdown positioning */
+    .practice-menu__dropdown-item {
+        position: relative;
+    }
+
+    /* Desktop Nested dropdowns */
+    .practice-menu__dropdown .practice-menu__dropdown {
+        top: 0;
+        left: 100%;
+        margin-left: 6px;
+        margin-top: 0;
+        transform: translateX(-8px) translateY(0);
+    }
+
+    .practice-menu__dropdown-item:hover > .practice-menu__dropdown,
+    .practice-menu__dropdown-item--open > .practice-menu__dropdown {
+        transform: translateX(0) translateY(0);
+    }
+
+    /* =========================================
+       DROPDOWN OVERFLOW ADJUSTMENTS
+       ========================================= */
+    
+    /* When dropdown overflows right - align to right edge of parent */
+    .practice-menu__dropdown--align-right {
+        left: auto;
+        right: 50%;
+        transform: translateX(50%) translateY(0);
+    }
+    
+    /* When dropdown overflows left - align to left edge of parent */
+    .practice-menu__dropdown--align-left {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%) translateY(0);
+    }
+    
+    /* Nested dropdown flip - open to left instead of right */
+    .practice-menu__dropdown .practice-menu__dropdown--flip-left {
+        left: auto;
+        right: 100%;
+        margin-left: 0;
+        margin-right: 6px;
+    }
+
+    /* Desktop Extras */
+    .practice-menu__dropdown-header {
+        padding: 12px 16px 8px;
+        font-size: 12px;
+        font-weight: 600;
+        color: var(--pm-text-muted);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+
+    .practice-menu__dropdown-divider {
+        height: 1px;
+        background: var(--pm-border);
+        margin: 6px 8px;
+    }
+}
+
+/* =========================================
+   DROPDOWN LINKS
+   ========================================= */
+
+.practice-menu__dropdown-link {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: var(--pm-dropdown-item-padding);
+    color: var(--pm-text);
+    text-decoration: none;
+    font-size: var(--pm-link-size);
+    font-weight: 450;
+    transition: all var(--pm-dropdown-transition);
+    border-radius: 8px;
+    letter-spacing: -0.01em;
+    touch-action: manipulation;
+}
+
+.practice-menu__dropdown-link:hover,
+.practice-menu__dropdown-link:focus-visible {
+    background: var(--pm-dropdown-hover-bg);
+    color: var(--pm-text);
+}
+
+.practice-menu__dropdown-link--has-dropdown {
+    padding-right: 32px;
+}
+
+/* Dropdown link arrows (Chevron) */
+.practice-menu__dropdown-link--has-dropdown::after {
+    content: '';
+    position: absolute;
+    right: 16px;
+    width: 6px;
+    height: 6px;
+    border: solid currentColor;
+    border-width: 0 1.5px 1.5px 0;
+    transform: rotate(-45deg); /* Point right for nested */
+    transform-origin: center;
+    opacity: 0.5;
+    transition: transform var(--pm-dropdown-transition), opacity var(--pm-dropdown-transition);
+}
+
+.practice-menu__dropdown-link--has-dropdown:hover::after {
+    opacity: 1;
+}
+
+/* =========================================
+   THEME SWITCHING
+   ========================================= */
+
+.practice-menu--theme-light {
+    --pm-bg: var(--pm-bg-light);
+    --pm-text: var(--pm-text-light);
+    --pm-text-muted: var(--pm-text-muted-light);
+    --pm-border: var(--pm-border-light);
+    --pm-accent: var(--pm-accent-light);
+    --pm-dropdown-bg: var(--pm-dropdown-bg-light);
+    --pm-dropdown-shadow: var(--pm-dropdown-shadow-light);
+    --pm-dropdown-hover-bg: var(--pm-dropdown-hover-bg-light);
+    --pm-cta-bg: var(--pm-cta-bg-light);
+    --pm-cta-text: var(--pm-cta-text-light);
+    --pm-cta-border: var(--pm-cta-border-light);
+    --pm-cta-bg-hover: var(--pm-cta-bg-hover-light);
+    --pm-cta-text-hover: var(--pm-cta-text-hover-light);
+    --pm-cta-border-hover: var(--pm-cta-border-hover-light);
+    --pm-cta-opacity-hover: 0.9;
+}
+
+.practice-menu--theme-dark {
+    --pm-bg: var(--pm-bg-dark);
+    --pm-text: var(--pm-text-dark);
+    --pm-text-muted: var(--pm-text-muted-dark);
+    --pm-border: var(--pm-border-dark);
+    --pm-accent: var(--pm-accent-dark);
+    --pm-dropdown-bg: var(--pm-dropdown-bg-dark);
+    --pm-dropdown-shadow: var(--pm-dropdown-shadow-dark);
+    --pm-dropdown-hover-bg: var(--pm-dropdown-hover-bg-dark);
+    --pm-cta-bg: var(--pm-cta-bg-dark);
+    --pm-cta-text: var(--pm-cta-text-dark);
+    --pm-cta-border: var(--pm-cta-border-dark);
+    --pm-cta-bg-hover: var(--pm-cta-bg-hover-dark);
+    --pm-cta-text-hover: var(--pm-cta-text-hover-dark);
+    --pm-cta-border-hover: var(--pm-cta-border-hover-dark);
+    --pm-cta-opacity-hover: 0.95;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (≤768px)
+   ========================================= */
+
+@media (max-width: 768px) {
+    .practice-menu__wrapper {
+        padding: 0 20px;
+    }
+
+    .practice-menu__toggle-button {
+        display: block;
+    }
+
+    .practice-menu__nav-list {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: min(340px, 85vw);
+        height: 100vh;
+        height: 100dvh;
+        background: var(--pm-bg);
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 80px 24px 32px;
+        transform: translateX(110%);
+        transition: transform var(--pm-mobile-transition);
+        overflow-y: auto;
+        box-shadow: -8px 0 32px rgba(0, 0, 0, 0.1);
+        z-index: var(--pm-z-nav);
+    }
+
+    .practice-menu__nav-item {
+        width: 100%;
+        border-bottom: 1px solid var(--pm-border);
+    }
+
+    /* =========================================
+       MOBILE LINK WRAPPER - Split click targets
+       ========================================= */
+
+    .practice-menu__link-wrapper {
+        display: flex;
+        align-items: stretch;
+        width: 100%;
+    }
+
+    .practice-menu__nav-link {
+        font-size: var(--pm-mobile-link-size);
+        padding: 16px 0;
+        font-weight: 500;
+    }
+
+    /* Link inside wrapper - no chevron, flex grow */
+    .practice-menu__link-wrapper .practice-menu__nav-link {
+        flex: 1;
+        padding-right: 12px;
+    }
+
+    /* Hide inline chevron when wrapper is used */
+    .practice-menu__link-wrapper .practice-menu__nav-link--has-dropdown::after {
+        display: none;
+    }
+
+    .practice-menu__nav-link--has-dropdown::after {
+        margin-left: auto;
+    }
+
+    /* Mobile dropdown toggle button */
+    .practice-menu__dropdown-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        min-width: 50px;
+        background: transparent;
+        border: none;
+        border-left: 1px solid var(--pm-border);
+        cursor: pointer;
+        color: var(--pm-text);
+        padding: 0;
+        transition: background var(--pm-transition);
+        touch-action: manipulation;
+    }
+
+    .practice-menu__dropdown-toggle:hover {
+        background: var(--pm-dropdown-hover-bg);
+    }
+
+    .practice-menu__dropdown-toggle:focus-visible {
+        outline: 2px solid var(--pm-text);
+        outline-offset: -4px;
+    }
+
+    /* Chevron inside toggle button */
+    .practice-menu__dropdown-toggle::after {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border: solid currentColor;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+        transition: transform var(--pm-dropdown-transition);
+        opacity: 0.6;
+    }
+
+    /* Rotate chevron when open */
+    .practice-menu__nav-item--open > .practice-menu__link-wrapper > .practice-menu__dropdown-toggle::after {
+        transform: rotate(225deg);
+    }
+
+    /* Mobile Logo Size */
+    .practice-menu__logo-image {
+        height: 38px;
+        width: 38px;
+    }
+
+    .practice-menu__logo-image--normal {
+        width: auto;
+    }
+
+    /* 
+       ACCORDION LOGIC
+       We removed position:absolute, so these just flow naturally 
+    */
+    .practice-menu__dropdown {
+        display: block;
+        width: 100%;
+        min-width: auto;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height var(--pm-mobile-transition);
+        opacity: 1; /* Always opaque, controlled by height */
+        visibility: visible;
+        position: static;
+    }
+
+    /* Only Expand when OPEN class is present */
+    .practice-menu__nav-item--open > .practice-menu__dropdown,
+    .practice-menu__dropdown-item--open > .practice-menu__dropdown {
+        /* Fix Mobile Delay: Reduced from 2000px to avoid animating empty space */
+        max-height: 600px;
+        padding: 0;
+        overflow: visible;
+    }
+
+    .practice-menu__dropdown-link {
+        padding: 14px 0 14px 24px;
+        font-size: 16px;
+        background: transparent;
+        border-radius: 0;
+        color: var(--pm-text);
+        opacity: 0.85;
+    }
+
+    .practice-menu__dropdown-link:hover {
+        background: transparent;
+        opacity: 1;
+    }
+
+    /* Nested levels indentation */
+    .practice-menu__dropdown .practice-menu__dropdown .practice-menu__dropdown-link {
+        padding-left: 44px;
+        font-size: 15px;
+        opacity: 0.75;
+    }
+
+    .practice-menu__dropdown .practice-menu__dropdown .practice-menu__dropdown .practice-menu__dropdown-link {
+        padding-left: 64px;
+        font-size: 14px;
+        opacity: 0.65;
+    }
+
+    /* Mobile dropdown arrow */
+    .practice-menu__dropdown-link--has-dropdown::after {
+        position: static;
+        margin-left: auto;
+        transform: rotate(45deg); /* Reset to down arrow for mobile */
+        opacity: 0.6;
+        transition: transform var(--pm-dropdown-transition);
+    }
+
+    .practice-menu__dropdown-item--open > .practice-menu__dropdown-link--has-dropdown::after {
+        transform: rotate(225deg);
+    }
+
+    /* CTA in mobile */
+    .practice-menu__nav-actions {
+        width: 100%;
+        margin: 24px 0 0;
+        /* padding-top: 24px;
+        border-top: 1px solid var(--pm-border); */
+        border-bottom: none;
+    }
+
+    .practice-menu__cta-button {
+        width: 100%;
+        text-align: center;
+        font-size: var(--pm-mobile-cta-size);
+        padding: var(--pm-mobile-cta-padding);
+        justify-content: center;
+    }
+
+    /* Hide dropdown extras */
+    .practice-menu__dropdown-divider,
+    .practice-menu__dropdown-header {
+        display: none;
+    }
+    
+    /* =========================================
+       MENU OPEN STATE & ANIMATIONS
+       ========================================= */
+
+    /* Slide the menu in */
+    .practice-menu__toggle:checked ~ .practice-menu__wrapper .practice-menu__nav-list {
+        transform: none;
+    }
+
+    /* Hamburger -> Cross Animation */
+    .practice-menu__toggle:checked ~ .practice-menu__wrapper .practice-menu__toggle-button .practice-menu__hamburger {
+        background: transparent;
+    }
+
+    .practice-menu__toggle:checked ~ .practice-menu__wrapper .practice-menu__toggle-button .practice-menu__hamburger::before {
+        top: 0;
+        background: var(--pm-text);
+        transform: rotate(45deg);
+    }
+
+    .practice-menu__toggle:checked ~ .practice-menu__wrapper .practice-menu__toggle-button .practice-menu__hamburger::after {
+        bottom: 0;
+        background: var(--pm-text);
+        transform: rotate(-45deg);
+    }
+
+    /* Prevent body scroll */
+    body:has(.practice-menu__toggle:checked) {
+        overflow: hidden;
+    }
+}

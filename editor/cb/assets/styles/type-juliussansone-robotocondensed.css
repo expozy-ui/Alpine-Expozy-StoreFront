@@ -13,12 +13,14 @@
     font-weight: 400;
 }        
 
-.type-juliussansone-robotocondensed h1 {font-size: 2.5rem;}
-.type-juliussansone-robotocondensed h2 {font-size: 1.8rem;}
-.type-juliussansone-robotocondensed h3 {font-size: 1.5rem;}
-.type-juliussansone-robotocondensed h4 {font-size: 1.3rem;}
-.type-juliussansone-robotocondensed h5 {font-size: 1.2rem;}
-.type-juliussansone-robotocondensed h6 {font-size: 1.1rem;}
+.type-juliussansone-robotocondensed h1 {font-size: 2.5rem; margin: 1.2rem 0 1.2rem; }
+.type-juliussansone-robotocondensed h2 {font-size: 1.8rem; margin: 1rem 0 1rem; }
+.type-juliussansone-robotocondensed h3 {font-size: 1.5rem; margin: 1rem 0 1rem; }
+.type-juliussansone-robotocondensed h4 {font-size: 1.3rem; margin: 0.5rem 0 0.5rem; }
+.type-juliussansone-robotocondensed h5 {font-size: 1.2rem; margin: 0.5rem 0 0.5rem; }
+.type-juliussansone-robotocondensed h6 {font-size: 1.1rem; margin: 0.5rem 0 0.5rem; }
+.type-juliussansone-robotocondensed p {margin:0.8rem 0 0.8rem;}
+/* .type-juliussansone-robotocondensed ul, .type-juliussansone-robotocondensed ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-juliussansone-robotocondensed .display { margin-bottom: 0.5rem; }
 .type-juliussansone-robotocondensed .display h1 {

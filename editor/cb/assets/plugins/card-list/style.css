@@ -1,0 +1,253 @@
+/* ===== Card List plugin =====
+   All selectors scoped under [data-cb-type="card-list"] so nothing leaks.
+   Colors run through CSS variables so dark mode is a variable override. */
+[data-cb-type="card-list"] {
+    position: relative;
+    width: 100%;
+    --accent-color: inherit;
+    --cl-card-bg: #ffffff;
+    --cl-card-border: #e5e7eb;
+    --cl-card-border-hover: #d1d5db;
+    --cl-media-bg: #e9ecef;
+    --cl-title: inherit;
+    --cl-desc: inherit;
+}
+
+/* ── Dark mode (opt-in — commented out) ───────────────────────────────────
+   Dark mode for a rendered block is the SITE's responsibility, not the plugin's.
+   Every color above is a CSS variable, so redefine the palette below under
+   whatever trigger your site uses — a class, [data-theme="dark"],
+   @media (prefers-color-scheme: dark), etc. Uncomment and point the selector at
+   your site's theme system. The accent color stays as configured.
+   NOTE: `.dark` is also the ContentBuilder editor's own UI theme, so on a page
+   that runs the editor, prefer a different class here.
+
+.dark [data-cb-type="card-list"] {
+    --cl-card-bg: #1f2937;
+    --cl-card-border: #374151;
+    --cl-card-border-hover: #4b5563;
+    --cl-media-bg: #111827;
+    --cl-title: #f3f4f6;
+    --cl-desc: #9ca3af;
+}
+*/
+
+/* Card Grid */
+[data-cb-type="card-list"] .card-list-grid {
+    display: grid;
+    gap: 16px;
+}
+
+/* Individual Card Item */
+[data-cb-type="card-list"] .card-item {
+    display: flex;
+    flex-direction: column;
+    background: var(--cl-card-bg);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--cl-card-border);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Base :hover is the shadow emphasis (also what existing embeds with no hover
+   attribute keep). No forced border color, so it respects the chosen Border Color.
+   The data-cb-hover rules below layer the lift on top. */
+[data-cb-type="card-list"] .card-item:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+/* Item Media */
+[data-cb-type="card-list"] .card-item .item-media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: var(--cl-media-bg);
+}
+
+[data-cb-type="card-list"] .card-item .item-media img,
+[data-cb-type="card-list"] .card-item .item-media video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+/* [data-cb-type="card-list"] .card-item:hover .item-media img,
+[data-cb-type="card-list"] .card-item:hover .item-media video {
+    transform: scale(1.05);
+} */
+
+/* Item Content */
+[data-cb-type="card-list"] .card-item .item-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+}
+
+[data-cb-type="card-list"] .card-item .item-content .item-title {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--cl-title);
+    margin: 0;
+    transition: color 0.2s ease;
+}
+
+/* [data-cb-type="card-list"] .card-item:hover .item-content .item-title {
+    color: var(--accent-color);
+} */
+
+[data-cb-type="card-list"] .card-item .item-content .item-description {
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--cl-desc);
+    margin: 0;
+}
+
+[data-cb-type="card-list"] .card-item .item-content .item-link {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-top: auto;
+    padding-top: 8px;
+    transition: color 0.2s ease;
+}
+
+[data-cb-type="card-list"] .card-item .item-content .item-link:hover {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+/* Focus Styles (WCAG Compliance) */
+[data-cb-type="card-list"] .card-item .item-content .item-link:focus-visible {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ── Flexible card controls (Background / Hover / Rounded) ─────────────────── */
+
+/* Card background. Transparent = see-through; Glass = the fill at reduced opacity
+   + a backdrop blur (frosted). Default "solid" uses the base --cl-card-bg above. */
+[data-cb-type="card-list"][data-cb-background="transparent"] .card-item {
+    background: transparent;
+}
+[data-cb-type="card-list"][data-cb-background="glass"] .card-item {
+    background: color-mix(in srgb, var(--cl-card-bg) 55%, transparent);
+    -webkit-backdrop-filter: blur(14px);
+    backdrop-filter: blur(14px);
+}
+
+/* Hover Effect. "Lift + Shadow" (default) keeps the base shadow and adds a raise;
+   "Lift" drops the extra shadow for a clean raise; "None" disables card + media hover. */
+[data-cb-type="card-list"][data-cb-hover="lift"] .card-item:hover,
+[data-cb-type="card-list"][data-cb-hover="lift-shadow"] .card-item:hover {
+    transform: translateY(-4px);
+}
+[data-cb-type="card-list"][data-cb-hover="lift"] .card-item:hover {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+[data-cb-type="card-list"][data-cb-hover="none"] .card-item:hover {
+    transform: none;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+[data-cb-type="card-list"][data-cb-hover="none"] .card-item:hover .item-media img,
+[data-cb-type="card-list"][data-cb-hover="none"] .card-item:hover .item-media video {
+    transform: none;
+}
+
+/* Rounded Corners off → square cards */
+[data-cb-type="card-list"][data-cb-rounded="false"] .card-item {
+    border-radius: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    [data-cb-type="card-list"] { padding: 16px; }
+    [data-cb-type="card-list"] .card-list-grid { padding: 16px; }
+    [data-cb-type="card-list"] .item-content { padding: 14px; }
+    [data-cb-type="card-list"] .item-title { font-size: 16px; }
+    [data-cb-type="card-list"] .item-description { font-size: 13px; }
+}
+
+@media (max-width: 768px) {
+    [data-cb-type="card-list"] { padding: 12px; }
+    [data-cb-type="card-list"] .card-list-grid {
+        padding: 12px;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 12px;
+    }
+    [data-cb-type="card-list"] .item-content { padding: 12px; }
+    [data-cb-type="card-list"] .item-title { font-size: 15px; }
+    [data-cb-type="card-list"] .item-description { font-size: 12.5px; }
+}
+
+@media (max-width: 480px) {
+    [data-cb-type="card-list"] { border-radius: 8px; }
+    [data-cb-type="card-list"] .card-list-grid { grid-template-columns: 1fr !important; }
+    [data-cb-type="card-list"] .card-item { border-radius: 6px; }
+}
+
+/* Loading State */
+[data-cb-type="card-list"][data-loading="true"] {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Video controls fade */
+[data-cb-type="card-list"] .item-media video::-webkit-media-controls {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+[data-cb-type="card-list"] .item-media:hover video::-webkit-media-controls {
+    opacity: 1;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    [data-cb-type="card-list"] .card-item,
+    [data-cb-type="card-list"] .item-media img,
+    [data-cb-type="card-list"] .item-media video,
+    [data-cb-type="card-list"] .item-title,
+    [data-cb-type="card-list"] .item-link {
+        transition: none !important;
+        animation: none !important;
+    }
+}
+
+/* High contrast */
+@media (prefers-contrast: high) {
+    [data-cb-type="card-list"] .card-item {
+        border: 2px solid currentColor;
+    }
+}
+
+/* Print */
+@media print {
+    [data-cb-type="card-list"] .card-item {
+        page-break-inside: avoid;
+        margin-bottom: 20px;
+    }
+    [data-cb-type="card-list"] .card-list-grid {
+        display: block;
+    }
+}
+
+/* Empty state (no content) */
+[data-cb-type="card-list"] .card-item:empty::before {
+    content: 'Add content to this item';
+    display: block;
+    padding: 40px 20px;
+    text-align: center;
+    color: #999;
+    font-size: 14px;
+}

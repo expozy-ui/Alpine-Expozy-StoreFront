@@ -1,0 +1,78 @@
+/* ==========================================================================
+   16. GALLERY MODERN — DM Serif Display + Inter
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@200;300;400;500;600;700&display=swap');
+
+.type-gallery-modern {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-gallery-modern h1,
+.type-gallery-modern h2,
+.type-gallery-modern h3,
+.type-gallery-modern h4,
+.type-gallery-modern h5,
+.type-gallery-modern h6 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+}
+
+.type-gallery-modern h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-gallery-modern h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-gallery-modern h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-gallery-modern h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-gallery-modern h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-gallery-modern h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-gallery-modern p {
+    margin: 0.75rem 0;
+}
+
+.type-gallery-modern .display {
+    margin-bottom: 2rem;
+}
+
+.type-gallery-modern .display h1 {
+    font-size: clamp(2.5rem, 6vw, 2.65rem);
+    line-height: 1.17;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-gallery-modern .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.15rem);
+    line-height: 1.5;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}

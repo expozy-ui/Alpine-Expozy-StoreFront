@@ -226,9 +226,7 @@
 
     const handleKeyDown = (e) => {
         if(e.keyCode === 27) { // escape key
-            var iframe = frameElement;
-            const modal = iframe.closest('.is-modal');
-            parent.hideModal(modal);
+            parent.closeAsset();
         }
     }
     document.addEventListener('keydown', handleKeyDown);

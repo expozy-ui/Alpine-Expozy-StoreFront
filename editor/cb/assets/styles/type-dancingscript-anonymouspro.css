@@ -14,12 +14,14 @@
     letter-spacing: 1px;
 }        
 
-.type-dancingscript-anonymouspro h1 {font-size: 3.5rem;}
-.type-dancingscript-anonymouspro h2 {font-size: 2.9rem;}
-.type-dancingscript-anonymouspro h3 {font-size: 2.5rem;}
-.type-dancingscript-anonymouspro h4 {font-size: 1.9rem;}
-.type-dancingscript-anonymouspro h5 {font-size: 1.6rem;}
-.type-dancingscript-anonymouspro h6 {font-size: 1.14rem;}
+.type-dancingscript-anonymouspro h1 {font-size: 3.5rem; margin: 1.2rem 0 1.2rem; }
+.type-dancingscript-anonymouspro h2 {font-size: 2.9rem; margin: 1rem 0 1rem; }
+.type-dancingscript-anonymouspro h3 {font-size: 2.5rem; margin: 1rem 0 1rem; }
+.type-dancingscript-anonymouspro h4 {font-size: 1.9rem; margin: 0.5rem 0 0.5rem; }
+.type-dancingscript-anonymouspro h5 {font-size: 1.6rem; margin: 0.5rem 0 0.5rem; }
+.type-dancingscript-anonymouspro h6 {font-size: 1.14rem; margin: 0.5rem 0 0.5rem; }
+.type-dancingscript-anonymouspro p {margin:0.8rem 0 0.8rem;}
+/* .type-dancingscript-anonymouspro ul, .type-dancingscript-anonymouspro ol { margin:0 0 1rem; padding-inline-start: 20px;} */
 
 .type-dancingscript-anonymouspro .display { margin-bottom: 0.5rem; }
 .type-dancingscript-anonymouspro .display h1 {

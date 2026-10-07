@@ -1,0 +1,78 @@
+/* ==========================================================================
+   30. FOUNDER MODE — Sora + Inter
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Sora:wght@300;400;500;600;700;800&display=swap');
+
+.type-founder-mode {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+.type-founder-mode h1,
+.type-founder-mode h2,
+.type-founder-mode h3,
+.type-founder-mode h4,
+.type-founder-mode h5,
+.type-founder-mode h6 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+}
+
+.type-founder-mode h1 {
+    font-size: clamp(2rem, 5vw, 2.25rem);
+    margin: 1.2rem 0;
+}
+
+.type-founder-mode h2 {
+    font-size: clamp(1.6rem, 4vw, 1.85rem);
+    margin: 1rem 0;
+}
+
+.type-founder-mode h3 {
+    font-size: clamp(1.4rem, 3.5vw, 1.6rem);
+    margin: 0.9rem 0;
+}
+
+.type-founder-mode h4 {
+    font-size: clamp(1.25rem, 3vw, 1.45rem);
+    margin: 0.8rem 0;
+}
+
+.type-founder-mode h5 {
+    font-size: clamp(1.125rem, 2.5vw, 1.3rem);
+    margin: 0.75rem 0;
+}
+
+.type-founder-mode h6 {
+    font-size: clamp(1rem, 2vw, 1.15rem);
+    margin: 0.75rem 0;
+}
+
+.type-founder-mode p {
+    margin: 0.75rem 0;
+}
+
+.type-founder-mode .display {
+    margin-bottom: 2rem;
+}
+
+.type-founder-mode .display h1 {
+    font-size: clamp(2.25rem, 5vw, 2.65rem);
+    line-height: 1.1;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.2rem;
+}
+
+.type-founder-mode .display p {
+    font-size: clamp(1.125rem, 1.8vw, 1.175rem);
+    line-height: 1.4;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 2.5rem;
+}
