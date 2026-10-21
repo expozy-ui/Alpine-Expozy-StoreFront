@@ -181,11 +181,6 @@ window.callModal = function (el) {
 };
 
 window.href = async function (url) {
-
-    if (!url.includes(LANG) && url != '/') {
-       url = `/${LANG}${url}`;
-    }
-
     history.pushState(null, null, url);
 
     data['pageUrl'] = [];
