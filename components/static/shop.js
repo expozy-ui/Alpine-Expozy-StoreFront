@@ -75,7 +75,6 @@ export let Shop = {
 
 	// CATEGORIES
 	get_categories: async function (dataCollect) {
-
 		let endpoint = Helpers.combineRequest('categories', dataCollect.combinedData);
 		let api = new ApiClass();
 		await api.get(endpoint, true);
