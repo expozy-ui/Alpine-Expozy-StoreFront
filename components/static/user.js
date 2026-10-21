@@ -10,9 +10,8 @@ export let User = {
 
 			api.response.user['logged_in'] = true;
 			response['obj'] = api.response.user;
-			data.user = response['obj'];
 
-			href('/userpage');
+			href('/');
 			localStorage.setItem('token', api.response.token);
 
 			fetch('/pages/editorLogin.php', {
@@ -34,17 +33,8 @@ export let User = {
 
 	// POST USERS
 	post_users: async function (dataCollect) {
-
 		let api = new ApiClass();
 		await api.post('users', dataCollect.combinedData);
-
-		if (api.response.status == 1) {
-			api.response.user['logged_in'] = true;
-			data.user = api.response.user;
-			href('/userpage');
-			localStorage.setItem('token', api.response.token);
-		}
-
 		return api.response;
 	},
 
