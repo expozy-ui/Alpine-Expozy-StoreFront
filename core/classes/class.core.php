@@ -26,6 +26,13 @@ class FrontCore
 
 		$rows = Api::cache(false)->get()->settings();
 
+		// Една неуспешна заявка (мрежа, празен отговор) не бива да сваля целия сайт
+		// в DDoS режим — опитваме още веднъж, преди да го включим.
+		if(is_array($rows) === false){
+			usleep(300000);
+			$rows = Api::cache(false)->get()->settings();
+		}
+
 		if(is_array($rows) === false ){
 			
 			DDos::change_status(1);

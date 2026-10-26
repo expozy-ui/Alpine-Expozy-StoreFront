@@ -49,12 +49,18 @@ class Users
     if(isset($_SESSION['email']) && $_SESSION['email'] != "") {
 		$row = $this->get_user_info();
 
+		// accounts не върна потребител (изтекъл токен, празен отговор) — третираме го като
+		// невлязъл, вместо Fatal error при запис на null в типизираните полета (int $id…)
+		if(!$this->valid_user($row)){
+			return false;
+		}
+
 		// $avatar =  Api::get()->users_avatar();
 
 		// $this->avatar = $image['url_10x10'];
 
 		$this->id = $row['id'];
-		$this->email = $row['email'];
+		$this->email = $row['email'] ?? '';
 		$this->names = $row['first_name'] . ' ' . $row['last_name'];
 		$this->first_name = $row['first_name'];
 		$this->last_name = $row['last_name'];
@@ -62,9 +68,9 @@ class Users
 		$this->phone_code = $row['phone_code'];
 		// $this->post_code = $row['address']['post_code'];
 		$this->balance = $row['balance']??'';
-		$this->userlevel = $row['userlevel'];
+		$this->userlevel = (int)($row['userlevel'] ?? 0);
 		$this->sesid = sha1(session_id());
-		$this->token = $row['token'];
+		$this->token = $row['token'] ?? '';
 		$this->date_created = $row['date_created'];
 		$this->addresses = $row['addresses'];
 		$this->company = $row['company'];
@@ -73,12 +79,15 @@ class Users
     } else {
 		if(isset($_COOKIE['email'])){
 			$row = $this->get_user_info();
+			if(!$this->valid_user($row)){
+				return false;
+			}
 			$this->id = $_SESSION['uid'] = $row['id'];
-			$this->email = $_SESSION['email'] = $row['email'];
+			$this->email = $_SESSION['email'] = $row['email'] ?? '';
 			$this->names = $_SESSION['names'] = $row['first_name'] . ' ' . $row['last_name'];
 			$this->balance = $_SESSION['balance'] = $row['balance'];
-			$this->userlevel = $_SESSION['userlevel'] = $row['userlevel'];
-			$this->token = $_SESSION['token'] = $row['token'];
+			$this->userlevel = $_SESSION['userlevel'] = (int)($row['userlevel'] ?? 0);
+			$this->token = $_SESSION['token'] = $row['token'] ?? '';
 			$this->sesid = sha1(session_id());
 			return true;
 		} else {
@@ -87,6 +96,13 @@ class Users
     }
   }
 	
+	/**
+	 * Отговорът на accounts е реален потребител (масив с id), а не грешка или празно.
+	 */
+	private function valid_user(mixed $row):bool{
+		return is_array($row) && !empty($row['id']);
+	}
+
 	private function _login(array $result):bool{
 		
 		if( ! isset($result['status']) ||  $result['status']==0) return false;
@@ -163,7 +179,12 @@ class Users
 	
 	public function loginByToken(string $token):bool {
 		$row = Api::data(['token'=>$token])->post()->token_verify();
-		
+
+		// Невалиден/изтекъл токен → API-то връща низ или празно — не е вход, не е Fatal error
+		if(!is_array($row)){
+			return false;
+		}
+
 		return $this->_login($row);
 		
 	}
