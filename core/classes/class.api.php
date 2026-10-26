@@ -42,6 +42,13 @@ class Api
 	    //require_once(BASEPATH.'core/api/loader.php');
 	}
 
+	/**
+	 * Токенът става за HTTP заглавка: само видими ASCII символи, разумна дължина.
+	 */
+	public static function valid_token(mixed $token):bool{
+		return is_string($token) && preg_match('/^[\x21-\x7E]{8,1024}$/', $token) === 1;
+	}
+
 	public static function get_id(){
 	    return static::$id;
 	}
@@ -61,6 +68,14 @@ class Api
 					"authentication: basic ".SAAS_KEY];
 		
 		
+		// Повреден токен (напр. разшифрован с грешен ключ — двоичен боклук) прави заглавката
+		// невалидна и curl не получава отговор → settings пада → сайтът влиза в DDoS режим.
+		// Затова такъв токен се маха и заявката минава като гост.
+		if(isset($_SESSION['token']) && !self::valid_token($_SESSION['token'])){
+			error_log('[api] невалиден токен в сесията — изтрит | '.($_SERVER['REQUEST_URI'] ?? ''));
+			unset($_SESSION['token']);
+		}
+
 		if(isset($_SESSION['token'])){
 		    // For logged users
 		    $headers[] = "authorization: bearer ".$_SESSION['token'];

@@ -1,0 +1,15 @@
+# Модулът се включва само през index.php — директен достъп е забранен.
+# Изключение: llms_txt.php, към който сочи /llms.txt от основния .htaccess.
+<IfModule mod_authz_core.c>
+	Require all denied
+	<Files "llms_txt.php">
+		Require all granted
+	</Files>
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+	<Files "llms_txt.php">
+		Allow from all
+	</Files>
+</IfModule>

@@ -1,0 +1,8 @@
+# Кешът на API-то (*.json) се чете само от PHP (core/classes/class.cache.php) — без публичен достъп.
+<IfModule mod_authz_core.c>
+	Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+	Order deny,allow
+	Deny from all
+</IfModule>

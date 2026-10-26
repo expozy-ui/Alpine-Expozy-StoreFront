@@ -22,7 +22,13 @@ class Page
 		
 	public bool $error404 = false;
 	public bool $private = false;
-	
+
+	// Обектът на динамичната страница (продукт, статия, категория), изтеглен в load_page().
+	// GeoOptimizer::headTags() и ai_version/ го ползват наготово — без втора заявка към API-то.
+	// $target_type: 'products' | 'blogPosts' | 'categories' | 'blogCategories' (endpoint-ът).
+	public array $target = [];
+	public string $target_type = '';
+
 	public string $html = '';
 	public string $header = '';
 	public string $footer = '';
@@ -158,33 +164,16 @@ class Page
 			if($this->type == 'post'){
 					$this->id = 16;
 					$target = Api::cache($cache)->id($this->target_id)->data(['resolution' => '10x10'])->get()->blogPosts();
-					
-					if($this->target_id > 0){
-						$this->seo_title = !empty(trim($target['seo_title'])) ? $target['seo_title'] : $target['title'];
-						$this->seo_description = !empty(trim($target['seo_description'])) ? $target['seo_description'] : $target['title']." ".$core->site_name;
+					$this->set_target('blogPosts', $target);
+
+					// Несъществуваща статия → 404 (иначе $target['title'] е null и PHP гърми)
+					if($this->target_id > 0 && !empty($target['id'])){
+						$this->seo_title = !empty(trim($target['seo_title'] ?? '')) ? $target['seo_title'] : $target['title'];
+						$this->seo_description = !empty(trim($target['seo_description'] ?? '')) ? $target['seo_description'] : $target['title']." ".$core->site_name;
 						$this->seo_image = $target['images'][0]['url'] ?? $core->web['logo'];
 						$this->seo_tags = $target['tags'] ?? $this->seo_title;
-						$this->error404 = $target ? false : true;
-						
-						$this->script = '<script type="application/ld+json">
-										{
-										  "@context": "https://schema.org",
-										  "@type": "NewsArticle",
-										  "url": "'.$target['url'].'",
-										   "publisher":{
-											  "@type":"Organization",
-											  "name":"Unicon",
-										    },
-										  "headline": "'.$target['title'].'",';
-						if(isset($target['images'][0])){
-							$this->script .=	 '"image": [
-												"'.$target['images'][0]['url'].'"
-											   ],';
-						}						
-
-						$this->script .=     '"datePublished": "'.str_replace(' ','T', $target['date_created']).'+00:00",
-										}
-										</script>';
+						$this->error404 = false;
+						// Article JSON-LD се генерира от GeoOptimizer::headTags() в <head>
 
 					} else {
 						$this->error404 = true;
@@ -196,6 +185,7 @@ class Page
 			} else if($this->type == 'product'){
 					$this->id = 13;
 					$target = Api::cache($cache)->id($this->target_id)->data(['resolution' => '10x10'])->get()->products();
+					$this->set_target('products', $target);
 					if(!empty($target) && $this->target_id > 0){
 						$this->seo_title = !empty(trim($target['seo_title'])) ? $target['seo_title'] : $target['title'];
 						$this->seo_description = !empty(trim($target['seo_description'])) ? $target['seo_description'] : $target['title']." ".$core->site_name;
@@ -213,7 +203,8 @@ class Page
 				
 				if($this->slug=='products'){
 						$target = Api::cache($cache)->id($this->target_id)->data(['resolution' => '10x10'])->get()->categories();
-						
+						$this->set_target('categories', $target);
+
 						$this->seo_title = $target['title']??'';
 						$this->seo_description = !empty(trim($target['description'])) ? $target['description'] : $this->seo_description;
 						$this->seo_image = !empty($target['image_url']) ? $target['image_url'] : $core->web['logo'];
@@ -222,11 +213,16 @@ class Page
 				}
 				if($this->slug=='blog' ){
 						$target = Api::cache($cache)->id($this->target_id)->data(['resolution' => '10x10'])->get()->blogCategories();
-												
+						$this->set_target('blogCategories', $target);
+
 						$this->seo_title = $target['title']??'';
 						$this->seo_tags = $this->seo_title;
-						// $this->error404 = $target ? false : true;
-						
+
+						// Несъществуваща категория → 404. Без id (/bg/blog) е целият блог — там 404 няма.
+						if($this->target_id > 0 && empty($target['id'])){
+							$this->error404 = true;
+						}
+
 				}
 			}
 
@@ -313,6 +309,30 @@ class Page
 			}
 	}
 	
+	/**
+	 * Запазва изтегления обект за повторна употреба (виж $target) — само ако е
+	 * конкретен намерен запис (с id), не списък и не грешка.
+	 */
+	private function set_target(string $type, mixed $target):void{
+		if($this->target_id > 0 && is_array($target) && !empty($target['id'])){
+			$this->target = $target;
+			$this->target_type = $type;
+		}
+	}
+
+	/**
+	 * Обектът от load_page(), ако е от този тип и с този id; иначе [].
+	 */
+	public function get_target(string $type, int $id = 0):array{
+		if($this->target_type !== $type){
+			return [];
+		}
+		if($id > 0 && (int)($this->target['id'] ?? 0) !== $id){
+			return [];
+		}
+		return $this->target;
+	}
+
 	private function prepareTags(string|array $string):string{
 		
 		if(is_array($string)){

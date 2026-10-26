@@ -34,9 +34,15 @@ class Editor{
 		$parameters = json_decode(base64_decode($base64), true);
 
 		if(isset($parameters['token'])){
-				require_once(BASEPATH.'core/classes/class.cryptor.php');
-				$parameters['token'] =  Cryptor::Decrypt($parameters['token'], SAAS_KEY);
-				
+				$parameters['token'] = self::decrypt_token($parameters['token']);
+
+				// Невалиден/изтекъл токен — без редактор (преди тук гърмеше с Fatal error)
+				if($parameters['token'] === false){
+					http_response_code(403);
+					die('Токенът от линка не се разшифрова с SAAS_KEY на този сайт. [editor:decrypt]');
+				}
+				// Резултатът не спира редактора: при повторен запис токенът вече е ползван
+				// (token_verify отказва), а потребителят е влязъл от първото отваряне — сесията стига.
 				$user->loginByToken($parameters['token']);
 		}
 		
@@ -53,6 +59,32 @@ class Editor{
 		$this->getRevisions();
 
 
+	}
+
+	/**
+	 * Токенът от линка на редактора, разшифрован. false, ако не е валиден:
+	 * aes-256-ctr с друг ключ не дава грешка, а двоичен боклук — той не бива да стига
+	 * до сесията, иначе всяка следваща заявка към API-то пада (виж Api::valid_token()).
+	 */
+	public static function decrypt_token(mixed $encrypted):string|false{
+		if(!is_string($encrypted) || $encrypted === ''){
+			return false;
+		}
+
+		require_once(BASEPATH.'core/classes/class.cryptor.php');
+
+		try {
+			$token = Cryptor::Decrypt($encrypted, SAAS_KEY);
+		} catch(\Throwable $e){
+			return false;
+		}
+
+		if(!Api::valid_token($token)){
+			error_log('[editor] токенът от линка не се разшифрова до валиден токен | '.($_SERVER['REQUEST_URI'] ?? ''));
+			return false;
+		}
+
+		return $token;
 	}
 
 	public function getRevisions(){
@@ -122,7 +154,8 @@ class Editor{
 				$row['revision_title'] = $revision_title;
 				if(empty($row['title'])) $row['title'] = 'Blog-'.$page->id;
 
-				$this->_refresh_cache('blogPosts', $page->id);
+				// $this->id — id на статията; $page->id е 16 (шаблонът „post“), задава го load_page()
+				$this->_refresh_cache('blogPosts', (int)$this->id);
 
 				$row['cid'] = $row['category']['id'];
 				// $row['combination_id'] = $row['combination']['id'];
@@ -191,9 +224,24 @@ class Editor{
 	}
 
 	private function _refresh_cache(string $endpoint, int $id){
-			$cache = new Cache($endpoint, '', '', $id);
-			//d($cache);
-			@unlink($cache->file);
+
+			// Всички кеширани варианти (различни параметри → различен хеш в името), за всички езици:
+			// езикът на записа идва от ?lang= на линка към редактора, а той е езикът на админа
+			// (напр. en), не непременно на съдържанието — с него списъкът на bg оставаше.
+			if(!method_exists('Cache', 'clear')){
+				return; // стар class.cache.php (частично качване) — без чистене, без Fatal error
+			}
+			Cache::clear($endpoint, $id);
+
+			// И списъците (id 0) — иначе в „Последни статии“ и др. старото заглавие остава до изтичане на кеша
+			Cache::clear($endpoint, 0);
+
+			// Кешът на AI версията (ai_version/) — целият, ако модулът е инсталиран
+			$ai_cache = BASEPATH.'ai_version/classes/class.ai_cache.php';
+			if(file_exists($ai_cache)){
+				require_once $ai_cache;
+				AiCache::clear();
+			}
 	}
 
 }

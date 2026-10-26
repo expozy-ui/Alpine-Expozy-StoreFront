@@ -5,3 +5,5 @@ nbproject/private/private.xml
 nbproject/project.properties
 nbproject/project.xml
 /static
+/ai_version/logs/
+/ai_version/cache/

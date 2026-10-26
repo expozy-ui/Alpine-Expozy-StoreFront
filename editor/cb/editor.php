@@ -10,8 +10,15 @@ require_once '../../core/autoload.php';
 $parameters = json_decode(base64_decode($_GET['i'] ?? ''), true);
 
 if(isset($parameters['token'])){
-	require_once(BASEPATH.'core/classes/class.cryptor.php');
-	$_SESSION['token'] = Cryptor::Decrypt($parameters['token'], SAAS_KEY);
+	// Невалиден токен (грешен ключ, повреден линк) не влиза в сесията — иначе
+	// всички следващи заявки към API-то падат и сайтът влиза в DDoS режим.
+	$token = Editor::decrypt_token($parameters['token']);
+	if($token === false){
+		http_response_code(403);
+		die('Токенът от линка не се разшифрова с SAAS_KEY на този сайт (core/saas_key.php). '.
+			'Линкът е от проект с друг ключ — отворете редактора от админа на проекта на този сайт. [editor:decrypt]');
+	}
+	$_SESSION['token'] = $token;
 
 	$user = new Users();
 }

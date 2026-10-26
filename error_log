@@ -1,0 +1,10 @@
+[30-Mar-2026 13:45:26 Europe/Sofia] PHP Fatal error:  Uncaught TypeError: htmlspecialchars(): Argument #1 ($string) must be of type string, array given in /home/myexpozy/web/ecommerce.myexpozy.com/public_html/core/classes/class.geo_optimizer.php:475
+Stack trace:
+#0 /home/myexpozy/web/ecommerce.myexpozy.com/public_html/core/classes/class.geo_optimizer.php(475): htmlspecialchars()
+#1 /home/myexpozy/web/ecommerce.myexpozy.com/public_html/core/classes/class.geo_optimizer.php(225): GeoOptimizer->escapeAttr()
+#2 /home/myexpozy/web/ecommerce.myexpozy.com/public_html/core/classes/class.geo_optimizer.php(336): GeoOptimizer->generateGeoMetaTags()
+#3 /home/myexpozy/web/ecommerce.myexpozy.com/public_html/core/classes/class.geo_optimizer.php(368): GeoOptimizer->generateFullProductGEO()
+#4 /home/myexpozy/web/ecommerce.myexpozy.com/public_html/pages/header.php(94): GeoOptimizer->headTags()
+#5 /home/myexpozy/web/ecommerce.myexpozy.com/public_html/index.php(35): require_once('/home/myexpozy/...')
+#6 {main}
+  thrown in /home/myexpozy/web/ecommerce.myexpozy.com/public_html/core/classes/class.geo_optimizer.php on line 475

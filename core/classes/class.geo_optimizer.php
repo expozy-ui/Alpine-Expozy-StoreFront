@@ -23,6 +23,7 @@ class GeoOptimizer {
     private $site_name;
     private $site_url;
     private $lang;
+    private $currency;
     private $t;
     
     /**
@@ -32,10 +33,12 @@ class GeoOptimizer {
     private static $fallback = null;
     
     public function __construct() {
-        global $core, $lang;
+        global $core, $lang, $currency;
         $this->site_name = $core->site_name ?? 'Online Store';
         $this->site_url  = SITEURL ?? "https://{$_SERVER['HTTP_HOST']}";
         $this->lang      = $lang->language ?? $_SESSION['LANG_expozy'] ?? 'bg';
+        // Валутата по подразбиране на магазина (core/autoload.php), fallback EUR
+        $this->currency  = $currency['code'] ?? 'EUR';
         $this->t         = self::loadTranslations($this->lang);
     }
     
@@ -43,6 +46,8 @@ class GeoOptimizer {
      * Зарежда езиков файл. Fallback към EN.
      */
     private static function loadTranslations($lang_code) {
+        // Само код от две малки букви влиза в пътя (иначе — английски)
+        $lang_code = preg_match('/^[a-z]{2}$/', (string)$lang_code) ? $lang_code : 'en';
         $file = BASEPATH . "core/lang/geo/{$lang_code}.php";
         
         if (file_exists($file)) {
@@ -70,7 +75,44 @@ class GeoOptimizer {
         
         return self::$fallback[$key] ?? $key;
     }
-    
+
+    /**
+     * API-то връща цената и наличността във variations[], а не на ниво продукт.
+     * Попълва price / old_price / quantity / sku / category, ако липсват.
+     * Може да се вика многократно — вече попълнен продукт не се променя.
+     */
+    public function normalizeProduct($product) {
+        $variations = $product['variations'] ?? [];
+        $first      = $variations[0] ?? [];
+
+        if (empty($product['price']) && $first) {
+            $product['price'] = $first['selling_price'] ?? $first['price'] ?? 0;
+
+            if (!empty($first['promoprice']) && ($first['price'] ?? 0) > $product['price']) {
+                $product['old_price'] = $first['price'];
+            }
+        }
+
+        if (empty($product['quantity']) && $variations) {
+            $product['quantity'] = array_sum(array_column($variations, 'qty'));
+        }
+
+        if (empty($product['sku']) && !empty($first['sku'])) {
+            $product['sku'] = $first['sku'];
+        }
+
+        if (empty($product['category']) && !empty($product['categories'][0]['title'])) {
+            $product['category'] = $product['categories'][0]['title'];
+        }
+
+        // Празна марка (id 0) → без марка, schema-та ползва името на магазина
+        if (is_array($product['brand'] ?? null) && empty($product['brand']['title'])) {
+            unset($product['brand']);
+        }
+
+        return $product;
+    }
+
     /**
      * ─────────────────────────────────────────────────
      * 1. PRODUCT SCHEMA.ORG (JSON-LD) – за AI търсачки
@@ -79,11 +121,13 @@ class GeoOptimizer {
      * които AI системите използват за препоръки.
      */
     public function generateProductSchema($product) {
+        $product = $this->normalizeProduct($product);
+
         $schema = [
             "@context"    => "https://schema.org",
             "@type"       => "Product",
             "name"        => $product['title'] ?? '',
-            "description" => strip_tags($product['description'] ?? ''),
+            "description" => $this->plainText($product['description'] ?? ''),
             "url"         => $product['url'] ?? '',
             "sku"         => $product['sku'] ?? '',
             "brand"       => [
@@ -93,7 +137,7 @@ class GeoOptimizer {
             "offers" => [
                 "@type"           => "Offer",
                 "price"           => $product['price'] ?? 0,
-                "priceCurrency"   => $product['currency'] ?? 'BGN',
+                "priceCurrency"   => $product['currency'] ?? $this->currency,
                 "availability"    => (isset($product['quantity']) && $product['quantity'] > 0)
                     ? "https://schema.org/InStock"
                     : "https://schema.org/OutOfStock",
@@ -159,9 +203,11 @@ class GeoOptimizer {
      * AI търсачките обичат FAQ формат.
      */
     public function generateProductFAQ($product) {
+        $product = $this->normalizeProduct($product);
+
         $title    = $product['title'] ?? '';
         $price    = $product['price'] ?? '';
-        $currency = $product['currency'] ?? 'BGN';
+        $currency = $product['currency'] ?? $this->currency;
         $brand    = $this->toStr($product['brand'] ?? $this->site_name);
         $in_stock = isset($product['quantity']) && $product['quantity'] > 0;
         $category = $this->toStr($product['category'] ?? '');
@@ -192,9 +238,9 @@ class GeoOptimizer {
             "a" => sprintf($this->t('faq_order_a'), $title, $this->site_name)
         ];
         
-        // Въпрос 4: Описание (ако има)
-        if (!empty($product['description'])) {
-            $short_desc = mb_substr(strip_tags($product['description']), 0, 300, 'UTF-8');
+        // Въпрос 4: Описание (ако има текст — „<p>&nbsp;</p>“ след почистване е празно)
+        $short_desc = mb_substr($this->plainText($product['description'] ?? ''), 0, 300, 'UTF-8');
+        if ($short_desc !== '') {
             $faqs[] = [
                 "q" => sprintf($this->t('faq_what_q'), $title),
                 "a" => $short_desc
@@ -242,11 +288,13 @@ class GeoOptimizer {
      * ─────────────────────────────────────────────────
      */
     public function generateGeoMetaTags($product) {
+        $product = $this->normalizeProduct($product);
+
         $title = $product['title'] ?? '';
-        $desc  = strip_tags($product['seo_description'] ?? $product['description'] ?? '');
+        $desc  = $this->plainText(!empty($product['seo_description']) ? $product['seo_description'] : ($product['description'] ?? ''));
         $desc  = mb_substr($desc, 0, 160, 'UTF-8');
         $price = $product['price'] ?? '';
-        $currency = $product['currency'] ?? 'BGN';
+        $currency = $product['currency'] ?? $this->currency;
         $image = $product['images'][0]['image'] ?? $product['images'][0]['url'] ?? '';
         $url   = $product['url'] ?? '';
         
@@ -286,11 +334,13 @@ class GeoOptimizer {
      * Скрит семантичен HTML с microdata, четим от AI краулери.
      */
     public function generateLLMOBlock($product) {
+        $product = $this->normalizeProduct($product);
+
         $title    = $product['title'] ?? '';
         $price    = $product['price'] ?? '';
-        $currency = $product['currency'] ?? 'BGN';
+        $currency = $product['currency'] ?? $this->currency;
         $brand    = $this->toStr($product['brand'] ?? '');
-        $desc     = strip_tags($product['description'] ?? '');
+        $desc     = $this->plainText($product['description'] ?? '');
         $desc     = mb_substr($desc, 0, 500, 'UTF-8');
         $in_stock = isset($product['quantity']) && $product['quantity'] > 0;
         $url      = $product['url'] ?? '';
@@ -322,21 +372,28 @@ class GeoOptimizer {
      * ─────────────────────────────────────────────────
      */
     public function generateBlogPostSchema($post) {
+        $published = $post['date_created'] ?? date('Y-m-d H:i:s');
+        $modified  = $post['date_modified'] ?? $published;
+
         $schema = [
             "@context"      => "https://schema.org",
             "@type"         => "Article",
             "headline"      => $post['title'] ?? '',
-            "description"   => strip_tags($post['seo_description'] ?? $post['description'] ?? ''),
+            "description"   => $this->plainText(!empty($post['seo_description']) ? $post['seo_description'] : ($post['description'] ?? '')),
             "url"           => $post['url'] ?? '',
-            "datePublished" => $post['date_created'] ?? date('Y-m-d'),
-            "dateModified"  => $post['date_modified'] ?? $post['date_created'] ?? date('Y-m-d'),
+            "datePublished" => date('c', strtotime($published)),
+            "dateModified"  => date('c', strtotime($modified)),
             "author"        => [
                 "@type" => "Organization",
                 "name"  => $this->site_name
             ],
             "publisher"     => [
                 "@type" => "Organization",
-                "name"  => $this->site_name
+                "name"  => $this->site_name,
+                "logo"  => [
+                    "@type" => "ImageObject",
+                    "url"   => $GLOBALS['core']->web['logo'] ?? ''
+                ]
             ],
             "mainEntityOfPage" => [
                 "@type" => "WebPage",
@@ -402,7 +459,8 @@ class GeoOptimizer {
         
         // ── ПРОДУКТОВА СТРАНИЦА ──
         if ($page->type === 'product' && $page->target_id > 0) {
-            $product = Api::cache(true)->id($page->target_id)->get()->products();
+            // Продуктът вече е изтеглен в Page::load_page() — без втора заявка
+            $product = $page->get_target('products', $page->target_id) ?: Api::cache(true)->id($page->target_id)->get()->products();
             
             if (!empty($product)) {
                 $result = $this->generateFullProductGEO($product);
@@ -412,7 +470,7 @@ class GeoOptimizer {
         
         // ── БЛОГ ПУБЛИКАЦИЯ ──
         elseif ($page->type === 'post' && $page->target_id > 0) {
-            $post = Api::cache(true)->id($page->target_id)->get()->blogPosts();
+            $post = $page->get_target('blogPosts', $page->target_id) ?: Api::cache(true)->id($page->target_id)->get()->blogPosts();
             
             if (!empty($post)) {
                 echo $this->generateBlogPostSchema($post);
@@ -420,7 +478,7 @@ class GeoOptimizer {
         }
         
         // ── НАЧАЛНА СТРАНИЦА ──
-        elseif ($page->slug === 'home' || $page->slug === 'index') {
+        elseif (in_array($page->slug, ['homepage', 'home', 'index'], true)) {
             echo $this->generateOrganizationSchema();
         }
         
@@ -513,6 +571,17 @@ class GeoOptimizer {
     
     private function escapeAttr($val) {
         return htmlspecialchars($this->toStr($val), ENT_QUOTES, 'UTF-8');
+    }
+
+    /**
+     * HTML от редактора → един ред текст: без тагове, entities (&nbsp;) и отстъпи.
+     */
+    private function plainText($html) {
+        // Интервал пред всеки таг — иначе "<p>a</p><p>b</p>" става "ab"
+        $text = html_entity_decode(strip_tags(str_replace('<', ' <', (string) $html)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
+        $text = str_replace("\u{00A0}", ' ', $text);
+
+        return trim(preg_replace('/\s+/u', ' ', $text));
     }
     
     /**

@@ -52,10 +52,12 @@ class DDos
 							if(isset($res['ddos']) && $res['ddos'] == 0){
 								self::change_status(0);
 							}
-					} else {
-						
+					} else if(!(method_exists('FrontCore', 'backend_down') && FrontCore::backend_down())){
+						// При пауза след неуспешни settings (виж FrontCore) не викаме бекенда —
+						// FrontCore веднага след това отговаря с 503
 						$res = Api::cache(false)->get()->settings();
 						if(isset($res['ddos']) && $res['ddos'] == 1){
+							error_log('[ddos] включен от настройките (settings.ddos = 1) | '.($_SERVER['REQUEST_URI'] ?? ''));
 							self::change_status(1);
 						}
 					}

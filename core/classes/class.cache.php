@@ -7,7 +7,11 @@ if (!defined("_VALID_PHP")) { die('Direct access to this location is not allowed
 class Cache{
 	const PATH = BASEPATH."cache/";
 	const EXPIRE_HOUR = 1; //in hours
-	const ENDPOINTS = ['blogPosts', 'pages', 'settings', 'settings_web', 'languages', 'category'];
+	const ENDPOINTS = ['blogPosts', 'pages', 'settings', 'settings_web', 'languages', 'category', 'categories'];
+
+	// Файловете са .php с този първи ред: при заявка по HTTP PHP ги изпълнява и спира веднага.
+	// .json се сервира направо от nginx (без .htaccess) и беше публично достъпен.
+	const GUARD = "<?php exit; ?>\n";
 	
 	public $file;
 	public $expire;
@@ -33,11 +37,36 @@ class Cache{
 			if(isset($lang)){
 				$this->file .= "_{$lang->language}";
 			}
-			
-			$this->file .= ".json";
+
+			// Хеш на целия URL — различни параметри (limit, filters…) = различен файл
+			$this->file .= "_".substr(md5($url), 0, 12);
+
+			$this->file .= ".php";
 			
 			$this->api_url = $url;
 			$this->api_method = $method;
+	}
+
+	/**
+	 * Трие всички кеширани отговори за endpoint + id (на даден език, ако е подаден).
+	 * Името на файла съдържа хеш на URL-а, т.е. един endpoint/id има по един файл
+	 * за всеки набор параметри — затова се трие по маска, а не по едно име.
+	 * Връща броя изтрити файлове.
+	 */
+	public static function clear(string $endpoint, int|string $id = 0, string $language = ''):int{
+			$base = self::PATH."{$endpoint}_{$id}".($language !== '' ? "_{$language}" : '');
+
+			// "{$base}_*" — с хеш; .json — стари формати (без хеш / преди .php).
+			// Разделителят "_" пази от съвпадение с друг id (pages_1_* не хваща pages_10_*).
+			$files = array_merge(glob("{$base}_*.php") ?: [], glob("{$base}_*.json") ?: [], glob("{$base}.json") ?: []);
+
+			$deleted = 0;
+			foreach($files as $file){
+				if(@unlink($file)){
+					$deleted++;
+				}
+			}
+			return $deleted;
 	}
 
 	public function save($response):bool{
@@ -51,7 +80,13 @@ class Cache{
 
 			$data = ['expire' => $this->expire,	'response' => $response, 'url' => $this->api_url];
 
-			if(file_put_contents($this->file, json_encode($data))){
+			// Старите публични .json файлове (отпреди .php) — трият се при първия запис;
+			// след това glob не намира нищо и е почти безплатен
+			foreach(glob(self::PATH.'*.json') ?: [] as $legacy){
+				@unlink($legacy);
+			}
+
+			if(file_put_contents($this->file, self::GUARD.json_encode($data))){
 				return true;
 			}
 			return false;
@@ -64,22 +99,20 @@ class Cache{
 			if(file_exists($this->file) === false) return FALSE;
 			if(isset($core->devMode) && $core->devMode) return false;
 			
-			$file = file_get_contents($this->file);
+			$file = (string)file_get_contents($this->file);
 			
-			//if($file === FALSE) return FALSE;
+			if(str_starts_with($file, self::GUARD)){
+				$file = substr($file, strlen(self::GUARD));
+			}
 			
 			$response = json_decode($file, true);
 			
-			if($response['expire'] > time()){
+			if(is_array($response) && $response['expire'] > time()){
 				return $response['response'];
-			} else {
-				unlink($this->file);
 			}
-			
-			if($this->api_url != $response['url']){
-				return false;
-			}
-			
+
+			unlink($this->file);
+
 			return false;
 	}
 }
