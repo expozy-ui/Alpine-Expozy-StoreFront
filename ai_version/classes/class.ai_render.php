@@ -47,6 +47,12 @@ class AiRender
 			// С кеш и без redirect към /404 — статусът го връщаме ние
 			$page->load_page(true, false);
 
+			// Заглавията от админа може да са записани с HTML ентитита (&#1048;…) —
+			// декодират се веднъж, иначе e() ги escape-ва втори път
+			foreach(['title', 'seo_title', 'seo_description'] as $field){
+				$page->$field = html_entity_decode($page->$field, ENT_QUOTES | ENT_HTML5, 'UTF-8');
+			}
+
 			if($page->error404){
 				$status = 404;
 				$template = '404';
@@ -104,7 +110,8 @@ class AiRender
 			// Само код от две малки букви влиза в пътя (Lang вече го проверява — тук за всеки случай)
 			$code = preg_match('/^[a-z]{2}$/', (string)$lang->language) ? $lang->language : 'en';
 			$file = self::ROOT."/lang/{$code}.php";
-			$en = require self::ROOT.'/lang/en.php';
+			// en.php е резервата за липсващи етикети; проект само на един език може да го няма
+			$en = is_file(self::ROOT.'/lang/en.php') ? require self::ROOT.'/lang/en.php' : [];
 			self::$t = file_exists($file) ? array_merge($en, require $file) : $en;
 		}
 
@@ -232,13 +239,11 @@ class AiRender
 	}
 
 	/**
-	 * Текущият URL без чужди параметри (за canonical). page= остава заради пагинацията.
+	 * Текущият URL без чужди параметри (за canonical). page= остава заради пагинацията,
+	 * а параметрите от config.cache_params — защото сменят съдържанието (/estate?id=5).
 	 */
 	public static function canonical(): string {
-		$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
-		$page_no = (int)($_GET['page'] ?? 0);
-
-		return SITEURL.$path.($page_no > 1 ? '?page='.$page_no : '');
+		return self::page_url(max(1, (int)($_GET['page'] ?? 1)));
 	}
 
 	/**
