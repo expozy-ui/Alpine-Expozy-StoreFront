@@ -39,11 +39,21 @@ class AiCache
 	 * (?lang=zz, ?page=99999) би създала нов файл. Не-кешируемите се рендерират нормално.
 	 *  - lang: само езиковият префикс на пътя (без ?lang= отгоре) и само език на сайта;
 	 *  - page: само цяло число от 1 до MAX_PAGE (или без page);
-	 *  - параметрите от config.cache_params: само позволените им стойности (или без тях).
+	 *  - параметрите от config.cache_params: само позволените им стойности (или без тях);
+	 *    'int' вместо списък — всяко цяло положително число (напр. ?id=N).
 	 */
 	public static function cacheable(array $languages, array $cache_params = []): bool {
 		foreach($cache_params as $param => $allowed){
-			if(isset($_GET[$param]) && !in_array($_GET[$param], $allowed, true)){
+			if(!isset($_GET[$param])){
+				continue;
+			}
+
+			$value = $_GET[$param];
+			$valid = $allowed === 'int'
+				? is_string($value) && ctype_digit($value) && $value[0] !== '0'
+				: in_array($value, (array)$allowed, true);
+
+			if(!$valid){
 				return false;
 			}
 		}
