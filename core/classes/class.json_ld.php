@@ -177,7 +177,9 @@ class JsonLd
 			$product = $page->get_target('products', $page->target_id);
 			if(!empty($product['id'])){
 				$product = $geo->normalizeProduct($product);
-				$url = self::url((string)($product['url'] ?? '')) ?: $canonical;
+				// Страницата е самият продукт — canonical, а не url от API-то (може да носи
+				// параметри извън canonical, напр. ?id_code= в kokoauto).
+				$url = $canonical;
 
 				$main[] = $geo->productNode($product, $url.'#product', $url, $ids['organization']);
 				$faq = $geo->faqNode($product, $url.'#faq');
@@ -196,7 +198,7 @@ class JsonLd
 		else if($page->type === 'post' && $page->target_id > 0){
 			$post = $page->get_target('blogPosts', $page->target_id);
 			if(!empty($post['id'])){
-				$url = self::url((string)($post['url'] ?? '')) ?: $canonical;
+				$url = $canonical; // страницата е самата статия
 
 				$main[] = self::article_node($post, $url, $ids, $geo);
 				$webpage['mainEntity'] = ['@id' => $url.'#article'];
