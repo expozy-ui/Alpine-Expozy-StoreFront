@@ -141,6 +141,11 @@ class GeoOptimizer {
             ]
         ];
 
+        // Празно описание не се извежда („пропусни, не измисляй“)
+        if ($node['description'] === '') {
+            unset($node['description']);
+        }
+
         if (!empty($product['sku'])) {
             $node['sku'] = (string) $product['sku'];
         }
