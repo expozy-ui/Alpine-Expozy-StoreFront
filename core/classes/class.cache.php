@@ -7,7 +7,7 @@ if (!defined("_VALID_PHP")) { die('Direct access to this location is not allowed
 class Cache{
 	const PATH = BASEPATH."cache/";
 	const EXPIRE_HOUR = 1; //in hours
-	const ENDPOINTS = ['blogPosts', 'pages', 'settings', 'settings_web', 'languages', 'category', 'categories'];
+	const ENDPOINTS = ['blogPosts', 'pages', 'settings', 'settings_web', 'languages', 'category', 'categories', 'organization'];
 
 	// Файловете са .php с този първи ред: при заявка по HTTP PHP ги изпълнява и спира веднага.
 	// .json се сервира направо от nginx (без .htaccess) и беше публично достъпен.

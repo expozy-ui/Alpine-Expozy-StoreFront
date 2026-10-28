@@ -41,6 +41,10 @@ class Page
 	const ID_HEADER = 100;
 	const ID_FOOTER = 101;
 
+	// GET параметри, които сменят съдържанието на страницата — остават в canonical
+	// (напр. 'id' за /estate?id=5 в проект с обекти по ?id=). page= се добавя винаги при N > 1.
+	const CANONICAL_PARAMS = [];
+
 	function __construct(){
 			global $core;
 
@@ -260,6 +264,29 @@ class Page
 
 
 
+
+	/**
+	 * Canonical URL на текущата страница — едно място за pages/header.php, JsonLd и
+	 * AI версията: SITEURL + пътят + параметрите от CANONICAL_PARAMS + ?page=N (N > 1).
+	 * Останалите GET параметри (utm, филтри…) не влизат. Не е escape-нат за HTML.
+	 */
+	public static function canonical():string{
+		$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?: '/';
+
+		$query = [];
+		foreach(static::CANONICAL_PARAMS as $param){
+			if(is_string($_GET[$param] ?? null) && $_GET[$param] !== ''){
+				$query[$param] = $_GET[$param];
+			}
+		}
+
+		$page_no = is_string($_GET['page'] ?? null) ? (int)$_GET['page'] : 0;
+		if($page_no > 1){
+			$query['page'] = $page_no;
+		}
+
+		return SITEURL.$path.($query ? '?'.http_build_query($query) : '');
+	}
 
 	public static function html_res_change(string $html, string $res):string{
 			global $core;

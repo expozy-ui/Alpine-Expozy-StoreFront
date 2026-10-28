@@ -25,7 +25,7 @@ $ai_title = $status == 404 ? AiRender::t('not_found_title')
 	<meta name="robots" content="noindex, follow">
 <?php } ?>
 <?php
-	// JSON-LD от GeoOptimizer (магазин/блог), ако проектът го има
+	// JSON-LD (@graph от JsonLd през GeoOptimizer::headTags()), ако проектът го има — същият като в нормалната версия
 	if($status == 200 && is_file(BASEPATH.'core/classes/class.geo_optimizer.php')){
 		require_once BASEPATH.'core/classes/class.geo_optimizer.php';
 		$geo = new GeoOptimizer();

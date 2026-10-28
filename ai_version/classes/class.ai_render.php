@@ -243,6 +243,11 @@ class AiRender
 	 * а параметрите от config.cache_params — защото сменят съдържанието (/estate?id=5).
 	 */
 	public static function canonical(): string {
+		// Ядрото смята canonical на едно място (същият и в нормалната версия, и в JSON-LD).
+		// Проект с по-старо ядро — по cache_params.
+		if(method_exists('Page', 'canonical')){
+			return Page::canonical();
+		}
 		return self::page_url(max(1, (int)($_GET['page'] ?? 1)));
 	}
 

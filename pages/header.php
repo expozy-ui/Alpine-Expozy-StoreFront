@@ -57,7 +57,7 @@
 
 
 
-		<link href="<?php echo SITEURL. (isset($_SERVER['REDIRECT_URL']) ? $_SERVER['REDIRECT_URL'] : '') ?>" rel="canonical" />
+		<link href="<?php echo htmlspecialchars(method_exists('Page', 'canonical') ? Page::canonical() : SITEURL.($_SERVER['REDIRECT_URL'] ?? ''), ENT_QUOTES, 'UTF-8') ?>" rel="canonical" />
 
 
 		<!-- CORE SYSTEM SETTINGS -->

@@ -115,25 +115,20 @@ class GeoOptimizer {
 
     /**
      * ─────────────────────────────────────────────────
-     * 1. PRODUCT SCHEMA.ORG (JSON-LD) – за AI търсачки
+     * 1. PRODUCT – възел за @graph (виж JsonLd)
      * ─────────────────────────────────────────────────
-     * Генерира разширен Product schema с всички сигнали,
-     * които AI системите използват за препоръки.
+     * $id = {url}#product; seller сочи към организацията ($org_id) вместо да
+     * повтаря името ѝ. brand е марката на продукта — без марка няма brand.
      */
-    public function generateProductSchema($product) {
+    public function productNode($product, $id, $url, $org_id) {
         $product = $this->normalizeProduct($product);
 
-        $schema = [
-            "@context"    => "https://schema.org",
+        $node = [
             "@type"       => "Product",
+            "@id"         => $id,
             "name"        => $product['title'] ?? '',
             "description" => $this->plainText($product['description'] ?? ''),
-            "url"         => $product['url'] ?? '',
-            "sku"         => $product['sku'] ?? '',
-            "brand"       => [
-                "@type" => "Brand",
-                "name"  => $this->toStr($product['brand'] ?? $this->site_name)
-            ],
+            "url"         => $url,
             "offers" => [
                 "@type"           => "Offer",
                 "price"           => $product['price'] ?? 0,
@@ -141,31 +136,37 @@ class GeoOptimizer {
                 "availability"    => (isset($product['quantity']) && $product['quantity'] > 0)
                     ? "https://schema.org/InStock"
                     : "https://schema.org/OutOfStock",
-                "seller" => [
-                    "@type" => "Organization",
-                    "name"  => $this->site_name
-                ],
-                "url" => $product['url'] ?? '',
+                "seller"          => ["@id" => $org_id],
+                "url"             => $url,
             ]
         ];
-        
+
+        if (!empty($product['sku'])) {
+            $node['sku'] = (string) $product['sku'];
+        }
+
         // Снимки
         if (!empty($product['images'])) {
             $images = [];
             foreach ($product['images'] as $img) {
                 $images[] = $img['image'] ?? $img['url'] ?? '';
             }
-            $schema['image'] = array_filter($images);
+            $images = array_values(array_filter($images));
+            if ($images) {
+                $node['image'] = $images;
+            }
         }
-        
-        // Категория
-        if (!empty($product['category'])) {
-            $schema['category'] = $this->toStr($product['category']);
+
+        if (!empty($product['brand'])) {
+            $node['brand'] = ["@type" => "Brand", "name" => $this->toStr($product['brand'])];
         }
-        
+
+        // Без category: Google (Merchant listings) я приема само от своя каталог с продукти,
+        // а не името на категорията в магазина — категорията е в BreadcrumbList
+
         // Рейтинг (ако има)
         if (!empty($product['rating']) && $product['rating'] > 0) {
-            $schema['aggregateRating'] = [
+            $node['aggregateRating'] = [
                 "@type"       => "AggregateRating",
                 "ratingValue" => $product['rating'],
                 "reviewCount" => $product['review_count'] ?? 1,
@@ -173,26 +174,44 @@ class GeoOptimizer {
                 "worstRating" => 1
             ];
         }
-        
+
         // Тегло (ако има)
         if (!empty($product['weight'])) {
-            $schema['weight'] = [
+            $node['weight'] = [
                 "@type"    => "QuantitativeValue",
                 "value"    => $product['weight'],
                 "unitCode" => "KGM"
             ];
         }
-        
-        // Отстъпка
+
+        // Промоция — валидна до края на годината (както преди)
         if (!empty($product['old_price']) && $product['old_price'] > $product['price']) {
-            $schema['offers']['priceValidUntil'] = date('Y-12-31');
-            $discount_pct = round((1 - $product['price'] / $product['old_price']) * 100);
-            $schema['offers']['discount'] = "{$discount_pct}%";
+            $node['offers']['priceValidUntil'] = date('Y-12-31');
         }
-        
-        return '<script type="application/ld+json">' . 
-               json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . 
-               '</script>';
+
+        return $node;
+    }
+
+    /**
+     * FAQPage възел за @graph — същите въпроси като generateProductFAQ().
+     * [] при липса на въпроси.
+     */
+    public function faqNode($product, $id) {
+        $faqs = $this->generateProductFAQ($product)['faqs'];
+        if (!$faqs) {
+            return [];
+        }
+
+        $node = ["@type" => "FAQPage", "@id" => $id, "mainEntity" => []];
+        foreach ($faqs as $faq) {
+            $node['mainEntity'][] = [
+                "@type" => "Question",
+                "name"  => $faq['q'],
+                "acceptedAnswer" => ["@type" => "Answer", "text" => $faq['a']]
+            ];
+        }
+
+        return $node;
     }
     
     /**
@@ -368,168 +387,38 @@ class GeoOptimizer {
     
     /**
      * ─────────────────────────────────────────────────
-     * 5. BLOG POST GEO – за блог публикации
+     * 5. HEAD TAGS – автоматично за текущата страница
      * ─────────────────────────────────────────────────
-     */
-    public function generateBlogPostSchema($post) {
-        $published = $post['date_created'] ?? date('Y-m-d H:i:s');
-        $modified  = $post['date_modified'] ?? $published;
-
-        $schema = [
-            "@context"      => "https://schema.org",
-            "@type"         => "Article",
-            "headline"      => $post['title'] ?? '',
-            "description"   => $this->plainText(!empty($post['seo_description']) ? $post['seo_description'] : ($post['description'] ?? '')),
-            "url"           => $post['url'] ?? '',
-            "datePublished" => date('c', strtotime($published)),
-            "dateModified"  => date('c', strtotime($modified)),
-            "author"        => [
-                "@type" => "Organization",
-                "name"  => $this->site_name
-            ],
-            "publisher"     => [
-                "@type" => "Organization",
-                "name"  => $this->site_name,
-                "logo"  => [
-                    "@type" => "ImageObject",
-                    "url"   => $GLOBALS['core']->web['logo'] ?? ''
-                ]
-            ],
-            "mainEntityOfPage" => [
-                "@type" => "WebPage",
-                "@id"   => $post['url'] ?? ''
-            ]
-        ];
-        
-        if (!empty($post['images'][0])) {
-            $schema['image'] = $post['images'][0]['url'] ?? '';
-        }
-        
-        if (!empty($post['tags'])) {
-            $schema['keywords'] = $post['tags'];
-        }
-        
-        return '<script type="application/ld+json">' . 
-               json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . 
-               '</script>';
-    }
-    
-    /**
-     * ─────────────────────────────────────────────────
-     * 6. ПЪЛЕН GEO ПАКЕТ – всичко заедно за продукт
-     * ─────────────────────────────────────────────────
-     */
-    public function generateFullProductGEO($product) {
-        $output = '';
-        
-        // JSON-LD Product Schema
-        $output .= "\t\t" . $this->generateProductSchema($product) . "\n";
-        
-        // FAQ Schema + HTML
-        $faq = $this->generateProductFAQ($product);
-        $output .= "\t\t" . $faq['schema'] . "\n";
-        
-        // GEO Meta Tags
-        $output .= $this->generateGeoMetaTags($product);
-        
-        // LLMO hidden block (body, не head)
-        $llmo = $this->generateLLMOBlock($product);
-        
-        return [
-            'head_tags'  => $output,
-            'body_block' => $llmo,
-            'faq_html'   => $faq['html'],
-            'faq_data'   => $faq['faqs']
-        ];
-    }
-    
-    /**
-     * ─────────────────────────────────────────────────
-     * 7. HEAD TAGS – автоматично за текущата страница
-     * ─────────────────────────────────────────────────
-     * Извиква се от header.php ПРЕДИ затварящия </head> таг.
-     * Разпознава типа страница и добавя правилните schema-и.
-     * 
+     * Извиква се от header.php и ai_version/layout.php ПРЕДИ затварящия </head>.
+     * JSON-LD: един @graph от JsonLd (Organization, WebSite, WebPage + Product,
+     * Article…). На продуктова страница — и гео мета таговете (не са JSON-LD).
+     *
      * Използване в header.php:
      *   $geo = new GeoOptimizer();
      *   $geo->headTags();
      */
     public function headTags() {
         global $page;
-        
-        // ── ПРОДУКТОВА СТРАНИЦА ──
-        if ($page->type === 'product' && $page->target_id > 0) {
+
+        if (is_file(__DIR__ . '/class.json_ld.php')) {
+            require_once __DIR__ . '/class.json_ld.php';
+            JsonLd::render($this);
+        }
+
+        // ── ГЕО МЕТА ТАГОВЕ НА ПРОДУКТА ──
+        if ($page->type === 'product' && $page->target_id > 0 && !$page->error404) {
             // Продуктът вече е изтеглен в Page::load_page() — без втора заявка
-            $product = $page->get_target('products', $page->target_id) ?: Api::cache(true)->id($page->target_id)->get()->products();
-            
+            $product = $page->get_target('products', $page->target_id);
+
             if (!empty($product)) {
-                $result = $this->generateFullProductGEO($product);
-                echo $result['head_tags'];
+                echo $this->generateGeoMetaTags($product);
             }
         }
-        
-        // ── БЛОГ ПУБЛИКАЦИЯ ──
-        elseif ($page->type === 'post' && $page->target_id > 0) {
-            $post = $page->get_target('blogPosts', $page->target_id) ?: Api::cache(true)->id($page->target_id)->get()->blogPosts();
-            
-            if (!empty($post)) {
-                echo $this->generateBlogPostSchema($post);
-            }
-        }
-        
-        // ── НАЧАЛНА СТРАНИЦА ──
-        elseif (in_array($page->slug, ['homepage', 'home', 'index'], true)) {
-            echo $this->generateOrganizationSchema();
-        }
-        
-        // ── КАТЕГОРИЯ / СПИСЪК ПРОДУКТИ ──
-        elseif ($page->slug === 'products') {
-            echo $this->generateCollectionSchema();
-        }
     }
     
     /**
      * ─────────────────────────────────────────────────
-     * 8. ORGANIZATION SCHEMA – начална страница
-     * ─────────────────────────────────────────────────
-     */
-    public function generateOrganizationSchema() {
-        $schema = [
-            "@context" => "https://schema.org",
-            "@type"    => "Organization",
-            "name"     => $this->site_name,
-            "url"      => $this->site_url,
-            "logo"     => $GLOBALS['core']->web['logo'] ?? '',
-        ];
-        
-        return '<script type="application/ld+json">' . 
-               json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . 
-               '</script>';
-    }
-    
-    /**
-     * ─────────────────────────────────────────────────
-     * 9. COLLECTION SCHEMA – категория / списък продукти
-     * ─────────────────────────────────────────────────
-     */
-    public function generateCollectionSchema() {
-        global $page;
-        
-        $schema = [
-            "@context" => "https://schema.org",
-            "@type"    => "CollectionPage",
-            "name"     => $page->seo_title ?: $this->t('products') . " - {$this->site_name}",
-            "url"      => $this->site_url . $_SERVER['REQUEST_URI'],
-        ];
-        
-        return '<script type="application/ld+json">' . 
-               json_encode($schema, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT) . 
-               '</script>';
-    }
-    
-    /**
-     * ─────────────────────────────────────────────────
-     * 10. PRODUCT FAQ HTML – по product_id
+     * 6. PRODUCT FAQ HTML – по product_id
      * ─────────────────────────────────────────────────
      * Връща готов Alpine.js FAQ акордеон HTML.
      * 
@@ -575,8 +464,9 @@ class GeoOptimizer {
 
     /**
      * HTML от редактора → един ред текст: без тагове, entities (&nbsp;) и отстъпи.
+     * Публичен — ползва го и JsonLd.
      */
-    private function plainText($html) {
+    public function plainText($html) {
         // Интервал пред всеки таг — иначе "<p>a</p><p>b</p>" става "ab"
         $text = html_entity_decode(strip_tags(str_replace('<', ' <', (string) $html)), ENT_QUOTES | ENT_HTML5, 'UTF-8');
         $text = str_replace("\u{00A0}", ' ', $text);
