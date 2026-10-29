@@ -22,8 +22,8 @@ class JsonLd
 
 	private const GUARD = "<?php exit; ?>\n";
 
-	// Типовете от „Организация“ в админа; непознат → Organization
-	private const ORG_TYPES = ['Organization', 'OnlineStore', 'LocalBusiness'];
+	// Типовете от „Организация“ в админа; непознат → Organization.
+	private const ORG_TYPES = ['Organization', 'OnlineStore', 'LocalBusiness', 'SportsTeam'];
 
 	private const JSON_FLAGS = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_HEX_TAG | JSON_INVALID_UTF8_SUBSTITUTE;
 
@@ -166,6 +166,13 @@ class JsonLd
 			}
 			if(!empty($project['main_id'])){
 				$webpage['mainEntity'] = ['@id' => $project['main_id']];
+			}
+			// Допълнителни полета на самата страница (напр. offers и datePosted на RealEstateListing);
+			// не презаписват общите (@id, url, name…)
+			foreach(is_array($project['webpage'] ?? null) ? $project['webpage'] : [] as $key => $value){
+				if(is_string($key) && !isset($webpage[$key])){
+					$webpage[$key] = $value;
+				}
 			}
 			$main = $project['main'] ?? [];
 			$crumbs = $project['crumbs'] ?? [];
@@ -408,7 +415,8 @@ class JsonLd
 	/**
 	 * Възлите за страница, която проектът описва сам (JsonLdProject::page()):
 	 * ['type' => 'WebPage'|'CollectionPage'…, 'main' => [възли], 'main_id' => @id на
-	 *  главния, 'crumbs' => [['name','item'], …] без „Начало“, 'image' => url] или null.
+	 *  главния, 'crumbs' => [['name','item'], …] без „Начало“, 'image' => url,
+	 *  'webpage' => [допълнителни полета на WebPage]] или null.
 	 */
 	private static function project_page(string $canonical, array $ids, GeoOptimizer $geo):?array{
 		if(!is_file(__DIR__.'/class.json_ld.project.php')){

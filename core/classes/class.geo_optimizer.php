@@ -9,7 +9,7 @@
  * Generative Engine Optimization - генерира AI-оптимизирано 
  * съдържание за всеки продукт и блог пост.
  * 
- * Конвенция: class.{name}.php в /core/classes/
+ * Конвенция: class.{name}.php в /core/classes/.
  * ============================================================
  */
 
@@ -144,6 +144,12 @@ class GeoOptimizer {
         // Празно описание не се извежда („пропусни, не измисляй“)
         if ($node['description'] === '') {
             unset($node['description']);
+        }
+
+        // Маркетплейс: продуктът е на продавач (seller с public = 1) — продава той, не сайтът
+        $seller = $product['seller'] ?? null;
+        if (is_array($seller) && !empty($seller['public']) && trim((string) ($seller['title'] ?? '')) !== '') {
+            $node['offers']['seller'] = ["@type" => "Organization", "name" => trim((string) $seller['title'])];
         }
 
         if (!empty($product['sku'])) {
