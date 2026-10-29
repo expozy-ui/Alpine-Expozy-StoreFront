@@ -1,4 +1,5 @@
-var lang = localStorage.getItem('lang');
+// Езикът на страницата — LANG идва от pages/header.php (localStorage.lang не се записва никъде)
+var lang = typeof LANG !== 'undefined' ? LANG : document.documentElement.lang;
 if (lang != 'bg' && lang != 'en') {
     lang = 'en';
 }
