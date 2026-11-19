@@ -6,18 +6,20 @@ if(file_exists('.htaccess') === false){
 	@unlink('index.php');
 	exec('rm -rf .git 2>&1', $out, $code);
 	exec('rm -rf tmp 2>&1', $out, $code);
-	$git_clone = "git clone https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard && rm -rf static";
+		//--depth 1: само последната версия (88 MB вместо 150) - на сървър с
+		//бавна връзка до GitHub пълният клон е ~60 сек.
+	$git_clone = "git clone --depth 1 https://github.com/expozy-ui/frontend.expozy.git tmp && mv tmp/.git . && rm -rf tmp && git reset --hard && rm -rf static";
 	$output = exec($git_clone, $out, $code);
 
 	if(isset($_GET['saas_key'])){
 		require_once( "core/autoload.php");
 		require_once(BASEPATH.'core/classes/class.gitops.php');
 		GitOps::change_saas_key($_GET['saas_key']);
-		
+
 		get_template($_GET['saas_key']);
 	}
-	
-	
+
+	unshallow_in_background();
 	die();
 }
 
@@ -244,6 +246,18 @@ function get_template(string $saas_key){
 		GitOps::get_my_saas_template($saas_key);
 	}
 
+	unshallow_in_background();
 	header('Location: /');
 	die();
+}
+
+/**
+ * Клонът е с --depth 1, а "Upload" (git push към нов repo) не минава от
+ * отрязана история. Затова остатъкът се дърпа на заден план, след като
+ * сайтът вече е готов - никой не го чака.
+ */
+function unshallow_in_background(){
+	if (file_exists('.git/shallow')){
+		exec('nohup git fetch --unshallow > /dev/null 2>&1 &');
+	}
 }
